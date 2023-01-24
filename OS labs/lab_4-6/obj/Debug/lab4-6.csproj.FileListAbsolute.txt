@@ -1,0 +1,22 @@
+D:\Games and tools\Project\C#\lab4-6\bin\Debug\lab4-6.exe.config
+D:\Games and tools\Project\C#\lab4-6\bin\Debug\lab4-6.exe
+D:\Games and tools\Project\C#\lab4-6\bin\Debug\lab4-6.pdb
+D:\Games and tools\Project\C#\lab4-6\obj\Debug\lab4-6.csproj.AssemblyReference.cache
+D:\Games and tools\Project\C#\lab4-6\obj\Debug\lab4-6.csproj.SuggestedBindingRedirects.cache
+D:\Games and tools\Project\C#\lab4-6\obj\Debug\lab4_6.Form1.resources
+D:\Games and tools\Project\C#\lab4-6\obj\Debug\lab4_6.Properties.Resources.resources
+D:\Games and tools\Project\C#\lab4-6\obj\Debug\lab4-6.csproj.GenerateResource.cache
+D:\Games and tools\Project\C#\lab4-6\obj\Debug\lab4-6.csproj.CoreCompileInputs.cache
+D:\Games and tools\Project\C#\lab4-6\obj\Debug\lab4-6.exe
+D:\Games and tools\Project\C#\lab4-6\obj\Debug\lab4-6.pdb
+D:\Project\C#\lab4-6\bin\Debug\lab4-6.exe.config
+D:\Project\C#\lab4-6\bin\Debug\lab4-6.exe
+D:\Project\C#\lab4-6\bin\Debug\lab4-6.pdb
+D:\Project\C#\lab4-6\obj\Debug\lab4-6.csproj.AssemblyReference.cache
+D:\Project\C#\lab4-6\obj\Debug\lab4-6.csproj.SuggestedBindingRedirects.cache
+D:\Project\C#\lab4-6\obj\Debug\lab4_6.Form1.resources
+D:\Project\C#\lab4-6\obj\Debug\lab4_6.Properties.Resources.resources
+D:\Project\C#\lab4-6\obj\Debug\lab4-6.csproj.GenerateResource.cache
+D:\Project\C#\lab4-6\obj\Debug\lab4-6.csproj.CoreCompileInputs.cache
+D:\Project\C#\lab4-6\obj\Debug\lab4-6.exe
+D:\Project\C#\lab4-6\obj\Debug\lab4-6.pdb

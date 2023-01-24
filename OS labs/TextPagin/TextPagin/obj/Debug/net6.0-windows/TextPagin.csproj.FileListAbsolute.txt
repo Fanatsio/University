@@ -1,0 +1,68 @@
+C:\Users\rechu\Downloads\TextPagin\TextPagin\bin\Debug\net6.0-windows\TextPagin.exe
+C:\Users\rechu\Downloads\TextPagin\TextPagin\bin\Debug\net6.0-windows\TextPagin.deps.json
+C:\Users\rechu\Downloads\TextPagin\TextPagin\bin\Debug\net6.0-windows\TextPagin.runtimeconfig.json
+C:\Users\rechu\Downloads\TextPagin\TextPagin\bin\Debug\net6.0-windows\TextPagin.dll
+C:\Users\rechu\Downloads\TextPagin\TextPagin\bin\Debug\net6.0-windows\TextPagin.pdb
+C:\Users\rechu\Downloads\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.csproj.AssemblyReference.cache
+C:\Users\rechu\Downloads\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.Form1.resources
+C:\Users\rechu\Downloads\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.csproj.GenerateResource.cache
+C:\Users\rechu\Downloads\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rechu\Downloads\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.AssemblyInfoInputs.cache
+C:\Users\rechu\Downloads\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.AssemblyInfo.cs
+C:\Users\rechu\Downloads\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.csproj.CoreCompileInputs.cache
+C:\Users\rechu\Downloads\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.dll
+C:\Users\rechu\Downloads\TextPagin\TextPagin\obj\Debug\net6.0-windows\refint\TextPagin.dll
+C:\Users\rechu\Downloads\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.pdb
+C:\Users\rechu\Downloads\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.genruntimeconfig.cache
+C:\Users\rechu\Downloads\TextPagin\TextPagin\obj\Debug\net6.0-windows\ref\TextPagin.dll
+F:\TextPagin\TextPagin\bin\Debug\net6.0-windows\TextPagin.exe
+F:\TextPagin\TextPagin\bin\Debug\net6.0-windows\TextPagin.deps.json
+F:\TextPagin\TextPagin\bin\Debug\net6.0-windows\TextPagin.runtimeconfig.json
+F:\TextPagin\TextPagin\bin\Debug\net6.0-windows\TextPagin.dll
+F:\TextPagin\TextPagin\bin\Debug\net6.0-windows\TextPagin.pdb
+F:\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.csproj.AssemblyReference.cache
+F:\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.Form1.resources
+F:\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.csproj.GenerateResource.cache
+F:\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.GeneratedMSBuildEditorConfig.editorconfig
+F:\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.AssemblyInfoInputs.cache
+F:\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.AssemblyInfo.cs
+F:\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.csproj.CoreCompileInputs.cache
+F:\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.dll
+F:\TextPagin\TextPagin\obj\Debug\net6.0-windows\refint\TextPagin.dll
+F:\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.pdb
+F:\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.genruntimeconfig.cache
+F:\TextPagin\TextPagin\obj\Debug\net6.0-windows\ref\TextPagin.dll
+F:\Университет\OS labs\TextPagin\TextPagin\bin\Debug\net6.0-windows\TextPagin.exe
+F:\Университет\OS labs\TextPagin\TextPagin\bin\Debug\net6.0-windows\TextPagin.deps.json
+F:\Университет\OS labs\TextPagin\TextPagin\bin\Debug\net6.0-windows\TextPagin.runtimeconfig.json
+F:\Университет\OS labs\TextPagin\TextPagin\bin\Debug\net6.0-windows\TextPagin.dll
+F:\Университет\OS labs\TextPagin\TextPagin\bin\Debug\net6.0-windows\TextPagin.pdb
+F:\Университет\OS labs\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.csproj.AssemblyReference.cache
+F:\Университет\OS labs\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.Form1.resources
+F:\Университет\OS labs\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.csproj.GenerateResource.cache
+F:\Университет\OS labs\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.GeneratedMSBuildEditorConfig.editorconfig
+F:\Университет\OS labs\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.AssemblyInfoInputs.cache
+F:\Университет\OS labs\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.AssemblyInfo.cs
+F:\Университет\OS labs\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.csproj.CoreCompileInputs.cache
+F:\Университет\OS labs\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.dll
+F:\Университет\OS labs\TextPagin\TextPagin\obj\Debug\net6.0-windows\refint\TextPagin.dll
+F:\Университет\OS labs\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.pdb
+F:\Университет\OS labs\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.genruntimeconfig.cache
+F:\Университет\OS labs\TextPagin\TextPagin\obj\Debug\net6.0-windows\ref\TextPagin.dll
+D:\Университет\OS labs\TextPagin\TextPagin\bin\Debug\net6.0-windows\TextPagin.exe
+D:\Университет\OS labs\TextPagin\TextPagin\bin\Debug\net6.0-windows\TextPagin.deps.json
+D:\Университет\OS labs\TextPagin\TextPagin\bin\Debug\net6.0-windows\TextPagin.runtimeconfig.json
+D:\Университет\OS labs\TextPagin\TextPagin\bin\Debug\net6.0-windows\TextPagin.dll
+D:\Университет\OS labs\TextPagin\TextPagin\bin\Debug\net6.0-windows\TextPagin.pdb
+D:\Университет\OS labs\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.csproj.AssemblyReference.cache
+D:\Университет\OS labs\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.Form1.resources
+D:\Университет\OS labs\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.csproj.GenerateResource.cache
+D:\Университет\OS labs\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.GeneratedMSBuildEditorConfig.editorconfig
+D:\Университет\OS labs\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.AssemblyInfoInputs.cache
+D:\Университет\OS labs\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.AssemblyInfo.cs
+D:\Университет\OS labs\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.csproj.CoreCompileInputs.cache
+D:\Университет\OS labs\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.dll
+D:\Университет\OS labs\TextPagin\TextPagin\obj\Debug\net6.0-windows\refint\TextPagin.dll
+D:\Университет\OS labs\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.pdb
+D:\Университет\OS labs\TextPagin\TextPagin\obj\Debug\net6.0-windows\TextPagin.genruntimeconfig.cache
+D:\Университет\OS labs\TextPagin\TextPagin\obj\Debug\net6.0-windows\ref\TextPagin.dll
