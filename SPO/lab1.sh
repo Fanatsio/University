@@ -7,7 +7,11 @@ for n in $@;
 		stat -c '%w' $n
   done
 echo "--------------------------gawk--------------------------"
-echo $(stat -c '%y' $@) $(stat -c '%w' $@) $(stat -c '%x' $@) | gawk '{print "File last modified time:",$1,$2,"\n","File creation time:",$4,$5,"\n","File last access time:",$7,$6}'
+for n in $@;
+	do
+    stat -c '%n' $n
+    echo $(stat -c '%y' $n) $(stat -c '%w' $n) $(stat -c '%x' $n) | gawk '{print "File last modified time:",$1,$2,$3,"\n","File creation time:",$4,$5,$6,"\n","File last access time:",$7,$8,$9}'
+  done
 echo "--------------------------Командная подстановка--------------------------"
 for n in $@;
   do
