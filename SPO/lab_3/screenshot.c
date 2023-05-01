@@ -35,9 +35,9 @@ int WINAPI WinMain( __in HINSTANCE hInstance, __in_opt HINSTANCE hPrevInstance, 
 	height = GetSystemMetrics( SM_CYVIRTUALSCREEN );
 
 	WNDCLASSEX wncx;
-	ZeroMemory( &wncx, sizeof( wncx ) );
+	ZeroMemory(&wncx, sizeof(wncx));
 	
-	wncx.cbSize = sizeof( WNDCLASSEX );
+	wncx.cbSize = sizeof(WNDCLASSEX);
 	wncx.cbClsExtra	= 0;
 	wncx.cbWndExtra	= 0;
 	wncx.hbrBackground	= (HBRUSH) GetStockObject( TRANSPARENT );
@@ -50,15 +50,14 @@ int WINAPI WinMain( __in HINSTANCE hInstance, __in_opt HINSTANCE hPrevInstance, 
 	wncx.lpszMenuName	= _T( "Menu" );
 	wncx.lpfnWndProc	= (WNDPROC) WndProc;
 
-	if( !RegisterClassEx( &wncx ) )
+	if(!RegisterClassEx(&wncx))
 	{
 		MessageBox( NULL, _T( "Register window class failed!" ), _T( "Failed" ), MB_OK );
 		return -1;
 	}
 
-	hwnd = CreateWindow( appName, _T( "Capture your window" ), WS_POPUP | WS_SYSMENU | WS_SIZEBOX, 0, 0, width, height,
-		NULL, NULL, hInstance, NULL );
-
+	hwnd = CreateWindow( appName, _T( "Capture your window" ), WS_POPUP | WS_SYSMENU | WS_SIZEBOX, 0, 0, width, height, NULL, NULL, hInstance, NULL );
+	MessageBox( NULL, _T( "Select an area of the screen by clicking on two points with the mouse\nTo close the program, press the right mouse button" ), _T( "Instruction" ), MB_OK );
 	if( NULL == hwnd )
 	{
 		MessageBox( NULL, _T( "Create window failed!" ), _T( "Failed" ), MB_OK );
@@ -92,7 +91,7 @@ LRESULT CALLBACK WndProc( HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam )
 {
 	switch( msg )
 	{
-	case WM_CREATE:
+		case WM_CREATE:
 		{		
 			if( !setTransparentWindow( hwnd, 90 ) )
 			{
@@ -101,7 +100,7 @@ LRESULT CALLBACK WndProc( HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam )
 		}
 		return 0;
 
-	case WM_LBUTTONDOWN:
+		case WM_LBUTTONDOWN:
 		{
 			if( lClickNum > 1 )
 				return 0;
@@ -145,20 +144,20 @@ LRESULT CALLBACK WndProc( HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam )
 		}
 		return 0;
 
-	case WM_RBUTTONDOWN:
+		case WM_RBUTTONDOWN:
 		{
 			PostQuitMessage( 0 );
 		}
 		return 0;
 
-	case WM_DESTROY:
+		case WM_DESTROY:
 		{
 			PostQuitMessage( 0 );
 		}
 		return 0;
 
-	default:
-		return DefWindowProc( hwnd, msg, wParam, lParam );
+		default:
+			return DefWindowProc( hwnd, msg, wParam, lParam );
 	}
 }
 
@@ -264,8 +263,7 @@ BOOL SaveBmp(HBITMAP hBitmap, LPCWSTR FileName)
 		RealizePalette(hDC); 
 		ReleaseDC(NULL, hDC); 
 	} 
-	fh = CreateFile( FileName, GENERIC_WRITE,0, NULL, CREATE_ALWAYS, 
-		FILE_ATTRIBUTE_NORMAL | FILE_FLAG_SEQUENTIAL_SCAN, NULL ); 
+	fh = CreateFile(FileName, GENERIC_WRITE, 0, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL | FILE_FLAG_SEQUENTIAL_SCAN, NULL); 
 
 	if (fh == INVALID_HANDLE_VALUE) return FALSE; 
 
@@ -333,24 +331,24 @@ LRESULT CALLBACK captureProc( HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam 
 {
 	switch( msg )
 	{
-	case WM_CREATE:
+		case WM_CREATE:
 		{
 			if( !setTransparentWindow( hwnd, 60 ) )
 			{
 				MessageBox( NULL, _T( "Set transparent window failed!" ), _T( "Failed" ), MB_OK );
 			}
+			SetTimer(hwnd, 1, 5000, NULL);
+			break;
 		}
 		return 0;
-
-	case WM_PAINT:
+		case WM_PAINT:
 		{
 			PAINTSTRUCT ps;
 			HDC hdc = BeginPaint( hwnd, &ps );
 			EndPaint( hwnd, &ps );
 			return 0;
 		}
-
-	case WM_KEYDOWN:
+		case WM_KEYDOWN:
 		{
 			switch( wParam )
 			{
@@ -365,7 +363,7 @@ LRESULT CALLBACK captureProc( HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam 
 		}
 		return 0;
 
-	case WM_RBUTTONDOWN:
+		case WM_TIMER:
 		{
 			wchar_t bmp_file[] = { ' ', '.', 'b', 'm', 'p', '\0' };
 			bmp_file[0] = bmp_index++;
@@ -383,7 +381,7 @@ LRESULT CALLBACK captureProc( HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam 
 		}
 		return 0;
 
-	case WM_NCHITTEST:
+		case WM_NCHITTEST:
 		{
 			UINT nHitTest;
 			nHitTest = DefWindowProc(hwnd,msg,wParam,lParam);
@@ -394,13 +392,19 @@ LRESULT CALLBACK captureProc( HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam 
 			return nHitTest;
 		}
 
-	case WM_DESTROY:
+		case WM_RBUTTONDOWN:
+		{
+			PostQuitMessage(0);
+		}
+		return 0;
+
+		case WM_DESTROY:
 		{
 			PostQuitMessage( 0 );
 		}
 		return 0;
 
-	default:
-		return DefWindowProc( hwnd, msg, wParam, lParam );
+		default:
+			return DefWindowProc( hwnd, msg, wParam, lParam );
 	}
 }
