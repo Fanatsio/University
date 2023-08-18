@@ -188,7 +188,7 @@ static LRESULT CALLBACK EditProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lPa
                             LocalUnlock(textH);
 
                             return 0;
-                        } break;
+                        }
                     }
                 break;
             }
@@ -774,7 +774,7 @@ static LRESULT CALLBACK WndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lPar
             SetTextColor(dc, GetSysColor(COLOR_WINDOWTEXT));
             SetBkMode(dc, TRANSPARENT);
             return (LRESULT)GetStockObject(NULL_BRUSH);
-        } break;
+        }
         case WM_USER_CARETMOVE : {
             ULONGLONG row = SendMessageW(Gui.text_box, EM_LINEFROMCHAR, -1, 0);
             DWORD start;
