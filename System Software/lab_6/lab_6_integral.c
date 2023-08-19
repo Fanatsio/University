@@ -6,9 +6,9 @@ double f(int n) {
   double I = 0.0;
   for (double x = 1.0 / n; x <= 2 * 3.1415; x += 2.0 / n) {
     if (x <= 3.1415 / 2)
-      y = pow(2, x) - 2 + x * x;
+      y = (pow(x, 2) - 2 * pow(x, 3)) * cos(pow(x, 2));
     else
-      y = sqrt(x) * exp(-((x) * (x)));
+      y = exp(sin(2 * x));
     I += y;
   }
   I *= 2.0 / n;
@@ -20,7 +20,8 @@ int main() {
   printf("Enter precision >> ");
   scanf("%lf", &e);
   int n = 1;
-  double In = f(n), I2n = f(2 * n);
+  double In = f(n);
+  double I2n = f(2 * n);
   while ((fabs(I2n - In) / 3) >= e) {
     printf("%lf for n = %d \n", I2n, n * 2);
     n *= 2;
