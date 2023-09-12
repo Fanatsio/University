@@ -18,13 +18,13 @@ plot_3d_graph(data_with_noise['x1'], data_with_noise['x2'], data_with_noise['Y']
 single_neuron_net = create_neural_network(1, 2)
 
 print("\nВеса после обучения для сети с одним нейроном:")
-neuron_weights, bias = single_neuron_net.neurons[0].get_weights()  # Получаем веса и смещение
+neuron_weights, bias = single_neuron_net.neurons[0].get_weights()
 print(f"Веса нейрона: {neuron_weights}")
 print(f"Смещение (bias): {bias}")
 
 training_set = []
 for index, row in data_with_noise.iterrows():
-    inputs = row[['x1', 'x2']].tolist()  # Выбираем только 'x1' и 'x2' в качестве входных признаков
+    inputs = row[['x1', 'x2']].tolist()
     target = row['Y']
     training_set.append((inputs, target))
 
@@ -42,7 +42,6 @@ for inputs, target in test_data:
 test_error_single_neuron /= len(test_data)
 print(f"Ошибка на тестовой выборке для сети с одним нейроном: {test_error_single_neuron}")
 
-# Вывод весов для сети с одним нейроном
 print("\nВеса после обучения для сети с одним нейроном:")
 neuron_weights, bias = single_neuron_net.neurons[0].get_weights()  # Получаем веса и смещение
 print(f"Веса нейрона: {neuron_weights}")
