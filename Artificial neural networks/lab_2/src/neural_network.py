@@ -46,7 +46,6 @@ class Neuron:
         prediction = self.predict(x)
         error = y - prediction
 
-        # Проверяем, не равны ли prediction и target
         if prediction != y:
             self.weights += learning_rate * error * x
             self.bias += learning_rate * error
