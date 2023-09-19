@@ -50,6 +50,15 @@ class Neuron:
             self.weights += learning_rate * error * x
             self.bias += learning_rate * error
 
+    @staticmethod
+    def calculate_mse(neural_net, test_data):
+        total_error = 0
+        for inputs, target in test_data:
+            prediction = neural_net.neurons[0].predict(inputs)
+            total_error += (target - prediction) ** 2
+        mse = total_error / len(test_data)
+        return mse
+
     def get_weights(self):
         return self.weights, self.bias
 
