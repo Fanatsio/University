@@ -1,7 +1,7 @@
 class Perceptron:
     def __init__(self):
         self.weights = [1, 1]
-        self.bias = -1.5
+        self.bias = -0.5
 
     @staticmethod
     def step_function(x):
