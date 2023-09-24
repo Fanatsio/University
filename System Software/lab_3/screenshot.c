@@ -73,8 +73,8 @@ LRESULT CALLBACK WindowProcedure (HWND hwnd, UINT message, WPARAM wParam, LPARAM
                     char buff[1024];
                     GetWindowText(edit, buff, 1024);
                     int integerValue = atoi(buff);
-                    Sleep(integerValue * 1000);
-                    HANDLE_WM_PAINT(hwnd,wParam,lParam,OnPaint);
+                    Sleep(integerValue * 1000);                         // доделать функцию создания скриншотов через задданые промежутки
+                    HANDLE_WM_PAINT(hwnd, wParam, lParam, OnPaint);     // Разобраться с функцией OnPaint()
                     break;
                 case ID_QUIT:
                     PostQuitMessage(0);
@@ -110,8 +110,8 @@ void OnPaint(HWND hwnd) {
         nWid = GetSystemMetrics(SM_CXSCREEN);
         nHt = GetSystemMetrics(SM_CYSCREEN);
 
-        StretchBlt(
-            hWindowdc, 0, 0, rc.right, rc.bottom,
+        StretchBlt(                                 // Переместить отображение скриншотов в отдельное окно
+            hWindowdc, 0, 0, rc.right, rc.bottom,   // Или сделать функцию сохранения .jpg
             hBitmapdc, 0, 0, nWid, nHt, SRCCOPY
         );
 
