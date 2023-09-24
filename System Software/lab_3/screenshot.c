@@ -1,3 +1,4 @@
+// Compile: x86_64-w64-mingw32-gcc screenshot.c -o screenshot.exe -Wall -mwindows
 #include <windows.h>
 #include <windowsx.h>
 
