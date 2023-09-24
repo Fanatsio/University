@@ -1,105 +1,147 @@
 #include <windows.h>
-#include <stdio.h>
-#include <wingdi.h>
-#include <stdbool.h>
+#include <windowsx.h>
 
-// Function to capture a screenshot and save it to a JPEG file
-void captureScreenshot(int count) {
-    HDC hdcScreen = GetDC(NULL);
-    
-    int width = GetSystemMetrics(SM_CXSCREEN);
-    int height = GetSystemMetrics(SM_CYSCREEN);
-    
-    HBITMAP hBitmap = CreateCompatibleBitmap(hdcScreen, width, height);
-    HDC hdcMem = CreateCompatibleDC(hdcScreen);
-    HBITMAP hOldBitmap = (HBITMAP)SelectObject(hdcMem, hBitmap);
-    
-    BitBlt(hdcMem, 0, 0, width, height, hdcScreen, 0, 0, SRCCOPY);
-    
-    SelectObject(hdcMem, hOldBitmap);
-    DeleteDC(hdcMem);
-    ReleaseDC(NULL, hdcScreen);
-    
-    char filename[100];
-    sprintf(filename, "screenshot_%d.jpg", count);
-    
-    // Save the captured screenshot as a JPEG file
-    SaveBitmapAsJPEG(hBitmap, filename, 90); // 90 is the JPEG quality
-    
-    DeleteObject(hBitmap);
-}
+#define ID_BEEP 1000
+#define ID_QUIT 1001
+#define ID_EDIT 1003
 
-// Function to save a bitmap as a JPEG file
-void SaveBitmapAsJPEG(HBITMAP hBitmap, const char* filename, int quality) {
-    BITMAP bmp;
-    if (!GetObject(hBitmap, sizeof(BITMAP), &bmp)) {
-        return;
+LRESULT CALLBACK WindowProcedure (HWND, UINT, WPARAM, LPARAM);
+void CaptureScreen(HWND);
+void OnPaint(HWND hwnd);
+
+char szClassName[ ] = "Screenshot";
+
+HBITMAP hBitmap = NULL;
+HWND edit;
+
+int WINAPI WinMain (HINSTANCE hThisInstance, HINSTANCE hPrevInstance, LPSTR lpszArgument, int nFunsterStil) {
+    HWND hwnd;
+    MSG messages;
+    WNDCLASSEX wincl;
+    HDC dc;
+
+    wincl.hInstance = hThisInstance;
+    wincl.lpszClassName = szClassName;
+    wincl.lpfnWndProc = WindowProcedure;
+    wincl.style = CS_DBLCLKS;
+    wincl.cbSize = sizeof (WNDCLASSEX);
+    wincl.hIcon = LoadIcon (NULL, IDI_APPLICATION);
+    wincl.hIconSm = LoadIcon (NULL, IDI_APPLICATION);
+    wincl.hCursor = LoadCursor (NULL, IDC_ARROW);
+    wincl.lpszMenuName = NULL;
+    wincl.cbClsExtra = 0;
+    wincl.cbWndExtra = 0;
+    wincl.hbrBackground = (HBRUSH) COLOR_BACKGROUND;
+
+    if (!RegisterClassEx (&wincl)) {
+        return 0;
     }
     
-    BITMAPINFOHEADER bmi = {0};
-    bmi.biSize = sizeof(BITMAPINFOHEADER);
-    bmi.biWidth = bmp.bmWidth;
-    bmi.biHeight = -bmp.bmHeight; // Negative height to make the image top-down
-    bmi.biPlanes = 1;
-    bmi.biBitCount = 24; // 24-bit RGB format
-    bmi.biCompression = BI_RGB;
-    
-    unsigned char* buffer = NULL;
-    HDC hdc = GetDC(NULL);
-    
-    HBITMAP hDIB = CreateDIBSection(hdc, (BITMAPINFO*)&bmi, DIB_RGB_COLORS, (void**)&buffer, NULL, 0);
-    HDC hMemDC = CreateCompatibleDC(hdc);
-    HBITMAP hOldBitmap = (HBITMAP)SelectObject(hMemDC, hDIB);
-    
-    BitBlt(hMemDC, 0, 0, bmp.bmWidth, bmp.bmHeight, hBitmap, 0, 0, SRCCOPY);
-    
-    SelectObject(hMemDC, hOldBitmap);
-    DeleteDC(hMemDC);
-    ReleaseDC(NULL, hdc);
-    
-    // Save the DIB (bitmap) as a JPEG file
-    SaveDIBAsJPEG(hDIB, filename, quality);
-    
-    DeleteObject(hDIB);
-}
+    hwnd = CreateWindowEx(
+        WS_EX_CLIENTEDGE, szClassName, "Hello from WinAPI!", 
+        WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 
+        350, 330, NULL, NULL, hThisInstance, NULL
+    );
 
-// Function to save a DIB (bitmap) as a JPEG file
-void SaveDIBAsJPEG(HBITMAP hDIB, const char* filename, int quality) {
-    // Convert the DIB to JPEG and save it
-    // Implement this function using Windows API functions or external library
-}
+    CaptureScreen(hwnd);
 
-DWORD WINAPI ScreenshotThread(LPVOID lpParam) {
-    int intervalInSeconds = *(int*)lpParam;
-    int screenshotCount = 1;
-    
-    while (1) {
-        captureScreenshot(screenshotCount);
-        printf("Screenshot %d captured\n", screenshotCount);
-        
-        screenshotCount++;
-        Sleep(intervalInSeconds * 1000); // Sleep for the specified interval
+    ShowWindow (hwnd, SW_MAXIMIZE);
+
+
+    while (GetMessage (&messages, NULL, 0, 0)) {
+        TranslateMessage(&messages);
+        DispatchMessage(&messages);
     }
-    
+
+    return messages.wParam;
+}
+
+LRESULT CALLBACK WindowProcedure (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
+    switch (message) {
+        case WM_CREATE:
+            edit = CreateWindowW(L"Edit", L"",
+                                    WS_CHILD | WS_VISIBLE | WS_VSCROLL | ES_MULTILINE | ES_AUTOVSCROLL,
+                                    15, 15, 200, 25, hwnd, (HMENU)ID_EDIT, NULL, NULL);
+            CreateWindowW(L"Button", L"Screenshot", WS_VISIBLE | WS_CHILD, 20, 250, 80, 25, hwnd,
+                          (HMENU)ID_BEEP, NULL, NULL);
+            CreateWindowW(L"Button", L"Quit", WS_VISIBLE | WS_CHILD, 220, 250, 80, 25, hwnd,
+                          (HMENU)ID_QUIT, NULL, NULL);
+            break;
+        case WM_COMMAND:
+            switch (LOWORD(wParam)) {
+                case ID_BEEP:
+                    char buff[1024];
+                    GetWindowText(edit, buff, 1024);
+                    int integerValue = atoi(buff);
+                    Sleep(integerValue * 1000);
+                    HANDLE_WM_PAINT(hwnd,wParam,lParam,OnPaint);
+                    break;
+                case ID_QUIT:
+                    PostQuitMessage(0);
+                    break;
+            }
+            break;
+        case WM_DESTROY:
+            PostQuitMessage (0);
+            break;
+        default:
+            return DefWindowProc (hwnd, message, wParam, lParam);
+    }
     return 0;
 }
 
-int main() {
-    int intervalInSeconds = 5; // Set the interval between screenshots
-    
-    // Create a thread for capturing screenshots
-    HANDLE hThread = CreateThread(NULL, 0, ScreenshotThread, &intervalInSeconds, 0, NULL);
-    
-    if (hThread == NULL) {
-        printf("Failed to create thread\n");
-        return 1;
+void OnPaint(HWND hwnd) {
+    HDC hBitmapdc, hWindowdc;
+    HBITMAP hOld;
+    PAINTSTRUCT ps;
+    RECT rc;
+    int nWid, nHt;
+
+    if (hBitmap) {
+        hWindowdc = BeginPaint(hwnd, &ps);
+        hWindowdc = GetDC(hwnd);
+
+        hBitmapdc = CreateCompatibleDC(hWindowdc);
+
+        hOld = SelectBitmap(hBitmapdc,hBitmap);
+
+        GetClientRect(hwnd,&rc);
+
+        nWid = GetSystemMetrics(SM_CXSCREEN);
+        nHt = GetSystemMetrics(SM_CYSCREEN);
+
+        StretchBlt(
+            hWindowdc, 0, 0, rc.right, rc.bottom,
+            hBitmapdc, 0, 0, nWid, nHt, SRCCOPY
+        );
+
+        DeleteDC(hBitmapdc);
+
+        EndPaint(hwnd,&ps);
     }
-    
-    // Wait for the thread to finish
-    WaitForSingleObject(hThread, INFINITE);
-    
-    // Clean up the thread handle
-    CloseHandle(hThread);
-    
-    return 0;
+}
+
+void CaptureScreen(HWND hParent) {
+    HDC hDesktopdc,hBitmapdc;
+    int nWid, nHt;
+    HBITMAP hOriginal;
+
+    hDesktopdc = GetWindowDC(HWND_DESKTOP);
+    if (hDesktopdc) {
+        nWid = GetSystemMetrics(SM_CXSCREEN);
+        nHt = GetSystemMetrics(SM_CYSCREEN);
+
+        hBitmap = CreateCompatibleBitmap(hDesktopdc,nWid,nHt);
+        hBitmapdc = CreateCompatibleDC(hDesktopdc);
+        hOriginal = (HBITMAP)SelectBitmap(hBitmapdc, hBitmap);
+
+        BitBlt(hBitmapdc,0,0,nWid,nHt,
+        hDesktopdc,0,0,SRCCOPY);
+
+        DeleteDC(hBitmapdc);
+
+        ReleaseDC(HWND_DESKTOP, hDesktopdc);
+
+        UpdateWindow(hParent);
+    }
 }
