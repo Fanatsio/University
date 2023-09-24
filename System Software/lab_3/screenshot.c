@@ -73,7 +73,7 @@ LRESULT CALLBACK WindowProcedure (HWND hwnd, UINT message, WPARAM wParam, LPARAM
                     char buff[1024];
                     GetWindowText(edit, buff, 1024);
                     int integerValue = atoi(buff);
-                    Sleep(integerValue * 1000);                         // доделать функцию создания скриншотов через задданые промежутки
+                    Sleep(integerValue * 1000);                         // доделать функцию создания скриншотов через заданные промежутки
                     HANDLE_WM_PAINT(hwnd, wParam, lParam, OnPaint);     // Разобраться с функцией OnPaint()
                     break;
                 case ID_QUIT:
