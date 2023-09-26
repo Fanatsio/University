@@ -1,6 +1,8 @@
 // Compile: x86_64-w64-mingw32-gcc screenshot.c -o screenshot.exe -Wall -mwindows
 #include <windows.h>
 #include <windowsx.h>
+#include <wingdi.h>
+#include <stdio.h>
 
 #define ID_BEEP 1000
 #define ID_QUIT 1001
@@ -48,7 +50,6 @@ int WINAPI WinMain (HINSTANCE hThisInstance, HINSTANCE hPrevInstance, LPSTR lpsz
 
     ShowWindow (hwnd, SW_MAXIMIZE);
 
-
     while (GetMessage (&messages, NULL, 0, 0)) {
         TranslateMessage(&messages);
         DispatchMessage(&messages);
@@ -60,13 +61,9 @@ int WINAPI WinMain (HINSTANCE hThisInstance, HINSTANCE hPrevInstance, LPSTR lpsz
 LRESULT CALLBACK WindowProcedure (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
     switch (message) {
         case WM_CREATE:
-            edit = CreateWindowW(L"Edit", L"",
-                                    WS_CHILD | WS_VISIBLE | WS_VSCROLL | ES_MULTILINE | ES_AUTOVSCROLL,
-                                    15, 15, 200, 25, hwnd, (HMENU)ID_EDIT, NULL, NULL);
-            CreateWindowW(L"Button", L"Screenshot", WS_VISIBLE | WS_CHILD, 20, 250, 80, 25, hwnd,
-                          (HMENU)ID_BEEP, NULL, NULL);
-            CreateWindowW(L"Button", L"Quit", WS_VISIBLE | WS_CHILD, 220, 250, 80, 25, hwnd,
-                          (HMENU)ID_QUIT, NULL, NULL);
+            edit = CreateWindowW(L"Edit", L"", WS_CHILD | WS_VISIBLE | WS_VSCROLL | ES_MULTILINE | ES_AUTOVSCROLL, 15, 15, 200, 25, hwnd, (HMENU)ID_EDIT, NULL, NULL);
+            CreateWindowW(L"Button", L"Screenshot", WS_VISIBLE | WS_CHILD, 20, 250, 80, 25, hwnd, (HMENU)ID_BEEP, NULL, NULL);
+            CreateWindowW(L"Button", L"Quit", WS_VISIBLE | WS_CHILD, 220, 250, 80, 25, hwnd, (HMENU)ID_QUIT, NULL, NULL);
             break;
         case WM_COMMAND:
             switch (LOWORD(wParam)) {
@@ -91,6 +88,56 @@ LRESULT CALLBACK WindowProcedure (HWND hwnd, UINT message, WPARAM wParam, LPARAM
     return 0;
 }
 
+void SaveBitmapToFile(HBITMAP hBitmap, const char* filePath) {
+    BITMAP bmp;
+    GetObject(hBitmap, sizeof(BITMAP), &bmp);
+
+    BITMAPFILEHEADER bmfh;
+    BITMAPINFOHEADER bih;
+
+    bih.biSize = sizeof(BITMAPINFOHEADER);
+    bih.biWidth = bmp.bmWidth;
+    bih.biHeight = bmp.bmHeight;
+    bih.biPlanes = 1;
+    bih.biBitCount = 32;
+    bih.biCompression = BI_RGB;
+    bih.biSizeImage = 0;
+    bih.biXPelsPerMeter = 0;
+    bih.biYPelsPerMeter = 0;
+    bih.biClrUsed = 0;
+    bih.biClrImportant = 0;
+
+    DWORD dwBmpSize = ((bmp.bmWidth * bih.biBitCount + 31) / 32) * 4 * bmp.bmHeight;
+
+    bmfh.bfType = 0x4D42;
+    bmfh.bfSize = sizeof(BITMAPFILEHEADER) + sizeof(BITMAPINFOHEADER) + dwBmpSize;
+    bmfh.bfReserved1 = 0;
+    bmfh.bfReserved2 = 0;
+    bmfh.bfOffBits = sizeof(BITMAPFILEHEADER) + sizeof(BITMAPINFOHEADER);
+
+    FILE* file = fopen(filePath, "wb");
+    if (!file) {
+        return;
+    }
+
+    fwrite(&bmfh, sizeof(BITMAPFILEHEADER), 1, file);
+    fwrite(&bih, sizeof(BITMAPINFOHEADER), 1, file);
+
+    BYTE* pData = (BYTE*)malloc(dwBmpSize);
+    if (!pData) {
+        fclose(file);
+        return;
+    }
+
+    HDC hDC = GetDC(NULL);
+    GetDIBits(hDC, hBitmap, 0, bmp.bmHeight, pData, (BITMAPINFO*)&bih, DIB_RGB_COLORS);
+    fwrite(pData, dwBmpSize, 1, file);
+    ReleaseDC(NULL, hDC);
+
+    fclose(file);
+    free(pData);
+}
+
 void OnPaint(HWND hwnd) {
     HDC hBitmapdc, hWindowdc;
     HBITMAP hOld;
@@ -104,21 +151,18 @@ void OnPaint(HWND hwnd) {
 
         hBitmapdc = CreateCompatibleDC(hWindowdc);
 
-        hOld = SelectBitmap(hBitmapdc,hBitmap);
+        hOld = SelectBitmap(hBitmapdc, hBitmap);
 
-        GetClientRect(hwnd,&rc);
+        GetClientRect(hwnd, &rc);
 
         nWid = GetSystemMetrics(SM_CXSCREEN);
         nHt = GetSystemMetrics(SM_CYSCREEN);
 
-        StretchBlt(                                 // Переместить отображение скриншотов в отдельное окно
-            hWindowdc, 0, 0, rc.right, rc.bottom,   // Или сделать функцию сохранения .jpg
-            hBitmapdc, 0, 0, nWid, nHt, SRCCOPY
-        );
+        SaveBitmapToFile(hBitmap, "screenshot.bmp");
 
         DeleteDC(hBitmapdc);
 
-        EndPaint(hwnd,&ps);
+        EndPaint(hwnd, &ps);
     }
 }
 
