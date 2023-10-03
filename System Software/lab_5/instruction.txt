@@ -1,10 +1,10 @@
 sudo apt-get install linux-headers-$(uname -r)
 make
-sudo insmod module_name.ko
+sudo insmod lab_5.ko
 dmesg
 
 
 
 
-sudo rmmod module_name
-sudo rmmod module_name
+sudo rmmod lab_5
+sudo rmmod lab_5

@@ -82,5 +82,5 @@ module_init(random_device_init);
 module_exit(random_device_exit);
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Your Name");
+MODULE_AUTHOR("Dmitriy Rechuk");
 MODULE_DESCRIPTION("Random Device Driver");
