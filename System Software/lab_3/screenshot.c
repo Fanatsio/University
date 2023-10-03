@@ -41,7 +41,7 @@ int WINAPI WinMain (HINSTANCE hThisInstance, HINSTANCE hPrevInstance, LPSTR lpsz
     }
     
     hwnd = CreateWindowEx(
-        WS_EX_CLIENTEDGE, szClassName, "Hello from WinAPI!", 
+        WS_EX_CLIENTEDGE, szClassName, "ScreenshopApp", 
         WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 
         350, 330, NULL, NULL, hThisInstance, NULL
     );

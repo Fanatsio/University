@@ -3,12 +3,11 @@
 #include <windowsx.h>
 #include <wingdi.h>
 #include <stdio.h>
-#include <unistd.h>
-#include <string.h>
 
 #define ID_BEEP 1000
 #define ID_QUIT 1001
-#define ID_EDIT 1002
+#define ID_EDIT 1003
+#define ID_MESS 1004
 
 LRESULT CALLBACK WindowProcedure (HWND, UINT, WPARAM, LPARAM);
 void CaptureScreen(HWND);
@@ -43,7 +42,7 @@ int WINAPI WinMain (HINSTANCE hThisInstance, HINSTANCE hPrevInstance, LPSTR lpsz
     }
     
     hwnd = CreateWindowEx(
-        WS_EX_CLIENTEDGE, szClassName, "Hello from WinAPI!", 
+        WS_EX_CLIENTEDGE, szClassName, "ScreenshopApp", 
         WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 
         350, 330, NULL, NULL, hThisInstance, NULL
     );
@@ -73,9 +72,10 @@ LRESULT CALLBACK WindowProcedure (HWND hwnd, UINT message, WPARAM wParam, LPARAM
                     char buff[1024];
                     GetWindowText(edit, buff, 1024);
                     int integerValue = atoi(buff);
-                    for(int i = 1; i <= 10; i++) {
+                    for (int i = 25; i <= 100; i+=25) {
                         Sleep(integerValue * 1000);
                         HANDLE_WM_PAINT(hwnd, wParam, lParam, OnPaint);
+                        CreateWindowW(L"Edit", L"Screenshot created", WS_CHILD | WS_VISIBLE, 50, i, 200, 25, hwnd, (HMENU)ID_MESS, NULL, NULL);
                     }
                     break;
                 case ID_QUIT:
@@ -92,11 +92,9 @@ LRESULT CALLBACK WindowProcedure (HWND hwnd, UINT message, WPARAM wParam, LPARAM
     return 0;
 }
 
-void SaveBitmapToFile(HBITMAP hBitmap, char* filePath, int count) {
+void SaveBitmapToFile(HBITMAP hBitmap, const char* filePath) {
     BITMAP bmp;
     GetObject(hBitmap, sizeof(BITMAP), &bmp);
-
-    char buffer[20];
 
     BITMAPFILEHEADER bmfh;
     BITMAPINFOHEADER bih;
@@ -121,11 +119,7 @@ void SaveBitmapToFile(HBITMAP hBitmap, char* filePath, int count) {
     bmfh.bfReserved2 = 0;
     bmfh.bfOffBits = sizeof(BITMAPFILEHEADER) + sizeof(BITMAPINFOHEADER);
 
-    snprintf(buffer, sizeof buffer, "%d", count);
-    strcat(buffer, filePath);
-    count++;
-
-    FILE* file = fopen(buffer, "wb");
+    FILE* file = fopen(filePath, "wb");
     if (!file) {
         return;
     }
@@ -146,7 +140,6 @@ void SaveBitmapToFile(HBITMAP hBitmap, char* filePath, int count) {
 
     fclose(file);
     free(pData);
-    free(buffer);
 }
 
 void OnPaint(HWND hwnd) {
@@ -155,7 +148,6 @@ void OnPaint(HWND hwnd) {
     PAINTSTRUCT ps;
     RECT rc;
     int nWid, nHt;
-    int count = 1;
 
     if (hBitmap) {
         hWindowdc = BeginPaint(hwnd, &ps);
@@ -170,7 +162,7 @@ void OnPaint(HWND hwnd) {
         nWid = GetSystemMetrics(SM_CXSCREEN);
         nHt = GetSystemMetrics(SM_CYSCREEN);
 
-        SaveBitmapToFile(hBitmap, "screenshot.bmp", count);
+        SaveBitmapToFile(hBitmap, "screenshot.bmp");
 
         DeleteDC(hBitmapdc);
 
