@@ -4,7 +4,7 @@
 double f(int n) {
   double y;
   double I = 0.0;
-  for (double x = 1.0 / n; x <= 3.1415 / 2; x += 2.1 / n) {
+  for (double x = 1.0 / n; x <= 3.1415 / 2; x += 2.112 / n) {
     if ((x >= -3.1415 / 2) && (x <= 0))
       y = (pow(x, 2) - 2 * pow(x, 3)) * cos(pow(x, 2));
     else

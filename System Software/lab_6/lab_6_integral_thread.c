@@ -1,81 +1,65 @@
-#include <pthread.h>
 #include <stdio.h>
 #include <math.h>
+#include <pthread.h>
+
+double f(double x) {
+    if (x < 0) {
+        return (pow(x, 2) - 2 * pow(x, 3)) * cos(pow(x, 2));
+    }
+    return exp(sin(2 * x));
+}
 
 typedef struct {
-    int start_index;
-    int end_index;
-    int n;
-} thread_args;
+    double a;
+    double b;
+    double eps;
+    double sum;
+} IntegralParams;
 
-double func_first(double i, double j, int n) {
-    double y;
-    double I = 0.0;
-    for(double x = i / n; x <= j; x += 2.1 / n) {
-        y = (pow(x, 2) - 2 * pow(x, 3)) * cos(pow(x, 2));
-        I += y;
-    }
-    return I;
-}
+void* calculate_integral(void* arg) {
+    IntegralParams* params = (IntegralParams*)arg;
+    double a = params->a;
+    double b = params->b;
+    double eps = params->eps;
 
-double func_second(double j, double k, int n) {
-    double y;
-    double I = 0.0;
-    for(double x = j / n; x <= k; x += 2.1 / n) {
-        y = exp(sin(2 * x));
-        I += y;
-    }
-    return I;
-}
+    int n = 1;
+    double h = (b - a) / n;
+    double prev_sum;
+    params->sum = 0.0;
 
-double integral_calc(int start, int mid, int end, int n) {
-    double i = start;
-    double j = mid + 1;
-    double k = end;
-    
-    double result = func_first(i, j, n) + func_second(j, k, n);
+    do {
+        prev_sum = params->sum;
+        params->sum = 0.0;
 
-    return result;
-}
+        for (int i = 0; i < n; i++) {
+            double x = a + (i + 0.5) * h;
+            double partial_sum = f(x) * h;
+            params->sum += partial_sum;
+        }
 
-void *calculate(void *arg) {
-    thread_args *args = (thread_args *)arg;
-    int start = args->start_index;
-    int end = args->end_index;
-    int n = args->n;
-    int mid = 0;
+        n *= 2;
+        h /= 2;
+    } while (fabs(params->sum - prev_sum) > eps);
 
-    thread_args left_args = {start, mid, n};
-    thread_args right_args = {mid, end, n};
-    pthread_t left_thread, right_thread;
-
-    pthread_create(&left_thread, NULL, calculate, &left_args);
-    pthread_create(&right_thread, NULL, calculate, &right_args);
-    pthread_join(left_thread, NULL);
-    pthread_join(right_thread, NULL);
-
-    printf("%lf", integral_calc(start, mid, end, n));
-
-    return 0;
+    return NULL;
 }
 
 int main() {
-    double e;
-    printf("Enter precision >> ");
-    scanf("%lf", &e);
+    double a = - 3.1415 / 2;
+    double b = 3.1415 / 2;
+    double eps = 1e-10;
 
-    /*double In = integral_calc(start, mid, end, n);
-    double I2n = integral_calc(start, mid, end, 2 * n);
-    while ((fabs(I2n - In) / 3) >= e) {
-        printf("%lf for n = %d \n", I2n, n * 2);
-        n *= 2;
-        In = I2n;
-        I2n = integral_calc(start, mid, end, 2 * n);
-    }
-    printf("%lf \n", I2n);*/
-    thread_args args = {-3.1415/2, 3.1415/2, 1};
-    pthread_t calc_thread;
-    pthread_create(&calc_thread, NULL, calculate, &args);
-    pthread_join(calc_thread, NULL);
+    IntegralParams params;
+    params.a = a;
+    params.b = b;
+    params.eps = eps;
+
+    pthread_t thread;
+    pthread_create(&thread, NULL, calculate_integral, (void*)&params);
+    pthread_join(thread, NULL);
+
+    double result = params.sum;
+
+    printf("%lf\n", result);
     return 0;
 }

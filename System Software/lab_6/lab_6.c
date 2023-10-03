@@ -58,11 +58,15 @@ int main() {
     for (int i = 0; i < size; i++) {
         arr[i] = rand() % 1000;
     }
+    printf("The array is: ");
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
     thread_args args = {0, size - 1};
     pthread_t sort_thread;
     pthread_create(&sort_thread, NULL, merge_sort, &args);
     pthread_join(sort_thread, NULL);
-    printf("The sorted array is: ");
+    printf("\nThe sorted array is: ");
     for (int i = 0; i < size; i++) {
         printf("%d ", arr[i]);
     }
