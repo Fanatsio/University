@@ -1,2 +1,0 @@
-mkdir random_generator_module
-cd random_generator_module

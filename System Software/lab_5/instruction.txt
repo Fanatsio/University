@@ -1,7 +1,10 @@
-Compile and load the module:
-    make
-    sudo insmod random_generator.ko
-    dmesg  # Check kernel log for module messages
+sudo apt-get install linux-headers-$(uname -r)
+make
+sudo insmod module_name.ko
+dmesg
 
-Unload the module:
-    sudo rmmod random_generator
+
+
+
+sudo rmmod module_name
+sudo rmmod module_name
