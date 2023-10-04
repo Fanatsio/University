@@ -5,11 +5,5 @@ void setup() {
 }
 
 void loop() {
-  int buttonState = digitalRead(D1);
-
-  if(buttonState == HIGH) {
-      digitalWrite(D0, HIGH);
-  } else {
-      digitalWrite(D0, LOW);
-  }
+  digitalWrite(D0, !digitalRead(D1));
 }
