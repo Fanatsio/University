@@ -1,7 +1,7 @@
 // Реализовать задание из пункта №3, но с использованием аппаратного прерывания при нажатии на кнопку вместо использования функции digitalRead
 const int ledPins[] = {D0, D1, D2};
 const int buttonPin = D3;
-int currentLED = 0;
+int valitale currentLED = 0;
 
 void setup() {
   for (int i = 0; i < 3; i++) {
