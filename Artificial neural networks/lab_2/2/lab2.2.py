@@ -1,7 +1,6 @@
 import pandas as pd
 
-from src.neural_network import (create_neural_network, train_neural_network_1,
-                                split_data, print_predictions_and_targets)
+from src.neural_network import create_neural_network, train_neural_network_1, split_data, print_predictions_and_targets
 
 data = pd.read_csv('2lab_data.csv')
 input_features = data[['x1', 'x2', 'x3', 'x4', 'x5', 'x6']]
