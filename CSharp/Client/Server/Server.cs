@@ -16,13 +16,13 @@ class Server
                 byte[] sendData = SerializeData(dataToSend);
 
                 pipeServer.Write(sendData, 0, sendData.Length);
-                Console.WriteLine("Сервер отправил данные: {0}", dataToSend);
+                Console.WriteLine("Сервер отправил данные: {0}, {1}", dataToSend.Field1, dataToSend.Field2);
 
                 byte[] receiveData = new byte[1024 * 10];
                 int bytesRead = pipeServer.Read(receiveData, 0, receiveData.Length);
 
                 MyData receivedData = DeserializeData(receiveData, bytesRead);
-                Console.WriteLine("Сервер получил ответ от клиента: {0}", receivedData);
+                Console.WriteLine("Сервер получил ответ от клиента: {0}, {1}", receivedData.Field1, receivedData.Field2);
             }
             finally
             {
