@@ -1,0 +1,5 @@
+D:\project\C#\Client\Client\bin\Release\net7.0\publish\Client.exe
+D:\project\C#\Client\Client\bin\Release\net7.0\publish\Client.dll
+D:\project\C#\Client\Client\bin\Release\net7.0\publish\Client.deps.json
+D:\project\C#\Client\Client\bin\Release\net7.0\publish\Client.runtimeconfig.json
+D:\project\C#\Client\Client\bin\Release\net7.0\publish\Client.pdb
