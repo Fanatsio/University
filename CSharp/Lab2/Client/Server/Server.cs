@@ -44,10 +44,10 @@ class Server
 
             while (!cts.Token.IsCancellationRequested)
             {
-                MyData data = new MyData { Field1 = 42, Field2 = "Helloclient", Priority = 1 };
+                MyData data = new() { Field1 = 42, Field2 = "Helloclient", Priority = 1 };
                 dataQueue.Enqueue(data);
 
-                MyData highPriorityData = new MyData { Field1 = 99, Field2 = "HighPriority", Priority = 1 };
+                MyData highPriorityData = new() { Field1 = 99, Field2 = "HighPriority", Priority = 1 };
                 dataQueue.Enqueue(highPriorityData);
 
                 Thread.Sleep(1000);
