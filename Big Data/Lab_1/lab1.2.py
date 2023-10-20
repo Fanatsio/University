@@ -10,8 +10,8 @@ pathNeg = "/home/maslenok/Рабочий стол/606-12/Речук/lab1/data/mo
 pathPos = "/home/maslenok/Рабочий стол/606-12/Речук/lab1/data/movie/pos/"
 '''
 
-pathNeg = "D:/GitHub/University/Big Data/Lab_1/data/data/movie/neg/"
-pathPos = "D:/GitHub/University/Big Data/Lab_1/data/data/movie/pos/"
+pathNeg = "D:/GitHub/University/Big Data/Lab_1/data/movie/neg/"
+pathPos = "D:/GitHub/University/Big Data/Lab_1/data/movie/pos/"
 
 pos_texts = ''
 neg_texts = ''

@@ -26,7 +26,7 @@ class Program
                     Console.WriteLine("Клиент отправил данные серверу: {0}, {1}", response.Field1, response.Field2);
                 }
 
-                //pipeClient.Close();
+                pipeClient.Close();
             }
             catch (Exception ex)
             {

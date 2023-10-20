@@ -12,8 +12,8 @@ pathPos = "/home/maslenok/Рабочий стол/606-12/Речук/lab1/data/mo
 '''
 
 # For Windows:
-pathNeg = "D:/GitHub/University/Big Data/Lab_1/data/data/movie/neg/"
-pathPos = "D:/GitHub/University/Big Data/Lab_1/data/data/movie/pos/"
+pathNeg = "D:/GitHub/University/Big Data/Lab_1/data/movie/neg/"
+pathPos = "D:/GitHub/University/Big Data/Lab_1/data/movie/pos/"
 
 s1 = []
 s2 = []
@@ -47,4 +47,4 @@ clf = BernoulliNB()
 clf.fit(X_train, Y_train)
 y_pred = clf.predict(X_test)
 accuracy = accuracy_score(Y_test, y_pred)
-print(f'Точность модели: {accuracy:.2f}')
+print(f'Model accuracy: {accuracy:.2f}')

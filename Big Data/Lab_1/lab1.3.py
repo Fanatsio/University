@@ -12,8 +12,8 @@ pathNeg = "/home/maslenok/Рабочий стол/606-12/Речук/lab1/data/mo
 pathPos = "/home/maslenok/Рабочий стол/606-12/Речук/lab1/data/movie/pos/"
 '''
 
-pathNeg = "D:/GitHub/University/Big Data/Lab_1/data/data/movie/neg/"
-pathPos = "D:/GitHub/University/Big Data/Lab_1/data/data/movie/pos/"
+pathNeg = "D:/GitHub/University/Big Data/Lab_1/data/movie/neg/"
+pathPos = "D:/GitHub/University/Big Data/Lab_1/data/movie/pos/"
 
 
 def read_files_from_folder(folder_path):
@@ -31,8 +31,7 @@ all_texts = neg_texts + pos_texts
 
 y = np.array([0] * len(neg_texts) + [1] * len(pos_texts))
 
-# Используем CountVectorizer для векторизации текстов
-vectorizer = CountVectorizer(binary=True, max_features=5000)  # Вы можете настроить max_features по вашему желанию
+vectorizer = CountVectorizer(binary=True, max_features=5000)
 X = vectorizer.fit_transform(all_texts)
 
 X_train, X_test, Y_train, Y_test = train_test_split(X, y, test_size=0.2, random_state=5)
@@ -42,7 +41,7 @@ clf.fit(X_train, Y_train)
 y_pred = clf.predict(X_test)
 
 accuracy = accuracy_score(Y_test, y_pred)
-print(f'Точность модели: {accuracy:.2f}')
+print(f'Model accuracy: {accuracy:.2f}')
 
 mse = mean_squared_error(Y_test, y_pred)
-print(f'Среднеквадратичная ошибка: {mse:.2f}')
+print(f'Mean square error: {mse:.2f}')
