@@ -31,8 +31,8 @@ all_texts = neg_texts + pos_texts
 
 y = np.array([0] * len(neg_texts) + [1] * len(pos_texts))
 
-vectorizer = CountVectorizer(binary=True, max_features=5000)
-X = vectorizer.fit_transform(all_texts)
+vectorized = CountVectorizer(binary=True, max_features=5000)
+X = vectorized.fit_transform(all_texts)
 
 X_train, X_test, Y_train, Y_test = train_test_split(X, y, test_size=0.2, random_state=5)
 clf = BernoulliNB()
