@@ -8,6 +8,7 @@ class Server
         {
             Console.WriteLine("Сервер ожидает подключения...");
             pipeServer.WaitForConnection();
+            Console.WriteLine("Клиент подключился к серверу.");
 
             var dataQueue = new PriorityQueue<MyData>((x, y) => x.Priority.CompareTo(y.Priority));
             var receivedDataBuffer = new List<MyData>();
@@ -37,6 +38,7 @@ class Server
 
                     MyData receivedData = DeserializeData(receiveData, bytesRead);
                     receivedDataBuffer.Add(receivedData);
+                    Console.WriteLine("Сервер получил данные: {0}, {1}", receivedData.Field1, receivedData.Field2);
                 }
             });
 

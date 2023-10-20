@@ -12,19 +12,19 @@ class Program
                 pipeClient.Connect();
                 Console.WriteLine("Клиент успешно подключен к серверу.");
 
-                byte[] receiveData = new byte[1024 * 10];
-                int bytesRead = pipeClient.Read(receiveData, 0, receiveData.Length);
+                while (true)
+                {
+                    byte[] receiveData = new byte[1024 * 10];
+                    int bytesRead = pipeClient.Read(receiveData, 0, receiveData.Length);
 
-                MyData receivedData = DeserializeData(receiveData, bytesRead);
-                Console.WriteLine("Клиент получил данные от сервера: {0}, {1}", receivedData.Field1, receivedData.Field2);
+                    MyData receivedData = DeserializeData(receiveData, bytesRead);
+                    Console.WriteLine("Клиент получил данные от сервера: {0}, {1}", receivedData.Field1, receivedData.Field2);
 
-                MyData response = new MyData { Field1 = 123, Field2 = "Привет, сервер!" };
-                byte[] sendData = SerializeData(response);
-                pipeClient.Write(sendData, 0, sendData.Length);
-
-                bytesRead = pipeClient.Read(receiveData, 0, receiveData.Length);
-                receivedData = DeserializeData(receiveData, bytesRead);
-                Console.WriteLine("Клиент получил данные от сервера: {0}, {1}", receivedData.Field1, receivedData.Field2);
+                    MyData response = new MyData { Field1 = receivedData.Field1 * 2, Field2 = "Привет, сервер!" };
+                    byte[] sendData = SerializeData(response);
+                    pipeClient.Write(sendData, 0, sendData.Length);
+                    Console.WriteLine("Клиент отправил данные серверу: {0}, {1}", response.Field1, response.Field2);
+                }
 
                 //pipeClient.Close();
             }
