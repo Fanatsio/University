@@ -1,0 +1,14 @@
+G:\ЭВМ\Lab2\Client\bin\Debug\net7.0\Client.exe
+G:\ЭВМ\Lab2\Client\bin\Debug\net7.0\Client.deps.json
+G:\ЭВМ\Lab2\Client\bin\Debug\net7.0\Client.runtimeconfig.json
+G:\ЭВМ\Lab2\Client\bin\Debug\net7.0\Client.dll
+G:\ЭВМ\Lab2\Client\bin\Debug\net7.0\Client.pdb
+G:\ЭВМ\Lab2\Client\obj\Debug\net7.0\Client.GeneratedMSBuildEditorConfig.editorconfig
+G:\ЭВМ\Lab2\Client\obj\Debug\net7.0\Client.AssemblyInfoInputs.cache
+G:\ЭВМ\Lab2\Client\obj\Debug\net7.0\Client.AssemblyInfo.cs
+G:\ЭВМ\Lab2\Client\obj\Debug\net7.0\Client.csproj.CoreCompileInputs.cache
+G:\ЭВМ\Lab2\Client\obj\Debug\net7.0\Client.dll
+G:\ЭВМ\Lab2\Client\obj\Debug\net7.0\refint\Client.dll
+G:\ЭВМ\Lab2\Client\obj\Debug\net7.0\Client.pdb
+G:\ЭВМ\Lab2\Client\obj\Debug\net7.0\Client.genruntimeconfig.cache
+G:\ЭВМ\Lab2\Client\obj\Debug\net7.0\ref\Client.dll

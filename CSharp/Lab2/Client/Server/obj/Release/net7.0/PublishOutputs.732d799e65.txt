@@ -1,5 +1,0 @@
-D:\project\C#\Client\Server\bin\Release\net7.0\publish\Server.exe
-D:\project\C#\Client\Server\bin\Release\net7.0\publish\Server.dll
-D:\project\C#\Client\Server\bin\Release\net7.0\publish\Server.deps.json
-D:\project\C#\Client\Server\bin\Release\net7.0\publish\Server.runtimeconfig.json
-D:\project\C#\Client\Server\bin\Release\net7.0\publish\Server.pdb
