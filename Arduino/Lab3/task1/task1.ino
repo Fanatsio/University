@@ -1,37 +1,44 @@
 #include <WiFi.h>
 #include <string>
- 
-String ssid = "ASOIU";
-String password = "kaf.asoiu.48";
- 
-void setup() {
-  Serial.begin();
-  while (!Serial) continue;
 
-  if (WiFi.status() == WL_NO_SHIELD) {
-    Serial.println("Wifi shield not present");
-    while (true) continue;;
+const char* ssid = "ASOIU";
+const char* password = "kaf.asoiu.48";
+
+void setup() {
+  Serial.begin(115200);
+  while (!Serial) {
+    delay(100);
   }
 
-  WiFi.begin(ssid.c_str(), password.c_str());
+  if (WiFi.status() == WL_NO_SHIELD) {
+    Serial.println("WiFi shield not present");
+    while (true) {
+      delay(1000);
+    }
+  }
+
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(1000);
+    Serial.println("Connecting to WiFi...");
+  }
+
   Serial.print("WiFi connected. Local IP = ");
   Serial.println(WiFi.localIP());
 }
- 
+
 void loop() {
-  if (!Serial.available()) return;
+  if (Serial.available() > 0) {
+    String host = Serial.readStringUntil('\n');
+    host.trim();
 
-  if (WiFi.status() != WL_CONNECTED) WiFi.begin(ssid.c_str(), password.c_str());
+    if (!host.isEmpty()) {
+      int pingResult = WiFi.ping(host);
 
-  String host = String(Serial.readString().c_str());
-  host.trim();
-
-  if (!host.length()) return;
-  
-  int pingResult = WiFi.ping(host.c_str());
-
-  Serial.print("Ping Host: ");
-  Serial.print(host.c_str());
-  Serial.print(pingResult >= 0 ? " succesful. RTT = " : " failed. Error Code = ");
-  Serial.println(pingResult);
+      Serial.print("Ping Host: ");
+      Serial.print(host);
+      Serial.print(pingResult >= 0 ? " successful. RTT = " : " failed. Error Code = ");
+      Serial.println(pingResult);
+    }
+  }
 }
