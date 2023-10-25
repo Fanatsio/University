@@ -1,9 +1,9 @@
 import pandas as pd
 
-from src.neural_network import create_neural_network, train_neural_network_1, split_data, Neuron, \
+from neural_network import create_neural_network, train_neural_network_1, split_data, Neuron, \
     print_predictions_and_targets
 
-data = pd.read_csv('2lab_data.csv')
+data = pd.read_csv('2/2lab_data.csv')
 input_features = data[['x1', 'x2', 'x3', 'x4', 'x5', 'x6']]
 targets = data[['y1', 'y2', 'y3']]
 
@@ -23,9 +23,8 @@ for i, neuron in enumerate(neural_net.neurons):
     neuron_weights, neuron_bias = neuron.get_weights()
     print(f"Нейрон {i + 1} - Веса: {neuron_weights}, Смещение: {neuron_bias}")
 
-print(training_set)
+# print(training_set)
 print(input_features)
 print(targets)
 
 print_predictions_and_targets(neural_net, training_set)
-#%%

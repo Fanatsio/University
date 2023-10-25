@@ -1,16 +1,16 @@
 import pandas as pd
-from src.neural_network import create_neural_network, train_neural_network_1, train_neural_network_2, \
+from neural_network import create_neural_network, train_neural_network_1, train_neural_network_2, \
     DataGenerator, split_data, plot_3d_graph, Neuron, print_predictions_and_targets
 
-DataGenerator.generate_data('data.csv')
+DataGenerator.generate_data('1/data.csv')
 
-data = pd.read_csv('data.csv')
+data = pd.read_csv('1/data.csv')
 
 plot_3d_graph(data['x1'], data['x2'], data['Y'], '3D график до добавления шума')
 
 noise_std = 5.0
-DataGenerator.add_noise('data.csv', noise_std)
-data_with_noise = pd.read_csv('data.csv')
+DataGenerator.add_noise('1/data.csv', noise_std)
+data_with_noise = pd.read_csv('1/data.csv')
 
 plot_3d_graph(data_with_noise['x1'], data_with_noise['x2'], data_with_noise['Y'],
               '3D график с добавленным шумом', color='r')
@@ -27,6 +27,7 @@ for index, row in data_with_noise.iterrows():
 
 train_data, test_data = split_data(training_set, train_fraction=0.8)
 
+# при рейте меньше 0.0001 nan
 train_neural_network_1(single_neuron_net1, train_data, epochs=1000, learning_rate=0.0001, target_error=0.01)
 train_neural_network_2(single_neuron_net2, train_data, epochs=1000, learning_rate=0.0001, target_error=0.01)
 
@@ -51,5 +52,3 @@ print_predictions_and_targets(single_neuron_net2, test_data)
 
 print_predictions_and_targets(single_neuron_net1, train_data)
 print_predictions_and_targets(single_neuron_net2, train_data)
-
-#%%
