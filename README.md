@@ -1,1 +1,1 @@
-# Laboratory work from the university
+# Projects and laboratory works written during university studies
