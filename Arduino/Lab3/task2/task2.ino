@@ -1,9 +1,9 @@
 #include <WiFi.h>
 #include <string>
-#include <Wire.h> // Библиотека для работы с I2C
-#include <TroykaMeteoSensor.h> // Библиотека для работы с SHT31
-#include <TroykaIMU.h> // Библиотека для работы с LPS25HB
- 
+#include <Wire.h>
+#include <TroykaMeteoSensor.h>
+#include <TroykaIMU.h>
+
 String ssid = "ASOIU";
 String password = "kaf.asoiu.48";
 
@@ -11,33 +11,21 @@ WiFiServer server(80);
 TroykaMeteoSensor meteoSensor;
 Barometer barometer;
 
+void sendHtmlTemplate(WiFiClient client);
+
 void setup() {
-  // Инициализация последовательного порта
   Serial.begin();
-
-    // Инициализация I2C
   Wire.begin();
-
-  // Инициализация датчика SHT31
   meteoSensor.begin();
-
-  // Инициализация датчика LPS25HB
   barometer.begin();
-
-  // Подключение к WiFi
   WiFi.mode(WIFI_STA);
   WiFi.setHostname("PicoW2");
-  WiFi.begin(ssid.c_str(), password.c_str());
-  
-  Serial.printf("Connecting to '%s' with '%s'\n", ssid.c_str(), password.c_str());
-  
+  WiFi.begin(ssid.c_str(), password.c.str());
+
   while (WiFi.status() != WL_CONNECTED) {
-    Serial.print(".");
     delay(1000);
   }
-  Serial.printf("\nConnected to WiFi\n\nConnect to server at %s\n", WiFi.localIP().toString().c_str());
-  
-  // Инициализация сервера
+
   server.begin();
 }
 
@@ -49,7 +37,7 @@ void sendHtmlTemplate(WiFiClient client) {
   client.println("<html>");
   client.println("<head><title>Weather and Barometer Data</title></head>");
   client.println("<body>");
-  
+
   if (meteoSensor.read() != SHT_OK) {
     client.println("<h1>Data error or sensor not connected</h1>");
   } else {
@@ -72,10 +60,9 @@ void sendHtmlTemplate(WiFiClient client) {
 void loop() {
   WiFiClient client = server.available();
   if (!client) return;
-  
+
   while (!client.available()) ;
 
   String req = client.readStringUntil('\n');
-  Serial.println(req);
   sendHtmlTemplate(client);
 }
