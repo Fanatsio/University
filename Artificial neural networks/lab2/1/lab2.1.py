@@ -51,3 +51,5 @@ print_predictions_and_targets(single_neuron_net2, test_data)
 
 print_predictions_and_targets(single_neuron_net1, train_data)
 print_predictions_and_targets(single_neuron_net2, train_data)
+
+#%%

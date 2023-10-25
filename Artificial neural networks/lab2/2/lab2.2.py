@@ -28,3 +28,4 @@ print(input_features)
 print(targets)
 
 print_predictions_and_targets(neural_net, training_set)
+#%%
