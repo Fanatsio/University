@@ -1,42 +1,61 @@
 ﻿using System.IO.Pipes;
 using System.Runtime.CompilerServices;
 
-public struct Data
+namespace Server
 {
-    public int num1;
-    public int num2;
-}
-
-class PipeServer
-{
-    static void Main()
+    public struct Data
     {
-        using NamedPipeServerStream pipeServer = new("channel", PipeDirection.InOut);
-        Console.WriteLine("Ожидается подключения клиента к серверу");
-        pipeServer.WaitForConnection();
-        Console.WriteLine("Клиент подключен");
+        public int num1;
+        public int num2;
+    }
 
-        StreamWriter sw = new(pipeServer) {
-            AutoFlush = true
-        };
+    class PipeServer
+    {
+        static void Main()
+        {
+            using NamedPipeServerStream pipeServer = new("channel", PipeDirection.InOut);
+            Console.WriteLine("Ожидается подключения клиента к серверу");
+            pipeServer.WaitForConnection();
+            Console.WriteLine("Клиент подключен");
 
-        Console.Write("Введите первое число: ");
-        int num_1 = int.Parse(Console.ReadLine());
-        Console.Write("Введите второе число: ");
-        int num_2 = int.Parse(Console.ReadLine());
+            StreamWriter sw = new(pipeServer)
+            {
+                AutoFlush = true
+            };
 
-        Data msg = new() {
-            num1 = num_1,
-            num2 = num_2
-        };
+            Console.Write("Введите первое число: ");
+            int num_1 = int.Parse(Console.ReadLine());
+            Console.Write("Введите второе число: ");
+            int num_2 = int.Parse(Console.ReadLine());
 
-        byte[] bytes = new byte[Unsafe.SizeOf<Data>()];
-        Unsafe.As<byte, Data>(ref bytes[0]) = msg;
-        sw.BaseStream.Write(bytes, 0, bytes.Length);
-        byte[] received_bytes = new byte[Unsafe.SizeOf<Data>()];
-        sw.BaseStream.Read(received_bytes, 0, received_bytes.Length);
-        Data received_data = Unsafe.As<byte, Data>(ref received_bytes[0]);
-        Console.WriteLine($"Полученные данные: первое число = {received_data.num1}, второе число = {received_data.num2}");
-        Console.ReadKey();
+
+            Data msg = new()
+            {
+                num1 = num_1,
+                num2 = num_2
+            };
+
+            byte[] bytes = SerializeData(msg);
+            sw.BaseStream.Write(bytes, 0, bytes.Length);
+
+            Data received_data = DeserializeData(sw);
+            Console.WriteLine($"Полученные данные: первое число = {received_data.num1}, второе число = {received_data.num2}");
+
+            Console.ReadKey();
+        }
+
+        static byte[] SerializeData(Data msg)
+        {
+            byte[] bytes = new byte[Unsafe.SizeOf<Data>()];
+            Unsafe.As<byte, Data>(ref bytes[0]) = msg;
+            return bytes;
+        }
+
+        public static Data DeserializeData(StreamWriter sw)
+        {
+            byte[] received_bytes = new byte[Unsafe.SizeOf<Data>()];
+            sw.BaseStream.Read(received_bytes, 0, received_bytes.Length);
+            return Unsafe.As<byte, Data>(ref received_bytes[0]);
+        }
     }
 }

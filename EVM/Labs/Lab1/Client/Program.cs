@@ -1,30 +1,45 @@
 ﻿using System.IO.Pipes;
 using System.Runtime.CompilerServices;
 
-public struct Data
+namespace Client
 {
-    public int num1;
-    public int num2;
-}
-
-class PipeClient
-{
-    static void Main()
+    public struct Data
     {
-        using NamedPipeClientStream pipeClient = new NamedPipeClientStream(".", "channel", PipeDirection.InOut);
-        pipeClient.Connect();
-        Console.WriteLine("Клиент подключился к серверу");
+        public int num1;
+        public int num2;
+    }
 
-        byte[] bytes = new byte[Unsafe.SizeOf<Data>()];
-        pipeClient.Read(bytes, 0, bytes.Length);
-        Data received_data = Unsafe.As<byte, Data>(ref bytes[0]);
+    class PipeClient
+    {
+        static void Main()
+        {
+            using NamedPipeClientStream pipeClient = new(".", "channel", PipeDirection.InOut);
+            pipeClient.Connect();
+            Console.WriteLine("Клиент подключился к серверу");
 
-        Console.WriteLine("Число1: " + received_data.num1);
-        Console.WriteLine("Число2: " + received_data.num2);
+            Data received_data = DeserializeData(pipeClient);
 
-        byte[] modified_bytes = new byte[Unsafe.SizeOf<Data>()];
-        Unsafe.As<byte, Data>(ref modified_bytes[0]) = received_data;
-        pipeClient.Write(modified_bytes, 0, modified_bytes.Length);
-        Console.ReadKey();
+            Console.WriteLine("Число1: " + received_data.num1);
+            Console.WriteLine("Число2: " + received_data.num2);
+
+            byte[] modified_bytes = SerializeData(received_data);
+            pipeClient.Write(modified_bytes, 0, modified_bytes.Length);
+
+            Console.ReadKey();
+        }
+
+        static byte[] SerializeData(Data received_data)
+        {
+            byte[] modified_bytes = new byte[Unsafe.SizeOf<Data>()];
+            Unsafe.As<byte, Data>(ref modified_bytes[0]) = received_data;
+            return modified_bytes;
+        }
+
+        public static Data DeserializeData(NamedPipeClientStream pipeClient)
+        {
+            byte[] bytes = new byte[Unsafe.SizeOf<Data>()];
+            pipeClient.Read(bytes, 0, bytes.Length);
+            return Unsafe.As<byte, Data>(ref bytes[0]);
+        }
     }
 }

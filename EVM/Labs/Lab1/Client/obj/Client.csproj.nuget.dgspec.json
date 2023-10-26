@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Fanatsio\\Desktop\\EVM_Labs-main\\EVM_Labs-main\\Lab1 EVM\\Client\\Client.csproj": {}
+    "D:\\GitHub\\University\\EVM\\Labs\\Lab1\\Client\\Client.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Fanatsio\\Desktop\\EVM_Labs-main\\EVM_Labs-main\\Lab1 EVM\\Client\\Client.csproj": {
+    "D:\\GitHub\\University\\EVM\\Labs\\Lab1\\Client\\Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Fanatsio\\Desktop\\EVM_Labs-main\\EVM_Labs-main\\Lab1 EVM\\Client\\Client.csproj",
+        "projectUniqueName": "D:\\GitHub\\University\\EVM\\Labs\\Lab1\\Client\\Client.csproj",
         "projectName": "Client",
-        "projectPath": "C:\\Users\\Fanatsio\\Desktop\\EVM_Labs-main\\EVM_Labs-main\\Lab1 EVM\\Client\\Client.csproj",
+        "projectPath": "D:\\GitHub\\University\\EVM\\Labs\\Lab1\\Client\\Client.csproj",
         "packagesPath": "C:\\Users\\Fanatsio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Fanatsio\\Desktop\\EVM_Labs-main\\EVM_Labs-main\\Lab1 EVM\\Client\\obj\\",
+        "outputPath": "D:\\GitHub\\University\\EVM\\Labs\\Lab1\\Client\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Tools\\Visual Studio SDK\\NuGetPackages"
@@ -60,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
