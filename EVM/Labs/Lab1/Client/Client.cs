@@ -14,6 +14,7 @@ namespace Client
         static void Main()
         {
             using NamedPipeClientStream pipeClient = new(".", "channel", PipeDirection.InOut);
+            Console.WriteLine("Подключение к серверу...");
             pipeClient.Connect();
             Console.WriteLine("Клиент подключился к серверу");
 
@@ -24,6 +25,7 @@ namespace Client
 
             byte[] modified_bytes = SerializeData(received_data);
             pipeClient.Write(modified_bytes, 0, modified_bytes.Length);
+            Console.WriteLine("Клиент отправил ответ серверу о получении сообщения");
 
             Console.ReadKey();
         }
