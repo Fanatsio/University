@@ -1,9 +1,9 @@
-from classes.laminat import Laminat as lm
-from classes.wallpaper import Wallpaper as wp
-from classes.tile import Tile as tl
 from guietta import Gui, _, Quit
+
+from classes.laminat import Laminat as lm
 from classes.save import *
-from math import *
+from classes.tile import Tile as tl
+from classes.wallpaper import Wallpaper as wp
 
 gui = Gui(
     [Quit, _, _],

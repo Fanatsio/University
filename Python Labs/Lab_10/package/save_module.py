@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 
-from  openpyxl import  *
-def  data_Save(*args):
-    wb=load_workbook("D:\Университет\Pythonlabs\lab_10\Result.xlsx")
+from openpyxl import *
+
+
+def data_Save(*args):
+    wb = load_workbook("D:\Университет\Pythonlabs\lab_10\Result.xlsx")
     ws = wb.active
 
     ws['A1'] = "Обои:"
@@ -33,4 +35,3 @@ def  data_Save(*args):
         ws['E3'] = "Общая цена:"
         ws['F3'].value = args[5]
         wb.save("F:\Университет\Pythonlabs\lab_10\Result.xlsx")
-

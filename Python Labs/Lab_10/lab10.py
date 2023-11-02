@@ -8,10 +8,10 @@ from package.save_module import *
 from math import *
 from guizero import *
 
-app = App("Lab10", layout="grid", height= 180, width=200)
-wallpaper_app = App(title="Обои", layout="grid", height= 321, width=314)
-tile_app = App("Плитка", layout="grid", height= 310, width=340)
-laminate_app = App("Ламинат", layout="grid", height= 290, width=340)
+app = App("Lab10", layout="grid", height=180, width=200)
+wallpaper_app = App(title="Обои", layout="grid", height=321, width=314)
+tile_app = App("Плитка", layout="grid", height=310, width=340)
+laminate_app = App("Ламинат", layout="grid", height=290, width=340)
 wallpaper_app.hide()
 tile_app.hide()
 laminate_app.hide()
@@ -23,23 +23,27 @@ def back():
     laminate_app.hide()
     app.show()
 
+
 def exit():
     wallpaper_app.destroy()
     tile_app.destroy()
     laminate_app.destroy()
     app.destroy()
 
+
 def ww():
     wallpaper_app.show()
     app.hide()
     wallpaper()
 
-def  t():
+
+def t():
     tile_app.show()
     app.hide()
     tile()
 
-def  l():
+
+def l():
     laminate_app.show()
     app.hide()
     laminat()
@@ -47,18 +51,18 @@ def  l():
 
 exit_Button = PushButton(app, text="Закрыть", command=exit, grid=[0, 0])
 
-
-wallpaper_Text = Text(app, text="Обои", align="left", grid=[0,1])
+wallpaper_Text = Text(app, text="Обои", align="left", grid=[0, 1])
 wallpaper_Button = PushButton(app, text="Начать расчет",
                               align="left", command=ww, grid=[1, 1])
 
 tile_Text = Text(app, text="Плитка", align="left", grid=[0, 2])
 tile_Button = PushButton(app, text="Начать расчет",
-                              align="left", command=t, grid=[1,  2])
+                         align="left", command=t, grid=[1, 2])
 
 laminat_Text = Text(app, text="Ламинат", align="left", grid=[0, 3])
 laminat_Button = PushButton(app, text="Начать расчет",
-                              align="left", command=l, grid=[1, 3])
+                            align="left", command=l, grid=[1, 3])
+
 
 def wallpaper():
     back_Button = PushButton(wallpaper_app, text="Назад",
@@ -88,24 +92,27 @@ def wallpaper():
     cost_Roll = TextBox(wallpaper_app, grid=[1, 5])
     cost_Roll.value = 0
 
-    def  W_calc_quantity():
+    def W_calc_quantity():
         W_result_TextBox.value = ceil(calculation_quantity(float(length_Room.value), float(width_Room.value),
-                                           float(height_Room.value), float(width_Roll.value), float(length_Roll.value)))
-    def  W_calc_cost():
+                                                           float(height_Room.value), float(width_Roll.value),
+                                                           float(length_Roll.value)))
+
+    def W_calc_cost():
         result_cost_TextBox.value = round(calculation_cost(float(W_result_TextBox.value), float(cost_Roll.value)), 1)
 
     def save():
         data_Save(W_result_TextBox.value, result_cost_TextBox.value)
 
     result_Label = Text(wallpaper_app, text="Количество рулонов", grid=[0, 10])
-    W_result_TextBox = TextBox(wallpaper_app,  grid=[1, 10])
+    W_result_TextBox = TextBox(wallpaper_app, grid=[1, 10])
     result_Button = PushButton(wallpaper_app, text="Рассчитать", grid=[1, 11], command=W_calc_quantity)
 
     result_cost_Label = Text(wallpaper_app, text="Общая цена", grid=[0, 12])
-    result_cost_TextBox = TextBox(wallpaper_app,  grid=[1, 12])
+    result_cost_TextBox = TextBox(wallpaper_app, grid=[1, 12])
     result_Button = PushButton(wallpaper_app, text="Рассчитать", grid=[1, 13], command=W_calc_cost)
 
-    result_Button = PushButton(wallpaper_app, text="Сохранить результаты", grid= [1, 14], command=save)
+    result_Button = PushButton(wallpaper_app, text="Сохранить результаты", grid=[1, 14], command=save)
+
 
 def tile():
     back_Button = PushButton(tile_app, text="Назад",
@@ -131,29 +138,29 @@ def tile():
     T_cost_Roll = TextBox(tile_app, grid=[1, 5])
     T_cost_Roll.value = 0
 
-
-    def  calc_T_length():
+    def calc_T_length():
         T_result_TextBox.value = round(T_calculation_length(float(T_length_Room.value), float(T_width_Room.value),
-                                           float(T_width_Roll.value), float(T_length_Roll.value)), 0)
-    def  calc_T_cost():
+                                                            float(T_width_Roll.value), float(T_length_Roll.value)), 0)
+
+    def calc_T_cost():
         T_result_cost_TextBox.value = round(T_calculation_cost(float(T_result_TextBox.value),
-                                                             float(T_cost_Roll.value)), 1)
+                                                               float(T_cost_Roll.value)), 1)
 
     def save():
-        data_Save(0,0, T_result_TextBox.value, T_result_cost_TextBox.value)
-
+        data_Save(0, 0, T_result_TextBox.value, T_result_cost_TextBox.value)
 
     T_result_Label = Text(tile_app, text="Количество плиток", grid=[0, 10])
-    T_result_TextBox = TextBox(tile_app,  grid=[1, 10])
+    T_result_TextBox = TextBox(tile_app, grid=[1, 10])
     T_result_Button = PushButton(tile_app, text="Рассчитать", grid=[1, 11], command=calc_T_length)
 
     T_result_cost_Label = Text(tile_app, text="Общая цена", grid=[0, 12])
-    T_result_cost_TextBox = TextBox(tile_app,  grid=[1, 12])
+    T_result_cost_TextBox = TextBox(tile_app, grid=[1, 12])
     T_result_cost_Button = PushButton(tile_app, text="Рассчитать", grid=[1, 13], command=calc_T_cost)
 
-    T_result_save_Button = PushButton(tile_app, text="Сохранить результаты", grid= [1, 14], command=save)
+    T_result_save_Button = PushButton(tile_app, text="Сохранить результаты", grid=[1, 14], command=save)
 
-def  laminat():
+
+def laminat():
     back_Button = PushButton(laminate_app, text="Назад",
                              align="left", command=back, grid=[0, 10])
 
@@ -175,14 +182,14 @@ def  laminat():
 
     def calc_L_length():
         L_Result_TextBox.value = round(L_calculation_length(float(length_Room.value), float(width_Room.value),
-                                                      float(width.value)), 1)
+                                                            float(width.value)), 1)
 
     def calc_L_cost():
         L_Result_cost_TextBox.value = round(L_calculation_cost(float(L_Result_TextBox.value),
-                                                     float(cost.value)), 1)
+                                                               float(cost.value)), 1)
 
     def save():
-        data_Save(0,0,0,0, L_Result_TextBox.value, L_Result_cost_TextBox.value)
+        data_Save(0, 0, 0, 0, L_Result_TextBox.value, L_Result_cost_TextBox.value)
 
     L_Result_Label = Text(laminate_app, text="Количество плиток", grid=[0, 6])
     L_Result_TextBox = TextBox(laminate_app, grid=[1, 6])
@@ -193,5 +200,6 @@ def  laminat():
     L_Result_cost_Button = PushButton(laminate_app, text="Рассчитать", grid=[1, 9], command=calc_L_cost)
 
     L_Result_save_Button = PushButton(laminate_app, text="Сохранить результаты", grid=[1, 10], command=save)
+
 
 app.display()

@@ -14,6 +14,7 @@
 class Water():
     def __str__(self):
         return 'Вода'
+
     def __add__(self, other):
         if isinstance(other, Air):
             return Storm()
@@ -26,9 +27,11 @@ class Water():
         else:
             return None
 
+
 class Air():
     def __str__(self):
         return 'Воздух'
+
     def __add__(self, other):
         if isinstance(other, Water):
             return Storm()
@@ -41,9 +44,11 @@ class Air():
         else:
             return None
 
+
 class Storm():
     def __str__(self):
         return 'Шторм'
+
     def __add__(self, other):
         return None
 
@@ -51,6 +56,7 @@ class Storm():
 class Fire():
     def __str__(self):
         return 'Огонь'
+
     def __add__(self, other):
         if isinstance(other, Air):
             return Lightning()
@@ -63,9 +69,11 @@ class Fire():
         else:
             return None
 
+
 class Earth():
     def __str__(self):
         return 'Земля'
+
     def __add__(self, other):
         if isinstance(other, Air):
             return Dust()
@@ -78,33 +86,43 @@ class Earth():
         else:
             return None
 
+
 class Steam():
     def __str__(self):
         return 'Пар'
 
+
 class Mud():
     def __str__(self):
         return 'Грязь'
+
     def __add__(self, other):
         return None
+
 
 class Lightning():
     def __str__(self):
         return 'Молния'
+
     def __add__(self, other):
         return None
+
 
 class Dust():
     def __str__(self):
         return 'Пыль'
+
     def __add__(self, other):
         return None
+
 
 class Lava():
     def __str__(self):
         return 'Лава'
+
     def __add__(self, other):
         return None
+
 
 # Сложение элементов реализовывать через __add__
 # Если результат не определен - то возвращать None
@@ -112,17 +130,20 @@ class Lava():
 #
 
 elements = {
-    1: Water(), 
-    2: Air(), 
-    3: Fire(), 
-    4: Earth(), 
+    1: Water(),
+    2: Air(),
+    3: Fire(),
+    4: Earth(),
 }
 
 first_elevent = int(input('Выберите первый элемент: \n 1 - Вода \n 2 - Воздух \n 3 - Огонь \n 4 - Земля \n >> '))
 second_elevent = int(input('Выберите второй элемент: \n 1 - Вода \n 2 - Воздух \n 3 - Огонь \n 4 - Земля \n >> '))
 
+
 def alchemist(first_element, second_element):
-    print(elements[first_element], '+', elements[second_element], '=', elements[first_element] + elements[second_element])
+    print(elements[first_element], '+', elements[second_element], '=',
+          elements[first_element] + elements[second_element])
+
 
 alchemist(first_elevent, second_elevent)
 
