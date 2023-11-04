@@ -1,0 +1,11 @@
+D:\GitHub\University\OOP\Lab2\Project1\Project1.Library\obj\Debug\net7.0\Project1.Library.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub\University\OOP\Lab2\Project1\Project1.Library\obj\Debug\net7.0\Project1.Library.AssemblyInfoInputs.cache
+D:\GitHub\University\OOP\Lab2\Project1\Project1.Library\obj\Debug\net7.0\Project1.Library.AssemblyInfo.cs
+D:\GitHub\University\OOP\Lab2\Project1\Project1.Library\obj\Debug\net7.0\Project1.Library.csproj.CoreCompileInputs.cache
+D:\GitHub\University\OOP\Lab2\Project1\Project1.Library\bin\Debug\net7.0\Project1.Library.deps.json
+D:\GitHub\University\OOP\Lab2\Project1\Project1.Library\bin\Debug\net7.0\Project1.Library.dll
+D:\GitHub\University\OOP\Lab2\Project1\Project1.Library\bin\Debug\net7.0\Project1.Library.pdb
+D:\GitHub\University\OOP\Lab2\Project1\Project1.Library\obj\Debug\net7.0\Project1.Library.dll
+D:\GitHub\University\OOP\Lab2\Project1\Project1.Library\obj\Debug\net7.0\refint\Project1.Library.dll
+D:\GitHub\University\OOP\Lab2\Project1\Project1.Library\obj\Debug\net7.0\Project1.Library.pdb
+D:\GitHub\University\OOP\Lab2\Project1\Project1.Library\obj\Debug\net7.0\ref\Project1.Library.dll
