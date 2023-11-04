@@ -14,7 +14,7 @@ namespace Server
     {
         private static readonly PriorityQueue<Structure, int> dataQueue = new();
         private static readonly Mutex mutex = new();
-        private static bool createQueueCompleted = true; // Флаг завершения CreateQueue()
+        private static bool createQueueCompleted = true;
 
         static async Task Main()
         {
@@ -30,8 +30,8 @@ namespace Server
             {
                 if (!eventArgs.Cancel)
                 {
-                    eventArgs.Cancel = true; // Отменить завершение при нажатии Ctrl + C
-                    senderSource.Cancel(); // Отменить только SenderTask
+                    eventArgs.Cancel = true;
+                    senderSource.Cancel();
                 }
             };
 
@@ -71,7 +71,7 @@ namespace Server
         {
             while (!token.IsCancellationRequested)
             {
-                createQueueCompleted = false; // Сбрасываем флаг перед вводом данных
+                createQueueCompleted = false;
                 CreateQueue();
                 await Task.Delay(1000);
             }
@@ -85,7 +85,7 @@ namespace Server
                 if (createQueueCompleted)
                 {
                     mutex.WaitOne();
-                    bool flag = dataQueue.TryDequeue(out Structure st, out int priority);
+                    bool flag = dataQueue.TryDequeue(out Structure st, out _);
                     mutex.ReleaseMutex();
                     if (flag)
                     {
@@ -110,12 +110,9 @@ namespace Server
         public static Structure DeserializeData(NamedPipeServerStream pipeServer)
         {
             int size = Unsafe.SizeOf<Structure>();
-            byte[] receivedBytes = new byte[size];
-            if (pipeServer.Read(receivedBytes, 0, receivedBytes.Length) == receivedBytes.Length)
-            {
-                return Unsafe.As<byte, Structure>(ref receivedBytes[0]);
-            }
-            return new Structure();
+            byte[] bytes = new byte[size];
+            pipeServer.Read(bytes, 0, bytes.Length);
+            return Unsafe.As<byte, Structure>(ref bytes[0]);
         }
     }
 }
