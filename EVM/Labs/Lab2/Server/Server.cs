@@ -92,7 +92,7 @@ namespace Server
                         byte[] dataBytes = SerializeData(st);
                         await pipeServer.WriteAsync(dataBytes);
                         st = DeserializeData(pipeServer);
-                        Console.WriteLine($"num1 = {st.num1}; num2 = {st.num2}; приоритет = {st.pr}");
+                        Console.WriteLine($"Клиент получил: num1 = {st.num1}; num2 = {st.num2}; приоритет = {st.pr}");
                     }
                 }
                 await Task.Delay(1000);
