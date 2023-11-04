@@ -12,25 +12,30 @@ namespace Server
 
     class PipeServer
     {
-        private static readonly PriorityQueue<Structure, int> dataQueue = new PriorityQueue<Structure, int>();
-        private static readonly Mutex mutex = new Mutex();
+        private static readonly PriorityQueue<Structure, int> dataQueue = new();
+        private static readonly Mutex mutex = new();
+        private static bool createQueueCompleted = true; // Флаг завершения CreateQueue()
 
         static async Task Main()
         {
-            CancellationTokenSource source = new CancellationTokenSource();
-            CancellationToken token = source.Token;
-
-            using NamedPipeServerStream pipeServer = new NamedPipeServerStream("channel", PipeDirection.InOut);
+            using NamedPipeServerStream pipeServer = new("channel", PipeDirection.InOut);
             Console.WriteLine("Ожидание подключения клиента...");
             await pipeServer.WaitForConnectionAsync();
             Console.WriteLine("Клиент подключен");
 
+            CancellationTokenSource senderSource = new();
+            CancellationToken senderToken = senderSource.Token;
+
             Console.CancelKeyPress += (sender, eventArgs) =>
             {
-                source.Cancel();
+                if (!eventArgs.Cancel)
+                {
+                    eventArgs.Cancel = true; // Отменить завершение при нажатии Ctrl + C
+                    senderSource.Cancel(); // Отменить только SenderTask
+                }
             };
 
-            await Task.WhenAll(SenderTask(token), ReceiverTask(pipeServer, token));
+            await Task.WhenAll(SenderTask(senderToken), ReceiverTask(pipeServer));
         }
 
         static void CreateQueue()
@@ -50,7 +55,7 @@ namespace Server
             {
                 _priority = 0;
             }
-            Structure data = new Structure()
+            Structure data = new()
             {
                 num1 = _num1,
                 num2 = _num2,
@@ -66,26 +71,31 @@ namespace Server
         {
             while (!token.IsCancellationRequested)
             {
+                createQueueCompleted = false; // Сбрасываем флаг перед вводом данных
                 CreateQueue();
-                await Task.Delay(1000, token);
+                await Task.Delay(1000);
             }
+            createQueueCompleted = true;
         }
 
-        private static async Task ReceiverTask(NamedPipeServerStream pipeServer, CancellationToken token)
+        private static async Task ReceiverTask(NamedPipeServerStream pipeServer)
         {
-            while (!token.IsCancellationRequested)
+            while (true)
             {
-                mutex.WaitOne();
-                bool flag = dataQueue.TryDequeue(out Structure st, out int priority);
-                mutex.ReleaseMutex();
-                if (flag)
+                if (createQueueCompleted)
                 {
-                    byte[] dataBytes = SerializeData(st);
-                    await pipeServer.WriteAsync(dataBytes, 0, dataBytes.Length, token);
-                    st = DeserializeData(pipeServer);
-                    Console.WriteLine($"num1 = {st.num1}; num2 = {st.num2}; приоритет = {st.pr}");
+                    mutex.WaitOne();
+                    bool flag = dataQueue.TryDequeue(out Structure st, out int priority);
+                    mutex.ReleaseMutex();
+                    if (flag)
+                    {
+                        byte[] dataBytes = SerializeData(st);
+                        await pipeServer.WriteAsync(dataBytes);
+                        st = DeserializeData(pipeServer);
+                        Console.WriteLine($"num1 = {st.num1}; num2 = {st.num2}; приоритет = {st.pr}");
+                    }
                 }
-                await Task.Delay(1000, token);
+                await Task.Delay(1000);
             }
         }
 
