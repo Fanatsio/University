@@ -13,14 +13,14 @@ namespace Server
     class PipeServer
     {
         private static readonly PriorityQueue<Structure, int> dataQueue = new PriorityQueue<Structure, int>();
-        private static readonly Mutex mutex = new();
+        private static readonly Mutex mutex = new Mutex();
 
         static async Task Main()
         {
-            CancellationTokenSource source = new();
+            CancellationTokenSource source = new CancellationTokenSource();
             CancellationToken token = source.Token;
 
-            using NamedPipeServerStream pipeServer = new("channel", PipeDirection.InOut);
+            using NamedPipeServerStream pipeServer = new NamedPipeServerStream("channel", PipeDirection.InOut);
             Console.WriteLine("Ожидание подключения клиента...");
             await pipeServer.WaitForConnectionAsync();
             Console.WriteLine("Клиент подключен");
@@ -50,7 +50,7 @@ namespace Server
             {
                 _priority = 0;
             }
-            Structure data = new()
+            Structure data = new Structure()
             {
                 num1 = _num1,
                 num2 = _num2,
@@ -81,7 +81,7 @@ namespace Server
                 if (flag)
                 {
                     byte[] dataBytes = SerializeData(st);
-                    await pipeServer.WriteAsync(dataBytes, token);
+                    await pipeServer.WriteAsync(dataBytes, 0, dataBytes.Length, token);
                     st = DeserializeData(pipeServer);
                     Console.WriteLine($"num1 = {st.num1}; num2 = {st.num2}; приоритет = {st.pr}");
                 }
