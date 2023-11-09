@@ -73,7 +73,7 @@ namespace Server
             {
                 createQueueCompleted = false;
                 CreateQueue();
-                await Task.Delay(1000);
+                await Task.Delay(1000, token);
             }
             createQueueCompleted = true;
         }
