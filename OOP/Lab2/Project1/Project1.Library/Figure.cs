@@ -8,6 +8,7 @@
             Type = type;
             FileStream = File.OpenWrite($"C:\\Users\\Fanatsio\\Desktop\\{name}.txt");
         }
+
         private bool disposedValue = false;
         public string Name { get; }
         public FigureType Type { get; }

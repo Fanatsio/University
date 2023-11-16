@@ -2,60 +2,61 @@
 {
     public static class FigureTestHelper
     {
-        private static uint localeventcounter = 0;
+        private static uint localEventCounter = 0;
+
+        public static void CalculateEvent(object? sender, EventArgs e)
+        {
+            localEventCounter++;
+        }
+
         public static TNumber CalculatePerimeter<TNumber>(bool is3DFigure, TNumber[] testData, ref uint eventCounter) where TNumber : INumber<TNumber>
         {
             // Выполнить расчет периметра для фигуры на основе входных данных.
             // Счетчик должен увеличиваться при каждом срабатывании событий. Каждое событие должно выполниться один раз.
             TNumber result;
             Figure<TNumber> figure;
-            if (!is3DFigure)
+
+            if (is3DFigure)
             {
-                figure = new Cylinder<TNumber>(testData[0], testData[1]);
+                figure = new Ellipsoid<TNumber>(testData[0], testData[1], testData[2]);
             }
             else
             {
-                figure = new Square<TNumber>(testData[0]);
+                figure = new Ellipse<TNumber>(testData[0], testData[1]);
             }
-            figure.CalculatePerimeterEvent += Figure_CalculatePerimeterEvent;
+
+            figure.CalculatePerimeterEvent += CalculateEvent;
             result = figure.CalculatePerimeter();
             figure.Save();
-            figure.CalculatePerimeterEvent -= Figure_CalculatePerimeterEvent;
-            eventCounter = localeventcounter;
+            figure.CalculatePerimeterEvent -= CalculateEvent;
+
+            eventCounter = localEventCounter;
             return result;
-            static void Figure_CalculatePerimeterEvent(object? sender, EventArgs e)
-            {
-                localeventcounter++;
-            }
         }
 
         public static TNumber CalculateSquare<TNumber>(bool is3DFigure, TNumber[] testData, ref uint eventCounter) where TNumber : INumber<TNumber>
         {
             // Выполнить расчет площади для фигуры на основе входных данных.
             // Счетчик должен увеличиваться при каждом срабатывании событий. Каждое событие должно выполниться один раз.
-
             TNumber result;
             Figure<TNumber> figure;
 
-            if (!is3DFigure)
+            if (is3DFigure)
             {
-                figure = new Square<TNumber>(testData[0]);
+                figure = new Ellipsoid<TNumber>(testData[0], testData[1], testData[2]);
             }
             else
             {
-                figure = new Cylinder<TNumber>(testData[0], testData[1]);
+                figure = new Ellipse<TNumber>(testData[0], testData[1]);
             }
-            figure.CalculatePerimeterEvent += Figure_CalculateSquareEvent;
+
+            figure.CalculatePerimeterEvent += CalculateEvent;
             result = figure.CalculateSquare();
             figure.Save();
-            figure.CalculatePerimeterEvent -= Figure_CalculateSquareEvent;
-            eventCounter = localeventcounter;
-            return result;
+            figure.CalculatePerimeterEvent -= CalculateEvent;
 
-            static void Figure_CalculateSquareEvent(object? sender, EventArgs e)
-            {
-                localeventcounter++;
-            }
+            eventCounter = localEventCounter;
+            return result;
         }
 
         public static TNumber CalculateVolume<TNumber>(bool is3DFigure, TNumber[] testData, ref uint eventCounter) where TNumber : INumber<TNumber>
@@ -64,24 +65,23 @@
             // Счетчик должен увеличиваться при каждом срабатывании событий. Каждое событие должно выполниться один раз.
             TNumber result;
             Figure<TNumber> figure;
-            if (!is3DFigure)
+
+            if (is3DFigure)
             {
-                figure = new Square<TNumber>(testData[0]);
+                figure = new Ellipsoid<TNumber>(testData[0], testData[1], testData[2]);
             }
             else
             {
-                figure = new Cylinder<TNumber>(testData[0], testData[1]);
+                figure = new Ellipse<TNumber>(testData[0], testData[1]);
             }
-            figure.CalculatePerimeterEvent += Figure_CalculateVolumeEvent;
+
+            figure.CalculatePerimeterEvent += CalculateEvent;
             result = figure.CalculateVolume();
             figure.Save();
-            figure.CalculatePerimeterEvent -= Figure_CalculateVolumeEvent;
-            eventCounter = localeventcounter;
+            figure.CalculatePerimeterEvent -= CalculateEvent;
+
+            eventCounter = localEventCounter;
             return result;
-            static void Figure_CalculateVolumeEvent(object? sender, EventArgs e)
-            {
-                localeventcounter++;
-            }
         }
     }
 }
