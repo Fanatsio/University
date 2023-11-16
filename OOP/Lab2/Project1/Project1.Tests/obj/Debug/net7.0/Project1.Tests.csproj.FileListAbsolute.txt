@@ -1,6 +1,0 @@
-D:\GitHub\University\OOP\Lab2\Project1\Project1.Tests\bin\Debug\net7.0\CoverletSourceRootsMapping_Project1.Tests
-D:\GitHub\University\OOP\Lab2\Project1\Project1.Tests\obj\Debug\net7.0\Project1.Tests.csproj.AssemblyReference.cache
-D:\GitHub\University\OOP\Lab2\Project1\Project1.Tests\obj\Debug\net7.0\Project1.Tests.GeneratedMSBuildEditorConfig.editorconfig
-D:\GitHub\University\OOP\Lab2\Project1\Project1.Tests\obj\Debug\net7.0\Project1.Tests.AssemblyInfoInputs.cache
-D:\GitHub\University\OOP\Lab2\Project1\Project1.Tests\obj\Debug\net7.0\Project1.Tests.AssemblyInfo.cs
-D:\GitHub\University\OOP\Lab2\Project1\Project1.Tests\obj\Debug\net7.0\Project1.Tests.csproj.CoreCompileInputs.cache
