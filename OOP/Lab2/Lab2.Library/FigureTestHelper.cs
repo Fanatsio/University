@@ -11,8 +11,6 @@
 
         public static TNumber CalculatePerimeter<TNumber>(bool is3DFigure, TNumber[] testData, ref uint eventCounter) where TNumber : INumber<TNumber>
         {
-            // Выполнить расчет периметра для фигуры на основе входных данных.
-            // Счетчик должен увеличиваться при каждом срабатывании событий. Каждое событие должно выполниться один раз.
             TNumber result;
             Figure<TNumber> figure;
 
@@ -36,8 +34,6 @@
 
         public static TNumber CalculateSquare<TNumber>(bool is3DFigure, TNumber[] testData, ref uint eventCounter) where TNumber : INumber<TNumber>
         {
-            // Выполнить расчет площади для фигуры на основе входных данных.
-            // Счетчик должен увеличиваться при каждом срабатывании событий. Каждое событие должно выполниться один раз.
             TNumber result;
             Figure<TNumber> figure;
 
@@ -61,8 +57,6 @@
 
         public static TNumber CalculateVolume<TNumber>(bool is3DFigure, TNumber[] testData, ref uint eventCounter) where TNumber : INumber<TNumber>
         {
-            // Выполнить расчет объема для фигуры на основе входных данных.
-            // Счетчик должен увеличиваться при каждом срабатывании событий. Каждое событие должно выполниться один раз.
             TNumber result;
             Figure<TNumber> figure;
 

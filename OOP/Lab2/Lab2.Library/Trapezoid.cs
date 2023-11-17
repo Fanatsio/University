@@ -84,7 +84,7 @@
         public override void Save()
         {
             using StreamWriter writer = new(FileStream ?? throw new InvalidOperationException("FileStream is not initialized."), leaveOpen: true);
-            string str = @$"a = {_a}, b = {_b}, значит периметр равен: {CalculatePerimeter()}, площадь равна: {CalculateSquare()}";
+            string str = @$"a = {_a}, b = {_b}, c = {_c}, d = {_d}, значит периметр равен: {CalculatePerimeter()}, площадь равна: {CalculateSquare()}";
             writer.Write(str);
             writer.Flush();
         }
@@ -92,7 +92,7 @@
         public override async Task SaveAsync(CancellationToken cancellationToken = default)
         {
             using StreamWriter writer = new(FileStream ?? throw new InvalidOperationException("FileStream is not initialized."), leaveOpen: true);
-            string str = @$"a = {_a}, b = {_b}, значит периметр равен: {CalculatePerimeter()}, Площадь равна: {CalculateSquare()}";
+            string str = @$"a = {_a}, b = {_b}, c = {_c}, d = {_d}, значит периметр равен: {CalculatePerimeter()}, площадь равна: {CalculateSquare()}";
             await writer.WriteAsync(str);
             await writer.FlushAsync();
         }
