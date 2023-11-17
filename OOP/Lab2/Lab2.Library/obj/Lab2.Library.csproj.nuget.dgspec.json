@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Test\\Lab2\\Lab2.Library\\Lab2.Library.csproj": {}
+    "D:\\GitHub\\University\\OOP\\Lab2\\Lab2.Library\\Lab2.Library.csproj": {}
   },
   "projects": {
-    "D:\\Test\\Lab2\\Lab2.Library\\Lab2.Library.csproj": {
+    "D:\\GitHub\\University\\OOP\\Lab2\\Lab2.Library\\Lab2.Library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Test\\Lab2\\Lab2.Library\\Lab2.Library.csproj",
+        "projectUniqueName": "D:\\GitHub\\University\\OOP\\Lab2\\Lab2.Library\\Lab2.Library.csproj",
         "projectName": "Lab2.Library",
-        "projectPath": "D:\\Test\\Lab2\\Lab2.Library\\Lab2.Library.csproj",
+        "projectPath": "D:\\GitHub\\University\\OOP\\Lab2\\Lab2.Library\\Lab2.Library.csproj",
         "packagesPath": "C:\\Users\\Fanatsio\\.nuget\\packages\\",
-        "outputPath": "D:\\Test\\Lab2\\Lab2.Library\\obj\\",
+        "outputPath": "D:\\GitHub\\University\\OOP\\Lab2\\Lab2.Library\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Tools\\Visual Studio SDK\\NuGetPackages"

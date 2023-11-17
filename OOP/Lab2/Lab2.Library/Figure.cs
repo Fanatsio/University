@@ -6,7 +6,7 @@
         {
             Name = name;
             Type = type;
-            FileStream = File.OpenWrite($"C:\\Users\\Fanatsio\\Downloads\\{name}.txt");
+            FileStream = File.OpenWrite($"{name}.txt");
         }
 
         private bool disposedValue = false;

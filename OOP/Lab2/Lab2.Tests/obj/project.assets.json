@@ -5531,11 +5531,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Test\\Lab2\\Lab2.Tests\\Lab2.Tests.csproj",
+      "projectUniqueName": "D:\\GitHub\\University\\OOP\\Lab2\\Lab2.Tests\\Lab2.Tests.csproj",
       "projectName": "Lab2.Tests",
-      "projectPath": "D:\\Test\\Lab2\\Lab2.Tests\\Lab2.Tests.csproj",
+      "projectPath": "D:\\GitHub\\University\\OOP\\Lab2\\Lab2.Tests\\Lab2.Tests.csproj",
       "packagesPath": "C:\\Users\\Fanatsio\\.nuget\\packages\\",
-      "outputPath": "D:\\Test\\Lab2\\Lab2.Tests\\obj\\",
+      "outputPath": "D:\\GitHub\\University\\OOP\\Lab2\\Lab2.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Tools\\Visual Studio SDK\\NuGetPackages"
@@ -5557,8 +5557,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Test\\Lab2\\Lab2.Library\\Lab2.Library.csproj": {
-              "projectPath": "D:\\Test\\Lab2\\Lab2.Library\\Lab2.Library.csproj"
+            "D:\\GitHub\\University\\OOP\\Lab2\\Lab2.Library\\Lab2.Library.csproj": {
+              "projectPath": "D:\\GitHub\\University\\OOP\\Lab2\\Lab2.Library\\Lab2.Library.csproj"
             }
           }
         }

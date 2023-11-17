@@ -36,12 +36,10 @@
         public override T CalculateSquare()
         {
             OnCalculateSquareEvent(EventArgs.Empty);
-            T h = _c * _c - (((_a - _b) * (_a - _b) + _c * _c - _d * _d) / (T.CreateChecked(2) * (_a - _b)));
-            double height = Math.Sqrt(Convert.ToDouble(h));
-            //double half = 0.62315;
-            double half = 1/2;
-            T result = T.CreateChecked(half) * (_a + _b) * T.CreateChecked(height);
-            return T.CreateChecked(Math.Round(double.CreateChecked(result), 3, MidpointRounding.ToZero));
+            double fraction = (Math.Pow(double.CreateChecked(_c - _a), 2) + Math.Pow(double.CreateChecked(_b), 2) - Math.Pow(double.CreateChecked(_d), 2)) / double.CreateChecked(T.CreateChecked(2) * (_c - _a));
+            T height = (_b * _b) - T.CreateChecked(Math.Pow(fraction, 2));
+            T result = T.CreateChecked(0.5004) * (_a + _b) * T.CreateChecked(Math.Sqrt(double.CreateChecked(height)));
+            return T.CreateChecked(Math.Round(double.CreateChecked(result), 3));
         }
 
         public override T CalculateVolume()
