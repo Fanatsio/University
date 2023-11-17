@@ -1,4 +1,4 @@
-﻿using System.IO.Pipes;
+using System.IO.Pipes;
 using System.Runtime.CompilerServices;
 
 namespace Server
@@ -14,6 +14,7 @@ namespace Server
     {
         private static readonly PriorityQueue<Structure, int> dataQueue = new();
         private static readonly Mutex mutex = new();
+        private static bool createQueueCompleted = true;
 
         static async Task Main()
         {
@@ -34,7 +35,7 @@ namespace Server
                 }
             };
 
-            await Task.WhenAll(SenderTask(senderToken), ReceiverTask(pipeServer, senderToken));
+            await Task.WhenAll(SenderTask(senderToken), ReceiverTask(pipeServer));
         }
 
         static void CreateQueue()
@@ -70,27 +71,32 @@ namespace Server
         {
             while (!token.IsCancellationRequested)
             {
+                createQueueCompleted = false;
                 CreateQueue();
-                await Task.Delay(100);
+                await Task.Delay(1000, token);
             }
+            createQueueCompleted = true;
         }
 
-        private static async Task ReceiverTask(NamedPipeServerStream pipeServer, CancellationToken token)
+        private static async Task ReceiverTask(NamedPipeServerStream pipeServer)
         {
-            while (!token.IsCancellationRequested)
+            while (true)
             {
-                mutex.WaitOne();
-                bool flag = dataQueue.TryDequeue(out Structure st, out _);
-                mutex.ReleaseMutex();
-                if (flag)
+                if (createQueueCompleted)
                 {
-                    byte[] dataBytes = SerializeData(st);
-                    await pipeServer.WriteAsync(dataBytes);
-                    st = DeserializeData(pipeServer);
-                    Console.WriteLine($"Клиент получил: num1 = {st.num1}; num2 = {st.num2}; приоритет = {st.pr}");
+                    mutex.WaitOne();
+                    bool flag = dataQueue.TryDequeue(out Structure st, out _);
+                    mutex.ReleaseMutex();
+                    if (flag)
+                    {
+                        byte[] dataBytes = SerializeData(st);
+                        await pipeServer.WriteAsync(dataBytes);
+                        st = DeserializeData(pipeServer);
+                        Console.WriteLine($"Клиент получил: num1 = {st.num1}; num2 = {st.num2}; приоритет = {st.pr}");
+                    }
                 }
+                await Task.Delay(1000);
             }
-            await Task.Delay(100);
         }
 
         static byte[] SerializeData(Structure st)

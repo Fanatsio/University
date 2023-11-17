@@ -22,8 +22,14 @@ namespace Client
             {
                 Structure receivedData = DeserializeData(Client);
                 Console.WriteLine($"Полученные данные: num1 = {receivedData.num1}, num2 = {receivedData.num2}, приоритет = {receivedData.priority}");
-                byte[] modified_bytes = SerializeData(receivedData);
-                Client.Write(modified_bytes, 0, modified_bytes.Length);
+                if(Client.IsConnected)
+                {
+                    byte[] modified_bytes = SerializeData(receivedData);
+                    Client.Write(modified_bytes, 0, modified_bytes.Length);
+                } else
+                {
+                    break;
+                }
             }
         }
 

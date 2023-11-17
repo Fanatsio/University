@@ -24,15 +24,20 @@ namespace Server
             };
 
             Console.Write("Введите первое число: ");
-            int num_1 = int.Parse(Console.ReadLine());
+            if (!int.TryParse(Console.ReadLine(), out int _num1))
+            {
+                _num1 = 0;
+            }
             Console.Write("Введите второе число: ");
-            int num_2 = int.Parse(Console.ReadLine());
-
+            if (!int.TryParse(Console.ReadLine(), out int _num2))
+            {
+                _num2 = 0;
+            }
 
             Data msg = new()
             {
-                num1 = num_1,
-                num2 = num_2
+                num1 = _num1,
+                num2 = _num2
             };
 
             byte[] bytes = SerializeData(msg);

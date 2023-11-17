@@ -40,3 +40,4 @@ D:\GitHub\University\EVM\Labs\Lab2\Client\obj\Debug\net7.0\refint\Client.dll
 D:\GitHub\University\EVM\Labs\Lab2\Client\obj\Debug\net7.0\Client.pdb
 D:\GitHub\University\EVM\Labs\Lab2\Client\obj\Debug\net7.0\Client.genruntimeconfig.cache
 D:\GitHub\University\EVM\Labs\Lab2\Client\obj\Debug\net7.0\ref\Client.dll
+D:\GitHub\University\EVM\Labs\Lab2\Client\obj\Debug\net7.0\Client.sourcelink.json
