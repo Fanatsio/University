@@ -1,0 +1,14 @@
+G:\OOP\Lab3\Lab3.Library\obj\Debug\net8.0\Lab3.Library.csproj.AssemblyReference.cache
+G:\OOP\Lab3\Lab3.Library\obj\Debug\net8.0\Lab3.Library.GeneratedMSBuildEditorConfig.editorconfig
+G:\OOP\Lab3\Lab3.Library\obj\Debug\net8.0\Lab3.Library.AssemblyInfoInputs.cache
+G:\OOP\Lab3\Lab3.Library\obj\Debug\net8.0\Lab3.Library.AssemblyInfo.cs
+G:\OOP\Lab3\Lab3.Library\obj\Debug\net8.0\Lab3.Library.csproj.CoreCompileInputs.cache
+G:\OOP\Lab3\Lab3.Library\bin\Debug\net8.0\Lab3.Library.deps.json
+G:\OOP\Lab3\Lab3.Library\bin\Debug\net8.0\Lab3.Library.runtimeconfig.json
+G:\OOP\Lab3\Lab3.Library\bin\Debug\net8.0\Lab3.Library.dll
+G:\OOP\Lab3\Lab3.Library\bin\Debug\net8.0\Lab3.Library.pdb
+G:\OOP\Lab3\Lab3.Library\obj\Debug\net8.0\Lab3.Library.dll
+G:\OOP\Lab3\Lab3.Library\obj\Debug\net8.0\refint\Lab3.Library.dll
+G:\OOP\Lab3\Lab3.Library\obj\Debug\net8.0\Lab3.Library.pdb
+G:\OOP\Lab3\Lab3.Library\obj\Debug\net8.0\Lab3.Library.genruntimeconfig.cache
+G:\OOP\Lab3\Lab3.Library\obj\Debug\net8.0\ref\Lab3.Library.dll

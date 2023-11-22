@@ -47,7 +47,10 @@ void* calculate_integral(void* arg) {
 int main() {
     double a = - 3.1415 / 2;
     double b = 3.1415 / 2;
-    double eps = 1e-10;
+    double eps;
+
+    printf("Enter precision >> ");
+    scanf("%lf", &eps);
 
     IntegralParams params;
     params.a = a;
