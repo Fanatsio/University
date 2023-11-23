@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wMU0yxZGrdawsE25fUdIt735UPjJr4rSJVH+44SqmdZefOlRT7xrpnWf9AVAaN+tTGInhvjkC+Rm3Rgktky+nw==",
+  "dgSpecHash": "cbdWIP0YFMwAEFvyRR42oo3i1dq9QHQlUNvdc0HUcTZAcDLCxytfwDXud4U3ybnEd4rymiUD547e+TQ6i9HQBA==",
   "success": true,
-  "projectFilePath": "G:\\OOP\\Lab3\\Lab3.Tests\\Lab3.Tests.csproj",
+  "projectFilePath": "D:\\GitHub\\University\\OOP\\Lab3\\Lab3.Tests\\Lab3.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Fanatsio\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\Fanatsio\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",

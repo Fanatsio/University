@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\OOP\\Lab3\\Lab3.Tests\\Lab3.Tests.csproj": {}
+    "D:\\GitHub\\University\\OOP\\Lab3\\Lab3.Tests\\Lab3.Tests.csproj": {}
   },
   "projects": {
-    "G:\\OOP\\Lab3\\Lab3.Library\\Lab3.Library.csproj": {
+    "D:\\GitHub\\University\\OOP\\Lab3\\Lab3.Library\\Lab3.Library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\OOP\\Lab3\\Lab3.Library\\Lab3.Library.csproj",
+        "projectUniqueName": "D:\\GitHub\\University\\OOP\\Lab3\\Lab3.Library\\Lab3.Library.csproj",
         "projectName": "Lab3.Library",
-        "projectPath": "G:\\OOP\\Lab3\\Lab3.Library\\Lab3.Library.csproj",
+        "projectPath": "D:\\GitHub\\University\\OOP\\Lab3\\Lab3.Library\\Lab3.Library.csproj",
         "packagesPath": "C:\\Users\\Fanatsio\\.nuget\\packages\\",
-        "outputPath": "G:\\OOP\\Lab3\\Lab3.Library\\obj\\",
+        "outputPath": "D:\\GitHub\\University\\OOP\\Lab3\\Lab3.Library\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Tools\\Visual Studio SDK\\NuGetPackages"
@@ -96,14 +96,14 @@
         }
       }
     },
-    "G:\\OOP\\Lab3\\Lab3.Tests\\Lab3.Tests.csproj": {
+    "D:\\GitHub\\University\\OOP\\Lab3\\Lab3.Tests\\Lab3.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\OOP\\Lab3\\Lab3.Tests\\Lab3.Tests.csproj",
+        "projectUniqueName": "D:\\GitHub\\University\\OOP\\Lab3\\Lab3.Tests\\Lab3.Tests.csproj",
         "projectName": "Lab3.Tests",
-        "projectPath": "G:\\OOP\\Lab3\\Lab3.Tests\\Lab3.Tests.csproj",
+        "projectPath": "D:\\GitHub\\University\\OOP\\Lab3\\Lab3.Tests\\Lab3.Tests.csproj",
         "packagesPath": "C:\\Users\\Fanatsio\\.nuget\\packages\\",
-        "outputPath": "G:\\OOP\\Lab3\\Lab3.Tests\\obj\\",
+        "outputPath": "D:\\GitHub\\University\\OOP\\Lab3\\Lab3.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Tools\\Visual Studio SDK\\NuGetPackages"
@@ -125,8 +125,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "G:\\OOP\\Lab3\\Lab3.Library\\Lab3.Library.csproj": {
-                "projectPath": "G:\\OOP\\Lab3\\Lab3.Library\\Lab3.Library.csproj"
+              "D:\\GitHub\\University\\OOP\\Lab3\\Lab3.Library\\Lab3.Library.csproj": {
+                "projectPath": "D:\\GitHub\\University\\OOP\\Lab3\\Lab3.Library\\Lab3.Library.csproj"
               }
             }
           }

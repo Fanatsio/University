@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ls5bqXjLfrgkutSuzjrxvji3CvbS1cP3uD2z1ZTwaRCk34xpbEHBxXHG0UX4tzT8LDOw1vLhewO9GKG02OUDMg==",
+  "dgSpecHash": "ZpU3CxfYPBOoVsOTbPiAK3ddrnSPsFiTnCP7idg6QGdoXnXVELot7NqwpjD/cNT7kW1/CRb4Et/oJKug6RQdRw==",
   "success": true,
-  "projectFilePath": "G:\\OOP\\Lab3\\Lab3.Library\\Lab3.Library.csproj",
+  "projectFilePath": "D:\\GitHub\\University\\OOP\\Lab3\\Lab3.Library\\Lab3.Library.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Fanatsio\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\Fanatsio\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

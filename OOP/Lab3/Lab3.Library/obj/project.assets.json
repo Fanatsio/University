@@ -2510,11 +2510,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\OOP\\Lab3\\Lab3.Library\\Lab3.Library.csproj",
+      "projectUniqueName": "D:\\GitHub\\University\\OOP\\Lab3\\Lab3.Library\\Lab3.Library.csproj",
       "projectName": "Lab3.Library",
-      "projectPath": "G:\\OOP\\Lab3\\Lab3.Library\\Lab3.Library.csproj",
+      "projectPath": "D:\\GitHub\\University\\OOP\\Lab3\\Lab3.Library\\Lab3.Library.csproj",
       "packagesPath": "C:\\Users\\Fanatsio\\.nuget\\packages\\",
-      "outputPath": "G:\\OOP\\Lab3\\Lab3.Library\\obj\\",
+      "outputPath": "D:\\GitHub\\University\\OOP\\Lab3\\Lab3.Library\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Tools\\Visual Studio SDK\\NuGetPackages"
