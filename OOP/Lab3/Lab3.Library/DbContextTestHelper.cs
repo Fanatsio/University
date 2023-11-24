@@ -1,5 +1,7 @@
 ﻿// ReSharper disable All
 
+using System.Data.Entity;
+
 namespace Lab3.Library;
 
 public static class DbContextTestHelper

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHub\\University\\OOP\\Lab3\\Lab3.Library\\Lab3.Library.csproj": {}
+    "G:\\OOP\\Lab3\\Lab3.Library\\Lab3.Library.csproj": {}
   },
   "projects": {
-    "D:\\GitHub\\University\\OOP\\Lab3\\Lab3.Library\\Lab3.Library.csproj": {
+    "G:\\OOP\\Lab3\\Lab3.Library\\Lab3.Library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\University\\OOP\\Lab3\\Lab3.Library\\Lab3.Library.csproj",
+        "projectUniqueName": "G:\\OOP\\Lab3\\Lab3.Library\\Lab3.Library.csproj",
         "projectName": "Lab3.Library",
-        "projectPath": "D:\\GitHub\\University\\OOP\\Lab3\\Lab3.Library\\Lab3.Library.csproj",
+        "projectPath": "G:\\OOP\\Lab3\\Lab3.Library\\Lab3.Library.csproj",
         "packagesPath": "C:\\Users\\Fanatsio\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\University\\OOP\\Lab3\\Lab3.Library\\obj\\",
+        "outputPath": "G:\\OOP\\Lab3\\Lab3.Library\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Tools\\Visual Studio SDK\\NuGetPackages"
@@ -47,25 +47,35 @@
           "dependencies": {
             "Microsoft.Data.Sqlite": {
               "target": "Package",
-              "version": "[7.0.13, )"
+              "version": "[8.0.0, )"
             },
             "Microsoft.Data.Sqlite.Core": {
               "target": "Package",
-              "version": "[7.0.13, )"
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
-              "version": "[7.0.13, )"
+              "version": "[8.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.Sqlite.Core": {
               "target": "Package",
-              "version": "[7.0.13, )"
+              "version": "[8.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.13, )"
+              "version": "[8.0.0, )"
             },
             "System.Data.SQLite": {
               "target": "Package",

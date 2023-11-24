@@ -8,11 +8,6 @@ namespace Lab3.Library
         public DbSet<Categories> Categories { get; set; }
         public DbSet<Products> Products { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlite("DataSource=ClothingCatalog.db");
-        }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Products>().HasIndex(t => t.Id);
@@ -21,6 +16,17 @@ namespace Lab3.Library
 
             modelBuilder.Entity<Categories>().HasIndex(t => t.Id);
             modelBuilder.Entity<Brands>().HasIndex(t => t.Id);
+        }
+
+        public ClothingCatalogContext()
+        {
+            Database.EnsureDeleted();   // удаляем бд со старой схемой
+            Database.EnsureCreated();   // создаем бд с новой схемой
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlite("DataSource=ClothingCatalog.db");
         }
     }
 }
