@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHub\\University\\EVM\\Labs\\Lab2\\Server\\Server.csproj": {}
+    "G:\\EVM\\Labs\\Lab2\\Server\\Server.csproj": {}
   },
   "projects": {
-    "D:\\GitHub\\University\\EVM\\Labs\\Lab2\\Server\\Server.csproj": {
+    "G:\\EVM\\Labs\\Lab2\\Server\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\University\\EVM\\Labs\\Lab2\\Server\\Server.csproj",
+        "projectUniqueName": "G:\\EVM\\Labs\\Lab2\\Server\\Server.csproj",
         "projectName": "Server",
-        "projectPath": "D:\\GitHub\\University\\EVM\\Labs\\Lab2\\Server\\Server.csproj",
+        "projectPath": "G:\\EVM\\Labs\\Lab2\\Server\\Server.csproj",
         "packagesPath": "C:\\Users\\Fanatsio\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\University\\EVM\\Labs\\Lab2\\Server\\obj\\",
+        "outputPath": "G:\\EVM\\Labs\\Lab2\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Tools\\Visual Studio SDK\\NuGetPackages"

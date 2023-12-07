@@ -1,0 +1,9 @@
+a = 1; b = 2; priority = 0; result = 4,666666999999996
+a = 2; b = 3; priority = 0; result = 12,666666999999997
+a = 1; b = 2; priority = 0; result = 4,666666999999996
+a = 1; b = 2; priority = 0; result = 4,666666999999996
+a = 1; b = 2; priority = 0; result = 4,666666999999996
+a = 2; b = 3; priority = 0; result = 12,666666999999997
+a = 0; b = 2; priority = 0; result = 5,333335999999999
+a = -3; b = 3; priority = 0; result = 36,000072000000024
+a = 0; b = 2; priority = 0; result = 12,000000120000031

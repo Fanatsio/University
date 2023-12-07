@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHub\\University\\EVM\\Labs\\Lab2\\Client\\Client.csproj": {}
+    "G:\\EVM\\Labs\\Lab2\\Client\\Client.csproj": {}
   },
   "projects": {
-    "D:\\GitHub\\University\\EVM\\Labs\\Lab2\\Client\\Client.csproj": {
+    "G:\\EVM\\Labs\\Lab2\\Client\\Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\University\\EVM\\Labs\\Lab2\\Client\\Client.csproj",
+        "projectUniqueName": "G:\\EVM\\Labs\\Lab2\\Client\\Client.csproj",
         "projectName": "Client",
-        "projectPath": "D:\\GitHub\\University\\EVM\\Labs\\Lab2\\Client\\Client.csproj",
+        "projectPath": "G:\\EVM\\Labs\\Lab2\\Client\\Client.csproj",
         "packagesPath": "C:\\Users\\Fanatsio\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\University\\EVM\\Labs\\Lab2\\Client\\obj\\",
+        "outputPath": "G:\\EVM\\Labs\\Lab2\\Client\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Tools\\Visual Studio SDK\\NuGetPackages"

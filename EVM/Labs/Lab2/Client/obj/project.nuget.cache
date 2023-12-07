@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "udPdaY5C/j2b28m3C1U4KaFuNe7ONmvXkUdUhW0ISr+2F5VXf4j+7ACqgO2lcwy9pojvjMy5JhkMffa/KH/AxA==",
+  "dgSpecHash": "f+8FaclrmHWp8SvswAnXzUaK46Bd7eUI1wer5BNDMlsQFU1q0o3IyqBLJoTy2tNjt3pCgPMODM9cdzlroMGNtw==",
   "success": true,
-  "projectFilePath": "D:\\GitHub\\University\\EVM\\Labs\\Lab2\\Client\\Client.csproj",
+  "projectFilePath": "G:\\EVM\\Labs\\Lab2\\Client\\Client.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

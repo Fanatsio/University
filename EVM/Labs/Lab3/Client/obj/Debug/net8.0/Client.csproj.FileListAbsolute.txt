@@ -1,0 +1,14 @@
+G:\EVM\Labs\Lab3\Client\bin\Debug\net8.0\Client.exe
+G:\EVM\Labs\Lab3\Client\bin\Debug\net8.0\Client.deps.json
+G:\EVM\Labs\Lab3\Client\bin\Debug\net8.0\Client.runtimeconfig.json
+G:\EVM\Labs\Lab3\Client\bin\Debug\net8.0\Client.dll
+G:\EVM\Labs\Lab3\Client\bin\Debug\net8.0\Client.pdb
+G:\EVM\Labs\Lab3\Client\obj\Debug\net8.0\Client.GeneratedMSBuildEditorConfig.editorconfig
+G:\EVM\Labs\Lab3\Client\obj\Debug\net8.0\Client.AssemblyInfoInputs.cache
+G:\EVM\Labs\Lab3\Client\obj\Debug\net8.0\Client.AssemblyInfo.cs
+G:\EVM\Labs\Lab3\Client\obj\Debug\net8.0\Client.csproj.CoreCompileInputs.cache
+G:\EVM\Labs\Lab3\Client\obj\Debug\net8.0\Client.dll
+G:\EVM\Labs\Lab3\Client\obj\Debug\net8.0\refint\Client.dll
+G:\EVM\Labs\Lab3\Client\obj\Debug\net8.0\Client.pdb
+G:\EVM\Labs\Lab3\Client\obj\Debug\net8.0\Client.genruntimeconfig.cache
+G:\EVM\Labs\Lab3\Client\obj\Debug\net8.0\ref\Client.dll
