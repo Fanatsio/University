@@ -27,7 +27,7 @@ namespace Client
                     int b = receivedData.b;
                     int n = 10000;
 
-                    receivedData.result = TrapezoidalRule(a, b, n);
+                    receivedData.result = Integral(a, b, n);
                     Console.WriteLine(receivedData.result);
 
                     byte[] modified_bytes = SerializeData(receivedData);
@@ -55,7 +55,7 @@ namespace Client
             return 3 * x * x * x;
         }
 
-        static double TrapezoidalRule(int a, int b, int n)
+        static double Integral(int a, int b, int n)
         {
             double h = (b - a) / Convert.ToDouble(n);
             double result = 0.5 * (Function(a) + Function(b));

@@ -82,7 +82,7 @@ namespace Server
                             mutex.ReleaseMutex();
                         }
                     }
-                });
+                }, token);
             }
 
             Task ReceiverTask(CancellationToken token)
@@ -99,15 +99,13 @@ namespace Server
                             ClientConnect(st, token);
                         }
                     }
-                });
+                }, token);
             }
 
             async void ClientConnect(Structure st, CancellationToken token)
             {
                 try
                 {
-                    byte[] dataBytes = new byte[Unsafe.SizeOf<Structure>()];
-                    Unsafe.As<byte, Structure>(ref dataBytes[0]) = st;
                     NamedPipeServerStream pipeServer = new($"channel{count}", PipeDirection.InOut);
                     Console.WriteLine("Waiting for client connection...");
                     Process myProcess = new();
@@ -116,24 +114,36 @@ namespace Server
                     myProcess.StartInfo.Arguments = $"channel{count}";
                     myProcess.StartInfo.CreateNoWindow = true;
                     myProcess.Start();
-                    await pipeServer.WaitForConnectionAsync();
+                    await pipeServer.WaitForConnectionAsync(token);
                     Console.WriteLine("Client connected");
-                    await pipeServer.WriteAsync(dataBytes, 0, dataBytes.Length);
+
+                    byte[] dataBytes = SerializeData(st);
+                    await pipeServer.WriteAsync(dataBytes, token);
+
                     byte[] receivedBytes = new byte[Unsafe.SizeOf<Structure>()];
-                    if (await pipeServer.ReadAsync(receivedBytes, 0, receivedBytes.Length) == receivedBytes.Length)
+                    if (await pipeServer.ReadAsync(receivedBytes, token) == receivedBytes.Length)
                     {
                         st = Unsafe.As<byte, Structure>(ref receivedBytes[0]);
                     }
+
                     mutFile.WaitOne();
                     file.WriteLine($"a = {st.a}; b = {st.b}; priority = {0}; result = {st.result}");
                     Console.WriteLine($"a = {st.a}; b = {st.b}; priority = {0}; result = {st.result}");
                     mutFile.ReleaseMutex();
+
                     pipeServer.Close();
                     count++;
                     await myProcess.WaitForExitAsync(token);
                 }
                 catch (Exception) { }
             }
+        }
+
+        static byte[] SerializeData(Structure st)
+        {
+            byte[] dataBytes = new byte[Unsafe.SizeOf<Structure>()];
+            Unsafe.As<byte, Structure>(ref dataBytes[0]) = st;
+            return dataBytes;
         }
     }
 }
