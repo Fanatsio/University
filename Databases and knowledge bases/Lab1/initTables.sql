@@ -36,7 +36,6 @@ CREATE TABLE product (
     CONSTRAINT fk_provider FOREIGN KEY (provider_id) REFERENCES provider(provider_id)
 );
 
--- Заполним provider_name при помощи триггера
 CREATE OR REPLACE FUNCTION update_provider_name()
 RETURNS TRIGGER AS $$
 BEGIN
