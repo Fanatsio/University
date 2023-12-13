@@ -3,11 +3,10 @@ DECLARE
     i INTEGER := 0;
 BEGIN
     WHILE i < 1000 LOOP -- создаст 1000 записей
-        INSERT INTO provider (provider_name) VALUES ('provider ' || i);
+        INSERT INTO provider (provider_inn, provider_name, provider_address) VALUES (i, 'Provider' || i, 'Address' || i);
         i := i + 1;
     END LOOP;
 END;
 $$ LANGUAGE plpgsql;
-
 
 SELECT fill_provider_name();
