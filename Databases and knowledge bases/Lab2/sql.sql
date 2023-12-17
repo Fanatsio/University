@@ -1,87 +1,99 @@
+-- Запрос на полную выборку данных
 SELECT * FROM provider;
 
-SELECT DISTINCT inn, provider_name, address
+-- Запрос на выборку данных без повторений
+SELECT DISTINCT inn, name, address
 FROM provider;
 
-
-SELECT inn, provider_name, address
+-- Запрос на выборку первых 10 записей
+SELECT inn, name, address
 FROM provider
 LIMIT 10;
 
+-- Запрос на выборку последних 15 записей
+SELECT *
+FROM provider
+ORDER BY id DESC
+LIMIT 15;
 
-
--- Пример для столбца price в таблице product
+-- Запросы на выполнение функций Average, Max, Min
 SELECT AVG(price) AS average_price
 FROM product;
 
--- Пример для столбца quantity в таблице product
 SELECT MAX(quantity) AS max_quantity
 FROM product;
 
--- Пример для столбца weight в таблице product
 SELECT MIN(weight) AS min_weight
 FROM product;
 
--- Пример для таблицы natural_person
+-- запрос на возвращение определенного кортежа по первичному ключу
 SELECT *
 FROM natural_person
 WHERE natural_person_id = 1;
 
--- Пример для таблицы product, выбор продуктов с количеством больше 100
+-- запросы на возвращение значения по условиям больше, меньше и между
 SELECT *
 FROM product
 WHERE quantity > 100;
 
--- Пример для таблицы product, выбор продуктов с ценой меньше 50
 SELECT *
 FROM product
 WHERE price < 50;
 
--- Пример для таблицы product, выбор продуктов с весом между 5 и 10
 SELECT *
 FROM product
 WHERE weight BETWEEN 5 AND 10;
 
--- Пример для таблицы natural_person, выбор физических лиц с именем, начинающимся на "Иван"
+-- запросы на возвращении всех кортежей по условию с использованием оператора LIKE и ESCAPE
 SELECT *
 FROM natural_person
-WHERE natural_customer_name LIKE 'Иван%';
+WHERE forename LIKE '%a%';
 
--- Пример с использованием ESCAPE для поиска значений, содержащих символ "%"
 SELECT *
-FROM table_name
-WHERE column_name LIKE '%\%%' ESCAPE '\';
+FROM natural_person
+WHERE forename LIKE '%^_%' ESCAPE '^';
 
--- Пример для таблицы natural_person, выбор физических лиц с указанным номером телефона
+-- запрос на возвращение кортежей со сложным условием на основе логических операторов И, ИЛИ, НЕ
+SELECT *
+FROM product
+WHERE (weight > 1.70 OR receipt_date > '2023-09-01') AND quantity > 15;
+
+SELECT *
+FROM waybill
+WHERE NOT product_quantity = 0;
+
+
+-- запрос с использованием оператора NOT NULL в условии отбора
 SELECT *
 FROM natural_person
 WHERE phone_number IS NOT NULL;
 
+-- Запрос с простыми условиями, условиями, содержащими IN или BETWEEN
 SELECT *
 FROM product
-WHERE price IN (50, 75, 100);
+WHERE price IN (189.00, 493.50, 997.50);
 
 SELECT *
 FROM product
-WHERE price IN (50, 75, 100);
+WHERE price BETWEEN (189.00, 493.50, 997.50);
 
--- Сортировка по нескольким полям (product_name в алфовитном порядке, price по убыванию)
+
+-- Запросы с сортировкой по нескольким полям, направлениям
 SELECT *
 FROM product
 ORDER BY product_name ASC, price DESC;
 
--- С использованием статических функций
-SELECT customer_id, AVG(total_cost) AS avg_cost, SUM(total_cost) AS total_cost
-FROM orders
-GROUP BY customer_id;
+-- Запросы с использованием групповых операций (группировка статистические функции, отбор по групповым функциям)
+SELECT place, SUM(price) AS total_price
+FROM product
+GROUP BY place;
 
--- С использованием груповых функций
-SELECT customer_id, SUM(total_cost) AS total_cost
-FROM orders
-GROUP BY customer_id
-HAVING SUM(total_cost) > 1000;
+SELECT place, SUM(price) AS total_cost
+FROM product
+GROUP BY place
+HAVING SUM (price) > 6000;
 
--- Использование UNION (объединение множеств)
+-- Запросы с операцией над множествами (обязательно используя сортировку)
 SELECT email
 FROM natural_person
 UNION
@@ -89,7 +101,6 @@ SELECT email
 FROM legal_person
 ORDER BY email ASC;
 
--- Использование UNION ALL (объединение множеств с дубликатами)
 SELECT email
 FROM natural_person
 UNION ALL
@@ -97,46 +108,33 @@ SELECT email
 FROM legal_person
 ORDER BY email ASC;
 
--- Пример обновления email для конкретного natural_person_id
+-- Запросы на обновление
 UPDATE natural_person
 SET email = 'new_email@example.com'
 WHERE natural_person_id = 1;
 
--- Пример обновления phone_number для конкретного legal_person_id
-UPDATE legal_person
-SET phone_number = 1234567890
-WHERE legal_person_id = 1;
-
--- Пример обновления address для конкретного provider_id
 UPDATE provider
 SET address = 'New Address'
 WHERE provider_id = 1;
 
--- Пример обновления цены и количества для конкретного product_id
-UPDATE product
-SET price = 99.99, quantity = 50
-WHERE product_id = 1;
-
--- Пример обновления общей стоимости и количества товара для конкретного orders_id
-UPDATE orders
-SET total_cost = 500.00, product_quantity = 10
-WHERE orders_id = 1;
-
--- Пример удаления конкретного natural_person_id
+-- Запросы на удаление
 DELETE FROM natural_person
 WHERE natural_person_id = 1;
 
--- Пример удаления конкретного legal_person_id
-DELETE FROM legal_person
-WHERE legal_person_id = 1;
-
--- Пример удаления provider по условию из подзапроса
 DELETE FROM provider
-WHERE provider_id IN (
+WHERE id IN (
     SELECT provider_id
     FROM product
     WHERE price < 50
 );
+
+-- Запросы на вставку
+INSERT INTO legal_person (inn, name, phone, email, delivery_address, representative_forename) 
+VALUES ('789456123', 'OOO SNG', '79095273752', 'email@email.com', 'surgut', 'Ivanov');
+
+INSERT INTO natural_person (passport, forename, phone, email, delivery_address) 
+VALUES ('4894165', 'Komarov', '79084893526', 'email@email.com', 'minsk');
+
 
 -- Создание таблицы
 CREATE TABLE Client (
