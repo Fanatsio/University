@@ -1,105 +1,103 @@
 ﻿// ReSharper disable All
 
-using System.Data.Entity;
-
-namespace Lab3.Library;
-
-public static class DbContextTestHelper
+namespace Lab3.Library
 {
-    public static int AddEntities()
+    public static class DbContextTestHelper
     {
-        // Добавляем данные в БД.
-        using var context = new ClothingCatalogContext();
-        context.Database.EnsureCreated();
-
-        var Products = new Products { NameProduct = "tests" };
-        var Brands = new Brands { NameBrands = "testar" };
-        var Categories = new Categories { NameCategories = "testal" };
-
-        context.Products.Add(Products);
-        context.Brands.Add(Brands);
-        context.Categories.Add(Categories);
-
-        return context.SaveChanges();
-    }
-
-    public static int UpdateEntities()
-    {
-        // Обновляем данные в БД.
-        using var context = new ClothingCatalogContext();
-        context.Database.EnsureCreated();
-
-        var ProductsToUpdate = context.Products.FirstOrDefault(s => s.NameProduct == "tests");
-        var BrandsToUpdate = context.Brands.FirstOrDefault(s => s.NameBrands == "testar");
-        var CategoriesToUpdate = context.Categories.FirstOrDefault(s => s.NameCategories == "testal");
-
-        if (ProductsToUpdate != null)
+        public static int AddEntities()
         {
-            ProductsToUpdate.NameProduct = "tests (upd)";
-        }
-        if (BrandsToUpdate != null)
-        {
-            BrandsToUpdate.NameBrands = "testar (upd)";
-        }
-        if (CategoriesToUpdate != null)
-        {
-            CategoriesToUpdate.NameCategories = "testal (upd)";
+            // Добавляем данные в БД.
+            using var context = new ClothingCatalogContext();
+            context.Database.EnsureCreated();
+
+            var product = new Product { NameProduct = "testa" };
+            var brand = new Brand { Name = "testb" };
+            var category = new Category { Name = "testc" };
+
+            context.Products.Add(product);
+            context.Brands.Add(brand);
+            context.Categories.Add(category);
+
+            return context.SaveChanges();
         }
 
-        return context.SaveChanges();
-    }
-
-    public static int ReadEntities()
-    {
-        // Читаем данные из БД.
-        using var context = new ClothingCatalogContext();
-        context.Database.EnsureCreated();
-
-        Console.WriteLine("Products:");
-        foreach (var product in context.Products)
+        public static int UpdateEntities()
         {
-            Console.WriteLine($"ID: {product.Id}, Name: {product.NameProduct}");
+            // Обновляем данные в БД.
+            using var context = new ClothingCatalogContext();
+            context.Database.EnsureCreated();
+
+            var productToUpdate = context.Products.FirstOrDefault(s => s.NameProduct == "testa");
+            var brandToUpdate = context.Brands.FirstOrDefault(s => s.Name == "testb");
+            var categoryToUpdate = context.Categories.FirstOrDefault(s => s.Name == "testc");
+
+            if (productToUpdate != null)
+            {
+                productToUpdate.NameProduct = "testa (upd)";
+            }
+            if (brandToUpdate != null)
+            {
+                brandToUpdate.Name = "testb (upd)";
+            }
+            if (categoryToUpdate != null)
+            {
+                categoryToUpdate.Name = "testc (upd)";
+            }
+
+            return context.SaveChanges();
         }
 
-        Console.WriteLine("Brands:");
-        foreach (var brand in context.Brands)
+        public static int ReadEntities()
         {
-            Console.WriteLine($"ID: {brand.Id}, Name: {brand.NameBrands}");
+            // Читаем данные из БД.
+            using var context = new ClothingCatalogContext();
+            context.Database.EnsureCreated();
+
+            Console.WriteLine("Products:");
+            foreach (var product in context.Products)
+            {
+                Console.WriteLine($"ID: {product.Id}, Name: {product.NameProduct}");
+            }
+
+            Console.WriteLine("Brands:");
+            foreach (var brand in context.Brands)
+            {
+                Console.WriteLine($"ID: {brand.Id}, Name: {brand.Name}");
+            }
+
+            Console.WriteLine("Categories:");
+            foreach (var category in context.Categories)
+            {
+                Console.WriteLine($"ID: {category.Id}, Name: {category.Name}");
+            }
+
+            return context.Products.Count() + context.Brands.Count() + context.Categories.Count();
         }
 
-        Console.WriteLine("Categories:");
-        foreach (var category in context.Categories)
+        public static int RemoveEntities()
         {
-            Console.WriteLine($"ID: {category.Id}, Name: {category.NameCategories}");
+            // Удаляем данные в БД.
+            using var context = new ClothingCatalogContext();
+            context.Database.EnsureCreated();
+
+            var productToDelete = context.Products.FirstOrDefault(s => s.NameProduct == "testa (upd)");
+            var brandToDelete = context.Brands.FirstOrDefault(a => a.Name == "testb (upd)");
+            var categoryToDelete = context.Categories.FirstOrDefault(al => al.Name == "testc (upd)");
+
+            if (productToDelete != null)
+            {
+                context.Products.Remove(productToDelete);
+            }
+            if (brandToDelete != null)
+            {
+                context.Brands.Remove(brandToDelete);
+            }
+            if (categoryToDelete != null)
+            {
+                context.Categories.Remove(categoryToDelete);
+            }
+
+            return context.SaveChanges();
         }
-
-        return context.Products.Count() + context.Brands.Count() + context.Categories.Count();
-    }
-
-
-    public static int RemoveEntities()
-    {
-        // Удаляем данные в БД.
-        using var context = new ClothingCatalogContext();
-        context.Database.EnsureCreated();
-
-        var ProductsToDelete = context.Products.FirstOrDefault(s => s.NameProduct == "tests (upd)");
-        var BrandsToDelete = context.Brands.FirstOrDefault(a => a.NameBrands == "testar (upd)");
-        var CategoriesToDelete = context.Categories.FirstOrDefault(al => al.NameCategories == "testal (upd)");
-
-        if (ProductsToDelete != null)
-        {
-            context.Products.Remove(ProductsToDelete);
-        }
-        if (BrandsToDelete != null)
-        {
-            context.Brands.Remove(BrandsToDelete);
-        }
-        if (CategoriesToDelete != null)
-        {
-            context.Categories.Remove(CategoriesToDelete);
-        }
-
-        return context.SaveChanges();
     }
 }
