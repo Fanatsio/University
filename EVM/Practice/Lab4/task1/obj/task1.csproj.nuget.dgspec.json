@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "G:\\EVM\\Practice\\Lab4\\task1\\task1.csproj": {}
+    "F:\\EVM\\Practice\\Lab4\\task1\\task1.csproj": {}
   },
   "projects": {
-    "G:\\EVM\\Practice\\Lab4\\task1\\task1.csproj": {
+    "F:\\EVM\\Practice\\Lab4\\task1\\task1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\EVM\\Practice\\Lab4\\task1\\task1.csproj",
+        "projectUniqueName": "F:\\EVM\\Practice\\Lab4\\task1\\task1.csproj",
         "projectName": "task1",
-        "projectPath": "G:\\EVM\\Practice\\Lab4\\task1\\task1.csproj",
-        "packagesPath": "C:\\Users\\Fanatsio\\.nuget\\packages\\",
-        "outputPath": "G:\\EVM\\Practice\\Lab4\\task1\\obj\\",
+        "projectPath": "F:\\EVM\\Practice\\Lab4\\task1\\task1.csproj",
+        "packagesPath": "C:\\Users\\Hetsu\\.nuget\\packages\\",
+        "outputPath": "F:\\EVM\\Practice\\Lab4\\task1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Tools\\Visual Studio SDK\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Fanatsio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Hetsu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -65,7 +66,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

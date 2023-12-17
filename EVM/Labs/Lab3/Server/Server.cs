@@ -17,7 +17,7 @@ namespace Server
         private static readonly Mutex mutex = new();
         private static readonly Mutex mutFile = new();
         private static int count = 0;
-        private static readonly string path = "G:\\EVM\\Labs\\Lab3\\Client\\bin\\Debug\\net8.0\\Client.exe";
+        private static readonly string path = "D:\\EVM\\Labs\\Lab3\\Client\\bin\\Debug\\net7.0\\Client.exe";
 
         private static async Task Main()
         {
