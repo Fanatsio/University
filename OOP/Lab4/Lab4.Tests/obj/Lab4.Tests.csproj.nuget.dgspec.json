@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHub\\University\\OOP\\Lab4\\Lab4.Tests\\Lab4.Tests.csproj": {}
+    "D:\\OOP\\Fanatsio University main OOP-Lab4\\Lab4.Tests\\Lab4.Tests.csproj": {}
   },
   "projects": {
-    "D:\\GitHub\\University\\OOP\\Lab4\\Lab4.Library\\Lab4.Library.csproj": {
+    "D:\\OOP\\Fanatsio University main OOP-Lab4\\Lab4.Library\\Lab4.Library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\University\\OOP\\Lab4\\Lab4.Library\\Lab4.Library.csproj",
+        "projectUniqueName": "D:\\OOP\\Fanatsio University main OOP-Lab4\\Lab4.Library\\Lab4.Library.csproj",
         "projectName": "Lab4.Library",
-        "projectPath": "D:\\GitHub\\University\\OOP\\Lab4\\Lab4.Library\\Lab4.Library.csproj",
-        "packagesPath": "C:\\Users\\Fanatsio\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\University\\OOP\\Lab4\\Lab4.Library\\obj\\",
+        "projectPath": "D:\\OOP\\Fanatsio University main OOP-Lab4\\Lab4.Library\\Lab4.Library.csproj",
+        "packagesPath": "C:\\Users\\60611_rdm\\.nuget\\packages\\",
+        "outputPath": "D:\\OOP\\Fanatsio University main OOP-Lab4\\Lab4.Library\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Tools\\Visual Studio SDK\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Fanatsio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\60611_rdm\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -44,11 +45,35 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Autofac": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Autofac.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.0, )"
             },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Sqlite.Core": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.0, )"
             },
@@ -77,24 +102,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\GitHub\\University\\OOP\\Lab4\\Lab4.Tests\\Lab4.Tests.csproj": {
+    "D:\\OOP\\Fanatsio University main OOP-Lab4\\Lab4.Tests\\Lab4.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\University\\OOP\\Lab4\\Lab4.Tests\\Lab4.Tests.csproj",
+        "projectUniqueName": "D:\\OOP\\Fanatsio University main OOP-Lab4\\Lab4.Tests\\Lab4.Tests.csproj",
         "projectName": "Lab4.Tests",
-        "projectPath": "D:\\GitHub\\University\\OOP\\Lab4\\Lab4.Tests\\Lab4.Tests.csproj",
-        "packagesPath": "C:\\Users\\Fanatsio\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\University\\OOP\\Lab4\\Lab4.Tests\\obj\\",
+        "projectPath": "D:\\OOP\\Fanatsio University main OOP-Lab4\\Lab4.Tests\\Lab4.Tests.csproj",
+        "packagesPath": "C:\\Users\\60611_rdm\\.nuget\\packages\\",
+        "outputPath": "D:\\OOP\\Fanatsio University main OOP-Lab4\\Lab4.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Tools\\Visual Studio SDK\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Fanatsio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\60611_rdm\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -103,14 +128,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\GitHub\\University\\OOP\\Lab4\\Lab4.Library\\Lab4.Library.csproj": {
-                "projectPath": "D:\\GitHub\\University\\OOP\\Lab4\\Lab4.Library\\Lab4.Library.csproj"
+              "D:\\OOP\\Fanatsio University main OOP-Lab4\\Lab4.Library\\Lab4.Library.csproj": {
+                "projectPath": "D:\\OOP\\Fanatsio University main OOP-Lab4\\Lab4.Library\\Lab4.Library.csproj"
               }
             }
           }
@@ -125,6 +151,12 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[17.8.0, )"
@@ -162,7 +194,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

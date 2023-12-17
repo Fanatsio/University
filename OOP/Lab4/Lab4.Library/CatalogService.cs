@@ -4,85 +4,122 @@ namespace Lab4.Library
 {
     internal class CatalogService : ICatalogService
     {
-        private readonly IDbContextFactory<CatalogContext> _contextFactory;
+        private readonly IDbContextFactory<ClothingCatalogContext> _contextFactory;
 
-        public CatalogService(IDbContextFactory<CatalogContext> contextFactory)
+        public CatalogService(IDbContextFactory<ClothingCatalogContext> contextFactory)
         {
             _contextFactory = contextFactory;
         }
 
-        public int AddSong(Song song)
+        public int AddProducts(Product Products)
         {
             using var context = _contextFactory.CreateDbContext();
-            context.Songs.Add(song);
+            context.Products.Add(Products);
             return context.SaveChanges();
         }
 
-        public int AddArtist(Artist artist)
+        public int AddBrands(Brand Brands)
         {
             using var context = _contextFactory.CreateDbContext();
-            context.Artists.Add(artist);
+            context.Brands.Add(Brands);
             return context.SaveChanges();
         }
 
-        public int UpdateSong(int Id, string updatedSong)
+        public int AddCategories(Category categories)
         {
             using var context = _contextFactory.CreateDbContext();
-            var song = context.Songs.Find(Id);
-            if (song != null)
+            context.Categories.Add(categories);
+            return context.SaveChanges();
+        }
+
+        public int UpdateProducts(int Id, string updatedProducts)
+        {
+            using var context = _contextFactory.CreateDbContext();
+            var Product = context.Products.Find(Id);
+            if (Product != null)
             {
-                song.nameSong = updatedSong;
-                context.Songs.Update(song);
+                Product.NameProduct = updatedProducts;
+                context.Products.Update(Product);
                 return context.SaveChanges();
             }
             return 0;
         }
 
-        public int UpdateArtist(int Id, string updatedArtist)
+        public int UpdateBrands(int Id, string updatedBrands)
         {
             using var context = _contextFactory.CreateDbContext();
-            var artist = context.Artists.Find(Id);
-            if (artist != null)
+            var brand = context.Brands.Find(Id);
+            if (brand != null)
             {
-                artist.NameArtist = updatedArtist;
-                context.Artists.Update(artist);
+                brand.Name = updatedBrands;
+                context.Brands.Update(brand);
                 return context.SaveChanges();
             }
             return 0;
         }
 
-        public Song ReadSong(int Id)
+        public int UpdateCategories(int Id, string updatedCategories)
         {
             using var context = _contextFactory.CreateDbContext();
-            return context.Songs.Find(Id);
-        }
-
-        public Artist ReadArtist(int Id)
-        {
-            using var context = _contextFactory.CreateDbContext();
-            return context.Artists.Find(Id);
-        }
-
-
-        public int RemoveSong(int songName)
-        {
-            using var context = _contextFactory.CreateDbContext();
-            var song = context.Songs.Find(songName);
-            if (song != null)
+            var Category = context.Categories.Find(Id);
+            if (Category != null)
             {
-                context.Songs.Remove(song);
+                Category.Name = updatedCategories;
+                context.Categories.Update(Category);
                 return context.SaveChanges();
             }
             return 0;
         }
 
-        public int RemoveArtist(string nameArtist)
+        public Product ReadProducts(int ProductsId)
         {
             using var context = _contextFactory.CreateDbContext();
-            var artist = context.Artists.Find(nameArtist);
-            if (artist != null)
+            return context.Products.Find(ProductsId);
+        }
+
+        public Brand ReadBrands(int BrandsId)
+        {
+            using var context = _contextFactory.CreateDbContext();
+            return context.Brands.Find(BrandsId);
+        }
+
+        public Category ReadCategories(int CategoriesId)
+        {
+            using var context = _contextFactory.CreateDbContext();
+            return context.Categories.Find(CategoriesId);
+        }
+
+        public int RemoveProducts(int ProductsName)
+        {
+            using var context = _contextFactory.CreateDbContext();
+            var Product = context.Products.Find(ProductsName);
+            if (Product != null)
             {
-                context.Artists.Remove(artist);
+                context.Products.Remove(Product);
+                return context.SaveChanges();
+            }
+            return 0;
+        }
+
+        public int RemoveBrands(string nameBrands)
+        {
+            using var context = _contextFactory.CreateDbContext();
+            var Brand = context.Brands.Find(nameBrands);
+            if (Brand != null)
+            {
+                context.Brands.Remove(Brand);
+                return context.SaveChanges();
+            }
+            return 0;
+        }
+
+        public int RemoveCategories(int nameCategories)
+        {
+            using var context = _contextFactory.CreateDbContext();
+            var Category = context.Categories.Find(nameCategories);
+            if (Category != null)
+            {
+                context.Categories.Remove(Category);
                 return context.SaveChanges();
             }
             return 0;

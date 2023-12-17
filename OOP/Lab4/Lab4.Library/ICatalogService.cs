@@ -2,17 +2,17 @@
 {
     internal interface ICatalogService
     {
-        int AddProducts(Products Products);
-        int AddBrands(Brands Brands);
-        int AddCategories(Categories categories);
+        int AddProducts(Product Products);
+        int AddBrands(Brand Brands);
+        int AddCategories(Category categories);
 
         int UpdateProducts(int Id, string updatedProducts);
         int UpdateBrands(int Id, string updatedBrands);
         int UpdateCategories(int Id, string updatedCategories);
 
-        Products ReadProducts(int ProductsId);
-        Brands ReadBrands(int BrandsId);
-        Categories ReadCategories(int CategoriesId);
+        Product ReadProducts(int ProductsId);
+        Brand ReadBrands(int BrandsId);
+        Category ReadCategories(int CategoriesId);
 
         int RemoveProducts(int ProductsName);
         int RemoveBrands(string nameBrands);
