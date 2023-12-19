@@ -9,12 +9,10 @@ angle = 45  # Угол наклона в градусах
 conditions = [desired_h + 10, desired_h - 10, desired_h]  # 3 начальных состояния
 
 
-# Функция принятия решения
 def decision_function(_h, _desired_h):
     return 1 if _h <= _desired_h else -1
 
 
-# Код для построения графиков
 plt.figure(figsize=(12, 6))
 plt.axhline(y=desired_h, color='r', linestyle='--', label="Желаемая высота")
 plt.title("Моделирование системы автоматического контроля высоты с обновленными исходными условиями")
