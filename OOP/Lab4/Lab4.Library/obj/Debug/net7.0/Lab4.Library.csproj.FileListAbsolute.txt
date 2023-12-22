@@ -12,3 +12,18 @@ D:\OOP\Fanatsio University main OOP-Lab4\Lab4.Library\obj\Debug\net7.0\Lab4.Libr
 D:\OOP\Fanatsio University main OOP-Lab4\Lab4.Library\obj\Debug\net7.0\ref\Lab4.Library.dll
 D:\OOP\Fanatsio University main OOP-Lab4\Lab4.Library\bin\Debug\net7.0\Lab4.Library.runtimeconfig.json
 D:\OOP\Fanatsio University main OOP-Lab4\Lab4.Library\obj\Debug\net7.0\Lab4.Library.genruntimeconfig.cache
+D:\GitHub\University\OOP\Lab4\Lab4.Library\bin\Debug\net7.0\Lab4.Library.deps.json
+D:\GitHub\University\OOP\Lab4\Lab4.Library\bin\Debug\net7.0\Lab4.Library.runtimeconfig.json
+D:\GitHub\University\OOP\Lab4\Lab4.Library\bin\Debug\net7.0\Lab4.Library.dll
+D:\GitHub\University\OOP\Lab4\Lab4.Library\bin\Debug\net7.0\Lab4.Library.pdb
+D:\GitHub\University\OOP\Lab4\Lab4.Library\obj\Debug\net7.0\Lab4.Library.csproj.AssemblyReference.cache
+D:\GitHub\University\OOP\Lab4\Lab4.Library\obj\Debug\net7.0\Lab4.Library.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub\University\OOP\Lab4\Lab4.Library\obj\Debug\net7.0\Lab4.Library.AssemblyInfoInputs.cache
+D:\GitHub\University\OOP\Lab4\Lab4.Library\obj\Debug\net7.0\Lab4.Library.AssemblyInfo.cs
+D:\GitHub\University\OOP\Lab4\Lab4.Library\obj\Debug\net7.0\Lab4.Library.csproj.CoreCompileInputs.cache
+D:\GitHub\University\OOP\Lab4\Lab4.Library\obj\Debug\net7.0\Lab4.Library.sourcelink.json
+D:\GitHub\University\OOP\Lab4\Lab4.Library\obj\Debug\net7.0\Lab4.Library.dll
+D:\GitHub\University\OOP\Lab4\Lab4.Library\obj\Debug\net7.0\refint\Lab4.Library.dll
+D:\GitHub\University\OOP\Lab4\Lab4.Library\obj\Debug\net7.0\Lab4.Library.pdb
+D:\GitHub\University\OOP\Lab4\Lab4.Library\obj\Debug\net7.0\Lab4.Library.genruntimeconfig.cache
+D:\GitHub\University\OOP\Lab4\Lab4.Library\obj\Debug\net7.0\ref\Lab4.Library.dll

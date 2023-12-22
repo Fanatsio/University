@@ -33,7 +33,7 @@ CREATE TABLE product (
     place INTEGER UNIQUE,
     provider_id INTEGER REFERENCES provider(id),
     provider_name VARCHAR(255),
-    CONSTRAINT fk_provider FOREIGN KEY (provider_id) REFERENCES provider(id),
+    CONSTRAINT fk_provider FOREIGN KEY (provider_id) REFERENCES provider(id) [ON UPDATE {CASCADE}],
     name VARCHAR(255),
     receipt_date DATE,
     article VARCHAR(255) UNIQUE,
