@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -m32 -shared -Wl,-soname,libIntegralLib.so -o libIntegralLib.so CMakeFiles/IntegralLib.dir/integral.cpp.o 

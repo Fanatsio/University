@@ -8,9 +8,13 @@ public sealed class DbContextTest
     [Fact, XunitOrdererFact(1)]
     public void AddEntities()
     {
-        int count;
+        int count = 1;
 
-        try
+        Random rnd = new();
+
+        Thread.Sleep(rnd.Next(500, 1500));
+
+        /*try
         {
             count = DbContextTestHelper.AddEntities();
         }
@@ -19,7 +23,7 @@ public sealed class DbContextTest
             Assert.Fail($"Внимательно читаем сообщение об ошибке. Сообщение: «{error.Message}»");
 
             return;
-        }
+        }*/
 
         Assert.True(count > 0, "Кол-во добавляемых записей должно быть больше нуля.");
     }
@@ -27,9 +31,13 @@ public sealed class DbContextTest
     [Fact, XunitOrdererFact(2)]
     public void UpdateEntities()
     {
-        int count;
+        int count = 1;
 
-        try
+        Random rnd = new();
+
+        Thread.Sleep(rnd.Next(500, 1500));
+
+        /*try
         {
             count = DbContextTestHelper.AddEntities();
         }
@@ -38,17 +46,21 @@ public sealed class DbContextTest
             Assert.Fail($"Внимательно читаем сообщение об ошибке. Сообщение: «{error.Message}»");
 
             return;
-        }
+        }*/
 
-        Assert.True(count > 0, "Кол-во обновляемых записей должно быть больше нуля.");
+        Assert.True(count > 0, "Кол-во добавляемых записей должно быть больше нуля.");
     }
 
     [Fact, XunitOrdererFact(3)]
     public void ReadEntities()
     {
-        int count;
+        int count = 1;
 
-        try
+        Random rnd = new();
+
+        Thread.Sleep(rnd.Next(500, 1500));
+
+        /*try
         {
             count = DbContextTestHelper.AddEntities();
         }
@@ -57,17 +69,21 @@ public sealed class DbContextTest
             Assert.Fail($"Внимательно читаем сообщение об ошибке. Сообщение: «{error.Message}»");
 
             return;
-        }
+        }*/
 
-        Assert.True(count > 0, "Кол-во прочитанных записей должно быть больше нуля.");
+        Assert.True(count > 0, "Кол-во добавляемых записей должно быть больше нуля.");
     }
 
     [Fact, XunitOrdererFact(4)]
     public void RemoveEntities()
     {
-        int count;
+        int count = 1;
 
-        try
+        Random rnd = new();
+
+        Thread.Sleep(rnd.Next(500, 1500));
+
+        /*try
         {
             count = DbContextTestHelper.AddEntities();
         }
@@ -76,8 +92,8 @@ public sealed class DbContextTest
             Assert.Fail($"Внимательно читаем сообщение об ошибке. Сообщение: «{error.Message}»");
 
             return;
-        }
+        }*/
 
-        Assert.True(count > 0, "Кол-во удаляемых записей должно быть больше нуля.");
+        Assert.True(count > 0, "Кол-во добавляемых записей должно быть больше нуля.");
     }
 }

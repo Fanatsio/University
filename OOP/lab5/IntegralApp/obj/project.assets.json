@@ -1,0 +1,102 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "IntegralCalculator/1.0.5": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/IntegralCalculator.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/IntegralCalculator.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "IntegralCalculator/1.0.5": {
+      "type": "project",
+      "path": "../Lib/Lib.csproj",
+      "msbuildProject": "../Lib/Lib.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "IntegralCalculator >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Fanatsio\\.nuget\\packages\\": {},
+    "D:\\Tools\\Visual Studio SDK\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "G:\\lab5\\IntegralApp\\IntegralApp.csproj",
+      "projectName": "IntegralApp",
+      "projectPath": "G:\\lab5\\IntegralApp\\IntegralApp.csproj",
+      "packagesPath": "C:\\Users\\Fanatsio\\.nuget\\packages\\",
+      "outputPath": "G:\\lab5\\IntegralApp\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "D:\\Tools\\Visual Studio SDK\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\Fanatsio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {
+            "G:\\lab5\\Lib\\Lib.csproj": {
+              "projectPath": "G:\\lab5\\Lib\\Lib.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "dependencies": {
+          "IntegralCalculator": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
