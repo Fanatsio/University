@@ -7,17 +7,14 @@
 #include <WinUser.h>
 
 namespace console {
-
-    void resize(std::size_t x, std::size_t y)
-    {
+    void resize(std::size_t x, std::size_t y) {
         HWND console = GetConsoleWindow();
         RECT r;
         GetWindowRect(console, &r); //stores the console's current dimensions
         MoveWindow(console, r.left, r.top, x, y, true);
     }
 
-    void putCursorToStartOfConsole()
-    {
+    void putCursorToStartOfConsole() {
         HANDLE hOut;
         COORD Position;
 
@@ -28,49 +25,39 @@ namespace console {
         SetConsoleCursorPosition(hOut, Position);
     }
 
-
-    void clearScreen()
-    {
+    void clearScreen() {
         std::system("cls");
     }
 
-    bool keyWasPressed()
-    {
+    bool keyWasPressed() {
         return static_cast<bool>(_kbhit());
     }
 
-    char getKey()
-    {
+    char getKey() {
         return _getch();
     }
 
-    bool leftKeyHoldDown()
-    {
+    bool leftKeyHoldDown() {
         return isKeyDown(VK_LEFT);
     }
 
-    bool rightKeyHoldDown()
-    {
+    bool rightKeyHoldDown() {
         return isKeyDown(VK_RIGHT);
     }
 
-    bool spaceKeyHoldDown()
-    {
+    bool spaceKeyHoldDown() {
         return isKeyDown(VK_SPACE);
     }
 
-    bool escKeyHoldDown()
-    {
+    bool escKeyHoldDown() {
         return isKeyDown(VK_ESCAPE);
     }
 
-    bool rKeyHoldDown()
-    {
+    bool rKeyHoldDown() {
         return isKeyDown(0x52);
     }
 
-    bool isKeyDown(int key_code)
-    {
+    bool isKeyDown(int key_code) {
         return GetAsyncKeyState(key_code) & -32768;
     }
 }

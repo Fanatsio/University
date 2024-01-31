@@ -17,7 +17,6 @@ namespace arkanoid {
         int lives = startLives;
         int level{ 0 };
         for (;;) {
-
             Level level1{ score, lives,  ++level, makeBricksLevel1() };
             level1.run();
             score = level1.score();

@@ -1,7 +1,5 @@
 #include "Ball.h"
 
-#include <algorithm>
-
 namespace arkanoid {
 
     Ball::Ball(Point topLeft, double maxPositionX, double maxPositionY)
@@ -12,7 +10,7 @@ namespace arkanoid {
     {
     }
 
-    bool Ball::isActive()
+    bool Ball::isActive() const
     {
         return mIsActive;
     }
@@ -43,4 +41,4 @@ namespace arkanoid {
         GameObject::move(elapsedTimeInMS);
     }
 
-}  // namespace arkanoid
+}

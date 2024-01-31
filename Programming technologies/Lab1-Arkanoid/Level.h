@@ -14,47 +14,46 @@ namespace arkanoid {
     class Brick;
     class Platform;
 
-    class Level
-    {
-    public:
-        Level(long long score, int lives, int level, std::vector<Brick> bricks);
-        ~Level() = default;
+    class Level {
+        public:
+            Level(long long score, int lives, int level, std::vector<Brick> bricks);
+            ~Level() = default;
 
-        void run();
+            void run();
 
-        long long score() const;
-        int lives() const;
+            long long score() const;
+            int lives() const;
 
-        bool isGameOver() const;
-    private:
-        void handleBallMovementsAndCollisions(double elapsedTimeInMS);
-        void printToConsole();
+            bool isGameOver() const;
+        private:
+            void handleBallMovementsAndCollisions(double elapsedTimeInMS);
+            void printToConsole();
 
-        Platform makePlatform();
-        Ball makeBall();
+            Platform makePlatform();
+            Ball makeBall();
 
-        static constexpr int boardWidth{ 26 };
-        static constexpr int boardHeight{ 18 };
+            static constexpr int boardWidth{ 26 };
+            static constexpr int boardHeight{ 18 };
 
-        static constexpr auto plattformWidth{ 5.0 };
-        static constexpr auto wallThickness{ 1.0 };
+            static constexpr auto plattformWidth{ 5.0 };
+            static constexpr auto wallThickness{ 1.0 };
 
-        static constexpr auto pointsPerBrick{ 100 };
+            static constexpr auto pointsPerBrick{ 100 };
 
-        long long mScore;
-        int mLives;
-        const int mLevel;
+            long long mScore;
+            int mLives;
+            const int mLevel;
 
-        std::vector<Brick> mBricks;
+            std::vector<Brick> mBricks;
 
-        const Wall mLeftWall;
-        const Wall mRightWall;
-        const Wall mTopWall;
+            const Wall mLeftWall;
+            const Wall mRightWall;
+            const Wall mTopWall;
 
-        Platform mPlatform;
-        Ball mBall;
+            Platform mPlatform;
+            Ball mBall;
 
-        bool mIsGameOver;
+            bool mIsGameOver;
     };
 
     void movePlatformBetweenWalls(
