@@ -1,0 +1,3 @@
+D:/GitHub/University/Programming technologies/Lab1-Arkanoid/cmake-build-debug/CMakeFiles/Lab1_Arkanoid.dir
+D:/GitHub/University/Programming technologies/Lab1-Arkanoid/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/GitHub/University/Programming technologies/Lab1-Arkanoid/cmake-build-debug/CMakeFiles/rebuild_cache.dir
