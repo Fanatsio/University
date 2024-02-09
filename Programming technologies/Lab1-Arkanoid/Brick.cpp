@@ -31,4 +31,4 @@ namespace arkanoid {
     {
         return mHitpoints == 0;
     }
-}  // namespace arkanoid
+}

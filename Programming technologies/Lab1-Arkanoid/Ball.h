@@ -12,7 +12,7 @@ namespace arkanoid {
         Ball(Point topLeft, double maxPositionX, double maxPositionY);
         ~Ball() override = default;
 
-        bool isActive() const;
+        [[nodiscard]] bool isActive() const;
         void activate();
         void deactivate();
 
@@ -29,6 +29,6 @@ namespace arkanoid {
         static constexpr auto width{ 1 };
         static constexpr auto height{ 1 };
     };
-}  // namespace arkanoid
+}
 
-#endif //LAB1_ARKANOID_BALL_H
+#endif

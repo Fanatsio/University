@@ -14,10 +14,11 @@ namespace arkanoid {
         double velocity() const = delete;
         void setVelocity(double velocity) = delete;
 
-        double angle() const = delete;
-        void setAngle(double angle) = delete;
+        [[maybe_unused]] double angle() const = delete;
 
-        void move(const Point& delta) = delete;
+        [[maybe_unused]] void setAngle(double angle) = delete;
+
+        [[maybe_unused]] void move(const Point& delta) = delete;
 
         std::size_t startHitpoints() const;
         std::size_t hitpoints() const;
@@ -28,6 +29,6 @@ namespace arkanoid {
         const std::size_t mStartHitpoints;
         std::size_t mHitpoints;
     };
-}  // namespace arkanoid
+}
 
-#endif //LAB1_ARKANOID_BRICK_H
+#endif
