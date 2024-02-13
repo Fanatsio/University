@@ -40,19 +40,19 @@ def iterative_dragon_curve(tutle, order, length):
 
 # Инициализация экрана и черепашки
 screen = turtle.Screen()
-screen.setup(width=800, height=600)
+screen.setup(width=1280, height=720)
 screen.title("Dragon Curve Fractal")
 screen.bgcolor("white")
 
 turtle = turtle.Turtle()
-turtle.speed(100)  # Ускоряем черепашку
+turtle.speed(0)  # Ускоряем черепашку
 
 # Рисование рекурсивной кривой дракона
 turtle.penup()
 turtle.goto(-300, 0)
 turtle.pendown()
 turtle.color("blue")
-recursive_dragon_curve(turtle, 12, 5)
+recursive_dragon_curve(turtle, 24, 5)
 
 # Рисование кривой дракона с использованием L-системы
 turtle.penup()
