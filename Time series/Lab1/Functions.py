@@ -38,7 +38,7 @@ def graph():
     plt.title('График')
     plt.xlabel('количество дней')
     plt.ylabel('данные')
-    plt.grid(True)  # Добавление сетки
+    plt.grid(True)
 
     plt.show()
 
@@ -80,7 +80,6 @@ def histogram_of_variance(columns):
 
 
 def histograms_of_absolute_values():
-    # слева количество значений, снизу их диапазон
     plt.figure(figsize=(10, 6))
     plt.hist(DAX_values.abs(), bins=60, color='skyblue', edgecolor='black', alpha=0.7, label='DAX')
     plt.hist(SMI_values.abs(), bins=60, color='salmon', edgecolor='black', alpha=0.7, label='SMI')
@@ -96,7 +95,6 @@ def histograms_of_absolute_values():
 
 
 def histograms_of_difference_values():
-    # слева количество значений, снизу их диапазон
     plt.figure(figsize=(10, 6))
     plt.hist(DAX_values.diff().dropna(), bins=60, color='skyblue', edgecolor='black', alpha=0.7, label='DAX')
     plt.hist(SMI_values.diff().dropna(), bins=60, color='salmon', edgecolor='black', alpha=0.7, label='SMI')
