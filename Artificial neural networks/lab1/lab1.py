@@ -12,16 +12,16 @@ class Perceptron:
                 self.weights[1] += d * self.trainingSet[i][1] * self.accuracy
 
     def test(self):
-        if (self.predict([0,1]) == 1 and
-            self.predict([1,0]) == 1 and
-            self.predict([1,1]) == 1 and
-            self.predict([0,0]) == 0):
+        if (self.predict([0, 1]) == 1 and
+                self.predict([1, 0]) == 1 and
+                self.predict([1, 1]) == 1 and
+                self.predict([0, 0]) == 0):
             return 1
         return 0
 
     def predict(self, x):
-        summator = x[0] * self.weights[0] + x[1] * self.weights[1]
-        if summator >= 1:
+        summer = x[0] * self.weights[0] + x[1] * self.weights[1]
+        if summer >= 1:
             return 1
         else:
             return 0
@@ -29,11 +29,12 @@ class Perceptron:
     def get_weight(self):
         return self.weights
 
+
 neuron = Perceptron()
-print(f"Начальные веса = {neuron.get_weight()}")
+print(f"Начальные веса = {neuron.get_weight()}\n")
 
-
-while(neuron.test() != 1):
+while neuron.test() != 1:
     neuron.train()
-    print(f"Веса после обучения {neuron.get_weight()}")
+    print(f"Веса во время обучения {neuron.get_weight()}")
 
+print(f"\nВеса после обучения {neuron.get_weight()}")
