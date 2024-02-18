@@ -1,76 +1,91 @@
-import numpy as np
+import random
+
+class Neuron:
+    def __init__(self, n):
+        self.weights = [random.randint(1, 200) / 1000 for _ in range(n)]
+
+    def predict(self, x: list) -> float:
+        return x[0] * self.weights[0] + x[1] * self.weights[1]
 
 class NeuralNetwork:
-    def __init__(self, input_size, hidden_size, output_size):
-        self.input_size = input_size
-        self.hidden_size = hidden_size
-        self.output_size = output_size
-        
-        # Веса для входного слоя и скрытого слоя
-        self.weights_input_hidden = np.random.randn(self.input_size, self.hidden_size)
-        # Веса для скрытого слоя и выходного слоя
-        self.weights_hidden_output = np.random.randn(self.hidden_size, self.output_size)
-        
-        # Смещения для скрытого слоя и выходного слоя
-        self.bias_hidden = np.zeros((1, self.hidden_size))
-        self.bias_output = np.zeros((1, self.output_size))
-        
-    def sigmoid(self, x):
-        return 1 / (1 + np.exp(-x))
-    
-    def sigmoid_derivative(self, x):
-        return x * (1 - x)
-    
-    def feedforward(self, X):
-        # Прямое распространение
-        self.hidden_sum = np.dot(X, self.weights_input_hidden) + self.bias_hidden
-        self.activated_hidden = self.sigmoid(self.hidden_sum)
-        self.output_sum = np.dot(self.activated_hidden, self.weights_hidden_output) + self.bias_output
-        self.activated_output = self.sigmoid(self.output_sum)
-        return self.activated_output
-    
-    def backward(self, X, y, output):
-        # Обратное распространение ошибки
-        self.output_error = y - output
-        self.output_delta = self.output_error * self.sigmoid_derivative(output)
-        
-        self.hidden_error = self.output_delta.dot(self.weights_hidden_output.T)
-        self.hidden_delta = self.hidden_error * self.sigmoid_derivative(self.activated_hidden)
-        
-        # Обновление весов и смещений
-        self.weights_hidden_output += self.activated_hidden.T.dot(self.output_delta)
-        self.weights_input_hidden += X.T.dot(self.hidden_delta)
-        self.bias_output += np.sum(self.output_delta, axis=0)
-        self.bias_hidden += np.sum(self.hidden_delta, axis=0)
-        
-    def train(self, X, y, epochs):
-        for epoch in range(epochs):
-            output = self.feedforward(X)
-            self.backward(X, y, output)
-            
-            if epoch % 1000 == 0:
-                loss = np.mean(np.square(y - self.feedforward(X)))
-                print(f"Epoch {epoch}, Loss: {loss:.4f}")
-                
-# Пример использования
-if __name__ == "__main__":
-    # Пример данных
-    X = np.array([[0, 0],
-                  [0, 1],
-                  [1, 0],
-                  [1, 1]])
-    y = np.array([[0], [1], [1], [0]])
-    
-    # Создание нейронной сети с произвольным количеством входов
-    input_size = 2  # Количество входов
-    hidden_size = 4  # Количество нейронов в скрытом слое
-    output_size = 1  # Количество выходов
-    
-    nn = NeuralNetwork(input_size, hidden_size, output_size)
-    
-    # Обучение сети
-    nn.train(X, y, epochs=10000)
-    
-    # Вывод результата
-    print("Output after training:")
-    print(nn.feedforward(X))
+    def __init__(self, n):
+        self.neurons = [Neuron(2) for _ in range(n)]
+        self.a = 0.00005
+
+    def predict(self, x: list):
+        return self.neurons[0].predict(x)
+
+    def fit1(self, x_train: list, y_train: list, x_test: list, y_test: list):
+        mse_train = 0
+        length_train = len(x_train)
+
+        # Обучение на обучающей выборке
+        for i in range(length_train):
+            y_pred = self.predict(x_train[i])
+            mse_train += ((y_pred - y_train[i]) ** 2) / length_train
+            self.neurons[0].weights[0] += (y_train[i] - y_pred) / sum(self.neurons[0].weights)
+            self.neurons[0].weights[1] += (y_train[i] - y_pred) / sum(self.neurons[0].weights)
+
+        # Оценка на тестовой выборке
+        mse_test = 0
+        length_test = len(x_test)
+        for i in range(length_test):
+            y_pred = self.predict(x_test[i])
+            mse_test += ((y_pred - y_test[i]) ** 2) / length_test
+
+        print(f"Mean square error (train) -> {mse_train}")
+        print(f"Mean square error (test)  -> {mse_test}")
+
+        return [self.neurons[0].weights[0], self.neurons[0].weights[1]]
+
+    def fit2(self, x_train: list, y_train: list, x_test: list, y_test: list):
+        mse_train = 0
+        length_train = len(x_train)
+
+        # Обучение на обучающей выборке
+        for i in range(length_train):
+            y_pred = self.predict(x_train[i])
+            mse_train += ((y_pred - y_train[i]) ** 2) / length_train
+            self.neurons[0].weights[0] -= self.a * (y_pred - y_train[i]) * x_train[i][0]
+            self.neurons[0].weights[1] -= self.a * (y_pred - y_train[i]) * x_train[i][1]
+
+        # Оценка на тестовой выборке
+        mse_test = 0
+        length_test = len(x_test)
+        for i in range(length_test):
+            y_pred = self.predict(x_test[i])
+            mse_test += ((y_pred - y_test[i]) ** 2) / length_test
+
+        print(f"Mean square error (train) -> {mse_train}")
+        print(f"Mean square error (test)  -> {mse_test}")
+
+        return [self.neurons[0].weights[0], self.neurons[0].weights[1]]
+
+# Чтение данных из файла CSV
+data_file = 'data.csv'
+data = []
+with open(data_file, 'r') as file:
+    for line in file:
+        if not line.startswith('x1'):
+            values = line.strip().split(',')
+            x = [int(values[0]), int(values[1])]
+            y = float(values[2])
+            data.append((x, y))
+
+# Разделение данных на обучающую и тестовую выборки
+split_index = int(0.8 * len(data))
+train_data = data[:split_index]
+test_data = data[split_index:]
+
+# Разделение x и y для обучающей и тестовой выборок
+x_train, y_train = zip(*train_data)
+x_test, y_test = zip(*test_data)
+
+nn1 = NeuralNetwork(1)
+nn2 = NeuralNetwork(1)
+
+print("------------")
+print(nn1.fit1(x_train, y_train, x_test, y_test))
+print("------------")
+print(nn2.fit2(x_train, y_train, x_test, y_test))
+print("------------")
