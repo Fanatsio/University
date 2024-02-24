@@ -50,7 +50,6 @@ class Block:
 pygame.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 clock = pygame.time.Clock()
-img = pygame.image.load('1.jpg').convert()
 
 paddle = Paddle(WIDTH // 2 - paddle_w // 2, HEIGHT - paddle_h - 10, paddle_w, paddle_h, paddle_speed)
 ball = Ball(rnd(ball_rect, WIDTH - ball_rect), HEIGHT // 2, ball_radius, ball_speed)
@@ -79,7 +78,7 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-    screen.blit(img, (0, 0))
+    screen.fill((0, 0, 0))  # Черный цвет фона
 
     # Drawing world
     for block in blocks:
