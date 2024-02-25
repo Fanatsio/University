@@ -4,18 +4,17 @@ from random import randrange as rnd
 WIDTH, HEIGHT = 1200, 800
 fps = 90
 
-
-# Paddle settings
+# Настройки для ракетки
 paddle_w = 330
 paddle_h = 35
 paddle_speed = 15
 
-# Ball settings
+# Настройки для мяча
 ball_radius = 20
 ball_speed = 6
 ball_rect = int(ball_radius * 2 ** 0.5)
 
-# Block settings
+# Настройки для блоков
 block_width = 100
 block_height = 50
 
@@ -30,7 +29,7 @@ class Paddle:
         elif direction == "right":
             self.rect.x += self.speed
 
-        # Keep the paddle within the screen boundaries
+        # Ограничение ракетки в пределах экрана
         self.rect.x = max(0, min(self.rect.x, WIDTH - self.rect.width))
 
 class Ball:
@@ -81,17 +80,17 @@ while running:
 
     screen.fill((0, 0, 0))  # Черный цвет фона
 
-    # Drawing world
+    # Рисуем мир
     for block in blocks:
         pygame.draw.rect(screen, block.color, block.rect)
 
     pygame.draw.rect(screen, pygame.Color('darkorange'), paddle.rect)
     pygame.draw.circle(screen, pygame.Color('white'), ball.rect.center, ball_radius)
 
-    # Ball movement
+    # Движение мяча
     ball.move()
 
-    # Collision detection
+    # Обнаружение столкновений
     if ball.rect.centerx < ball_radius or ball.rect.centerx > WIDTH - ball_radius:
         ball.dx = -ball.dx
 
@@ -107,22 +106,22 @@ while running:
             blocks.remove(block)
             break
 
-    # Game over conditions
+    # Условия окончания игры
     if ball.rect.bottom > HEIGHT or not blocks:
         if not blocks:
-            print('WIN!!!')
+            print('ПОБЕДА!!!')
         else:
-            print('GAME OVER!')
+            print('КОНЕЦ ИГРЫ!')
         running = False
 
-    # Control
+    # Управление
     keys = pygame.key.get_pressed()
     if keys[pygame.K_LEFT]:
         paddle.move("left")
     if keys[pygame.K_RIGHT]:
         paddle.move("right")
 
-    # Update screen
+    # Обновление экрана
     pygame.display.flip()
     clock.tick(fps)
 
