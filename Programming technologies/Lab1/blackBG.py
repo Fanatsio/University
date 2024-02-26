@@ -72,8 +72,7 @@ def detect_collision(ball, rect):
     elif delta_y > delta_x:
         ball.dx = -ball.dx
 
-running = True
-while running:
+while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
@@ -112,7 +111,7 @@ while running:
             print('ПОБЕДА!!!')
         else:
             print('КОНЕЦ ИГРЫ!')
-        running = False
+        break
 
     # Управление
     keys = pygame.key.get_pressed()
