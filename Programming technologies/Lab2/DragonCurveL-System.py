@@ -1,20 +1,18 @@
 import turtle
 
-WIDTH, HEIGHT = 1600, 900
+
+WIDTH, HEIGHT = 1000, 800
 screen = turtle.Screen()
 screen.setup(WIDTH, HEIGHT)
-screen.screensize(3 * WIDTH, 3 * HEIGHT)
 screen.bgcolor('black')
 screen.delay(0)
 
-turtl = turtle.Turtle()
-turtl.pensize(2)
-turtl.speed(0)
-turtl.setpos(WIDTH // 4, -HEIGHT // 4 - 25)
-turtl.color('magenta')
+tutle = turtle.Turtle()
+tutle.speed(0)
+tutle.color('magenta')
 
 gens = 13
-axiom = 'XY'
+axiom = 'FX'
 chr_1, rule_1 = 'X', 'X+YF+'
 chr_2, rule_2 = 'Y', '-FX-Y'
 step = 4
@@ -33,17 +31,13 @@ def get_result(gens, axiom):
 
 
 def draw_l_system(axiom):
-    turtle.penup()
-    turtle.goto(-WIDTH // 2 + 60, -HEIGHT // 2 - 100)
-    turtle.pendown()
-
     for chr in axiom:
         if chr == chr_1 or chr == chr_2:
-            turtl.forward(step)
+            tutle.forward(step)
         elif chr == '+':
-            turtl.right(angle)
+            tutle.right(angle)
         elif chr == '-':
-            turtl.left(angle)
+            tutle.left(angle)
 
 
 axiom = get_result(gens, axiom)

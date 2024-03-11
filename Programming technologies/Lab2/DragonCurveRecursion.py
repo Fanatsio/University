@@ -1,36 +1,35 @@
 import turtle
 
 
-def recursive_dragon_curve(turtle, order, length):
-    if order == 0:
+def recursive_dragon_curve(turtle, gens, length):
+    if gens == 0:
         turtle.forward(length)
     else:
-        recursive_dragon_curve(turtle, order - 1, length)
+        recursive_dragon_curve(turtle, gens - 1, length)
         turtle.right(90)
-        reverse_dragon_curve(turtle, order - 1, length)
+        reverse_dragon_curve(turtle, gens - 1, length)
 
 
-def reverse_dragon_curve(turtle, order, length):
-    if order == 0:
+def reverse_dragon_curve(turtle, gens, length):
+    if gens == 0:
         turtle.forward(length)
     else:
-        recursive_dragon_curve(turtle, order - 1, length)
+        recursive_dragon_curve(turtle, gens - 1, length)
         turtle.left(90)
-        reverse_dragon_curve(turtle, order - 1, length)
+        reverse_dragon_curve(turtle, gens - 1, length)
 
 
+WIDTH, HEIGHT = 1000, 800
 screen = turtle.Screen()
-screen.setup(width=1280, height=720)
+screen.setup(WIDTH, HEIGHT)
 screen.title("Dragon Curve Fractal")
 screen.bgcolor("white")
+screen.delay(0)
 
-t = turtle.Turtle()
-t.speed(0)
+tutle = turtle.Turtle()
+tutle.speed(0)
+tutle.color("blue")
 
-t.penup()
-t.goto(-300, 0)
-t.pendown()
-t.color("blue")
-recursive_dragon_curve(t, 12, 5)
+recursive_dragon_curve(tutle, 13, 4)
 
 screen.exitonclick()
