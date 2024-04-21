@@ -18,3 +18,4 @@
 - [**Объектно-ориентированное программирование**](https://github.com/Fanatsio/surgu-OOP)
 - [**Сети и телекоммуникации**](https://github.com/Fanatsio/surgu-Networks-and-telecommunications)
 - [**Учебная практика 2 курс**](https://github.com/Fanatsio/surgu-Educational-practice)
+- [**Учебная практика 3 курс**](https://github.com/Fanatsio/surgu-Educational-practice-3)
