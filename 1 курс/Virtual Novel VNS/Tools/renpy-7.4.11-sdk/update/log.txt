@@ -1,0 +1,17 @@
+running ['D:/GitHub/VirtualNovel-VNS/Tools/renpy-7.4.11-sdk\\lib\\windows-x86_64\\zsync.exe', '-o', 'D:\\GitHub\\VirtualNovel-VNS\\Tools\\renpy-7.4.11-sdk\\update\\sdk.update.new', '-k', 'D:\\GitHub\\VirtualNovel-VNS\\Tools\\renpy-7.4.11-sdk\\update\\sdk.zsync', '-i', 'D:\\GitHub\\VirtualNovel-VNS\\Tools\\renpy-7.4.11-sdk\\update\\sdk.update', 'http://update.renpy.org/release-8/renpy-8.1.3-sdk.zsync']
+partfile does not exist
+partfile does not exist
+partfile does not exist
+partfile does not exist
+could not rename file \\?\D:\GitHub\VirtualNovel-VNS\Tools\renpy-7.4.11-sdk\launcher\game\fonts\Roboto-Light.ttfcould not rename file \\?\D:\GitHub\VirtualNovel-VNS\Tools\renpy-7.4.11-sdk\launcher\game\fonts\Roboto-Regular.ttfR \\?\D:\GitHub\VirtualNovel-VNS\Tools\renpy-7.4.11-sdk\launcher\game\fonts\Roboto-Light.ttfTraceback (most recent call last):
+  File "renpy/common/00updater.rpy", line 126, in process_deferred
+    process_deferred_line(l)
+  File "renpy/common/00updater.rpy", line 88, in process_deferred_line
+    os.unlink(fn)
+PermissionError: [WinError 32] Процесс не может получить доступ к файлу, так как этот файл занят другим процессом: '\\\\?\\D:\\GitHub\\VirtualNovel-VNS\\Tools\\renpy-7.4.11-sdk\\launcher\\game\\fonts\\Roboto-Light.ttf'
+R \\?\D:\GitHub\VirtualNovel-VNS\Tools\renpy-7.4.11-sdk\launcher\game\fonts\Roboto-Regular.ttfTraceback (most recent call last):
+  File "renpy/common/00updater.rpy", line 126, in process_deferred
+    process_deferred_line(l)
+  File "renpy/common/00updater.rpy", line 88, in process_deferred_line
+    os.unlink(fn)
+PermissionError: [WinError 32] Процесс не может получить доступ к файлу, так как этот файл занят другим процессом: '\\\\?\\D:\\GitHub\\VirtualNovel-VNS\\Tools\\renpy-7.4.11-sdk\\launcher\\game\\fonts\\Roboto-Regular.ttf'

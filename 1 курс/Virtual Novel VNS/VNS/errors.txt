@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 130: end of line expected.
+    jump label start
+               ^
+
+Ren'Py Version: Ren'Py 7.4.11.2266
+Tue May  3 15:11:08 2022
