@@ -1,0 +1,594 @@
+! KBS name:     Small Business Acquisition Advisor                          !
+! Description:  This prototype expert system helps a user to make a         !
+!               decision about buying a small retail business.              !
+! File names:   The KBS file is named SBPA.KBS.  Four external Pascal       !
+!               language programs are called to display the introduction    !
+!               and recommendation screens.                                 !
+! Hardware:     IBM-PC compatible                                           !
+
+Execute;
+Runtime;
+Endoff;
+BkColor=1;
+
+                              !Action Block Starts
+
+ACTIONS
+         Color = 12           !Light Red
+         Display "
+
+
+                          S M A L L   B U S I N E S S
+                     A C Q U I S I T I O N   A D V I S O R"
+         Color = 13           !Light Magenta
+         Display "
+
+
+                         Developed by Hiren B. Patel"
+         Color = 12           !Light Red
+         Display "
+                  under the direction and supervision of
+                              Dr. D.G. Dologite
+                      For further information, contact
+                              Dr. D.G. Dologite
+                          c/o Macmillan Publishing
+
+
+                         Press any key to continue.~"
+
+         Call Expert, ""     ! Calls Pascal program for opening screen
+         Color = 12
+         Find Price
+         Find Sales
+         Find Expenses
+         Find LeaseYears
+         Find Recommendation
+;
+
+                       !Rule Block Starts
+
+        !**********RECOMMENDATION BLOCK STARTS**********
+
+Rule Recommendation.1.1
+IF        Money = Not_OK
+THEN      Recommendation = Poor    ! Calls Pascal program for POOR screen
+          Call Poor, ""
+;
+Rule Recommendation.2.2
+IF        Location = Bad
+THEN      Recommendation = Poor    ! Calls Pascal program for POOR screen
+          Call Poor, ""
+;
+Rule Recommendation.3.3
+IF        Money = OK
+     and  Location = Fair
+     and  LeaseOwnership = Bad
+THEN      Recommendation = Poor
+          Call Poor, ""            ! Calls Pascal program for POOR screen
+;
+Rule Recommendation.4.4
+IF        Money = OK
+     and  Location = Good
+     and  LeaseOwnership = Bad
+THEN      Recommendation = Poor
+          Call Poor, ""            ! Calls Pascal program for POOR screen
+;
+Rule Recommendation.5.5
+IF        Money = OK
+     and  Location = Fair
+     and  LeaseOwnership = Good
+THEN      Recommendation = Caution
+          Call Caution, ""         ! Calls Pascal program for CAUTION screen
+;
+Rule Recommendation.6.6
+IF        Money = OK
+     and  Location = Fair
+     and  LeaseOwnership = Fair
+THEN      Recommendation = Caution
+          Call Caution, ""         ! Calls Pascal program for CAUTION screen
+;
+Rule Recommendation.7.7
+IF        Money = OK
+     and  Location = Good
+     and  LeaseOwnership = Good
+THEN      Recommendation = Good
+          Call Good, ""            ! Calls Pascal program for GOOD screen
+;
+Rule Recommendation.8.8
+IF        Money = OK
+     and  Location = Good
+     and  LeaseOwnership = Fair
+THEN      Recommendation = Good
+          Call Good, ""            ! Calls Pascal program for GOOD screen
+;
+             !**********MONEY BLOCK STARTS**********
+
+Rule Money.1.9
+IF        Financing = OK
+     and  Income = OK
+THEN      Money = OK
+;
+Rule Money.2.10
+IF        Financing <> OK
+     or   Income <> OK
+THEN      Money = Not_OK
+;
+
+           !**********FINANCING BLOCK STARTS**********
+       ! Store price should not be more than 3 year profit
+
+Rule Financing.1.11
+IF        Price < ((Sales-Expenses)*3)
+     and  LeaseYears >= 3
+THEN      Financing = OK
+;
+Rule Financing.2.12
+IF        Price >= ((Sales-Expenses)*3)
+     and  LeaseYears < 3
+THEN      Financing = Not_Ok
+          Display "
+
+
+             You need to negotiate the store price.
+          It is high when comparing three year profits.
+              Also, lease is less than three years.
+
+
+
+                   Press any key to continue.~
+"
+;
+            !**********INCOME BLOCK STARTS**********
+
+      ! Sales should be greater then expense at 15 percent
+
+Rule Income.1.13
+IF        Expenses < (Sales*.85)
+THEN      Income = OK
+;
+Rule Income.2.14
+IF        Expenses >= (Sales*.85)
+THEN      Income = Not_OK
+          Display "
+
+
+
+
+               This business does not appear to be
+                profitable at a 15 percent margin.                                
+
+
+                   Press any key to continue.~
+"
+;
+
+            !*********LOCATION BLOCK STARTS**********
+
+Rule Location.1.15
+IF        Neighborhood = Bad
+THEN      Location = Bad
+;
+Rule Location.2.16
+IF        Character = Good
+     and  Neighborhood = Good
+THEN      Location = Good
+;
+Rule Location.3.17
+IF        Character = Good
+     and  Neighborhood = Fair
+THEN      Location = Fair
+;
+Rule Location.4.18
+IF        Character = Fair
+     and  Neighborhood = Good
+THEN      Location = Good
+;
+Rule Location.5.19
+IF        Character = Fair
+     and  Neighborhood = Fair
+THEN      Location = Fair
+;
+Rule Location.6.20
+IF        Character = Bad
+     and  Neighborhood = Good
+THEN      Location = Fair
+;
+Rule Location.7.21
+IF        Character = Bad
+     and  Neighborhood = Fair
+THEN      Location = Bad
+;
+
+           !**********CHARACTER BLOCK STARTS**********
+
+Rule Character.1.22
+IF        PhyCond = Bad
+THEN      Character = Bad
+;
+Rule Character.2.23
+IF        Competition = Light
+     and  PhyCond = Good
+THEN      Character = Good
+;
+Rule Character.3.24
+IF        Competition = Light
+     and  PhyCond = Fair
+THEN      Character = Good
+;
+Rule Character.4.25
+IF        Competition = Moderate
+     and  PhyCond = Good
+THEN      Character = Good
+;
+Rule Character.5.26
+IF        Space = Over_400
+     and  Competition = Heavy
+     and  PhyCond = Good
+THEN      Character = Good
+;
+Rule Character.6.27
+IF        Space = Over_400
+     and  Competition = Moderate
+     and  PhyCond = Fair
+THEN      Character = Good
+;
+Rule Character.7.28
+IF        Space = Over_400
+     and  Competition = Heavy
+     and  PhyCond = Fair
+THEN      Character = Fair
+;
+Rule Character.8.29
+IF        Space = Under_\_Equal_to_400
+     and  Competition = Heavy
+     and  PhyCond = Fair
+THEN      Character = Bad
+;
+Rule Character.9.30
+IF        Space = Under_\_Equal_to_400
+     and  Competition = Heavy
+     and  PhyCond = Good
+THEN      Character = Fair
+;
+
+Rule Character.10.31
+IF        Space = Under_\_Equal_to_400
+     and  Competition = Moderate
+     and  PhyCond = Fair
+THEN      Character = Fair
+;
+
+         !**********NEIGHBORHOOD BLOCK STARTS**********
+
+Rule Neighborhood.1.32
+IF        EcoCond = Bad
+THEN      Neighborhood = Bad
+;
+Rule Neighborhood.2.33
+IF        PedTraffic = Light
+     and  PublicTransp = Light
+THEN      Neighborhood = Bad
+;
+Rule Neighborhood.3.34
+IF        PedTraffic = Light
+     and  EcoCond = Fair
+THEN      Neighborhood = Bad
+;
+Rule Neighborhood.4.35
+IF        PedTraffic = Moderate
+     and  PublicTransp = Light
+     and  EcoCond = Fair
+THEN      Neighborhood = Bad
+;
+Rule Neighborhood.5.36
+IF        PedTraffic = Light
+     and  PublicTransp = Moderate
+     and  EcoCond = Good
+THEN      Neighborhood = Fair
+;
+Rule Neighborhood.6.37
+IF        PedTraffic = Moderate
+     and  PublicTransp = Light
+     and  EcoCond = Good
+THEN      Neighborhood = Fair
+;
+Rule Neighborhood.7.38
+IF        PedTraffic = Moderate
+     and  PublicTransp = Moderate
+     and  EcoCond = Fair
+THEN      Neighborhood = Fair
+;
+Rule Neighborhood.8.39
+IF        PedTraffic = Heavy
+     and  PublicTransp = Light
+     and  EcoCond = Fair
+THEN      Neighborhood = Bad
+;
+Rule Neighborhood.9.40
+IF        PedTraffic = Heavy
+     and  PublicTransp = Heavy
+     and  EcoCond = Good
+THEN      Neighborhood = Good
+;
+Rule Neighborhood.10.41
+IF        PedTraffic = Heavy
+     and  PublicTransp = Heavy
+     and  EcoCond = Fair
+THEN      Neighborhood = Good
+;
+Rule Neighborhood.11.42
+IF        PedTraffic = Heavy
+     and  PublicTransp = Moderate
+     and  EcoCond = Good
+THEN      Neighborhood = Good
+;
+Rule Neighborhood.12.43
+IF        PedTraffic = Heavy
+     and  PublicTransp = Light
+     and  EcoCond = Good
+THEN      Neighborhood = Good
+;
+Rule Neighborhood.13.44
+IF        InOut = Inside
+     and  PedTraffic = Moderate
+     and  PublicTransp = Heavy
+THEN      Neighborhood = Fair
+;
+Rule Neighborhood.14.45
+IF        InOut = Inside
+     and  PedTraffic = Light
+     and  PublicTransp = Heavy
+     and  EcoCond = Good
+THEN      Neighborhood = Good
+;
+Rule Neighborhood.15.46
+IF        InOut = Inside
+     and  PedTraffic = Moderate
+     and  PublicTransp = Moderate
+     and  EcoCond = Good
+THEN      Neighborhood = Fair
+;
+Rule Neighborhood.16.47
+IF        InOut = Inside
+     and  PedTraffic = Heavy
+     and  PublicTransp = Moderate
+     and  EcoCond = Fair
+THEN      Neighborhood = Fair
+;
+Rule Neighborhood.17.48
+IF        InOut = Outside
+     and  PedTraffic = Heavy
+     and  PublicTransp = Moderate
+     and  EcoCond = Fair
+THEN      Neighborhood = Good
+;
+Rule Neighborhood.18.49
+IF        InOut = Outside
+     and  PedTraffic = Moderate
+     and  PublicTransp = Heavy
+     and  EcoCond = Good
+THEN      Neighborhood = Good
+;
+Rule Neighborhood.19.50
+IF        InOut = Outside
+     and  PedTraffic = Moderate
+     and  PublicTransp = Heavy
+     and  EcoCond = Fair
+THEN      Neighborhood = Good
+;
+Rule Neighborhood.20.51
+IF        InOut = Outside
+     and  PedTraffic = Moderate
+     and  PublicTransp = Moderate
+     and  EcoCond = Good
+THEN      Neighborhood = Good
+;
+Rule Neighborhood.21.52
+IF        InOut = Outside
+     and  PedTraffic = Light
+     and  PublicTransp = Heavy
+     and  EcoCond = Good
+THEN      Neighborhood = Good
+;
+
+        !**********LEASE OWNERSHIP BLOCK STARTS**********
+
+Rule LeaseOwnership.1.53
+IF        Transferable = No
+THEN      LeaseOwnership = Bad
+;
+Rule LeaseOwnership.2.54
+IF        Transferable = Do_Not_Know
+THEN      LeaseOwnership = Fair
+          Display "
+
+               You need to know whether you will
+                 be able to transfer the lease.
+                 If no, lease ownership is BAD.   
+
+
+
+                   Press any key to continue.~
+"
+;
+Rule LeaseOwnership.3.55
+IF        Transferable = Yes
+     and  Restrictions = Do_Not_Know
+THEN      LeaseOwnership = Fair
+          Display "
+
+              Try to find out about lease restrictions,
+               if any. They may be important to your
+                     future expansion plans.
+
+
+
+                   Press any key to continue.~
+"
+;
+Rule LeaseOwnership.4.56
+IF        Transferable = Yes
+     and  Restrictions = No
+     and  PayTaxes = Do_Not_Know
+THEN      LeaseOwnership = Fair
+          Display "
+
+          Try to find out who is going to pay the real
+       estate taxes.  They are important for your income.
+
+
+                  Press any key to continue.~"
+;
+Rule LeaseOwnership.5.57
+IF        Transferable = Yes
+     and  Restrictions = No
+     and  PayTaxes = Them
+THEN      LeaseOwnership = Good
+;
+Rule LeaseOwnership.6.58
+IF        Transferable = Yes
+     and  Restrictions = No
+     and  PayTaxes = Us
+THEN      LeaseOwnership = Good
+;
+Rule LeaseOwnership.7.59
+IF        RentInc = Yes
+     and  Transferable = Yes
+     and  Restrictions = Yes
+THEN      LeaseOwnership = Bad
+;
+
+Rule LeaseOwnership.8.60
+IF        RentInc = No
+     and  Transferable = Yes
+     and  Restrictions = Yes
+     and  PayTaxes = Do_Not_Know
+THEN      LeaseOwnership = Fair
+          Display "
+
+          Try to find out who is going to pay the real
+       estate taxes.  They are important for your income.
+
+
+
+                  Press any key to continue.~"
+
+;
+Rule LeaseOwnership.9.61
+IF        RentInc = No
+     and  Transferable = Yes
+     and  Restrictions = Yes
+     and  PayTaxes = Them
+THEN      LeaseOwnership = Good
+;
+Rule LeaseOwnership.10.62
+IF        RentInc = No
+     and  Transferable = Yes
+     and  Restrictions = Yes
+     and  PayTaxes = Us
+THEN      LeaseOwnership = Fair
+;
+Rule LeaseOwnership.11.63
+IF        RentInc = No
+     and  Transferable = Yes
+     and  Restrictions = Do_Not_Know
+     and  PayTaxes = Them
+THEN      LeaseOwnership = Good
+          Display "
+
+              Try to find out about lease restrictions,
+               if any.  They may be important to your
+                     future expansion plans.
+
+                   Press any key to continue.~
+"
+;
+Rule LeaseOwnership.12.64
+IF        RentInc = Yes
+     and  Transferable = Yes
+     and  Restrictions = Yes
+     and  PayTaxes = Them
+THEN      LeaseOwnership = Fair
+;
+
+          !***********STATEMENT BLOCK STARTS*************
+
+ASK Price:"How much does the owner want to sell the business for?
+";
+
+ASK Sales:"How much does the store collect in revenue per year?
+";
+
+ASK LeaseYears:"How many years is the lease for?
+";
+
+ASK Expenses:"What are the yearly expenses?
+
+Do NOT forget to include:    Rent
+                             Utilities
+                             Taxes
+                             Salaries
+                             Other
+";
+Ask Space:"What is the size of the store in square feet?
+";
+
+Choices Space: Under_\_Equal_to_400, Over_400;
+
+ASK Competition:"How heavy is the competition near the business
+that you are considering?
+";
+
+Choices Competition: Heavy, Moderate, Light;
+
+ASK PhyCond:"What is the physical condition of the store?
+";
+
+Choices PhyCond: Good, Fair, Bad;
+
+ASK PedTraffic:"What is the volume of pedestrian traffic?
+";
+
+Choices PedTraffic: Heavy, Moderate, Light;
+
+ASK InOut:"Is the store inside the building or outside the
+building?
+";
+
+Choices InOut: Outside, Inside;
+
+ASK EcoCond:"What is the economic condition of the neighborhood?
+";
+
+Choices EcoCond: Good, Fair, Bad;
+
+ASK PublicTransp:"How heavy is the traffic generated by public
+transportation?
+";
+
+Choices PublicTransp: Heavy, Moderate, Light;
+
+ASK Transferable:"Is the lease transferable when the current
+owner sells it to you, and can you transfer it?
+";
+
+Choices Transferable: Yes, No, Do_Not_Know;
+
+ASK Restrictions:"Are there any restrictions to sell any item
+which you may want to sell in the future?
+";
+
+Choices Restrictions: No, Yes, Do_Not_Know;
+
+ASK PayTaxes:"Who pays the Real Estate taxes?
+";
+
+Choices PayTaxes: Us, Them, Do_Not_Know;
+
+ASK RentInc:"Is there a yearly rent increase?
+";
+
+Choices RentInc: Yes, No;
+
+                            ! END OF STATEMENT BLOCK
+

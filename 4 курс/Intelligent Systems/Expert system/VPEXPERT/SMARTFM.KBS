@@ -1,0 +1,57 @@
+ACTIONS
+     GMODE 14                           !Enters EGA graphics mode
+
+     MouseAvailable = yes
+     Done = no                          !These 4 lines initialize (assign
+     Temp = needed                      !values to) the variables Done,
+     ftemp = not_known                  !Temp, and ftemp, causing
+                                        !linked dynamic objects to appear
+                                        !on screen.
+
+     WHILETRUE Done = no THEN           !This loop keeps the form on
+     END                                !screen until the user clicks on
+                                        !the LBUTTON labeled 'Done.'
+
+     TMODE;                             !Resumes text mode after loop
+                                        !ends.
+
+     LBUTTON Done: 37,20;               !Displays a button labeled 'Done.'
+                                        !When the user clicks on this
+                                        !button, variable Done is assigned
+                                        !a 'yes' value and form disappears.
+                                        !(Clicking on LBUTTONs toggle 'yes,'
+                                        !'no' values.
+
+     FORMFIELD temp: 60, 7, 7;          !Displays a formfield showing the
+                                        !value 'needed,' as assigned in the
+                                        !ACTIONS block.
+
+     ASK temp: "Does the patient exhibit an abnormal temperature?";
+     CHOICES temp: YES, NO;
+                                        !Labels the 'temp' formfield
+                                        !and provides a menu of choices.
+
+     WHENEVER temp_status               !This WHENEVER rule is tested any
+     IF Temp = YES                      !time the variable temp is
+     THEN ftemp  = REQUIRED             !assigned a value. It passes if
+     ELSE ftemp = NOT_REQUIRED;         !temperature has a 'yes' value.
+
+     FORMFIELD ftemp: 50, 15, 15;
+     ASK ftemp: "What is the patient's temperature?";
+
+     WHENEVER MouseAvailable
+          IF MouseAvailable = yes
+          THEN MOUSEON;
+
+     WHENEVER temp1
+          IF ftemp < 98.7
+          THEN ftemp = normal;
+
+     WHENEVER temp2
+          IF ftemp > 98.6 and ftemp < 100.1
+          THEN ftemp = abnormal;
+
+     WHENEVER temp3
+          IF ftemp > 100.0
+          THEN ftemp = serious;
+

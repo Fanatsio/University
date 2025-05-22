@@ -1,0 +1,46 @@
+ACTIONS
+      BCALL Reset                   !Invokes RESET.BAT file which deletes
+                                    !        previous consultation files
+      FIND Day                      !Makes system look for 1st variable
+      FIND Weather                  !Makes system look for 2nd variable
+      SHIP Patient, Day             !Puts day of week in Patient file
+      SHIP Patient, Weather         !Puts expected weather in Patient file
+      BCALL Nuroshll                !Invokes NUROSHLL.BAT file which
+                                    !        manages the flow of information
+                                    !        with the neural network
+      RECEIVE Patient, Patients     !Reads value in Patient text file back
+                                    !        into VP Expert
+      FIND Doctors;                 !Fires rule set
+
+
+Rule 1      IF  Patients <= 60
+            AND Day < 6
+            THEN Doctors = 8;
+
+Rule 2      IF  Patients > 60
+            AND Day < 6
+            THEN Doctors = 12;
+
+Rule 3      IF Patients <= 60
+            AND Day > 5
+            THEN Doctors = 14;
+
+Rule 4      IF Patients > 60
+            AND Day > 5
+            THEN Doctors = 18;
+
+
+ASK Day: "What day of the week is being planned for?
+             1 = Sunday       5 = Thursday
+             2 = Monday       6 = Friday
+             3 = Tuesday      7 = Saturday
+             4 = Wednesday";
+CHOICES Day: 1, 2, 3, 4, 5, 6, 7;
+
+ASK Weather: "Rate the weather expected using the following scale:
+                     1 = Clear
+                     2 = Cloudy
+                     3 = Rainy
+                     4 = Heavy rain, thunder";
+CHOICES Weather: 1, 2, 3, 4;
+

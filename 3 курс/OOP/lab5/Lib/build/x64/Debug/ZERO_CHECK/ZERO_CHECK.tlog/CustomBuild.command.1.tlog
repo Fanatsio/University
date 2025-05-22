@@ -1,0 +1,10 @@
+^C:\USERS\MAXAM\ДОКУМЕНТЫ\LAB55\LIB\BUILD\CMAKEFILES\E17389B3F6D116096059AC7E04B87263\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/maxam/Документы/Lab55/Lib -BC:/Users/maxam/Документы/Lab55/Lib/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/maxam/Документы/Lab55/Lib/build/IntegralLib.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,113 @@
+D:\TI\TiLab4\bin\Debug\net6.0-windows\TiLab4.exe
+D:\TI\TiLab4\bin\Debug\net6.0-windows\TiLab4.deps.json
+D:\TI\TiLab4\bin\Debug\net6.0-windows\TiLab4.runtimeconfig.json
+D:\TI\TiLab4\bin\Debug\net6.0-windows\TiLab4.dll
+D:\TI\TiLab4\bin\Debug\net6.0-windows\TiLab4.pdb
+D:\TI\TiLab4\obj\Debug\net6.0-windows\Hamming.Form1.resources
+D:\TI\TiLab4\obj\Debug\net6.0-windows\TiLab4.csproj.GenerateResource.cache
+D:\TI\TiLab4\obj\Debug\net6.0-windows\TiLab4.GeneratedMSBuildEditorConfig.editorconfig
+D:\TI\TiLab4\obj\Debug\net6.0-windows\TiLab4.AssemblyInfoInputs.cache
+D:\TI\TiLab4\obj\Debug\net6.0-windows\TiLab4.AssemblyInfo.cs
+D:\TI\TiLab4\obj\Debug\net6.0-windows\TiLab4.csproj.CoreCompileInputs.cache
+D:\TI\TiLab4\obj\Debug\net6.0-windows\TiLab4.dll
+D:\TI\TiLab4\obj\Debug\net6.0-windows\refint\TiLab4.dll
+D:\TI\TiLab4\obj\Debug\net6.0-windows\TiLab4.pdb
+D:\TI\TiLab4\obj\Debug\net6.0-windows\TiLab4.genruntimeconfig.cache
+D:\TI\TiLab4\obj\Debug\net6.0-windows\ref\TiLab4.dll
+C:\Users\Serafim01\Desktop\TiLab4\bin\Debug\net6.0-windows\TiLab4.exe
+C:\Users\Serafim01\Desktop\TiLab4\bin\Debug\net6.0-windows\TiLab4.deps.json
+C:\Users\Serafim01\Desktop\TiLab4\bin\Debug\net6.0-windows\TiLab4.runtimeconfig.json
+C:\Users\Serafim01\Desktop\TiLab4\bin\Debug\net6.0-windows\TiLab4.dll
+C:\Users\Serafim01\Desktop\TiLab4\bin\Debug\net6.0-windows\TiLab4.pdb
+C:\Users\Serafim01\Desktop\TiLab4\obj\Debug\net6.0-windows\Hamming.Form1.resources
+C:\Users\Serafim01\Desktop\TiLab4\obj\Debug\net6.0-windows\TiLab4.csproj.GenerateResource.cache
+C:\Users\Serafim01\Desktop\TiLab4\obj\Debug\net6.0-windows\TiLab4.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Serafim01\Desktop\TiLab4\obj\Debug\net6.0-windows\TiLab4.AssemblyInfoInputs.cache
+C:\Users\Serafim01\Desktop\TiLab4\obj\Debug\net6.0-windows\TiLab4.AssemblyInfo.cs
+C:\Users\Serafim01\Desktop\TiLab4\obj\Debug\net6.0-windows\TiLab4.csproj.CoreCompileInputs.cache
+C:\Users\Serafim01\Desktop\TiLab4\obj\Debug\net6.0-windows\TiLab4.dll
+C:\Users\Serafim01\Desktop\TiLab4\obj\Debug\net6.0-windows\refint\TiLab4.dll
+C:\Users\Serafim01\Desktop\TiLab4\obj\Debug\net6.0-windows\TiLab4.pdb
+C:\Users\Serafim01\Desktop\TiLab4\obj\Debug\net6.0-windows\TiLab4.genruntimeconfig.cache
+C:\Users\Serafim01\Desktop\TiLab4\obj\Debug\net6.0-windows\ref\TiLab4.dll
+C:\Users\Serafim01\Desktop\TiLab3\bin\Debug\net6.0-windows\TiLab4.exe
+C:\Users\Serafim01\Desktop\TiLab3\bin\Debug\net6.0-windows\TiLab4.deps.json
+C:\Users\Serafim01\Desktop\TiLab3\bin\Debug\net6.0-windows\TiLab4.runtimeconfig.json
+C:\Users\Serafim01\Desktop\TiLab3\bin\Debug\net6.0-windows\TiLab4.dll
+C:\Users\Serafim01\Desktop\TiLab3\bin\Debug\net6.0-windows\TiLab4.pdb
+C:\Users\Serafim01\Desktop\TiLab3\obj\Debug\net6.0-windows\Hamming.Form1.resources
+C:\Users\Serafim01\Desktop\TiLab3\obj\Debug\net6.0-windows\TiLab4.csproj.GenerateResource.cache
+C:\Users\Serafim01\Desktop\TiLab3\obj\Debug\net6.0-windows\TiLab4.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Serafim01\Desktop\TiLab3\obj\Debug\net6.0-windows\TiLab4.AssemblyInfoInputs.cache
+C:\Users\Serafim01\Desktop\TiLab3\obj\Debug\net6.0-windows\TiLab4.AssemblyInfo.cs
+C:\Users\Serafim01\Desktop\TiLab3\obj\Debug\net6.0-windows\TiLab4.csproj.CoreCompileInputs.cache
+C:\Users\Serafim01\Desktop\TiLab3\obj\Debug\net6.0-windows\TiLab4.dll
+C:\Users\Serafim01\Desktop\TiLab3\obj\Debug\net6.0-windows\refint\TiLab4.dll
+C:\Users\Serafim01\Desktop\TiLab3\obj\Debug\net6.0-windows\TiLab4.pdb
+C:\Users\Serafim01\Desktop\TiLab3\obj\Debug\net6.0-windows\TiLab4.genruntimeconfig.cache
+C:\Users\Serafim01\Desktop\TiLab3\obj\Debug\net6.0-windows\ref\TiLab4.dll
+C:\Users\Hetsu\Desktop\Theory_Information\TiLab3\bin\Debug\net6.0-windows\TiLab4.exe
+C:\Users\Hetsu\Desktop\Theory_Information\TiLab3\bin\Debug\net6.0-windows\TiLab4.deps.json
+C:\Users\Hetsu\Desktop\Theory_Information\TiLab3\bin\Debug\net6.0-windows\TiLab4.runtimeconfig.json
+C:\Users\Hetsu\Desktop\Theory_Information\TiLab3\bin\Debug\net6.0-windows\TiLab4.dll
+C:\Users\Hetsu\Desktop\Theory_Information\TiLab3\bin\Debug\net6.0-windows\TiLab4.pdb
+C:\Users\Hetsu\Desktop\Theory_Information\TiLab3\obj\Debug\net6.0-windows\Hamming.Form1.resources
+C:\Users\Hetsu\Desktop\Theory_Information\TiLab3\obj\Debug\net6.0-windows\TiLab4.csproj.GenerateResource.cache
+C:\Users\Hetsu\Desktop\Theory_Information\TiLab3\obj\Debug\net6.0-windows\TiLab4.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hetsu\Desktop\Theory_Information\TiLab3\obj\Debug\net6.0-windows\TiLab4.AssemblyInfoInputs.cache
+C:\Users\Hetsu\Desktop\Theory_Information\TiLab3\obj\Debug\net6.0-windows\TiLab4.AssemblyInfo.cs
+C:\Users\Hetsu\Desktop\Theory_Information\TiLab3\obj\Debug\net6.0-windows\TiLab4.csproj.CoreCompileInputs.cache
+C:\Users\Hetsu\Desktop\Theory_Information\TiLab3\obj\Debug\net6.0-windows\TiLab4.sourcelink.json
+C:\Users\Hetsu\Desktop\Theory_Information\TiLab3\obj\Debug\net6.0-windows\TiLab4.dll
+C:\Users\Hetsu\Desktop\Theory_Information\TiLab3\obj\Debug\net6.0-windows\refint\TiLab4.dll
+C:\Users\Hetsu\Desktop\Theory_Information\TiLab3\obj\Debug\net6.0-windows\TiLab4.pdb
+C:\Users\Hetsu\Desktop\Theory_Information\TiLab3\obj\Debug\net6.0-windows\TiLab4.genruntimeconfig.cache
+C:\Users\Hetsu\Desktop\Theory_Information\TiLab3\obj\Debug\net6.0-windows\ref\TiLab4.dll
+G:\Университет\TheorInf-main\TiLab3\bin\Debug\net6.0-windows\TiLab4.exe
+G:\Университет\TheorInf-main\TiLab3\bin\Debug\net6.0-windows\TiLab4.deps.json
+G:\Университет\TheorInf-main\TiLab3\bin\Debug\net6.0-windows\TiLab4.runtimeconfig.json
+G:\Университет\TheorInf-main\TiLab3\bin\Debug\net6.0-windows\TiLab4.dll
+G:\Университет\TheorInf-main\TiLab3\bin\Debug\net6.0-windows\TiLab4.pdb
+G:\Университет\TheorInf-main\TiLab3\obj\Debug\net6.0-windows\Hamming.Form1.resources
+G:\Университет\TheorInf-main\TiLab3\obj\Debug\net6.0-windows\TiLab4.csproj.GenerateResource.cache
+G:\Университет\TheorInf-main\TiLab3\obj\Debug\net6.0-windows\TiLab4.GeneratedMSBuildEditorConfig.editorconfig
+G:\Университет\TheorInf-main\TiLab3\obj\Debug\net6.0-windows\TiLab4.AssemblyInfoInputs.cache
+G:\Университет\TheorInf-main\TiLab3\obj\Debug\net6.0-windows\TiLab4.AssemblyInfo.cs
+G:\Университет\TheorInf-main\TiLab3\obj\Debug\net6.0-windows\TiLab4.csproj.CoreCompileInputs.cache
+G:\Университет\TheorInf-main\TiLab3\obj\Debug\net6.0-windows\TiLab4.dll
+G:\Университет\TheorInf-main\TiLab3\obj\Debug\net6.0-windows\refint\TiLab4.dll
+G:\Университет\TheorInf-main\TiLab3\obj\Debug\net6.0-windows\TiLab4.pdb
+G:\Университет\TheorInf-main\TiLab3\obj\Debug\net6.0-windows\TiLab4.genruntimeconfig.cache
+G:\Университет\TheorInf-main\TiLab3\obj\Debug\net6.0-windows\ref\TiLab4.dll
+H:\Теория информации\TiLab3\bin\Debug\net6.0-windows\TiLab4.exe
+H:\Теория информации\TiLab3\bin\Debug\net6.0-windows\TiLab4.deps.json
+H:\Теория информации\TiLab3\bin\Debug\net6.0-windows\TiLab4.runtimeconfig.json
+H:\Теория информации\TiLab3\bin\Debug\net6.0-windows\TiLab4.dll
+H:\Теория информации\TiLab3\bin\Debug\net6.0-windows\TiLab4.pdb
+H:\Теория информации\TiLab3\obj\Debug\net6.0-windows\Hamming.Form1.resources
+H:\Теория информации\TiLab3\obj\Debug\net6.0-windows\TiLab4.csproj.GenerateResource.cache
+H:\Теория информации\TiLab3\obj\Debug\net6.0-windows\TiLab4.GeneratedMSBuildEditorConfig.editorconfig
+H:\Теория информации\TiLab3\obj\Debug\net6.0-windows\TiLab4.AssemblyInfoInputs.cache
+H:\Теория информации\TiLab3\obj\Debug\net6.0-windows\TiLab4.AssemblyInfo.cs
+H:\Теория информации\TiLab3\obj\Debug\net6.0-windows\TiLab4.csproj.CoreCompileInputs.cache
+H:\Теория информации\TiLab3\obj\Debug\net6.0-windows\TiLab4.dll
+H:\Теория информации\TiLab3\obj\Debug\net6.0-windows\refint\TiLab4.dll
+H:\Теория информации\TiLab3\obj\Debug\net6.0-windows\TiLab4.pdb
+H:\Теория информации\TiLab3\obj\Debug\net6.0-windows\TiLab4.genruntimeconfig.cache
+H:\Теория информации\TiLab3\obj\Debug\net6.0-windows\ref\TiLab4.dll
+D:\Теория информации\Лабораторная работа №3\bin\Debug\net6.0-windows\TiLab4.exe
+D:\Теория информации\Лабораторная работа №3\bin\Debug\net6.0-windows\TiLab4.deps.json
+D:\Теория информации\Лабораторная работа №3\bin\Debug\net6.0-windows\TiLab4.runtimeconfig.json
+D:\Теория информации\Лабораторная работа №3\bin\Debug\net6.0-windows\TiLab4.dll
+D:\Теория информации\Лабораторная работа №3\bin\Debug\net6.0-windows\TiLab4.pdb
+D:\Теория информации\Лабораторная работа №3\obj\Debug\net6.0-windows\Hamming.Form1.resources
+D:\Теория информации\Лабораторная работа №3\obj\Debug\net6.0-windows\TiLab4.csproj.GenerateResource.cache
+D:\Теория информации\Лабораторная работа №3\obj\Debug\net6.0-windows\TiLab4.GeneratedMSBuildEditorConfig.editorconfig
+D:\Теория информации\Лабораторная работа №3\obj\Debug\net6.0-windows\TiLab4.AssemblyInfoInputs.cache
+D:\Теория информации\Лабораторная работа №3\obj\Debug\net6.0-windows\TiLab4.AssemblyInfo.cs
+D:\Теория информации\Лабораторная работа №3\obj\Debug\net6.0-windows\TiLab4.csproj.CoreCompileInputs.cache
+D:\Теория информации\Лабораторная работа №3\obj\Debug\net6.0-windows\TiLab4.dll
+D:\Теория информации\Лабораторная работа №3\obj\Debug\net6.0-windows\refint\TiLab4.dll
+D:\Теория информации\Лабораторная работа №3\obj\Debug\net6.0-windows\TiLab4.pdb
+D:\Теория информации\Лабораторная работа №3\obj\Debug\net6.0-windows\TiLab4.genruntimeconfig.cache
+D:\Теория информации\Лабораторная работа №3\obj\Debug\net6.0-windows\ref\TiLab4.dll

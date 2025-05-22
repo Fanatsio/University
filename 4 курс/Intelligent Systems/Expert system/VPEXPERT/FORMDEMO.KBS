@@ -1,0 +1,86 @@
+RUNTIME;
+ENDOFF;
+BKCOLOR = 1;
+ACTIONS
+  COLOR = 15
+  DISPLAY " FORMDEMO.KBS
+
+ This VP-Expert release 2 sample file demonstrates the use of
+ FORMFIELDs combined with Dynamic Images.
+
+ You must have an EGA or VGA display and a Microsoft-compatible mouse
+ installed to use this demonstration rule base properly. You need to
+ modify the rule base in order to have it support other display types."
+ 
+ Find Continue
+
+;  ! -- [ End of Actions ]
+
+Ask Response: "
+ Do you wish to procede?";
+Choices Response: Yes, No;
+ 
+Rule Show_Sample
+If      Response = Yes
+THEN    Continue = Yes
+        CLS
+        MOUSEON
+        GMODE 16
+        GCOLOR 15
+        GBCOLOR 8
+        Done = NO
+        RECTANGLE 20, 5, 580, 130
+        RECTANGLE 20, 150, 580, 300
+        GLOCATE  32 , 2
+        GDISPLAY "EXAMPLE FORMFIELDS"
+        GLOCATE  30 , 12
+        GDISPLAY "FORMFIELDS AND METERS"
+        GLOCATE 24, 40
+        GDISPLAY "Press Button when done:"
+        GLOCATE 19, 21
+        GDISPLAY "0    Pounds    800       0   Kilograms  400"
+        LWEIGHT = 0
+        KWEIGHT = 0
+        Name[1] = NEEDED
+        Department = NEEDED
+        Married = _
+        Spouse_Name = NEEDED
+        WHILETRUE Done = NO THEN END
+ELSE    Continue = no;
+
+!.......WHENEVER rules.........
+
+WHENEVER Married_Changes
+IF Married = YES
+THEN Spouse_Name = NEEDED
+ELSE Spouse_Name = NA;
+
+WHENEVER KWeight_Changes
+IF    KWeight <> (LWeight/2.2)
+THEN  LWeight=(KWeight*2.2);
+
+WHENEVER LWeight_Changes
+IF    LWeight<> (KWeight*2.2)
+THEN  KWeight=(LWeight/2.2);
+
+
+!.......Dynamic Images.......
+
+FORMFIELD Name[1]: 22, 4, 12, 9;
+ASK Name[1]: "Your Name:";
+FORMFIELD Department: 22, 7, 12, 9;
+ASK Department: "Department:";
+CHOICES Department: SALES, FINANCE, DEVELOPMENT, OPERATIONS, MANAGEMENT;
+FORMFIELD Married: 60, 4, 1, 9;
+ASK Married: "Married?:";
+CHOICES Married: YES, NO;
+FORMFIELD Spouse_Name: 55, 7, 12, 9;
+ASK Spouse_Name: "Spouse's Name:";
+
+
+FORMFIELD LWeight: 25, 15, 5, 8;
+FORMFIELD KWeight: 50, 15, 5, 8;
+METER LWeight: 145, 225, 0, 800;
+METER KWeight: 345, 225, 0, 400;
+BUTTON Done: 400, 335, 1, 14;
+

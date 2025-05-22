@@ -1,0 +1,46 @@
+﻿<Window x:Class="Maze.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Maze Solver" Height="507" Width="909">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Лабиринт -->
+        <Canvas Name="MazeCanvas" Grid.Row="0" Grid.Column="0" Background="White"/>
+
+        <TextBlock Name="DebugOutput" Grid.Row="2" Grid.ColumnSpan="2" 
+           HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="14"/>
+
+        <!-- Панель управления -->
+        <StackPanel Grid.Row="0" Grid.Column="1" Margin="10">
+            <Button Content="Найти все пути" Click="FindAllPaths_Click" Name="AllPathsButton" Margin="5"/>
+            <Button Content="Найти кратчайший путь" Click="FindShortestPath_Click" Name="ShortestRouteButton" Margin="5"/>
+            <Button Content="Показать следующий маршрут" Click="ShowNextRoute_Click" Name="NextRouteButton" Margin="5"/>
+            <Button Content="Изменить конфигурацию лабиринта" Name="EditButton" Click="EditMaze_Click" Margin="5"/>
+            <Button Name="ImportButton" Content="Импортировать" Click="ImportButton_Click" Margin="5"/>
+            <Button Name="ExportButton" Content="Экспортировать" Click="ExportButton_Click" Margin="5"/>
+        </StackPanel>
+        <!-- Список путей -->
+        <ListBox x:Name="PathsListBox" SelectionChanged="PathsListBox_SelectionChanged" Margin="0,217,0,0" Grid.RowSpan="2" HorizontalAlignment="Center" Width="235" Grid.Column="1" />
+        <!-- Выбор для эдита -->
+        <StackPanel Orientation="Vertical" Margin="450,224,5,5">
+            <ComboBox x:Name="CellTypeComboBox" Width="119" Height="23">
+                <ComboBoxItem Content="Пустая клетка" Tag="0"/>
+                <ComboBoxItem Content="Стена" Tag="1"/>
+                <ComboBoxItem Content="Вход" Tag="2"/>
+                <ComboBoxItem Content="Выход" Tag="3"/>
+            </ComboBox>
+        </StackPanel>
+
+        <!-- Информация о маршруте -->
+        <TextBlock Name="RouteInfo" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" 
+                   HorizontalAlignment="Left" VerticalAlignment="Stretch" FontSize="16" Margin="100,0,0,0"/>
+    </Grid>
+</Window>

@@ -1,0 +1,37 @@
+ACTIONS
+     WOPEN 1,1,1,20,77,3
+     ACTIVE 1
+     DISPLAY  "
+
+        ** WELCOME TO THE HMO SERVICE FLU SCREENING ASSISTANT **
+
+       Please indicate the patient's symptom, press the HOME key,
+       then enter a two-digit distress level factor.  Complete
+       the entry by pressing the ENTER and ARROW keys.  Repeat the
+       process until all of the patient's symptoms are accounted for.
+       Press the END key when finished to continue the consultation.
+
+         This example demonstrates use of the POP keyword.
+
+                       PRESS ANY KEY TO CONTINUE~
+"
+ WCLOSE 1
+ FIND symptom
+ WHILEKNOWN symptom
+     RESET symptom1
+     SORT symptom
+     POP symptom, symptom1    !POP is used to obtain the top value
+                              !variable in PLURAL variable 'stack'
+                              !symptom1 is a variable used to hold the
+                              !top value
+     DISPLAY "{#symptom1} is one of the patient's symptoms."
+ END
+     DISPLAY "End of Patient Symptom list.";
+
+ASK symptom: "What are the patient's symptoms? (rate distress level
+              on a scale of 0 to 100)";
+CHOICES symptom: sore_throat, stomach_ache, headache, nausea,
+                  severe_cough, G_I_discomfort;
+
+PLURAL: symptom;
+

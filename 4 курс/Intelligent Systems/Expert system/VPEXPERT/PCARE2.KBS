@@ -1,0 +1,80 @@
+!__________________________________________________________________________!
+!                                                                          !
+! PC/CARE - Personal Computer Diagnosis and Repair Assistant - Part 2      !
+!                                                                          !
+! This part of the system prints out the error log for management control  !
+! purposes.                                                                !
+!__________________________________________________________________________!
+!                                                                          !
+! Saved filename   : pcare2.kbs                                            !
+! Purpose          : This KBS file is accessed by a CHAIN command in       !
+!                    pcare.kbs.  It retrieves records from the database    !
+!                    file err1.dbf for printout.  The printout is for a    !
+!                    manager's use to see what type of errors staff        !
+!                    members are experiencing.                             !
+! Technical note   : This KBS does not save any variables.                 !
+! Micro used       : IBM AT compatible PC                                  !
+! Shell used       : VP-Expert, Educational Version, 2.02                  !
+!__________________________________________________________________________!
+!                                                                          !
+execute;                         !start consultation immediately
+bkcolor = 3;                     !set screen background color to light blue
+runtime;                         !eliminate rules and facts windows
+endoff;                          !eliminate need to press end
+!
+!============================== Actions Block =============================
+!
+actions
+     loadfacts tempdata          !load into memory all variable names and values
+                                 !stored in the temporary file called TEMPDATA
+     wopen 1,5,12,8,57,7         !defines opening window
+     active 1                    !activates window 1
+     display "
+                PC/CARE ERROR LOG KEEPER
+
+     This produces a printout of the recommendations
+     given for the PC problems staff members have been
+     experiencing.
+
+     (Press any key to continue ... )~"
+     wclose 1                    !removes window 1
+     color = 20                  !set caution message to blinking red
+     display "             C A U T I O N !!!!!"
+     color = 4
+     display "Please check to make sure the printer is ON."
+     display "Press any key to continue.~"
+     color = 0                   !reset text back to black lettering
+     menu err_type,all,err1,error_type
+     find err_type
+     cls
+     display " "
+     display " The following database records meet your criteria:"
+     display " "
+     display " Recommendation: {err_type}"
+     display " "
+     display "                    NAME   "
+     display "                  -------- "
+     whileknown error_type
+              get err_type = error_type,err1,all
+              reset message
+              printon            !send display text to screen and printer
+              find message
+     end
+;
+!============================== Rules Block ===============================
+
+rule 1
+     if error_type <> unknown
+     then message = displayed
+          display "               {e_name} "
+      else message = displayed
+          display " "
+          display " *    E N D   O F   E R R O R   L O G   F I L E   * "
+          display " "
+          display "Press any key when done.~";
+
+!============================= Questions Block ============================
+
+ask err_type: "{emp_name}, what type of error are you interested in
+searching for?";
+

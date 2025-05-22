@@ -1,0 +1,441 @@
+! * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+! * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+! * * *                                                         * * *
+! * * *          JOB APPLICANT SCREENING ASSISTANT              * * *
+! * * *                                                         * * *
+! * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+! * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+!
+! Saved as PROJECT1.KBS
+! Description:  An expert system to help United Nations Development
+!               Programme (UNDP) personnel screen job applicants.
+
+RUNTIME;
+ENDOFF;
+ACTIONS
+     WOPEN 1,3,17,18,45,7                 !Window for opening message.
+     ACTIVE 1                             !Activate the window.
+     DISPLAY "
+
+
+               Welcome To The
+     Job Applicant Screening Assistant
+
+       Developed by T.M. Wan Bok Nale
+   under the direction and supervision of
+             Dr. D.G. Dologite
+     For further information, contact
+             Dr. D.G. Dologite
+         c/o Macmillan Publishing
+
+
+         Press any key to continue.
+     ~
+     "
+     WCLOSE 1                             !Remove window 1.
+
+     WOPEN 1,3,4,16,72,7                  !Open explanation window.
+     ACTIVE 1                             !Activate it.
+     DISPLAY"
+                 Job Applicant Screening Assistant
+
+      This system is designed to help you screen an applicant
+      applying for a job with the UNDP.  Please answer the
+      questions using answers from the application form.
+      The applicant will be categorized as being a(n):
+
+                      Excellent candidate
+                      Good candidate
+                      Fair candidate
+                      Unqualified candidate
+
+                    Press any key to continue...
+      ~"
+
+
+     WCLOSE 1
+
+     WOPEN 2,1,1,5,77,2                   !Instructions window defined.
+     ACTIVE 2                             !Activate it.
+     DISPLAY"
+                                 INSTRUCTIONS
+             To select a choice(s), move the lightbar to the
+             desired answer choice(s), then press the enter key."
+
+     WOPEN 3,7,1,14,77,3                  !Consultation window defined.
+     ACTIVE 3                             !Activate it.
+     Ppoints = 0                          !Initialize accumulator.
+     FIND Recommendation
+     WCLOSE 2                             !Close instructions window.
+     WCLOSE 3                             !Close consultation window.
+     WOPEN 4,5,13,12,48,7                 !Concluding window defined.
+     WOPEN 5,6,5,10,70,7                  !Nest in window 4.
+     ACTIVE 5                             !Activate concluding window.
+     LOCATE 1,9                           !Location for next display.
+     DISPLAY"
+      Based on the information given, the applicant may be a(n)
+
+      {Recommendation}.
+
+              (Press any key to conclude this consultation.)~"
+
+;
+
+! * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+! *       Set 1 ( Rules to determine the recommendation. )          *
+! * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+!Begin set 1.
+
+Rule 1
+     IF    Education-workexperience = Qualified  AND
+           Language = Superior   AND
+           Go-thru-personal-background = Yes AND
+           Check-point-personal-background = Yes AND
+           Personal-background = Fit-well
+     THEN  Recommendation = Excellent_candidate;
+
+Rule 2
+     IF    Education-workexperience = Qualified  AND
+           Language = superior   AND
+           Go-thru-personal-background = Yes AND
+           Check-point-personal-background = Yes AND
+           Personal-background = Fit-adequately
+     THEN  Recommendation = Good_candidate;
+
+Rule 3
+     IF    Education-workexperience = Qualified  AND
+           Language = Superior   AND
+           Go-thru-personal-background = Yes AND
+           Check-point-personal-background = Yes AND
+           Personal-background = Fit-poorly
+     THEN  Recommendation = Fair_candidate;
+
+Rule 4
+     IF    Education-workexperience = Qualified  AND
+           Language = Adequate   AND
+           Go-thru-personal-background = Yes AND
+           Check-point-personal-background = Yes AND
+           Personal-background = Fit-well
+     THEN  Recommendation = Good_candidate;
+
+Rule 5
+     IF    Education-workexperience = Qualified  AND
+           Language = Adequate   AND
+           Go-thru-personal-background = Yes AND
+           Check-point-personal-background = Yes AND
+           Personal-background = Fit-adequately
+     THEN  Recommendation = Fair_candidate;
+
+Rule 6
+     IF    Education-workexperience = Qualified  AND
+           Language = Adequate   AND
+           Go-thru-personal-background = Yes AND
+           Check-point-personal-background = Yes AND
+           Personal-background = Fit-poorly
+     THEN  Recommendation = Fair_candidate;
+
+Rule 7
+     IF    Education-workexperience = Qualified  AND
+           Language = Below-requirement
+     THEN  Recommendation = Unqualified_candidate;
+
+Rule 8
+     IF    Education-workexperience = Unqualified
+     THEN  Recommendation = unqualified_candidate;
+
+!End of set 1.
+
+
+! * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+! *       Set 2 ( Rules to determine the education level. )         *
+! * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+!Begin set 2.
+
+Rule 9
+     IF    Degree = Masters_Degree OR Degree = Bachelors_Degree AND
+           DP-Background <> None
+     THEN  Education-workexperience = Qualified;
+
+Rule 10
+     IF    Degree = Masters_Degree OR Degree = Bachelors_Degree AND
+           Dp-background = None
+     THEN  Education-workexperience = Unqualified;
+
+Rule 11
+     IF    Degree = High_school AND
+           Dp-background = At_least_5_years AND
+           Experience = At_least_10_years
+     THEN  Education-workexperience = Qualified;
+
+Rule 12
+     IF    Degree = High_school AND
+           Dp-background <> At_least_5_years
+     THEN  Education-workexperience = Unqualified;
+
+Rule 13
+     IF    Degree = High_school AND
+           Dp-background <> At_least_10_years
+     THEN  Education-workexperience = Unqualified;
+
+ASK Degree: " What is the applicant's highest level of education achieved?";
+CHOICES Degree: High_school, Bachelors_Degree, Masters_Degree;
+
+ASK Experience:" How many years of relevant working experience does the applicant have?";
+CHOICES Experience: Less_than_10_years, At_least_10_years;
+
+ASK Dp-background:" What experience does the applicant have in the development programme?";
+CHOICES Dp-background: None, Less_than_5_years, At_least_5_years;
+
+!End of set 2.
+
+! * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+! *      Set 3 ( Rules to determine the language proficiency. )     *
+! * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+!Begin set 3.
+
+Rule 14
+     IF    Department = Africa AND
+           Fluent = French
+     THEN  Language = Superior;
+
+Rule 15
+     IF    Department = Africa AND
+           Fluent = Arabic AND
+           Not-fluent = French
+     THEN  Language = Superior;
+
+Rule 16
+     IF    Department = Africa AND
+           Fluent = Arabic AND
+           Not-fluent <> French
+     THEN  Language = Adequate;
+
+Rule 17
+     IF    Department = Africa AND
+           Fluent <> French AND
+           Fluent <> Arabic
+     THEN  Language = Below-requirement;
+
+Rule 18
+     IF    Department = Asia AND
+           Fluent = Chinese
+     THEN  Language = Superior;
+
+Rule 19
+     IF    Department = Asia AND
+           Fluent = Russian AND
+           Not-fluent <> None
+     THEN  Language = Superior;
+
+Rule 20
+     IF    Department = Asia AND
+           Fluent = Russian AND
+           Not-fluent = None
+     THEN  Language = Adequate;
+
+Rule 21
+     IF    Department = Asia AND
+           Fluent <> Chinese AND
+           Fluent <> Russian
+     THEN  Language = Below-requirement;
+
+Rule 22
+     IF    Department = Arab AND
+           Fluent = Arabic
+     THEN  Language = Superior;
+
+Rule 23
+     IF    Department = Arab AND
+           Fluent = French AND
+           Not-fluent = Arabic
+     THEN  Language = Superior;
+
+Rule 24
+     IF    Department = Arab AND
+           Fluent = French AND
+           Not-fluent <> Arabic
+     THEN  Language = Adequate;
+
+Rule 25
+     IF    Department = Arab AND
+           Fluent <> Arabic AND
+           Fluent <> French
+     THEN  Language = Below-requirement;
+
+Rule 26
+     IF    Department = Latin_America AND
+           Fluent = Spanish
+     THEN  Language = Superior;
+
+Rule 27
+     IF    Department = Latin_America AND
+           Fluent <> Spanish AND
+           Fluent <> None AND
+           Not-fluent = Spanish
+     THEN  Language = Adequate;
+
+Rule 28
+     IF    Department = Latin_America AND
+           Fluent = None AND
+           Not-fluent = Spanish
+     THEN  Language = Below-requirement;
+
+Rule 29
+     IF    Department = Latin_America AND
+           Fluent <> Spanish AND
+           Not-fluent <> Spanish
+     THEN  Language = Below-requirement;
+
+ASK Department:" In which department is the position available?";
+CHOICES Department: Africa, Asia, Arab, Latin_America;
+
+ASK Fluent:" Which of these official languages does the applicant speak fluently?
+(Press the END key after making your selection(s).)";
+CHOICES Fluent: French, Arabic, Spanish, Chinese, Russian, None;
+
+ASK Not-fluent:" Which of the following languages does the applicant speak,
+but without fluency?
+(Press the END key after making your selection(s).)";
+CHOICES Not-fluent: French, Arabic, Spanish, Chinese, Russian, None;
+
+PLURAL: Fluent, Not-fluent;
+
+!End of set 3.
+
+! * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+! *   Set 4 ( Rules to determine how well the personal background   *
+! *           of the applicant fits the profile of the job. )       *
+! * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+!Begin set 4.
+
+Rule 30
+     IF    Age = 18-29
+     THEN  Dummy-Age = Yes
+           Ppoints = ( Ppoints + 2 );
+Rule 31
+     IF    Age = 30-39
+     THEN  Dummy-Age = Yes
+           Ppoints = (Ppoints + 3);
+
+Rule 32
+     IF    Age = 40-49
+     THEN  Dummy-Age = Yes
+           Ppoints = (Ppoints + 2);
+
+Rule 33
+     IF    Age = 50_and_older
+     THEN  Dummy-age = Yes
+           Ppoints = (Ppoints + 1);
+
+Rule 34
+     IF    Un-employee = Yes
+     THEN  Dummy-Un-employee = Yes
+           Ppoints = ( Ppoints + 5 );
+
+Rule 35
+     IF    Un-employee = No
+     THEN  Dummy-Un-employee = Yes
+           Ppoints = ( Ppoints + 0 );
+
+Rule 36
+     IF    Relocate = Yes
+     THEN  Dummy-Relocate = Yes
+           Ppoints = ( Ppoints + 2 );
+
+Rule 37
+     IF    Relocate = No
+     THEN  Dummy-Relocate = Yes
+           Ppoints = ( Ppoints + 0 );
+
+Rule 38
+     IF    Missions = Yes
+     THEN  Dummy-Missions = Yes
+           Ppoints = ( Ppoints + 2 );
+
+Rule 39
+     IF    Missions = No
+     THEN  Dummy-Missions = Yes
+           Ppoints = ( Ppoints + 0 );
+
+Rule 40
+     IF    Adaptability = Never
+     THEN  Dummy-Adaptability = Yes
+           Ppoints = ( Ppoints + 1 );
+
+Rule 41
+     IF    Adaptability = Less_than_1_year
+     THEN  Dummy-Adaptability = Yes
+           Ppoints = ( Ppoints + 2 );
+
+Rule 42
+     IF    Adaptability = At_least_1_year
+     THEN  Dummy-Adaptability = Yes
+           Ppoints = ( Ppoints + 3 );
+
+Rule 43
+     IF    Dependents = None
+     THEN  Dummy-Dependents = Yes
+           Ppoints = ( Ppoints + 3 );
+
+Rule 44
+     IF    Dependents = One_or_two
+     THEN  Dummy-Dependents = Yes
+           Ppoints = ( Ppoints + 2 );
+
+Rule 45
+     IF    Dependents = Three_or_more
+     THEN  Dummy-Dependents = Yes
+           Ppoints = ( Ppoints + 1 );
+
+Rule 46
+     IF    Ppoints > 13
+     THEN  Check-point-personal-background = Yes
+           Personal-background = Fit-well;
+
+Rule 47
+     IF    Ppoints > 9 AND Ppoints <= 13
+     THEN  Check-point-personal-background = Yes
+           Personal-background = Fit-adequately;
+
+Rule 48
+     IF   Ppoints <= 9
+     THEN Check-point-personal-background = Yes
+          Personal-background = Fit-poorly;
+
+
+ASK Age:" What is the age range of the applicant?";
+CHOICES Age: 18-29, 30-39, 40-49, 50_and_older;
+
+ASK Un-employee:" Is the applicant already a UN employee?";
+CHOICES Un-employee: Yes, No;
+
+ASK Relocate:" Is the applicant willing to relocate?";
+CHOICES Relocate: Yes, No;
+
+ASK Missions:" Is the applicant willing to go on missions abroad?";
+CHOICES Missions: Yes, No;
+
+ASK Adaptability:" How long has the applicant lived in the region represented
+ by the department?";
+CHOICES Adaptability: Never, Less_than_1_year, At_least_1_year;
+
+ASK Dependents:" How many dependent(s) does the applicant claim?";
+CHOICES Dependents: None, One_or_two, Three_or_more;
+
+!End of set 4.
+
+! Rule to force all the user questions about personal background.
+
+Rule Dummy-for-personal-background
+     IF    Dummy-Age = Yes AND
+           Dummy-Un-employee = Yes AND
+           Dummy-Relocate = Yes AND
+           Dummy-Missions = Yes AND
+           Dummy-Adaptability = Yes AND
+           Dummy-Dependents = Yes
+     THEN  Go-thru-personal-background = Yes;
+

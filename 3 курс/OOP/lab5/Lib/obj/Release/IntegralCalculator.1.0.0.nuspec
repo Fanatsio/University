@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>IntegralCalculator</id>
+    <version>1.0.0</version>
+    <authors>Fuck</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <description>Fuck this shit</description>
+    <repository type="git" />
+    <dependencies>
+      <group targetFramework="net8.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\maxam\Документы\Lab55\Lib\bin\Release\net8.0\Lib.dll" target="lib\net8.0\Lib.dll" />
+  </files>
+</package>

@@ -1,0 +1,366 @@
+! Name       : Computer Job Scheduler Assistant (Verification Support)
+! Description: An expert system to be used as a tool for the training of new
+!              CXAJM81H job schedulers.
+! Platform   : IBM PC/XT DOS 3.3
+! Shell      : VP-Expert (HDS) educational version
+! Filenames  : PROJECT2.KBS
+!              PROJECT.KBS  (Chained From: CXAJM81H Scheduling Consultation)
+!              VALID.DBF    (Data Base link: CXAJM81H Validation Values)
+
+ENDOFF;
+EXECUTE;
+RUNTIME;
+BKCOLOR = 3;
+
+ACTIONS
+  WOPEN 2,1,1,5,77,2                       !define instructions window 2
+  ACTIVE 2                                            !activate window 2
+  DISPLAY "                           Instructions
+       Use the arrow keys to move the lightbar to a desired
+       answer choice then press the Enter key."
+  WOPEN 3,7,1,14,77,3                      !define consultation window 3
+  ACTIVE 3                                           !activate window 3
+  LOADFACTS temp
+
+  done_yet = no
+
+   WHILETRUE done_yet = no THEN
+     RESET done_yet
+     RESET done
+     RESET ask_done
+     RESET vsupport
+     FIND vsupport
+     FIND done
+   END
+   DISPLAY "Exiting the Consultation ...." ;
+
+
+
+! %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Rules %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+!**** Rule Set 8 to Determine Verification Support ******
+RULE R8_1
+IF   output   = yes         AND
+     revenue  = yes         AND
+     log      = yes
+THEN vsupport = vs1;
+
+RULE R8_2
+IF   output   = no1         OR
+     revenue  = no1         OR
+     log      = no1
+THEN vsupport = vs2;
+
+RULE R8_3
+IF   output   = no2         AND
+     revenue  = no2         OR
+     log      = no2
+THEN vsupport = vs3;
+
+RULE R8_4
+IF   output   = no2_1       AND
+     revenue  = no2         OR
+     log      = no2
+THEN vsupport = vs4;
+
+RULE R8_5
+IF   output   = no3         OR
+     revenue  = no3         OR
+     log      = no3
+THEN vsupport = vs5;
+
+!**** Rule Set 5 to Determine OUTPUT Critical Factor ******
+RULE output_valid
+IF los_recs >= 0     AND
+   chg_recs >= 0     AND
+   cls_recs >= 0     AND
+   ur_recs  >= 0
+THEN  output = check_valid
+      search_key = output
+      get search_key = key, valid, all
+      reset output
+      close valid;
+
+RULE r5_1
+IF    los_recs >= (val1)   AND
+      chg_recs >= (val2)   AND
+      cls_recs >= (val3)   AND
+      ur_recs  >= (val4)
+THEN  output   = yes;
+
+RULE r5_2
+IF   change   = none        AND
+     los_recs < (val1)    OR
+     chg_recs < (val2)    OR
+     cls_recs < (val3)    OR
+     ur_recs  < (val4)
+THEN output   = no1;
+
+RULE r5_3
+IF   change   = revenue     AND
+     los_recs < (val1)    AND
+     chg_recs >= (val2)    AND
+     cls_recs >= (val3)    AND
+     ur_recs  >= (val4)
+THEN output   = no2;
+
+RULE r5_4
+IF   change   = revenue      AND
+     los_recs < (val1)     OR
+     chg_recs < (val2)     OR
+     cls_recs < (val3)     OR
+     ur_recs  < (val4)
+THEN output   = no2_1;
+
+RULE r_5
+IF   change   = other        AND
+     los_recs < (val1)     OR
+     chg_recs < (val2)     OR
+     cls_recs < (val3)     OR
+     ur_recs  < (val4)
+THEN output   = no3;
+
+!**** Rule Set 6 to Determine REVENUE Critical Factor ******
+RULE revenue_valid
+IF care_rev >= 0        AND
+   caid_rev >= 0
+THEN  revenue = check_valid
+      search_key = revenue
+      get search_key = key, valid, all
+      reset revenue
+      close valid;
+
+RULE r6_1
+IF   care_rev >= (val1)      AND
+     caid_rev >= (val2)      AND
+     rev_mod_ers = no
+THEN revenue = yes;
+
+RULE r6_2
+IF   change   = none         AND
+     care_rev < (val1)       OR
+     caid_rev < (val2)       OR
+     rev_mod_ers = yes
+THEN revenue = no1;
+
+RULE r6_3
+IF   change   = revenue      AND
+     care_rev < (val1)       OR
+     caid_rev < (val2)       OR
+     rev_mod_ers = yes
+THEN revenue = no2;
+
+RULE r6_4
+IF   change      = other     AND
+     care_rev    < (val1)    OR
+     caid_rev    < (val2)    OR
+     rev_mod_ers = yes
+THEN revenue     = no3;
+
+!**** Rule Set 7 to Determine LOG Critical Factor ******
+RULE R7_1
+IF   miss_vals   = no        AND
+     unres_macros= no
+THEN log         = yes;
+
+RULE R7_2
+IF   change      = none      AND
+     miss_vals   = yes       OR
+     unres_macros= yes
+THEN log         = no1;
+
+RULE R7_3
+IF   change      = revenue   AND
+     miss_vals   = yes       OR
+     unres_macros= yes
+THEN log         = no2;
+
+RULE R7_4
+IF   change      = other     AND
+     miss_vals   = yes       OR
+     unres_macros= yes
+THEN log         = no3
+BECAUSE
+" empty ";
+
+!*****  Done With Scheduling Support Consultation Rules *********
+RULE  done_no
+IF    ask_done = no
+THEN  done=no
+      done_yet = no
+      reset ask_done
+      reset output
+      reset revenue
+      reset log
+      reset los_recs
+      reset chg_recs
+      reset cls_recs
+      reset ur_recs
+      reset care_rev
+      reset caid_rev
+      reset rev_mod_ers
+      reset miss_vals
+      reset unres_macros
+      DISPLAY " ***** New Consultation *****
+
+"
+ELSE  done=yes
+      done_yet=yes;
+
+
+!*********  WHENEVER Rules **********
+WHENEVER menu_bld
+IF menu_bld = yes
+THEN
+     wopen 1,1,1,5,77,2                       !define instructions window 1
+     active 1                                            !activate window 1
+     display "                           Instructions
+     Use the arrow keys to move the lightbar to a desired
+     answer choice then press the Enter key."
+     wopen 2,7,1,14,77,3                      !define consultation window 2
+     active 2                                           !activate window 2
+     reset menu_bld ;
+
+WHENEVER
+      vsupport
+IF    vsupport = vs1
+THEN  COLOR=14
+      CLOSE 3
+      CLOSE 2
+      WOPEN 4,5,5,11,70,1
+      ACTIVE 4
+      DISPLAY "
+  CXAJM81H Completed Successfully
+
+  Based on your responses during this consultation, it has
+  been verified that the output count is good, the
+  revenue generated is good, and there are no LOG
+  syntax exceptions.  The CXAJM81H job has completed
+  successfully.
+
+  Press any key to continue consultation.~"
+
+      WCLOSE 4
+      COLOR = 0
+      ACTIVE 2
+      ACTIVE 3;
+
+
+WHENEVER
+      vsupport
+IF    vsupport = vs2
+THEN  COLOR=14
+      CLOSE 3
+      CLOSE 2
+      WOPEN 4,5,5,12,70,1
+      ACTIVE 4
+      DISPLAY "
+  Problem with Data or Process Requires Change
+
+  Based on your responses during this consultation, no change
+  was made to the process, but verification indicators show
+  that the process requires a change to accommodate a change
+  in the data.  Also check and verify the input tape and
+  the CXAJM80H syntax Log.  CXAJM81H has NOT completed
+  successfully.
+
+  Press any key to continue consultation.~"
+
+      WCLOSE 4
+      COLOR = 0
+      ACTIVE 2
+      ACTIVE 3;
+
+WHENEVER
+      vsupport
+IF    vsupport = vs3
+THEN  COLOR=14
+      CLOSE 3
+      CLOSE 2
+      WOPEN 4,5,5,11,70,1
+      ACTIVE 4
+      DISPLAY "
+  Problem with Changed Revenue Module
+
+  Based on your responses during this consultation, a change
+  was made to the revenue module, but indicators show that the
+  changes did not work.  Please review your changes and correct.
+  The CXAJM81H job has NOT completed successfully.
+
+  Press any key to continue consultation.~"
+
+      WCLOSE 4
+      COLOR = 0
+      ACTIVE 2
+      ACTIVE 3;
+
+WHENEVER
+      vsupport
+IF    vsupport = vs4
+THEN  COLOR=14
+      CLOSE 3
+      CLOSE 2
+      WOPEN 4,5,5,11,70,1
+      ACTIVE 4
+      DISPLAY "
+  Verification of Completed CXAJM81H
+
+  Based on your responses during this consultation, a change
+  has been made to the revenue module, but indicators show a
+  process-wide problem.  Please review both the changed code
+  and the input data. The CXAJM81H job has NOT completed
+  successfully.
+
+  Press any key to continue consultation.~"
+
+      WCLOSE 4
+      COLOR = 0
+      ACTIVE 2
+      ACTIVE 3;
+
+WHENEVER
+      vsupport
+IF    vsupport = vs5
+THEN  COLOR=14
+      CLOSE 3
+      CLOSE 2
+      WOPEN 4,5,5,11,70,1
+      ACTIVE 4
+      DISPLAY "
+  Verification of Completed CXAJM81H
+
+  Based on your responses during this consultation, the
+  change made to the process is not working.  Please review
+  the syntax log to determine where and what the
+  problem is.  The CXAJM81H job has NOT completed
+  successfully.
+
+  Press any key to continue consultation.~"
+
+      WCLOSE 4
+      COLOR = 0
+      ACTIVE 2
+      ACTIVE 3;
+
+! %%%%%%%%%%%%%%%%% Plural Declarations, Questions, Menus %%%%%%%%%%%%%%%%%%
+
+PLURAL: vsupport ;
+
+ASK los_recs: "Enter how many patient records have been outputted.";
+ASK chg_recs: "Enter how many charge records have been outputted.";
+ASK cls_recs: "Enter how many classification records have been outputted.";
+ASK ur_recs:  "Enter how many utilization review records have been outputted.";
+ASK care_rev: "Enter the total dollar amount generated for Medicare.";
+ASK caid_rev: "Enter the total dollar amount generated for Medicaid.";
+ASK rev_mod_ers: "Are there any errors reported by the revenue module?";
+ASK miss_vals: "Are there any missing values other than Alternate Level of Care
+days in the Log?";
+ASK unres_macros: "Are there any unresolved Macro variables (error 513) in the
+Log?";
+ASK ask_done: "Are you finished with the Verification Assistant?";
+
+CHOICES unres_macros,rev_mod_ers,miss_vals: no,yes ;
+CHOICES ask_done: yes,no ;
+
+!*************** End of Project2 KBS File  *********************;
+

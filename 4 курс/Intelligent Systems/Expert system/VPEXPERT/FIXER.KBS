@@ -1,0 +1,463 @@
+!=======================================================================
+!                   Computer File Fixer Knowledge Base
+!=======================================================================
+
+! Filename:     Fixer.kbs
+! Databases:    Files.dbf, Programs.dbf
+
+!=======================================================================
+!                      Consultation Defaults
+!=======================================================================
+
+EXECUTE;
+RUNTIME;
+ENDOFF;
+BKCOLOR = 3;
+
+!=======================================================================
+!                          Actions Block
+!=======================================================================
+
+ACTIONS
+
+!------------------------------
+!      Opening Credits
+!------------------------------
+     wopen 1, 2, 10, 13, 60, 6
+     active 1
+     display "
+
+          COMPUTER FILE FIXER EXPERT SYSTEM
+
+             Developed by Daniel Dubinsky
+        under the direction and supervision of
+                  Dr. D.G. Dologite
+           For further information, contact
+                  Dr. D.G. Dologite
+              c/o Macmillan Publishing
+
+
+                Press any key to continue~"
+
+
+!------------------------------
+!        Introduction
+!------------------------------
+     wclose 1
+     wopen 1, 2, 10, 13, 60, 6
+     active 1
+     display "
+
+           Computer File Fixer Expert System
+
+        This expert system will help you to find
+        the solution to disk problems when using
+        the Accounts Receivable and Billing System.
+        The program asks you a series of questions
+        about the situation and recommends a
+        solution to your problem.
+
+
+           Press any key to start consultation ~"
+
+
+! --------------------------
+! Set Up Consultation Screen
+! --------------------------
+     wclose 1
+     wopen 2, 0, 20, 3, 40, 7
+     wopen 3, 19, 0, 3, 79, 7
+     wopen 4, 5, 1, 12, 77, 6
+     active 2
+     display "   Computer File Fixer Expert System"
+     active 3
+     display "     Use the arrow keys to highlight the desired choice and press enter."
+     active 4
+! ----------------------------------------------------------
+! Database Procedure with File Rules (below) to get Program
+! Not Working, Program Type, File in Error, File Type
+! ----------------------------------------------------------
+     EOF = EOF
+     FLAG = Y
+     MENU program_not_working,EOF <>PROG_NAME,programs,prog_name
+     FIND program_not_working
+     MRESET program_not_working
+     CLS
+     GET program_not_working = prog_name, programs, ALL
+     possible_file = (file_1)
+     possible_file = (file_2)
+     possible_file = (file_3)
+     possible_file = (file_4)
+     possible_file = (file_5)
+     prog_type = (prog_type)
+     CLOSE programs
+
+     MENU name_of_file, possible_file = FILE_NAME, files, FILE_NAME
+     RESET file_dummy
+     COUNT possible_file, filecount
+     FIND file_in_error
+     WHILETRUE file_in_error = UNKNOWN OR file_in_error = not_yet THEN
+          RESET key_prog_working
+          GET EOF = PROG_NAME OR
+                    flag = KEY_PROG AND
+                    possible_file = FILE_1 AND
+                    program_not_working <> PROG_NAME,
+                                        programs,ALL
+          file_1 = (FILE_1)
+          prog_name = (PROG_NAME)
+          FIND file_dummy
+          file_in_error = (file_dummy)
+          RESET file_dummy
+     END
+     MRESET files
+
+     GET file_in_error = file_name, files, ALL
+     Type_of_file = (file_type)
+     recreateable = (recreate)
+     file_to_restore = (actual1)
+     file_to_restore = (actual2)
+     file_to_restore = (actual3)
+     file_to_restore = (actual4)
+     file_to_restore = (actual5)
+     file_to_restore = (actual6)
+    CLOSE files
+! --------------------------------------
+! Transfer Control To rules Block
+! --------------------------------------
+
+     FIND solution
+
+! --------------------------------------
+! Reset Screen Windows
+! --------------------------------------
+
+     wclose 1
+     wclose 3
+     wclose 4
+     wclose 2
+
+! ---------------------------------
+! Get Text Associated with Solution
+! ---------------------------------
+     wopen 1, 2, 5, 18, 70, 6
+     active 1
+     display "Final Recommendation"
+     display " "
+     Find Text
+     Display " "
+     Display "Press any key to continue. ~";
+
+! ========================================================================
+!                                Rules Block
+! ========================================================================
+! ----------------------------------
+! Rules for Solution Text
+! ----------------------------------
+
+     RULE Text1
+     IF solution = not_known
+     THEN text = found
+     DISPLAY "The information you have given is not sufficient to"
+     DISPLAY "make a recommendation. Please check your information"
+     DISPLAY "and try again.";
+
+     RULE Text2
+     IF solution = Impossible
+     THEN text = found
+     DISPLAY "The information you have given is conflicting. "
+     DISPLAY "Please check your information and try again.";
+
+     RULE Text3
+     IF solution = Call
+     THEN text = found
+     DISPLAY "You have a real problem. You had better call the programmer.";
+
+     RULE Text4
+     IF solution = Restore_All
+     THEN text = found
+     DISPLAY "You should restore all of the files from backup."
+     DISPLAY "Use the Restore choice from the Backup/Restore Menu."
+     DISPLAY "                                 "
+     DISPLAY "   At the C:\> prompt type ASSIST"
+     DISPLAY "   Select Backup/Restore Files from the Main Menu"
+     DISPLAY "   Select Restore Data Files from the Backup/Restore Menu"
+     DISPLAY "   Follow the directions on screen";
+
+     RULE Text5
+     IF solution = Restore
+     THEN Text = found
+     DISPLAY "You should restore the {file_in_error} File."
+     DISPLAY "Use the DOS copy command."
+     DISPLAY " "
+     DISPLAY "    At the C:\> prompt insert your latest backup disk in drive."
+     DISPLAY "    Type Copy A:\<filename> C:\ASSIST once for each file listed."
+     DISPLAY " "
+     DISPLAY "File names:"
+     DISPLAY "{file_to_restore}";
+
+     RULE Text6
+     IF solution = rebuild or
+        solution = recreate
+     THEN text = found
+     DISPLAY "You should {Solution} the {file_in_error} File."
+     DISPLAY "Use the fixer program included with the package."
+     DISPLAY " "
+     DISPLAY "    At the C:\> prompt type FIXER."
+     DISPLAY "    Enter your password."
+     DISPLAY "    Select {solution} {file_in_error} file from the Main Menu.";
+
+     RULE Text7
+     If solution = zap
+     THEN text = found
+     DISPLAY "You should zap the {file_in_error} File."
+     DISPLAY "Use the fixer program included with the package."
+     DISPLAY "    "
+     DISPLAY "    At the C:\> prompt type FIXER."
+     DISPLAY "    Enter your password."
+     DISPLAY "    Select Zap {file_in_error} file from the Main Menu."
+     DISPLAY "    Note: Zap will erase the {file_in_error} File and create"
+     DISPLAY "          a new one. You will have to retype the information.";
+
+
+! ----------------------------------
+! Rules for "Not enough information"
+! ----------------------------------
+
+     RULE Stop1
+     IF file_in_error = not_known
+     THEN solution = not_known;
+
+     RULE Stop2
+     IF type_of_error = not_known
+     THEN solution = not_known;
+
+! -----------------------------------
+! Final Rule Set: Solution to Problem
+! -----------------------------------
+
+     RULE Final1
+     IF type_of_file = sequential AND
+        type_of_error = index
+     THEN solution = Impossible;
+
+     RULE Final2
+     IF type_of_file = random AND
+        type_of_error = index
+     THEN solution = Impossible;
+
+     RULE Final3
+     IF Type_of_Access = Major AND
+        Backup_quality = Good
+     THEN solution = Restore_all;
+
+     RULE Final4
+     IF Type_of_Access = Major AND
+        Backup_quality = bad
+     THEN solution = Call;
+
+     RULE Final5
+     IF Type_of_file = indexed AND
+        Type_of_error = index  AND
+        Type_of_access = minor
+     THEN solution = Rebuild;
+
+     RULE Final6
+     IF Type_of_file = indexed AND
+        Type_of_error = data AND
+        Type_of_access = minor AND
+        Recreateable = Y
+     THEN solution = Recreate;
+
+     RULE Final7
+     IF Type_of_file = indexed AND
+        Type_of_error = data AND
+        Type_of_access = minor AND
+        Backup_quality = good AND
+        Recreateable = N
+     THEN solution = Restore;
+
+     RULE Final8
+     IF Type_of_file = indexed AND
+        Type_of_error = data AND
+        Type_of_access = minor AND
+        Backup_quality = bad AND
+        Recreateable = N
+     THEN solution = Call;
+
+     RULE Final9
+     IF Type_of_file = random AND
+        Type_of_error = Data AND
+        Type_of_access = Minor AND
+        Backup_quality = good
+     THEN solution = Restore;
+
+     RULE Final10
+     IF Type_of_file = random AND
+        Type_of_error = Data AND
+        Type_of_access = Minor AND
+        Backup_quality = bad
+     THEN solution = Zap;
+
+     RULE Final11
+     IF Type_of_file = Sequential AND
+        Type_of_error = data AND
+        Type_of_access = minor AND
+        Backup_quality = good
+     THEN solution = Restore;
+
+     Rule Final12
+     IF Type_of_file = Sequential AND
+        Type_of_error = data AND
+        Type_of_access = minor AND
+        Backup_quality = bad
+     THEN solution = Call;
+
+! ---------------------------------------------------------
+! Rule Set with Database Proc (above) to find File in Error
+! ---------------------------------------------------------
+
+     RULE File0
+       IF prog_type = BW
+       THEN file_in_error = all;
+
+     RULE File1
+       IF filecount = 1
+       THEN file_in_error = (FILE_1);
+
+     RULE File2
+       IF screen_message = yes
+       THEN find name_of_file
+            file_in_error = (name_of_file);
+
+     RULE File3
+       IF PROG_NAME = EOF
+       THEN file_dummy = not_known;
+
+     RULE File4
+       IF key_prog_working = no
+       THEN file_dummy = (FILE_1);
+
+     RULE File5
+       IF key_prog_working = yes
+       OR key_prog_working = dont_know
+       THEN file_dummy = not_yet;
+
+! ----------------------
+! Type of Error Rule Set
+! ----------------------
+
+     RULE Error1
+       IF screen_message = no
+       AND lockup = no
+       AND bad_data = no
+       THEN Type_of_error = not_known;
+
+     RULE Error2
+       IF screen_message = no
+       AND lockup = yes
+       THEN Type_of_error = data;
+
+     RULE Error3
+       IF screen_message = no
+       AND bad_data = yes
+       THEN Type_of_error = data;
+
+     RULE Error4
+       IF screen_message = yes
+       AND error_number = 91
+       THEN Type_of_error = index;
+
+     RULE Error5
+       IF screen_message = yes
+       AND error_number = 30
+       THEN type_of_error = data;
+
+     RULE Error6
+       IF screen_message = yes
+       AND error_number = 23
+       THEN type_of_error = data;
+
+! -----------------------
+! Type of Access Rule Set
+! -----------------------
+
+     RULE Access1
+       IF prog_type = BW
+       THEN type_of_access = major;
+
+     RULE Access2
+       IF prog_type = BR
+       THEN type_of_access = minor;
+
+    RULE Access3
+       IF prog_type = OL
+       THEN type_of_access = minor;
+
+
+! -----------------------
+! Backup Quality Rule Set
+! -----------------------
+
+     RULE Backup1
+       IF Backup = Yes
+       AND Time = OK
+       THEN Backup_quality = good;
+
+     RULE Backup2
+       IF Backup = no
+       THEN Backup_quality = bad;
+
+     RULE Backup3
+       IF Time = Not_ok
+       THEN backup_quality = bad;
+
+! =======================================================================
+!                          Questions Block
+! =======================================================================
+
+     ASK program_not_working:
+         "Which program were you using when the error occurred?
+                                                          ";
+
+     ASK key_prog_working:
+         "Is the program {PROG_NAME} working properly?
+                                                      ";
+     CHOICES key_prog_working: Yes,No,Dont_Know;
+
+     ASK screen_message:
+     "Did you get a screen error message indicating filename and error no.?
+                                                     ";
+     CHOICES screen_message: Yes, No;
+
+     ASK error_number:
+     "Which error number did you see on the screen?
+                                                    ";
+     CHOICES error_number: 91, 30, 23;
+
+     ASK name_of_file:
+     "Which file was it?
+                                                    ";
+
+     ASK Lockup:
+     "Did the computer freeze up or crash?
+                                                   ";
+     Choices lockup: Yes, No;
+
+     ASK Bad_data:
+     "Did garbled or incorrect information appear?
+                                                   ";
+     CHOICES Bad_data: Yes, No;
+
+     ASK Backup:
+     "Do you have a good backup disk?
+                                                  ";
+     CHOICES backup:Yes,No;
+
+     ASK Time:
+     "Remember, you will lose all work done since last backup was made.
+     Is the amount of time since your last backup acceptable?
+                                                   ";
+     CHOICES time: Ok, Not_Ok;
+
+     PLURAL: possible_file, file_to_restore;
+

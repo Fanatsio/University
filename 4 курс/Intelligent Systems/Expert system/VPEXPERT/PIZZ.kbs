@@ -1,0 +1,308 @@
+! Name of the expert system: VIBOR PIZZI
+! Description:  This system giv rezept prigotovlenia pizzi.
+! Microcomputer used: IBM PC compatible
+! Saved file name: PIZZA.KBS
+
+ENDOFF;
+RUNTIME;
+
+! ACTIONS BLOCK
+ACTIONS
+WOPEN 1,0,0,23,79,2
+ACTIVE 1
+DISPLAY "
+
+
+
+		                     VIBOR RECEPTA PIZZI
+
+                            Developed by Malarova Tanya
+
+
+   				
+
+
+
+
+
+                           Press any key to continue~"
+
+WCLOSE 1
+
+   DISPLAY " Welcome to the exspert system Vibor Pizzi
+"
+   FIND RECO
+   DISPLAY " Based on the answers you have given,
+   I recommend you prepare pizza: {RECO}";
+
+
+RULE 1-1
+IF       PIZ = YES
+	   OR P-C = OKK 	
+THEN     P-A = OK;
+
+RULE 1-2
+IF       PIZ = NO
+THEN     RECO =Exit_from_expert_system;
+
+RULE 2-1
+IF       P-A = OK
+         AND TOM = YES
+THEN     P-B = OK;
+
+
+RULE 2-2
+IF       P-A = OK
+         AND TOM = NO
+THEN     P-B= NOK;
+
+RULE 3-1
+IF       P-B = OK
+         AND CHEES = YES
+THEN     P-C = OK;
+
+RULE 3-2
+IF       P-B = OK
+         AND CHEES = NO
+THEN     P-C = NOK;
+
+RULE 3-3
+IF       P-B = NOK
+         AND BUY2 = YES
+THEN     P-I = OK;
+
+RULE 3-4
+IF       P-B = NOK
+         AND BUY2 = NO
+THEN     P-C = NOKK;
+
+RULE 4-1
+IF       P-C = OK
+         AND PR = YES
+THEN     P-D = OK;
+
+RULE 4-2
+IF       P-C = OK
+         AND PR = NO
+THEN     RECO =Pizza_with_tomat;
+
+
+RULE 4-3
+IF       P-C = NOK
+         AND VIB = FISH
+THEN     RECO =Pizza_with_fish;
+
+RULE 4-4
+IF       P-C = NOK
+         AND VIB = APPLE
+THEN     RECO =Pizza_with_apple;
+
+RULE 4-5
+IF       P-C = NOK
+         AND VIB = NOTHING
+THEN     P-D = NOK;
+
+
+RULE 4-7
+IF       P-C = NOKK
+         AND CHEES = YES
+THEN     P-D = OKK;
+
+RULE 4-8
+IF       P-C = NOKK
+         AND CHEES = NO
+THEN     P-D = NOKK;
+
+RULE 5-1
+IF       P-D = OK
+         AND WH = ANCHOUS
+THEN     RECO =Italiansk_pizza;
+
+RULE 5-2
+IF       P-D = OK
+         AND WH = GRIB
+THEN     RECO =Pizza_with_gribs;
+
+RULE 5-3
+IF       P-D = NOK
+         AND BUY1 = NO
+THEN     RECO =No_solutions;
+
+RULE 5-4
+IF       P-D = NOK
+         AND BUY1 = YES
+THEN     P-E=OK;
+
+RULE 5-5
+IF       P-D = OKK
+         AND AN = YES
+THEN     RECO =Italiansk_pizza;
+
+RULE 5-6
+IF       P-D = OKK
+         AND AN = NO
+THEN     P-E=NOK;
+
+RULE 5-7
+IF       P-D = NOKK
+         AND AP = YES
+THEN     RECO =Pizza_with_apple;
+
+RULE 5-8
+IF       P-D = NOKK
+         AND AP = NO
+THEN     P-E=OKK;
+
+RULE 6-1
+IF       P-E = OK
+         AND PR = YES
+THEN     P-F=OK;
+
+RULE 6-2
+IF       P-E = OK
+         AND  PR= NO
+THEN     RECO =Pizza_with_tomatom;
+
+RULE 6-3
+IF       P-E = NOK
+         AND BUY3 = YES
+THEN     RECO =Italiansk_pizza;
+
+RULE 6-4
+IF       P-E = NOK
+         AND BUY3 = NO
+THEN     RECO =No_solutions;
+
+RULE 6-5
+IF       P-E = OKK
+         AND BUY4 = NO
+THEN     RECO =No_solutions;
+
+RULE 6-5
+IF       P-E = OKK
+         AND BUY4 = YES
+THEN     RECO =Pizza_with_apple;
+
+RULE 7-1
+IF       P-F = OK
+         AND WH = GRIB
+THEN     RECO =Pizza_with_gribs;
+
+RULE 7-2
+IF       P-F = OK
+         AND WH = ANCHOUS
+THEN     RECO =Italiansk_pizza;
+
+RULE 8-1
+IF       P-I = OK
+         AND CHEES = YES
+THEN     PP-C=OK;
+
+RULE 8-2
+IF       P-I = OK
+         AND CHEES = NO
+THEN     PP-C=NOK;
+
+RULE 9-1
+IF       PP-C = OK
+         AND PR = YES
+THEN     PP-D=OK;
+
+RULE 9-2
+IF       PP-C = OK
+         AND PR = NO
+THEN     RECO =Pizza_with_tomatom;
+
+RULE 9-3
+IF       PP-C = NOK
+         AND VIB = FISH
+THEN     RECO =Pizza_with_fish;
+
+RULE 9-4
+IF       PP-C = NOK
+         AND VIB = APPLE
+THEN     RECO =Pizza_with_apple;
+
+RULE 9-5
+IF       PP-C = NOK
+         AND VIB = NOTHING
+THEN     PP-D = NOK;
+
+RULE 10-1
+IF       PP-D=OK
+         AND WH = ANCHOUS
+THEN     RECO =Italiansk_pizza;
+
+RULE 10-2
+IF       PP-D = OK
+         AND WH = GRIB
+THEN     RECO =Pizza_with_gribs;
+
+RULE 10-3
+IF	   PP-D = NOK
+         AND BUY1 = NO
+THEN     RECO =No_solutions;
+
+RULE 10-4
+IF       PP-D = NOK
+         AND BUY1 = YES
+THEN     PP-E=OK;
+
+RULE 11-1
+IF       PP-E = OK
+         AND PR = YES
+THEN     PP-F=OK;
+
+RULE 11-2
+IF       PP-E = OK
+         AND PR= NO
+THEN     RECO =Pizza_with_tomatom;
+
+RULE 12-1
+IF       PP-F = OK
+         AND WH = ANCHOUS
+THEN     RECO =Italiansk_pizza;
+
+RULE 12-2
+IF       PP-F = OK
+         AND WH = GRIB
+THEN     RECO =Pizza_with_gribs;
+
+! STATEMENTS BLOCK
+
+ASK PIZ: " You want to preper pizz?";
+CHOICES PIZ: YES,NO;
+
+ASK TOM: " Have you TOMAT?";
+CHOICES TOM: YES,NO;
+
+ASK CHEES: " Have you CHEES?";
+CHOICES CHEES : YES,NO;
+
+ASK PR: " Have you other products?";
+CHOICES PR : YES,NO;
+
+ASK WH: " Which?";
+CHOICES WH : ANCHOUS,GRIB;
+
+ASK VIB : "	A FISH or APPLE?";
+CHOICES VIB : FISH,APPLE,NOTHING;
+
+ASK BUY1 : " You need to buy CHEES. Buy?";
+CHOICES BUY1 : YES,NO;
+
+ASK BUY2 : " May to buy there?";
+CHOICES BUY2 : YES,NO;
+
+ASK AN : " Have you ANCHOUS?";
+CHOICES AN : YES,NO;
+
+ASK AP : " Have you APPLES?";
+CHOICES AP : YES,NO;
+
+ASK BUY3 : " You need to buy ANCHOUS. Buy?";
+CHOICES BUY3 : YES,NO;
+
+ASK BUY4 : " You need to buy APPLES. Buy?";
+CHOICES BUY4 : YES,NO;
+

@@ -1,0 +1,9 @@
+b:\proinv.kbs = yes CNF 0
+drugs = no CNF 100
+ed = poor CNF 100
+fam = yes CNF 100
+pro_inv = FAIR CNF 100
+psy = good CNF 100
+social = helpful CNF 100
+word1 = does CNF 100
+word2 = has_not CNF 100

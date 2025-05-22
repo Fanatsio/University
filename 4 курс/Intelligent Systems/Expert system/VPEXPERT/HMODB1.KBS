@@ -1,0 +1,26 @@
+ACTIONS
+     DISPLAY "This example assists your interrogation of the"
+     DISPLAY "MEMBER database file."
+     MENU plan_type, ALL, member, p_type
+     FIND plan_type
+     FIND cut_off
+     DISPLAY "The following database records meet your criteria:"
+     WHILEKNOWN p_type
+          GET plan_type = p_type and cut_off < requests, member, ALL
+          RESET message
+          FIND message
+     END
+;
+
+RULE 1
+     IF p_type <> unknown
+     THEN message = displayed
+          DISPLAY "{id}, {p_type}, {lname}, {fname}, {requests}"
+     ELSE message = displayed
+          DISPLAY "End of file";
+
+ASK plan_type: "What plan type do you want to check?";
+
+ASK cut_off: "If you want only those records with `requests' above
+a certain number, please enter the number (or zero).";
+

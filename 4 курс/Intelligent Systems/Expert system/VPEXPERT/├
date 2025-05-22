@@ -1,0 +1,32 @@
+ACTIONS
+	FIND HMO Service Screening Control 3/11/9X
+	DISPLAY "The value of HMO Service Screening Control 3/11/9X is {HMO Service Screening Control 3/11/9X}";
+
+RULE 0
+IF	
+THEN	=No_Cases;
+
+RULE 1
+IF	
+THEN	;
+
+RULE 2
+IF	
+THEN	=34;
+
+RULE 3
+IF	
+THEN	=65;
+
+RULE 4
+IF	
+THEN	=104;
+
+RULE 5
+IF	
+THEN	=41;
+
+RULE 6
+IF	
+THEN	=17;
+

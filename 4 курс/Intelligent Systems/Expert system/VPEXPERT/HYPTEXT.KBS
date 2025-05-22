@@ -1,0 +1,19 @@
+     ACTIONS
+          GMODE 16
+          Exit = No
+          MouseAvailable = Yes
+          Topic = INTRO                !Sets value of first HYPERTEXT hyperword
+          WHILETRUE Exit = No THEN END
+          TMODE;
+
+          HYPERTEXT Topic: 8,5,72,20,info,14,15;
+          LBUTTON Exit: 40,2;
+
+          WHENEVER 1
+               IF Exit = Yes
+               THEN RESET Topic;
+
+          WHENEVER MouseAvailable
+               IF MouseAvailable = Yes
+               THEN MOUSEON;
+

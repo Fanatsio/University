@@ -1,0 +1,178 @@
+! HMO Service Screening Assistant
+! with additional enhancements: customized conclusions
+! Saved as hmoadd1.kbs
+
+!**************************************************************************
+
+!execute;                                   !start consultation immediately
+      !use exclamation point temporarily to disable execute while debugging
+bkcolor = 3;                     !set screen background color to light blue
+runtime;                                 !eliminate rules and facts windows
+
+!============================== Actions Block =============================
+
+actions
+     wopen 1,3,10,13,60,7                          !define opening window 1
+     active 1                                            !activate window 1
+     display "                                       
+
+              HMO Service Screening Assistant
+
+   This consultation assists you to screen a person who
+   enters an HMO facility.  It asks a series of questions
+   about the person, then recommends a level of support
+   appropriate to the person's needs.
+
+   Please press any key to begin the consultation.~
+
+       "
+     wclose 1                                              !remove window 1
+     color = 20                   !set following text color to blinking red
+     display "         CAUTION!"
+     color = 4                      !set following text to non-blinking red
+     display "Please make sure your printer in ON."
+     display "Press any key to continue.~"
+     cls                                                  !clear the screen
+     color = 0                          !set following text to normal black
+     wopen 1,1,1,6,77,2                       !define instructions window 1
+     active 1                                            !activate window 1
+     display "                           Instructions
+          Use the arrow keys to move the lightbar to a desired
+          answer choice then press the Enter key.
+          Press the End key to move to the next question."
+     wopen 2,8,1,13,77,3                      !define consultation window 2
+     active 2                                            !activate window 2
+     find support
+     find message                       !set sub-goal to customize messages
+     display "Press any key to conclude this consultation.~"
+;
+!============================== Rules Block ===============================
+
+!--------------------- Rule Set 1: Recommendations ------------------------
+
+rule 1_1                            !number rules to correspond to rule set
+     if member_status = ok and
+        reason = new_case or
+        reason = follow_up_case and
+        problem = serious
+     then support = level_1
+             room = room_201;                 !assign a value to a variable
+
+rule 1_2
+     if member_status = ok and
+        reason = new_case and
+        problem = non_serious
+     then support = level_2
+             room = room_202;                 !assign a value to a variable
+
+rule 1_3
+     if member_status = ok and
+        reason = follow_up_case and
+        problem = non_serious
+     then support = level_3
+             room = room_203;                 !assign a value to a variable
+
+rule 1_4
+     if member_status = ok and
+        reason = information_other
+     then support = information_other;
+
+rule 1_5
+     if member_status = not_ok
+     then support = non_member;
+
+!---------------------- Rule Set 2: Member Status -------------------------
+
+rule 2_1
+     if member = yes and
+        valid_id = yes
+     then member_status = ok
+        find id_number                               !get direct user input
+     because "Validated members are entitled to medical support, while 
+     non-members are provided with other appropriate support.";
+
+rule 2_2
+     if member = yes and
+        valid_id = no
+     then member_status = not_ok;
+
+rule 2_3
+     if member = no
+     then member_status = not_ok;
+
+!-------------- Rule Set 3: Problem (Determine seriousness) ---------------
+
+rule 3_1
+     if temperature = normal and
+        other_symptoms = yes
+     then problem = serious
+     because "The presence of an abnormal temperature or other symptoms
+     indicate a serious problem that requires immediate attention.";
+
+rule 3_2
+     if temperature = normal and
+        other_symptoms = no
+     then problem = non_serious;
+
+rule 3_3
+     if temperature = abnormal or
+        temperature = not_known and
+        other_symptoms = yes
+     then problem = serious
+     because "The presence of an abnormal temperature or other symptoms
+     indicate a serious problem that requires immediate attention.";
+
+!-------------------- Rule Set 4: Concluding Messages ---------------------
+
+rule message_level123               !use a meaningful name for a rule label
+     if support = level_1 or
+        support = level_2 or
+        support = level_3
+     then message = print_form
+        printon                    !send display text to screen and printer
+        display "Authorization Form For Service - {support}"
+        display "ID: {id_number}"
+        display "Reason: {reason}"
+        display "Self-reported: temperature - {temperature}"
+        display "               symptoms - {other_symptoms}"
+        printoff                                           !disable printon
+        pdisplay "Kindly go to {room} for service."         !send text only
+                                                                !to printer
+        find co_pay               !set sub-goal to determine co-pay charges
+        eject                       !move printer paper to top of next page
+        display ""                                  !display one blank line
+        display "Please tear the Authorization Form off the printer.";
+
+        rule get_co_pay            !single rule to determine co-pay charges
+             if id_number > 999999
+             then co_pay = yes
+                  pdisplay"(Co-payment charge of $8.00 made for service.)";
+
+whenever message_non_member
+     if support = non_member
+     then display "Appropriate service is available at station Z.";
+
+rule message_info
+     if support = information_other
+     then message = station_X
+        display "Appropriate service is available at {message}.";
+
+!============================= Questions Block +===========================
+
+ask member: "Is the person an HMO member?";
+choices member: yes, no;
+
+ask valid_id: "Does the person have a valid HMO `id' number?";
+choices valid_id: yes, no;
+
+ask id_number: "What is the `id' number?";
+
+ask reason: "What is the reason for coming to the HMO facility?";
+choices reason: new_case, follow_up_case, information_other;
+
+ask temperature: "What is the person's temperature?";
+choices temperature: normal, abnormal, not_known;
+
+ask other_symptoms:  "Does the person claim other symptoms?";
+choices other_symptoms: yes, no;
+

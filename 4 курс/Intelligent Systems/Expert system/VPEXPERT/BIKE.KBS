@@ -1,0 +1,254 @@
+! Name of the expert system: Vacation Planner
+! Description: This system helps plan your ideal vacation based on preferences
+! Microcomputer used: IBM PC compatible
+! Saved file name: VACATION.KBS
+
+ENDOFF;
+RUNTIME;
+
+! ACTIONS BLOCK
+ACTIONS
+WOPEN 1,0,0,23,79,2
+ACTIVE 1
+DISPLAY "
+
+VACATION PLANNER
+
+Developed by Rechuk Dmitrii
+under the direction and supervision of
+[Supervisor Name]
+
+Press any key to continue~"
+
+WCLOSE 1
+
+DISPLAY " Welcome to the Vacation Planner"
+FIND RECO
+DISPLAY " Based on your preferences,
+Recommendation: {RECO}";
+
+! RULES BLOCK
+
+RULE 5-1
+IF       BUDGET = LOW
+AND DURATION = SHORT
+AND LOCATION = DOMESTIC
+AND ACTIVITY = RELAX
+AND PACE = SLOW
+THEN     RECO = Local_spa_day;
+
+RULE 5-2
+IF       BUDGET = LOW
+AND DURATION = SHORT
+AND LOCATION = DOMESTIC
+AND ACTIVITY = RELAX
+AND PACE = FAST
+THEN     RECO = City_day_trip;
+
+RULE 5-3
+IF       BUDGET = LOW
+AND DURATION = SHORT
+AND LOCATION = DOMESTIC
+AND ACTIVITY = ADVENTURE
+AND PHYSICAL = ACTIVE
+THEN     RECO = Local_hiking_trail;
+
+RULE 5-4
+IF       BUDGET = LOW
+AND DURATION = SHORT
+AND LOCATION = DOMESTIC
+AND ACTIVITY = ADVENTURE
+AND PHYSICAL = MODERATE
+THEN     RECO = Nearby_biking_tour;
+
+RULE 5-5
+IF       BUDGET = LOW
+AND DURATION = LONG
+AND TRAVEL = SOLO
+AND INTEREST = CULTURE
+AND SEASON = SUMMER
+THEN     RECO = Budget_cultural_hostel;
+
+RULE 5-6
+IF       BUDGET = LOW
+AND DURATION = LONG
+AND TRAVEL = SOLO
+AND INTEREST = CULTURE
+AND SEASON = WINTER
+THEN     RECO = Local_museum_tour;
+
+RULE 6-1
+IF       BUDGET = HIGH
+AND LOCATION = INTERNATIONAL
+AND CLIMATE = WARM
+AND TRAVEL = GROUP
+AND COMPANY = FAMILY
+AND AGE = YOUNG
+THEN     RECO = Tropical_theme_park_resort;
+
+RULE 6-2
+IF       BUDGET = HIGH
+AND LOCATION = INTERNATIONAL
+AND CLIMATE = WARM
+AND TRAVEL = GROUP
+AND COMPANY = FAMILY
+AND AGE = MIXED
+THEN     RECO = Caribbean_beach_villa;
+
+RULE 6-3
+IF       BUDGET = HIGH
+AND LOCATION = INTERNATIONAL
+AND CLIMATE = WARM
+AND TRAVEL = GROUP
+AND COMPANY = FRIENDS
+AND EXPERIENCE = NEW
+THEN     RECO = Exotic_island_party;
+
+RULE 6-4
+IF       BUDGET = HIGH
+AND LOCATION = INTERNATIONAL
+AND CLIMATE = WARM
+AND TRAVEL = GROUP
+AND COMPANY = FRIENDS
+AND EXPERIENCE = FAMILIAR
+THEN     RECO = Luxury_beach_club;
+
+RULE 6-5
+IF       BUDGET = HIGH
+AND LOCATION = INTERNATIONAL
+AND CLIMATE = COLD
+AND ACTIVITY = ADVENTURE
+AND PHYSICAL = ACTIVE
+AND ACCOMMODATION = HOTEL
+THEN     RECO = Alpine_ski_lodge;
+
+RULE 6-6
+IF       BUDGET = HIGH
+AND LOCATION = INTERNATIONAL
+AND CLIMATE = COLD
+AND ACTIVITY = ADVENTURE
+AND PHYSICAL = ACTIVE
+AND ACCOMMODATION = CAMPING
+THEN     RECO = Arctic_wilderness_camp;
+
+RULE 6-7
+IF       BUDGET = MEDIUM
+AND TRAVEL = SOLO
+AND INTEREST = NATURE
+AND ACCOMMODATION = CAMPING
+AND SEASON = SUMMER
+AND FOOD = LOCAL
+THEN     RECO = Mountain_camping_retreat;
+
+RULE 6-8
+IF       BUDGET = MEDIUM
+AND TRAVEL = SOLO
+AND INTEREST = NATURE
+AND ACCOMMODATION = CAMPING
+AND SEASON = SUMMER
+AND FOOD = STANDARD
+THEN     RECO = Lakeside_camping_trip;
+
+RULE 6-9
+IF       BUDGET = MEDIUM
+AND TRAVEL = GROUP
+AND COMPANY = FAMILY
+AND AGE = OLDER
+AND HISTORY = YES
+AND PACE = SLOW
+THEN     RECO = Historical_river_cruise;
+
+RULE 6-10
+IF       BUDGET = MEDIUM
+AND TRAVEL = GROUP
+AND COMPANY = FAMILY
+AND AGE = OLDER
+AND HISTORY = YES
+AND PACE = FAST
+THEN     RECO = European_castle_tour;
+
+RULE 6-11
+IF       BUDGET = MEDIUM
+AND TRAVEL = SOLO
+AND INTEREST = ADVENTURE
+AND PHYSICAL = MODERATE
+AND EXPERIENCE = NEW
+AND FOOD = LOCAL
+THEN     RECO = Desert_culinary_glamping;
+
+RULE 6-12
+IF       BUDGET = MEDIUM
+AND TRAVEL = SOLO
+AND INTEREST = ADVENTURE
+AND PHYSICAL = MODERATE
+AND EXPERIENCE = NEW
+AND FOOD = STANDARD
+THEN     RECO = Coastal_kayaking_adventure;
+
+RULE 6-13
+IF       BUDGET = HIGH
+AND LOCATION = DOMESTIC
+AND ACTIVITY = RELAX
+AND ACCOMMODATION = HOTEL
+AND SEASON = SUMMER
+AND PACE = SLOW
+THEN     RECO = Luxury_coastal_spa;
+
+RULE 6-14
+IF       BUDGET = HIGH
+AND LOCATION = DOMESTIC
+AND ACTIVITY = RELAX
+AND ACCOMMODATION = HOTEL
+AND SEASON = SUMMER
+AND PACE = FAST
+THEN     RECO = Urban_luxury_getaway;
+
+! STATEMENTS BLOCK
+
+ASK BUDGET : " What is your budget for the vacation?";
+CHOICES BUDGET : LOW, MEDIUM, HIGH;
+
+ASK DURATION : " How long will your vacation be?";
+CHOICES DURATION : SHORT, LONG;
+
+ASK LOCATION : " Do you prefer to travel domestically or internationally?";
+CHOICES LOCATION : DOMESTIC, INTERNATIONAL;
+
+ASK ACTIVITY : " What type of activity do you prefer?";
+CHOICES ACTIVITY : RELAX, ADVENTURE;
+
+ASK CLIMATE : " What climate do you prefer for your vacation?";
+CHOICES CLIMATE : WARM, COLD;
+
+ASK TRAVEL : " Are you traveling solo or in a group?";
+CHOICES TRAVEL : SOLO, GROUP;
+
+ASK INTEREST : " What are you most interested in?";
+CHOICES INTEREST : CULTURE, NATURE, ADVENTURE;
+
+ASK SEASON : " In which season are you traveling?";
+CHOICES SEASON : SUMMER, WINTER;
+
+ASK ACCOMMODATION : " What type of accommodation do you prefer?";
+CHOICES ACCOMMODATION : CAMPING, HOTEL;
+
+ASK COMPANY : " Who are you traveling with?";
+CHOICES COMPANY : FAMILY, FRIENDS;
+
+ASK AGE : " What is the age group of your family?";
+CHOICES AGE : YOUNG, MIXED, OLDER;
+
+ASK PACE : " Do you prefer a fast-paced or slow-paced vacation?";
+CHOICES PACE : FAST, SLOW;
+
+ASK PHYSICAL : " How physically active are you for this vacation?";
+CHOICES PHYSICAL : ACTIVE, MODERATE;
+
+ASK EXPERIENCE : " Do you want a new experience or something familiar?";
+CHOICES EXPERIENCE : NEW, FAMILIAR;
+
+ASK FOOD : " Do you prefer local cuisine or standard meals?";
+CHOICES FOOD : LOCAL, STANDARD;
+
+ASK HISTORY : " Are you interested in historical sites?";
+CHOICES HISTORY : YES, NO;

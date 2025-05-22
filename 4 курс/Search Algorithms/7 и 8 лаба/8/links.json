@@ -1,0 +1,802 @@
+{
+    "page_1.txt": {
+        "title": "Поисковая система",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%B8%D1%81%D0%BA%D0%BE%D0%B2%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0"
+    },
+    "page_2.txt": {
+        "title": "Поисковик",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%B8%D1%81%D0%BA%D0%BE%D0%B2%D0%B8%D0%BA"
+    },
+    "page_3.txt": {
+        "title": "Цифровой аудиоформат",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A6%D0%B8%D1%84%D1%80%D0%BE%D0%B2%D1%8B%D0%B5_%D0%B0%D1%83%D0%B4%D0%B8%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D1%8B"
+    },
+    "page_4.txt": {
+        "title": "Графические форматы",
+        "url": "https://ru.wikipedia.org/wiki/%D0%93%D1%80%D0%B0%D1%84%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5_%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D1%8B"
+    },
+    "page_5.txt": {
+        "title": "Поисковый робот",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%B8%D1%81%D0%BA%D0%BE%D0%B2%D1%8B%D0%B9_%D1%80%D0%BE%D0%B1%D0%BE%D1%82"
+    },
+    "page_6.txt": {
+        "title": "Релевантность",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%BB%D0%B5%D0%B2%D0%B0%D0%BD%D1%82%D0%BD%D0%BE%D1%81%D1%82%D1%8C"
+    },
+    "page_7.txt": {
+        "title": "Индексация в поисковых системах",
+        "url": "https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D0%B0%D1%86%D0%B8%D1%8F_%D0%B2_%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%BE%D0%B2%D1%8B%D1%85_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0%D1%85"
+    },
+    "page_8.txt": {
+        "title": "Google (поисковая система)",
+        "url": "https://ru.wikipedia.org/wiki/Google_(%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%BE%D0%B2%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0)"
+    },
+    "page_9.txt": {
+        "title": "Пузырь фильтров",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9F%D1%83%D0%B7%D1%8B%D1%80%D1%8C_%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%BE%D0%B2"
+    },
+    "page_10.txt": {
+        "title": "База данных",
+        "url": "https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D0%B7%D0%B0_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85"
+    },
+    "page_11.txt": {
+        "title": "Каталог ресурсов в Интернете",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3_%D1%80%D0%B5%D1%81%D1%83%D1%80%D1%81%D0%BE%D0%B2"
+    },
+    "page_12.txt": {
+        "title": "Веб-страница",
+        "url": "https://ru.wikipedia.org/wiki/%D0%92%D0%B5%D0%B1-%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0"
+    },
+    "page_13.txt": {
+        "title": "Страница результатов поиска",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0_%D1%80%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D0%BE%D0%B2_%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%B0"
+    },
+    "page_14.txt": {
+        "title": "Ключевое слово",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BB%D1%8E%D1%87%D0%B5%D0%B2%D1%8B%D0%B5_%D1%81%D0%BB%D0%BE%D0%B2%D0%B0"
+    },
+    "page_15.txt": {
+        "title": "Поисковый запрос",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%B8%D1%81%D0%BA%D0%BE%D0%B2%D1%8B%D0%B9_%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81"
+    },
+    "page_16.txt": {
+        "title": "Usenet",
+        "url": "https://ru.wikipedia.org/wiki/Usenet"
+    },
+    "page_17.txt": {
+        "title": "Интернет-магазин",
+        "url": "https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82-%D0%BC%D0%B0%D0%B3%D0%B0%D0%B7%D0%B8%D0%BD"
+    },
+    "page_18.txt": {
+        "title": "Гогуль",
+        "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%BE%D0%B3%D1%83%D0%BB%D1%8C"
+    },
+    "page_19.txt": {
+        "title": "Локальный поисковик",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9B%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%BE%D0%B2%D0%B8%D0%BA"
+    },
+    "page_20.txt": {
+        "title": "Цифровой аудиоформат",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A6%D0%B8%D1%84%D1%80%D0%BE%D0%B2%D0%BE%D0%B9_%D0%B0%D1%83%D0%B4%D0%B8%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82"
+    },
+    "page_21.txt": {
+        "title": "Wayback Machine",
+        "url": "https://ru.wikipedia.org/wiki/Wayback_Machine"
+    },
+    "page_22.txt": {
+        "title": "Portable Document Format",
+        "url": "https://ru.wikipedia.org/wiki/PDF"
+    },
+    "page_23.txt": {
+        "title": "Процесс",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81"
+    },
+    "page_24.txt": {
+        "title": "Вероятностный латентно-семантический анализ",
+        "url": "https://ru.wikipedia.org/wiki/%D0%92%D0%B5%D1%80%D0%BE%D1%8F%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%BD%D1%8B%D0%B9_%D0%BB%D0%B0%D1%82%D0%B5%D0%BD%D1%82%D0%BD%D0%BE-%D1%81%D0%B5%D0%BC%D0%B0%D0%BD%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7"
+    },
+    "page_25.txt": {
+        "title": "Латентно-семантический анализ",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B5%D0%BD%D1%82%D0%BD%D0%BE-%D1%81%D0%B5%D0%BC%D0%B0%D0%BD%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5_%D0%B8%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5"
+    },
+    "page_26.txt": {
+        "title": "Регистрация в каталогах",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%86%D0%B8%D1%8F_%D0%B2_%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3%D0%B0%D1%85"
+    },
+    "page_27.txt": {
+        "title": "Dinosaur Game",
+        "url": "https://ru.wikipedia.org/wiki/Dinosaur_Game"
+    },
+    "page_28.txt": {
+        "title": "Латвийская национальная библиотека",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B2%D0%B8%D0%B9%D1%81%D0%BA%D0%B0%D1%8F_%D0%BD%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D0%B1%D0%B8%D0%B1%D0%BB%D0%B8%D0%BE%D1%82%D0%B5%D0%BA%D0%B0"
+    },
+    "page_29.txt": {
+        "title": "Тикер",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B8%D0%BA%D0%B5%D1%80"
+    },
+    "page_30.txt": {
+        "title": "БД (значения)",
+        "url": "https://ru.wikipedia.org/wiki/%D0%91%D0%94_(%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D1%8F)"
+    },
+    "page_31.txt": {
+        "title": "Вики",
+        "url": "https://ru.wikipedia.org/wiki/%D0%92%D0%B8%D0%BA%D0%B8"
+    },
+    "page_32.txt": {
+        "title": "Международный стандартный сериальный номер",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B6%D0%B4%D1%83%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9_%D1%81%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%D0%BD%D1%8B%D0%B9_%D1%81%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BD%D0%BE%D0%BC%D0%B5%D1%80"
+    },
+    "page_33.txt": {
+        "title": "Плющев, Александр Владимирович",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9F%D0%BB%D1%8E%D1%89%D0%B5%D0%B2,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B8%D1%87"
+    },
+    "page_34.txt": {
+        "title": "The Guardian",
+        "url": "https://ru.wikipedia.org/wiki/The_Guardian"
+    },
+    "page_35.txt": {
+        "title": "Sherlock (программа)",
+        "url": "https://ru.wikipedia.org/wiki/Sherlock_(%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0)"
+    },
+    "page_36.txt": {
+        "title": "Кроссплатформенность",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D0%BE%D1%81%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B5%D0%BD%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%BD%D0%BE%D0%B5_%D0%BE%D0%B1%D0%B5%D1%81%D0%BF%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5"
+    },
+    "page_37.txt": {
+        "title": "PDF (значения)",
+        "url": "https://ru.wikipedia.org/wiki/PDF_(%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D1%8F)"
+    },
+    "page_38.txt": {
+        "title": "ISO 50001",
+        "url": "https://ru.wikipedia.org/wiki/ISO_50001"
+    },
+    "page_39.txt": {
+        "title": "Размещение патинко",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D0%B7%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D0%B0%D1%82%D0%B8%D0%BD%D0%BA%D0%BE"
+    },
+    "page_40.txt": {
+        "title": "Interactive fiction",
+        "url": "https://ru.wikipedia.org/wiki/Interactive_fiction"
+    },
+    "page_41.txt": {
+        "title": "Каталог ресурсов в Интернете",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3_%D1%80%D0%B5%D1%81%D1%83%D1%80%D1%81%D0%BE%D0%B2_%D0%B2_%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82%D0%B5"
+    },
+    "page_42.txt": {
+        "title": "Аэрофлот (российская авиакомпания)",
+        "url": "https://ru.wikipedia.org/wiki/%D0%90%D1%8D%D1%80%D0%BE%D1%84%D0%BB%D0%BE%D1%82_(%D1%80%D0%BE%D1%81%D1%81%D0%B8%D0%B9%D1%81%D0%BA%D0%B0%D1%8F_%D0%B0%D0%B2%D0%B8%D0%B0%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D1%8F)"
+    },
+    "page_43.txt": {
+        "title": "Ашманов, Игорь Станиславович",
+        "url": "https://ru.wikipedia.org/wiki/%D0%98%D0%B3%D0%BE%D1%80%D1%8C_%D0%90%D1%88%D0%BC%D0%B0%D0%BD%D0%BE%D0%B2"
+    },
+    "page_44.txt": {
+        "title": "Тверь",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B2%D0%B5%D1%80%D1%8C"
+    },
+    "page_45.txt": {
+        "title": "Броуновское движение",
+        "url": "https://ru.wikipedia.org/wiki/%D0%91%D1%80%D0%BE%D1%83%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%BE%D0%B5_%D0%B4%D0%B2%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5"
+    },
+    "page_46.txt": {
+        "title": "Биодизель",
+        "url": "https://ru.wikipedia.org/wiki/%D0%91%D0%B8%D0%BE%D0%B4%D0%B8%D0%B7%D0%B5%D0%BB%D1%8C"
+    },
+    "page_47.txt": {
+        "title": "The New York Times",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9D%D1%8C%D1%8E-%D0%99%D0%BE%D1%80%D0%BA_%D0%A2%D0%B0%D0%B9%D0%BC%D1%81"
+    },
+    "page_48.txt": {
+        "title": "Ruby",
+        "url": "https://ru.wikipedia.org/wiki/Ruby"
+    },
+    "page_49.txt": {
+        "title": "Латышский язык",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D1%8B%D1%88%D1%81%D0%BA%D0%B8%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA"
+    },
+    "page_50.txt": {
+        "title": "Управляющие символы",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A3%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D1%8F%D1%8E%D1%89%D0%B8%D0%B9_%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB"
+    },
+    "page_51.txt": {
+        "title": "Эмуляция",
+        "url": "https://ru.wikipedia.org/wiki/%D0%AD%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80"
+    },
+    "page_52.txt": {
+        "title": "Цикл Деминга",
+        "url": "https://ru.wikipedia.org/wiki/PDCA"
+    },
+    "page_53.txt": {
+        "title": "GMG Radio",
+        "url": "https://ru.wikipedia.org/wiki/GMG_Radio"
+    },
+    "page_54.txt": {
+        "title": "Apple DOS",
+        "url": "https://ru.wikipedia.org/wiki/Apple_DOS"
+    },
+    "page_55.txt": {
+        "title": "Шульман, Екатерина Михайловна",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A8%D1%83%D0%BB%D1%8C%D0%BC%D0%B0%D0%BD,_%D0%95%D0%BA%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%BD%D0%B0"
+    },
+    "page_56.txt": {
+        "title": "Journal of Machine Learning Research",
+        "url": "https://ru.wikipedia.org/wiki/Journal_of_Machine_Learning_Research"
+    },
+    "page_57.txt": {
+        "title": "Сайд-скроллер",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%B9%D0%B4-%D1%81%D0%BA%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D1%80"
+    },
+    "page_58.txt": {
+        "title": "Программа-игрушка",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0-%D0%B8%D0%B3%D1%80%D1%83%D1%88%D0%BA%D0%B0"
+    },
+    "page_59.txt": {
+        "title": "Открытый мир",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D1%8B%D0%B9_%D0%BC%D0%B8%D1%80"
+    },
+    "page_60.txt": {
+        "title": "Уваровка (Московская область)",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A3%D0%B2%D0%B0%D1%80%D0%BE%D0%B2%D0%BA%D0%B0_(%D0%9C%D0%BE%D1%81%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F_%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C)"
+    },
+    "page_61.txt": {
+        "title": "Валдай",
+        "url": "https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D0%BB%D0%B4%D0%B0%D0%B9"
+    },
+    "page_62.txt": {
+        "title": "Нелинейность (компьютерные игры)",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B5%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D0%BE%D1%81%D1%82%D1%8C_(%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D1%8B%D0%B5_%D0%B8%D0%B3%D1%80%D1%8B)"
+    },
+    "page_63.txt": {
+        "title": "Объектно-ориентированный язык программирования",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BD%D0%BE-%D0%BE%D1%80%D0%B8%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F"
+    },
+    "page_64.txt": {
+        "title": "Ņ",
+        "url": "https://ru.wikipedia.org/wiki/%C5%85"
+    },
+    "page_65.txt": {
+        "title": "Переднеязычный носовой согласный",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9F%D0%B5%D1%80%D0%B5%D0%B4%D0%BD%D0%B5%D1%8F%D0%B7%D1%8B%D1%87%D0%BD%D1%8B%D0%B9_%D0%BD%D0%BE%D1%81%D0%BE%D0%B2%D0%BE%D0%B9_%D1%81%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%BD%D1%8B%D0%B9"
+    },
+    "page_66.txt": {
+        "title": "Отрицание",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9E%D1%82%D1%80%D0%B8%D1%86%D0%B0%D0%BD%D0%B8%D0%B5"
+    },
+    "page_67.txt": {
+        "title": "Национальная библиотека Австралии",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D0%B1%D0%B8%D0%B1%D0%BB%D0%B8%D0%BE%D1%82%D0%B5%D0%BA%D0%B0_%D0%90%D0%B2%D1%81%D1%82%D1%80%D0%B0%D0%BB%D0%B8%D0%B8"
+    },
+    "page_68.txt": {
+        "title": "Вертикальная черта",
+        "url": "https://ru.wikipedia.org/wiki/%D0%92%D0%B5%D1%80%D1%82%D0%B8%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D1%87%D0%B5%D1%80%D1%82%D0%B0"
+    },
+    "page_69.txt": {
+        "title": "Управляющие символы",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A3%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D1%8F%D1%8E%D1%89%D0%B8%D0%B5_%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB%D1%8B"
+    },
+    "page_70.txt": {
+        "title": "2005 год",
+        "url": "https://ru.wikipedia.org/wiki/2005"
+    },
+    "page_71.txt": {
+        "title": "Шульман",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A8%D1%83%D0%BB%D1%8C%D0%BC%D0%B0%D0%BD"
+    },
+    "page_72.txt": {
+        "title": "Тамагочи",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B0%D0%BC%D0%B0%D0%B3%D0%BE%D1%87%D0%B8"
+    },
+    "page_73.txt": {
+        "title": "Химия",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A5%D0%B8%D0%BC%D0%B8%D1%8F"
+    },
+    "page_74.txt": {
+        "title": "Научный журнал",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D1%83%D1%87%D0%BD%D1%8B%D0%B9_%D0%B6%D1%83%D1%80%D0%BD%D0%B0%D0%BB"
+    },
+    "page_75.txt": {
+        "title": "Apple",
+        "url": "https://ru.wikipedia.org/wiki/Apple_Computer"
+    },
+    "page_76.txt": {
+        "title": "Dragon (журнал)",
+        "url": "https://ru.wikipedia.org/wiki/Dragon_(%D0%B6%D1%83%D1%80%D0%BD%D0%B0%D0%BB)"
+    },
+    "page_77.txt": {
+        "title": "Times Higher Education",
+        "url": "https://ru.wikipedia.org/wiki/Times_Higher_Education"
+    },
+    "page_78.txt": {
+        "title": "Бор (Валдайский район)",
+        "url": "https://ru.wikipedia.org/wiki/%D0%91%D0%BE%D1%80_(%D0%92%D0%B0%D0%BB%D0%B4%D0%B0%D0%B9%D1%81%D0%BA%D0%B8%D0%B9_%D1%80%D0%B0%D0%B9%D0%BE%D0%BD)"
+    },
+    "page_79.txt": {
+        "title": "Закрытое административно-территориальное образование",
+        "url": "https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%BA%D1%80%D1%8B%D1%82%D0%BE%D0%B5_%D0%B0%D0%B4%D0%BC%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D0%BE-%D1%82%D0%B5%D1%80%D1%80%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5_%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5"
+    },
+    "page_80.txt": {
+        "title": "Visual Basic",
+        "url": "https://ru.wikipedia.org/wiki/Visual_Basic"
+    },
+    "page_81.txt": {
+        "title": "Список логических символов",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85_%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB%D0%BE%D0%B2"
+    },
+    "page_82.txt": {
+        "title": "Z̧",
+        "url": "https://ru.wikipedia.org/wiki/Z%CC%A7"
+    },
+    "page_83.txt": {
+        "title": "Ţ",
+        "url": "https://ru.wikipedia.org/wiki/%C5%A2"
+    },
+    "page_84.txt": {
+        "title": "CiNii",
+        "url": "https://ru.wikipedia.org/wiki/CiNii"
+    },
+    "page_85.txt": {
+        "title": "Обязательный экземпляр",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9E%D0%B1%D1%8F%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D1%8D%D0%BA%D0%B7%D0%B5%D0%BC%D0%BF%D0%BB%D1%8F%D1%80"
+    },
+    "page_86.txt": {
+        "title": "Год",
+        "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%BE%D0%B4"
+    },
+    "page_87.txt": {
+        "title": "Парламент Австралии",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%BB%D0%B0%D0%BC%D0%B5%D0%BD%D1%82_%D0%90%D0%B2%D1%81%D1%82%D1%80%D0%B0%D0%BB%D0%B8%D0%B8"
+    },
+    "page_88.txt": {
+        "title": "Эффект тамагочи",
+        "url": "https://ru.wikipedia.org/wiki/%D0%AD%D1%84%D1%84%D0%B5%D0%BA%D1%82_%D1%82%D0%B0%D0%BC%D0%B0%D0%B3%D0%BE%D1%87%D0%B8"
+    },
+    "page_89.txt": {
+        "title": "Химия (значения)",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A5%D0%B8%D0%BC%D0%B8%D1%8F_(%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D1%8F)"
+    },
+    "page_90.txt": {
+        "title": "Короцкое сельское поселение",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D1%80%D0%BE%D1%86%D0%BA%D0%BE%D0%B5_%D1%81%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%BE%D0%B5_%D0%BF%D0%BE%D1%81%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5"
+    },
+    "page_91.txt": {
+        "title": "2005 год",
+        "url": "https://ru.wikipedia.org/wiki/2005_%D0%B3%D0%BE%D0%B4"
+    },
+    "page_92.txt": {
+        "title": "Vodafone",
+        "url": "https://ru.wikipedia.org/wiki/Vodafone"
+    },
+    "page_93.txt": {
+        "title": "Вода",
+        "url": "https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D0%B4%D0%B0"
+    },
+    "page_94.txt": {
+        "title": "Электроника",
+        "url": "https://ru.wikipedia.org/wiki/%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BD%D0%B8%D0%BA%D0%B0"
+    },
+    "page_95.txt": {
+        "title": "Международная стандартная отраслевая классификация",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B6%D0%B4%D1%83%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%D0%BD%D0%B0%D1%8F_%D0%BE%D1%82%D1%80%D0%B0%D1%81%D0%BB%D0%B5%D0%B2%D0%B0%D1%8F_%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F"
+    },
+    "page_96.txt": {
+        "title": "Сельское поселение",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%BE%D0%B5_%D0%BF%D0%BE%D1%81%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_(%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F)"
+    },
+    "page_97.txt": {
+        "title": "Статическая типизация",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D1%82%D0%B8%D0%BF%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F"
+    },
+    "page_98.txt": {
+        "title": "Национальный институт восточных языков и культур",
+        "url": "https://ru.wikipedia.org/wiki/INALCO"
+    },
+    "page_99.txt": {
+        "title": "Озёрский городской округ (Челябинская область)",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9E%D0%B7%D1%91%D1%80%D1%81%D0%BA%D0%B8%D0%B9_%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D1%81%D0%BA%D0%BE%D0%B9_%D0%BE%D0%BA%D1%80%D1%83%D0%B3_(%D0%A7%D0%B5%D0%BB%D1%8F%D0%B1%D0%B8%D0%BD%D1%81%D0%BA%D0%B0%D1%8F_%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C)"
+    },
+    "page_100.txt": {
+        "title": "Новоуральский городской округ",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9D%D0%BE%D0%B2%D0%BE%D1%83%D1%80%D0%B0%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B9_%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D1%81%D0%BA%D0%BE%D0%B9_%D0%BE%D0%BA%D1%80%D1%83%D0%B3"
+    },
+    "page_101.txt": {
+        "title": "Верховная рада Украины",
+        "url": "https://ru.wikipedia.org/wiki/%D0%92%D0%B5%D1%80%D1%85%D0%BE%D0%B2%D0%BD%D0%B0%D1%8F_%D0%A0%D0%B0%D0%B4%D0%B0"
+    },
+    "page_102.txt": {
+        "title": "Семёновщинское сельское поселение",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BC%D1%91%D0%BD%D0%BE%D0%B2%D1%89%D0%B8%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D1%81%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%BE%D0%B5_%D0%BF%D0%BE%D1%81%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5"
+    },
+    "page_103.txt": {
+        "title": "Районы местного самоуправления Северной территории",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D0%B9%D0%BE%D0%BD%D1%8B_%D0%BC%D0%B5%D1%81%D1%82%D0%BD%D0%BE%D0%B3%D0%BE_%D1%81%D0%B0%D0%BC%D0%BE%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F_%D0%A1%D0%B5%D0%B2%D0%B5%D1%80%D0%BD%D0%BE%D0%B9_%D1%82%D0%B5%D1%80%D1%80%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B8"
+    },
+    "page_104.txt": {
+        "title": "Яжелбицкое сельское поселение",
+        "url": "https://ru.wikipedia.org/wiki/%D0%AF%D0%B6%D0%B5%D0%BB%D0%B1%D0%B8%D1%86%D0%BA%D0%BE%D0%B5_%D1%81%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%BE%D0%B5_%D0%BF%D0%BE%D1%81%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5"
+    },
+    "page_105.txt": {
+        "title": "1991 год",
+        "url": "https://ru.wikipedia.org/wiki/1991"
+    },
+    "page_106.txt": {
+        "title": "Симбиоз",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BC%D0%B1%D0%B8%D0%BE%D0%B7"
+    },
+    "page_107.txt": {
+        "title": "Кабинет министров Украины",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%B1%D0%B8%D0%BD%D0%B5%D1%82_%D0%9C%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%80%D0%BE%D0%B2_%D0%A3%D0%BA%D1%80%D0%B0%D0%B8%D0%BD%D1%8B"
+    },
+    "page_108.txt": {
+        "title": "Искусство Австралии",
+        "url": "https://ru.wikipedia.org/wiki/%D0%98%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%BE_%D0%90%D0%B2%D1%81%D1%82%D1%80%D0%B0%D0%BB%D0%B8%D0%B8"
+    },
+    "page_109.txt": {
+        "title": "China Mobile",
+        "url": "https://ru.wikipedia.org/wiki/China_Mobile"
+    },
+    "page_110.txt": {
+        "title": "Электрический дипольный момент",
+        "url": "https://ru.wikipedia.org/wiki/%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D0%B4%D0%B8%D0%BF%D0%BE%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BC%D0%BE%D0%BC%D0%B5%D0%BD%D1%82"
+    },
+    "page_111.txt": {
+        "title": "Nuance Communications",
+        "url": "https://ru.wikipedia.org/wiki/Nuance_Communications"
+    },
+    "page_112.txt": {
+        "title": "Глобальный стандарт классификации отраслей",
+        "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%BB%D0%BE%D0%B1%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D1%81%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82_%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8_%D0%BE%D1%82%D1%80%D0%B0%D1%81%D0%BB%D0%B5%D0%B9"
+    },
+    "page_113.txt": {
+        "title": "Домохозяйство",
+        "url": "https://ru.wikipedia.org/wiki/%D0%94%D0%BE%D0%BC%D0%BE%D1%85%D0%BE%D0%B7%D1%8F%D0%B9%D1%81%D1%82%D0%B2%D0%BE"
+    },
+    "page_114.txt": {
+        "title": "TIM (компания)",
+        "url": "https://ru.wikipedia.org/wiki/TIM_(%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D1%8F)"
+    },
+    "page_115.txt": {
+        "title": "Герб Челябинской области",
+        "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D1%80%D0%B1_%D0%A7%D0%B5%D0%BB%D1%8F%D0%B1%D0%B8%D0%BD%D1%81%D0%BA%D0%BE%D0%B9_%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D0%B8"
+    },
+    "page_116.txt": {
+        "title": "Лавинный диод",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%B2%D0%B8%D0%BD%D0%BD%D1%8B%D0%B9_%D0%B4%D0%B8%D0%BE%D0%B4"
+    },
+    "page_117.txt": {
+        "title": "Нижнесергинский муниципальный район",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B8%D0%B6%D0%BD%D0%B5%D1%81%D0%B5%D1%80%D0%B3%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D0%BC%D1%83%D0%BD%D0%B8%D1%86%D0%B8%D0%BF%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D1%80%D0%B0%D0%B9%D0%BE%D0%BD"
+    },
+    "page_118.txt": {
+        "title": "Верховная рада Украины",
+        "url": "https://ru.wikipedia.org/wiki/%D0%92%D0%B5%D1%80%D1%85%D0%BE%D0%B2%D0%BD%D0%B0%D1%8F_%D1%80%D0%B0%D0%B4%D0%B0_%D0%A3%D0%BA%D1%80%D0%B0%D0%B8%D0%BD%D1%8B"
+    },
+    "page_119.txt": {
+        "title": "Демянск",
+        "url": "https://ru.wikipedia.org/wiki/%D0%94%D0%B5%D0%BC%D1%8F%D0%BD%D1%81%D0%BA"
+    },
+    "page_120.txt": {
+        "title": "Поповка (приток Поломети)",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BF%D0%BE%D0%B2%D0%BA%D0%B0_(%D0%BF%D1%80%D0%B8%D1%82%D0%BE%D0%BA_%D0%9F%D0%BE%D0%BB%D0%BE%D0%BC%D0%B5%D1%82%D0%B8)"
+    },
+    "page_121.txt": {
+        "title": "Чёрная (приток Поломети)",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A7%D1%91%D1%80%D0%BD%D0%B0%D1%8F_(%D0%BF%D1%80%D0%B8%D1%82%D0%BE%D0%BA_%D0%9F%D0%BE%D0%BB%D0%BE%D0%BC%D0%B5%D1%82%D0%B8)"
+    },
+    "page_122.txt": {
+        "title": "Лонница (приток Поломети)",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9B%D0%BE%D0%BD%D0%BD%D0%B8%D1%86%D0%B0_(%D0%BF%D1%80%D0%B8%D1%82%D0%BE%D0%BA_%D0%9F%D0%BE%D0%BB%D0%BE%D0%BC%D0%B5%D1%82%D0%B8)"
+    },
+    "page_123.txt": {
+        "title": "5G",
+        "url": "https://ru.wikipedia.org/wiki/5G"
+    },
+    "page_124.txt": {
+        "title": "Wilmar International",
+        "url": "https://ru.wikipedia.org/wiki/Wilmar_International"
+    },
+    "page_125.txt": {
+        "title": "iPhone 4s",
+        "url": "https://ru.wikipedia.org/wiki/IPhone_4S"
+    },
+    "page_126.txt": {
+        "title": "1982 год",
+        "url": "https://ru.wikipedia.org/wiki/1982_%D0%B3%D0%BE%D0%B4"
+    },
+    "page_127.txt": {
+        "title": "Оленьи Ручьи",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9E%D0%BB%D0%B5%D0%BD%D1%8C%D0%B8_%D0%A0%D1%83%D1%87%D1%8C%D0%B8_(%D0%BF%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9_%D0%BF%D0%B0%D1%80%D0%BA)"
+    },
+    "page_128.txt": {
+        "title": "1981 год",
+        "url": "https://ru.wikipedia.org/wiki/1981_%D0%B3%D0%BE%D0%B4"
+    },
+    "page_129.txt": {
+        "title": "1979 год",
+        "url": "https://ru.wikipedia.org/wiki/1979_%D0%B3%D0%BE%D0%B4"
+    },
+    "page_130.txt": {
+        "title": "Los Angeles Times",
+        "url": "https://ru.wikipedia.org/wiki/Los_Angeles_Times"
+    },
+    "page_131.txt": {
+        "title": "Гражданская война в Анголе",
+        "url": "https://ru.wikipedia.org/wiki/%D0%93%D1%80%D0%B0%D0%B6%D0%B4%D0%B0%D0%BD%D1%81%D0%BA%D0%B0%D1%8F_%D0%B2%D0%BE%D0%B9%D0%BD%D0%B0_%D0%B2_%D0%90%D0%BD%D0%B3%D0%BE%D0%BB%D0%B5"
+    },
+    "page_132.txt": {
+        "title": "Катастрофа C-130 в Джакарте",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D1%82%D0%B0%D1%81%D1%82%D1%80%D0%BE%D1%84%D0%B0_C-130_%D0%B2_%D0%94%D0%B6%D0%B0%D0%BA%D0%B0%D1%80%D1%82%D0%B5"
+    },
+    "page_133.txt": {
+        "title": "Герб Приморского края",
+        "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D1%80%D0%B1_%D0%9F%D1%80%D0%B8%D0%BC%D0%BE%D1%80%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D0%BA%D1%80%D0%B0%D1%8F"
+    },
+    "page_134.txt": {
+        "title": "Герб Усть-Ордынского Бурятского округа",
+        "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D1%80%D0%B1_%D0%A3%D1%81%D1%82%D1%8C-%D0%9E%D1%80%D0%B4%D1%8B%D0%BD%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D0%91%D1%83%D1%80%D1%8F%D1%82%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D0%B0%D0%B2%D1%82%D0%BE%D0%BD%D0%BE%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BE%D0%BA%D1%80%D1%83%D0%B3%D0%B0"
+    },
+    "page_135.txt": {
+        "title": "Шокурово",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A8%D0%BE%D0%BA%D1%83%D1%80%D0%BE%D0%B2%D0%BE"
+    },
+    "page_136.txt": {
+        "title": "Демянский уезд",
+        "url": "https://ru.wikipedia.org/wiki/%D0%94%D0%B5%D0%BC%D1%8F%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D1%83%D0%B5%D0%B7%D0%B4"
+    },
+    "page_137.txt": {
+        "title": "Шарама (деревня)",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A8%D0%B0%D1%80%D0%B0%D0%BC%D0%B0_(%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D0%BD%D1%8F)"
+    },
+    "page_138.txt": {
+        "title": "Джиттер",
+        "url": "https://ru.wikipedia.org/wiki/%D0%94%D0%B6%D0%B8%D1%82%D1%82%D0%B5%D1%80"
+    },
+    "page_139.txt": {
+        "title": "Сборная Италии по футболу",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B1%D0%BE%D1%80%D0%BD%D0%B0%D1%8F_%D0%98%D1%82%D0%B0%D0%BB%D0%B8%D0%B8_%D0%BF%D0%BE_%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D1%83"
+    },
+    "page_140.txt": {
+        "title": "iPhone 4s",
+        "url": "https://ru.wikipedia.org/wiki/IPhone_4s"
+    },
+    "page_141.txt": {
+        "title": "Яблоня (Новгородская область)",
+        "url": "https://ru.wikipedia.org/wiki/%D0%AF%D0%B1%D0%BB%D0%BE%D0%BD%D1%8F_(%D0%9D%D0%BE%D0%B2%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D1%8F_%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C)"
+    },
+    "page_142.txt": {
+        "title": "Ямник (Ямникское сельское поселение)",
+        "url": "https://ru.wikipedia.org/wiki/%D0%AF%D0%BC%D0%BD%D0%B8%D0%BA_(%D0%AF%D0%BC%D0%BD%D0%B8%D0%BA%D1%81%D0%BA%D0%BE%D0%B5_%D1%81%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%BE%D0%B5_%D0%BF%D0%BE%D1%81%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5)"
+    },
+    "page_143.txt": {
+        "title": "Оленьи Ручьи",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9E%D0%BB%D0%B5%D0%BD%D1%8C%D0%B8_%D0%A0%D1%83%D1%87%D1%8C%D0%B8"
+    },
+    "page_144.txt": {
+        "title": "Заручевье (Демянский район)",
+        "url": "https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D1%80%D1%83%D1%87%D0%B5%D0%B2%D1%8C%D0%B5_(%D0%94%D0%B5%D0%BC%D1%8F%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D1%80%D0%B0%D0%B9%D0%BE%D0%BD)"
+    },
+    "page_145.txt": {
+        "title": "Памятники природы Свердловской области",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D0%BC%D1%8F%D1%82%D0%BD%D0%B8%D0%BA%D0%B8_%D0%BF%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D1%8B_%D0%A1%D0%B2%D0%B5%D1%80%D0%B4%D0%BB%D0%BE%D0%B2%D1%81%D0%BA%D0%BE%D0%B9_%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D0%B8"
+    },
+    "page_146.txt": {
+        "title": "Уральский государственный лесотехнический университет",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A3%D1%80%D0%B0%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B9_%D1%81%D0%B0%D0%B4_%D0%BB%D0%B5%D1%87%D0%B5%D0%B1%D0%BD%D1%8B%D1%85_%D0%BA%D1%83%D0%BB%D1%8C%D1%82%D1%83%D1%80_%D0%B8%D0%BC%D0%B5%D0%BD%D0%B8_%D0%9B._%D0%98._%D0%92%D0%B8%D0%B3%D0%BE%D1%80%D0%BE%D0%B2%D0%B0"
+    },
+    "page_147.txt": {
+        "title": "Дэрроу, Кларенс",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BB%D1%8D%D1%80%D0%B5%D0%BD%D1%81_%D0%94%D1%8D%D1%80%D1%80%D0%BE%D1%83"
+    },
+    "page_148.txt": {
+        "title": "Чучхе",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A7%D1%83%D1%87%D1%85%D0%B5"
+    },
+    "page_149.txt": {
+        "title": "Успенский, Николай Дмитриевич",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A3%D1%81%D0%BF%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B9,_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B5%D0%B2%D0%B8%D1%87"
+    },
+    "page_150.txt": {
+        "title": "Памятник природы",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D0%BC%D1%8F%D1%82%D0%BD%D0%B8%D0%BA_%D0%BF%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D1%8B"
+    },
+    "page_151.txt": {
+        "title": "Парк-дендрарий Талицкого лесотехникума",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%BA-%D0%B4%D0%B5%D0%BD%D0%B4%D1%80%D0%B0%D1%80%D0%B8%D0%B9_%D0%A2%D0%B0%D0%BB%D0%B8%D1%86%D0%BA%D0%BE%D0%B3%D0%BE_%D0%BB%D0%B5%D1%81%D0%BE%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D1%83%D0%BC%D0%B0"
+    },
+    "page_152.txt": {
+        "title": "Северский дендросад",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D0%B2%D0%B5%D1%80%D1%81%D0%BA%D0%B8%D0%B9_%D0%B4%D0%B5%D0%BD%D0%B4%D1%80%D0%BE%D1%81%D0%B0%D0%B4"
+    },
+    "page_153.txt": {
+        "title": "Ботанический сад",
+        "url": "https://ru.wikipedia.org/wiki/%D0%91%D0%BE%D1%82%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%81%D0%B0%D0%B4"
+    },
+    "page_154.txt": {
+        "title": "Луанда",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9B%D1%83%D0%B0%D0%BD%D0%B4%D0%B0"
+    },
+    "page_155.txt": {
+        "title": "Даниил (пророк)",
+        "url": "https://ru.wikipedia.org/wiki/%D0%94%D0%B0%D0%BD%D0%B8%D0%B8%D0%BB_(%D0%BF%D1%80%D0%BE%D1%80%D0%BE%D0%BA)"
+    },
+    "page_156.txt": {
+        "title": "Чемпионат Европы по футболу 2004 (отборочный турнир)",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D0%BC%D0%BF%D0%B8%D0%BE%D0%BD%D0%B0%D1%82_%D0%95%D0%B2%D1%80%D0%BE%D0%BF%D1%8B_%D0%BF%D0%BE_%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D1%83_2004_(%D0%BE%D1%82%D0%B1%D0%BE%D1%80%D0%BE%D1%87%D0%BD%D1%8B%D0%B9_%D1%82%D1%83%D1%80%D0%BD%D0%B8%D1%80)"
+    },
+    "page_157.txt": {
+        "title": "Кен, Мойзе",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B5%D0%BD,_%D0%9C%D0%BE%D0%B9%D0%B7%D0%B5"
+    },
+    "page_158.txt": {
+        "title": "Уровень моря",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A3%D1%80%D0%BE%D0%B2%D0%B5%D0%BD%D1%8C_%D0%BC%D0%BE%D1%80%D1%8F"
+    },
+    "page_159.txt": {
+        "title": "Грабленка",
+        "url": "https://ru.wikipedia.org/wiki/%D0%93%D1%80%D0%B0%D0%B1%D0%BB%D0%B5%D0%BD%D0%BA%D0%B0"
+    },
+    "page_160.txt": {
+        "title": "Посёлок городского типа",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9F%D0%B3%D1%82"
+    },
+    "page_161.txt": {
+        "title": "Дыроватый Камень (городской округ Староуткинск)",
+        "url": "https://ru.wikipedia.org/wiki/%D0%94%D1%8B%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8B%D0%B9_%D0%9A%D0%B0%D0%BC%D0%B5%D0%BD%D1%8C_(%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D1%81%D0%BA%D0%BE%D0%B9_%D0%BE%D0%BA%D1%80%D1%83%D0%B3_%D0%A1%D1%82%D0%B0%D1%80%D0%BE%D1%83%D1%82%D0%BA%D0%B8%D0%BD%D1%81%D0%BA)"
+    },
+    "page_162.txt": {
+        "title": "Дэрроу, Кларенс",
+        "url": "https://ru.wikipedia.org/wiki/%D0%94%D1%8D%D1%80%D1%80%D0%BE%D1%83,_%D0%9A%D0%BB%D0%B0%D1%80%D0%B5%D0%BD%D1%81"
+    },
+    "page_163.txt": {
+        "title": "Первоначальное накопление капитала",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9F%D0%B5%D1%80%D0%B2%D0%BE%D0%BD%D0%B0%D1%87%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5_%D0%BD%D0%B0%D0%BA%D0%BE%D0%BF%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BA%D0%B0%D0%BF%D0%B8%D1%82%D0%B0%D0%BB%D0%B0"
+    },
+    "page_164.txt": {
+        "title": "Демянский район",
+        "url": "https://ru.wikipedia.org/wiki/%D0%94%D0%B5%D0%BC%D1%8F%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D1%80%D0%B0%D0%B9%D0%BE%D0%BD_%D0%9D%D0%BE%D0%B2%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D1%81%D0%BA%D0%BE%D0%B9_%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D0%B8"
+    },
+    "page_165.txt": {
+        "title": "Успенский",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A3%D1%81%D0%BF%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B9"
+    },
+    "page_166.txt": {
+        "title": "Аналитический марксизм",
+        "url": "https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D0%BC%D0%B0%D1%80%D0%BA%D1%81%D0%B8%D0%B7%D0%BC"
+    },
+    "page_167.txt": {
+        "title": "Отчуждение (философия)",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9E%D1%82%D1%87%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_(%D1%84%D0%B8%D0%BB%D0%BE%D1%81%D0%BE%D1%84%D0%B8%D1%8F)"
+    },
+    "page_168.txt": {
+        "title": "Ильиногорское сельское поселение",
+        "url": "https://ru.wikipedia.org/wiki/%D0%98%D0%BB%D1%8C%D0%B8%D0%BD%D0%BE%D0%B3%D0%BE%D1%80%D1%81%D0%BA%D0%BE%D0%B5_%D1%81%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%BE%D0%B5_%D0%BF%D0%BE%D1%81%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5"
+    },
+    "page_169.txt": {
+        "title": "Магистр богословия",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B3%D0%B8%D1%81%D1%82%D1%80_%D0%B1%D0%BE%D0%B3%D0%BE%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F"
+    },
+    "page_170.txt": {
+        "title": "Лапин, Пётр Иванович",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%BF%D0%B8%D0%BD,_%D0%9F%D1%91%D1%82%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87"
+    },
+    "page_171.txt": {
+        "title": "Южная Лунда",
+        "url": "https://ru.wikipedia.org/wiki/%D0%AE%D0%B6%D0%BD%D0%B0%D1%8F_%D0%9B%D1%83%D0%BD%D0%B4%D0%B0"
+    },
+    "page_172.txt": {
+        "title": "Варух",
+        "url": "https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D1%80%D1%83%D1%85"
+    },
+    "page_173.txt": {
+        "title": "Крутуша",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D1%83%D1%82%D1%83%D1%88%D0%B0"
+    },
+    "page_174.txt": {
+        "title": "Староуткинск",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D0%B0%D1%80%D0%BE%D1%83%D1%82%D0%BA%D0%B8%D0%BD%D1%81%D0%BA"
+    },
+    "page_175.txt": {
+        "title": "Скала",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BA%D0%B0%D0%BB%D0%B0"
+    },
+    "page_176.txt": {
+        "title": "Саратовский социально-экономический институт",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D1%80%D0%B0%D1%82%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE-%D1%8D%D0%BA%D0%BE%D0%BD%D0%BE%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D0%B8%D0%BD%D1%81%D1%82%D0%B8%D1%82%D1%83%D1%82_%D0%A0%D0%AD%D0%A3_%D0%B8%D0%BC%D0%B5%D0%BD%D0%B8_%D0%93._%D0%92._%D0%9F%D0%BB%D0%B5%D1%85%D0%B0%D0%BD%D0%BE%D0%B2%D0%B0"
+    },
+    "page_177.txt": {
+        "title": "Эвертон (футбольный клуб)",
+        "url": "https://ru.wikipedia.org/wiki/%D0%AD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D0%BD_(%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BB%D1%83%D0%B1)"
+    },
+    "page_178.txt": {
+        "title": "Балтийская система высот",
+        "url": "https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D0%BB%D1%82%D0%B8%D0%B9%D1%81%D0%BA%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%B2%D1%8B%D1%81%D0%BE%D1%82"
+    },
+    "page_179.txt": {
+        "title": "Памятник природы",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9_%D0%BF%D0%B0%D0%BC%D1%8F%D1%82%D0%BD%D0%B8%D0%BA"
+    },
+    "page_180.txt": {
+        "title": "Олдама",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9E%D0%BB%D0%B4%D0%B0%D0%BC%D0%B0"
+    },
+    "page_181.txt": {
+        "title": "Шишковское сельское поселение (Новгородская область)",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A8%D0%B8%D1%88%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%BE%D0%B5_%D1%81%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%BE%D0%B5_%D0%BF%D0%BE%D1%81%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_(%D0%9D%D0%BE%D0%B2%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D1%8F_%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C)"
+    },
+    "page_182.txt": {
+        "title": "Черноручейское сельское поселение",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D1%80%D0%BD%D0%BE%D1%80%D1%83%D1%87%D0%B5%D0%B9%D1%81%D0%BA%D0%BE%D0%B5_%D1%81%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%BE%D0%B5_%D0%BF%D0%BE%D1%81%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5"
+    },
+    "page_183.txt": {
+        "title": "Малая Крутуша",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D1%83%D1%82%D1%83%D1%88%D0%B0_(%D0%98%D0%BB%D1%8C%D0%B8%D0%BD%D0%BE%D0%B3%D0%BE%D1%80%D1%81%D0%BA%D0%BE%D0%B5_%D1%81%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%BE%D0%B5_%D0%BF%D0%BE%D1%81%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5)"
+    },
+    "page_184.txt": {
+        "title": "Атлас мира",
+        "url": "https://ru.wikipedia.org/wiki/%D0%90%D1%82%D0%BB%D0%B0%D1%81_%D0%BC%D0%B8%D1%80%D0%B0"
+    },
+    "page_185.txt": {
+        "title": "Малая Пустошка (Новгородская область)",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9F%D1%83%D1%81%D1%82%D0%BE%D1%88%D0%BA%D0%B0_(%D0%98%D0%BB%D1%8C%D0%B8%D0%BD%D0%BE%D0%B3%D0%BE%D1%80%D1%81%D0%BA%D0%BE%D0%B5_%D1%81%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%BE%D0%B5_%D0%BF%D0%BE%D1%81%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5)"
+    },
+    "page_186.txt": {
+        "title": "Архив Российской академии наук",
+        "url": "https://ru.wikipedia.org/wiki/%D0%90%D1%80%D1%85%D0%B8%D0%B2_%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D0%B9%D1%81%D0%BA%D0%BE%D0%B9_%D0%B0%D0%BA%D0%B0%D0%B4%D0%B5%D0%BC%D0%B8%D0%B8_%D0%BD%D0%B0%D1%83%D0%BA"
+    },
+    "page_187.txt": {
+        "title": "Мегила",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B3%D0%B8%D0%BB%D0%B0"
+    },
+    "page_188.txt": {
+        "title": "Уткинский Завод",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A3%D1%82%D0%BA%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D0%97%D0%B0%D0%B2%D0%BE%D0%B4"
+    },
+    "page_189.txt": {
+        "title": "Раукар",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D1%83%D0%BA%D0%B0%D1%80"
+    },
+    "page_190.txt": {
+        "title": "Саратовский социально-экономический институт",
+        "url": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D1%80%D0%B0%D1%82%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE-%D1%8D%D0%BA%D0%BE%D0%BD%D0%BE%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D0%B8%D0%BD%D1%81%D1%82%D0%B8%D1%82%D1%83%D1%82"
+    },
+    "page_191.txt": {
+        "title": "1854 год",
+        "url": "https://ru.wikipedia.org/wiki/1854_%D0%B3%D0%BE%D0%B4"
+    },
+    "page_192.txt": {
+        "title": "Еврейская энциклопедия Брокгауза и Ефрона",
+        "url": "https://ru.wikipedia.org/wiki/%D0%95%D0%B2%D1%80%D0%B5%D0%B9%D1%81%D0%BA%D0%B0%D1%8F_%D1%8D%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F_%D0%91%D1%80%D0%BE%D0%BA%D0%B3%D0%B0%D1%83%D0%B7%D0%B0_%D0%B8_%D0%95%D1%84%D1%80%D0%BE%D0%BD%D0%B0"
+    },
+    "page_193.txt": {
+        "title": "Вельё",
+        "url": "https://ru.wikipedia.org/wiki/%D0%92%D0%B5%D0%BB%D1%8C%D1%91_(%D0%BE%D0%B7%D0%B5%D1%80%D0%BE)"
+    },
+    "page_194.txt": {
+        "title": "Эвертон",
+        "url": "https://ru.wikipedia.org/wiki/%D0%AD%D0%B2%D0%B5%D1%80%D1%82%D0%BE%D0%BD"
+    },
+    "page_195.txt": {
+        "title": "Плагиат",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B5%D0%BF%D1%80%D0%B0%D0%B2%D0%BE%D0%BC%D0%B5%D1%80%D0%BD%D1%8B%D0%B5_%D0%B7%D0%B0%D0%B8%D0%BC%D1%81%D1%82%D0%B2%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F"
+    },
+    "page_196.txt": {
+        "title": "Аккрингтон (футбольный клуб)",
+        "url": "https://ru.wikipedia.org/wiki/%D0%90%D0%BA%D0%BA%D1%80%D0%B8%D0%BD%D0%B3%D1%82%D0%BE%D0%BD_(%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BB%D1%83%D0%B1)"
+    },
+    "page_197.txt": {
+        "title": "Глава муниципального образования",
+        "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%BB%D0%B0%D0%B2%D0%B0_%D1%81%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D0%BF%D0%BE%D1%81%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F"
+    },
+    "page_198.txt": {
+        "title": "Государственный комитет Российской Федерации по высшему образованию",
+        "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BC%D0%B8%D1%82%D0%B5%D1%82_%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D0%B9%D1%81%D0%BA%D0%BE%D0%B9_%D0%A4%D0%B5%D0%B4%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%B8_%D0%BF%D0%BE_%D0%B2%D1%8B%D1%81%D1%88%D0%B5%D0%BC%D1%83_%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8E"
+    },
+    "page_199.txt": {
+        "title": "Международная карта мира",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B6%D0%B4%D1%83%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D0%BD%D0%B0%D1%8F_%D0%BA%D0%B0%D1%80%D1%82%D0%B0_%D0%BC%D0%B8%D1%80%D0%B0"
+    },
+    "page_200.txt": {
+        "title": "Михальцево",
+        "url": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B8%D1%85%D0%B0%D0%BB%D1%8C%D1%86%D0%BE%D0%B2%D0%BE"
+    }
+}

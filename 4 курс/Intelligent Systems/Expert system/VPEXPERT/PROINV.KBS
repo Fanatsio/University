@@ -1,0 +1,232 @@
+! JUVENILE DELINQUENT PROBATION INVESTIGATION EVALUATION
+! Saved as PROINV.KBS
+!Microcomputer Used:      Wang Microsystems PC 382
+!Software Used:           VP-Expert, Educational Version 2.02
+!KBS File Name:           PROINV.KBS
+!Temporary File Access:   TEMP 2
+!Chained to:              DIAGASMT.KBS
+!**************************************************************************
+EXECUTE;                        !starts consultation immediately
+bkcolor = 3;                    !set screen background color to light blue
+runtime;                        !removes consultation windows at runtime
+endoff;                         !eliminate need to press END after a choice
+!=============================== Actions Block ============================
+ACTIONS
+     wopen 1,1,1,20,77,3
+     active 1
+     display "
+
+                     PROBATION INVESTIGATION EVALUATION
+
+
+      This section of the consultation evaluates the juvenile's family
+    background, educational/school history, previous substance abuse
+    record, prior personal history and/or psychological reports, and
+    prior effectiveness of social assistance administered to the
+    juvenile.
+
+
+
+    PLEASE PRESS ANY KEY TO BEGIN THE PROBATION INVESTIGATION EVALUATION~
+
+       "
+     wclose 1                                              !remove window 1
+     wopen 1,1,1,5,77,2                       !define instructions window 1
+     active 1                                            !activate window 1
+     display "                           INSTRUCTIONS
+          Use the arrow keys to move the lightbar to a desired
+          answer choice then press the Enter key."
+     wopen 2,7,1,14,77,3                      !define consultation window 2
+     active 2                                            !activate window 2
+     find pro_inv
+     find word1
+     find word2
+     wclose 1                                              !remove window 1
+     wclose 2                                              !remove window 2
+     wopen 1,1,1,17,77,2
+     active 1
+     display "
+   Based on the responses, the Probation Investigation Evaluation is {pro_inv}
+     because:
+
+     1.   the respondent's overall educational/school history is {ed};
+     2.   {fam}, the respondent {word1} live with a family which is
+            broken or unable to meet his/her needs;
+     3.   the repondent's prior psychological condition has determined
+            to be {psy};
+     4.   {drugs}, the respondent {word2} been previously involved with
+            drugs;
+     5.   previously administered social assistance has been {social}
+            to the respondent.
+
+      PRESS ANY KEY TO GO ON TO THE DIAGNOSTIC ASSESSMENT EVALUATION~
+     "
+     wclose 1
+     SAVEFACTS temp2                !save all variable names and values in a
+                                    !temporary text file called TEMP2
+     CHAIN diagasmt                 !link to another .KBS file called DIAGASMT
+;
+!=============================== Rules Block ==============================
+RULE 1C
+     IF ed = good AND fam = yes AND psy = good
+     AND drugs = yes AND social = helpful
+     THEN pro_inv = FAIR;
+RULE 2C
+     IF ed = good and fam = yes and psy = good
+     and drugs = yes and social = not_helpful
+     then pro_inv = FAIR;
+RULE 3C
+     if ed = good and fam = yes and psy = good
+     and drugs = no and social = helpful then
+     pro_inv = GOOD;
+RULE 4C
+     if ed = good and fam = yes and psy = good
+     and drugs = no and social = not_helpful
+     then pro_inv = FAIR;
+RULE 5C
+     if ed = good and fam = yes and psy = poor
+     and drugs = yes and social = helpful then
+     pro_inv = FAIR;
+RULE 6C
+     if ed = good and fam = yes and psy = poor
+     and drugs = yes and social = not_helpful
+     then pro_inv = POOR;
+RULE 7C
+     if ed = good and fam = yes and psy = poor
+     and drugs = no and social = helpful then
+     pro_inv = FAIR;
+RULE 8C
+     if ed = good and fam = yes and psy = poor
+     and drugs = no and social = not_helpful then
+     pro_inv = FAIR;
+RULE 9C
+     if ed = good and fam = no and psy = good
+     and drugs = yes and social = helpful then
+     pro_inv = GOOD;
+RULE 10C
+     if ed = good and fam = no and psy = good
+     and drugs = yes and social = not_helpful
+     then pro_inv = FAIR;
+RULE 11C
+     if ed = good and fam = no and psy = good
+     and drugs = no and social = helpful then
+     pro_inv = GOOD;
+RULE 12C
+     if ed = good and fam = no and psy = good
+     and drugs = no and social = not_helpful
+     then pro_inv = GOOD;
+RULE 13C
+     if ed = good and fam = no and psy = poor
+     and drugs = yes and social = helpful then
+     pro_inv = FAIR;
+RULE 14C
+     if ed = good and fam = no and psy = poor
+     and drugs = yes and social = not_helpful
+     then pro_inv = FAIR;
+RULE 15C
+     if ed = good and fam = no and psy = poor
+     and drugs = no and social = helpful then
+     pro_inv = GOOD;
+RULE 16C
+     if ed = good and fam = no and psy = poor
+     and drugs = no and social = not_helpful
+     then pro_inv = FAIR;
+RULE 17C
+     if ed = poor and fam = yes and psy = good
+     and drugs = yes and social = helpful then
+     pro_inv = FAIR;
+RULE 18C
+     if ed = poor and fam = yes and psy = good
+     and drugs = yes and social = not_helpful
+     then pro_inv = POOR;
+RULE 19C
+     if ed = poor and fam = yes and psy = good
+     and drugs = no and social = helpful then
+     pro_inv = FAIR;
+RULE 20C
+     if ed = poor and fam = yes and psy = good
+     and drugs = no and social = not_helpful then
+     pro_inv = FAIR;
+RULE 21C
+     if ed = poor and fam = yes and psy = poor
+     and drugs = yes and social = helpful then
+     pro_inv = POOR;
+RULE 22C
+     if ed = poor and fam = yes and psy = poor
+     and drugs = yes and social = not_helpful
+     then pro_inv = POOR;
+RULE 23C
+     if ed = poor and fam = yes and psy = poor
+     and drugs = no and social = helpful then
+     pro_inv = FAIR;
+RULE 24C
+     if ed = poor and fam = yes and psy = poor
+     and drugs = no and social = not_helpful then
+     pro_inv = POOR;
+RULE 25C
+     if ed = poor and fam = no and psy = good
+     and drugs = yes and social = helpful then
+     pro_inv = FAIR;
+RULE 26C
+     if ed = poor and fam = no and psy = good
+     and drugs = yes and social = not_helpful
+     then pro_inv = FAIR;
+RULE 27C
+     if ed = poor and fam = no and psy = good
+     and drugs = no and social = helpful then
+     pro_inv = GOOD;
+RULE 28C
+     if ed = poor and fam = no and psy = good
+     and drugs = no and social = not_helpful then
+     pro_inv = FAIR;
+RULE 29C
+     if ed = poor and fam = no and psy = poor
+     and drugs = yes and social = helpful then
+     pro_inv = FAIR;
+RULE 30C
+     if ed = poor and fam = no and psy = poor
+     and drugs = yes and social = not_helpful
+     then pro_inv = POOR;
+RULE 31C
+     if ed = poor and fam = no and psy = poor
+     and drugs = no and social = helpful then
+     pro_inv = FAIR;
+RULE 32C
+     if ed = poor and fam = no and psy = poor
+     and drugs = no and social = not_helpful
+     then pro_inv = FAIR;
+RULE WORD1A
+     if fam = yes
+     then word1 = does;
+RULE WORD1B
+     if fam = no
+     then word1 = does_not;
+RULE WORD2A
+     if drugs = yes
+     then word2 = has;
+RULE WORD2B
+     if drugs = no
+     then word2 = has_not;
+!================================= Questions Block =========================
+
+ask ed: "What is the history of the respondent's general overall school
+attendance record and behavior?";
+choices ed: good, poor;
+
+ask fam: "Does the respondent come from a broken family which has not been
+supportive or is unable to meet his/her physical or social needs?";
+choices fam: yes, no;
+
+ask psy: "After reviewing any previous psychiatric and/or general
+personal history reports, what is the evaluation of the respondent's
+prior psychological condition?";
+choices psy: good, poor;
+
+ask drugs: "Has the respondent previously been involved with drugs/alcohol?";
+choices drugs: yes, no;
+
+ask social: "If social assistance was ever administered to the respondent
+or his/her family concerning the above matters, what were the results?
+(if never administered, assume that it could be `helpful' to respondent)";
+choices social: helpful, not_helpful;
+

@@ -1,0 +1,418 @@
+!
+!
+!                DECISION SITUATION UNDER STUDY:
+!          EVALUATING A KBS DEVELOPMENT PROJECT'S RISK
+!             KNOWLEDGE BASE - VP-EXPERT VERSION
+!               (Initial Prototype ks-eval4.kbs)
+
+
+RUNTIME;
+ACTIONS
+! PRINTON
+DISPLAY"
+              ________________________________________________
+             |                                                |
+             |                 WELCOME TO THE                 |
+             |           RISK EVALUATION ASSISTANT            |
+             |                                                |
+             |       Copyright (c) 1991 by R.J. Mockler       |
+             |               All right reserved               |
+             |                                                |
+             |         Developed with John Merseburg          |
+             |                                                |
+             |        Direct all inquiries for use to:        |
+             |             Dr. Robert J. Mockler              |
+             |              Macmillan Publishing              |
+             |               Columbus, OH 43235               |
+             |________________________________________________|
+
+
+      Press any key to continue.~"
+      CLS
+
+DISPLAY"
+           ____________________________________________________
+          |                                                    |
+          |   This system is designed to help  you  evaluate   |
+          |   the risks inherent in your proposed  knowledge   |
+          |   based system project. Based on your replies to   |
+          |   the questions  asked  about:                     |
+          |     . the  organization environment                |
+          |     . the  knowledge  area  complexity             |
+          |     . the computer expertise adequacy              |
+          |   you will be given an estimate of the project's   |
+          |   chances of success.                              |
+          |                                                    |
+          |____________________________________________________|
+
+          Press any key to continue~"
+          CLS
+
+FIND level_of_risk;
+
+
+
+!    Level of Risk
+
+Rule 1-1
+if knowledge-area-complexity = simple and
+   org-environment-complexity = favorable and
+   computer-expertise-adequacy = ok or
+   computer-expertise-adequacy = good
+then level_of_risk = low
+CLS
+DISPLAY"
+Based on the answers you have given, the project you have
+proposed has a low level of risk and a high potential for
+success";
+
+Rule 1-2
+if knowledge-area-complexity = simple or
+   knowledge-area-complexity = moderate and
+   org-environment-complexity = favorable and
+   computer-expertise-adequacy = good
+then level_of_risk = low
+CLS
+DISPLAY"
+Based on the answers you have given, the project you have
+proposed has a low level of risk and a high potential for
+success";
+
+Rule 1-3
+if knowledge-area-complexity = simple and
+   org-environment-complexity = neutral or
+   org-environment-complexity = favorable and
+   computer-expertise-adequacy = good
+then level_of_risk = low
+CLS
+DISPLAY"
+Based on the answers you have given, the project you have
+proposed has a low level of risk and a high potential for
+success";
+
+Rule 1-4
+if knowledge-area-complexity = complex and
+   org-environment-complexity = unfavorable or
+   computer-expertise-adequacy = poor
+then level_of_risk = high_risk
+CLS
+DISPLAY"
+ Based on the answers you have given,
+
+ the project you have proposed is a high risk project";
+
+Rule 1-5
+if org-environment-complexity = unfavorable and
+   knowledge-area-complexity = complex or
+   computer-expertise-adequacy = poor
+then level_of_risk = high_risk
+CLS
+DISPLAY"
+ Based on the answers you have given,
+
+ the project you have proposed is a high risk project";
+
+Rule 1-6
+if computer-expertise-adequacy = poor and
+   knowledge-area-complexity = complex or
+   org-environment-complexity = unfavorable
+then level_of_risk = high_risk
+CLS
+DISPLAY"
+ Based on the answers you have given,
+
+ the project you have proposed is a high risk project";
+
+Rule 1-7
+if level_of_risk = UNKNOWN
+then level_of_risk = moderate
+CLS
+DISPLAY"
+     Based on the answers you have given, the project you have
+proposed is a moderately risky one, which must be carefully
+planned. The specific areas that must be re-examined and detailed
+plans for reducing the risk found in the project will be
+identified in more advanced versions of this system";
+
+!   knowledge area complexity   */
+
+Rule 2-1
+if factual-knowledge = simple and
+   reasoning-heuristics = simple
+then knowledge-area-complexity = simple;
+
+Rule 2-2
+if reasoning-heuristics = complex and
+   factual-knowledge = moderate or
+   factual-knowledge = complex
+then knowledge-area-complexity = complex;
+
+Rule 2-3
+if factual-knowledge = complex and
+   reasoning-heuristics = complex or
+   reasoning-heuristics = moderate
+then knowledge-area-complexity = complex;
+
+Rule 2-4
+if knowledge-area-complexity = UNKNOWN
+then knowledge-area-complexity = moderate;
+
+ASK reasoning-heuristics:" For the proposed knowledge based
+system, would you describe the reasoning processes involved as
+simple, moderately-complex or complex?";
+
+CHOICES reasoning-heuristics: simple, moderate, complex;
+
+ASK factual-knowledge:" For the proposed knowledge based
+system, would you describe the factual knowledge covered in the
+area as straight-forward and simple (for example, how an electric
+motor works), moderately complex (for example, insurance claims
+processing) or complex (for example, international corporate tax
+planning and auditing)?";
+
+CHOICES factual-knowledge: simple, moderate, complex;
+
+!   organization environment complexity   */
+
+Rule 3-1
+if knowledge-area-expertise-avail = favorable and
+   organization_units_involved <=5 and
+   company-management-involvement = favorable or
+   company-management-involvement = neutral
+then org-environment-complexity = favorable;
+
+Rule 3-2
+if knowledge-area-expertise-avail = favorable or
+   knowledge-area-expertise-avail = neutral and
+   organization_units_involved <= 5 and
+   company-management-involvement = favorable
+then org-environment-complexity = favorable;
+
+Rule 3-3
+if knowledge-area-expertise-avail = neutral and
+   organization_units_involved <= 5 and
+   company-management-involvement = neutral
+then org-environment-complexity = neutral;
+
+Rule 3-4
+if knowledge-area-expertise-avail = favorable and
+   organization_units_involved <= 5 and
+   company-management-involvement = unfavorable
+then org-environment-complexity = neutral;
+
+Rule 3-5
+if knowledge-area-expertise-avail = unfavorable and
+   organization_units_involved <=5 and
+   company-management-involvement = favorable
+then org-environment-complexity = neutral;
+
+Rule 3-6
+if knowledge-area-expertise-avail = favorable and
+   organization_units_involved > 5 and
+   company-management-involvement = favorable or
+   company-management-involvement = neutral
+then org-environment-complexity = neutral;
+
+Rule 3-7
+if knowledge-area-expertise-avail = favorable or
+   knowledge-area-expertise-avail = neutral and
+   organization_units_involved >5 and
+   company-management-involvement = favorable
+then org-environment-complexity = neutral;
+
+Rule 3-8
+if org-environment-complexity = UNKNOWN
+then org-environment-complexity = unfavorable;
+
+!     knowledge area expertise availability     */
+
+Rule 4-1
+if expert-developed = yes
+then knowledge-area-expertise-avail = favorable;
+
+Rule 4-2
+if expert-developed = no and
+   expert-availability = unlimited
+then knowledge-area-expertise-avail = favorable;
+
+Rule 4-3
+if expert-developed = no and
+   expert-availability = limited
+then knowledge-area-expertise-avail = neutral;
+
+Rule 4-4
+if expert-developed = no and
+   expert-availability = very-limited
+then knowledge-area-expertise-avail = unfavorable;
+
+ASK expert-developed:" Will the system be developed by the
+expert whose knowledge is being replicated in the system?";
+
+CHOICES expert-developed: yes, no;
+
+ASK expert-availability:" Where the system is not being
+developed by the expert(s) whose knowledge is being replicated in
+the system, how available will the expert(s) be who are involved
+in the project?";
+
+CHOICES expert-availability: unlimited, limited,
+very-limited;
+
+!     organizational units involved        */
+
+Rule 5-1
+if users_involved > -1 and
+   experts_involved > -1
+then organization_units_involved = (users_involved+experts_involved);
+
+ASK users_involved:" How many people are expected to use the
+proposed system on a regular basis? Type in any number.";
+
+ASK experts_involved:" How many experts will be involved in
+the development of the system? Type in any number.";
+
+!    company management involvement   */
+
+Rule 6-1
+if initiated-by = top-company-management or
+   initiated-by = operating-management or
+   initiated-by = user-or-expert and
+   supported-by = top-company-management
+then company-management-involvement = favorable;
+
+Rule 6-2
+if initiated-by = outside-company and
+   management-support = no
+then company-management-involvement = unfavorable;
+
+Rule 6-3
+if supported-by = top-company-management and
+   initiated-by = outside-company and
+   management-support = yes
+then company-management-involvement = neutral;
+
+Rule 6-4
+if company-management-involvement = UNKNOWN
+then company-management-involvement = neutral;
+
+
+ASK initiated-by:" Who initiated the proposed project?";
+
+CHOICES initiated-by: top-company-management,
+operating-management, user-or-expert, outside-company;
+
+ASK supported-by:" What is the highest level of management
+which has expressed interest in and support for the project?";
+
+CHOICES supported-by: top-company-management,
+operating-management;
+
+ASK management-support:" Though the system was initiated by
+someone outside the company, has management expressed interest in
+and support for the project?";
+
+CHOICES management-support: yes, no;
+
+!   computer expertise adequacy      */
+
+Rule 7-1
+if computer-expertise-requirements = favorable and
+   computer-expertise-availability = favorable or
+   computer-expertise-availability = neutral
+then computer-expertise-adequacy = good;
+
+Rule 7-2
+if computer-expertise-requirements = favorable or
+   computer-expertise-requirements = neutral and
+   computer-expertise-availability = favorable
+then computer-expertise-adequacy = good;
+
+Rule 7-3
+if computer-expertise-requirements = unfavorable and
+   computer-expertise-availability = unfavorable or
+   computer-expertise-availability = neutral
+then computer-expertise-adequacy = poor;
+
+Rule 7-4
+if computer-expertise-requirements = unfavorable or
+   computer-expertise-requirements = neutral and
+   computer-expertise-availability = unfavorable
+then computer-expertise-adequacy = poor;
+
+Rule 7-5
+if computer-expertise-adequacy = UNKNOWN
+then computer-expertise-adequacy = ok;
+
+!   computer expertise requirements      */
+
+Rule 8-1
+if knowledge-area-complexity = simple or
+   knowledge-area-complexity = moderate and
+   org-environment-complexity = favorable
+then computer-expertise-requirements = favorable;
+
+Rule 8-2
+if knowledge-area-complexity = simple and
+   org-environment-complexity = favorable or
+   org-environment-complexity = neutral
+then computer-expertise-requirements = favorable;
+
+Rule 8-3
+if knowledge-area-complexity = complex or
+   knowledge-area-complexity = moderate and
+   org-environment-complexity = unfavorable
+then computer-expertise-requirements = unfavorable;
+
+Rule 8-4
+if knowledge-area-complexity = complex and
+   org-environment-complexity = unfavorable or
+   org-environment-complexity = neutral
+then computer-expertise-requirements = unfavorable;
+
+rule 8-5
+if computer-expertise-requirements = UKNOWN
+then computer-expertise-requirements = neutral;
+
+
+!     computer expertise availability        */
+
+Rule 9-1
+if people = unlimited and
+   equipment-facilities = limited or
+   equipment-facilities = unlimited
+then computer-expertise-availability = favorable;
+
+Rule 9-2
+if people = unlimited or
+   people = limited and
+   equipment-facilities = unlimited
+then computer-expertise-availibility = favorable;
+
+Rule 9-3
+if people = very-limited and
+   equipment-facilities = limited or
+   equipment-facilities = very-limited
+then computer-expertise-availability = unfavorable;
+
+Rule 9-4
+if people = very-limited or
+   people = limited and
+   equipment-facilities = very-limited
+then computer-expertise-availability = unfavorable;
+
+Rule 9-5
+if computer-expertise-availablity= UKNOWN
+then computer-expertise-availability = neutral;
+
+ASK people:" To what degree will Computer Information System
+personnel, who are qualified to develop such a system, be made
+available to work on this project?";
+
+CHOICES people: unlimited, limited, very-limited;
+
+ASK equipment-facilities:" To what degree will equipment and
+facilities needed to develop this proposed system be made
+available to work on this project?";
+
+CHOICES equipment-facilities: unlimited, limited, very-limited;
+

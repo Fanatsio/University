@@ -1,0 +1,131 @@
+C:\Users\Hetsu\source\repos\Maze\bin\Debug\net6.0-windows\Maze.exe
+C:\Users\Hetsu\source\repos\Maze\bin\Debug\net6.0-windows\Maze.deps.json
+C:\Users\Hetsu\source\repos\Maze\bin\Debug\net6.0-windows\Maze.runtimeconfig.json
+C:\Users\Hetsu\source\repos\Maze\bin\Debug\net6.0-windows\Maze.dll
+C:\Users\Hetsu\source\repos\Maze\bin\Debug\net6.0-windows\Maze.pdb
+C:\Users\Hetsu\source\repos\Maze\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\Hetsu\source\repos\Maze\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\Hetsu\source\repos\Maze\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\Hetsu\source\repos\Maze\obj\Debug\net6.0-windows\Maze_MarkupCompile.cache
+C:\Users\Hetsu\source\repos\Maze\obj\Debug\net6.0-windows\Maze.g.resources
+C:\Users\Hetsu\source\repos\Maze\obj\Debug\net6.0-windows\Maze.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hetsu\source\repos\Maze\obj\Debug\net6.0-windows\Maze.AssemblyInfoInputs.cache
+C:\Users\Hetsu\source\repos\Maze\obj\Debug\net6.0-windows\Maze.AssemblyInfo.cs
+C:\Users\Hetsu\source\repos\Maze\obj\Debug\net6.0-windows\Maze.csproj.CoreCompileInputs.cache
+C:\Users\Hetsu\source\repos\Maze\obj\Debug\net6.0-windows\Maze.dll
+C:\Users\Hetsu\source\repos\Maze\obj\Debug\net6.0-windows\refint\Maze.dll
+C:\Users\Hetsu\source\repos\Maze\obj\Debug\net6.0-windows\Maze.pdb
+C:\Users\Hetsu\source\repos\Maze\obj\Debug\net6.0-windows\Maze.genruntimeconfig.cache
+C:\Users\Hetsu\source\repos\Maze\obj\Debug\net6.0-windows\ref\Maze.dll
+C:\Users\Hetsu\Desktop\IS\Maze\bin\Debug\net6.0-windows\Maze.exe
+C:\Users\Hetsu\Desktop\IS\Maze\bin\Debug\net6.0-windows\Maze.deps.json
+C:\Users\Hetsu\Desktop\IS\Maze\bin\Debug\net6.0-windows\Maze.runtimeconfig.json
+C:\Users\Hetsu\Desktop\IS\Maze\bin\Debug\net6.0-windows\Maze.dll
+C:\Users\Hetsu\Desktop\IS\Maze\bin\Debug\net6.0-windows\Maze.pdb
+C:\Users\Hetsu\Desktop\IS\Maze\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\Hetsu\Desktop\IS\Maze\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\Hetsu\Desktop\IS\Maze\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\Hetsu\Desktop\IS\Maze\obj\Debug\net6.0-windows\Maze_MarkupCompile.cache
+C:\Users\Hetsu\Desktop\IS\Maze\obj\Debug\net6.0-windows\Maze.g.resources
+C:\Users\Hetsu\Desktop\IS\Maze\obj\Debug\net6.0-windows\Maze.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hetsu\Desktop\IS\Maze\obj\Debug\net6.0-windows\Maze.AssemblyInfoInputs.cache
+C:\Users\Hetsu\Desktop\IS\Maze\obj\Debug\net6.0-windows\Maze.AssemblyInfo.cs
+C:\Users\Hetsu\Desktop\IS\Maze\obj\Debug\net6.0-windows\Maze.csproj.CoreCompileInputs.cache
+C:\Users\Hetsu\Desktop\IS\Maze\obj\Debug\net6.0-windows\Maze.sourcelink.json
+C:\Users\Hetsu\Desktop\IS\Maze\obj\Debug\net6.0-windows\Maze.dll
+C:\Users\Hetsu\Desktop\IS\Maze\obj\Debug\net6.0-windows\refint\Maze.dll
+C:\Users\Hetsu\Desktop\IS\Maze\obj\Debug\net6.0-windows\Maze.pdb
+C:\Users\Hetsu\Desktop\IS\Maze\obj\Debug\net6.0-windows\Maze.genruntimeconfig.cache
+C:\Users\Hetsu\Desktop\IS\Maze\obj\Debug\net6.0-windows\ref\Maze.dll
+C:\Users\Hetsu\Desktop\IS\Maze\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\Hetsu\Desktop\IS\Maze\obj\Debug\net6.0-windows\Maze.csproj.AssemblyReference.cache
+C:\Users\Hetsu\Desktop\IS\Maze\obj\Debug\net6.0-windows\Maze.csproj.Up2Date
+C:\Users\rechu\Downloads\IS-main\Maze\bin\Debug\net6.0-windows\Maze.exe
+C:\Users\rechu\Downloads\IS-main\Maze\bin\Debug\net6.0-windows\Maze.deps.json
+C:\Users\rechu\Downloads\IS-main\Maze\bin\Debug\net6.0-windows\Maze.runtimeconfig.json
+C:\Users\rechu\Downloads\IS-main\Maze\bin\Debug\net6.0-windows\Maze.dll
+C:\Users\rechu\Downloads\IS-main\Maze\bin\Debug\net6.0-windows\Maze.pdb
+C:\Users\rechu\Downloads\IS-main\Maze\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\rechu\Downloads\IS-main\Maze\obj\Debug\net6.0-windows\Maze.csproj.AssemblyReference.cache
+C:\Users\rechu\Downloads\IS-main\Maze\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\rechu\Downloads\IS-main\Maze\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\rechu\Downloads\IS-main\Maze\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\rechu\Downloads\IS-main\Maze\obj\Debug\net6.0-windows\Maze_MarkupCompile.cache
+C:\Users\rechu\Downloads\IS-main\Maze\obj\Debug\net6.0-windows\Maze.g.resources
+C:\Users\rechu\Downloads\IS-main\Maze\obj\Debug\net6.0-windows\Maze.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rechu\Downloads\IS-main\Maze\obj\Debug\net6.0-windows\Maze.AssemblyInfoInputs.cache
+C:\Users\rechu\Downloads\IS-main\Maze\obj\Debug\net6.0-windows\Maze.AssemblyInfo.cs
+C:\Users\rechu\Downloads\IS-main\Maze\obj\Debug\net6.0-windows\Maze.csproj.CoreCompileInputs.cache
+C:\Users\rechu\Downloads\IS-main\Maze\obj\Debug\net6.0-windows\Maze.csproj.Up2Date
+C:\Users\rechu\Downloads\IS-main\Maze\obj\Debug\net6.0-windows\Maze.dll
+C:\Users\rechu\Downloads\IS-main\Maze\obj\Debug\net6.0-windows\refint\Maze.dll
+C:\Users\rechu\Downloads\IS-main\Maze\obj\Debug\net6.0-windows\Maze.pdb
+C:\Users\rechu\Downloads\IS-main\Maze\obj\Debug\net6.0-windows\Maze.genruntimeconfig.cache
+C:\Users\rechu\Downloads\IS-main\Maze\obj\Debug\net6.0-windows\ref\Maze.dll
+D:\GitHub\sht\Интеллектуальные системы\Maze\bin\Debug\net6.0-windows\Maze.exe
+D:\GitHub\sht\Интеллектуальные системы\Maze\bin\Debug\net6.0-windows\Maze.deps.json
+D:\GitHub\sht\Интеллектуальные системы\Maze\bin\Debug\net6.0-windows\Maze.runtimeconfig.json
+D:\GitHub\sht\Интеллектуальные системы\Maze\bin\Debug\net6.0-windows\Maze.dll
+D:\GitHub\sht\Интеллектуальные системы\Maze\bin\Debug\net6.0-windows\Maze.pdb
+D:\GitHub\sht\Интеллектуальные системы\Maze\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+D:\GitHub\sht\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\Maze.csproj.AssemblyReference.cache
+D:\GitHub\sht\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\MainWindow.baml
+D:\GitHub\sht\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\MainWindow.g.cs
+D:\GitHub\sht\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\App.g.cs
+D:\GitHub\sht\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\Maze_MarkupCompile.cache
+D:\GitHub\sht\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\Maze.g.resources
+D:\GitHub\sht\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\Maze.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub\sht\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\Maze.AssemblyInfoInputs.cache
+D:\GitHub\sht\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\Maze.AssemblyInfo.cs
+D:\GitHub\sht\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\Maze.csproj.CoreCompileInputs.cache
+D:\GitHub\sht\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\Maze.sourcelink.json
+D:\GitHub\sht\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\Maze.csproj.Up2Date
+D:\GitHub\sht\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\Maze.dll
+D:\GitHub\sht\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\refint\Maze.dll
+D:\GitHub\sht\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\Maze.pdb
+D:\GitHub\sht\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\Maze.genruntimeconfig.cache
+D:\GitHub\sht\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\ref\Maze.dll
+E:\Лабораторные работы\Интеллектуальные системы\Maze\bin\Debug\net6.0-windows\Maze.exe
+E:\Лабораторные работы\Интеллектуальные системы\Maze\bin\Debug\net6.0-windows\Maze.deps.json
+E:\Лабораторные работы\Интеллектуальные системы\Maze\bin\Debug\net6.0-windows\Maze.runtimeconfig.json
+E:\Лабораторные работы\Интеллектуальные системы\Maze\bin\Debug\net6.0-windows\Maze.dll
+E:\Лабораторные работы\Интеллектуальные системы\Maze\bin\Debug\net6.0-windows\Maze.pdb
+E:\Лабораторные работы\Интеллектуальные системы\Maze\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+E:\Лабораторные работы\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\Maze.csproj.AssemblyReference.cache
+E:\Лабораторные работы\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\MainWindow.baml
+E:\Лабораторные работы\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\MainWindow.g.cs
+E:\Лабораторные работы\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\App.g.cs
+E:\Лабораторные работы\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\Maze_MarkupCompile.cache
+E:\Лабораторные работы\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\Maze.g.resources
+E:\Лабораторные работы\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\Maze.GeneratedMSBuildEditorConfig.editorconfig
+E:\Лабораторные работы\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\Maze.AssemblyInfoInputs.cache
+E:\Лабораторные работы\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\Maze.AssemblyInfo.cs
+E:\Лабораторные работы\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\Maze.csproj.CoreCompileInputs.cache
+E:\Лабораторные работы\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\Maze.csproj.Up2Date
+E:\Лабораторные работы\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\Maze.dll
+E:\Лабораторные работы\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\refint\Maze.dll
+E:\Лабораторные работы\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\Maze.pdb
+E:\Лабораторные работы\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\Maze.genruntimeconfig.cache
+E:\Лабораторные работы\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\ref\Maze.dll
+F:\Лабораторные работы\Интеллектуальные системы\Maze\bin\Debug\net6.0-windows\Maze.exe
+F:\Лабораторные работы\Интеллектуальные системы\Maze\bin\Debug\net6.0-windows\Maze.deps.json
+F:\Лабораторные работы\Интеллектуальные системы\Maze\bin\Debug\net6.0-windows\Maze.runtimeconfig.json
+F:\Лабораторные работы\Интеллектуальные системы\Maze\bin\Debug\net6.0-windows\Maze.dll
+F:\Лабораторные работы\Интеллектуальные системы\Maze\bin\Debug\net6.0-windows\Maze.pdb
+F:\Лабораторные работы\Интеллектуальные системы\Maze\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+F:\Лабораторные работы\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\Maze.csproj.AssemblyReference.cache
+F:\Лабораторные работы\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\MainWindow.baml
+F:\Лабораторные работы\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\MainWindow.g.cs
+F:\Лабораторные работы\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\App.g.cs
+F:\Лабораторные работы\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\Maze_MarkupCompile.cache
+F:\Лабораторные работы\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\Maze.g.resources
+F:\Лабораторные работы\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\Maze.GeneratedMSBuildEditorConfig.editorconfig
+F:\Лабораторные работы\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\Maze.AssemblyInfoInputs.cache
+F:\Лабораторные работы\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\Maze.AssemblyInfo.cs
+F:\Лабораторные работы\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\Maze.csproj.CoreCompileInputs.cache
+F:\Лабораторные работы\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\Maze.csproj.Up2Date
+F:\Лабораторные работы\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\Maze.dll
+F:\Лабораторные работы\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\refint\Maze.dll
+F:\Лабораторные работы\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\Maze.pdb
+F:\Лабораторные работы\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\Maze.genruntimeconfig.cache
+F:\Лабораторные работы\Интеллектуальные системы\Maze\obj\Debug\net6.0-windows\ref\Maze.dll

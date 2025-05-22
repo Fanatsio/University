@@ -1,0 +1,11 @@
+C:\Users\maxam\Документы\Lab55\Lib\bin\Release\net7.0\win-x86\Lib.deps.json
+C:\Users\maxam\Документы\Lab55\Lib\bin\Release\net7.0\win-x86\Lib.dll
+C:\Users\maxam\Документы\Lab55\Lib\bin\Release\net7.0\win-x86\Lib.pdb
+C:\Users\maxam\Документы\Lab55\Lib\obj\Release\net7.0\win-x86\Lib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\maxam\Документы\Lab55\Lib\obj\Release\net7.0\win-x86\Lib.AssemblyInfoInputs.cache
+C:\Users\maxam\Документы\Lab55\Lib\obj\Release\net7.0\win-x86\Lib.AssemblyInfo.cs
+C:\Users\maxam\Документы\Lab55\Lib\obj\Release\net7.0\win-x86\Lib.csproj.CoreCompileInputs.cache
+C:\Users\maxam\Документы\Lab55\Lib\obj\Release\net7.0\win-x86\Lib.dll
+C:\Users\maxam\Документы\Lab55\Lib\obj\Release\net7.0\win-x86\refint\Lib.dll
+C:\Users\maxam\Документы\Lab55\Lib\obj\Release\net7.0\win-x86\Lib.pdb
+C:\Users\maxam\Документы\Lab55\Lib\obj\Release\net7.0\win-x86\ref\Lib.dll

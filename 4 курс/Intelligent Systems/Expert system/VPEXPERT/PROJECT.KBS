@@ -1,0 +1,689 @@
+! KBS Name   : The Computer Job Scheduler Assistant (Scheduling Support)
+! Description: An expert system to be used as a tool for training new CXAJM81H job
+!              schedulers.                                                             
+! Hardware   : IBM PC/XT DOS 3.3
+! Shell      : VP-Expert educational version
+! Filea used : PROJECT.KBS (Main KBS file: CXAJM81H Job Scheduling Consultation)
+!              PROJECT2.KBS (Chained KBS file: CXAJM81H Job Verification
+!                Consultation)
+!              VALID.DBF (dBASE file for Database link: Consultation Validation
+!                Values)
+
+ENDOFF;
+EXECUTE;
+RUNTIME;
+BKCOLOR = 3;
+
+ACTIONS
+    WOPEN 1,1,1,20,77,3                    !Defines opening credit window
+    ACTIVE 1
+    DISPLAY "
+
+
+
+                    COMPUTER JOB SCHEDULER ASSISTANT
+
+                       Developed by Jason Oliveira
+                  under the direction and supervision of
+                            Dr. D.G. Dologite
+                    For further information, contact
+                            Dr. D.G. Dologite
+                        c/o Macmillan Publishing
+
+
+                   PRESS ANY KEY TO BEGIN CONSULTATION~
+     "
+     WCLOSE 1
+     WOPEN 1,3,10,13,60,7                  !Defines opening window 1
+     ACTIVE 1
+     DISPLAY "
+
+             Computer Job Scheduler Assistant
+
+   This system is designed to be used as a training
+   tool for job schedulers.  It helps to schedule
+   the CXAJM81H job.  It then assists to verify
+   the completed job.
+
+            Please press any key to continue.~
+
+       "
+     WCLOSE 1
+     WOPEN 2,1,1,5,77,2                    !Defines instructions window 2
+     ACTIVE 2
+     DISPLAY "                          Instructions
+          Use the arrow keys to move the lightbar to a desired
+          answer choice then press the Enter key."
+     WOPEN 3,7,1,14,77,3                   !Defines consultation window 3
+     ACTIVE 3
+     FIND done_yet                         !Find Is CXAJM81H Scheduled yet?
+
+   WHILETRUE done_yet = no THEN
+     RESET done
+     RESET finish
+     FIND ssupport                         !Find CXAJM81H Scheduling Support
+     ACTIVE 2
+     ACTIVE 3
+     FIND done                             !Find Is CXAJM81H Completed yet?
+   END
+   DISPLAY "Exiting the consultation ...." ;
+
+! %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Rules %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+! *****  Rule Set 4 to Determine Scheduling Suppport *****
+
+RULE r4_1
+IF   tape     = yes    AND
+     rate     = yes    AND
+     code     = yes
+THEN ssupport = ss1
+     ind      = ss1
+     SAVEFACTS temp;
+
+RULE r4_6
+IF   tape     = no
+THEN ssupport = ss6
+     ind      = no;
+
+RULE r4_4
+IF   rate     = no1
+THEN ssupport = ss4
+     ind      = no;
+
+RULE r4_5
+IF   rate     = no2
+THEN ssupport = ss5
+     ind      = no;
+
+RULE r4_2
+IF   code     = no1
+THEN ssupport = ss2
+     ind      = no;
+
+RULE r4_3
+IF   code     = no2
+THEN ssupport = ss3
+     ind      = no;
+
+!***** Rule Set 1 to Determine TAPE Critical Factor and Help ********
+RULE tape_help
+IF tape_created = help
+THEN tape = help
+     whiletrue tape_created = help THEN
+      RESET tape_created
+      find tape_created
+     end
+     reset tape;
+
+RULE tape_valid
+IF    tape_created = yes  AND
+      blkcnt_good  >= 0
+THEN  tape =  check_valid
+      search_key = tape
+      get search_key = key, valid, all
+      close valid
+      reset tape;
+
+RULE r1_1
+IF   tape_created =  yes     AND
+     blkcnt_good  >= (val1)
+THEN tape         =  yes
+     display "The block count is good."
+     display "  "
+BECAUSE
+"The tape is of a current creation with no write errors and
+the block count is within a normal range
+
+";
+
+RULE r1_2
+IF   tape_created =  no      OR
+     blkcnt_good  <= (val1)
+THEN tape         =  no
+     display "The input tape is not ready!!  /Q if you wish to quit."
+     display "  "
+BECAUSE
+"Either the tape is not of a good current creation or
+the block count falls below the acceptable range
+
+";
+
+
+!***** Rule Set 2 to Determine RATE Critical Factor and Help ******
+RULE rate2_help
+IF   change        =  none  AND
+     rates_keyed2  =  help
+THEN rate          =  help
+     whiletrue rates_keyed2 = help THEN
+      RESET rates_keyed2
+      find rates_keyed2
+     end
+     reset rate ;
+
+RULE r2_1
+IF   change        <> revenue AND
+     rates_keyed2  =  yes
+THEN rate          =  no1
+     display "The rate tables are in err!  /Q if you wish to quit."
+     display "  ";
+
+RULE r2_2
+IF   change        <> revenue AND
+     rates_keyed2  =  no
+THEN rate          =  yes;
+
+RULE rate_help
+IF   change        = revenue  AND
+     rates_keyed   =  help
+THEN rate          =  help
+      whiletrue rates_keyed  = help THEN
+      RESET rates_keyed
+      find rates_keyed
+     end
+     reset rate ;
+
+RULE r2_3
+IF   change       =  revenue  AND
+     rates_keyed  =  yes
+THEN rate         =  yes;
+
+RULE r2_4
+IF   change       =  revenue  AND
+     rates_keyed  =  no
+THEN rate         =  no2
+     display "The rate tables are not ready!  /Q if you wish to quit."
+     display "  " ;
+
+!*********  Help Rules for CHANGE Critical Factor ******
+RULE change_help
+IF   change_any = help
+THEN change =  help
+     whiletrue change_any = help THEN
+      RESET change_any
+      FIND  change_any
+     end
+     change = (change_any) ;
+
+RULE change_1
+IF   change_any <> help
+THEN change =  (change_any);
+
+!******* Rule Set 3 to Determine CODE  Critical Factor ************
+RULE r3_1_1
+IF   change       =  none     AND
+     formats2     =  yes
+THEN code         =  no1;
+
+RULE r3_1_2
+IF   change       =  none     AND
+     macro_calls2 =  yes
+THEN code         =  no1;
+
+RULE r3_1_3
+IF   change       =  none     AND
+     cxup2000s2   =  yes
+THEN code         =  no1;
+
+RULE r3_1_4
+IF   change       =  none     AND
+     sysin_point2 =  yes
+THEN code         =  no1;
+
+RULE r3_2_1
+IF   change       =  none     AND
+     formats2     =  no
+THEN code         =  yes;
+
+RULE r3_2_2
+IF   change       =  none     AND
+     macro_calls2 =  no
+THEN code         =  yes;
+
+RULE r3_2_3
+IF   change       =  none     AND
+     cxup2000s2   =  no
+THEN code         =  yes;
+
+RULE r3_2_4
+IF   change       =  none     AND
+     sysin_point2 =  no
+THEN code         =  yes;
+
+RULE r3_3_1
+IF   change       =  other    AND
+     formats2     =  no       AND
+     macro_calls2 =  no       AND
+     cxup2000s    =  yes      AND
+     sysin_point  =  yes
+THEN code         =  yes;
+
+RULE r3_4_1
+IF   change       =  other    AND
+     formats2     =  yes
+THEN code         =  no1;
+
+RULE r3_4_2
+IF   change       =  other    AND
+     macro_calls2 =  yes
+THEN code         =  no1;
+
+RULE r3_5_1
+IF   change       =  other    AND
+     cxup2000s    =  no
+THEN code         =  no2 ;
+
+RULE r3_5_2
+IF   change       =  other    AND
+     sysin_point  =  no
+THEN code         =  no2 ;
+
+RULE r3_6
+IF   change       =  revenue  AND
+     formats      =  yes      AND
+     macro_calls  =  yes      AND
+     cxup2000s    =  yes      AND
+     sysin_point  =  yes
+THEN code         =  yes;
+
+RULE r3_7_1
+IF   change       =  revenue  AND
+     formats      =  no
+THEN code         =  no2;
+
+RULE r3_7_2
+IF   change       =  revenue  AND
+     macro_calls  =  no
+THEN code         =  no2;
+
+RULE r3_7_3
+IF   change       =  revenue  AND
+     cxup2000s    =  no
+THEN code         =  no2;
+
+RULE r3_7_4
+IF   change       =  revenue  AND
+     sysin_point  =  no
+THEN code         =  no2;
+
+!*****  Done With Scheduling Support Consultation Rules *********
+RULE done_yet_yes
+IF   ask_done_yet = yes
+THEN done_yet = yes
+     savefacts temp
+     display "Loading Verification Assistant ....."
+     chain project2;
+
+RULE done_yet_no
+IF   ask_done_yet = no
+THEN done_yet = no;
+
+RULE done_yes
+IF   ind      = ss1 AND
+     ask_done = yes
+THEN  done = yes
+      display "Loading Verification Assistant...."
+      savefacts temp
+      chain project2 ;
+
+RULE done_no
+IF   ind      = ss1 AND
+     ask_done = no
+THEN done=no
+     WHILETRUE ask_done = no THEN
+      reset ask_done
+      find ask_done
+     END
+      display "Loading Verification Assistant...."
+      savefacts temp
+      chain project2 ;
+
+RULE done_no_no
+IF   finish = no
+THEN  done = no
+      done_yet = no
+      reset ssupport
+      reset tape
+      reset rate
+      reset code
+      reset tape_created
+      reset blkcnt_good
+      reset rates_keyed
+      reset rates_keyed2
+      reset change_any
+      reset change
+      reset macro_calls
+      reset cxup2000s
+      reset sysin_point
+      reset formats
+      reset formats2
+      reset macro_calls2
+      reset cxup2000s2
+      reset sysin_point2
+      reset ask_done_yet
+      reset ask_done
+      reset finish
+      DISPLAY " ***** New Consultation *****
+
+"
+ELSE  done=yes
+      done_yet = yes;
+
+!*********  WHENEVER Help Rules **********
+WHENEVER
+      tape_created
+IF    tape_created = help
+THEN  COLOR=14
+      WOPEN 4,5,5,16,70,1
+      ACTIVE 4
+      DISPLAY "
+  OSTIQ  Tape Management System Query
+
+  From Option 6 of ISPF or TSO
+  ( <shift><shift> to get into MainFrame Mode. )
+
+   - Type OSTIQ <enter>
+   - Type MASTER <enter>
+   - Type CX.CMNDLOS.PROD(0) <enter>
+   - Read the screen to check that the creation date
+     (CRTDATE) is in the current month.
+   - Write down the block count (BLKCNT) for the
+     next consultation question.
+
+   Press any key to continue consultation.~"
+
+      WCLOSE 4
+      ACTIVE 2
+      ACTIVE 3
+      COLOR = 0
+      ;
+
+WHENEVER
+      change_any
+IF    change_any = help
+THEN  COLOR=14
+      CLOSE 3
+      CLOSE 2
+      WOPEN 4,5,5,18,70,1
+      ACTIVE 4
+      DISPLAY "
+ How to Determine A Change to CXAJM81H
+
+ Revenue: If it is a November process month,
+ a new Medicare revenue needs to be loaded.  If
+ it is a February process month, a new Medicaid
+ revenue scheme needs to be loaded.
+
+ Other: Any changes to the process in general, such as
+ reading a new field or adding a new sort.  Any
+ changes to the format of the CX.CMNDLOS.PROD(0+)
+ input tape, such as a new record length.
+
+ None: No changes are neccessary.
+
+ Press any key to continue consultation.~"
+
+      WCLOSE 4
+      COLOR = 0
+      ACTIVE 2
+      ACTIVE 3;
+
+WHENEVER
+      rates_keyed2
+IF    rates_keyed2 = help
+THEN  COLOR=14
+      CLOSE 3
+      CLOSE 2
+      WOPEN 4,2,5,20,70,1
+      ACTIVE 4
+      DISPLAY "
+  How and When to enter new revenue rate schemes:
+
+  A change to the revenue rate tables should only be
+  performed when there is a new revenue scheme.  Refer
+  to Change help to determine when to add a new revenue
+  scheme.
+
+  The revenue rate tables are stored in the CXSHHC.TABLES
+  SAS Library.  Each revenue scheme has its own table with
+  a dataset name reflecting the type and effective date of
+  the scheme.  (e.g., Medicaid January 1990 =  NYS0190)
+
+  Refer to the rate table data dictionary to determine what
+  data is to be entered.  All numbers are supplied and
+  verified by Corporate Reimbursement.
+
+  Press any key to continue consultation.~"
+
+      WCLOSE 4
+      COLOR = 0
+      ACTIVE 2
+      ACTIVE 3;
+
+WHENEVER
+      rates_keyed
+IF    rates_keyed = help
+THEN  COLOR=14
+      CLOSE 3
+      CLOSE 2
+      WOPEN 4,2,5,20,70,1
+      ACTIVE 4
+      DISPLAY "
+  How and When to enter new revenue rate schemes:
+
+  A change to the revenue rate tables should only be
+  performed when there is a new revenue scheme.  Refer
+  to Change help to determine when to add a new revenue
+  scheme.
+
+  The revenue rate tables are stored in the CXSHHC.TABLES
+  SAS Library.  Each revenue scheme has its own table with
+  a dataset name reflecting the type and effective date of
+  the scheme. (e.g., Medicaid January 1990 =  NYS0190)
+
+  Refer to the rate table data dictionary to determine what
+  data is to be entered.  All numbers are supplied and
+  verified by Corporate Reimbursement.
+
+  Press any key to continue consultation.~"
+
+      WCLOSE 4
+      COLOR = 0
+      ACTIVE 2
+      ACTIVE 3;
+
+!WHENEVER menu_bld
+!IF menu_bld = yes
+!THEN
+!     wopen 1,1,1,5,77,2                       !define instructions window 1
+!     active 1                                            !activate window 1
+!     display "                           Instructions
+!          Use the arrow keys to move the lightbar to a desired
+!          answer choice then press the Enter key."
+!     wopen 2,7,1,14,77,3                      !define consultation window 2
+!     active 2                                           !activate window 2
+!     reset menu_bld ;
+
+!*********  WHENEVER CXAJM81H Scheduling Support Display Rules ******
+WHENEVER
+      ssupport
+IF    ssupport = ss1
+THEN  COLOR=14
+      CLOSE 3
+      CLOSE 2
+      WOPEN 4,5,5,11,70,1
+      ACTIVE 4
+      DISPLAY "
+  Recommendation for Scheduling of CXAJM81H
+
+  Based on your responses during this consultation, it
+  has been determined that the input tape is ready, the
+  revenue rate tables are ready, and the code is ready.
+  CXAJM81H is ready to be scheduled for submission.
+
+  Press any key to continue consultation.~"
+
+      WCLOSE 4
+      COLOR = 0
+      ACTIVE 2
+      ACTIVE 3;
+
+WHENEVER
+      ssupport
+IF    ssupport = ss2
+THEN  COLOR=14
+      CLOSE 3
+      CLOSE 2
+      WOPEN 4,5,5,11,70,1
+      ACTIVE 4
+      DISPLAY "
+  There is a problem with the CODE.                               
+
+  Based on your responses during this consultation, it has been
+  determined that code was changed when no change was required.
+  Please re-establish the original code.  CXAJM81H is NOT ready to
+  be scheduled for submission.
+
+  Press any key to continue.~"
+
+      WCLOSE 4
+      RESET ssupport
+      COLOR = 0
+      ACTIVE 2
+      ACTIVE 3;
+
+WHENEVER
+      ssupport
+IF    ssupport = ss3
+THEN  COLOR=14
+      CLOSE 3
+      CLOSE 2
+      WOPEN 4,5,5,11,70,1
+      ACTIVE 4
+      DISPLAY "
+  There is a problem with the CODE.                               
+
+  Based on your responses during this consultation, it has been
+  determined that code required a change and the change was not
+  completed.  Please complete the change to the code.  CXAJM81H is
+  NOT ready to be scheduled for submission.
+
+  Press any key to continue.~"
+
+      WCLOSE 4
+      reset ssupport
+      COLOR = 0
+      ACTIVE 2
+      ACTIVE 3;
+
+WHENEVER
+      ssupport
+IF    ssupport = ss4
+THEN  COLOR=14
+      CLOSE 3
+      CLOSE 2
+      WOPEN 4,5,5,11,70,1
+      ACTIVE 4
+      DISPLAY "
+  There is a problem with the REVENUE RATE TABLES.                
+
+  Based on your responses during this consultation, it has been
+  determined that the revenue rate tables were changed when no rate
+  change was neccessary.  Please re-establish the original rate
+  tables.  CXAJM81H is NOT ready to be scheduled for submission.
+
+  Press any key to continue.~"
+
+      WCLOSE 4
+      reset ssupport
+      COLOR = 0
+      ACTIVE 2
+      ACTIVE 3;
+
+WHENEVER
+      ssupport
+IF    ssupport = ss5
+THEN  COLOR=14
+      CLOSE 3
+      CLOSE 2
+      WOPEN 4,5,5,11,70,1
+      ACTIVE 4
+      DISPLAY "
+  There is a problem with the REVENUE RATE TABLES.                
+
+  Based on your responses during this consultation, it has been
+  determined that the revenue rate tables required a new revenue
+  scheme and one was not added.  Please key and verify the new
+  revenue scheme.  CXAJM81H is NOT ready to be scheduled for
+  submission.
+
+  Press any key to continue.~"
+
+      WCLOSE 4
+      reset ssupport
+      COLOR = 0
+      ACTIVE 2
+      ACTIVE 3;
+
+WHENEVER
+      ssupport
+IF    ssupport = ss6
+THEN  COLOR=14
+      CLOSE 3
+      CLOSE 2
+      WOPEN 4,5,5,11,70,1
+      ACTIVE 4
+      DISPLAY "
+  There is a problem with the INPUT TAPE.                         
+
+  Based on your responses during this consultation, it has
+  been determined that the input tape is not ready.  Please check
+  CXAJM80H for a successful completion and schedule for submission
+  if neccessary.   CXAJM81H is NOT ready to be scheduled for
+  submission.
+
+  Press any key to continue.~"
+
+      WCLOSE 4
+      reset ssupport
+      COLOR = 0
+      ACTIVE 2
+      ACTIVE 3;
+
+! %%%%%%%%%%%%%%%%% Plural Declarations, Questions, Menus %%%%%%%%%%%%%%%%%%
+
+PLURAL: ssupport ;
+
+ASK change_any: "Indicate what, if any, change is being made to the update
+process.";
+CHOICES change_any: revenue,other,none,help;
+
+ASK tape_created: "Has the CX.CMNDLOS.PROD tape been created succesfully?";
+ASK blkcnt_good: "What is the block count of the CX.CMNDLOS.PROD tape?";
+ASK rates_keyed: "Have the new revenue rate tables been keyed and verified?";
+ASK rates_keyed2: "Have any changes been made to the rate tables?";
+ASK formats: "Have the formats for the new revenue scheme been coded?";
+ASK formats2: "Have any changes been made to the revenue formats?";
+ASK macro_calls: "Have the Macro calls for the new revenue scheme been
+added?";
+ASK macro_calls2: "Have any changes been made to the Macro calls of CXUP2001-
+CXUP2004?";
+ASK cxup2000s: "Have the neccessary changes been made to the CXUP2001 -
+CXUP2004 Programs?";
+ASK cxup2000s2: "Have any changes been made to the code of the CXUP2001 -
+CXUP2004 Programs?";
+ASK sysin_point: "Have the SYSINs been repointed to the CX.PADBARS.NEWCODE
+library?";
+ASK sysin_point2: "Have any SYSINs been repointed to the CX.PADBARS.NEWCODE
+library?";
+ASK ask_done: "Is the scheduled CXAJM81H job completed?";
+ASK ask_done_yet: "Has the CXAJM81H job been scheduled yet?";
+ASK finish: "Are you finish with the Scheduler Assistant?";
+
+CHOICES tape_created,rates_keyed: yes,no,help;
+CHOICES macro_calls,cxup2000s,sysin_point,formats: yes,no;
+CHOICES formats2,macro_calls2,cxup2000s2,sysin_point2: no,yes;
+CHOICES rates_keyed2: no,yes,help;
+CHOICES ask_done,ask_done_yet,finish: yes,no;
+
+!*************** End of Project KBS File  *********************;
+

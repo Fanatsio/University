@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="840pt" height="823pt" viewBox="0.00 0.00 840.21 823.09">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 819.09)">
+<title>DFD_Level_1</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-819.09 836.21,-819.09 836.21,4 -4,4"/>
+<!-- Оператор -->
+<g id="node1" class="node">
+<title>Оператор</title>
+<ellipse fill="lightblue" stroke="black" cx="237.5" cy="-628.05" rx="49.66" ry="18"/>
+<text text-anchor="middle" x="237.5" y="-623.85" font-family="Times,serif" font-size="14.00">Оператор</text>
+</g>
+<!-- P1: Идентификация\nсотрудника -->
+<g id="node3" class="node">
+<title>P1: Идентификация\nсотрудника</title>
+<ellipse fill="lightgreen" stroke="black" cx="237.5" cy="-402.46" rx="91.34" ry="91.34"/>
+<text text-anchor="middle" x="237.5" y="-406.66" font-family="Times,serif" font-size="14.00">P1: Идентификация</text>
+<text text-anchor="middle" x="237.5" y="-389.86" font-family="Times,serif" font-size="14.00">сотрудника</text>
+</g>
+<!-- Оператор&#45;&gt;P1: Идентификация\nсотрудника -->
+<g id="edge1" class="edge">
+<title>Оператор-&gt;P1: Идентификация\nсотрудника</title>
+<path fill="none" stroke="black" d="M237.5,-609.87C237.5,-587.16 237.5,-545.3 237.5,-505.19"/>
+<polygon fill="black" stroke="black" points="237.5,-495.43 242,-505.43 237.5,-499.21 237.5,-505.43 237.5,-505.43 237.5,-505.43 237.5,-499.21 233,-505.43 237.5,-495.43"/>
+<text text-anchor="middle" x="269" y="-516" font-family="Times,serif" font-size="14.00">Настройки</text>
+</g>
+<!-- Сотрудник -->
+<g id="node2" class="node">
+<title>Сотрудник</title>
+<ellipse fill="lightblue" stroke="black" cx="423.5" cy="-797.09" rx="54.49" ry="18"/>
+<text text-anchor="middle" x="423.5" y="-792.89" font-family="Times,serif" font-size="14.00">Сотрудник</text>
+</g>
+<!-- Сотрудник&#45;&gt;P1: Идентификация\nсотрудника -->
+<g id="edge2" class="edge">
+<title>Сотрудник-&gt;P1: Идентификация\nсотрудника</title>
+<path fill="none" stroke="black" d="M417.42,-779.01C401.25,-734.17 354.92,-609.81 304.5,-511.8 300.69,-504.41 296.56,-496.84 292.28,-489.32"/>
+<polygon fill="black" stroke="black" points="287.39,-480.89 296.3,-487.29 289.29,-484.16 292.4,-489.55 292.4,-489.55 292.4,-489.55 289.29,-484.16 288.51,-491.8 287.39,-480.89"/>
+<text text-anchor="middle" x="429.07" y="-623.85" font-family="Times,serif" font-size="14.00">Данные RFID</text>
+</g>
+<!-- P2: Обнаружение\nприсутствия и\nконтроль точек -->
+<g id="node4" class="node">
+<title>P2: Обнаружение\nприсутствия и\nконтроль точек</title>
+<ellipse fill="lightgreen" stroke="black" cx="593.5" cy="-628.05" rx="81.44" ry="81.44"/>
+<text text-anchor="middle" x="593.5" y="-640.65" font-family="Times,serif" font-size="14.00">P2: Обнаружение</text>
+<text text-anchor="middle" x="593.5" y="-623.85" font-family="Times,serif" font-size="14.00">присутствия и</text>
+<text text-anchor="middle" x="593.5" y="-607.05" font-family="Times,serif" font-size="14.00">контроль точек</text>
+</g>
+<!-- Сотрудник&#45;&gt;P2: Обнаружение\nприсутствия и\nконтроль точек -->
+<g id="edge3" class="edge">
+<title>Сотрудник-&gt;P2: Обнаружение\nприсутствия и\nконтроль точек</title>
+<path fill="none" stroke="black" d="M440.11,-779.77C460.44,-759.79 496.1,-724.75 527.93,-693.48"/>
+<polygon fill="black" stroke="black" points="535.05,-686.47 531.07,-696.69 532.36,-689.12 527.92,-693.48 527.92,-693.48 527.92,-693.48 532.36,-689.12 524.77,-690.27 535.05,-686.47"/>
+<text text-anchor="middle" x="547.52" y="-748.49" font-family="Times,serif" font-size="14.00">Видеопоток,</text>
+<text text-anchor="middle" x="547.52" y="-731.69" font-family="Times,serif" font-size="14.00">сигналы датчиков</text>
+</g>
+<!-- P4: Анализ и\nуведомления -->
+<g id="node6" class="node">
+<title>P4: Анализ и\nуведомления</title>
+<ellipse fill="lightgreen" stroke="black" cx="467.5" cy="-175.76" rx="65.76" ry="65.76"/>
+<text text-anchor="middle" x="467.5" y="-179.96" font-family="Times,serif" font-size="14.00">P4: Анализ и</text>
+<text text-anchor="middle" x="467.5" y="-163.16" font-family="Times,serif" font-size="14.00">уведомления</text>
+</g>
+<!-- P1: Идентификация\nсотрудника&#45;&gt;P4: Анализ и\nуведомления -->
+<g id="edge9" class="edge">
+<title>P1: Идентификация\nсотрудника-&gt;P4: Анализ и\nуведомления</title>
+<path fill="none" stroke="black" d="M278.19,-320.17C291.26,-298.86 307.06,-276.99 325,-259.52 345.99,-239.08 372.99,-221.75 397.83,-208.31"/>
+<polygon fill="black" stroke="black" points="406.51,-203.74 399.76,-212.38 403.17,-205.5 397.66,-208.4 397.66,-208.4 397.66,-208.4 403.17,-205.5 395.57,-204.42 406.51,-203.74"/>
+<text text-anchor="middle" x="382.75" y="-272.12" font-family="Times,serif" font-size="14.00">Данные сотрудника</text>
+</g>
+<!-- D1: База данных\nсотрудников -->
+<g id="node7" class="node">
+<title>D1: База данных\nсотрудников</title>
+<path fill="lightyellow" stroke="black" d="M237.5,-199.16C237.5,-202.03 211.95,-204.36 180.5,-204.36 149.05,-204.36 123.5,-202.03 123.5,-199.16 123.5,-199.16 123.5,-152.36 123.5,-152.36 123.5,-149.49 149.05,-147.16 180.5,-147.16 211.95,-147.16 237.5,-149.49 237.5,-152.36 237.5,-152.36 237.5,-199.16 237.5,-199.16"/>
+<path fill="none" stroke="black" d="M237.5,-199.16C237.5,-196.29 211.95,-193.96 180.5,-193.96 149.05,-193.96 123.5,-196.29 123.5,-199.16"/>
+<text text-anchor="middle" x="180.5" y="-179.96" font-family="Times,serif" font-size="14.00">D1: База данных</text>
+<text text-anchor="middle" x="180.5" y="-163.16" font-family="Times,serif" font-size="14.00">сотрудников</text>
+</g>
+<!-- P1: Идентификация\nсотрудника&#45;&gt;D1: База данных\nсотрудников -->
+<g id="edge4" class="edge">
+<title>P1: Идентификация\nсотрудника-&gt;D1: База данных\nсотрудников</title>
+<path fill="none" stroke="black" d="M164.71,-346.64C149.41,-331.17 135.37,-313.06 127,-293.12 115.67,-266.16 130.11,-236.18 146.83,-213.41"/>
+<polygon fill="black" stroke="black" points="152.8,-205.71 150.23,-216.37 150.48,-208.69 146.67,-213.61 146.67,-213.61 146.67,-213.61 150.48,-208.69 143.12,-210.85 152.8,-205.71"/>
+<text text-anchor="middle" x="170.75" y="-272.12" font-family="Times,serif" font-size="14.00">Запрос данных</text>
+</g>
+<!-- P3: Проверка\nэкипировки -->
+<g id="node5" class="node">
+<title>P3: Проверка\nэкипировки</title>
+<ellipse fill="lightgreen" stroke="black" cx="634.5" cy="-402.46" rx="66.59" ry="66.59"/>
+<text text-anchor="middle" x="634.5" y="-406.66" font-family="Times,serif" font-size="14.00">P3: Проверка</text>
+<text text-anchor="middle" x="634.5" y="-389.86" font-family="Times,serif" font-size="14.00">экипировки</text>
+</g>
+<!-- P2: Обнаружение\nприсутствия и\nконтроль точек&#45;&gt;P3: Проверка\nэкипировки -->
+<g id="edge7" class="edge">
+<title>P2: Обнаружение\nприсутствия и\nконтроль точек-&gt;P3: Проверка\nэкипировки</title>
+<path fill="none" stroke="black" d="M608.07,-547.59C612.15,-525.36 616.56,-501.27 620.6,-479.26"/>
+<polygon fill="black" stroke="black" points="622.39,-469.5 625.01,-480.15 621.71,-473.22 620.59,-479.34 620.59,-479.34 620.59,-479.34 621.71,-473.22 616.16,-478.53 622.39,-469.5"/>
+<text text-anchor="middle" x="649" y="-516" font-family="Times,serif" font-size="14.00">Видеопоток</text>
+</g>
+<!-- P2: Обнаружение\nприсутствия и\nконтроль точек&#45;&gt;P4: Анализ и\nуведомления -->
+<g id="edge10" class="edge">
+<title>P2: Обнаружение\nприсутствия и\nконтроль точек-&gt;P4: Анализ и\nуведомления</title>
+<path fill="none" stroke="black" d="M536.09,-569.87C517.58,-547.91 499.11,-521.43 488.5,-493.8 472.2,-451.39 468.19,-332.26 467.39,-252.72"/>
+<polygon fill="black" stroke="black" points="467.31,-242.99 471.89,-252.95 467.34,-246.77 467.39,-252.99 467.39,-252.99 467.39,-252.99 467.34,-246.77 462.89,-253.03 467.31,-242.99"/>
+<text text-anchor="middle" x="523.5" y="-398.26" font-family="Times,serif" font-size="14.00">Координаты</text>
+</g>
+<!-- D2: База данных\nмониторинга -->
+<g id="node8" class="node">
+<title>D2: База данных\nмониторинга</title>
+<path fill="lightyellow" stroke="black" d="M700.5,-52C700.5,-54.87 674.95,-57.2 643.5,-57.2 612.05,-57.2 586.5,-54.87 586.5,-52 586.5,-52 586.5,-5.2 586.5,-5.2 586.5,-2.33 612.05,0 643.5,0 674.95,0 700.5,-2.33 700.5,-5.2 700.5,-5.2 700.5,-52 700.5,-52"/>
+<path fill="none" stroke="black" d="M700.5,-52C700.5,-49.13 674.95,-46.8 643.5,-46.8 612.05,-46.8 586.5,-49.13 586.5,-52"/>
+<text text-anchor="middle" x="643.5" y="-32.8" font-family="Times,serif" font-size="14.00">D2: База данных</text>
+<text text-anchor="middle" x="643.5" y="-16" font-family="Times,serif" font-size="14.00">мониторинга</text>
+</g>
+<!-- P2: Обнаружение\nприсутствия и\nконтроль точек&#45;&gt;D2: База данных\nмониторинга -->
+<g id="edge6" class="edge">
+<title>P2: Обнаружение\nприсутствия и\nконтроль точек-&gt;D2: База данных\nмониторинга</title>
+<path fill="none" stroke="black" d="M651.82,-570.54C664.45,-557.24 677.35,-542.8 688.5,-528.6 769.74,-425.15 747.65,-372.44 760.5,-241.52 766.21,-183.35 787.72,-161.73 760.5,-110 749.4,-88.91 730,-72.28 710.15,-59.76"/>
+<polygon fill="black" stroke="black" points="701.76,-54.74 712.65,-56.01 705,-56.68 710.34,-59.87 710.34,-59.87 710.34,-59.87 705,-56.68 708.03,-63.73 701.76,-54.74"/>
+<text text-anchor="middle" x="795.46" y="-280.52" font-family="Times,serif" font-size="14.00">Координаты,</text>
+<text text-anchor="middle" x="795.46" y="-263.72" font-family="Times,serif" font-size="14.00">время точек</text>
+</g>
+<!-- P3: Проверка\nэкипировки&#45;&gt;P4: Анализ и\nуведомления -->
+<g id="edge11" class="edge">
+<title>P3: Проверка\nэкипировки-&gt;P4: Анализ и\nуведомления</title>
+<path fill="none" stroke="black" d="M594.09,-349.05C582.03,-335.56 568.1,-321.85 553.5,-311.12 537.95,-299.7 527.31,-307.08 514,-293.12 502.48,-281.05 493.69,-265.76 487.03,-250.28"/>
+<polygon fill="black" stroke="black" points="483.41,-241.23 491.3,-248.84 484.81,-244.74 487.13,-250.51 487.13,-250.51 487.13,-250.51 484.81,-244.74 482.95,-252.19 483.41,-241.23"/>
+<text text-anchor="middle" x="571.75" y="-272.12" font-family="Times,serif" font-size="14.00">Статус экипировки</text>
+</g>
+<!-- P3: Проверка\nэкипировки&#45;&gt;D2: База данных\nмониторинга -->
+<g id="edge8" class="edge">
+<title>P3: Проверка\nэкипировки-&gt;D2: База данных\nмониторинга</title>
+<path fill="none" stroke="black" d="M636.1,-335.41C637.98,-257.8 641.03,-131.61 642.56,-68.35"/>
+<polygon fill="black" stroke="black" points="642.8,-58.51 647.06,-68.62 642.71,-62.29 642.56,-68.51 642.56,-68.51 642.56,-68.51 642.71,-62.29 638.06,-68.4 642.8,-58.51"/>
+<text text-anchor="middle" x="699.18" y="-171.56" font-family="Times,serif" font-size="14.00">Статус экипировки</text>
+</g>
+<!-- P4: Анализ и\nуведомления&#45;&gt;Оператор -->
+<g id="edge14" class="edge">
+<title>P4: Анализ и\nуведомления-&gt;Оператор</title>
+<path fill="none" stroke="black" d="M464.16,-241.73C460.31,-260.18 453.23,-279.05 440.5,-293.12 423.8,-311.56 404.55,-293.01 387.5,-311.12 329.8,-372.41 374.53,-418.21 337.5,-493.8 317.13,-535.39 283.12,-577.08 260.5,-602.48"/>
+<polygon fill="black" stroke="black" points="253.83,-609.85 257.2,-599.41 256.37,-607.04 260.54,-602.43 260.54,-602.43 260.54,-602.43 256.37,-607.04 263.88,-605.45 253.83,-609.85"/>
+<text text-anchor="middle" x="426" y="-398.26" font-family="Times,serif" font-size="14.00">Уведомления</text>
+</g>
+<!-- P4: Анализ и\nуведомления&#45;&gt;D2: База данных\nмониторинга -->
+<g id="edge12" class="edge">
+<title>P4: Анализ и\nуведомления-&gt;D2: База данных\nмониторинга</title>
+<path fill="none" stroke="black" d="M511.06,-126.09C527.56,-109.01 547.07,-90.32 566.5,-75.2 572.35,-70.65 578.69,-66.21 585.14,-62"/>
+<polygon fill="black" stroke="black" points="593.59,-56.66 587.54,-65.8 590.39,-58.68 585.14,-62 585.14,-62 585.14,-62 590.39,-58.68 582.73,-58.2 593.59,-56.66"/>
+<text text-anchor="middle" x="598" y="-79.4" font-family="Times,serif" font-size="14.00">Нарушения</text>
+</g>
+<!-- D3: Отчеты -->
+<g id="node9" class="node">
+<title>D3: Отчеты</title>
+<path fill="lightyellow" stroke="black" d="M142.75,-43.33C142.75,-45.13 124.26,-46.6 101.5,-46.6 78.74,-46.6 60.25,-45.13 60.25,-43.33 60.25,-43.33 60.25,-13.87 60.25,-13.87 60.25,-12.07 78.74,-10.6 101.5,-10.6 124.26,-10.6 142.75,-12.07 142.75,-13.87 142.75,-13.87 142.75,-43.33 142.75,-43.33"/>
+<path fill="none" stroke="black" d="M142.75,-43.33C142.75,-41.52 124.26,-40.05 101.5,-40.05 78.74,-40.05 60.25,-41.52 60.25,-43.33"/>
+<text text-anchor="middle" x="101.5" y="-24.4" font-family="Times,serif" font-size="14.00">D3: Отчеты</text>
+</g>
+<!-- P4: Анализ и\nуведомления&#45;&gt;D3: Отчеты -->
+<g id="edge13" class="edge">
+<title>P4: Анализ и\nуведомления-&gt;D3: Отчеты</title>
+<path fill="none" stroke="black" d="M406.65,-150.63C335.45,-122.39 218.86,-76.15 152.3,-49.75"/>
+<polygon fill="black" stroke="black" points="143.19,-46.14 154.15,-45.64 146.71,-47.53 152.49,-49.82 152.49,-49.82 152.49,-49.82 146.71,-47.53 150.83,-54.01 143.19,-46.14"/>
+<text text-anchor="middle" x="269.22" y="-79.4" font-family="Times,serif" font-size="14.00">Отчет</text>
+</g>
+<!-- D1: База данных\nсотрудников&#45;&gt;P1: Идентификация\nсотрудника -->
+<g id="edge5" class="edge">
+<title>D1: База данных\nсотрудников-&gt;P1: Идентификация\nсотрудника</title>
+<path fill="none" stroke="black" d="M193.78,-204.54C200.86,-220.34 209.18,-240.69 214.5,-259.52 218.23,-272.73 221.42,-286.81 224.13,-300.79"/>
+<polygon fill="black" stroke="black" points="225.88,-310.24 219.63,-301.23 225.19,-306.52 224.06,-300.4 224.06,-300.4 224.06,-300.4 225.19,-306.52 228.48,-299.58 225.88,-310.24"/>
+<text text-anchor="middle" x="253.85" y="-272.12" font-family="Times,serif" font-size="14.00">ID, допуск</text>
+</g>
+<!-- D3: Отчеты&#45;&gt;Оператор -->
+<g id="edge15" class="edge">
+<title>D3: Отчеты-&gt;Оператор</title>
+<path fill="none" stroke="black" d="M87.11,-46.95C54.2,-88.78 -21.58,-198.73 6.5,-293.12 46.01,-425.93 161.03,-551.65 212.31,-602.88"/>
+<polygon fill="black" stroke="black" points="219.39,-609.87 209.11,-606.05 216.7,-607.21 212.28,-602.84 212.28,-602.84 212.28,-602.84 216.7,-607.21 215.44,-599.64 219.39,-609.87"/>
+<text text-anchor="middle" x="62.5" y="-272.12" font-family="Times,serif" font-size="14.00">Отчеты по запросу</text>
+</g>
+</g>
+</svg>

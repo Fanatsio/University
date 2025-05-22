@@ -1,0 +1,56 @@
+ACTIONS
+	FIND TEL
+	DISPLAY "The value of TEL is {TEL}";
+
+RULE 0
+IF	DBCITY=KANCHANABURI AND
+	DBPREFER=HIGH AND
+	HOTEL=Rama of River Kwai Hotel AND
+	ADDRESS=284-3 Saeng Chut Road, Kanchanaburi
+THEN	TEL=034-511-184;
+
+RULE 1
+IF	DBCITY=KANCHANABURI AND
+	DBPREFER=MEDIUM AND
+	HOTEL=River Kwai Village Hotel AND
+	ADDRESS=74 Ban Phutakhian Tamban, Amphor Saiyok, 
+THEN	TEL=034-517-552;
+
+RULE 2
+IF	DBCITY=KANCHANABURI AND
+	DBPREFER=STANDARD AND
+	HOTEL=Kanchanaburi Inn AND
+	ADDRESS=55 Rajavithi Road, Kanchanaburi
+THEN	TEL=034-517-828;
+
+RULE 3
+IF	DBCITY=SUKHOTHAI AND
+	DBPREFER=HIGH AND
+	HOTEL=Rajthanee Hotel AND
+	ADDRESS=229 Charodai Road, Amphoer Muang, Sukhoth
+THEN	TEL=055-511-910;
+
+RULE 4
+IF	DBCITY=SUKHOTHAI AND
+	DBPREFER=MEDIUM AND
+	HOTEL=Wiang Sukhothai Hotel AND
+	ADDRESS=25/3 Mahatthai Bumrung Road, Sukhothai
+THEN	TEL=055-511-910;
+
+RULE 5
+IF	DBCITY=SUKHOTHAI AND
+	DBPREFER=STANDARD AND
+	HOTEL=Nanchao Hotel AND
+	ADDRESS=242 Raromtriloknat Road, Sukhothai
+THEN	TEL=055-259-511;
+
+ASK DBCITY: "What is the value of DBCITY?";
+CHOICES DBCITY: KANCHANABURI,SUKHOTHAI;
+
+ASK DBPREFER: "What is the value of DBPREFER?";
+CHOICES DBPREFER: HIGH,MEDIUM,STANDARD;
+
+ASK HOTEL: "What is the value of HOTEL?";
+CHOICES HOTEL: Rama of River Kwai Hotel,River Kwai Village Hotel,Kanchanaburi Inn,Rajthanee Hotel,Wiang Sukhothai Hotel,Nanchao Hotel;
+
+ASK ADDRESS: "What is the value of ADDRESS?";

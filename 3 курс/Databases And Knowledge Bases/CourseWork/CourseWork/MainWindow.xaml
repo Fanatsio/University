@@ -1,0 +1,241 @@
+﻿<!-- Views/MainWindow.xaml -->
+<Window x:Class="CourseWork.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:CourseWork.ViewModels"
+        Title="Система заказов мебели" 
+        Height="700" 
+        Width="1200">
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <TabControl Margin="10">
+            <!-- Физические лица -->
+            <TabItem Header="Физ. лица">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Button Content="Создать" Command="{Binding AddNaturalPersonCommand}" Margin="0,0,5,0"/>
+                        <Button Content="Редактировать" Command="{Binding EditNaturalPersonCommand}" Margin="0,0,5,0"/>
+                        <Button Content="Удалить" Command="{Binding DeleteNaturalPersonCommand}" Margin="0,0,5,0"/>
+                        <Button Content="Обновить" Command="{Binding LoadNaturalPersonsCommand}"/>
+                    </StackPanel>
+                    <DataGrid Grid.Row="1" ItemsSource="{Binding NaturalPersons}" 
+                              SelectedItem="{Binding SelectedNaturalPerson}"
+                              AutoGenerateColumns="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding NaturalPersonId}"/>
+                            <DataGridTextColumn Header="Паспорт" Binding="{Binding NaturalPersonPassport}"/>
+                            <DataGridTextColumn Header="ФИО" Binding="{Binding NaturalPersonName}"/>
+                            <DataGridTextColumn Header="Телефон" Binding="{Binding NaturalPersonPhone}"/>
+                            <DataGridTextColumn Header="Email" Binding="{Binding NaturalPersonEmail}"/>
+                            <DataGridTextColumn Header="Адрес" Binding="{Binding NaturalPersonAddress}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+
+            <!-- Юридические лица -->
+            <TabItem Header="Юр. лица">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Button Content="Создать" Command="{Binding AddLegalPersonCommand}" Margin="0,0,5,0"/>
+                        <Button Content="Редактировать" Command="{Binding EditLegalPersonCommand}" Margin="0,0,5,0"/>
+                        <Button Content="Удалить" Command="{Binding DeleteLegalPersonCommand}" Margin="0,0,5,0"/>
+                        <Button Content="Обновить" Command="{Binding LoadLegalPersonsCommand}"/>
+                    </StackPanel>
+                    <DataGrid Grid.Row="1" ItemsSource="{Binding LegalPersons}" 
+                              SelectedItem="{Binding SelectedLegalPerson}"
+                              AutoGenerateColumns="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding LegalPersonId}"/>
+                            <DataGridTextColumn Header="ИНН" Binding="{Binding LegalPersonInn}"/>
+                            <DataGridTextColumn Header="Название" Binding="{Binding LegalPersonName}"/>
+                            <DataGridTextColumn Header="Телефон" Binding="{Binding LegalPersonPhone}"/>
+                            <DataGridTextColumn Header="Email" Binding="{Binding LegalPersonEmail}"/>
+                            <DataGridTextColumn Header="Адрес" Binding="{Binding LegalPersonAddress}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+
+            <!-- Поставщики -->
+            <TabItem Header="Поставщики">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Button Content="Создать" Command="{Binding AddProviderCommand}" Margin="0,0,5,0"/>
+                        <Button Content="Редактировать" Command="{Binding EditProviderCommand}" Margin="0,0,5,0"/>
+                        <Button Content="Удалить" Command="{Binding DeleteProviderCommand}" Margin="0,0,5,0"/>
+                        <Button Content="Обновить" Command="{Binding LoadProvidersCommand}"/>
+                    </StackPanel>
+                    <DataGrid Grid.Row="1" ItemsSource="{Binding Providers}" 
+                              SelectedItem="{Binding SelectedProvider}"
+                              AutoGenerateColumns="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding ProviderId}"/>
+                            <DataGridTextColumn Header="ИНН" Binding="{Binding ProviderInn}"/>
+                            <DataGridTextColumn Header="Название" Binding="{Binding ProviderName}"/>
+                            <DataGridTextColumn Header="Адрес" Binding="{Binding ProviderAddress}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+
+            <!-- Материалы -->
+            <TabItem Header="Материалы">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Button Content="Создать" Command="{Binding AddMaterialCommand}" Margin="0,0,5,0"/>
+                        <Button Content="Редактировать" Command="{Binding EditMaterialCommand}" Margin="0,0,5,0"/>
+                        <Button Content="Удалить" Command="{Binding DeleteMaterialCommand}" Margin="0,0,5,0"/>
+                        <Button Content="Обновить" Command="{Binding LoadMaterialsCommand}"/>
+                    </StackPanel>
+                    <DataGrid Grid.Row="1" ItemsSource="{Binding Materials}" 
+                              SelectedItem="{Binding SelectedMaterial}"
+                              AutoGenerateColumns="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding MaterialId}"/>
+                            <DataGridTextColumn Header="Цвет" Binding="{Binding MaterialColour}"/>
+                            <DataGridTextColumn Header="Название" Binding="{Binding MaterialName}"/>
+                            <DataGridTextColumn Header="Тип" Binding="{Binding MaterialType}"/>
+                            <DataGridTextColumn Header="Количество" Binding="{Binding MaterialQuantity}"/>
+                            <DataGridTextColumn Header="ИНН Поставщика" Binding="{Binding ProviderInn}"/>
+                            <DataGridTextColumn Header="Стоимость" Binding="{Binding MaterialCost}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+
+            <!-- Фурнитура -->
+            <TabItem Header="Фурнитура">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Button Content="Создать" Command="{Binding AddAccessoriesCommand}" Margin="0,0,5,0"/>
+                        <Button Content="Редактировать" Command="{Binding EditAccessoriesCommand}" Margin="0,0,5,0"/>
+                        <Button Content="Удалить" Command="{Binding DeleteAccessoriesCommand}" Margin="0,0,5,0"/>
+                        <Button Content="Обновить" Command="{Binding LoadAccessoriesCommand}"/>
+                    </StackPanel>
+                    <DataGrid Grid.Row="1" ItemsSource="{Binding Accessories}" 
+                              SelectedItem="{Binding SelectedAccessories}"
+                              AutoGenerateColumns="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding AccessoriesId}"/>
+                            <DataGridTextColumn Header="Название" Binding="{Binding AccessoriesName}"/>
+                            <DataGridTextColumn Header="Цвет" Binding="{Binding AccessoriesColour}"/>
+                            <DataGridTextColumn Header="Тип" Binding="{Binding AccessoriesType}"/>
+                            <DataGridTextColumn Header="Количество" Binding="{Binding AccessoriesQuantity}"/>
+                            <DataGridTextColumn Header="ИНН Поставщика" Binding="{Binding ProviderInn}"/>
+                            <DataGridTextColumn Header="Стоимость" Binding="{Binding AccessoriesCost}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+
+            <!-- Мебель -->
+            <TabItem Header="Мебель">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Button Content="Создать" Command="{Binding AddFurnitureCommand}" Margin="0,0,5,0"/>
+                        <Button Content="Редактировать" Command="{Binding EditFurnitureCommand}" Margin="0,0,5,0"/>
+                        <Button Content="Удалить" Command="{Binding DeleteFurnitureCommand}" Margin="0,0,5,0"/>
+                        <Button Content="Обновить" Command="{Binding LoadFurnitureCommand}"/>
+                    </StackPanel>
+                    <DataGrid Grid.Row="1" ItemsSource="{Binding Furniture}" 
+                              SelectedItem="{Binding SelectedFurniture}"
+                              AutoGenerateColumns="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding FurnitureId}"/>
+                            <DataGridTextColumn Header="Цвет" Binding="{Binding FurnitureColour}"/>
+                            <DataGridTextColumn Header="Артикул" Binding="{Binding FurnitureArticle}"/>
+                            <DataGridTextColumn Header="ID Материала" Binding="{Binding IdMaterial}"/>
+                            <DataGridTextColumn Header="Тип" Binding="{Binding FurnitureType}"/>
+                            <DataGridTextColumn Header="Размер" Binding="{Binding FurnitureSize}"/>
+                            <DataGridTextColumn Header="Название" Binding="{Binding FurnitureName}"/>
+                            <DataGridTextColumn Header="ID Фурнитуры" Binding="{Binding IdAccessories}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+
+            <!-- Заказы -->
+            <TabItem Header="Заказы">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Button Content="Создать" Command="{Binding AddOrderCommand}" Margin="0,0,5,0"/>
+                        <Button Content="Редактировать" Command="{Binding EditOrderCommand}" Margin="0,0,5,0"/>
+                        <Button Content="Удалить" Command="{Binding DeleteOrderCommand}" Margin="0,0,5,0"/>
+                        <Button Content="Обновить" Command="{Binding LoadOrdersCommand}"/>
+                    </StackPanel>
+                    <DataGrid Grid.Row="1" ItemsSource="{Binding Orders}" 
+                              SelectedItem="{Binding SelectedOrder}"
+                              AutoGenerateColumns="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding OrdersId}"/>
+                            <DataGridTextColumn Header="Дата" Binding="{Binding OrdersRegistrationDate, StringFormat=d}"/>
+                            <DataGridTextColumn Header="Стоимость" Binding="{Binding OrdersTotalCost}"/>
+                            <DataGridTextColumn Header="№ Заказа" Binding="{Binding OrderNumber}"/>
+                            <DataGridTextColumn Header="Тип клиента" Binding="{Binding CategoryCustomer}"/>
+                            <DataGridTextColumn Header="Статус" Binding="{Binding OrdersStatus}"/>
+                            <DataGridTextColumn Header="ID Клиента" Binding="{Binding CustomerId}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+
+            <!-- Накладные -->
+            <TabItem Header="Накладные">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Button Content="Создать" Command="{Binding AddWaybillCommand}" Margin="0,0,5,0"/>
+                        <Button Content="Редактировать" Command="{Binding EditWaybillCommand}" Margin="0,0,5,0"/>
+                        <Button Content="Удалить" Command="{Binding DeleteWaybillCommand}" Margin="0,0,5,0"/>
+                        <Button Content="Обновить" Command="{Binding LoadWaybillsCommand}"/>
+                    </StackPanel>
+                    <DataGrid Grid.Row="1" ItemsSource="{Binding Waybills}" 
+                              SelectedItem="{Binding SelectedWaybill}"
+                              AutoGenerateColumns="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding WaybillId}"/>
+                            <DataGridTextColumn Header="№ Накладной" Binding="{Binding WaybillNumber}"/>
+                            <DataGridTextColumn Header="Артикул мебели" Binding="{Binding ArticleFurniture}"/>
+                            <DataGridTextColumn Header="Количество" Binding="{Binding FurnitureQuantity}"/>
+                            <DataGridTextColumn Header="№ Заказа" Binding="{Binding OrdersNumber}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

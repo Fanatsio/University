@@ -1,0 +1,600 @@
+ENDOFF;
+RUNTIME;
+
+! ACTIONS BLOCK
+ACTIONS
+WOPEN 1,0,0,23,79,2
+ACTIVE 1
+DISPLAY "
+
+
+
+
+
+
+
+
+
+                            Vibor ukrashenii dly devyshek
+                               Vipolnil: Busygin Igor
+                                   Grypa: 606-72
+
+
+
+
+
+
+
+
+
+                           Press any key to continue~"
+
+WCLOSE 1
+
+   DISPLAY " Dobro pozhalivat v systemy vibora ukrashenii dlia devyshek"
+   FIND RECO
+   DISPLAY " Vam podoided sledyeshee ukrashenie: {RECO}";
+
+RULE 1
+IF       hudaia = YES
+THEN     hudaiaY = OK;
+
+RULE 2
+IF       hudaia = NO
+THEN     hudaiaN = OK;
+
+RULE 3
+IF       hudaiaY = OK         
+         AND golubie = YES
+THEN     golubieY = OK;
+
+RULE 4
+IF       hudaiaN = OK         
+         AND golubie = YES
+THEN     golubieN = OK;
+
+RULE 5
+IF       golubieN = OK         
+         AND blondinka = YES
+THEN     blondinkaN = OK;
+
+RULE 6
+IF       golubieY = OK         
+         AND blondinka = YES
+THEN     blondinkaY = OK;
+
+RULE 7
+IF       blondinkaY = OK         
+         AND ukrdliaruk = YES
+THEN     ukrdliarukY = OK;
+
+RULE 8
+IF       blondinkaY = OK         
+         AND ukrdliaruk = NO
+THEN     ukrdliarukYN = OK;
+
+RULE 9
+IF       ukrdliarukYN = OK        
+         AND sheia = YES
+THEN     RECO = Podveska_s_brillianovoi_cepochkoi;
+
+RULE 10
+IF       ukrdliarukYN = OK        
+         AND sheia = NO
+THEN     sheiaYN = OK;
+
+RULE 11
+IF       sheiaYN = OK       
+         AND ushi = YES
+THEN     RECO = Miniaturnie_brilliantovie_serejki;
+
+RULE 12
+IF       blondinkaN = OK         
+         AND ukrdliaruk = YES
+THEN     ukrdliarukN = OK;
+
+RULE 13
+IF       blondinkaN = OK         
+         AND ukrdliaruk = NO
+THEN     ukrdliarukNN = OK;
+
+RULE 14
+IF       ukrdliarukNN = OK        
+         AND sheia = YES
+THEN     RECO = Brilliantovaia_cep;
+
+RULE 15
+IF       ukrdliarukNN = OK        
+         AND sheia = NO
+THEN     sheiaNN = OK;
+
+RULE 16
+IF       sheiaNN = OK       
+         AND ushi = YES
+THEN     RECO = Massivnie_brilliantovie_kolca;
+
+RULE 17
+IF       ukrdliarukY = OK         
+         AND palci = YES
+THEN     RECO = Miniaturnoe_kolco_s_brilliantom;
+
+RULE 18
+IF       ukrdliarukN = OK         
+         AND palci = YES
+THEN     RECO = persten_s_brilliantom;
+
+RULE 19
+IF       ukrdliarukN = OK         
+         AND palci = NO
+THEN     RECO = massivnie_chasi_s_brilliantom;
+
+RULE 20
+IF       ukrdliarukY = OK         
+         AND palci = NO
+THEN     RECO = miniaturnie_chasi_s_brilliantom;
+
+RULE 21
+IF       golubieN = OK         
+         AND blondinka = NO
+THEN     brunetkaNN = OK;
+
+RULE 22
+IF       brunetkaNN = OK        
+         AND brunetka = YES
+THEN     brunetkaN = OK;
+
+RULE 23
+IF       brunetkaN = OK         
+         AND ukrdliaruk = YES
+THEN     ukrdliarukNY = OK;
+
+RULE 24
+IF       ukrdliarukNY = OK         
+         AND palci = YES
+THEN     RECO = persten_s_sapfirom;
+
+RULE 25
+IF       ukrdliarukNY = OK         
+         AND palci = NO
+THEN     RECO = Massivnie_chasi_s_sapfirom;
+
+RULE 26
+IF       brunetkaN = OK         
+         AND ukrdliaruk = NO
+THEN     ukrdliarukYNN = OK;
+
+RULE 27
+IF       ukrdliarukYNN = OK        
+         AND sheia = YES
+THEN     RECO = Saofirovaia_cep;
+
+RULE 28
+IF       ukrdliarukYNN = OK        
+         AND sheia = NO
+THEN     sheiaYNN = OK;
+
+RULE 29
+IF       sheiaYNN = OK       
+         AND ushi = YES
+THEN     RECO = Massivnie_sapfirovie_colca;
+
+RULE 30
+IF       golubieY = OK         
+         AND blondinka = NO
+THEN     brunetkaYN = OK;
+
+RULE 31
+IF       brunetkaYN = OK         
+         AND brunetka  = YES
+THEN     brunetkaY = OK;
+
+RULE 32
+IF       brunetkaY = OK         
+         AND ukrdliaruk = YES
+THEN     ukrdliarukYY = OK;
+
+RULE 33
+IF       ukrdliarukYY = OK         
+         AND palci = YES
+THEN     RECO = Miniaturnoe_kolco_s_sapfirom;
+
+RULE 34
+IF       ukrdliarukYY = OK         
+         AND palci = NO
+THEN     RECO = Miniaturnie_chasi_s_sapfirom;
+
+RULE 35
+IF       brunetkaY = OK         
+         AND ukrdliaruk = NO
+THEN     ukrdliarukYYN = OK;
+
+RULE 36
+IF       ukrdliarukYYN = OK        
+         AND sheia = YES
+THEN     RECO = Podveska_s_sapfirovoi_cepochkoi;
+
+RULE 37
+IF       ukrdliarukYYN = OK        
+         AND sheia = NO
+THEN     sheiaYYN = OK;
+
+RULE 38
+IF       sheiaYYN = OK       
+         AND ushi = YES
+THEN     RECO = Miniaturnie_sapfirovie_serejki;
+
+RULE 39
+IF       hudaiaY = OK         
+         AND zelenie = YES
+THEN     zelenieY = OK;
+
+RULE 40
+IF       hudaiaN = OK         
+         AND zelenie = YES
+THEN     zelenieN = OK;
+
+RULE 41
+IF       zelenieN = OK         
+         AND blondinka = YES
+THEN     blondinkaNZ = OK;
+
+RULE 42
+IF       zelenieY = OK         
+         AND blondinka = YES
+THEN     blondinkaYZ = OK;
+
+RULE 43
+IF       blondinkaYZ = OK         
+         AND ukrdliaruk = YES
+THEN     ukrdliarukYZ = OK;
+
+RULE 44
+IF       blondinkaYZ = OK         
+         AND ukrdliaruk = NO
+THEN     ukrdliarukYNZ = OK;
+
+RULE 45
+IF       ukrdliarukYNZ = OK        
+         AND sheia = YES
+THEN     RECO = Serebriannaia_podveska_s_agatom;
+
+RULE 46
+IF       ukrdliarukYNZ = OK        
+         AND sheia = NO
+THEN     sheiaYNZ = OK;
+
+RULE 47
+IF       sheiaYNZ = OK       
+         AND ushi = YES
+THEN     RECO = Miniaturnie_serejki_s_agatom;
+
+RULE 48
+IF       blondinkaNZ = OK         
+         AND ukrdliaruk = YES
+THEN     ukrdliarukNZ = OK;
+
+RULE 49
+IF       blondinkaNZ = OK         
+         AND ukrdliaruk = NO
+THEN     ukrdliarukNNZ = OK;
+
+RULE 50
+IF       ukrdliarukNNZ = OK        
+         AND sheia = YES
+THEN     RECO = Agatovaia_cep;
+
+RULE 51
+IF       ukrdliarukNNZ = OK        
+         AND sheia = NO
+THEN     sheiaNNZ = OK;
+
+RULE 52
+IF       sheiaNNZ = OK       
+         AND ushi = YES
+THEN     RECO = Massivnie_agatovie_kolca;
+
+RULE 53
+IF       ukrdliarukYZ = OK         
+         AND palci = YES
+THEN     RECO = Miniaturnoe_serebriannoe_kolco_s_agatom;
+
+RULE 54
+IF       ukrdliarukNZ = OK         
+         AND palci = YES
+THEN     RECO = persten_s_agatom;
+
+RULE 55
+IF       ukrdliarukNZ = OK         
+         AND palci = NO
+THEN     RECO = massivnie_chasi_s_zelenim_ciferblatom;
+
+RULE 56
+IF       ukrdliarukYZ = OK         
+         AND palci = NO
+THEN     RECO = miniaturnie_chasi_s_zelenim_ciferblatom;
+
+RULE 57
+IF       zelenieN = OK         
+         AND blondinka = NO
+THEN     brunetkaNZ = OK;
+
+RULE 58
+IF       zelenieY = OK         
+         AND blondinka = NO
+THEN     brunetkaYZ = OK;
+
+RULE 59
+IF       brunetkaYZ = OK         
+         AND ukrdliaruk = YES
+THEN     ukrdliarukYZB = OK;
+
+RULE 60
+IF       brunetkaYZ = OK         
+         AND ukrdliaruk = NO
+THEN     ukrdliarukYNZB = OK;
+
+RULE 61
+IF       ukrdliarukYNZB = OK        
+         AND sheia = YES
+THEN     RECO = podveska_s_izumrudnoi_cepochkoi;
+
+RULE 62
+IF       ukrdliarukYNZB = OK        
+         AND sheia = NO
+THEN     sheiaYNZB = OK;
+
+RULE 63
+IF       sheiaYNZB = OK       
+         AND ushi = YES
+THEN     RECO = Miniaturnie_izumrudnie_serejki;
+
+RULE 64
+IF       brunetkaNZ = OK         
+         AND ukrdliaruk = YES
+THEN     ukrdliarukNZB = OK;
+
+RULE 65
+IF       brunetkaNZ = OK         
+         AND ukrdliaruk = NO
+THEN     ukrdliarukNNZB = OK;
+
+RULE 66
+IF       ukrdliarukNNZB = OK        
+         AND sheia = YES
+THEN     RECO = Izumrudnaia_cep;
+
+RULE 67
+IF       ukrdliarukNNZB = OK        
+         AND sheia = NO
+THEN     sheiaNNZB = OK;
+
+RULE 68
+IF       sheiaNNZB = OK       
+         AND ushi = YES
+THEN     RECO = Massivnie_Izumrudnie_kolca;
+
+RULE 69
+IF       ukrdliarukYZB = OK         
+         AND palci = YES
+THEN     RECO = Miniaturnoe_kolco_s_izumrudom;
+
+RULE 70
+IF       ukrdliarukNZB = OK         
+         AND palci = YES
+THEN     RECO = persten_s_izumrudom;
+
+RULE 71
+IF       ukrdliarukNZB = OK         
+         AND palci = NO
+THEN     RECO = massivnie_chasi_s_izumrudom;
+
+RULE 72
+IF       ukrdliarukYZB = OK         
+         AND palci = NO
+THEN     RECO = miniaturnie_chasi_s_izumrudom;
+
+
+RULE 73
+IF       hudaiaY = OK         
+         AND zelenie = NO
+THEN     zelenieYNO = OK;
+
+RULE 74
+IF       hudaiaN = OK         
+         AND zelenie = NO
+THEN     zelenieNNO = OK;
+
+RULE 75
+IF       zelenieYNO = OK         
+         AND carie = YES
+THEN     carieY = OK;
+
+RULE 76
+IF       zelenieNNO = OK         
+         AND carie = YES
+THEN     carieN = OK;
+
+RULE 77
+IF       carieN = OK         
+         AND blondinka = YES
+THEN     blondinkaNK = OK;
+
+RULE 78
+IF       carieY = OK         
+         AND blondinka = YES
+THEN     blondinkaYK = OK;
+
+RULE 79
+IF       blondinkaYK = OK         
+         AND ukrdliaruk = YES
+THEN     ukrdliarukYK = OK;
+
+RULE 80
+IF       blondinkaYK = OK         
+         AND ukrdliaruk = NO
+THEN     ukrdliarukYNK = OK;
+
+RULE 81
+IF       ukrdliarukYNK = OK        
+         AND sheia = YES
+THEN     RECO = Serebriannaia_podveska_s_jeltim_kamnem;
+
+RULE 82
+IF       ukrdliarukYNK = OK        
+         AND sheia = NO
+THEN     sheiaYNK = OK;
+
+RULE 83
+IF       sheiaYNK = OK       
+         AND ushi = YES
+THEN     RECO = Miniaturnie_serejki_s_jeltim_kamnem;
+
+RULE 84
+IF       blondinkaNK = OK         
+         AND ukrdliaruk = YES
+THEN     ukrdliarukNK = OK;
+
+RULE 85
+IF       blondinkaNK = OK         
+         AND ukrdliaruk = NO
+THEN     ukrdliarukNNK = OK;
+
+RULE 86
+IF       ukrdliarukNK = OK        
+         AND sheia = YES
+THEN     RECO = Serebriannai_cep_s_jeltim_kamnem;
+
+RULE 87
+IF       ukrdliarukNNK = OK        
+         AND sheia = NO
+THEN     sheiaNNK = OK;
+
+RULE 88
+IF       sheiaNNK = OK       
+         AND ushi = YES
+THEN     RECO = Massivnie_kolca_s_jeltim_kamnem;
+
+RULE 89
+IF       ukrdliarukYK = OK         
+         AND palci = YES
+THEN     RECO = Miniaturnoe_kolco_s_jeltim_kamnem;
+
+RULE 90
+IF       ukrdliarukNK = OK         
+         AND palci = YES
+THEN     RECO = persten_s_jeltim_kamnem;
+
+RULE 91
+IF       ukrdliarukNK = OK         
+         AND palci = NO
+THEN     RECO = massivnie_chasi_s_korich_ciferblatom;
+
+RULE 92
+IF       ukrdliarukYK = OK         
+         AND palci = NO
+THEN     RECO = miniaturnie_chasi_s_korich_ciferblatom;
+
+RULE 93
+IF       carieN = OK         
+         AND blondinka = NO
+THEN     brunetkaNK = OK;
+
+RULE 94
+IF       carieY = OK         
+         AND blondinka = NO
+THEN     brunetkaYK = OK;
+
+RULE 95
+IF       brunetkaYK = OK         
+         AND ukrdliaruk = YES
+THEN     ukrdliarukYKB = OK;
+
+RULE 96
+IF       brunetkaYK = OK         
+         AND ukrdliaruk = NO
+THEN     ukrdliarukYNKB = OK;
+
+RULE 97
+IF       ukrdliarukYNKB = OK        
+         AND sheia = YES
+THEN     RECO = podveska_s_granatovoi_cepochkoi;
+
+RULE 98
+IF       ukrdliarukYNKB = OK        
+         AND sheia = NO
+THEN     sheiaYNKB = OK;
+
+RULE 99
+IF       sheiaYNKB = OK       
+         AND ushi = YES
+THEN     RECO = Miniaturnie_granatovie_serejki;
+
+RULE 100
+IF       brunetkaNK = OK         
+         AND ukrdliaruk = YES
+THEN     ukrdliarukNKB = OK;
+
+RULE 101
+IF       brunetkaNK = OK         
+         AND ukrdliaruk = NO
+THEN     ukrdliarukNNKB = OK;
+
+RULE 102
+IF       ukrdliarukNNKB = OK        
+         AND sheia = YES
+THEN     RECO = Granatovaia_cep;
+
+RULE 103
+IF       ukrdliarukNNKB = OK        
+         AND sheia = NO
+THEN     sheiaNNKB = OK;
+
+RULE 104
+IF       sheiaNNKB = OK       
+         AND ushi = YES
+THEN     RECO = Massivnie_Granatovie_kolca;
+
+RULE 105
+IF       ukrdliarukYKB = OK         
+         AND palci = YES
+THEN     RECO = Miniaturnoe_kolco_s_granatom;
+
+RULE 106
+IF       ukrdliarukNKB = OK         
+         AND palci = YES
+THEN     RECO = persten_s_granatom;
+
+RULE 107
+IF       ukrdliarukNKB = OK         
+         AND palci = NO
+THEN     RECO = massivnie_chasi_s_granatom;
+
+RULE 108
+IF       ukrdliarukYKB = OK         
+         AND palci = NO
+THEN     RECO = miniaturnie_chasi_s_granatom;
+
+
+!STATEMENTS BLOCK
+ASK hudaia: " Ukrashenie dlia hudoi devushki?";
+CHOICES hudaia: YES,NO;
+ASK golubie: " Ukrashenie dlia goluboglazoi devushki?";
+CHOICES golubie: YES,NO;
+ASK blondinka: " Ukrashenie dlia blondinki?";
+CHOICES blondinka : YES,NO;
+ASK ukrdliaruk: " Ukrashenie dlia ruk?";
+CHOICES ukrdliaruk : YES,NO;
+ASK palci: " Ukrashenie dlia pal`cev?";
+CHOICES palci : YES,NO;
+ASK sheia: " Ukrashenie dlia shei?";
+CHOICES sheia : YES,NO;
+ASK ushi: " Ukrashenie dlia ushei?";
+CHOICES ushi : YES,NO;
+ASK brunetka: " Ukrashenie dlia brunetki?";
+CHOICES brunetka : YES,NO;
+ASK zelenie: " Ukrashenie dlia zelenoglazoi devushki?";
+CHOICES zelenie : YES,NO;
+ASK carie: " Ukrashenie dlia careglazoi devushki?";
+CHOICES carie : YES,NO;
+
+

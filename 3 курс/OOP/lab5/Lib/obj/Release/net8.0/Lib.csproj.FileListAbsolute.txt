@@ -1,0 +1,11 @@
+C:\Users\maxam\Документы\Lab55\Lib\bin\Release\net8.0\Lib.deps.json
+C:\Users\maxam\Документы\Lab55\Lib\bin\Release\net8.0\Lib.dll
+C:\Users\maxam\Документы\Lab55\Lib\bin\Release\net8.0\Lib.pdb
+C:\Users\maxam\Документы\Lab55\Lib\obj\Release\net8.0\Lib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\maxam\Документы\Lab55\Lib\obj\Release\net8.0\Lib.AssemblyInfoInputs.cache
+C:\Users\maxam\Документы\Lab55\Lib\obj\Release\net8.0\Lib.AssemblyInfo.cs
+C:\Users\maxam\Документы\Lab55\Lib\obj\Release\net8.0\Lib.csproj.CoreCompileInputs.cache
+C:\Users\maxam\Документы\Lab55\Lib\obj\Release\net8.0\Lib.dll
+C:\Users\maxam\Документы\Lab55\Lib\obj\Release\net8.0\refint\Lib.dll
+C:\Users\maxam\Документы\Lab55\Lib\obj\Release\net8.0\Lib.pdb
+C:\Users\maxam\Документы\Lab55\Lib\obj\Release\net8.0\ref\Lib.dll

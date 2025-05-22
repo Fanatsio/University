@@ -1,0 +1,23 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:models="clr-namespace:SafetySystem.Models"
+        xmlns:viewModels="clr-namespace:SafetySystem.ViewModels"
+        xmlns:converters="clr-namespace:SafetySystem.Converters"
+        x:Class="SafetySystem.Views.EmployeesWindow"
+        Title="Список сотрудников"
+        Width="600" Height="400"
+        Background="White">
+    <DataGrid x:Name="EmployeesDataGrid"
+        AutoGenerateColumns="False"
+        IsReadOnly="True"
+        SelectionMode="Single"
+        CanUserResizeColumns="True"
+        CanUserSortColumns="True"
+        ItemsSource="{Binding Employees}"
+        x:DataType="viewModels:EmployeesViewModel">
+        <DataGrid.Columns>
+            <DataGridTextColumn Header="ФИО" Binding="{Binding Name, x:DataType=models:Employee}" Width="*"/>
+            <DataGridTextColumn Header="RFID" Binding="{Binding RfidTag, x:DataType=models:Employee}" Width="200"/>
+        </DataGrid.Columns>
+    </DataGrid>
+</Window>

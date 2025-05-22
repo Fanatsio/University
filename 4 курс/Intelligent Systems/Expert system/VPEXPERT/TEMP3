@@ -1,0 +1,8 @@
+b:\diagasmt.kbs = yes CNF 0
+current_psych = good CNF 100
+diag_assmt = GOOD CNF 100
+drug_use = no CNF 100
+ext_factors = great_extent CNF 100
+mtl_phys = no CNF 100
+word1 = does_not CNF 100
+word2 = is_not CNF 100

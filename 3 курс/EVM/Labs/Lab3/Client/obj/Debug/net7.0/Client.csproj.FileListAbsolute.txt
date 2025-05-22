@@ -1,0 +1,14 @@
+D:\EVM\Labs\Lab3\Client\bin\Debug\net7.0\Client.exe
+D:\EVM\Labs\Lab3\Client\bin\Debug\net7.0\Client.deps.json
+D:\EVM\Labs\Lab3\Client\bin\Debug\net7.0\Client.runtimeconfig.json
+D:\EVM\Labs\Lab3\Client\bin\Debug\net7.0\Client.dll
+D:\EVM\Labs\Lab3\Client\bin\Debug\net7.0\Client.pdb
+D:\EVM\Labs\Lab3\Client\obj\Debug\net7.0\Client.GeneratedMSBuildEditorConfig.editorconfig
+D:\EVM\Labs\Lab3\Client\obj\Debug\net7.0\Client.AssemblyInfoInputs.cache
+D:\EVM\Labs\Lab3\Client\obj\Debug\net7.0\Client.AssemblyInfo.cs
+D:\EVM\Labs\Lab3\Client\obj\Debug\net7.0\Client.csproj.CoreCompileInputs.cache
+D:\EVM\Labs\Lab3\Client\obj\Debug\net7.0\Client.dll
+D:\EVM\Labs\Lab3\Client\obj\Debug\net7.0\refint\Client.dll
+D:\EVM\Labs\Lab3\Client\obj\Debug\net7.0\Client.pdb
+D:\EVM\Labs\Lab3\Client\obj\Debug\net7.0\Client.genruntimeconfig.cache
+D:\EVM\Labs\Lab3\Client\obj\Debug\net7.0\ref\Client.dll

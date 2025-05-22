@@ -1,0 +1,87 @@
+RUNTIME;
+ACTIONS
+     DISPLAY "Welcome to the HMO Service Screening Assistant"
+     FIND support
+     DISPLAY "Recommended support: {support}."
+;
+
+RULE 1
+     IF member_status = ok and
+        reason = new_case or
+        reason = follow_up_case and
+        problem = serious
+     THEN support = level_1;
+
+RULE 2
+     IF member_status = ok and
+        reason = new_case and
+        problem = non_serious
+     THEN support = level_2;
+
+RULE 3
+     IF member_status = ok and
+        reason = follow_up_case and
+        problem = non_serious
+     THEN support = level_3;
+
+RULE 4
+     IF member_status = ok and
+        reason = information_other
+     THEN support = information_other;
+
+RULE 5
+     IF member_status = not_ok
+     THEN support = non_member;
+
+RULE 6
+     IF member = yes
+     THEN member_status = check_valid
+        FIND id_number                           !ASK for direct user input
+        GET id_number = id, member, ALL       !look in database for a match
+        RESET member_status;
+
+RULE 7
+     IF member = no
+     THEN member_status = not_ok;
+
+RULE 8
+     IF id_number = (id)
+     THEN member_status = ok
+        DISPLAY "Member status is ok"
+        requests = (requests + 1)                       !increment requests
+        PUT member;                             !update the database record
+
+RULE 9
+     IF id_number <> (id)
+     THEN member_status = not_ok
+        DISPLAY "Member status is not valid.";
+
+RULE 10
+     IF temperature = normal and
+        other_symptoms = yes
+     THEN problem = serious;
+
+RULE 11
+     IF temperature = normal and
+        other_symptoms = no
+     THEN problem = non_serious;
+
+RULE 12
+     IF temperature = abnormal or
+        temperature = not_known
+     THEN problem = serious;
+
+ASK member: "Is the person an HMO member?";
+CHOICES member: yes, no;
+
+ASK id_number: "What is the `id' number?";
+
+ASK reason: "What is the reason for coming to the HMO facility?";
+CHOICES reason: new_case, follow_up_case, information_other;
+
+ASK temperature: "What is the person's temperature?";
+CHOICES temperature: normal, abnormal, not_known;
+
+ASK other_symptoms:  "Does the person claim other symptoms?";
+CHOICES other_symptoms: yes, no;
+

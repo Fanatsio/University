@@ -1,0 +1,120 @@
+D:\Trash\Универ\Ucheba\Теория Информации\Kod\bin\Debug\Kod.exe.config
+D:\Trash\Универ\Ucheba\Теория Информации\Kod\bin\Debug\Kod.exe
+D:\Trash\Универ\Ucheba\Теория Информации\Kod\bin\Debug\Kod.pdb
+D:\Trash\Универ\Ucheba\Теория Информации\Kod\obj\Debug\Kod.csproj.AssemblyReference.cache
+D:\Trash\Универ\Ucheba\Теория Информации\Kod\obj\Debug\Kod.csproj.SuggestedBindingRedirects.cache
+D:\Trash\Универ\Ucheba\Теория Информации\Kod\obj\Debug\Kod.Form1.resources
+D:\Trash\Универ\Ucheba\Теория Информации\Kod\obj\Debug\Kod.Properties.Resources.resources
+D:\Trash\Универ\Ucheba\Теория Информации\Kod\obj\Debug\Kod.csproj.GenerateResource.cache
+D:\Trash\Универ\Ucheba\Теория Информации\Kod\obj\Debug\Kod.csproj.CoreCompileInputs.cache
+D:\Trash\Универ\Ucheba\Теория Информации\Kod\obj\Debug\Kod.exe
+D:\Trash\Универ\Ucheba\Теория Информации\Kod\obj\Debug\Kod.pdb
+D:\Trash\Универ\Ucheba\Теория Информации\Kod\bin\Debug\ru\Kod.resources.dll
+D:\Trash\Универ\Ucheba\Теория Информации\Kod\obj\Debug\Kod.Form1.ru.resources
+D:\Trash\Универ\Ucheba\Теория Информации\Kod\obj\Debug\ru\Kod.resources.dll
+D:\DOCS\LABS\теория информации\Kod\bin\Debug\Kod.exe.config
+D:\DOCS\LABS\теория информации\Kod\bin\Debug\Kod.exe
+D:\DOCS\LABS\теория информации\Kod\bin\Debug\Kod.pdb
+D:\DOCS\LABS\теория информации\Kod\bin\Debug\ru\Kod.resources.dll
+D:\DOCS\LABS\теория информации\Kod\obj\Debug\Kod.csproj.AssemblyReference.cache
+D:\DOCS\LABS\теория информации\Kod\obj\Debug\Kod.csproj.SuggestedBindingRedirects.cache
+D:\DOCS\LABS\теория информации\Kod\obj\Debug\Kod.Form1.resources
+D:\DOCS\LABS\теория информации\Kod\obj\Debug\Kod.Properties.Resources.resources
+D:\DOCS\LABS\теория информации\Kod\obj\Debug\Kod.Form1.ru.resources
+D:\DOCS\LABS\теория информации\Kod\obj\Debug\Kod.csproj.GenerateResource.cache
+D:\DOCS\LABS\теория информации\Kod\obj\Debug\Kod.csproj.CoreCompileInputs.cache
+D:\DOCS\LABS\теория информации\Kod\obj\Debug\ru\Kod.resources.dll
+D:\DOCS\LABS\теория информации\Kod\obj\Debug\Kod.exe
+D:\DOCS\LABS\теория информации\Kod\obj\Debug\Kod.pdb
+E:\TI\TILab2\bin\Debug\Kod.exe.config
+E:\TI\TILab2\bin\Debug\Kod.exe
+E:\TI\TILab2\bin\Debug\Kod.pdb
+E:\TI\TILab2\bin\Debug\ru\Kod.resources.dll
+E:\TI\TILab2\obj\Debug\Kod.csproj.AssemblyReference.cache
+E:\TI\TILab2\obj\Debug\Kod.csproj.SuggestedBindingRedirects.cache
+E:\TI\TILab2\obj\Debug\Kod.Form1.resources
+E:\TI\TILab2\obj\Debug\Kod.Properties.Resources.resources
+E:\TI\TILab2\obj\Debug\Kod.Form1.ru.resources
+E:\TI\TILab2\obj\Debug\Kod.csproj.GenerateResource.cache
+E:\TI\TILab2\obj\Debug\Kod.csproj.CoreCompileInputs.cache
+E:\TI\TILab2\obj\Debug\ru\Kod.resources.dll
+E:\TI\TILab2\obj\Debug\Kod.exe
+E:\TI\TILab2\obj\Debug\Kod.pdb
+D:\TI\TILab2\bin\Debug\Kod.exe.config
+D:\TI\TILab2\bin\Debug\Kod.exe
+D:\TI\TILab2\bin\Debug\Kod.pdb
+D:\TI\TILab2\bin\Debug\ru\Kod.resources.dll
+D:\TI\TILab2\obj\Debug\Kod.csproj.AssemblyReference.cache
+D:\TI\TILab2\obj\Debug\Kod.Form1.resources
+D:\TI\TILab2\obj\Debug\Kod.Properties.Resources.resources
+D:\TI\TILab2\obj\Debug\Kod.Form1.ru.resources
+D:\TI\TILab2\obj\Debug\Kod.csproj.GenerateResource.cache
+D:\TI\TILab2\obj\Debug\Kod.csproj.CoreCompileInputs.cache
+D:\TI\TILab2\obj\Debug\ru\Kod.resources.dll
+D:\TI\TILab2\obj\Debug\Kod.exe
+D:\TI\TILab2\obj\Debug\Kod.pdb
+C:\Users\Serafim01\Desktop\TILab2\bin\Debug\Kod.exe.config
+C:\Users\Serafim01\Desktop\TILab2\bin\Debug\Kod.exe
+C:\Users\Serafim01\Desktop\TILab2\bin\Debug\Kod.pdb
+C:\Users\Serafim01\Desktop\TILab2\bin\Debug\ru\Kod.resources.dll
+C:\Users\Serafim01\Desktop\TILab2\obj\Debug\Kod.csproj.AssemblyReference.cache
+C:\Users\Serafim01\Desktop\TILab2\obj\Debug\Kod.Form1.resources
+C:\Users\Serafim01\Desktop\TILab2\obj\Debug\Kod.Properties.Resources.resources
+C:\Users\Serafim01\Desktop\TILab2\obj\Debug\Kod.Form1.ru.resources
+C:\Users\Serafim01\Desktop\TILab2\obj\Debug\Kod.csproj.GenerateResource.cache
+C:\Users\Serafim01\Desktop\TILab2\obj\Debug\Kod.csproj.CoreCompileInputs.cache
+C:\Users\Serafim01\Desktop\TILab2\obj\Debug\ru\Kod.resources.dll
+C:\Users\Serafim01\Desktop\TILab2\obj\Debug\Kod.exe
+C:\Users\Serafim01\Desktop\TILab2\obj\Debug\Kod.pdb
+C:\Users\Hetsu\Desktop\Theory_Information\TILab2\bin\Debug\Kod.exe.config
+C:\Users\Hetsu\Desktop\Theory_Information\TILab2\bin\Debug\Kod.exe
+C:\Users\Hetsu\Desktop\Theory_Information\TILab2\bin\Debug\Kod.pdb
+C:\Users\Hetsu\Desktop\Theory_Information\TILab2\bin\Debug\ru\Kod.resources.dll
+C:\Users\Hetsu\Desktop\Theory_Information\TILab2\obj\Debug\Kod.csproj.AssemblyReference.cache
+C:\Users\Hetsu\Desktop\Theory_Information\TILab2\obj\Debug\Kod.Form1.resources
+C:\Users\Hetsu\Desktop\Theory_Information\TILab2\obj\Debug\Kod.Properties.Resources.resources
+C:\Users\Hetsu\Desktop\Theory_Information\TILab2\obj\Debug\Kod.Form1.ru.resources
+C:\Users\Hetsu\Desktop\Theory_Information\TILab2\obj\Debug\Kod.csproj.GenerateResource.cache
+C:\Users\Hetsu\Desktop\Theory_Information\TILab2\obj\Debug\Kod.csproj.CoreCompileInputs.cache
+C:\Users\Hetsu\Desktop\Theory_Information\TILab2\obj\Debug\ru\Kod.resources.dll
+C:\Users\Hetsu\Desktop\Theory_Information\TILab2\obj\Debug\Kod.exe
+C:\Users\Hetsu\Desktop\Theory_Information\TILab2\obj\Debug\Kod.pdb
+G:\Университет\TheorInf-main\TILab2\bin\Debug\Kod.exe.config
+G:\Университет\TheorInf-main\TILab2\bin\Debug\Kod.exe
+G:\Университет\TheorInf-main\TILab2\bin\Debug\Kod.pdb
+G:\Университет\TheorInf-main\TILab2\bin\Debug\ru\Kod.resources.dll
+G:\Университет\TheorInf-main\TILab2\obj\Debug\Kod.csproj.AssemblyReference.cache
+G:\Университет\TheorInf-main\TILab2\obj\Debug\Kod.Form1.resources
+G:\Университет\TheorInf-main\TILab2\obj\Debug\Kod.Properties.Resources.resources
+G:\Университет\TheorInf-main\TILab2\obj\Debug\Kod.Form1.ru.resources
+G:\Университет\TheorInf-main\TILab2\obj\Debug\Kod.csproj.GenerateResource.cache
+G:\Университет\TheorInf-main\TILab2\obj\Debug\Kod.csproj.CoreCompileInputs.cache
+G:\Университет\TheorInf-main\TILab2\obj\Debug\ru\Kod.resources.dll
+G:\Университет\TheorInf-main\TILab2\obj\Debug\Kod.exe
+G:\Университет\TheorInf-main\TILab2\obj\Debug\Kod.pdb
+H:\Теория информации\TILab2\bin\Debug\Kod.exe.config
+H:\Теория информации\TILab2\bin\Debug\Kod.exe
+H:\Теория информации\TILab2\bin\Debug\Kod.pdb
+H:\Теория информации\TILab2\bin\Debug\ru\Kod.resources.dll
+H:\Теория информации\TILab2\obj\Debug\Kod.csproj.AssemblyReference.cache
+H:\Теория информации\TILab2\obj\Debug\Kod.Form1.resources
+H:\Теория информации\TILab2\obj\Debug\Kod.Properties.Resources.resources
+H:\Теория информации\TILab2\obj\Debug\Kod.Form1.ru.resources
+H:\Теория информации\TILab2\obj\Debug\Kod.csproj.GenerateResource.cache
+H:\Теория информации\TILab2\obj\Debug\Kod.csproj.CoreCompileInputs.cache
+H:\Теория информации\TILab2\obj\Debug\ru\Kod.resources.dll
+H:\Теория информации\TILab2\obj\Debug\Kod.exe
+H:\Теория информации\TILab2\obj\Debug\Kod.pdb
+D:\Теория информации\Лабораторная работа №2\bin\Debug\Kod.exe.config
+D:\Теория информации\Лабораторная работа №2\bin\Debug\Kod.exe
+D:\Теория информации\Лабораторная работа №2\bin\Debug\Kod.pdb
+D:\Теория информации\Лабораторная работа №2\bin\Debug\ru\Kod.resources.dll
+D:\Теория информации\Лабораторная работа №2\obj\Debug\Kod.csproj.AssemblyReference.cache
+D:\Теория информации\Лабораторная работа №2\obj\Debug\Kod.Form1.resources
+D:\Теория информации\Лабораторная работа №2\obj\Debug\Kod.Properties.Resources.resources
+D:\Теория информации\Лабораторная работа №2\obj\Debug\Kod.Form1.ru.resources
+D:\Теория информации\Лабораторная работа №2\obj\Debug\Kod.csproj.GenerateResource.cache
+D:\Теория информации\Лабораторная работа №2\obj\Debug\Kod.csproj.CoreCompileInputs.cache
+D:\Теория информации\Лабораторная работа №2\obj\Debug\ru\Kod.resources.dll
+D:\Теория информации\Лабораторная работа №2\obj\Debug\Kod.exe
+D:\Теория информации\Лабораторная работа №2\obj\Debug\Kod.pdb

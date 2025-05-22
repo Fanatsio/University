@@ -1,0 +1,51 @@
+D:\GitHub\surgu-Intelligent-systems\GeneticAlgorithm\bin\Debug\net6.0-windows\GeneticAlgorithm.exe
+D:\GitHub\surgu-Intelligent-systems\GeneticAlgorithm\bin\Debug\net6.0-windows\GeneticAlgorithm.deps.json
+D:\GitHub\surgu-Intelligent-systems\GeneticAlgorithm\bin\Debug\net6.0-windows\GeneticAlgorithm.runtimeconfig.json
+D:\GitHub\surgu-Intelligent-systems\GeneticAlgorithm\bin\Debug\net6.0-windows\GeneticAlgorithm.dll
+D:\GitHub\surgu-Intelligent-systems\GeneticAlgorithm\bin\Debug\net6.0-windows\GeneticAlgorithm.pdb
+D:\GitHub\surgu-Intelligent-systems\GeneticAlgorithm\obj\Debug\net6.0-windows\GeneticAlgorithm.Form1.resources
+D:\GitHub\surgu-Intelligent-systems\GeneticAlgorithm\obj\Debug\net6.0-windows\GeneticAlgorithm.csproj.GenerateResource.cache
+D:\GitHub\surgu-Intelligent-systems\GeneticAlgorithm\obj\Debug\net6.0-windows\GeneticAlgorithm.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub\surgu-Intelligent-systems\GeneticAlgorithm\obj\Debug\net6.0-windows\GeneticAlgorithm.AssemblyInfoInputs.cache
+D:\GitHub\surgu-Intelligent-systems\GeneticAlgorithm\obj\Debug\net6.0-windows\GeneticAlgorithm.AssemblyInfo.cs
+D:\GitHub\surgu-Intelligent-systems\GeneticAlgorithm\obj\Debug\net6.0-windows\GeneticAlgorithm.csproj.CoreCompileInputs.cache
+D:\GitHub\surgu-Intelligent-systems\GeneticAlgorithm\obj\Debug\net6.0-windows\GeneticAlgorithm.sourcelink.json
+D:\GitHub\surgu-Intelligent-systems\GeneticAlgorithm\obj\Debug\net6.0-windows\GeneticAlgorithm.dll
+D:\GitHub\surgu-Intelligent-systems\GeneticAlgorithm\obj\Debug\net6.0-windows\refint\GeneticAlgorithm.dll
+D:\GitHub\surgu-Intelligent-systems\GeneticAlgorithm\obj\Debug\net6.0-windows\GeneticAlgorithm.pdb
+D:\GitHub\surgu-Intelligent-systems\GeneticAlgorithm\obj\Debug\net6.0-windows\GeneticAlgorithm.genruntimeconfig.cache
+D:\GitHub\surgu-Intelligent-systems\GeneticAlgorithm\obj\Debug\net6.0-windows\ref\GeneticAlgorithm.dll
+H:\Лабораторные работы DaCapo\Интеллектуальные системы\GeneticAlgorithm\bin\Debug\net6.0-windows\GeneticAlgorithm.exe
+H:\Лабораторные работы DaCapo\Интеллектуальные системы\GeneticAlgorithm\bin\Debug\net6.0-windows\GeneticAlgorithm.deps.json
+H:\Лабораторные работы DaCapo\Интеллектуальные системы\GeneticAlgorithm\bin\Debug\net6.0-windows\GeneticAlgorithm.runtimeconfig.json
+H:\Лабораторные работы DaCapo\Интеллектуальные системы\GeneticAlgorithm\bin\Debug\net6.0-windows\GeneticAlgorithm.dll
+H:\Лабораторные работы DaCapo\Интеллектуальные системы\GeneticAlgorithm\bin\Debug\net6.0-windows\GeneticAlgorithm.pdb
+H:\Лабораторные работы DaCapo\Интеллектуальные системы\GeneticAlgorithm\obj\Debug\net6.0-windows\GeneticAlgorithm.Form1.resources
+H:\Лабораторные работы DaCapo\Интеллектуальные системы\GeneticAlgorithm\obj\Debug\net6.0-windows\GeneticAlgorithm.csproj.GenerateResource.cache
+H:\Лабораторные работы DaCapo\Интеллектуальные системы\GeneticAlgorithm\obj\Debug\net6.0-windows\GeneticAlgorithm.GeneratedMSBuildEditorConfig.editorconfig
+H:\Лабораторные работы DaCapo\Интеллектуальные системы\GeneticAlgorithm\obj\Debug\net6.0-windows\GeneticAlgorithm.AssemblyInfoInputs.cache
+H:\Лабораторные работы DaCapo\Интеллектуальные системы\GeneticAlgorithm\obj\Debug\net6.0-windows\GeneticAlgorithm.AssemblyInfo.cs
+H:\Лабораторные работы DaCapo\Интеллектуальные системы\GeneticAlgorithm\obj\Debug\net6.0-windows\GeneticAlgorithm.csproj.CoreCompileInputs.cache
+H:\Лабораторные работы DaCapo\Интеллектуальные системы\GeneticAlgorithm\obj\Debug\net6.0-windows\GeneticAlgorithm.dll
+H:\Лабораторные работы DaCapo\Интеллектуальные системы\GeneticAlgorithm\obj\Debug\net6.0-windows\refint\GeneticAlgorithm.dll
+H:\Лабораторные работы DaCapo\Интеллектуальные системы\GeneticAlgorithm\obj\Debug\net6.0-windows\GeneticAlgorithm.pdb
+H:\Лабораторные работы DaCapo\Интеллектуальные системы\GeneticAlgorithm\obj\Debug\net6.0-windows\GeneticAlgorithm.genruntimeconfig.cache
+H:\Лабораторные работы DaCapo\Интеллектуальные системы\GeneticAlgorithm\obj\Debug\net6.0-windows\ref\GeneticAlgorithm.dll
+G:\Лабораторные работы DaCapo\Интеллектуальные системы\GeneticAlgorithm\obj\Debug\net6.0-windows\GeneticAlgorithm.Form1.resources
+G:\Лабораторные работы DaCapo\Интеллектуальные системы\GeneticAlgorithm\obj\Debug\net6.0-windows\GeneticAlgorithm.csproj.GenerateResource.cache
+G:\Лабораторные работы DaCapo\Интеллектуальные системы\GeneticAlgorithm\obj\Debug\net6.0-windows\GeneticAlgorithm.GeneratedMSBuildEditorConfig.editorconfig
+G:\Лабораторные работы DaCapo\Интеллектуальные системы\GeneticAlgorithm\obj\Debug\net6.0-windows\GeneticAlgorithm.AssemblyInfoInputs.cache
+G:\Лабораторные работы DaCapo\Интеллектуальные системы\GeneticAlgorithm\obj\Debug\net6.0-windows\GeneticAlgorithm.AssemblyInfo.cs
+G:\Лабораторные работы DaCapo\Интеллектуальные системы\GeneticAlgorithm\obj\Debug\net6.0-windows\GeneticAlgorithm.csproj.CoreCompileInputs.cache
+G:\Лабораторные работы DaCapo\Интеллектуальные системы\GeneticAlgorithm\obj\Debug\net6.0-windows\GeneticAlgorithm.dll
+G:\Лабораторные работы DaCapo\Интеллектуальные системы\GeneticAlgorithm\obj\Debug\net6.0-windows\refint\GeneticAlgorithm.dll
+G:\Лабораторные работы DaCapo\Интеллектуальные системы\GeneticAlgorithm\obj\Debug\net6.0-windows\GeneticAlgorithm.pdb
+D:\Университет\Интеллектуальные системы\GeneticAlgorithm\obj\Debug\net6.0-windows\GeneticAlgorithm.Form1.resources
+D:\Университет\Интеллектуальные системы\GeneticAlgorithm\obj\Debug\net6.0-windows\GeneticAlgorithm.csproj.GenerateResource.cache
+D:\Университет\Интеллектуальные системы\GeneticAlgorithm\obj\Debug\net6.0-windows\GeneticAlgorithm.GeneratedMSBuildEditorConfig.editorconfig
+D:\Университет\Интеллектуальные системы\GeneticAlgorithm\obj\Debug\net6.0-windows\GeneticAlgorithm.AssemblyInfoInputs.cache
+D:\Университет\Интеллектуальные системы\GeneticAlgorithm\obj\Debug\net6.0-windows\GeneticAlgorithm.AssemblyInfo.cs
+D:\Университет\Интеллектуальные системы\GeneticAlgorithm\obj\Debug\net6.0-windows\GeneticAlgorithm.csproj.CoreCompileInputs.cache
+D:\Университет\Интеллектуальные системы\GeneticAlgorithm\obj\Debug\net6.0-windows\GeneticAlgorithm.dll
+D:\Университет\Интеллектуальные системы\GeneticAlgorithm\obj\Debug\net6.0-windows\refint\GeneticAlgorithm.dll
+D:\Университет\Интеллектуальные системы\GeneticAlgorithm\obj\Debug\net6.0-windows\GeneticAlgorithm.pdb

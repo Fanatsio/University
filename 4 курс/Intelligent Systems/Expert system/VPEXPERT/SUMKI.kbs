@@ -1,0 +1,158 @@
+! Name of the expert system: MOTORCYCLE TROUBLESHOOTING ADVISOR
+! Description:  This system assists a user in diagnosing motorcycle
+!               problems and in finding out how to solve them.
+! Microcomputer used: IBM PC compatible
+! Saved file name: BIKE.KBS
+
+ENDOFF;
+RUNTIME;
+
+! ACTIONS BLOCK
+ACTIONS
+WOPEN 1,0,0,23,79,2
+ACTIVE 1
+DISPLAY "
+
+
+
+                                 VIBOR SUMOK
+
+                  Developed by Fomenko Vyacheslav Dmitrievich
+                   
+				   
+				   
+
+
+                           Press any key to continue~"
+
+WCLOSE 1
+
+display "Pomosh v podborke zhenskie sumki"
+
+
+FIND sumka
+
+display "Vasha sumka:{sumka}";
+
+RULE 0
+
+IF sportzal = da
+
+THEN sumka = PUMA_CHALLENGER_DUFFELBAG_XS;
+
+RULE 1
+
+IF supermarket = da
+THEN sumka = Shoper_RIP_CURL_sumka_LS;
+
+RULE 2
+
+IF plyazh = da
+
+THEN sumka = Calvin_Klein_Intense_Power;
+
+RULE 3
+
+IF prazdnik = da
+
+THEN sumka = Salvatore_Ferragamo_Vara_Bow;
+
+RULE 4
+
+IF vecherinka = da
+
+THEN sumka = Poyasnaya_sumka_Calvin_Klein;
+
+RULE 5
+
+IF dacha = da
+
+THEN sumka = foldabletrolley_dots_Reisenthel;
+
+RULE 6
+
+IF universitet = net
+
+THEN sumka = Tommy_Hilfiger_Setchel_TH_Core;
+
+RULE 7
+
+IF universitet = da AND
+
+noutbuk = da
+
+THEN sumka = sumka_netbookbag_dots_Reisenthel;
+
+RULE 8
+
+IF universitet = da AND
+
+noutbuk = net AND
+
+mnogo = da
+
+THEN sumka = Calvin_Klein_Must_BackPack;
+
+RULE 9
+
+IF universitet = da AND
+
+noutbuk = net AND
+
+mnogo = net AND
+
+klassika = da
+
+THEN sumka = klassicheskaya_sumka_Lara_Fabria;
+
+RULE 9
+
+IF universitet = da AND
+
+noutbuk = net AND
+
+mnogo = net AND
+
+klassika = net
+
+THEN sumka = Calvin_Klein_Jeans_Black;
+
+ask sportzal:"Vy sobiraetes' v sportzal?";
+
+choices sportzal:da, net;
+
+ask supermarket:"Vy sobiraetes' v supermarket?";
+
+choices supermarket:da, net;
+
+ask plyazh:"Vy sobiraetes' na plyazh?";
+
+choices plyazh:da, net;
+
+ask prazdnik:"Vy sobiraetes' v teatr/restoran/na prazdnik?";
+
+choices prazdnik:da, net;
+
+ask vecherinka:"Vy sobiraetes' na vecherinku?";
+
+choices vecherinka:da, net;
+
+ask dacha:"Vy sobiraetes' na dachu i vam bol'she 50 let?";
+
+choices dacha:da, net;
+
+ask universitet:"Vy sobiraetes' v universitet?";
+
+choices universitet:da, net;
+
+ask noutbuk:"Vy voz'mete s soboy noutbuk?";
+
+choices noutbuk:da, net;
+
+ask mnogo:"Vy voz'mete mnogo veshchey?";
+
+choices mnogo:da, net;
+
+ask klassika:"Vam nravitsya klassicheskiy stil'?";
+
+choices klassika:da, net;

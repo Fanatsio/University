@@ -1,0 +1,22 @@
+ACTIONS
+     WOPEN 1,1,1,20,77,3
+     ACTIVE 1
+     DISPLAY "
+
+         ** WELCOME TO THE HMO SERVICE FLU SCREENING ASSISTANT **
+
+
+           This example demonstrates use of the RECEIVE keyword.
+
+                       PRESS ANY KEY TO CONTINUE~
+"
+  WCLOSE 1
+  WHILEKNOWN symptom
+     RESET symptom
+     RECEIVE ailments, symptom          !RECEIVEs symptoms from AILMENTS file
+     DISPLAY "The patient's most distressing symptoms are {#symptom}."
+  END
+     DISPLAY "RECEIVE was executed successfully using the AILMENTS file."
+     DISPLAY "Note: The confidence factor (CNF) value does not get sent
+      to the AILMENTS file.";
+

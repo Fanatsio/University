@@ -1,0 +1,38 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:SafetySystem.ViewModels"
+        xmlns:views="using:SafetySystem.Views"
+        mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+        Title="Система мониторинга безопасности"
+        WindowState="Maximized">
+
+    <!-- Главный контейнер -->
+    <Grid>
+        <!-- Левое меню -->
+        <Border Width="200" Background="#2C3E50">
+            <StackPanel Margin="10" Spacing="15">
+                <Image Source="avalonia-resource:/Assets/logo.png" Height="50"/>
+                
+                <Button Content="Главный монитор" 
+                        Command="{Binding NavigateToDashboardCommand}"
+                        Style="{StaticResource MenuButtonStyle}"/>
+                        
+                <Button Content="Персонал" 
+                        Command="{Binding NavigateToStaffCommand}"
+                        Style="{StaticResource MenuButtonStyle}"/>
+                        
+                <!-- Остальные кнопки меню -->
+            </StackPanel>
+        </Border>
+
+        <!-- Основная область -->
+        <ContentControl Content="{Binding CurrentView}"/>
+        
+        <!-- Статус-бар -->
+        <Border Height="30" VerticalAlignment="Bottom" Background="#34495E">
+            <TextBlock Text="{Binding StatusMessage}" Foreground="White" Margin="10"/>
+        </Border>
+    </Grid>
+</Window>

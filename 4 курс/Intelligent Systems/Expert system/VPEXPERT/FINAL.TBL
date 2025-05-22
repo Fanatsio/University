@@ -1,0 +1,8 @@
+member_status   reason              problem        support
+ok              new_case            serious        level_1
+ok              new_case            non_serious    level_2
+ok              follow_up_case      serious        level_1
+ok              follow_up_case      non_serious    level_3
+ok              information_other   *              information_other
+not_ok          *                   *              non_member
+

@@ -1,0 +1,56 @@
+C:\Users\vital\OneDrive\Рабочий стол\IS\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.csproj.AssemblyReference.cache
+C:\Users\vital\OneDrive\Рабочий стол\IS\GeneticAlgorithm\obj\Debug\MainWindow.baml
+C:\Users\vital\OneDrive\Рабочий стол\IS\GeneticAlgorithm\obj\Debug\MainWindow.g.cs
+C:\Users\vital\OneDrive\Рабочий стол\IS\GeneticAlgorithm\obj\Debug\App.g.cs
+C:\Users\vital\OneDrive\Рабочий стол\IS\GeneticAlgorithm\obj\Debug\GeneticAlgorithm_MarkupCompile.cache
+C:\Users\vital\OneDrive\Рабочий стол\IS\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.g.resources
+C:\Users\vital\OneDrive\Рабочий стол\IS\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.Properties.Resources.resources
+C:\Users\vital\OneDrive\Рабочий стол\IS\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.csproj.GenerateResource.cache
+C:\Users\vital\OneDrive\Рабочий стол\IS\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.csproj.CoreCompileInputs.cache
+C:\Users\vital\OneDrive\Рабочий стол\IS\GeneticAlgorithm\bin\Debug\GeneticAlgorithm.exe.config
+C:\Users\vital\OneDrive\Рабочий стол\IS\GeneticAlgorithm\bin\Debug\GeneticAlgorithm.exe
+C:\Users\vital\OneDrive\Рабочий стол\IS\GeneticAlgorithm\bin\Debug\GeneticAlgorithm.pdb
+C:\Users\vital\OneDrive\Рабочий стол\IS\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.exe
+C:\Users\vital\OneDrive\Рабочий стол\IS\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.pdb
+C:\Users\Hetsu\Desktop\sht\GAV\IS\GeneticAlgorithm\bin\Debug\GeneticAlgorithm.exe.config
+C:\Users\Hetsu\Desktop\sht\GAV\IS\GeneticAlgorithm\bin\Debug\GeneticAlgorithm.exe
+C:\Users\Hetsu\Desktop\sht\GAV\IS\GeneticAlgorithm\bin\Debug\GeneticAlgorithm.pdb
+C:\Users\Hetsu\Desktop\sht\GAV\IS\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.csproj.AssemblyReference.cache
+C:\Users\Hetsu\Desktop\sht\GAV\IS\GeneticAlgorithm\obj\Debug\MainWindow.baml
+C:\Users\Hetsu\Desktop\sht\GAV\IS\GeneticAlgorithm\obj\Debug\MainWindow.g.cs
+C:\Users\Hetsu\Desktop\sht\GAV\IS\GeneticAlgorithm\obj\Debug\App.g.cs
+C:\Users\Hetsu\Desktop\sht\GAV\IS\GeneticAlgorithm\obj\Debug\GeneticAlgorithm_MarkupCompile.cache
+C:\Users\Hetsu\Desktop\sht\GAV\IS\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.g.resources
+C:\Users\Hetsu\Desktop\sht\GAV\IS\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.Properties.Resources.resources
+C:\Users\Hetsu\Desktop\sht\GAV\IS\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.csproj.GenerateResource.cache
+C:\Users\Hetsu\Desktop\sht\GAV\IS\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.csproj.CoreCompileInputs.cache
+C:\Users\Hetsu\Desktop\sht\GAV\IS\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.exe
+C:\Users\Hetsu\Desktop\sht\GAV\IS\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.pdb
+C:\Users\vital\OneDrive\Рабочий стол\sht\GAV\IS\GeneticAlgorithm\bin\Debug\GeneticAlgorithm.exe.config
+C:\Users\vital\OneDrive\Рабочий стол\sht\GAV\IS\GeneticAlgorithm\bin\Debug\GeneticAlgorithm.exe
+C:\Users\vital\OneDrive\Рабочий стол\sht\GAV\IS\GeneticAlgorithm\bin\Debug\GeneticAlgorithm.pdb
+C:\Users\vital\OneDrive\Рабочий стол\sht\GAV\IS\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.csproj.AssemblyReference.cache
+C:\Users\vital\OneDrive\Рабочий стол\sht\GAV\IS\GeneticAlgorithm\obj\Debug\MainWindow.baml
+C:\Users\vital\OneDrive\Рабочий стол\sht\GAV\IS\GeneticAlgorithm\obj\Debug\MainWindow.g.cs
+C:\Users\vital\OneDrive\Рабочий стол\sht\GAV\IS\GeneticAlgorithm\obj\Debug\App.g.cs
+C:\Users\vital\OneDrive\Рабочий стол\sht\GAV\IS\GeneticAlgorithm\obj\Debug\GeneticAlgorithm_MarkupCompile.cache
+C:\Users\vital\OneDrive\Рабочий стол\sht\GAV\IS\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.g.resources
+C:\Users\vital\OneDrive\Рабочий стол\sht\GAV\IS\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.Properties.Resources.resources
+C:\Users\vital\OneDrive\Рабочий стол\sht\GAV\IS\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.csproj.GenerateResource.cache
+C:\Users\vital\OneDrive\Рабочий стол\sht\GAV\IS\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.csproj.CoreCompileInputs.cache
+C:\Users\vital\OneDrive\Рабочий стол\sht\GAV\IS\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.exe
+C:\Users\vital\OneDrive\Рабочий стол\sht\GAV\IS\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.pdb
+C:\Users\rechu\Downloads\Telegram Desktop\GeneticAlgorithm\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.csproj.AssemblyReference.cache
+C:\Users\rechu\Downloads\Telegram Desktop\GeneticAlgorithm\GeneticAlgorithm\bin\Debug\GeneticAlgorithm.exe.config
+C:\Users\rechu\Downloads\Telegram Desktop\GeneticAlgorithm\GeneticAlgorithm\bin\Debug\GeneticAlgorithm.exe
+C:\Users\rechu\Downloads\Telegram Desktop\GeneticAlgorithm\GeneticAlgorithm\bin\Debug\GeneticAlgorithm.pdb
+C:\Users\rechu\Downloads\Telegram Desktop\GeneticAlgorithm\GeneticAlgorithm\obj\Debug\MainWindow.baml
+C:\Users\rechu\Downloads\Telegram Desktop\GeneticAlgorithm\GeneticAlgorithm\obj\Debug\MainWindow.g.cs
+C:\Users\rechu\Downloads\Telegram Desktop\GeneticAlgorithm\GeneticAlgorithm\obj\Debug\App.g.cs
+C:\Users\rechu\Downloads\Telegram Desktop\GeneticAlgorithm\GeneticAlgorithm\obj\Debug\GeneticAlgorithm_MarkupCompile.cache
+C:\Users\rechu\Downloads\Telegram Desktop\GeneticAlgorithm\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.g.resources
+C:\Users\rechu\Downloads\Telegram Desktop\GeneticAlgorithm\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.Properties.Resources.resources
+C:\Users\rechu\Downloads\Telegram Desktop\GeneticAlgorithm\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.csproj.GenerateResource.cache
+C:\Users\rechu\Downloads\Telegram Desktop\GeneticAlgorithm\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.csproj.CoreCompileInputs.cache
+C:\Users\rechu\Downloads\Telegram Desktop\GeneticAlgorithm\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.exe
+C:\Users\rechu\Downloads\Telegram Desktop\GeneticAlgorithm\GeneticAlgorithm\obj\Debug\GeneticAlgorithm.pdb

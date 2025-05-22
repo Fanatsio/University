@@ -1,0 +1,360 @@
+File not found.
+(Press Any Key to Go On)
+kb: %s loaded.*
+Go
+Consult
+Rules
+Values
+Editor
+Save
+Trace
+Run time error
+The trace is on.*
+Fast
+Speed set to fast.*
+Cannot speed a runtime consultation.*
+Slow
+Speed set to slower rate.*
+Cannot slow a runtime consultation.*
+Edit
+Go
+Variable
+[ VARIABLE ]
+Name of variable you want to see?
+WhatIf
+[ WHATIF ]
+Name of variable you want to change? 
+Rule
+*Rules cannot be viewed in runtime mode.
+[ SHOW RULE ]
+Name of rule to show?
+Recursion too deep
+Testing 
+or
+Run Time Error
+What is the value of %s ? *
+Truththresh must be from 0 to 100
+all
+%s = %s CNF %d$
+%s %s %s CNF %d$
+\\command.com
+[ CONSULT ]
+[ RULE ]
+[ RESULTS ]
+[ CONSULT ]
+Finding %s*
+%s = %.20s CNF %d*
+Sorry-- rules cannot be viewed in runtime mode
+(Press ENTER to Continue)*
+(Press ENTER to Continue)*
+RULE %s IF*
+THEN*
+ CNF %d*
+ CNF %s*
+ELSE 
+ CNF %d*
+Undefined
+%.20s CNF %d*
+Insufficient memory for editor
+five lines (including this) reserved for expansion.
+59
+60
+61
+62...CHOOSE FOLLOWS
+The menu has been truncated
+(= %.20s CNF %d)
+(= %.20s CNF %d )
+ CNF %d
+Fast
+Slow
+How?
+Name of variable you are asking about? 
+%s was set because:*
+You said so.*
+(Press Any Key to Continue)*
+No value is present.*
+(Press Any Key to Continue)*
+Why?
+The question is being asked because:*
+(Press Any Key to Continue)*
+Quit
+...End of choose...at 80 now
+81..3 spare lines
+82
+83 EXPERT
+unknown
+Error in END clause
+END without WHILEKNOWN
+(= %s CNF %d )
+...End of Expert
+89
+90
+91...DBGET follows
+menu_size
+record_num
+or
+or
+or
+...end of DBGET
+98...start of dbup.c
+Unable to append to file
+100
+101
+102 ..start of names.c
+(Select with %c, %c, %c, %c, PgUp, or PgDn, then press ENTER)
+The menu has been truncated
+..105 start of dbindex.c
+There is no field %s in the index file %s
+No comparisons are allowed in index files
+Index file %s not found
+.. end 
+..110 util.c
+Out of Memory Error
+Out of memory error
+A run-time error has occurred:*
+(Press ENTER to go on)
+...end of util
+116
+117
+..118 start of wksht.c
+column
+row
+named
+Illegal cell name accessing worksheet %s
+Illegal cell name accessing worksheet %s
+Worksheet file %s not found
+cell_type
+integer
+cell_type
+floating_point
+cell_type
+label
+...end of wksht.c
+132
+133
+134
+135..start of menu.c
+Help
+MAIN     
+INDUCE     
+TREE     
+CONSULT     
+GO     
+SET     
+Insufficient memory for help at this level. Seek help from the Main Menu
+Help
+Help the user!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Induce
+1Help 2Create 3Database 4Text 5Worksht 6Quit!!!!!!
+Edit
+Edit the rules!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Consult
+1Help 2Go 3Whatif 4Variable 5Rule 7Set 8Edit 9Quit!
+Tree
+1Help 2Text 3Graphics 4Quit!!!!!!!!!!!!!!!!!!!!!!!!
+FileName
+Change the working file name!!!!!!!!!!!!!!!!!!!!!!!
+Path
+Change the working directory!!!!!!!!!!!!!!!!!!!!!!!
+Quit
+End the program!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Help
+Help the user!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Create
+Edit an induction table in a text file!!!!!!!!!!!!!
+Database
+Induce rules from database records!!!!!!!!!!!!!!!!!
+Text
+Induce rules from a editor file!!!!!!!!!!!!!!!!!!!!
+Worksht
+Induce rules from a spreadsheet file!!!!!!!!!!!!!!!
+Quit
+Go back!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Help
+Help the user!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Text
+Display a text tree!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Graphics
+Display a graphic tree!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Quit
+Go back!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Help
+Help the user!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Go
+1Help 2How? 3Why? 4Slow 5Fast 6Quit!!!!!!!!!!!!!!!!
+WhatIf
+See what would happen if one response is changed!!!
+Variable
+See the value of a variable!!!!!!!!!!!!!!!!!!!!!!!!
+Rule
+See a rule!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Set
+1Help 2Trace 3Slow 4Fast 5Windows 5Quit!!!!!!!!!!!!
+Quit
+Return to Main Menu!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Help
+Help the user!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Trace
+Produce a trace of consultation!!!!!!!!!!!!!!!!!!!!
+Slow
+Make explanation windows move slowly!!!!!!!!!!!!!!!
+Fast
+Make explanation windows move quickly!!!!!!!!!!!!!!
+Windows
+1Help 2Consult 3Rules 4Values!!!!!!!!!!!!!!!!!!!!!!!
+Quit
+go back!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Help
+Help the user!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Consult
+Move or re-size consultation window!!!!!!!!!!!!!!!
+Rules
+Move or re-size rule window!!!!!!!!!!!!!!!!!!!!!!!!
+Values
+Move or re-size values window!!!!!!!!!!!!!!!!!!!!!!
+Save
+Save window configuration!!!!!!!!!!!!!!!!!!!!!!!!!!
+Quit
+go back!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Help
+Help the user!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+How?
+Ask how a conclusion was reached!!!!!!!!!!!!!!!!!!!
+Why?
+Ask why a question was asked!!!!!!!!!!!!!!!!!!!!!!!
+Slow
+Make explanation windows move more slowly!!!!!!!!!!
+Fast
+Make explanation windows move faster!!!!!!!!!!!!!!!
+Quit
+Go back to the top menu!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Quit
+Quit
+Quit
+%c %c %c %c   Enter to select   END to complete    /Q to Quit   ? for Unknown
+Enter to select    ? & Enter for Unknown    /Q to quit
+%c %c %c %c   Enter to go on    END to complete    /Q to Quit   DEL to delete
+Enter to go on   /Q to quit
+237...end of menu
+238
+239
+240
+241.. beginning of read
+rule
+choices
+ask
+plural
+autoquery
+execute
+runtime
+actions
+bkcolor
+endoff
+if
+CHOICES
+Too many variables in CHOICES
+CHOICES
+Variable name missing from CHOICES
+ASK
+Too many variables in ASK
+ASK
+Variable name missing from ASK
+BKCOLOR
+Illegal background color
+none
+Illegal statement
+none
+Text string too long
+else
+because
+all
+IF
+Syntax error in condition
+IF
+Syntax error in condition
+then
+and
+or
+LOGICAL_OPERATORS
+Syntax error in condition
+none
+Syntax error in clause
+CNF
+THEN
+Illegal confidence factor
+because
+else
+index
+get
+put
+append
+menu
+find
+chain
+ship
+receive
+loadfacts
+savefacts
+call
+ccall
+bcall
+display
+pdisplay
+wks
+pwks
+wks
+WKS
+Syntax error in worksheet clause
+reset
+mreset
+end
+sort
+whileknown
+close
+color
+COLOR
+Illegal color
+format
+cls
+eject
+printon
+printoff
+workon
+truththresh
+pop
+showtext
+image
+wopen
+WOPEN
+Incorrect window dimensions 
+active
+wclose
+locate
+'%s' expected
+none
+...end of read
+335
+336
+337
+338
+339
+340
+341
+342
+343.. start of MATH
+Syntax error in math expression
+Syntax error in math expression
+Illegal operator in math expression
+Syntax error in math expression
+Syntax error in math expression
+Illegal operator in math expression
+@abs
+@acos
+@asin
+@atan
+@cos
+@exp
+@log
+@sin
+@sqrt
+@tan

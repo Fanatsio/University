@@ -1,0 +1,30 @@
+C:\Users\Lenovo\Desktop\Notary\Lab1 EVM\Client\bin\Debug\net6.0\Client.exe
+C:\Users\Lenovo\Desktop\Notary\Lab1 EVM\Client\bin\Debug\net6.0\Client.deps.json
+C:\Users\Lenovo\Desktop\Notary\Lab1 EVM\Client\bin\Debug\net6.0\Client.runtimeconfig.json
+C:\Users\Lenovo\Desktop\Notary\Lab1 EVM\Client\bin\Debug\net6.0\Client.dll
+C:\Users\Lenovo\Desktop\Notary\Lab1 EVM\Client\bin\Debug\net6.0\Client.pdb
+C:\Users\Lenovo\Desktop\Notary\Lab1 EVM\Client\obj\Debug\net6.0\Client.csproj.AssemblyReference.cache
+C:\Users\Lenovo\Desktop\Notary\Lab1 EVM\Client\obj\Debug\net6.0\Client.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\Desktop\Notary\Lab1 EVM\Client\obj\Debug\net6.0\Client.AssemblyInfoInputs.cache
+C:\Users\Lenovo\Desktop\Notary\Lab1 EVM\Client\obj\Debug\net6.0\Client.AssemblyInfo.cs
+C:\Users\Lenovo\Desktop\Notary\Lab1 EVM\Client\obj\Debug\net6.0\Client.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Desktop\Notary\Lab1 EVM\Client\obj\Debug\net6.0\Client.dll
+C:\Users\Lenovo\Desktop\Notary\Lab1 EVM\Client\obj\Debug\net6.0\refint\Client.dll
+C:\Users\Lenovo\Desktop\Notary\Lab1 EVM\Client\obj\Debug\net6.0\Client.pdb
+C:\Users\Lenovo\Desktop\Notary\Lab1 EVM\Client\obj\Debug\net6.0\Client.genruntimeconfig.cache
+C:\Users\Lenovo\Desktop\Notary\Lab1 EVM\Client\obj\Debug\net6.0\ref\Client.dll
+D:\GitHub\University\EVM\Labs\Lab1\Client\bin\Debug\net6.0\Client.exe
+D:\GitHub\University\EVM\Labs\Lab1\Client\bin\Debug\net6.0\Client.deps.json
+D:\GitHub\University\EVM\Labs\Lab1\Client\bin\Debug\net6.0\Client.runtimeconfig.json
+D:\GitHub\University\EVM\Labs\Lab1\Client\bin\Debug\net6.0\Client.dll
+D:\GitHub\University\EVM\Labs\Lab1\Client\bin\Debug\net6.0\Client.pdb
+D:\GitHub\University\EVM\Labs\Lab1\Client\obj\Debug\net6.0\Client.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub\University\EVM\Labs\Lab1\Client\obj\Debug\net6.0\Client.AssemblyInfoInputs.cache
+D:\GitHub\University\EVM\Labs\Lab1\Client\obj\Debug\net6.0\Client.AssemblyInfo.cs
+D:\GitHub\University\EVM\Labs\Lab1\Client\obj\Debug\net6.0\Client.csproj.CoreCompileInputs.cache
+D:\GitHub\University\EVM\Labs\Lab1\Client\obj\Debug\net6.0\Client.dll
+D:\GitHub\University\EVM\Labs\Lab1\Client\obj\Debug\net6.0\refint\Client.dll
+D:\GitHub\University\EVM\Labs\Lab1\Client\obj\Debug\net6.0\Client.pdb
+D:\GitHub\University\EVM\Labs\Lab1\Client\obj\Debug\net6.0\Client.genruntimeconfig.cache
+D:\GitHub\University\EVM\Labs\Lab1\Client\obj\Debug\net6.0\ref\Client.dll
+D:\GitHub\University\EVM\Labs\Lab1\Client\obj\Debug\net6.0\Client.sourcelink.json

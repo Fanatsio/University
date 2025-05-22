@@ -1,0 +1,10 @@
+^C:\USERS\MAXAM\ДОКУМЕНТЫ\LAB55\LIB\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/maxam/Документы/Lab55/Lib -BC:/Users/maxam/Документы/Lab55/Lib/build --check-stamp-file C:/Users/maxam/Документы/Lab55/Lib/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

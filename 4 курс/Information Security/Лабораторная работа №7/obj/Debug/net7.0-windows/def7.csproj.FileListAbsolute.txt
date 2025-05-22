@@ -1,0 +1,33 @@
+D:\Защита информации\Lab7\bin\Debug\net7.0-windows\def7.exe
+D:\Защита информации\Lab7\bin\Debug\net7.0-windows\def7.deps.json
+D:\Защита информации\Lab7\bin\Debug\net7.0-windows\def7.runtimeconfig.json
+D:\Защита информации\Lab7\bin\Debug\net7.0-windows\def7.dll
+D:\Защита информации\Lab7\bin\Debug\net7.0-windows\def7.pdb
+D:\Защита информации\Lab7\obj\Debug\net7.0-windows\def7.Form1.resources
+D:\Защита информации\Lab7\obj\Debug\net7.0-windows\def7.csproj.GenerateResource.cache
+D:\Защита информации\Lab7\obj\Debug\net7.0-windows\def7.GeneratedMSBuildEditorConfig.editorconfig
+D:\Защита информации\Lab7\obj\Debug\net7.0-windows\def7.AssemblyInfoInputs.cache
+D:\Защита информации\Lab7\obj\Debug\net7.0-windows\def7.AssemblyInfo.cs
+D:\Защита информации\Lab7\obj\Debug\net7.0-windows\def7.csproj.CoreCompileInputs.cache
+D:\Защита информации\Lab7\obj\Debug\net7.0-windows\def7.dll
+D:\Защита информации\Lab7\obj\Debug\net7.0-windows\refint\def7.dll
+D:\Защита информации\Lab7\obj\Debug\net7.0-windows\def7.pdb
+D:\Защита информации\Lab7\obj\Debug\net7.0-windows\def7.genruntimeconfig.cache
+D:\Защита информации\Lab7\obj\Debug\net7.0-windows\ref\def7.dll
+H:\Защита информации\Lab7 _2\obj\Debug\net7.0-windows\def7.csproj.GenerateResource.cache
+H:\Защита информации\Lab7 _2\obj\Debug\net7.0-windows\def7.GeneratedMSBuildEditorConfig.editorconfig
+H:\Защита информации\Lab7 _2\obj\Debug\net7.0-windows\def7.AssemblyInfoInputs.cache
+H:\Защита информации\Lab7 _2\obj\Debug\net7.0-windows\def7.AssemblyInfo.cs
+H:\Защита информации\Lab7 _2\obj\Debug\net7.0-windows\def7.csproj.CoreCompileInputs.cache
+H:\Защита информации\Lab7 _2\obj\Debug\net7.0-windows\def7.sourcelink.json
+H:\Защита информации\Lab7 _2\obj\Debug\net7.0-windows\def7.dll
+H:\Защита информации\Lab7 _2\obj\Debug\net7.0-windows\refint\def7.dll
+H:\Защита информации\Lab7 _2\obj\Debug\net7.0-windows\def7.pdb
+H:\Защита информации\Lab7 _2\obj\Debug\net7.0-windows\SecureChatApp.Form1.resources
+H:\Защита информации\Lab7 _2\bin\Debug\net7.0-windows\def7.exe
+H:\Защита информации\Lab7 _2\bin\Debug\net7.0-windows\def7.deps.json
+H:\Защита информации\Lab7 _2\bin\Debug\net7.0-windows\def7.runtimeconfig.json
+H:\Защита информации\Lab7 _2\bin\Debug\net7.0-windows\def7.dll
+H:\Защита информации\Lab7 _2\bin\Debug\net7.0-windows\def7.pdb
+H:\Защита информации\Lab7 _2\obj\Debug\net7.0-windows\def7.genruntimeconfig.cache
+H:\Защита информации\Lab7 _2\obj\Debug\net7.0-windows\ref\def7.dll

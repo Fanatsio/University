@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск по Википедии</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        input { width: 60%; padding: 10px; }
+        button { padding: 10px; cursor: pointer; }
+        ul { list-style-type: none; padding: 0; }
+        li { margin: 10px 0; }
+        a { text-decoration: none; color: blue; font-weight: bold; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>Поиск по Википедии</h1>
+    <form action="/search" method="get">
+        <input type="text" name="q" placeholder="Введите поисковый запрос..." required>
+        <button type="submit">Искать</button>
+    </form>
+
+    {% if results %}
+        <h2>Результаты:</h2>
+        <ul>
+            {% for title, link, score in results %}
+                <li><a href="{{ link }}" target="_blank">{{ title }}</a> (релевантность: {{ score }})</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>

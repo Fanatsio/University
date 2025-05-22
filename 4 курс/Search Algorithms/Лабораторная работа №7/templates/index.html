@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск по Википедии</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Smooth hover animation */
+        .hover-scale {
+            transition: transform 0.2s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.02);
+        }
+        /* Highlight for snippets */
+        mark {
+            background-color: #fef08a;
+            padding: 0 2px;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="max-w-5xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl font-bold text-gray-900 text-center">Поиск по Википедии</h1>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="max-w-5xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+        <!-- Search form -->
+        <form method="GET" action="/search" class="flex items-center max-w-3xl mx-auto mb-8">
+            <div class="relative flex-1">
+                <input type="text" name="q" placeholder="Введите запрос..." value="{{ query | default('') }}"
+                    required class="w-full p-4 pr-12 text-gray-900 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <!-- Search icon -->
+                <svg class="absolute right-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+            </div>
+            <button type="submit"
+                class="ml-4 px-6 py-4 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-semibold rounded-lg shadow-md hover:from-blue-600 hover:to-indigo-700 transition duration-200">
+                Искать
+            </button>
+        </form>
+
+        <!-- Search results -->
+        {% if error %}
+            <p class="text-center text-red-600 text-lg">{{ error }}</p>
+        {% elif results %}
+            <div class="mb-6 text-center">
+                <h3 class="text-xl font-semibold text-gray-800">Результаты для: {{ query }}</h3>
+                <p class="text-gray-600">Всего: {{ total_results }}. Страница {{ page }} из {{ total_pages }}</p>
+            </div>
+            <div class="space-y-4">
+                {% for result in results %}
+                    <div class="bg-white p-6 rounded-lg shadow-md hover-scale">
+                        <h4 class="text-lg font-medium text-gray-900">{{ result.title }}</h4>
+                        <p class="text-sm text-gray-600 snippet" data-query="{{ query }}">{{ result.snippet }}</p>
+                        <div class="mt-2 flex items-center justify-between">
+                            <a href="/click?target={{ result.url }}&q={{ query }}" target="_blank"
+                                class="text-blue-600 font-medium hover:underline">Перейти →</a>
+                            <span class="text-sm text-gray-500">📊 Рейтинг: {{ result.score | round(3) }}</span>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <!-- Pagination -->
+            <div class="mt-8 flex justify-center space-x-4">
+                {% if page > 1 %}
+                    <a href="/search?q={{ query }}&page={{ page - 1 }}"
+                        class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition duration-200">Предыдущая</a>
+                {% endif %}
+                {% if page < total_pages %}
+                    <a href="/search?q={{ query }}&page={{ page + 1 }}"
+                        class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition duration-200">Следующая</a>
+                {% endif %}
+            </div>
+        {% else %}
+            <p class="text-center text-gray-600 text-lg">Ничего не найдено. Попробуйте другой запрос.</p>
+        {% endif %}
+
+        <!-- New search link -->
+        <div class="mt-8 text-center">
+            <a href="/" class="text-blue-600 font-medium hover:underline">Новый поиск</a>
+        </div>
+    </main>
+
+    <!-- JavaScript for highlighting query terms in snippets -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const snippets = document.querySelectorAll('.snippet');
+            snippets.forEach(snippet => {
+                const query = snippet.getAttribute('data-query').toLowerCase().split(/\s+/);
+                let text = snippet.innerHTML;
+                query.forEach(term => {
+                    const regex = new RegExp(`\\b${term}\\b`, 'gi');
+                    text = text.replace(regex, `<mark>${term}</mark>`);
+                });
+                snippet.innerHTML = text;
+            });
+        });
+    </script>
+</body>
+</html>

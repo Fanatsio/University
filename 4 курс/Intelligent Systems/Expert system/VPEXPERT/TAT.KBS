@@ -1,0 +1,517 @@
+! Foreign Tourism Authority Travel Assistant (TAT) - for Thailand
+! Saved as tat.kbs
+! This program links to the following dBASE III+ files:
+
+!          dBASE Filename     Description
+!          tatdata.dbf        Golf vacation sites
+!          mountain.dbf       Mountain trekking sites
+!          water.dbf          Hotel information for water activities
+!          city.dbf           Cities for water activities
+!          m_city.dbf         Major cities for sightseeing
+!          m_hotel.dbf        Hotels in major cities
+!          ar_city.dbf        Archaeological cities for sightseeing
+!          ar_hotel.dbf       Hotels in archaeological cities
+
+        runtime;        ! Eliminate rules and facts windows
+
+
+! ======================= Action Blocks ==============================
+
+actions
+        outdoor = Outdoor_Activities
+        sight = Sightseeing
+        major = Major_Cities
+        arch  = Archaeological_sites
+        wopen  1,1,1,20,77,3               ! Define opening window 1
+        active 1                            ! Activate window 1
+        display "
+
+
+
+                                Welcome to
+                        FOREIGN TOURISM AUTHORITY
+                     TRAVEL ASSISTANT - for Thailand
+
+                     Developed by Vantanee Hoontrakul
+                  under the direction and supervision of
+                            Dr. D.G. Dologite
+                     For further information, contact
+                            Dr. D.G. Dologite
+                        c/o Macmillan Publishing
+
+              Please press any key to begin the consultation ~ "
+        wclose 1                            ! Remove window 1
+
+        wopen 1,1,6,5,68,5          ! Define instructions window 1
+        active 1                     ! Activate window 1
+        display"Use the arrow keys to move the lightbar to a desired selection."
+        display"Press the Enter key to make a selection."
+        display"Press the End key to move to the next question."
+        wopen 2,7,5,17,70,3          ! Define consultation window 2
+        active 2                     ! Activate window 2
+
+        find place
+
+        wopen 1,5,5,10,70,4
+        active 1
+        display "
+       Thank you for using the Foreign Tourism Authority
+       Travel Assistant - for Thailand.  Please ask our travel
+       consultants any specific questions you may have.
+
+
+
+
+                 Press any key to end this consultation~"
+        wclose 1;
+
+!*******************  OUTDOOR RULES START HERE  *************************
+
+RULE 1
+if      area=(outdoor) and
+        interest=Golfing and
+        trans=By_car and
+        prefer=High
+then    place= 01    ! Assign a value to a variable for tatdata.dbf
+        find golfing_desc
+        find more_detail
+        find detail_desc;
+
+RULE 2
+if      area=(outdoor) and
+        interest=Golfing and
+        trans=By_plane and
+        prefer=High
+then    place=02     ! Assign a value to a variable for tatdata.dbf
+        find golfing_desc
+        find more_detail
+        find detail_desc;
+
+RULE 3
+if      area=(outdoor) and
+        interest=Golfing and
+        trans=By_train and
+        prefer=High
+then    wclose 2                  ! Close window 2
+        wopen 2,7,5,6,70,4        ! Open new window 2
+        active 2
+        display "                     Selection is a mismatch."
+        display"          Press any key to go back to consultation screen.~"
+        wclose 2                  ! Close window 2
+        place = mismatch;         ! Place = dummy value
+
+
+RULE 4
+if      area=(outdoor) and
+        interest=Golfing and
+        trans=By_car and
+        prefer=Medium
+then    place=03   ! Assign a value to a variable for tatdata.dbf
+        find golfing_desc
+        find more_detail
+        find detail_desc;
+
+RULE 5
+if      area=(outdoor) and
+        interest=Golfing and
+        trans=By_plane and
+        prefer=Medium
+then    place=04   ! Assign a value to a variable for tatdata.dbf
+        find golfing_desc
+        find more_detail
+        find detail_desc;
+
+RULE 6
+if      area=(outdoor) and
+        interest=Golfing and
+        trans=By_train and
+        prefer=Medium
+then    place=05
+        find golfing_desc
+        find more_detail
+        find detail_desc;
+
+RULE 7
+if      area=(outdoor) and
+        interest=Golfing and
+        trans=By_car and
+        prefer=Standard
+then    place=06
+        find golfing_desc
+        find more_detail
+        find detail_desc;
+
+RULE 8
+if      area=(outdoor) and
+        interest=Golfing and
+        trans=By_plane and
+        prefer=Standard
+then    wclose 2
+        wopen 2,7,5,6,70,4
+        active 2
+        display "                     Selection is a mismatch."
+        display"          Press any key to go back to consultation screen.~"
+        wclose 2
+        place = mismatch;
+
+RULE 9
+if      area=(outdoor) and
+        interest=Golfing and
+        trans=By_train and
+        prefer=Standard
+then    place=07
+        find golfing_desc
+        find more_detail
+        find detail_desc;
+
+RULE 10
+if      area=(outdoor) and
+        interest=Mountain_trekking then
+        find trans
+        find prefer
+        place=Chieng_Mai
+        find mountain_desc
+        find more_detail
+        find detail_desc;
+
+RULE 11
+if      area=(outdoor) and
+        interest=Water_sports and
+        trans=By_car
+then    place=Pattaya
+        find prefer
+        find water_desc
+        find more_detail
+        find detail_desc;
+
+RULE 12
+if      area=(outdoor) and
+        interest=Water_sports and
+        trans=By_plane
+then    place=Phuket
+        find prefer
+        find water_desc
+        find more_detail
+        find detail_desc;
+
+
+RULE 13
+if      area=(outdoor) and
+        interest=Water_sports and
+        trans=By_train
+then    place=Hua_HIN
+        find prefer
+        find water_desc
+        find more_detail
+        find detail_desc;
+
+! **************  MAJOR CITY RULE STARTS HERE *********************
+
+RULE 14
+IF      area=(sight) and
+        sight_prefer = (major) and
+        trans=By_plane
+then    place=Chieng_Mai
+        find prefer
+        find major_desc
+        find more_detail
+        find detail_desc;
+RULE 15
+if      area=(sight) and
+        sight_prefer = (major) and
+        trans=By_car
+THEN    place=Bangkok
+        find prefer
+        find major_desc
+        find more_detail
+        find detail_desc;
+RULE 16
+if      area=(sight) and
+        sight_prefer = (major) and
+        trans=By_train and
+        prefer <> High
+then    place=Ayutthaya
+        find major_desc
+        find more_detail
+        find detail_desc;
+RULE 17
+if      area=(sight) and
+        sight_prefer = (major) AND
+        trans=By_train and
+        prefer = High
+then    wclose 2
+        wopen 2,7,5,6,70,4
+        active 2
+        display "                     Selection is a mismatch."
+        display"          Press any key to go back to consultation screen.~"
+        wclose 2
+        place = mismatch;
+
+!   ***************  Archaeological_sites Rule Starts Here *******************
+
+RULE 18
+if      area=(sight) and
+        sight_prefer = (arch) and
+        arch_trans = By_train
+then    place=Kanchanaburi
+        find prefer
+        find arch_desc
+        find more_detail
+        find detail_desc;
+RULE 19
+if      area=(sight) and
+        sight_prefer = (arch) and
+        arch_trans  = By_car
+then    place=Sukhothai
+        find prefer
+        find arch_desc
+        find more_detail
+        find detail_desc;
+
+RULE MOUNTAIN_RULE
+if      interest = Mountain_trekking
+then
+        wclose 1
+        wclose 2
+        wopen 1,0,3,23,72,5
+        active 1
+        display "Our recommendation is: {PLACE}.
+                                                               "
+        get prefer = db_prefer, mountain,all
+        display "  Hotel: {HOTEL}"
+        display "         {ADDRESS1}"
+        display "  Tel:   {LOCAL_TEL}"
+        display "  Bangkok Office: {BKK_OFFICE}"
+        display "  Tel:   {BKK_TEL}             "
+        display "                               "
+        wopen 2,9,3,15,72,3
+        active 2
+        display "        Hill tribe trekking in Chieng Mai to see four major"
+        display "        hilltribes: Karen, Meo Lahu, Yao, and Akha."
+        display "                                               "
+        display "  Average cost:  2 days and 1 night      1,000  Baht."
+        display "  ------------   3 days and 2 nights     1,800  Baht."
+        display "                 4 days and 3 nights     2,200  Baht."
+        display "                                                  "
+        display "  Please contact TAT Chieng Mai office for authorization at"
+        display "              105/1 Chieng Mai-Lamphun Road            "
+        display "              Amphur Muang, Chieng Mai 50000           "
+        display "              Tel. (053) 248-604, 248-607             "
+        display "              Fax. (053) 248-605                      "
+        display "                                                      "
+
+        display "                         Press any key to continue ~"
+        wclose 1
+        wclose 2
+        mountain_desc=(hotel);        ! mountain_desc = any dummy value.
+
+RULE PLACE_DESC
+if      interest = Golfing
+then
+        wclose 1
+        wclose 2
+        wopen 1,1,3,5,73,4
+        active 1
+        get place = place_id,tatdata,all
+        display " Our recommendation is: {DBPLACE}                 "
+        display "                                                  "
+        wopen 2,6,1,18,78,3
+        active 2
+        display "      {DESC1}"
+        display "      {DESC2}"
+        display "      {DESC3}"
+        display "      {HOTEL}"
+        display "Tel:  {TEL}"
+        display "                    "
+        display "Cultural:  {CULTURAL}"
+        display "Center &"
+        display "Gardens"
+        display""
+        display""
+        display""
+        display""
+        display""
+        display""
+        display"                          Press any key to continue ~"
+        close tatdata
+        wclose 1
+        wclose 2
+        golfing_desc=dbplace;
+
+RULE WATER_DET
+        if interest = Water_sports
+then
+        wclose 1
+        wclose 2
+        wopen 1,3,3,21,72,5
+        active 1
+        display "Our recommendation is: {PLACE}."
+        display "                                "
+        get place = dbcity,city,all
+        display "{DBCITY}: {LOC_DESC1}"
+        display "          {LOC_DESC2}"
+        display "          {LOC_DESC3}"
+        display "                     "
+        display "Sport:    {SPRT_DESC1}"
+        display "          {SPRT_DESC2}"
+        display "          {SPRT_DESC3}"
+        display "                      "
+        get prefer = dbprefer and trans = dbtrans,water,all
+        display "  Hotel:  {HOTEL}"
+        display "  Place:  {DBPLACE}"
+        display "  Tel:    {LOCAL_TEL}"
+        display "                   "
+        display "  Bangkok Office: {BKK_OFFICE}"
+        display "  Tel:  {BKK_TEL}             "
+        display "                              "
+        display "                              "
+        display "                        Press any key to continue ~"
+        wclose 1
+        water_desc=(hotel);
+
+RULE MAJOR_DET
+        if sight_prefer = (major)
+then
+        wclose 1
+        wclose 2
+        wopen 1,3,3,21,72,5
+        active 1
+        display "Our recommendation is: {PLACE}."
+        display "                                "
+        get place = dbmajor,m_city,all
+        display "{DBMAJOR}: {CITY_DESC1}"
+        display "           {CITY_DESC2}"
+        display "           {CITY_DESC3}"
+        display "           {CITY_DESC4}"
+        display "                     "
+        display "Sightseeing: {SIGHT1}"
+        display "             {SIGHT2}"
+        display "             {SIGHT3}"
+        display "             {SIGHT4}"
+        display "             {SIGHT5}"
+        display "             {SIGHT6}"
+        display "                      "
+        get prefer = dbprefer and trans = dbtrans,m_hotel,all
+        display "  Hotel:     {HOTEL}"
+        display "  Address:   {DBPLACE}"
+        display "                   "
+        display "  Tel:       {BKK_TEL}             "
+        display "                      "
+        display "                       Press any key to continue ~"
+        wclose 1
+        major_desc=(hotel);
+
+RULE ARCH_DET
+        IF sight_prefer = (arch)
+THEN
+        wclose 1
+        wclose 2
+        wopen 1,3,3,21,72,5
+        active 1
+        display "Our recommendation is: {PLACE}."
+        display "                                "
+        get place = DB_ARCH,AR_CITY,ALL
+        display "{DB_ARCH}: {CITY_DESC1}"
+        display "           {CITY_DESC2}"
+        display "           {CITY_DESC3}"
+        display "           {CITY_DESC4}"
+        display "                     "
+        display "Attraction:  {ATTR1}"
+        display "             {ATTR2}"
+        display "             {ATTR3}"
+        display "             {ATTR4}"
+        display "             {ATTR5}"
+        display "             {ATTR6}"
+        get prefer = dbprefer and place = dbcity,ar_hotel,all
+        display "  Hotel:     {HOTEL}"
+        display "  Address:   {ADDRESS}"
+        display "                   "
+        display "  Tel:       {TEL}             "
+        display "                              "
+        display "                        Press any key to continue ~"
+        wclose 1
+        arch_desc=(hotel);
+
+RULE MORE_DET
+if       more_detail = Yes
+then     cls
+         wopen 1,1,3,23,74,3
+         active 1
+         display "  CLIMATE                      "
+         display "
+                Hot Season  : March - May
+                Rainy Season: June - September
+                Cool Season : October - February
+                Average Temperature: 28C (82.4F)
+
+  ENTRY REQUIREMENTS"
+    display "                                                       "
+    display "     Passports: All visitors entering Thailand must"
+    display "                possess valid passports."
+    display "                                                              "
+    display "     Visas:     American citizens visiting Thailand "
+    display "                for the purpose of vacation or pleasure are"
+    display "                exempt from applying for entry visas if they"
+    display "                plan to stay in Thailand for less than 15 days."
+    display "                                                          "
+    display "                Other nationalities please consult the"
+    display "                Thai consulate at 53 Park Place, 5th Floor,"
+    display "                New York City,  Tel: 212-732-8166.      "
+    display ""
+    display "                       Press any key to continue~"
+         wclose 1
+         wopen 1,1,3,23,74,3
+         active 1
+         display"  HEALTH REGULATIONS"
+         display"                                "
+         display"    No inoculations or vaccinations are required unless"
+         display"    you are coming from or passing through contaminated"
+         display"    areas."
+         display"                                                 "
+         display"  THAI CURRENCY
+
+    1 US. Dollar = 25 Baht (Approximately)
+
+  AIRLINE
+
+    Thai Airways reservation toll-free telephone number is
+    1-800-426-5204.
+
+
+
+
+
+                       Press any key to continue~"
+         wclose 1
+         detail_desc = Yes;
+
+ask area: "What do you prefer to do on your vacation?";
+choices area: Outdoor_Activities,Sightseeing;
+
+ask interest: "Which activity interests you the most?";
+choices interest: Golfing,Mountain_trekking,Water_sports;
+
+ask sight_prefer: "What kind of sights do you prefer to see?";
+choices sight_prefer: Major_Cities,Archaeological_sites;
+
+ask trans: "How do you plan to travel to your vacation destination?";
+choices trans: By_car,By_plane,By_train;
+
+ask arch_trans: "How do you like to travel?";
+choices arch_trans: By_car,By_train;
+
+ask prefer: "What level of comfort do you require on a vacation?";
+choices prefer: High,Medium,Standard;
+
+ask more_detail: "Would you like to know more about Thailand?";
+choices more_detail: Yes,No;
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,29 @@
+C:\Users\Lenovo\Desktop\Notary\Lab1 EVM\Server\bin\Debug\net6.0\Server.exe
+C:\Users\Lenovo\Desktop\Notary\Lab1 EVM\Server\bin\Debug\net6.0\Server.deps.json
+C:\Users\Lenovo\Desktop\Notary\Lab1 EVM\Server\bin\Debug\net6.0\Server.runtimeconfig.json
+C:\Users\Lenovo\Desktop\Notary\Lab1 EVM\Server\bin\Debug\net6.0\Server.dll
+C:\Users\Lenovo\Desktop\Notary\Lab1 EVM\Server\bin\Debug\net6.0\Server.pdb
+C:\Users\Lenovo\Desktop\Notary\Lab1 EVM\Server\obj\Debug\net6.0\Server.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\Desktop\Notary\Lab1 EVM\Server\obj\Debug\net6.0\Server.AssemblyInfoInputs.cache
+C:\Users\Lenovo\Desktop\Notary\Lab1 EVM\Server\obj\Debug\net6.0\Server.AssemblyInfo.cs
+C:\Users\Lenovo\Desktop\Notary\Lab1 EVM\Server\obj\Debug\net6.0\Server.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Desktop\Notary\Lab1 EVM\Server\obj\Debug\net6.0\Server.dll
+C:\Users\Lenovo\Desktop\Notary\Lab1 EVM\Server\obj\Debug\net6.0\refint\Server.dll
+C:\Users\Lenovo\Desktop\Notary\Lab1 EVM\Server\obj\Debug\net6.0\Server.pdb
+C:\Users\Lenovo\Desktop\Notary\Lab1 EVM\Server\obj\Debug\net6.0\Server.genruntimeconfig.cache
+C:\Users\Lenovo\Desktop\Notary\Lab1 EVM\Server\obj\Debug\net6.0\ref\Server.dll
+D:\GitHub\University\EVM\Labs\Lab1\Server\bin\Debug\net6.0\Server.exe
+D:\GitHub\University\EVM\Labs\Lab1\Server\bin\Debug\net6.0\Server.deps.json
+D:\GitHub\University\EVM\Labs\Lab1\Server\bin\Debug\net6.0\Server.runtimeconfig.json
+D:\GitHub\University\EVM\Labs\Lab1\Server\bin\Debug\net6.0\Server.dll
+D:\GitHub\University\EVM\Labs\Lab1\Server\bin\Debug\net6.0\Server.pdb
+D:\GitHub\University\EVM\Labs\Lab1\Server\obj\Debug\net6.0\Server.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub\University\EVM\Labs\Lab1\Server\obj\Debug\net6.0\Server.AssemblyInfoInputs.cache
+D:\GitHub\University\EVM\Labs\Lab1\Server\obj\Debug\net6.0\Server.AssemblyInfo.cs
+D:\GitHub\University\EVM\Labs\Lab1\Server\obj\Debug\net6.0\Server.csproj.CoreCompileInputs.cache
+D:\GitHub\University\EVM\Labs\Lab1\Server\obj\Debug\net6.0\Server.dll
+D:\GitHub\University\EVM\Labs\Lab1\Server\obj\Debug\net6.0\refint\Server.dll
+D:\GitHub\University\EVM\Labs\Lab1\Server\obj\Debug\net6.0\Server.pdb
+D:\GitHub\University\EVM\Labs\Lab1\Server\obj\Debug\net6.0\Server.genruntimeconfig.cache
+D:\GitHub\University\EVM\Labs\Lab1\Server\obj\Debug\net6.0\ref\Server.dll
+D:\GitHub\University\EVM\Labs\Lab1\Server\obj\Debug\net6.0\Server.sourcelink.json

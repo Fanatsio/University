@@ -1,0 +1,7 @@
+age = Between_12_and_16 CNF 100
+b:\PRESOFF.kbs = yes CNF 0
+pres_off = MEDIUM CNF 100
+tac = Designated_Felony CNF 100
+two_prior = no CNF 100
+vis = not_severe CNF 100
+word = does_not CNF 100

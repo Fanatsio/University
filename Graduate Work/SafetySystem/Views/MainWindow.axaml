@@ -1,0 +1,115 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="SafetySystem.Views.MainWindow"
+        Title="Система безопасности и мониторинга опасной зоны" Width="1200" Height="700"
+        Background="#F5F7FA">
+    <Window.Styles>
+        <!-- Стили для кнопок навигации -->
+        <Style Selector="Button.nav">
+            <Setter Property="Background" Value="#2E3A3F"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="CornerRadius" Value="5"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+        <Style Selector="Button.nav:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="#4A5A63"/>
+        </Style>
+        <!-- Стили для заголовков -->
+        <Style Selector="TextBlock.header">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="20"/>
+        </Style>
+        <Style Selector="TextBlock.subheader">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Foreground" Value="#666"/>
+            <Setter Property="Margin" Value="20,0,20,20"/>
+        </Style>
+        <!-- Стили для карточек -->
+        <Style Selector="Border.card">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="CornerRadius" Value="8"/>
+            <Setter Property="Padding" Value="15"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="BorderBrush" Value="#E0E0E0"/>
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style>
+        <!-- Стили для TabControl и TabItem -->
+        <Style Selector="TabControl">
+            <Setter Property="Background" Value="#F5F7FA"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <Style Selector="TabItem">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="#2E3A3F"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Margin" Value="0,0,5,0"/>
+            <Setter Property="CornerRadius" Value="5"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+        <Style Selector="TabItem:selected">
+            <Setter Property="Background" Value="#0078D4"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="#005EA6"/>
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style>
+        <Style Selector="TabItem:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="#E0E0E0"/>
+        </Style>
+        <Style Selector="TabItem:selected:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="#005EA6"/>
+        </Style>
+    </Window.Styles>
+
+    <DockPanel>
+        <!-- Боковая панель -->
+        <Border DockPanel.Dock="Left" Width="220" Background="#2E3A3F">
+            <StackPanel>
+                <TextBlock Text="Система безопасности" Foreground="White" FontSize="16" FontWeight="Bold" Margin="15,20,20,10"/>
+                <Separator Background="#4A5A63" Margin="10"/>
+                <Button Content="📝 Регистрация сотрудников" Classes="nav" Click="OnRegisterWindowClick"/>
+                <Button Content="👥 Список сотрудников" Classes="nav" Click="OnEmployeesButtonClick"/>
+                <Button Content="📊 Мониторинг" Classes="nav" Click="OnMonitorWindowClick"/>
+                <Button Content="🛤️ Контроль точек" Classes="nav" Click="OnRouteControlWindowClick"/>
+                <Button Content="📈 Анализ данных" Classes="nav" Click="OnDataAnalysisWindowClick"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Основной контент -->
+        <TabControl Background="#F5F7FA">
+            <TabItem Header="Главная">
+                <ScrollViewer>
+                    <StackPanel Margin="20">
+                        <TextBlock Text="Добро пожаловать!" Classes="header" Foreground="#2E3A3F"/>
+                        <TextBlock Text="Контролируйте безопасность сотрудников в реальном времени." Classes="subheader"/>
+                        <WrapPanel>
+                            <Border Classes="card" Width="300">
+                                <StackPanel>
+                                    <TextBlock Text="Статус системы" FontSize="18" FontWeight="SemiBold"/>
+                                    <TextBlock Text="Все системы работают штатно." FontSize="14" Foreground="#666" Margin="0,5,0,10"/>
+                                    <TextBlock Text="Активных тревог: 0" FontSize="14" Foreground="#28A745"/>
+                                </StackPanel>
+                            </Border>
+                            <Border Classes="card" Width="300">
+                                <StackPanel>
+                                    <TextBlock Text="Последние действия" FontSize="18" FontWeight="SemiBold"/>
+                                    <TextBlock Text="Нет недавних действий." FontSize="14" Foreground="#666" Margin="0,5,0,10"/>
+                                    <Button Content="Подробнее" Background="Transparent" Foreground="#0078D4" BorderBrush="#0078D4" BorderThickness="1" CornerRadius="5" Padding="10,5"/>
+                                </StackPanel>
+                            </Border>
+                        </WrapPanel>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="Уведомления">
+                <StackPanel Margin="20">
+                    <TextBlock Text="Активные тревоги" Classes="header" Foreground="#2E3A3F"/>
+                    <ListBox Name="NotificationList" Background="White" BorderBrush="#E0E0E0" BorderThickness="1" CornerRadius="5" Padding="10"/>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</Window>

@@ -1,0 +1,96 @@
+RUNTIME;
+ACTIONS
+     DISPLAY "Welcome to the HMO Service Screening Assistant"
+     WFORMAT fixed, 0            !format PWKS values without decimal places
+     FIND support
+     DISPLAY "Recommended support: {support}."
+;
+
+RULE 1
+     IF member_status = ok and
+        reason = new_case or
+        reason = follow_up_case and
+        problem = serious
+     THEN support = level_1
+        WKS old_number, B5, SSHMO        !transfer the value of spreadsheet
+                                    !cell B5 into the variable "old_number"
+        new_number = (old_number + 1)              !add 1 to the old number
+        PWKS new_number, B5, SSHMO;                !put the new number back
+
+RULE 2
+     IF member_status = ok and
+        reason = new_case and
+        problem = non_serious
+     THEN support = level_2
+        WKS old_number, B6, SSHMO
+        new_number = (old_number + 1)
+        PWKS new_number, B6, SSHMO;
+
+RULE 3
+     IF member_status = ok and
+        reason = follow_up_case and
+        problem = non_serious
+     THEN support = level_3
+        WKS old_number, B7, SSHMO
+        new_number = (old_number + 1)
+        PWKS new_number, B7, SSHMO;
+
+RULE 4
+     IF member_status = ok and
+        reason = information_other
+     THEN support = information_other
+        WKS old_number, B8, SSHMO
+        new_number = (old_number + 1)
+        PWKS new_number, B8, SSHMO;
+
+RULE 5
+     IF member_status = not_ok
+     THEN support = non_member
+        WKS old_number, B9, SSHMO
+        new_number = (old_number + 1)
+        PWKS new_number, B9, SSHMO;
+
+RULE 6
+     IF member = yes and
+        valid_id = yes
+     THEN member_status = ok;
+
+RULE 7
+     IF member = yes and
+        valid_id = no
+     THEN member_status = not_ok;
+
+RULE 8
+     IF member = no
+     THEN member_status = not_ok;
+
+RULE 9
+     IF temperature = normal and
+        other_symptoms = yes
+     THEN problem = serious;
+
+RULE 10
+     IF temperature = normal and
+        other_symptoms = no
+     THEN problem = non_serious;
+
+RULE 11
+     IF temperature = abnormal or
+        temperature = not_known
+     THEN problem = serious;
+
+ASK member: "Is the person an HMO member?";
+CHOICES member: yes, no;
+
+ASK valid_id: "Does the person have a valid HMO `id' number?";
+CHOICES valid_id: yes, no;
+
+ASK reason: "What is the reason for coming to the HMO facility?";
+CHOICES reason: new_case, follow_up_case, information_other;
+
+ASK temperature: "What is the person's temperature?";
+CHOICES temperature: normal, abnormal, not_known;
+
+ASK other_symptoms:  "Does the person claim other symptoms?";
+CHOICES other_symptoms: yes, no;
+

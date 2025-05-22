@@ -1,0 +1,81 @@
+RUNTIME;
+ENDOFF;
+BKCOLOR = 1;
+ACTIONS
+  COLOR = 15
+  DISPLAY " HMODEMO.KBS
+
+ This VP-Expert sample file demonstrates the use of
+ FORMFIELDs combined with Dynamic Images.
+
+ You must have an EGA or VGA display and a Microsoft-compatible mouse
+ installed to use this demonstration rule base properly. You need to
+ modify the rule base in order to have it support other display types."
+
+ Find Continue
+
+;  ! -- [ End of Actions ]
+
+Ask Response: "
+ Do you wish to procede?";
+Choices Response: Yes, No;
+
+Rule Show_Sample
+If      Response = Yes
+THEN    Continue = Yes
+        CLS
+        MOUSEON
+        GMODE 16
+        GCOLOR 15
+        GBCOLOR 8
+        Done = NO
+        RECTANGLE 20, 5, 580, 130
+        RECTANGLE 20, 150, 580, 300
+        GLOCATE  27 , 2
+        GDISPLAY "EXAMPLE HMO FORMFIELDS"
+        GLOCATE  22 , 12
+        GDISPLAY "ENTER THE PATIENT'S TEMPERATURE:"
+        GLOCATE 15, 40
+        GDISPLAY "Press Button when done:"
+        GLOCATE 19, 21
+        GDISPLAY "0  Fahrenheit  212      -20  Centigrade  100"
+        FTEMP = 0
+        CTEMP = 0
+        Patient_Name = NEEDED
+        Plan_Type = NEEDED
+        Type_Visit = NEEDED
+        Doctor_Name = NEEDED
+        WHILETRUE Done = NO THEN END
+ELSE    Continue = no;
+
+!.......WHENEVER rules.........
+
+WHENEVER FTEMP_Changes
+IF    FTEMP <> ((CTEMP*1.8)+32)
+THEN  CTEMP = ((FTEMP-32)*0.5555555555);
+
+WHENEVER CTEMP_Changes
+IF    CTEMP <> ((FTEMP-32)*0.5555555555)
+THEN  FTEMP = ((CTEMP*1.8)+32);
+
+
+!.......Dynamic Images.......
+
+FORMFIELD Patient_Name: 22, 4, 12, 9;
+ASK Patient_Name: "Patient's Name:";
+FORMFIELD Plan_Type: 22, 7, 12, 9;
+ASK Plan_Type: "Plan Type:";
+CHOICES Plan_Type: INDIVIDUAL, FAMILY, GROUP, CO-PAYMENT, OTHER;
+FORMFIELD Type_Visit: 55, 4, 10, 9;
+ASK Type_Visit: "Visit Type:";
+CHOICES Type_Visit: INITIAL, FOLLOW_UP, OTHER;
+FORMFIELD Doctor_Name: 55, 7, 12, 9;
+ASK Doctor_Name: "Doctor's Name:";
+
+
+FORMFIELD FTEMP: 25, 15, 5, 8;
+FORMFIELD CTEMP: 50, 15, 5, 8;
+METER FTEMP: 145, 225, 0, 212;
+METER CTEMP: 345, 225, 0, 100;
+BUTTON Done: 400, 335, 1, 14;
+

@@ -1,0 +1,108 @@
+!
+version 15.4
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+service password-encryption
+!
+hostname R2
+!
+!
+!
+enable secret 5 $1$mERr$9cTjUIEqNGurQiFU.ZeCi1
+!
+!
+!
+!
+!
+!
+ip cef
+no ipv6 cef
+!
+!
+!
+username fanatsio secret 5 $1$mERr$9cTjUIEqNGurQiFU.ZeCi1
+!
+!
+!
+!
+!
+!
+!
+!
+ip ssh version 1
+no ip domain-lookup
+ip domain-name example.com
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0/0
+ ip address 10.0.0.2 255.255.255.252
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/0/1
+ no ip address
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/0/1.100
+ encapsulation dot1Q 100
+ ip address 172.16.0.158 255.255.255.224
+!
+interface GigabitEthernet0/0/1.200
+ encapsulation dot1Q 200
+ ip address 172.16.0.174 255.255.255.240
+!
+interface GigabitEthernet0/0/1.300
+ encapsulation dot1Q 300
+ ip address 172.16.0.126 255.255.255.128
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip classless
+ip route 192.168.0.0 255.255.255.128 10.0.0.1 
+ip route 192.168.0.128 255.255.255.224 10.0.0.1 
+ip route 192.168.0.160 255.255.255.240 10.0.0.1 
+!
+ip flow-export version 9
+!
+!
+!
+no cdp run
+!
+banner motd "Unauthorized access is prohibited"
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 5 0
+ password 7 0822404F1A0A
+ login
+!
+line aux 0
+!
+line vty 0 4
+ exec-timeout 5 0
+ password 7 0822404F1A0A
+ login local
+ transport input ssh
+line vty 5 15
+ exec-timeout 5 0
+ password 7 0822404F1A0A
+ login local
+ transport input ssh
+!
+!
+!
+end
+

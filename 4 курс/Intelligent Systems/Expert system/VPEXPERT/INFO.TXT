@@ -1,0 +1,24 @@
+*INTRO
+
+
+   This is a simplified demonstration of hypertext.  To
+   illustrate how hypertext works, click on the following
+   embedded "hyperword": EXAMPLE.  Clicking on this or any
+   other hyperword retrieves additional information related
+   to the selected hyperword.
+
+
+
+*EXAMPLE
+
+
+   The information displayed here is retrieved from an external
+   file called INFO.TXT.  Any hypertext file must have a .TXT
+   suffix.  The file can be produced by any word processor that
+   can save an ASCII file.  Alternatively, the file can be
+   created as a .KBS file using VP-Expert's editor and copying
+   the saved file to a named .TXT file.  To do this, exit
+   VP-Expert, enter DOS, and type at the prompt:
+
+         A>COPY [file].KBS [file].TXT
+

@@ -1,0 +1,206 @@
+! JUVENILE DELINQUENT PRESENT OFFENSE CHARGE WEIGHT & STARTING KBS
+! Saved as PRESOFF.KBS
+!Microcomputer Used:      Wang Microsystems PC 382
+!Software Used:           VP-Expert, Educational Version 2.02
+!KBS File Name:           PRESOFF.KBS
+!Temporary File Access:   TEMP1
+!Chained to:              PROINV.KBS
+!**************************************************************************
+EXECUTE;                         !start consultation immediately
+bkcolor = 3;                     !set screen background color to light blue
+runtime;                        !removes consultation windows during a run
+endoff;                         !eliminate need to press END after a choice
+!=============================== Actions Block ============================
+ACTIONS
+     wopen 1,1,1,20,77,3
+     active 1
+     display "
+
+                             Welcome to the
+
+           ** JUVENILE DELINQUENT DISPOSITION ADVISORY SYSTEM **
+                            Prototype Version
+
+                      Developed by Robert S. Pfeffer
+                  under the direction and supervision of
+                            Dr. D. G. Dologite
+                      for further information, contact
+                            Dr. D.G. Dologite
+                        c/o Macmillan Publishing
+
+                    PLEASE PRESS ANY KEY TO CONTINUE~
+
+     "
+     wclose 1
+     wopen 1,1,1,20,77,3
+     active 1
+     display "
+
+                       PURPOSE OF THIS EXPERT SYSTEM
+
+
+    This consultation assists a user to evaluate a juvenile delinquent who
+  has been convicted of a designated felony act.  It asks a series of
+  detailed questions about the juvenile, then recommends a dispositional
+  outcome which is appropriate for the information obtained during a Family
+  Court dispositional hearing.
+
+
+
+
+
+
+                     PLEASE PRESS ANY KEY TO CONTINUE~
+       "
+wclose 1
+wopen 1,1,1,20,77,3
+active 1
+     display "
+
+
+                 PRESENT OFFENSE WEIGHT RISK EVALUATION
+
+
+    This section of the consultation classifies the top adjudicated charge
+  committed by the juvenile and categorizes the juvenile's age and
+  conviction record.  It also categorizes the extent of injury, economic
+  loss, or damage to the victim as described in a victim impact statement.   
+
+
+
+
+
+    PRESS ANY KEY TO BEGIN THE PRESENT OFFENSE WEIGHT RISK EVALUATION~
+       "
+     wclose 1                                              !remove window 1
+     wopen 1,1,1,5,77,2                       !define instructions window 1
+     active 1                                            !activate window 1
+     display "                           INSTRUCTIONS
+          Use the arrow keys to move the lightbar to a desired
+          answer choice then press the Enter key."
+     wopen 2,7,1,14,77,3                      !define consultation window 2
+     active 2                                            !activate window 2
+     find pres_off
+     find word
+     wclose 1                                              !remove window 1
+     wclose 2                                              !remove window 2
+     wopen 1,1,1,15,77,2                      !define consultation window 1
+     active 1                                            !activate window 1
+     display "
+      Based on the responses given, the Present Offense Risk is {pres_off}
+      because:
+
+      1.   the respondent's age is {age};
+      2.   the top adjudicated charge is a(n) {tac};
+      3.   {two_prior}, the respondent {word} have 2 or more total
+             convictions where at least one was a felony finding; and
+      4.   the injury, economic loss or damage inflicted by the respondent
+             on the victim is {vis}.
+
+
+      PRESS ANY KEY TO GO ON TO THE PROBATION INVESTIGATION EVALUATION~
+       "
+     wclose 1                          !remove window 1
+     SAVEFACTS temp1                   !save all variable names and values
+                                       !in a temp text file called TEMP1
+     CHAIN proinv                      !link to another .KBS file called PROINV
+;
+!=============================== Rules Block ==============================
+RULE 1A
+    if age = Other
+    then pres_off = OTHER_JURISDICTION
+    SAVEFACTS temp1
+    CHAIN disp;
+RULE 2A
+     if age = Between_7_and_11 and
+     tac = Des_Felony_Class_A then pres_off = DF_CLASS_A
+     SAVEFACTS temp1
+     CHAIN proinv;
+RULE 3Aa
+     if age = Between_12_and_16 and
+     tac = Des_Felony_Class_A then pres_off = DF_CLASS_A
+     SAVEFACTS temp1
+     CHAIN proinv;
+RULE 3A
+     if age = Between_7_and_11 and
+     tac = Designated_Felony and two_prior = yes and vis = severe
+     then pres_off = HIGH;
+RULE 4A
+     if age = Between_7_and_11 and
+     tac = Designated_Felony and two_prior = yes and vis = not_severe
+     then pres_off = HIGH;
+RULE 5A
+     if age = Between_7_and_11 and
+     tac = Designated_Felony and two_prior = no and vis = severe
+     then pres_off = HIGH;
+RULE 6A
+     if age = Between_7_and_11 and
+     tac = Designated_Felony and two_prior = no and vis = not_severe
+     then pres_off = MEDIUM;
+RULE 7A
+     if age = Between_12_and_16 and tac = Designated_Felony and two_prior = yes
+     and vis = severe then pres_off = HIGH;
+RULE 8A
+     if age = Between_12_and_16 and tac = Designated_Felony and two_prior = yes
+     and vis = not_severe then pres_off = HIGH;
+RULE 9A
+     if age = Between_12_and_16 and tac = Designated_Felony and two_prior = no
+     and vis = severe then pres_off = HIGH;
+RULE 10A
+     if age = Between_12_and_16 and tac = Designated_Felony and two_prior = no
+     and vis = not_severe then pres_off = MEDIUM;
+RULE 11A
+     if age = Between_7_and_11 and tac = Other_Felony and
+     two_prior = yes and vis = severe
+     then pres_off = HIGH;
+RULE 12A
+     if age = Between_7_and_11 and tac = Other_Felony and
+     two_prior = yes and vis = not_severe
+     then pres_off = MEDIUM;
+RULE 13A
+     if age = Between_7_and_11 and tac = Other_Felony and
+     two_prior = no and vis = severe
+     then pres_off = MEDIUM;
+RULE 14A
+     if age = Between_7_and_11 and tac = Other_Felony and
+     two_prior = no and vis = not_severe
+     then pres_off = LOW;
+RULE 15A
+     if age = Between_12_and_16 and tac = Other_Felony and
+     two_prior = yes and vis = severe
+     then pres_off = HIGH;
+RULE 16A
+     if age = Between_12_and_16 and tac = Other_Felony and
+     two_prior = yes and vis = not_severe
+     then pres_off = HIGH;
+RULE 17A
+     if age = Between_12_and_16 and tac = Other_Felony and
+     two_prior = no and vis = severe
+     then pres_off = HIGH;
+RULE 18A
+     if age = Between_12_and_16 and tac = Other_Felony and
+     two_prior = no and vis = not_severe
+     then pres_off = MEDIUM;
+RULE WORD1
+     if two_prior = yes
+     then word = does;
+RULE WORD2
+     if two_prior = no
+     then word = does_not;
+!================================= Questions Block =========================
+ask age: "What is the age of the respondent?";
+choices age: Between_7_and_11, Between_12_and_16, Other;
+
+ask tac: "What is the classification of the Top Adjudicated Charge?";
+choices tac: Des_Felony_Class_A, Designated_Felony, Other_Felony;
+
+ask two_prior: "Does the respondent have 2 or more total convictions where
+at least one was a felony finding?";
+choices two_prior: yes, no;
+
+ask vis: "To what extent is the injury, economic loss or damage to the
+victim?";
+choices vis: severe, not_severe;
+
+plural: tac, age;
+

@@ -1,0 +1,436 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" version="27.0.1">
+  <diagram name="Страница — 1" id="N1NaKPbTOAuNwjbSc7mU">
+    <mxGraphModel dx="2305" dy="1137" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="VP-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-2" target="VP-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-2" target="VP-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-2" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;p dir=&quot;ltr&quot;&gt;Каков ваш бюджет на отпуск?&lt;/p&gt;&lt;p dir=&quot;ltr&quot;&gt;What is your budget for the vacation?&lt;/p&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="260" y="20" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-3" target="VP-7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-3" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;p dir=&quot;ltr&quot;&gt;Как долго будет длиться ваш отпуск?&lt;/p&gt;&lt;p dir=&quot;ltr&quot;&gt;How long will your vacation be?&lt;/p&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="-46" y="150" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-7" target="VP-9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-7" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;p dir=&quot;ltr&quot;&gt;Вы предпочитаете путешествовать внутри страны или за границу?&lt;/p&gt;&lt;p dir=&quot;ltr&quot;&gt;Do you prefer to travel domestically or internationally?&lt;/p&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="-46" y="290" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-9" target="VP-11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-9" target="VP-13" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-9" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;p dir=&quot;ltr&quot;&gt;Какой тип активности вы предпочитаете?&lt;/p&gt;&lt;p dir=&quot;ltr&quot;&gt;What type of activity do you prefer?&lt;/p&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="-46" y="420" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-11" target="VP-15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-11" target="VP-17" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-11" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;p dir=&quot;ltr&quot;&gt;Вы предпочитаете быстрый или медленный темп отпуска?&lt;/p&gt;&lt;p dir=&quot;ltr&quot;&gt;Do you prefer a fast-paced or slow-paced vacation?&lt;/p&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="-376" y="570" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-13" target="VP-19" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-13" target="VP-21" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-13" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;p dir=&quot;ltr&quot;&gt;Насколько вы физически активны для этого отпуска?&lt;/p&gt;&lt;p dir=&quot;ltr&quot;&gt;How physically active are you for this vacation?&lt;/p&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="284" y="570" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-15" value="&lt;div&gt;Местный спа-день&lt;/div&gt;&lt;div&gt;Local spa day&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-476" y="720" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-17" value="&lt;div&gt;Городская однодневная поездка&lt;/div&gt;&lt;div&gt;City day trip&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-276" y="720" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-19" value="&lt;div&gt;Местная пешеходная тропа&lt;/div&gt;&lt;div&gt;Local hiking trail&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="184" y="720" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-21" value="&lt;div&gt;Ближайший велотур&lt;/div&gt;&lt;div&gt;Nearby biking tour&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="384" y="720" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-5" target="VP-23" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-5" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;p dir=&quot;ltr&quot;&gt;Вы предпочитаете путешествовать внутри страны или за границу?&lt;/p&gt;&lt;p dir=&quot;ltr&quot;&gt;Do you prefer to travel domestically or internationally?&lt;/p&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="790" y="150" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-23" target="VP-25" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-23" target="VP-27" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-23" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;p dir=&quot;ltr&quot;&gt;Какой тип активности вы предпочитаете?&lt;/p&gt;&lt;p dir=&quot;ltr&quot;&gt;What type of activity do you prefer?&lt;/p&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="790" y="290" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-25" target="VP-29" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-25" target="VP-31" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-25" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;p dir=&quot;ltr&quot;&gt;Какой тип размещения вы предпочитаете?&lt;/p&gt;&lt;p dir=&quot;ltr&quot;&gt;What type of accommodation do you prefer?&lt;/p&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="660" y="420" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-29" target="VP-33" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-29" target="VP-35" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-29" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;p dir=&quot;ltr&quot;&gt;В какой сезон вы путешествуете?&lt;/p&gt;&lt;p dir=&quot;ltr&quot;&gt;In which season are you traveling?&lt;/p&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="570" y="570" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-33" value="&lt;div&gt;Люксовый прибрежный спа&lt;/div&gt;&lt;div&gt;Luxury coastal spa&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="470" y="720" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-35" value="&lt;div&gt;Городской люксовый отдых&lt;/div&gt;&lt;div&gt;Urban luxury getaway&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="670" y="720" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-27" target="VP-37" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-27" target="VP-39" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-27" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;p dir=&quot;ltr&quot;&gt;Какой климат вы предпочитаете для отпуска?&lt;/p&gt;&lt;p dir=&quot;ltr&quot;&gt;What climate do you prefer for your vacation?&lt;/p&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="910" y="420" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-37" target="VP-41" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-37" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;p dir=&quot;ltr&quot;&gt;Вы путешествуете один или в группе?&lt;/p&gt;&lt;p dir=&quot;ltr&quot;&gt;Are you traveling solo or in a group?&lt;/p&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="790" y="570" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-41" target="VP-43" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-41" target="VP-45" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-41" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;p dir=&quot;ltr&quot;&gt;С кем вы путешествуете?&lt;/p&gt;&lt;p dir=&quot;ltr&quot;&gt;Who are you traveling with?&lt;/p&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="790" y="720" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-43" target="VP-47" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-43" target="VP-49" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-43" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;p dir=&quot;ltr&quot;&gt;Какова возрастная группа вашей семьи?&lt;/p&gt;&lt;p dir=&quot;ltr&quot;&gt;What is the age group of your family?&lt;/p&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="660" y="870" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-47" value="&lt;div&gt;Тропический тематический курорт&lt;/div&gt;&lt;div&gt;Tropical theme park resort&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="560" y="1020" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-49" value="&lt;div&gt;Карибская пляжная вилла&lt;/div&gt;&lt;div&gt;Caribbean beach villa&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="760" y="1020" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-45" target="VP-51" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-45" target="VP-53" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-45" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;p dir=&quot;ltr&quot;&gt;Хотите новый опыт или что-то знакомое?&lt;/p&gt;&lt;p dir=&quot;ltr&quot;&gt;Do you want a new experience or something familiar?&lt;/p&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="910" y="870" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-51" value="&lt;div&gt;Экзотическая островная вечеринка&lt;/div&gt;&lt;div&gt;Exotic island party&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="810" y="1020" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-53" value="&lt;div&gt;Люксовый пляжный клуб&lt;/div&gt;&lt;div&gt;Luxury beach club&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1010" y="1020" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-39" target="VP-55" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-39" target="VP-57" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-39" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;p dir=&quot;ltr&quot;&gt;Какой тип активности вы предпочитаете?&lt;/p&gt;&lt;p dir=&quot;ltr&quot;&gt;What type of activity do you prefer?&lt;/p&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="1030" y="570" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-58" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-55" target="VP-59" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-55" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;p dir=&quot;ltr&quot;&gt;Насколько вы физически активны для этого отпуска?&lt;/p&gt;&lt;p dir=&quot;ltr&quot;&gt;How physically active are you for this vacation?&lt;/p&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="910" y="720" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-59" value="&lt;div&gt;Альпийский лыжный домик&lt;/div&gt;&lt;div&gt;Alpine ski lodge&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="910" y="870" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-57" value="&lt;div&gt;Арктический лагерь&lt;/div&gt;&lt;div&gt;Arctic wilderness camp&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1110" y="720" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-31" target="VP-61" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-31" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;p dir=&quot;ltr&quot;&gt;В какой сезон вы путешествуете?&lt;/p&gt;&lt;p dir=&quot;ltr&quot;&gt;In which season are you traveling?&lt;/p&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="790" y="570" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-61" target="VP-63" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-61" target="VP-65" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-61" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;p dir=&quot;ltr&quot;&gt;Вы предпочитаете местную кухню или стандартные блюда?&lt;/p&gt;&lt;p dir=&quot;ltr&quot;&gt;Do you prefer local cuisine or standard meals?&lt;/p&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="790" y="720" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-63" value="&lt;div&gt;Горный кемпинг&lt;/div&gt;&lt;div&gt;Mountain camping retreat&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="690" y="870" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-65" value="&lt;div&gt;Озерный кемпинг&lt;/div&gt;&lt;div&gt;Lakeside camping trip&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="890" y="870" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-66" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-7" target="VP-67" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-67" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;p dir=&quot;ltr&quot;&gt;Вы путешествуете один или в группе?&lt;/p&gt;&lt;p dir=&quot;ltr&quot;&gt;Are you traveling solo or in a group?&lt;/p&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="-46" y="570" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-68" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-67" target="VP-69" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-69" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;p dir=&quot;ltr&quot;&gt;Что вас больше всего интересует?&lt;/p&gt;&lt;p dir=&quot;ltr&quot;&gt;What are you most interested in?&lt;/p&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="-46" y="720" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-69" target="VP-71" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-72" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-69" target="VP-73" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-71" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;p dir=&quot;ltr&quot;&gt;В какой сезон вы путешествуете?&lt;/p&gt;&lt;p dir=&quot;ltr&quot;&gt;In which season are you traveling?&lt;/p&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="-176" y="870" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-71" target="VP-75" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-76" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-71" target="VP-77" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-75" value="&lt;div&gt;Бюджетный культурный хостел&lt;/div&gt;&lt;div&gt;Budget cultural hostel&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-276" y="1020" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-77" value="&lt;div&gt;Тур по местным музеям&lt;/div&gt;&lt;div&gt;Local museum tour&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-76" y="1020" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-78" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-73" target="VP-79" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-80" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-73" target="VP-81" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-73" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;p dir=&quot;ltr&quot;&gt;Какой тип размещения вы предпочитаете?&lt;/p&gt;&lt;p dir=&quot;ltr&quot;&gt;What type of accommodation do you prefer?&lt;/p&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="84" y="870" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-82" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-79" target="VP-83" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-84" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-79" target="VP-85" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-79" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;p dir=&quot;ltr&quot;&gt;В какой сезон вы путешествуете?&lt;/p&gt;&lt;p dir=&quot;ltr&quot;&gt;In which season are you traveling?&lt;/p&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="-56" y="1020" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-86" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-83" target="VP-87" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-88" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-83" target="VP-89" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-83" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;p dir=&quot;ltr&quot;&gt;Вы предпочитаете местную кухню или стандартные блюда?&lt;/p&gt;&lt;p dir=&quot;ltr&quot;&gt;Do you prefer local cuisine or standard meals?&lt;/p&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="-176" y="1170" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-87" value="&lt;div&gt;Горный кемпинг&lt;/div&gt;&lt;div&gt;Mountain camping retreat&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-276" y="1320" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-89" value="&lt;div&gt;Озерный кемпинг&lt;/div&gt;&lt;div&gt;Lakeside camping trip&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-76" y="1320" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-90" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-81" target="VP-91" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-92" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-81" target="VP-93" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-81" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;p dir=&quot;ltr&quot;&gt;Насколько вы физически активны для этого отпуска?&lt;/p&gt;&lt;p dir=&quot;ltr&quot;&gt;How physically active are you for this vacation?&lt;/p&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="214" y="1020" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-94" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-91" target="VP-95" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-96" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-91" target="VP-97" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-91" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;p dir=&quot;ltr&quot;&gt;Хотите новый опыт или что-то знакомое?&lt;/p&gt;&lt;p dir=&quot;ltr&quot;&gt;Do you want a new experience or something familiar?&lt;/p&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="94" y="1170" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-98" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-95" target="VP-99" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-100" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-95" target="VP-101" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-95" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;p dir=&quot;ltr&quot;&gt;Вы предпочитаете местную кухню или стандартные блюда?&lt;/p&gt;&lt;p dir=&quot;ltr&quot;&gt;Do you prefer local cuisine or standard meals?&lt;/p&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="-56" y="1320" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-99" value="&lt;div&gt;Пустынный кулинарный глэмпинг&lt;/div&gt;&lt;div&gt;Desert culinary glamping&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-156" y="1470" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-101" value="&lt;div&gt;Прибрежное каякинг-приключение&lt;/div&gt;&lt;div&gt;Coastal kayaking adventure&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="44" y="1470" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-102" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-93" target="VP-103" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-93" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;p dir=&quot;ltr&quot;&gt;С кем вы путешествуете?&lt;/p&gt;&lt;p dir=&quot;ltr&quot;&gt;Who are you traveling with?&lt;/p&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="344" y="1170" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-104" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-103" target="VP-105" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-106" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-103" target="VP-107" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-103" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;p dir=&quot;ltr&quot;&gt;Какова возрастная группа вашей семьи?&lt;/p&gt;&lt;p dir=&quot;ltr&quot;&gt;What is the age group of your family?&lt;/p&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="344" y="1320" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-108" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-105" target="VP-109" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-105" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;p dir=&quot;ltr&quot;&gt;Интересуют ли вас исторические места?&lt;/p&gt;&lt;p dir=&quot;ltr&quot;&gt;Are you interested in historical sites?&lt;/p&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="214" y="1470" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-110" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-109" target="VP-111" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-112" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VP-109" target="VP-113" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-109" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;p dir=&quot;ltr&quot;&gt;Вы предпочитаете быстрый или медленный темп отпуска?&lt;/p&gt;&lt;p dir=&quot;ltr&quot;&gt;Do you prefer a fast-paced or slow-paced vacation?&lt;/p&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+          <mxGeometry x="214" y="1620" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-111" value="&lt;div&gt;Исторический речной круиз&lt;/div&gt;&lt;div&gt;Historical river cruise&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="114" y="1770" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-113" value="&lt;div&gt;Европейский тур по замкам&lt;/div&gt;&lt;div&gt;European castle tour&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="314" y="1770" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-107" value="&lt;div&gt;Прибрежный пляжный отдых&lt;/div&gt;&lt;div&gt;Coastal beach retreat&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="444" y="1470" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-114" value="LOW" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="139" y="90" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-115" value="HIGH" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="600" y="90" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-116" value="SHORT" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="-316" y="220" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-117" value="DOMESTIC" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="-316" y="360" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-118" value="RELAX" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="-316" y="490" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-119" value="SLOW" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="-436" y="650" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-120" value="FAST" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="-236" y="650" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-121" value="ADVENTURE" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="224" y="490" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-122" value="ACTIVE" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="224" y="650" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-123" value="MODERATE" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="424" y="650" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-124" value="INTERNATIONAL" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points [];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="760" y="240" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-125" value="WARM" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points [];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="760" y="490" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-126" value="GROUP" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points [];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="760" y="650" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-127" value="FAMILY" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points [];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="760" y="800" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-128" value="YOUNG" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points [];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="760" y="950" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-129" value="MIXED" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points [];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="860" y="950" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-130" value="FRIENDS" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points [];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="960" y="800" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-131" value="NEW" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points [];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="960" y="950" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-132" value="FAMILIAR" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points [];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="1060" y="950" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-133" value="COLD" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points [];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="960" y="490" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-134" value="HOTEL" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points [];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="960" y="650" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-135" value="CAMPING" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points [];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="1060" y="650" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-136" value="SUMMER" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points [];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="760" y="650" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-137" value="LOCAL" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points [];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="760" y="800" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-138" value="STANDARD" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points [];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="860" y="800" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-139" value="LONG" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points [];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="224" y="220" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-140" value="SOLO" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points [];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="-316" y="650" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-141" value="CULTURE" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points [];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="-316" y="800" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-142" value="SUMMER" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points [];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="-316" y="950" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-143" value="WINTER" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points [];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="-116" y="950" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VP-144" value="NATURE" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points [];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="24" y="950" width="50" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

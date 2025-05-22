@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "nYxxhRQIT9c=",
+  "success": true,
+  "projectFilePath": "D:\\Университет\\Базы данных и базы знаний\\CourseWork\\CourseWork\\CourseWork.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rechu\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.2\\microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512",
+    "C:\\Users\\rechu\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.2\\microsoft.extensions.logging.abstractions.8.0.2.nupkg.sha512",
+    "C:\\Users\\rechu\\.nuget\\packages\\npgsql\\9.0.3\\npgsql.9.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

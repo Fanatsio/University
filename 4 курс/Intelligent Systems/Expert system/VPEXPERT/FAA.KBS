@@ -1,0 +1,248 @@
+! System name:    FINANCIAL AID ADVISOR
+! Description:    An expert system to help students select appropriate
+!                 financial aid programs to apply for.
+! KBS file name:  FAA.KBS
+! DB file name:   FAA.DBF
+
+RUNTIME;
+ENDOFF;
+
+! Action Block
+ACTIONS
+      WOPEN 1,0,0,23,79,1
+      ACTIVE 1
+      DISPLAY "
+
+
+
+                    *** STUDENT FINANCIAL AID ADVISOR ***
+
+                            Developed by Sheng Guo
+                   under the direction and supervision of
+                             Dr. D.G. Dologite
+                      For further information, contact
+                             Dr. D.G. Dologite
+                          c/o Macmillan Publishing
+
+
+                          Press any key to continue~"
+
+      WCLOSE 1
+      PRINTOFF
+      DISPLAY "Welcome to the Student Financial Aid Advisor"
+      DISPLAY " "
+      ! Decide if printer is available or not
+      FIND PRTCTRL
+      ! living expense is assigned as a constant here
+      Living = 7000
+      FIND Support
+      ! Decide the eligibility of a student before searching for
+      ! suitable programs.  
+      FIND Continue;
+
+
+! Rules Block
+
+! Rule set 1-printer is used to control output through printer or screen.  
+RULE 1-printer
+IF Printer = Yes
+THEN PRTCTRL = ON
+     DISPLAY "Please turn on your printer. Press any key to continue ...~"
+     DISPLAY " "
+     PRINTON
+     EJECT;
+
+! Rule set 1-A calculates the education costs
+RULE 1-A-1
+IF Citizen= Yes
+   AND Resident = Yes
+   AND Hour >= 12
+THEN Edu_Cost = (living + 2*950)
+BECAUSE "In-State full-time tuition is $950";
+
+RULE 1-A-2
+IF Citizen= Yes
+   AND Resident = Yes
+   AND Hour <12
+THEN Edu_Cost = (living + 2*Hour*82)
+BECAUSE "In-State part-time tuition is $82 per credit hour";
+
+RULE 1-A-3
+IF Citizen= Yes
+   AND Resident = No
+   AND Hour >= 12
+THEN Edu_Cost = (living + 2*2350)
+BECAUSE "Out-of-State full-time tuition is $2350";
+
+RULE 1-A-4
+IF Citizen= Yes
+   AND Resident = No
+   AND Hour <12
+THEN Edu_Cost = (living + 2*Hour*198.5)
+BECAUSE "Out-of-State part-time tuition is $198.50 per credit hour";
+
+RULE 1-A-5
+IF Citizen= No
+   AND Hour >=12
+THEN Edu_Cost = (living + 2*2350)
+BECAUSE "Out-of-State full-time tuition is $2350";
+
+RULE 1-A-6
+IF Citizen= No
+   AND Hour <12
+THEN Edu_Cost = (living + 2*Hour*198.5)
+BECAUSE "Out-of-State part-time tuition is $198.50 per credit hour";
+
+! Rule set 1-B decides financial necessity.
+RULE 1-B
+IF Edu_Cost <= (Support)
+THEN Need = No
+     DISPLAY "It is determined that you are not eligible for financial"
+     DISPLAY "aid because no financial difficulty seems evident."
+ELSE Need = Yes;
+
+! Rule set 2 checks the academic progress of a student.  
+RULE 2-A
+IF ENTERING = NO
+   AND GPA >= 3.0
+THEN PROGRESS = OK;
+
+RULE 2-B
+IF ENTERING = NO
+   AND GPA < 3.0
+THEN PROGRESS = NOT_OK
+     DISPLAY "It is determined that you are not eligible for financial aid"
+     DISPLAY "now because of a GPA that is lower than required.";
+
+RULE 2-C
+IF ENTERING = YES
+THEN PROGRESS = OK;
+
+! Rule 3 decides the credibility of a student.  
+RULE 3
+IF Defaulted = Yes
+THEN Credibility = Bad
+     DISPLAY "It is determined that you are not eligible for financial aid"
+     DISPLAY "at this time.  Please make arrangements to pay off the current"
+     DISPLAY "loan before submitting a new application."
+ELSE Credibility = Good;
+
+! Rule set 4 decides the eligibility of a student.  
+RULE 4-A
+IF Need = No
+THEN Eligible = No;
+
+RULE 4-B
+IF Progress = NOT_OK
+THEN Eligible = No;
+
+RULE 4-C
+IF Credibility = Bad
+THEN Eligible = No;
+
+RULE 4-D
+IF Credibility = Good
+   AND Progress = Ok
+   AND Need = Yes
+THEN Eligible = Yes;
+
+! Rule 5 searches for matched programs if a student is eligible for financial
+! aid and retrieves information stored in a database.                            
+RULE 5
+IF Eligible = Yes
+THEN  Continue = Yes
+      FIND Program
+      COUNT Program, Pnumber
+      DISPLAY "THE FOLLOWING IS A LIST OF FINANCIAL AID SOURCES FOR WHICH"
+      DISPLAY "YOU MAY APPLY"
+      FOR Pcount= 1 to @Pnumber
+         GET Program=Aid_ID, FAA, ALL
+         DISPLAY "{NAME}"
+         DISPLAY "CONTACT: {CONTACT}"
+         DISPLAY "TEL: {TEL}"
+         DISPLAY "THE MAXIMUM AWARD AMOUNT IS: {MAX_AMT}"
+         DISPLAY "  "
+      END
+      PRINTOFF;
+
+! Rule set 6 defines the criteria for each financial aid program.
+RULE 6-1
+IF Hour >= 12
+   AND Employed = No
+THEN Program = GRA;
+
+RULE 6-2
+IF Hour >= 6
+   AND Citizen = Yes
+THEN Program = GSL;
+
+RULE 6-3-A
+IF Citizen = Yes
+THEN Program = TWP;
+
+RULE 6-3-B
+IF Citizen = No
+   AND Years_at_School = Yes
+THEN Program = TWP;
+
+RULE 6-4
+IF Citizen = Yes
+   AND Resident = Yes
+THEN Program = TAP;
+
+RULE 6-5
+IF Entering = Yes
+   AND Hour >= 12
+   AND GMAT >= 630
+   AND Under_GPA >= 3.2
+THEN Program = BGF;
+
+RULE 6-6
+IF Employed = Yes
+   AND FT_CITY_EMP = Yes
+THEN Program = MGS;
+
+! Questions Block
+
+PLURAL: Program;
+
+ASK Citizen: "Are you a US citizen or Permanent Resident?";
+CHOICES Citizen: Yes, No;
+
+ASK Resident: "Have you lived in this state for more than one year?";
+CHOICES Resident: Yes, No;
+
+ASK Hour: "How many credit hours do you plan to take per semester?";
+RANGE Hour: 1, 21;
+
+ASK Support: "How much can you and your family afford for tuition and expenses
+per year?";
+RANGE Support: 0, 100000;
+
+ASK Entering: "Are you an entering MBA student?";
+CHOICES Entering: Yes, No;
+
+ASK GPA: "Please input your GPA in the MBA Program (on a 4.0 scale).";
+RANGE GPA: 0,4;
+
+ASK Defaulted: "Have you ever defaulted on a student loan?";
+CHOICES Defaulted: Yes, No;
+
+ASK Employed: "Are you employed?";
+CHOICES Employed: Yes, No;
+
+ASK Years_at_School: "Have you been at this school for more than one year?";
+CHOICES Years_at_School: Yes, No;
+
+ASK GMAT: "Please enter your GMAT score.";
+RANGE GMAT: 0,800;
+
+ASK Under_GPA: "Please enter your undergraduate GPA.";
+RANGE Under_GPA: 0,4;
+
+ASK FT_CITY_EMP: "Are you a full-time city employee?";
+CHOICES FT_CITY_EMP: Yes, No;
+
+ASK Printer: "Do you have a printer attached to your computer?";
+CHOICES Printer: Yes, No;
+

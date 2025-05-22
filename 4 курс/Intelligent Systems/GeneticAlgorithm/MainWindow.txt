@@ -1,0 +1,67 @@
+﻿<Window x:Class="GeneticAlgorithm.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Магазин игрушек" Height="600" Width="1000">
+    <Window.Resources>
+        <!-- Стиль для заголовков столбцов DataGrid -->
+        <Style TargetType="DataGridColumnHeader">
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+        <!-- Стиль для ячеек DataGrid -->
+        <Style TargetType="DataGridCell">
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+        <!-- Стиль для TextBlock -->
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+        <!-- Стиль для TextBox -->
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+        <!-- Стиль для Button -->
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+    </Window.Resources>
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Таблица товаров -->
+        <DataGrid x:Name="ItemsGrid" Grid.Row="0" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,0,0,10"
+                  CanUserResizeColumns="True" CanUserSortColumns="True"
+                  VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"
+                  FontSize="16">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="№" Binding="{Binding Number}" Width="50"/>
+                <DataGridTextColumn Header="Название" Binding="{Binding Name}" Width="200"/>
+                <DataGridTextColumn Header="Цена за шт." Binding="{Binding Price}" Width="100"/>
+                <DataGridTextColumn Header="Мин. кол-во" Binding="{Binding MinQuantity}" Width="100"/>
+                <DataGridTextColumn Header="Макс. кол-во" Binding="{Binding MaxQuantity}" Width="100"/>
+                <DataGridTextColumn Header="Выбрано" Binding="{Binding SelectedQuantity}" Width="100"/>
+                <DataGridTextColumn Header="Стоимость" Binding="{Binding TotalCost}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Ввод и кнопка -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,10,0,10">
+            <TextBlock Text="Желаемая сумма:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox x:Name="TargetSum" Width="100" Margin="0,0,10,0" PreviewTextInput="NumberValidation" DataObject.Pasting="NumberValidationPaste"/>
+            <TextBlock Text="Итерации:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox x:Name="Iterations" Width="100" Margin="0,0,10,0" PreviewTextInput="NumberValidation" DataObject.Pasting="NumberValidationPaste"/>
+            <Button x:Name="StartButton" Content="Запустить" Width="100" Click="StartButton_Click"/>
+        </StackPanel>
+
+        <!-- Вывод результатов -->
+        <StackPanel Grid.Row="2">
+            <TextBlock x:Name="PriceRangeLabel" Text="Диапазон цен: от 0 до 0" Margin="0,0,0,5"/>
+            <TextBlock x:Name="ResultSumLabel" Text="Итоговая сумма: 0" Margin="0,0,0,5"/>
+            <TextBlock x:Name="DifferenceLabel" Text="Разница с желаемой суммой: 0" Margin="0,0,0,5"/>
+            <TextBlock x:Name="IterationResultLabel" Text="Результат итераций: не запущено" Margin="0,0,0,5"/>
+        </StackPanel>
+    </Grid>
+</Window>

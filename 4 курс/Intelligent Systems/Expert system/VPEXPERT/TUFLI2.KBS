@@ -1,0 +1,481 @@
+! Name of the expert system: MOTORCYCLE TROUBLESHOOTING ADVISOR
+! Description:  This system assists a user in diagnosing motorcycle
+!               problems and in finding out how to solve them.
+! Microcomputer used: IBM PC compatible
+! Saved file name: BIKE.KBS
+
+ENDOFF;
+RUNTIME;
+
+! ACTIONS BLOCK
+ACTIONS
+WOPEN 1,0,0,23,79,2
+ACTIVE 1
+DISPLAY "
+
+
+
+
+
+
+
+
+
+                            Vibor obyvi dly devyshek
+                           Sdelal: Petrochenko Nikita
+                                 Grypa: 606-72
+
+
+
+
+
+
+
+
+
+                           Press any key to continue~"
+
+WCLOSE 1
+
+   DISPLAY " Dobro pozhalivat v systemy vibora obyvi dly devyshek"
+   FIND RECO
+   DISPLAY " Vam podoided sledyishi vid obyvi: {RECO}";
+
+
+RULE 1
+IF       SPORT = YES
+THEN     SPORTIK = OK;
+
+RULE 2
+IF       SPORT = NO
+THEN     SPORTIK = NOK;
+
+
+RULE 4
+IF       SPORTIK = OK         
+         AND PLATFORMA = YES
+THEN     RECO = Snikersi;
+
+RULE 5
+IF       SPORTIK = OK 
+         AND SHNYRK = NO
+THEN     RECO = Sliponi;
+
+RULE 6
+IF       SPORTIK = OK 
+	 AND REZINA = YES
+THEN     RECO = Kedi;
+
+RULE 7
+IF       SPORTIK = OK 
+	 AND REZINA = NO
+THEN     RECO = Krosovki;
+
+RULE 8
+IF       TUFLI = YES
+	 AND SPORTIK = NOK
+THEN     TUFLIK = OK;
+
+RULE 9
+IF       TUFLI = NO
+	 AND SPORTIK = NOK
+THEN     TUFLIK = NOK;
+
+RULE K
+IF       TUFLIK = OK
+	 AND KABLYK = YES
+THEN     KABLYKK = OK;
+
+RULE 10
+IF       TUFLIK = OK
+	 AND KABLYK = NO
+THEN     KABLYKK = NOK;
+
+
+RULE 12
+IF       TUFLIK = OK     
+         AND KABLYKK = OK    
+         AND KLIN = YES
+THEN     RECO = Tufli_na_klinoividnom_kablyke;
+
+RULE 13
+IF       TUFLIK = OK
+         AND KABLYKK = OK         
+         AND RUMOCHKA = YES
+THEN     RUMOCHKAK = OK;
+
+RULE 14
+IF       TUFLIK = OK        
+         AND KABLYKK = OK 
+         AND RUMOCHKAK = OK
+         AND OTKRITRUM = YES
+THEN     RECO = Muli;
+
+RULE 14
+IF       TUFLIK = OK     
+         AND KABLYKK = OK    
+         AND RUMOCHKAK = OK
+         AND OTKRITRUM = NO
+THEN     RECO = Tufli_lodochki_na_kablyke_rumochke;
+
+RULE 15
+IF       TUFLIK = OK  
+         AND KABLYKK = OK       
+         AND STOLBIK = YES
+THEN     STOLBIKK = OK;
+
+RULE 16
+IF       TUFLIK = OK         
+         AND STOLBIKK = OK
+         AND BOSONOSHKI = YES
+THEN     RECO = Bosonoshki_na_kablyke_stolbike;
+
+RULE 17
+IF       TUFLIK = OK     
+         AND KABLYKK = OK    
+         AND STOLBIKK = OK
+         AND SABO = YES
+THEN     RECO = Sabo;
+
+RULE 18
+IF       TUFLIK = OK     
+         AND KABLYKK = OK    
+         AND STOLBIKK = OK
+         AND SABO = NO
+THEN     RECO = Tufli_lodochki_na_kablyke_stolbike;
+
+RULE 19
+IF       TUFLIK = OK   
+         AND KABLYKK = OK      
+         AND TANKETKA = YES
+THEN     TANKETKAK = OK;
+
+RULE 20
+IF       TUFLIK = OK   
+         AND KABLYKK = OK      
+         AND TANKETKAK = OK
+         AND BOSONOSHKIT = YES
+THEN     RECO = Bosonoshki_na_kablyke_tanketke;
+
+RULE 22
+IF       TUFLIK = OK   
+         AND KABLYKK = OK      
+         AND TANKETKAK = OK
+         AND BOSONOSHKIT = NO
+THEN     RECO = Tufli_na_kablyke_tanketke;
+
+RULE 11
+IF       TUFLIK = OK 
+         AND KABLYKK = OK        
+         AND KIRPICH = YES
+THEN     RECO = Tufli_na_kablyke_kirpichike;
+
+RULE 23
+IF       TUFLIK = OK 
+         AND KABLYKK = OK        
+         AND KIRPICH = NO
+THEN     RECO = Tufli_lodochki_na_kablyke_shpilke;
+
+RULE 25
+IF       TUFLIK = OK      
+         AND KABLYKK = NOK   
+         AND BOSONOSHKIN = YES
+THEN     RECO = Bosonoshki_bez_kablyka;
+
+RULE 26
+IF       TUFLIK = OK     
+         AND KABLYKK = NOK       
+         AND SLIPERI = YES
+THEN     RECO = Sliperi;
+
+RULE 27
+IF       TUFLIK = OK     
+         AND KABLYKK = NOK           
+         AND ISPADRILI = YES
+THEN     RECO = Ispadrili;
+
+RULE 28
+IF       TUFLIK = OK     
+         AND KABLYKK = NOK          
+         AND MOKASINI = YES
+THEN     MOKASINIK = OK;
+
+RULE 290
+IF       TUFLIK = OK     
+         AND KABLYKK = NOK          
+         AND MOKASINI = NO
+THEN     MOKASINIK = NOK;
+
+RULE 29
+IF       TUFLIK = OK     
+         AND KABLYKK = NOK           
+         AND MOKASINIK = OK
+	 AND TOPSIDER = YES
+THEN     RECO = Topsider;
+
+RULE 30
+IF       TUFLIK = OK     
+         AND KABLYKK = NOK          
+         AND MOKASINIK = OK
+	 AND TOPSIDER = NO
+THEN     RECO = Mokasini;
+
+RULE 31
+IF       TUFLIK = OK     
+         AND KABLYKK = NOK           
+	 AND MOKASINIK = NOK
+THEN     RECO = Baletki;
+
+RULE 33
+IF       SAPOGI = YES
+	 AND SPORTIK = NOK
+	 AND TUFLIK = NOK
+THEN     SAPOGIK = OK;
+
+RULE 34
+IF       SAPOGI = NO
+	 AND SPORTIK = NOK
+	 AND TUFLIK = NOK
+THEN     SAPOGIK = NOK;
+
+RULE 35
+IF       SAPOGIK = OK
+	 AND VISOKIE = YES
+THEN     VISOKIEK = OK;
+
+RULE 36
+IF       SAPOGIK = OK
+	 AND VISOKIE = NO
+THEN     VISOKIEK = NOK;
+
+RULE 37
+IF       SAPOGIK = OK
+	 AND VISOKIEK = OK
+	 AND BOTFORTI = YES
+THEN     RECO = Botforti;
+
+RULE 38
+IF       SAPOGIK = OK
+	 AND VISOKIEK = OK
+	 AND RIDINGI = YES
+THEN     RIDINGIK = OK;
+
+RULE 39
+IF       SAPOGIK = OK
+	 AND RIDINGI = NO
+THEN     RIDINGIK = NOK;
+
+RULE 40
+IF       SAPOGIK = OK
+	 AND JACKBOOT = NO
+THEN     JACKBOOTK = NOK;
+
+RULE 41
+IF       SAPOGIK = OK
+	 AND JACKBOOT = YES
+THEN     JACKBOOTK = OK;
+
+RULE 42
+IF       SAPOGIK = OK
+	 AND VISOKIEK = OK
+	 AND JACKBOOTK = NOK
+THEN     RECO = Ridingi;
+
+RULE 43
+IF       SAPOGIK = OK
+	 AND VISOKIEK = OK
+	 AND JACKBOOTK = OK
+THEN     RECO = Jackbooti;
+
+
+RULE 45
+IF       SAPOGIK = OK
+	 AND VISOKIEK = NOK
+	 AND VELINGTONI = YES
+THEN     RECO = Velingtoni;
+
+RULE 46
+IF       SAPOGIK = OK
+	 AND VISOKIEK = NOK
+	 AND VALENKI = YES
+THEN     RECO = Valenki;
+
+RULE 48
+IF       SAPOGIK = OK
+	 AND VISOKIEK = NOK
+	 AND DUTIE = YES
+THEN     RECO = Lunohodi;
+
+RULE 49
+IF       SAPOGIK = OK
+	 AND VISOKIEK = NOK
+	 AND DUTIE = NO
+THEN     RECO = Ygi;
+
+RULE 50
+IF       LETO = YES
+	 AND SPORTIK = NOK
+	 AND TUFLIK = NOK
+	 AND SAPOGIK = NOK
+THEN     LETOK = OK;
+
+RULE 51
+IF       LETO = NO
+	 AND SPORTIK = NOK
+	 AND TUFLIK = NOK
+	 AND SAPOGIK = NOK
+THEN     LETOK = NOK;
+
+RULE 52
+IF       LETOK = OK
+	 AND GLADIATORI = YES
+THEN     RECO = Gladiatori;
+
+RULE 53
+IF       LETOK = OK
+	 AND BIRKENSHTOKI = YES
+THEN     RECO = Birkenshtoki;
+
+RULE 54
+IF       LETOK = OK
+	 AND BIRKENSHTOKI = NO
+THEN     RECO = Sandali;
+
+RULE 56
+IF       BOTINKI = YES
+	 AND SPORTIK = NOK
+	 AND TUFLIK = NOK
+	 AND SAPOGIK = NOK
+	 AND LETOK = NOK
+THEN     BOTINKIK = OK;
+
+RULE 57
+IF       BOTINKI = NO
+	 AND SPORTIK = NOK
+	 AND TUFLIK = NOK
+	 AND SAPOGIK = NOK
+	 AND LETOK = NOK
+THEN     BOTINKIK = NOK;
+
+RULE 58
+IF       BOTINKIK = OK	 
+	 AND SHYROVKA = YES
+THEN     SHYROVKAK = OK;
+
+RULE 59
+IF       BOTINKIK = OK	 
+	 AND SHYROVKA = NO
+THEN     SHYROVKAK = NOK;
+
+RULE 60
+IF       BOTINKIK = OK	 
+	 AND SHYROVKAK = OK
+	 AND OKSFORDI = YES
+THEN     RECO = Oksfordi;
+
+RULE 61
+IF       BOTINKIK = OK	 
+	 AND SHYROVKAK = OK
+	 AND OKSFORDI = NO
+THEN     RECO = Dezerti;
+
+RULE 63
+IF       BOTINKIK = OK	 
+	 AND SHYROVKAK = NOK
+	 AND DJODPYR = YES
+THEN     RECO = Djodpyr;
+
+RULE 64
+IF       BOTINKIK = OK	 
+	 AND SHYROVKAK = NOK
+	 AND CHELSI = YES
+THEN     RECO = Chelsi;
+
+RULE 65
+IF       BOTINKIK = OK	 
+	 AND SHYROVKAK = NOK
+	 AND CHELSI = NO
+THEN     RECO = Botileni;
+
+RULE 67
+IF       BOTINKIK = NOK
+	 AND SPORTIK = NOK
+	 AND TUFLIK = NOK
+	 AND SAPOGIK = NOK
+	 AND LETOK = NOK
+THEN     RECO = Bosie_nogi;
+
+!STATEMENTS BLOCK
+ASK SPORT: " Vam nyshna obuv v sportivnom style?";
+CHOICES SPORT: YES,NO;
+ASK PLATFORMA: " Vam nyshna chtobi bila skritia platforma?";
+CHOICES PLATFORMA: YES,NO;
+ASK SHNYRK: " Vam nyshno chtobi bila shnyrovka?";
+CHOICES SHNYRK : YES,NO;
+ASK REZINA: " Vam nysho chtobi bila obuv s rovnoi rezinovoi podoshvoi?";
+CHOICES REZINA : YES,NO;
+ASK TUFLI: " Vam nyshni tufli?";
+CHOICES TUFLI: YES,NO;
+ASK KABLYK: " Vam nyshin kablyk?";
+CHOICES KABLYK: YES,NO;
+ASK KLIN: " Vam nyshen klinoividni kablyk?";
+CHOICES KLIN: YES,NO;
+ASK RUMOCHKA: " Vam nyshen kablyk rumochka?";
+CHOICES RUMOCHKA: YES,NO;
+ASK OTKRITRUM: " Vam nyshno chtobi bil otkriti podem?";
+CHOICES OTKRITRUM: YES,NO;
+ASK STOLBIK: " Vam nyshen kablyk stolbik?";
+CHOICES STOLBIK: YES,NO;
+ASK BOSONOSHKI: " Vam nyshno chtobi bil otkriti podem?";
+CHOICES BOSONOSHKI: YES,NO;
+ASK SABO: " Vam nyshno chtobi bila otkrita pyatka bez fiksatorov?";
+CHOICES SABO: YES,NO;
+ASK TANKETKA: " Vam nyshen kablyk tanketka?";
+CHOICES TANKETKA: YES,NO;
+ASK BOSONOSHKIT: " Vam nyshno chtobi bil otkriti podem?";
+CHOICES BOSONOSHKIT: YES,NO;
+ASK KIRPICH: " Vam nyshen kablyk kirpichek?";
+CHOICES KIRPICH: YES,NO;
+ASK BOSONOSHKIN: " Vam nyshno chtobi bil otkriti podem?";
+CHOICES BOSONOSHKIN: YES,NO;
+ASK SLIPERI: " Vam nyshno chtobi bil polyotkriti podem i izichek?";
+CHOICES SLIPERI: YES,NO;
+ASK ISPADRILI: " Vam nyshno chtobi bila ploskaya verevochnaya podoshva iz djuta?";
+CHOICES ISPADRILI: YES,NO;
+ASK MOKASINI: " Vam nyshno chtobi na verhnai chasti noska vistypal shov?";
+CHOICES MOKASINI: YES,NO;
+ASK TOPSIDER: " Vam nysho chtobi bila shnyrovka?";
+CHOICES TOPSIDER: YES,NO;
+ASK SAPOGI: " Vam nyshni sapogi?";
+CHOICES SAPOGI: YES,NO;
+ASK VISOKIE: " Vam nyshno chtobi oni bili visokimi?";
+CHOICES VISOKIE: YES,NO;
+ASK BOTFORTI: " Vam nyshno chtobi oni zakrivali kolenyu chashechky?";
+CHOICES BOTFORTI: YES,NO;
+ASK RIDINGI: " Vam nyshno chtobi oni bili iz plotnoi i myahkoi kozhi?";
+CHOICES RIDINGI: YES,NO;
+ASK JACKBOOT: " Vam nyshno chtobi bilo shostkim kolenishe?";
+CHOICES JACKBOOT: YES,NO;
+ASK VELINGTONI: " Vam nyshno chtobi oni bili iz rezini?";
+CHOICES VELINGTONI: YES,NO;
+ASK VALENKI: " Vam nyshno chtobi oni bili polnosty iz shersti?";
+CHOICES VALENKI: YES,NO;
+ASK DUTIE: " Vam nyshno chtobi oni bili dutimi?"; 
+CHOICES DUTIE: YES,NO;
+ASK LETO: " Vam nyshna otkritaya obyv na leto?"; 
+CHOICES LETO: YES,NO;
+ASK GLADIATORI: " Vam nyshno chtobi oni bili visokimi?"; 
+CHOICES GLADIATORI: YES,NO;
+ASK BIRKENSHTOKI: " Vam nyshno chtobi na nih bili dva shirokih remnya dly togo chtobi noga dershalas v obyvi?"; 
+CHOICES BIRKENSHTOKI: YES,NO;
+ASK BOTINKI: " Vam nyshni botinki?"; 
+CHOICES BOTINKI: YES,NO;
+ASK SHYROVKA: " Vam nyshno chtobi bila shnyrovka?"; 
+CHOICES SHYROVKA: YES,NO;
+ASK OKSFORDI: " Vam nyshno chtobi bila perforacia i kolpachek na noske?"; 
+CHOICES OKSFORDI: YES,NO;
+ASK DJODPYR: " Vam nyshno chtobi na nih bili remni na golenishe?"; 
+CHOICES DJODPYR: YES,NO;
+ASK CHELSI: " Vam nyshno chtobi bili vstavki iz rezinok po bokam?"; 
+CHOICES CHELSI: YES,NO;
+

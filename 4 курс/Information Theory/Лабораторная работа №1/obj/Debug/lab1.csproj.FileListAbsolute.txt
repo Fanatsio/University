@@ -1,0 +1,90 @@
+C:\Users\vital\OneDrive\Рабочий стол\TheorInf\lab1\bin\Debug\lab1.exe.config
+C:\Users\vital\OneDrive\Рабочий стол\TheorInf\lab1\bin\Debug\lab1.exe
+C:\Users\vital\OneDrive\Рабочий стол\TheorInf\lab1\bin\Debug\lab1.pdb
+C:\Users\vital\OneDrive\Рабочий стол\TheorInf\lab1\obj\Debug\lab1.csproj.AssemblyReference.cache
+C:\Users\vital\OneDrive\Рабочий стол\TheorInf\lab1\obj\Debug\MainWindow.g.cs
+C:\Users\vital\OneDrive\Рабочий стол\TheorInf\lab1\obj\Debug\App.g.cs
+C:\Users\vital\OneDrive\Рабочий стол\TheorInf\lab1\obj\Debug\lab1_MarkupCompile.cache
+C:\Users\vital\OneDrive\Рабочий стол\TheorInf\lab1\obj\Debug\lab1_MarkupCompile.lref
+C:\Users\vital\OneDrive\Рабочий стол\TheorInf\lab1\obj\Debug\MainWindow.baml
+C:\Users\vital\OneDrive\Рабочий стол\TheorInf\lab1\obj\Debug\lab1.g.resources
+C:\Users\vital\OneDrive\Рабочий стол\TheorInf\lab1\obj\Debug\lab1.Properties.Resources.resources
+C:\Users\vital\OneDrive\Рабочий стол\TheorInf\lab1\obj\Debug\lab1.csproj.GenerateResource.cache
+C:\Users\vital\OneDrive\Рабочий стол\TheorInf\lab1\obj\Debug\lab1.csproj.CoreCompileInputs.cache
+C:\Users\vital\OneDrive\Рабочий стол\TheorInf\lab1\obj\Debug\lab1.exe
+C:\Users\vital\OneDrive\Рабочий стол\TheorInf\lab1\obj\Debug\lab1.pdb
+C:\Users\rechu\Downloads\TheorInf-main\Lab1\bin\Debug\lab1.exe.config
+C:\Users\rechu\Downloads\TheorInf-main\Lab1\bin\Debug\lab1.exe
+C:\Users\rechu\Downloads\TheorInf-main\Lab1\bin\Debug\lab1.pdb
+C:\Users\rechu\Downloads\TheorInf-main\Lab1\obj\Debug\lab1.csproj.AssemblyReference.cache
+C:\Users\rechu\Downloads\TheorInf-main\Lab1\obj\Debug\MainWindow.g.cs
+C:\Users\rechu\Downloads\TheorInf-main\Lab1\obj\Debug\App.g.cs
+C:\Users\rechu\Downloads\TheorInf-main\Lab1\obj\Debug\lab1_MarkupCompile.cache
+C:\Users\rechu\Downloads\TheorInf-main\Lab1\obj\Debug\lab1_MarkupCompile.lref
+C:\Users\rechu\Downloads\TheorInf-main\Lab1\obj\Debug\MainWindow.baml
+C:\Users\rechu\Downloads\TheorInf-main\Lab1\obj\Debug\lab1.g.resources
+C:\Users\rechu\Downloads\TheorInf-main\Lab1\obj\Debug\lab1.Properties.Resources.resources
+C:\Users\rechu\Downloads\TheorInf-main\Lab1\obj\Debug\lab1.csproj.GenerateResource.cache
+C:\Users\rechu\Downloads\TheorInf-main\Lab1\obj\Debug\lab1.csproj.CoreCompileInputs.cache
+C:\Users\rechu\Downloads\TheorInf-main\Lab1\obj\Debug\lab1.exe
+C:\Users\rechu\Downloads\TheorInf-main\Lab1\obj\Debug\lab1.pdb
+C:\Users\rechu\Downloads\TheorInf-main\Lab1 — BackUp\bin\Debug\lab1.exe.config
+C:\Users\rechu\Downloads\TheorInf-main\Lab1 — BackUp\bin\Debug\lab1.exe
+C:\Users\rechu\Downloads\TheorInf-main\Lab1 — BackUp\bin\Debug\lab1.pdb
+C:\Users\rechu\Downloads\TheorInf-main\Lab1 — BackUp\obj\Debug\lab1.csproj.AssemblyReference.cache
+C:\Users\rechu\Downloads\TheorInf-main\Lab1 — BackUp\obj\Debug\MainWindow.g.cs
+C:\Users\rechu\Downloads\TheorInf-main\Lab1 — BackUp\obj\Debug\App.g.cs
+C:\Users\rechu\Downloads\TheorInf-main\Lab1 — BackUp\obj\Debug\lab1_MarkupCompile.cache
+C:\Users\rechu\Downloads\TheorInf-main\Lab1 — BackUp\obj\Debug\lab1_MarkupCompile.lref
+C:\Users\rechu\Downloads\TheorInf-main\Lab1 — BackUp\obj\Debug\MainWindow.baml
+C:\Users\rechu\Downloads\TheorInf-main\Lab1 — BackUp\obj\Debug\lab1.g.resources
+C:\Users\rechu\Downloads\TheorInf-main\Lab1 — BackUp\obj\Debug\lab1.Properties.Resources.resources
+C:\Users\rechu\Downloads\TheorInf-main\Lab1 — BackUp\obj\Debug\lab1.csproj.GenerateResource.cache
+C:\Users\rechu\Downloads\TheorInf-main\Lab1 — BackUp\obj\Debug\lab1.csproj.CoreCompileInputs.cache
+C:\Users\rechu\Downloads\TheorInf-main\Lab1 — BackUp\obj\Debug\lab1.exe
+C:\Users\rechu\Downloads\TheorInf-main\Lab1 — BackUp\obj\Debug\lab1.pdb
+H:\Теория информации\Lab1\obj\Debug\lab1.csproj.AssemblyReference.cache
+H:\Теория информации\Lab1\obj\Debug\MainWindow.g.cs
+H:\Теория информации\Lab1\obj\Debug\App.g.cs
+H:\Теория информации\Lab1\obj\Debug\lab1_MarkupCompile.cache
+H:\Теория информации\Lab1\obj\Debug\lab1_MarkupCompile.lref
+H:\Теория информации\Lab1\obj\Debug\lab1.exe
+H:\Теория информации\Lab1\obj\Debug\lab1.pdb
+H:\Теория информации\Lab1\bin\Debug\lab1.exe.config
+H:\Теория информации\Lab1\bin\Debug\lab1.exe
+H:\Теория информации\Lab1\bin\Debug\lab1.pdb
+H:\Теория информации\Lab1\obj\Debug\MainWindow.baml
+H:\Теория информации\Lab1\obj\Debug\lab1.g.resources
+H:\Теория информации\Lab1\obj\Debug\lab1.Properties.Resources.resources
+H:\Теория информации\Lab1\obj\Debug\lab1.csproj.GenerateResource.cache
+H:\Теория информации\Lab1\obj\Debug\lab1.csproj.CoreCompileInputs.cache
+G:\Теория информации\Lab1\bin\Debug\lab1.exe.config
+G:\Теория информации\Lab1\bin\Debug\lab1.exe
+G:\Теория информации\Lab1\bin\Debug\lab1.pdb
+G:\Теория информации\Lab1\obj\Debug\lab1.csproj.AssemblyReference.cache
+G:\Теория информации\Lab1\obj\Debug\MainWindow.g.cs
+G:\Теория информации\Lab1\obj\Debug\App.g.cs
+G:\Теория информации\Lab1\obj\Debug\lab1_MarkupCompile.cache
+G:\Теория информации\Lab1\obj\Debug\lab1_MarkupCompile.lref
+G:\Теория информации\Lab1\obj\Debug\MainWindow.baml
+G:\Теория информации\Lab1\obj\Debug\lab1.g.resources
+G:\Теория информации\Lab1\obj\Debug\lab1.Properties.Resources.resources
+G:\Теория информации\Lab1\obj\Debug\lab1.csproj.GenerateResource.cache
+G:\Теория информации\Lab1\obj\Debug\lab1.csproj.CoreCompileInputs.cache
+G:\Теория информации\Lab1\obj\Debug\lab1.exe
+G:\Теория информации\Lab1\obj\Debug\lab1.pdb
+D:\Теория информации\Lab1\bin\Debug\lab1.exe.config
+D:\Теория информации\Lab1\bin\Debug\lab1.exe
+D:\Теория информации\Lab1\bin\Debug\lab1.pdb
+D:\Теория информации\Lab1\obj\Debug\lab1.csproj.AssemblyReference.cache
+D:\Теория информации\Lab1\obj\Debug\MainWindow.g.cs
+D:\Теория информации\Lab1\obj\Debug\App.g.cs
+D:\Теория информации\Lab1\obj\Debug\lab1_MarkupCompile.cache
+D:\Теория информации\Lab1\obj\Debug\lab1_MarkupCompile.lref
+D:\Теория информации\Lab1\obj\Debug\MainWindow.baml
+D:\Теория информации\Lab1\obj\Debug\lab1.g.resources
+D:\Теория информации\Lab1\obj\Debug\lab1.Properties.Resources.resources
+D:\Теория информации\Lab1\obj\Debug\lab1.csproj.GenerateResource.cache
+D:\Теория информации\Lab1\obj\Debug\lab1.csproj.CoreCompileInputs.cache
+D:\Теория информации\Lab1\obj\Debug\lab1.exe
+D:\Теория информации\Lab1\obj\Debug\lab1.pdb

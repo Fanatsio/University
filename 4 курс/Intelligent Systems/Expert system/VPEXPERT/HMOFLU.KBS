@@ -1,0 +1,56 @@
+ACTIONS
+    WOPEN 1,1,1,20,77,3
+    ACTIVE 1
+    DISPLAY    "
+          ** WELCOME TO THE HMO SERVICE FLU SCREENING ASSISTANT **
+
+          Please indicate the patient's symptom, press the HOME key,
+          then enter a two-digit distress level factor.  Complete the
+          entry by pressing the ENTER and ARROW keys. Repeat the process
+          until all of the patient's symptoms are accounted for.  Press
+          the END key when finished to continue the consultation.
+
+             This example demonstrates use of the SORT keyword.
+
+                      PRESS ANY KEY TO CONTINUE~
+"
+ WCLOSE 1
+ FIND symptom
+ SORT symptom                                 !SORT is used to organize
+ FIND temp                                    !a variable in descending
+ FIND condition                               !CNF order
+ DISPLAY "The patient's body temperature is {#temp}."  !The # symbol is used to
+ DISPLAY "Initial diagnosis: {#condition}."            !display/print a CNF level
+;
+RULE 1
+     IF temp = over_98.6_degrees AND
+        symptom = sore_throat OR
+        symptom = stomach_ache OR
+        symptom = headache OR
+        symptom = nausea OR
+        symptom = severe_cough OR
+        symptom = G_I_discomfort
+     THEN condition = Serious
+     DISPLAY "{#symptom}.";
+
+RULE 2
+     IF temp = over_100_degrees AND
+          symptom = sore_throat OR
+          symptom = stomache_ache OR
+          symptom = headache OR
+          symptom = nausea OR
+          symptom = severe_cough OR
+          symptom = G_I_discomfort
+     THEN condition = Very_serious
+     DISPLAY "{#symptom}.";
+
+ASK temp: "What is the body temperature of the patient?";
+CHOICES temp: over_98.6_degrees, over_100_degrees;
+
+ASK symptom: "What are the patient's symptoms? (rate distress level
+              on a scale of 0 to 100)";
+CHOICES symptom: sore_throat, stomach_ache, headache, nausea,
+                  severe_cough, G_I_discomfort;
+
+PLURAL: symptom;
+

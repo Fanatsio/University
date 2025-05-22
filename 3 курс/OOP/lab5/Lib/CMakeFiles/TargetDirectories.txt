@@ -1,0 +1,3 @@
+/mnt/c/Users/maxam/Документы/Lab55/Lib/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/maxam/Документы/Lab55/Lib/CMakeFiles/edit_cache.dir
+/mnt/c/Users/maxam/Документы/Lab55/Lib/CMakeFiles/IntegralLib.dir

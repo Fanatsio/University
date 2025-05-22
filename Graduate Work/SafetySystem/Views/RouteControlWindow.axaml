@@ -1,0 +1,17 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="SafetySystem.Views.RouteControlWindow"
+        Title="Контроль точек" Width="800" Height="600">
+    <StackPanel Margin="20">
+        <TextBlock Text="Маршрут сотрудников" FontSize="20" HorizontalAlignment="Center"/>
+        
+        <DataGrid Name="RouteDataGrid" Width="750" Height="400">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Сотрудник" />
+                <DataGridTextColumn Header="Точка" />
+                <DataGridTextColumn Header="Время" />
+                <DataGridTextColumn Header="Статус" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+</Window>

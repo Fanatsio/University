@@ -1,0 +1,199 @@
+! JUVENILE DELINQUENT DIAGNOSTIC ASSESSMENT
+! Saved as DIAGASMT.KBS
+!Microcomputer Used:      Wang Microsystems PC 382
+!Software Used:           VP-Expert, Educational Version 2.02
+!KBS File Name:           DIAGASMT.KBS
+!Temporary File Access:   TEMP3
+!Chained to:              DISP.KBS
+!**************************************************************************
+EXECUTE;                        !starts consultation immediately
+bkcolor = 3;                    !set screen background color to light blue
+runtime;                        !removes consultation windows at runtime
+endoff;                         !eliminate need to press END after a choice
+!=============================== Actions Block ============================
+actions
+     wopen 1,1,1,20,77,3
+     active 1
+     display "
+
+                    DIAGNOSTIC ASSESSMENT EVALUATION
+
+     This section of the consultation evaluates the current physical,
+   emotional, and mental stability of the juvenile, as well as examines
+   possible involvement with drugs and/or alcohol. It also determines to
+   what extent, based on a clinical assessment, external factors have
+   contributed to the offense. 
+
+
+
+
+
+     PLEASE PRESS ANY KEY TO BEGIN THE DIAGNOSTIC ASSESSMENT EVALUATION~
+       "
+     wclose 1                   !remove window 1
+     wopen 1,1,1,5,77,2         !define instructions window 1
+     active 1                   !activate window 1
+     display "                           INSTRUCTIONS
+          Use the arrow keys to move the lightbar to a desired
+          answer choice then press the Enter key."
+     wopen 2,7,1,14,77,3        !define consultation window 2
+     active 2                   !activate window 2
+     find diag_assmt
+     find word1
+     find word2
+     wclose 1                   !remove window 1
+     wclose 2                   !remove window 2
+     wopen 1,1,1,18,77,2
+     active 1
+     display "
+        Based on the responses, the Diagnostic Assessment is {diag_assmt}
+        because:
+
+          1.   the current psychological evaluation of the respondent
+                 has been determined to be {current_psych};
+          2.   {mtl_phys}, the respondent {word1} possess noticeable
+                 mental disabilities and signs of physical abuse;
+          3.   {drug_use}, the respondent {word2} currently invloved
+                 with drugs/alcohol;
+          4.   based on the clinical assessment, external factors have,
+                 to a {ext_factors}, contributed to the offense(s)
+                 committed by the respondent.                                
+
+
+         PRESS ANY KEY TO GO ON TO THE DISPOSITION DETERMINATION~
+            "
+     wclose 1
+     SAVEFACTS temp3            !save all variable names and values in a
+                                !temporary text file called TEMP3
+     CHAIN disp                 !link to another .KBS file called DISP
+;
+!=============================== Rules Block ==============================
+RULE 1B
+     IF current_psych = good AND
+     mtl_phys = yes AND drug_use = yes
+     AND ext_factors = great_extent
+     THEN diag_assmt = POOR;
+
+RULE 2B
+     IF current_psych = good AND
+     mtl_phys = yes AND drug_use = yes
+     AND ext_factors = little_extent
+     THEN diag_assmt = FAIR;
+
+RULE 3B
+     IF current_psych = good AND
+     mtl_phys = yes AND drug_use = no
+     AND ext_factors = great_extent
+     THEN diag_assmt = FAIR;
+
+RULE 4B
+     IF current_psych = good AND
+     mtl_phys = yes AND drug_use = no
+     AND ext_factors = little_extent
+     THEN diag_assmt = GOOD;
+
+rule 5B
+     IF current_psych = good AND
+     mtl_phys = no AND drug_use = yes
+     AND ext_factors = great_extent
+     THEN diag_assmt = FAIR;
+
+rule 6B
+     if current_psych = good AND
+     mtl_phys = no AND drug_use = yes
+     AND ext_factors = little_extent
+     THEN diag_assmt = GOOD;
+
+RULE 7B
+     if current_psych = good AND
+     mtl_phys = no AND drug_use = no
+     AND ext_factors = great_extent
+     THEN diag_assmt = GOOD;
+
+rule 8B
+     if current_psych = good AND
+     mtl_phys = no AND drug_use = no
+     AND ext_factors = little_extent
+     THEN diag_assmt = GOOD;
+
+RULE 9B
+     if current_psych = poor AND
+     mtl_phys = yes AND drug_use = yes
+     AND ext_factors = great_extent
+     THEN diag_assmt = POOR;
+
+RULE 10B
+     if current_psych = poor AND
+     mtl_phys = yes AND drug_use = yes
+     AND ext_factors = little_extent
+     THEN diag_assmt = POOR;
+
+RULE 11B
+     if current_psych = poor AND
+     mtl_phys = yes AND drug_use = no
+     AND ext_factors = great_extent
+     THEN diag_assmt = POOR;
+
+RULE 12B
+     if current_psych = poor AND
+     mtl_phys = yes AND drug_use = no
+     AND ext_factors = little_extent
+     THEN diag_assmt = FAIR;
+
+RULE 13B
+     if current_psych = poor AND
+     mtl_phys = no AND drug_use = yes
+     AND ext_factors = great_extent
+     THEN diag_assmt = POOR;
+
+RULE 14B
+     if current_psych = poor AND
+     mtl_phys = no AND drug_use = yes
+     AND ext_factors = little_extent
+     THEN diag_assmt = FAIR;
+
+RULE 15B
+     if current_psych = poor AND
+     mtl_phys = no AND drug_use = no
+     AND ext_factors = great_extent
+     THEN diag_assmt = FAIR;
+
+RULE 16B
+     if current_psych = poor AND
+     mtl_phys = no AND drug_use = no
+     AND ext_factors = little_extent
+     THEN diag_assmt = GOOD;
+
+RULE WORD1A
+     if mtl_phys = yes
+     then word1 = does;
+
+RULE WORD1B
+     if mtl_phys = no
+     then word1 = does_not;
+
+RULE WORD2A
+     if drug_use = yes
+     then word2 = is;
+
+RULE WORD2B
+     if drug_use = no
+     then word2 = is_not;
+
+!================================ Questions Block =========================
+ask current_psych: "Based on current psychiatric reports, what is the
+evaluation of the repondent's psychological condition?";
+choices current_psych: good, poor;
+
+ask mtl_phys: "Does the respondent exhibit any noticeable mental
+disability(s) or signs of physical abuse?";
+choices mtl_phys: yes, no;
+
+ask drug_use: "Is the respondent currently involved with drugs/alcohol?";
+choices drug_use: yes, no;
+
+ask ext_factors: "To what extent, based on the clinical assessment,
+have external factors contributed to or caused the offense(s) the
+respondent has committed?";
+choices ext_factors: great_extent, little_extent;
+

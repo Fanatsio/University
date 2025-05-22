@@ -1,0 +1,440 @@
+!**************************************************************************
+! Developed by: Denise Donovan and Maria Aguilar                          *
+! Microcomputer Used: Advanced XT                                         *
+! Software Used:      VP-Expert, Educational Version 2.02                 *
+! KBS Files Used:     NFF.KBS - There are no other files currently used.  *
+!**************************************************************************
+EXECUTE;
+BKCOLOR = 1;
+RUNTIME;
+ENDOFF;
+
+
+!*************** ACTION BLOCK *************************
+ACTIONS
+    WOPEN 1,0,0,23,79,1
+    ACTIVE 1
+    DISPLAY "
+
+
+
+                *** NONPROFIT ORGANIZATION LOAN ADVISOR ***
+                             Prototype Version
+
+               Developed by Denise Donovan and Maria Aguilar
+                   under the direction and supervision of
+                             Dr. D.G. Dologite
+                      For further information, contact
+                             Dr. D.G. Dologite
+                          c/o Macmillan Publishing
+
+
+                      PLEASE PRESS ANY KEY TO CONTINUE~"
+    WCLOSE 1
+    WOPEN 2,0,0,23,79,1
+    ACTIVE 2
+    DISPLAY "
+          Welcome to the Nonprofit Organization Loan Advisor
+
+
+      This system is designed to help a loan associate from the
+      Nonprofit Facilities Fund to evaluate loan applications.  
+      Specifically, it helps the associate to evaluate the
+      qualitative, or non-financial, aspects of a loan application.
+
+      Several questions are asked during the consultation regarding
+      key decision factors.  The responses to these questions
+      determine the final recommendation.
+
+
+                PLEASE PRESS ANY KEY TO BEGIN CONSULTATION~"
+    WCLOSE 2
+    WOPEN 3,0,0,6,79,1
+    ACTIVE 3
+    DISPLAY
+"                     Nonprofit Organization Loan Advisor
+
+    Instructions:  Use the arrow keys to highlight the desired response,
+                   then press the ENTER key."
+
+    WOPEN 4,7,0,15,79,1
+    ACTIVE 4
+    FIND rec
+    WCLOSE 4
+    WCLOSE 3
+    WOPEN 5,0,0,23,79,1
+    ACTIVE 5
+    DISPLAY
+ "
+                The recommendation for the loan application is:
+
+                         {rec}.
+
+
+          This recommendation was determined by the combined evaluation
+                 of the critical factors.  They are as follows:
+
+                        Management Stability - {STABILITY}
+
+                Board of Directors and their Affiliations - {BOARD}
+
+                            Program History - {PROGRAM}
+
+
+           Thank you for using the NONPROFIT ORGANIZATION LOAN ADVISOR.
+
+                   PLEASE PRESS ANY KEY TO CONCLUDE CONSULTATION~"
+    WCLOSE 5
+
+;
+
+!*************** Rules Block for Final Recommendation***
+!*************** STABILITY = STRONG *************************
+RULE 1
+IF STABILITY = STRONG AND
+   BOARD     = STRONG AND
+   PROGRAM   = STRONG OR
+   PROGRAM   = FAIR
+THEN REC = APPROVE_LOAN_WITHOUT_COLLATERAL;
+
+RULE 2
+IF STABILITY = STRONG AND
+   BOARD     = STRONG AND
+   PROGRAM   = WEAK
+THEN REC = SUBMIT_ADDITIONAL_INFORMATION;
+
+RULE 3
+IF STABILITY = STRONG AND
+   BOARD     = FAIR AND
+   PROGRAM   = STRONG
+THEN REC = APPROVE_LOAN_WITHOUT_COLLATERAL;
+
+RULE 4
+IF STABILITY = STRONG AND
+   BOARD     = FAIR AND
+   PROGRAM   = FAIR
+THEN REC = APPROVE_LOAN_WITH_COLLATERAL;
+
+RULE 5
+IF STABILITY = STRONG AND
+   BOARD     = FAIR AND
+   PROGRAM   = WEAK
+THEN REC = SUBMIT_ADDITIONAL_INFORMATION;
+
+RULE 6
+IF STABILITY = STRONG AND
+   BOARD     = WEAK AND
+   PROGRAM   = STRONG OR
+   PROGRAM   = FAIR
+THEN REC = APPROVE_LOAN_WITH_COLLATERAL;
+
+RULE 7
+IF STABILITY = STRONG AND
+   BOARD     = WEAK AND
+   PROGRAM   = WEAK
+THEN REC = SUBMIT_ADDITIONAL_INFORMATION;
+
+!*************** STABILITY = FAIR *************************
+RULE 8
+IF STABILITY = FAIR AND
+   BOARD     = STRONG AND
+   PROGRAM   = STRONG
+THEN REC = APPROVE_LOAN_WITH_COLLATERAL;
+
+RULE 9
+IF STABILITY = FAIR AND
+   BOARD     = STRONG AND
+   PROGRAM   = FAIR
+THEN REC = SUBMIT_ADDITIONAL_INFORMATION;
+
+RULE 10
+IF STABILITY = FAIR AND
+   BOARD     = STRONG AND
+   PROGRAM   = WEAK
+THEN REC = REJECT_LOAN_APPLICATION;
+
+RULE 11
+IF STABILITY = FAIR AND
+   BOARD     = FAIR AND
+   PROGRAM   = STRONG OR
+   PROGRAM   = FAIR
+THEN REC = SUBMIT_ADDITIONAL_INFORMATION;
+
+RULE 12
+IF STABILITY = FAIR AND
+   BOARD     = FAIR AND
+   PROGRAM   = WEAK
+THEN REC = REJECT_LOAN_APPLICATION;
+
+RULE 13
+IF STABILITY = FAIR AND
+   BOARD     = WEAK AND
+   PROGRAM   = STRONG
+THEN REC = SUBMIT_ADDITIONAL_INFORMATION;
+
+RULE 14
+IF STABILITY = FAIR AND
+   BOARD     = WEAK AND
+   PROGRAM   = FAIR OR
+   PROGRAM   = WEAK
+THEN REC = REJECT_LOAN_APPLICATION;
+
+!*************** STABILITY = WEAK ****************************
+RULE 15
+IF STABILITY = WEAK AND
+   BOARD     = STRONG AND
+   PROGRAM   = STRONG
+THEN REC = SUBMIT_ADDITIONAL_INFORMATION;
+
+RULE 16
+IF STABILITY = WEAK AND
+   BOARD     = STRONG AND
+   PROGRAM   = FAIR OR
+   PROGRAM   = WEAK
+THEN REC = REJECT_LOAN_APPLICATION;
+
+RULE 17
+IF STABILITY = WEAK AND
+   BOARD     = FAIR OR
+   BOARD     = WEAK
+THEN REC = REJECT_LOAN_APPLICATION;
+
+!*************** FOR SECOND DECISION TABLE **************
+!*************** ED.'S SERVICE = H **********************
+
+RULE 18
+IF EDSERV  = More_than_5_Years AND
+   CFOSERV = 2_to_5_Years OR
+   CFOSERV = More_than_5_Years
+THEN STABILITY = STRONG
+BECAUSE
+"
+Strong management stability is a leading indicator of credit worthiness.";
+
+
+RULE 19
+IF EDSERV  = More_than_5_Years AND
+   CFOSERV = Less_than_2_Years
+THEN STABILITY = FAIR
+BECAUSE
+"
+Strong management stability is a leading indicator of credit worthiness.";
+
+!*************** ED.'S SERVICE = M **********************
+
+RULE 20
+IF EDSERV  = 2_to_5_Years AND
+   CFOSERV = More_than_5_Years
+THEN STABILITY = STRONG
+BECAUSE
+"
+Strong management stability is a leading indicator of credit worthiness.";
+
+RULE 21
+IF EDSERV  = 2_to_5_Years AND
+   CFOSERV = Less_than_2_Years OR
+   CFOSERV = 2_to_5_Years
+THEN STABILITY = FAIR
+BECAUSE
+"
+Strong management stability is a leading indicator of credit worthiness.";
+
+!*************** ED.'S SERVICE = L **********************
+
+RULE 22
+IF EDSERV  = Less_than_2_Years AND
+   CFOSERV = More_than_5_Years
+THEN STABILITY = FAIR
+BECAUSE
+"
+Strong management stability is a leading indicator of credit worthiness.";
+
+RULE 23
+IF EDSERV  = Less_than_2_Years AND
+   CFOSERV = Less_than_2_Years OR
+   CFOSERV = 2_to_5_Years
+THEN STABILITY = WEAK
+BECAUSE
+"
+Strong management stability is a leading indicator of credit worthiness.";
+
+
+!*************** FOR THIRD DECISION TABLE ***************
+!*************** BD.'S EXPER. = YES *********************
+
+RULE 24
+IF BDEXP = YES AND
+   BDINV = HIGH
+THEN BOARD = STRONG
+BECAUSE
+"
+The organization's leadership is responsible for it's financial obligations.";
+
+RULE 25
+IF BDEXP = YES AND
+   BDINV = MODERATE AND
+   BDGRN = YES
+THEN BOARD = STRONG
+BECAUSE
+"
+The organization's leadership is responsible for it's financial obligations.";
+
+RULE 26
+IF BDEXP = YES AND
+   BDINV = MODERATE AND
+   BDGRN = NO
+THEN BOARD = FAIR
+BECAUSE
+"
+The organization's leadership is responsible for it's financial obligations.";
+
+RULE 27
+IF BDEXP = YES AND
+   BDINV = LOW AND
+   BDGRN = YES
+THEN BOARD = STRONG
+BECAUSE
+"
+The organization's leadership is responsible for it's financial obligations.";
+
+RULE 28
+IF BDEXP = YES AND
+   BDINV = LOW AND
+   BDGRN = NO
+THEN BOARD = FAIR
+BECAUSE
+"
+The organization's leadership is responsible for it's financial obligations.";
+
+!*************** BD.'S EXPER. = NO **********************
+
+RULE 29
+IF BDEXP = NO AND
+   BDINV = HIGH AND
+   BDGRN = YES
+THEN BOARD = FAIR
+BECAUSE
+"
+The organization's leadership is responsible for it's financial obligations.";
+
+RULE 30
+IF BDEXP = NO AND
+   BDINV = HIGH AND
+   BDGRN = NO
+THEN BOARD = WEAK
+BECAUSE
+"
+The organization's leadership is responsible for it's financial obligations.";
+
+RULE 31
+IF BDEXP = NO AND
+   BDINV = MODERATE AND
+   BDGRN = YES
+THEN BOARD = FAIR
+BECAUSE
+"
+The organization's leadership is responsible for it's financial obligations.";
+
+RULE 32
+IF BDEXP = NO AND
+   BDINV = MODERATE AND
+   BDGRN = NO
+THEN BOARD = WEAK
+BECAUSE
+"
+The organization's leadership is responsible for it's financial obligations.";
+
+RULE 33
+IF BDEXP = NO AND
+   BDINV = LOW AND
+   BDGRN = YES
+THEN BOARD = FAIR
+BECAUSE
+"
+The organization's leadership is responsible for it's financial obligations.";
+
+RULE 34
+IF BDEXP = NO AND
+   BDINV = LOW AND
+   BDGRN = NO
+THEN BOARD = WEAK
+BECAUSE
+"
+The organization's leadership is responsible for it's financial obligations.";
+
+!*************** FOR FOURTH DECISION TABLE **************
+!*************** NEW PROGRAM ****************************
+
+RULE 35
+IF PGM = NEW AND
+   SIMEXP  = YES
+THEN PROGRAM = STRONG
+BECAUSE
+"
+Past experience is a key indicator of future success.";
+
+RULE 36
+IF PGM = NEW AND
+   SIMEXP  = NO
+THEN PROGRAM = FAIR
+BECAUSE
+"
+Past experience is a key indicator of future success.";
+!*************** EXIST PROGRAM **************************
+
+RULE 37
+IF PGM   = EXISTING AND
+   LEXP  = More_than_5_Years
+THEN PROGRAM = STRONG
+BECAUSE
+"
+Past experience is a key indicator of future success.";
+
+RULE 38
+IF PGM   = EXISTING AND
+   LEXP  = 2_to_5_Years
+THEN PROGRAM = FAIR
+BECAUSE
+"
+Past experience is a key indicator of future success.";
+
+RULE 39
+IF PGM   = EXISTING AND
+   LEXP  = Less_than_2_Years
+THEN PROGRAM = WEAK
+BECAUSE
+"
+Past experience is a key indicator of future success.";
+
+
+!*************** QUESTIONS *********************************
+ASK EDSERV:"How long has the Executive Director worked in this field?";
+CHOICES EDSERV: Less_than_2_Years, 2_to_5_Years, More_than_5_Years ;
+
+ASK CFOSERV:"How long has the Chief Financial Officer worked with the
+organization?";
+CHOICES CFOSERV: Less_than_2_Years, 2_to_5_Years, More_than_5_Years ;
+
+ASK BDEXP:"Are the majority of Board members experienced with the type of
+service the organization provides?";
+CHOICES BDEXP: Yes, No;
+
+ASK BDINV:"What is the degree of the Board members' involvement with the
+organization's operations?";
+CHOICES BDINV: Low, Moderate, High;
+
+ASK BDGRN:"Are any of the Board members willing to personally guarantee the
+loan?";
+CHOICES BDGRN: Yes, No;
+
+ASK PGM:"Is the project meant to cover a new program area or to expand an
+existing one?";
+CHOICES PGM: New, Existing;
+
+ASK SIMEXP:"If this is a new program, does the applicant have any similar
+experience?"; CHOICES SIMEXP: Yes, No;
+
+ASK LEXP:"If it will expand an existing program, how long has the organization
+been involved in this area or a similar one?";
+CHOICES LEXP: Less_than_2_Years, 2_to_5_Years, More_than_5_Years ;
+

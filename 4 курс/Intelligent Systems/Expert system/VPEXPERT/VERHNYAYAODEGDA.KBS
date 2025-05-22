@@ -1,0 +1,273 @@
+ENDOFF;
+RUNTIME;
+
+! ACTIONS BLOCK
+ACTIONS
+WOPEN 1,0,0,23,79,2
+ACTIVE 1
+DISPLAY "
+
+
+
+
+
+
+
+
+
+                         Vibor mushskoi verhnei odeshdi 
+                          Vipolnil(a): Tretyakova Arina
+                                 Gr: 606-72
+
+
+
+
+
+
+
+
+
+                           Press any key to continue~"
+
+WCLOSE 1
+
+   DISPLAY " Welcome to the men's clothing selection system!"
+   FIND RECO
+   DISPLAY " I recommend you: {RECO}";
+
+
+RULE 1
+IF       ZAST = MOLNIYA
+THEN     MOLNIYAK = OK;
+
+RULE 2
+IF       ZAST = PUGOVICI
+THEN     PUGOVICIK = OK;
+
+RULE 3
+IF       ZAST = KNOPKI
+THEN     KNOPKIK = OK;
+
+RULE 4
+IF       ZAST = MOLNIYA_NAISKOS
+THEN     MOLNIYA_NAISKOSK = OK;
+
+RULE 5
+IF       KAP = S_MEHOM
+THEN     S_MEHOMK = OK;
+
+RULE 6
+IF       KAP = BEZ_MEHA
+THEN     BEZ_MEHAK = OK;
+
+RULE 7
+IF       KAP = BEZ_KAPYUSHONA
+THEN     BEZ_KAPYUSHONAK = OK;
+
+RULE 8
+IF       DLINA = DO_KOLEN
+THEN     DO_KOLENK = OK;
+
+RULE 9
+IF       DLINA = PO_POYAS
+THEN     PO_POYASK = OK;
+
+RULE 10
+IF       DLINA = NIZHE_POYASA
+THEN     NIZHE_POYASAK = OK;
+
+RULE 11
+IF       MATERIAL = POLIESTER
+THEN     POLIESTERK = OK;
+
+RULE 12
+IF       MATERIAL = CUTTON
+THEN     CUTTONK = OK;
+
+RULE 13
+IF       MATERIAL = DENIM
+THEN     DENIMK = OK;
+
+RULE 14
+IF       MATERIAL = LEATHER
+THEN     LEATHERK = OK;
+
+RULE 15
+IF       MATERIAL = DRAPE
+THEN     DRAPEK = OK;
+
+RULE 16
+IF       MATERIAL = TWILL
+THEN     TWILLK = OK;
+
+RULE 17
+IF       MATERIAL = SHEEPSKIN
+THEN     SHEEPSKINK = OK;
+
+RULE 18
+IF       MATERIAL = FUR
+THEN     FURK = OK;
+
+RULE 19
+IF       MATERIAL = FLUFF
+THEN     FLUFFK = OK;
+
+RULE 20
+IF       MATERIAL = PLASCHEVKA
+THEN     PLASCHEVKAK = OK;
+
+RULE 21
+IF       SEASON = SUMMER
+THEN     SUMMERK = OK;
+
+RULE 22
+IF       SEASON = DEMISEASON
+THEN     DEMISEASONK = OK;
+
+RULE 23
+IF       SEASON = WINTER
+THEN     WINTERK = OK;
+
+RULE 24
+IF       POCKET = ONE
+THEN     ONEK = OK;
+
+RULE 25
+IF       POCKET = COUPLE
+THEN     COUPLEK = OK;
+
+RULE 26
+IF       POCKET = NONE
+THEN     NONEK = OK;
+
+RULE 40
+IF       MOLNIYAK = OK
+	 AND KAP = BEZ_MEHA			 
+THEN     MOL1 = OK;
+
+RULE 41
+IF       MOLNIYAK = OK
+	 AND KAP = BEZ_MEHA
+         AND POCKETM = ONE			 
+THEN     RECO = ANORAK;
+
+RULE 42
+IF       MOLNIYAK = OK
+	 AND KAP = BEZ_MEHA
+         AND POCKETM = COUPLE
+THEN     RECO = VETROVKA;
+
+RULE 43
+IF       MOLNIYAK = OK
+	 AND KAP = S_MEHOM			 
+THEN     MOL2 = OK;
+
+RULE 44
+IF       MOLNIYAK = OK
+	 AND KAP = S_MEHOM
+         AND MATERIALM = TWILL
+THEN     RECO = PARKA;
+
+RULE 45
+IF       MOLNIYAK = OK
+	 AND KAP = S_MEHOM
+         AND MATERIALM = FLUFF
+THEN     RECO = PUXOVIK;
+
+RULE 46
+IF       MOLNIYAK = OK
+	 AND KAP = BEZ_KAPYUSHONA			 
+THEN     MOL3 = OK;
+
+RULE 47
+IF       MOLNIYAK = OK
+	 AND KAP = BEZ_KAPYUSHONA
+         AND MATERIALP = LEATHER
+THEN     RECO = KOZHANAYA_KURTKA;
+
+RULE 48
+IF       MOLNIYAK = OK
+	 AND KAP = BEZ_KAPYUSHONA
+         AND MATERIALP = POLIESTER
+THEN     RECO = ZHILET;
+
+RULE 49
+IF       KNOPKIK = OK
+THEN     RECO = BOMBER;
+
+RULE 50
+IF       PUGOVICIK = OK
+	 AND DLINA = NIZHE_POYASA			 
+THEN     MOL4 = OK;
+
+RULE 51
+IF       PUGOVICIK = OK
+	 AND DLINA = PO_POYAS
+THEN     RECO = DJINSOVAYA_KURTKA;
+
+RULE 52
+IF       PUGOVICIK = OK
+	 AND DLINA = DO_KOLEN			 
+THEN     MOL4 = OK;
+
+RULE 54
+IF       PUGOVICIK = OK
+	 AND DO_KOLENK = OK
+         AND SEASON = DEMISEASON
+THEN     RECO = PLASCH;
+
+RULE 55
+IF       PUGOVICIK = OK
+	 AND DO_KOLENK = OK
+         AND SEASON = WINTER
+THEN     RECO = SHUBA;
+
+RULE 57
+IF       PUGOVICIK = OK
+	 AND DLINA = NIZHE_POYASA			 
+THEN     MOL4 = OK;
+
+RULE 58
+IF       PUGOVICIK = OK
+	 AND NIZHE_POYASAK = OK
+         AND SEASON = DEMISEASON
+THEN     RECO = PALTO;
+
+RULE 59
+IF       PUGOVICIK = OK
+	 AND NIZHE_POYASAK = OK
+         AND SEASON = WINTER
+THEN     RECO = DUBLYONKA;
+
+RULE 60
+IF       MOLNIYA_NAISKOSK = OK
+THEN     RECO = KOSUHA;
+
+!STATEMENTS BLOCK
+
+ASK ZAST: " Kakoi tip zasteshki Vas interesuet?";
+CHOICES ZAST: MOLNIYA,PUGOVICI,KNOPKI,MOLNIYA_NAISKOS;
+
+ASK KAP: " Kakoi kapyushon Vas interesuet?";
+CHOICES KAP: S_MEHOM,BEZ_MEHA,BEZ_KAPYUSHONA;
+
+ASK POCKETM: " Skolko karmanov Vas interesuet?";
+CHOICES POCKETM: ONE,COUPLE;
+
+ASK MATERIALM: " Iz kakogo materiala izdelie Vas interesuet?";
+CHOICES MATERIALM: TWILL,FLUFF;
+
+ASK MATERIALP: " Iz kakogo materiala izdelie Vas interesuet?";
+CHOICES MATERIALP: POLIESTER,LEATHER;
+
+ASK DLINA: " Kakoi dlini izdelie Vas interesuet?";
+CHOICES DLINA: DO_KOLEN,PO_POYAS,NIZHE_POYASA;
+
+ASK SEASON: " Izdelie dlya kakogo sezona Vas interesuet?";
+CHOICES SEASON: DEMISEASON,WINTER;
+
+
+
+
+
+

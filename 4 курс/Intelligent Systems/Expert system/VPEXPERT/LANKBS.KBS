@@ -1,0 +1,217 @@
+! System name: Local-Area Network Client Screening Advisor
+! Description: This expert system helps  non-technicians make
+!              local-area network  analyst  assignments based
+!              on  information  from   telephone  calls  with
+!              potential clients.
+! Microcomputer used:  IBM PC compatible
+! Saved file name:  LANKBS.KBS
+RUNTIME;
+ENDOFF;
+ACTIONS
+WOPEN 1,1,1,20,77,3
+ACTIVE 1
+DISPLAY "
+
+                  LOCAL-AREA NETWORK CLIENT SCREENING ADVISOR
+
+                        Developed by Anthony Cantarella
+                     under the direction and supervision of
+                               Dr. D.G. Dologite
+                        For further information, contact
+                               Dr. D.G. Dologite
+                            c/o Macmillan Publishing
+
+
+                    Press any key to begin the consultation~
+"
+wclose 1
+DISPLAY "This program will choose the level of
+analyst to assign to this project.
+  "
+
+
+
+FIND Analyst_Level
+
+DISPLAY "Send someone whose level is: {Analyst_Level}.~";
+
+
+Rule 1
+If Budget = Low
+   and Org_Size = Small
+    or Org_Size = Middle
+Then Analyst_Level = Trainee;
+
+Rule 2
+If Budget = Low
+   and Org_Size = Large
+   and Cost = OK
+    or Cost = In_range
+Then Analyst_Level = Experienced;
+
+Rule 3
+If Budget = Low
+   and Org_Size = Large
+   and Cost = Too_high
+Then Analyst_Level = Trainee;
+
+Rule 4
+If Budget = Low
+   and Org_Size = Very_large
+Then Analyst_Level = Experienced;
+
+Rule 5
+If Budget = Medium
+   and Org_Size = Small
+   and Cost = OK
+    or Cost = In_range
+Then Analyst_Level = Experienced;
+
+Rule 6
+If Budget = Medium
+   and Org_Size = Small
+   and Cost = Too_high
+Then Analyst_Level = Trainee;
+
+Rule 7
+If Budget = Medium
+   and Org_Size = Middle
+    or Org_Size = Large
+Then Analyst_Level = Experienced;
+
+Rule 8
+If Budget = Medium
+   and Org_Size = Very_large
+   and Cost = OK
+Then Analyst_Level = Very_Experienced;
+
+Rule 9
+If Budget = Medium
+   and Org_Size = Very_large
+   and Cost = In_range
+    or Cost = Too_high
+Then Analyst_Level = Experienced;
+
+Rule 10
+If Budget = High
+   and Org_Size = Small
+   and Cost = OK
+Then Analyst_Level = Very_Experienced;
+
+Rule 11
+If Budget = High
+   and Org_Size = Small
+   and Cost = In_range
+    or Cost = Too_high
+Then Analyst_Level = Experienced;
+
+Rule 12
+If Budget = High
+   and Org_Size = Middle
+   and Cost = OK
+    or Cost = In_range
+Then Analyst_Level = Very_Experienced;
+
+Rule 13
+If Budget = High
+   and Org_Size = Middle
+   and Cost = Too_high
+Then Analyst_Level = Experienced;
+
+Rule 14
+If Budget = High
+   and Org_Size = Large
+    or Org_Size = Very_Large
+Then Analyst_Level = Very_Experienced;
+
+Rule 15
+If  Est_Budget < 10000
+Then Budget = Low;
+
+Rule 16
+If Est_Budget >=  10000
+   and Est_Budget <= 50000
+Then Budget = Medium;
+
+Rule 17
+If Est_Budget  > 50000
+Then Budget = High;
+
+Rule 18
+If Node_Number > 0
+   and Future_Number > -1
+Then Node_Cost =
+((Node_Number + Future_Number) *  600);
+
+Rule 19
+If Org_Size_Ques = Under_20
+Then Org_Size = Small;
+
+Rule 20
+If Org_Size_Ques = Under_100
+Then Org_Size = Middle;
+
+Rule 21
+If Org_Size_Ques = Under_500
+Then Org_Size = Large;
+
+Rule 22
+If Org_Size_Ques = Over_500
+Then Org_Size = Very_Large;
+
+Rule 23
+If Floors > 0
+Then Floor_Cost = (2000*Floors);
+
+Rule 24
+If Buildings > 0
+Then Building_Cost = (8000*Buildings);
+
+Rule 25
+If Node_Cost > 1
+   and Building_Cost > 1
+   and Floor_Cost > 1
+Then Cost_Est =
+(((Building_Cost +
+Floor_Cost +
+Node_Cost) * 1.15)
++ 2000)
+Cost_Index =
+(Cost_Est/Est_Budget);
+
+Rule 26
+If Cost_Index <= 1
+Then Cost = OK;
+
+Rule 27
+If Cost_Index > 1
+   and Cost_Index <= 1.5
+Then Cost = In_range;
+
+Rule 28
+If Cost_Index > 1.5
+Then Cost = Too_high;
+
+
+ASK Est_Budget: "What is your estimated
+budget for this project?";
+
+ASK Org_Size_Ques: "How many people work in your entire
+organization, not just this office or division?";
+Choices Org_Size_Ques:Under_20,Under_100,Under_500,Over_500;
+
+ASK Node_Number: "What is the number of microcomputers to be
+connected?";
+
+Ask Future_Number: "How many additional machines will be
+added to the network in the next 2 years?
+(Enter 0 for unknown)";
+
+ASK Floors: "How many total floors in all buildings
+will the network span?
+(Enter number [1 for each Bldg; 1 for unknown])";
+
+Ask Buildings: "How many different buildings will the
+network span ?
+(Enter number - 1 for unknown)";
+

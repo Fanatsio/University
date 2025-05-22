@@ -1,0 +1,166 @@
+! This sample knowledge base was written in response to the article
+! "Taxing the Expert System Shells" by Bill and Bev Thompson in the
+! June 1987 issue of AI Expert. The Thompsons compared writing an application
+! in four expert system shells. The example they used was the problem of
+! determining exceptions to the tax laws based on specifics about the
+! employee such as disability or relation to the employer.
+
+! Federal income tax is represented by the variable tax[1].
+! Social security tax is represented by the variable tax[2].
+! Federal unemployment tax is represented by the variable tax[3].
+
+RUNTIME;
+ACTIONS
+	COLOR = 0
+	DISPLAY
+"                          Employer's Tax Guide
+
+
+  This sample expert system will help you determine if special tax 
+  considerations should be made for your employees.
+
+  Press any key to continue.~"
+  
+	WOPEN 1,7,3,7,74,7
+	ACTIVE 1
+	FIND employee_type
+
+! In finding employee_type elements of the dimensioned variable tax have
+! been assigned the value "exempt" if the employee information satisfies
+! the conditions for exception to the appropriate tax law.
+	x = 0
+	WHILEKNOWN tax[x]          ! This loop examines each value in the
+	  x = (x + 1)              ! tax array.
+	  FIND check               ! < This FIND fires Rule 9, which assings
+	  RESET check              ! the value "not exempt" to any elements
+	END                        ! of tax that have not been assigned the
+                                   ! value "exempt."
+
+	FIND display_tax_advice;   ! Select the appropriate message based
+                                   ! upon the user's responses.
+
+! %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Rules %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+! The following rules do two things: a) assign values to employee_type and b)
+! assign "exempt" to the elements of the dimensioned variable tax.
+! Since employee_type is a plural variable the inference engine will fire as
+! many of these rules as it can to assign all possible values to employee_type.
+! This reflects the ability of VP-Expert to consider all applicable cases.
+
+RULE 0
+IF   employee = other
+THEN employee_type = other
+BECAUSE
+"It is necessary to know the type of employee in order to ascertain
+the need for special tax treatment.";
+
+RULE 1
+IF	employee = family_member
+AND	relationship = husband
+or	relationship = wife
+THEN 	employee_type = spouse
+	tax[2] = exempt
+	tax[3] = exempt
+BECAUSE
+"It is further necessary to describe the family relationship to
+accurately assign tax exceptions";
+
+RULE 2
+IF	employee = family_member
+AND	relationship = son
+or	relationship = daughter
+AND	age < 21
+THEN 	emloyee_type = family
+	tax[3] = exempt
+BECAUSE
+"Since the employee in question is a son or daughter, the age of
+the employee is required";
+
+RULE 3
+IF	employee = family_member
+AND	relationship = son
+or	relationship = daughter
+AND	age >= 21
+THEN 	employee_type = family;
+
+RULE 4
+IF	employee = family_member
+AND	relationship = other
+THEN	employee_type = relative;
+
+RULE 5
+IF	employee = deceased
+AND	same_year = yes
+THEN	employee_type = deceased
+	tax[1] = exempt
+BECAUSE "Tax exceptions are different for employees whose estates were paid
+the same year that they died";
+
+RULE 6
+IF	employee = deceased
+AND	same_year = no
+THEN	employee_type = deceased
+	tax[1] = exempt
+	tax[2] = exempt
+	tax[3] = exempt;
+
+RULE 7
+IF	employee = disabled
+AND	worked_during = yes
+THEN 	employee_type = disabled
+	tax[3] = exempt;
+
+RULE 8
+IF	employee = disabled
+AND	worked_during = no
+THEN	employee_type = disabled
+	tax[2] = exempt
+	tax[3] = exempt;
+
+! ...........................Other rules.....................................
+
+RULE 9
+IF	tax[x] = unknown
+AND	x <= 3
+THEN	check = tax
+	tax[x] = not_exempt
+ELSE	check = exempt;
+
+RULE 10
+IF	employee_type<>other
+THEN 	display_tax_advice = found
+	WOPEN 2,16,5,6,70,3
+	ACTIVE 2
+	COLOR = 0
+	DISPLAY
+	"          Income is {tax[1]} from federal income tax,
+          is {tax[2]} from social security tax,
+          and is {tax[3]} from federal unemployment tax.
+
+          (Press any key to conclude this consultation)~"
+ELSE display_tax_advice = not_available
+	WOPEN 3,18,8,5,64,1
+	ACTIVE 3
+	COLOR = 12
+	DISPLAY
+"Special exemptions are not available for this employee type.
+
+   (Press any key to conclude this consultation)~";
+
+! %%%%%%%%%%%%%%%%% Plural Declarations, Questions, Menus %%%%%%%%%%%%%%%%%%
+
+PLURAL: employee, employee_type;
+
+ASK employee: "Which of the following best describes the employee?";
+CHOICES employee: Family_member,Disabled,Deceased,Other;
+
+ASK relationship: "What is the employee's relationship to the employer?";
+CHOICES relationship: Husband,Wife,Daughter,Son,Other;
+
+ASK same_year: "Was the estate paid in the same year the employee died?";
+CHOICES same_year: Yes,No;
+
+ASK age: "How old is the employee?";
+
+ASK worked_during: "Did the employee work during disability?";
+CHOICES worked_during: Yes,No;

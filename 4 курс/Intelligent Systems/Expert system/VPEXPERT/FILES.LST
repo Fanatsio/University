@@ -1,0 +1,148 @@
+VP-Expert Program and Related Files
+
+          VPX.EXE            VP-Expert program module
+          VPX.MSG            External text file
+          VPXE.EXE           VP-Expert editor
+          VPXI.EXE           Induction module
+          VPXH.EXE           Trace tool for Hercules display
+          VPXT.EXE           Trace tool for CGA, EGA display
+          VPXHERC.COM        Graphic support file Hercules
+          EHLP.EXE           Editor help support file
+          INDEXER.COM        Showtext indexer
+          README.BAT         Batch file to display readme info.
+          README.CHP         README.TXT file in a compressed form
+          VPXHELP.EXE        Help system program
+          VPXHELP.CHP        Help system text file
+          FILES.LST          List of files in this list
+
+
+VP-Expert Knowledge Bases and Related Files
+in Part One: VP-Expert Tutorial
+
+          HMORUN.KBS         Chapter 2, Figure 2-15
+          HMO.KBS            Chapter 2, Figure 2-15
+          HMODB.KBS          Chapter 4, Figure 4-2
+          MEMBER.DBF         DBF file used in Chapters 4 and 6
+                             (Figures 4-1 and 6-1)
+          HMODB1.KBS         Chapter 4, Figure 4-8
+          HMODB1R.KBS        Chapter 4, Figure 4-8
+          HMOSS.KBS          Chapter 4, Figure 4-11
+          SSHMO.WKS          WKS file used in Chapter 4
+                             (Figure 4-10)
+          FINAL.TBL          TBL file used in Chapter 4
+                             (Figure 4-15)
+          HMOIND.KBS         Chapter 4, Figure 4-16
+          HMOCNF.KBS         Chapter 4, Figure 4-19
+          HMOUSER.KBS        Chapter 5, Figure 5-1
+          HMOADD1.KBS        Chapter 5, Figure 5-8
+          HMOADD2.KBS        Chapter 5, Figure 5-12
+          MODULE1.KBS        Chapter 5, Figure 5-15
+          MODULE2.KBS        Chapter 5, Figure 5-16
+          TEMPDATA           Temporary file created in Chapter 5
+                             (Figure 5-16)
+          HMODB1S.KBS        Chapter 6, Figure 6-1
+          SSHMO1.KBS         Chapter 6, Figure 6-2
+          SSHMO1.WKS         WKS file used in Chapter 6
+                             (Figure 6-2)
+          HMOFLU.KBS         Chapter 6, Figure 6-4
+          HMOFLU1.KBS        Chapter 6, Figure 6-5
+          HMOFLU2.KBS        Chapter 6, Figure 6-6
+          HMOFLU3.KBS        Chapter 6, Figure 6-7
+          HMODEMO.KBS        Chapter 6, Figure 6-10
+          SMARTFM.KBS        Chapter 6, Figure 6-12
+          CARPICT.KBS        Chapter 6, Figure 6-14
+          HYPTEXT.KBS        Chapter 6, Figure 6-15
+          INFO.TXT           Hypertext INFO text file used in
+                             Chapter 6 (Figure 6-15)
+          DOCTORS.KBS        Chapter 6, Figure 6-17
+          PATIENT            Chapter 6, Patient text file created
+                             by VP-Expert (and is deleted by
+                             RESET.BAT program)
+          PATIENT.NET        Chapter 6, Patient trained neural
+                             network
+          PATIENT.IN         Chapter 6, Service file for use by
+                             BANALOG.EXE (Neuroshell)
+          PATIENT.FIG        Chapter 6, Patient configuration file
+          BANALOG.EXE        Chapter 6, NeuroShell program module
+          NUROSHLL.BAT       Chapter 6, Batch program to smooth the
+                             transfer between VP-Expert and
+                             NeuroShell and also invokes the NeuroShell
+                             program BANALOG
+          RESET.BAT          Chapter 6, Batch program to delete
+                             files from old consultation before
+                             beginning a new one
+
+
+     VP-Expert and M.1 Knowledge Bases and
+     Related Files Used in Part One Exercises Only
+
+          M1PUB.EXE          M.1 program module (Chapter 1 exercies)
+          M1PUB.CFG          M.1 Program configuration file
+          START.BAT          Batch file to run M.1 consultation
+          READM1.TXT         Text file of M.1 information
+          TAT.KBS            Chapter 1, Exercise 1
+          WATER.DBF          Database file used with TAT.KBS
+          MOUNTAIN.DBF       Database file used with TAT.KBS
+          CITY.DBF           Database file used with TAT.KBS
+          M_CITY.DBF         Database file used with TAT.KBS
+          M_HOTEL.DBF        Database file used with TAT.KBS
+          AR_CITY.DBF        Database file used with TAT.KBS
+          AR_HOTEL.DBF       Database file used with TAT.KBS
+          TATDATA.DBF        Database file used with TAT.KBS
+          CAREER.KBS         Chapter 1, Exercise 2 (M.1 KBS)
+          RISK.KBS           Chapter 1, Exercise 3
+          KBS-EVAL.KBS       Chapter 1, Exercise 3 (M.1 KBS)
+          RISKEVAL.KBS       Chapter 1, Exercise 4 (M.1 KBS)
+          SCREEN.KBS         Chapter 1, Exercise 6 (M.1 KBS)
+          TAXGUIDE.KBS       Chapter 2, Exercise 2
+          DEPENDEN.KBS       Chapter 2, Exercise 3
+          DEPENDEN.KMP       KMP file for Chapter 2, Exercise 3
+          VPXRUN.EXE         VP-Expert Runtime program module used to
+                             run the KMP file
+          FORMDEMO.KBS       Chapter 6, Exercise 6
+          README.KBS         Chapter 6, Exercise 9
+          README.TXT         Hypertext README text file
+
+
+
+
+     VP-Expert Knowledge Bases and Related
+     Files Used by Part Two: Sample Prototype Systems
+
+     Chapter 8: Beginner-Level Systems
+          Local-Area Network Client Screening Advisor
+               LANKBS.KBS
+          College Major Advisor
+               MAJOR.KBS
+          Nonprofit Organization Loan Advisor
+               NFF.KBS
+          Job Applicant Screening Assistant
+               PROJECT1.KBS
+          Motorcycle Troubleshooting Advisor
+               BIKE.KBS
+
+     Chapter 9: Intermediate-Level Systems
+          Personal Computer Diagnosis and Repair Assistant
+               PCARE.KBS         PCARE2.KBS          ERR1.DBF
+                   TEMPDATA
+          Foreign Tourism Authority Travel Assistant - For Thailand
+               TAT.KBS           WATER.DBF           MOUNTAIN.DBF
+               CITY.DBF          M_CITY.DBF          M_HOTEL.DBF
+               AR_CITY.DBF       AR_HOTEL.DBF        TATDATA.DBF
+          Student Financial Aid Advisor
+               FAA.KBS           FAA.DBF
+          Small Business Acquisition Advisor
+               SBPA.KBS          EXPERT.EXE          GOOD.EXE
+               CAUTION.EXE       POOR.EXE
+
+     Chapter 10: Advanced-Level Systems
+          Juvenile Delinquent Disposition Advisory System
+               PRESOFF.KBS       PROINV.KBS          DIAGASMT.KBS
+               DISP.KBS          TEMP1               TEMP2
+               TEMP3
+          Computer File Fixer Expert System
+               FIXER.KBS         FILES.DBF           PROGRAMS.DBF
+          Computer Job Scheduler Assistant
+               PROJECT.KBS       PROJECT2.KBS        TEMP
+               VALID.DBF
+

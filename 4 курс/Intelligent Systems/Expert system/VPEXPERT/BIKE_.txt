@@ -1,0 +1,158 @@
+! Name of the expert system: Vacation Planner
+! Description: This system helps plan your ideal vacation based on preferences
+! Microcomputer used: IBM PC compatible
+! Saved file name: VACATION.KBS
+
+ENDOFF;
+RUNTIME;
+
+! ACTIONS BLOCK
+ACTIONS
+WOPEN 1,0,0,23,79,2
+ACTIVE 1
+DISPLAY "
+
+VACATION PLANNER
+
+Developed by [Your Name]
+under the direction and supervision of
+[Supervisor Name]
+
+Press any key to continue~"
+
+WCLOSE 1
+
+DISPLAY " Welcome to the Vacation Planner"
+FIND RECO
+DISPLAY " Based on your preferences,
+Recommendation: {RECO}";
+
+! RULES BLOCK
+
+RULE 2-1
+IF       BUDGET = LOW
+AND DURATION = SHORT
+THEN     RECO = Local_getaway;
+
+RULE 2-2
+IF       BUDGET = LOW
+AND DURATION = LONG
+THEN     RECO = Budget_backpacking;
+
+RULE 3-1
+IF       BUDGET = HIGH
+AND LOCATION = DOMESTIC
+AND ACTIVITY = RELAX
+THEN     RECO = Luxury_resort;
+
+RULE 3-2
+IF       BUDGET = HIGH
+AND LOCATION = DOMESTIC
+AND ACTIVITY = ADVENTURE
+THEN     RECO = National_park_adventure;
+
+RULE 3-3
+IF       BUDGET = HIGH
+AND LOCATION = INTERNATIONAL
+AND CLIMATE = WARM
+THEN     RECO = Tropical_island;
+
+RULE 3-4
+IF       BUDGET = HIGH
+AND LOCATION = INTERNATIONAL
+AND CLIMATE = COLD
+THEN     RECO = Ski_resort;
+
+RULE 4-1
+IF       BUDGET = MEDIUM
+AND TRAVEL = SOLO
+AND INTEREST = CULTURE
+AND SEASON = SUMMER
+THEN     RECO = European_city_tour;
+
+RULE 4-2
+IF       BUDGET = MEDIUM
+AND TRAVEL = SOLO
+AND INTEREST = CULTURE
+AND SEASON = WINTER
+THEN     RECO = Asian_cultural_tour;
+
+RULE 4-3
+IF       BUDGET = MEDIUM
+AND TRAVEL = SOLO
+AND INTEREST = NATURE
+AND ACCOMMODATION = CAMPING
+THEN     RECO = Wilderness_camping;
+
+RULE 4-4
+IF       BUDGET = MEDIUM
+AND TRAVEL = SOLO
+AND INTEREST = NATURE
+AND ACCOMMODATION = HOTEL
+THEN     RECO = Eco_lodge_retreat;
+
+RULE 4-5
+IF       BUDGET = MEDIUM
+AND TRAVEL = GROUP
+AND COMPANY = FAMILY
+AND AGE = YOUNG
+THEN     RECO = Theme_park_vacation;
+
+RULE 4-6
+IF       BUDGET = MEDIUM
+AND TRAVEL = GROUP
+AND COMPANY = FAMILY
+AND AGE = MIXED
+THEN     RECO = Beach_holiday;
+
+RULE 4-7
+IF       BUDGET = MEDIUM
+AND TRAVEL = GROUP
+AND COMPANY = FRIENDS
+AND PACE = FAST
+THEN     RECO = Party_destination;
+
+RULE 4-8
+IF       BUDGET = MEDIUM
+AND TRAVEL = GROUP
+AND COMPANY = FRIENDS
+AND PACE = SLOW
+THEN     RECO = Countryside_retreat;
+
+! STATEMENTS BLOCK
+
+ASK BUDGET : " What is your budget for the vacation?";
+CHOICES BUDGET : LOW, MEDIUM, HIGH;
+
+ASK DURATION : " How long will your vacation be?";
+CHOICES DURATION : SHORT, LONG;
+
+ASK LOCATION : " Do you prefer to travel domestically or internationally?";
+CHOICES LOCATION : DOMESTIC, INTERNATIONAL;
+
+ASK ACTIVITY : " What type of activity do you prefer?";
+CHOICES ACTIVITY : RELAX, ADVENTURE;
+
+ASK CLIMATE : " What climate do you prefer for your vacation?";
+CHOICES CLIMATE : WARM, COLD;
+
+ASK TRAVEL : " Are you traveling solo or in a group?";
+CHOICES TRAVEL : SOLO, GROUP;
+
+ASK INTEREST : " What are you most interested in?";
+CHOICES INTEREST : CULTURE, NATURE;
+
+ASK SEASON : " In which season are you traveling?";
+CHOICES SEASON : SUMMER, WINTER;
+
+ASK ACCOMMODATION : " What type of accommodation do you prefer?";
+CHOICES ACCOMMODATION : CAMPING, HOTEL;
+
+ASK COMPANY : " Who are you traveling with?";
+CHOICES COMPANY : FAMILY, FRIENDS;
+
+ASK AGE : " What is the age group of your family?";
+CHOICES AGE : YOUNG, MIXED;
+
+ASK PACE : " Do you prefer a fast-paced or slow-paced vacation?";
+CHOICES PACE : FAST, SLOW;

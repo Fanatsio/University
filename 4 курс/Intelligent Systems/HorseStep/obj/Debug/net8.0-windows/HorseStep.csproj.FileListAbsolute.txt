@@ -1,0 +1,144 @@
+D:\GitHub\IS\HorseStep\bin\Debug\net8.0-windows\HorseStep.exe
+D:\GitHub\IS\HorseStep\bin\Debug\net8.0-windows\HorseStep.deps.json
+D:\GitHub\IS\HorseStep\bin\Debug\net8.0-windows\HorseStep.runtimeconfig.json
+D:\GitHub\IS\HorseStep\bin\Debug\net8.0-windows\HorseStep.dll
+D:\GitHub\IS\HorseStep\bin\Debug\net8.0-windows\HorseStep.pdb
+D:\GitHub\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.Form1.resources
+D:\GitHub\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.csproj.GenerateResource.cache
+D:\GitHub\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.AssemblyInfoInputs.cache
+D:\GitHub\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.AssemblyInfo.cs
+D:\GitHub\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.csproj.CoreCompileInputs.cache
+D:\GitHub\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.dll
+D:\GitHub\IS\HorseStep\obj\Debug\net8.0-windows\refint\HorseStep.dll
+D:\GitHub\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.pdb
+D:\GitHub\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.genruntimeconfig.cache
+D:\GitHub\IS\HorseStep\obj\Debug\net8.0-windows\ref\HorseStep.dll
+H:\IS\HorseStep\bin\Debug\net8.0-windows\HorseStep.exe
+H:\IS\HorseStep\bin\Debug\net8.0-windows\HorseStep.deps.json
+H:\IS\HorseStep\bin\Debug\net8.0-windows\HorseStep.runtimeconfig.json
+H:\IS\HorseStep\bin\Debug\net8.0-windows\HorseStep.dll
+H:\IS\HorseStep\bin\Debug\net8.0-windows\HorseStep.pdb
+H:\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.Form1.resources
+H:\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.csproj.GenerateResource.cache
+H:\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.GeneratedMSBuildEditorConfig.editorconfig
+H:\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.AssemblyInfoInputs.cache
+H:\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.AssemblyInfo.cs
+H:\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.csproj.CoreCompileInputs.cache
+H:\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.dll
+H:\IS\HorseStep\obj\Debug\net8.0-windows\refint\HorseStep.dll
+H:\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.pdb
+H:\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.genruntimeconfig.cache
+H:\IS\HorseStep\obj\Debug\net8.0-windows\ref\HorseStep.dll
+F:\IS\HorseStep\bin\Debug\net8.0-windows\HorseStep.exe
+F:\IS\HorseStep\bin\Debug\net8.0-windows\HorseStep.deps.json
+F:\IS\HorseStep\bin\Debug\net8.0-windows\HorseStep.runtimeconfig.json
+F:\IS\HorseStep\bin\Debug\net8.0-windows\HorseStep.dll
+F:\IS\HorseStep\bin\Debug\net8.0-windows\HorseStep.pdb
+F:\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.Form1.resources
+F:\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.csproj.GenerateResource.cache
+F:\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.GeneratedMSBuildEditorConfig.editorconfig
+F:\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.AssemblyInfoInputs.cache
+F:\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.AssemblyInfo.cs
+F:\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.csproj.CoreCompileInputs.cache
+F:\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.dll
+F:\IS\HorseStep\obj\Debug\net8.0-windows\refint\HorseStep.dll
+F:\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.pdb
+F:\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.genruntimeconfig.cache
+F:\IS\HorseStep\obj\Debug\net8.0-windows\ref\HorseStep.dll
+H:\Лабы\IS\HorseStep\bin\Debug\net8.0-windows\HorseStep.exe
+H:\Лабы\IS\HorseStep\bin\Debug\net8.0-windows\HorseStep.deps.json
+H:\Лабы\IS\HorseStep\bin\Debug\net8.0-windows\HorseStep.runtimeconfig.json
+H:\Лабы\IS\HorseStep\bin\Debug\net8.0-windows\HorseStep.dll
+H:\Лабы\IS\HorseStep\bin\Debug\net8.0-windows\HorseStep.pdb
+H:\Лабы\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.Form1.resources
+H:\Лабы\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.csproj.GenerateResource.cache
+H:\Лабы\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.GeneratedMSBuildEditorConfig.editorconfig
+H:\Лабы\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.AssemblyInfoInputs.cache
+H:\Лабы\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.AssemblyInfo.cs
+H:\Лабы\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.csproj.CoreCompileInputs.cache
+H:\Лабы\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.dll
+H:\Лабы\IS\HorseStep\obj\Debug\net8.0-windows\refint\HorseStep.dll
+H:\Лабы\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.pdb
+H:\Лабы\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.genruntimeconfig.cache
+H:\Лабы\IS\HorseStep\obj\Debug\net8.0-windows\ref\HorseStep.dll
+G:\Лабы\IS\HorseStep\bin\Debug\net8.0-windows\HorseStep.exe
+G:\Лабы\IS\HorseStep\bin\Debug\net8.0-windows\HorseStep.deps.json
+G:\Лабы\IS\HorseStep\bin\Debug\net8.0-windows\HorseStep.runtimeconfig.json
+G:\Лабы\IS\HorseStep\bin\Debug\net8.0-windows\HorseStep.dll
+G:\Лабы\IS\HorseStep\bin\Debug\net8.0-windows\HorseStep.pdb
+G:\Лабы\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.Form1.resources
+G:\Лабы\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.csproj.GenerateResource.cache
+G:\Лабы\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.GeneratedMSBuildEditorConfig.editorconfig
+G:\Лабы\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.AssemblyInfoInputs.cache
+G:\Лабы\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.AssemblyInfo.cs
+G:\Лабы\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.csproj.CoreCompileInputs.cache
+G:\Лабы\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.dll
+G:\Лабы\IS\HorseStep\obj\Debug\net8.0-windows\refint\HorseStep.dll
+G:\Лабы\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.pdb
+G:\Лабы\IS\HorseStep\obj\Debug\net8.0-windows\HorseStep.genruntimeconfig.cache
+G:\Лабы\IS\HorseStep\obj\Debug\net8.0-windows\ref\HorseStep.dll
+G:\Лабораторные работы\Интелектуальные системы\HorseStep\bin\Debug\net8.0-windows\HorseStep.exe
+G:\Лабораторные работы\Интелектуальные системы\HorseStep\bin\Debug\net8.0-windows\HorseStep.deps.json
+G:\Лабораторные работы\Интелектуальные системы\HorseStep\bin\Debug\net8.0-windows\HorseStep.runtimeconfig.json
+G:\Лабораторные работы\Интелектуальные системы\HorseStep\bin\Debug\net8.0-windows\HorseStep.dll
+G:\Лабораторные работы\Интелектуальные системы\HorseStep\bin\Debug\net8.0-windows\HorseStep.pdb
+G:\Лабораторные работы\Интелектуальные системы\HorseStep\obj\Debug\net8.0-windows\HorseStep.Form1.resources
+G:\Лабораторные работы\Интелектуальные системы\HorseStep\obj\Debug\net8.0-windows\HorseStep.csproj.GenerateResource.cache
+G:\Лабораторные работы\Интелектуальные системы\HorseStep\obj\Debug\net8.0-windows\HorseStep.GeneratedMSBuildEditorConfig.editorconfig
+G:\Лабораторные работы\Интелектуальные системы\HorseStep\obj\Debug\net8.0-windows\HorseStep.AssemblyInfoInputs.cache
+G:\Лабораторные работы\Интелектуальные системы\HorseStep\obj\Debug\net8.0-windows\HorseStep.AssemblyInfo.cs
+G:\Лабораторные работы\Интелектуальные системы\HorseStep\obj\Debug\net8.0-windows\HorseStep.csproj.CoreCompileInputs.cache
+G:\Лабораторные работы\Интелектуальные системы\HorseStep\obj\Debug\net8.0-windows\HorseStep.dll
+G:\Лабораторные работы\Интелектуальные системы\HorseStep\obj\Debug\net8.0-windows\refint\HorseStep.dll
+G:\Лабораторные работы\Интелектуальные системы\HorseStep\obj\Debug\net8.0-windows\HorseStep.pdb
+G:\Лабораторные работы\Интелектуальные системы\HorseStep\obj\Debug\net8.0-windows\HorseStep.genruntimeconfig.cache
+G:\Лабораторные работы\Интелектуальные системы\HorseStep\obj\Debug\net8.0-windows\ref\HorseStep.dll
+D:\DaCapo\Лабораторные работы\Интелектуальные системы\HorseStep\bin\Debug\net8.0-windows\HorseStep.exe
+D:\DaCapo\Лабораторные работы\Интелектуальные системы\HorseStep\bin\Debug\net8.0-windows\HorseStep.deps.json
+D:\DaCapo\Лабораторные работы\Интелектуальные системы\HorseStep\bin\Debug\net8.0-windows\HorseStep.runtimeconfig.json
+D:\DaCapo\Лабораторные работы\Интелектуальные системы\HorseStep\bin\Debug\net8.0-windows\HorseStep.dll
+D:\DaCapo\Лабораторные работы\Интелектуальные системы\HorseStep\bin\Debug\net8.0-windows\HorseStep.pdb
+D:\DaCapo\Лабораторные работы\Интелектуальные системы\HorseStep\obj\Debug\net8.0-windows\HorseStep.Form1.resources
+D:\DaCapo\Лабораторные работы\Интелектуальные системы\HorseStep\obj\Debug\net8.0-windows\HorseStep.csproj.GenerateResource.cache
+D:\DaCapo\Лабораторные работы\Интелектуальные системы\HorseStep\obj\Debug\net8.0-windows\HorseStep.GeneratedMSBuildEditorConfig.editorconfig
+D:\DaCapo\Лабораторные работы\Интелектуальные системы\HorseStep\obj\Debug\net8.0-windows\HorseStep.AssemblyInfoInputs.cache
+D:\DaCapo\Лабораторные работы\Интелектуальные системы\HorseStep\obj\Debug\net8.0-windows\HorseStep.AssemblyInfo.cs
+D:\DaCapo\Лабораторные работы\Интелектуальные системы\HorseStep\obj\Debug\net8.0-windows\HorseStep.csproj.CoreCompileInputs.cache
+D:\DaCapo\Лабораторные работы\Интелектуальные системы\HorseStep\obj\Debug\net8.0-windows\HorseStep.dll
+D:\DaCapo\Лабораторные работы\Интелектуальные системы\HorseStep\obj\Debug\net8.0-windows\refint\HorseStep.dll
+D:\DaCapo\Лабораторные работы\Интелектуальные системы\HorseStep\obj\Debug\net8.0-windows\HorseStep.pdb
+D:\DaCapo\Лабораторные работы\Интелектуальные системы\HorseStep\obj\Debug\net8.0-windows\HorseStep.genruntimeconfig.cache
+D:\DaCapo\Лабораторные работы\Интелектуальные системы\HorseStep\obj\Debug\net8.0-windows\ref\HorseStep.dll
+E:\Лабораторные работы\Интеллектуальные системы\HorseStep\bin\Debug\net8.0-windows\HorseStep.exe
+E:\Лабораторные работы\Интеллектуальные системы\HorseStep\bin\Debug\net8.0-windows\HorseStep.deps.json
+E:\Лабораторные работы\Интеллектуальные системы\HorseStep\bin\Debug\net8.0-windows\HorseStep.runtimeconfig.json
+E:\Лабораторные работы\Интеллектуальные системы\HorseStep\bin\Debug\net8.0-windows\HorseStep.dll
+E:\Лабораторные работы\Интеллектуальные системы\HorseStep\bin\Debug\net8.0-windows\HorseStep.pdb
+E:\Лабораторные работы\Интеллектуальные системы\HorseStep\obj\Debug\net8.0-windows\HorseStep.Form1.resources
+E:\Лабораторные работы\Интеллектуальные системы\HorseStep\obj\Debug\net8.0-windows\HorseStep.csproj.GenerateResource.cache
+E:\Лабораторные работы\Интеллектуальные системы\HorseStep\obj\Debug\net8.0-windows\HorseStep.GeneratedMSBuildEditorConfig.editorconfig
+E:\Лабораторные работы\Интеллектуальные системы\HorseStep\obj\Debug\net8.0-windows\HorseStep.AssemblyInfoInputs.cache
+E:\Лабораторные работы\Интеллектуальные системы\HorseStep\obj\Debug\net8.0-windows\HorseStep.AssemblyInfo.cs
+E:\Лабораторные работы\Интеллектуальные системы\HorseStep\obj\Debug\net8.0-windows\HorseStep.csproj.CoreCompileInputs.cache
+E:\Лабораторные работы\Интеллектуальные системы\HorseStep\obj\Debug\net8.0-windows\HorseStep.dll
+E:\Лабораторные работы\Интеллектуальные системы\HorseStep\obj\Debug\net8.0-windows\refint\HorseStep.dll
+E:\Лабораторные работы\Интеллектуальные системы\HorseStep\obj\Debug\net8.0-windows\HorseStep.pdb
+E:\Лабораторные работы\Интеллектуальные системы\HorseStep\obj\Debug\net8.0-windows\HorseStep.genruntimeconfig.cache
+E:\Лабораторные работы\Интеллектуальные системы\HorseStep\obj\Debug\net8.0-windows\ref\HorseStep.dll
+F:\Лабораторные работы\Интеллектуальные системы\HorseStep\bin\Debug\net8.0-windows\HorseStep.exe
+F:\Лабораторные работы\Интеллектуальные системы\HorseStep\bin\Debug\net8.0-windows\HorseStep.deps.json
+F:\Лабораторные работы\Интеллектуальные системы\HorseStep\bin\Debug\net8.0-windows\HorseStep.runtimeconfig.json
+F:\Лабораторные работы\Интеллектуальные системы\HorseStep\bin\Debug\net8.0-windows\HorseStep.dll
+F:\Лабораторные работы\Интеллектуальные системы\HorseStep\bin\Debug\net8.0-windows\HorseStep.pdb
+F:\Лабораторные работы\Интеллектуальные системы\HorseStep\obj\Debug\net8.0-windows\HorseStep.Form1.resources
+F:\Лабораторные работы\Интеллектуальные системы\HorseStep\obj\Debug\net8.0-windows\HorseStep.csproj.GenerateResource.cache
+F:\Лабораторные работы\Интеллектуальные системы\HorseStep\obj\Debug\net8.0-windows\HorseStep.GeneratedMSBuildEditorConfig.editorconfig
+F:\Лабораторные работы\Интеллектуальные системы\HorseStep\obj\Debug\net8.0-windows\HorseStep.AssemblyInfoInputs.cache
+F:\Лабораторные работы\Интеллектуальные системы\HorseStep\obj\Debug\net8.0-windows\HorseStep.AssemblyInfo.cs
+F:\Лабораторные работы\Интеллектуальные системы\HorseStep\obj\Debug\net8.0-windows\HorseStep.csproj.CoreCompileInputs.cache
+F:\Лабораторные работы\Интеллектуальные системы\HorseStep\obj\Debug\net8.0-windows\HorseStep.dll
+F:\Лабораторные работы\Интеллектуальные системы\HorseStep\obj\Debug\net8.0-windows\refint\HorseStep.dll
+F:\Лабораторные работы\Интеллектуальные системы\HorseStep\obj\Debug\net8.0-windows\HorseStep.pdb
+F:\Лабораторные работы\Интеллектуальные системы\HorseStep\obj\Debug\net8.0-windows\HorseStep.genruntimeconfig.cache
+F:\Лабораторные работы\Интеллектуальные системы\HorseStep\obj\Debug\net8.0-windows\ref\HorseStep.dll

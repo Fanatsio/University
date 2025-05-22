@@ -1,0 +1,286 @@
+!_________________________________________________________________________!
+!                                                                         !
+! Personal Computer Diagnosis and Repair Assistant (PC/Care) - Part 1     !
+! This system will help a user find and correct personal computer errors. !
+! This file links to PCARE2.KBS, which prints out a management report.    !
+!_________________________________________________________________________!
+!                                                                         !
+! Saved filename    : pcare.kbs                                           !
+! Shell used        : VP-Expert, Educational Version 2.02                 !
+! Microcomputer used: IBM AT compatible                                   !
+! Chained file      : pcare2.kbs (to print out the manager's report)      !
+! Temporary file    : tempdata (saves user's name for chaining to         !
+!                     pcare2.kbs)                                         !
+!_________________________________________________________________________!
+bkcolor = 3;                   !set screen background color to blue
+runtime;                       !eliminates rules and facts window
+endoff;                        !eliminates need to press END after a choice
+!=============================== Actions Block ============================
+actions
+  wopen 1,1,1,20,77,3          !define opening credit window
+  active 1
+  display "
+
+
+
+        PERSONAL COMPUTER DIAGNOSIS AND REPAIR ASSISTANT (PC/CARE)
+
+                       Developed by Laura Lucchesi
+                  under the direction and supervision of
+                            Dr. D.G. Dologite
+                    For further information, contact
+                            Dr. D.G. Dologite
+                        c/o Macmillan Publishing
+
+
+                        Press any key to continue~
+     "
+  wclose 1
+  cls
+  display "
+
+
+
+          Welcome to the PC/CARE  Personal Computer Diagnosis
+                                     and Repair Assistant
+
+
+
+
+
+
+
+
+        Press any key to continue ... ~"
+  cls
+  wopen 2,2,9,15,62,6          !define outer frame
+  active 2                     !activate window 2
+  display "
+            *** I N T R O D U C T I O N ***
+
+  This consultation assists a non-technical user in
+  troubleshooting problems encountered while using a
+  personal computer.  It asks a series of questions
+  about the problem then recommends a way to correct it.  
+
+  Please press any key to begin the consultation.~
+
+       "
+  wclose 2                     !remove window 2
+  wopen 3,1,1,5,77,6           !define instructions window 3
+  active 3                     !activate window 3
+  display "                        I N S T R U C T I O N S
+        Use the arrow keys to move the lightbar to a desired answer
+        choice then press the ENTER key."
+  wopen 4,7,1,14,77,7          !define consultation window 2
+  active 4                     !activate window 4
+  display "    "
+  whileknown end_switch
+      reset emp_name
+      find  emp_name
+      e_name = (emp_name)
+      reset recommend
+      find recommend
+      wclose 3                 !remove window 3
+      wopen 5,5,7,10,65,7      !define recommendations window
+      active 5                 !activate window 5
+      display "             ***    R E C O M M E N D A T I O N  ***
+
+      {emp_name}, based on the answers given, I recommend
+      that you {recommend}.
+
+      (Press any key to conclude the consultation.)~"
+      wclose 5
+      error_type = (recommend)
+      append err1              !adds to existing DB file
+      close  err1              !closes DB file
+end;
+!=============================== Rules Block ==============================
+rule D-1                       !rule that links to another
+     if title = manager        !KBS file called pcare2
+     then recommend = dummy
+          savefacts tempdata
+          chain pcare2;
+
+rule 1-1
+     if   c_prompt  = yes
+     then recommend = do_not_need_PC_CARE_The_computer_is_OK;
+
+rule 1-2
+     if   c_prompt  = no  and
+          fan =  no
+     then ps = defective
+     because "The motor is not running, so problem is with power supply";
+
+rule 1-3
+     if   c_prompt  = no  and
+          fan = yes
+     then ps = non_defective
+     because "The motor is running, so power supply is OK";
+
+rule 2-1
+     if   ps = defective  and
+          power_outlet = yes and
+          power_lite   = yes and
+          connections  = yes
+     then recommend = have_the_power_supply_checked;
+
+rule 2-2
+     if   ps = defective  and
+          power_outlet = yes and
+          power_lite   = yes and
+          connections  = no
+     then recommend = secure_the_power_cord;
+
+rule 2-3
+     if   ps = defective  and
+          power_outlet = no
+     then recommend = plug_the_PC_securely_into_an_outlet;
+
+rule 2-4
+     if   ps = defective  and
+          power_outlet = yes and
+          power_lite   = no  and
+          connections  = yes
+     then recommend = turn_on_the_PC_to_display_c_prompt;
+
+rule 2-5
+     if   ps = defective and
+          power_outlet = yes and
+          power_lite   = no  and
+          connections  = no
+     then recommend =  try_a_different_outlet;
+
+rule 3-1
+     if   ps = non_defective and
+          CRT_monitor = no
+     then CRT_check = not_ok
+     because "The monitor must be on to display anything";
+
+rule 3-2
+     if   ps = non_defective and
+          CRT_monitor = yes
+     then CRT_check = ok;
+
+rule 4-1
+     if   CRT_check  = not_ok and
+          briteness  = yes and
+          cables     = yes and
+          plugged_in = yes
+          then recommend = replace_the_monitor;
+
+rule 4-2
+     if   CRT_check = not_ok and
+          briteness = yes and
+          cables    = no
+     then recommend = secure_the_monitor_cable_connection;
+
+rule 4-3
+     if   CRT_check  = not_ok and
+          briteness  = yes and
+          cables     = yes and
+          plugged_in = no
+     then recommend  = check_the_plug_and_turn_the_monitor_on;
+
+rule 4-4
+     if   CRT_check = not_ok and
+          briteness = no
+     then recommend = adjust_the_brightness_level;
+
+rule 5-1
+     if   CRT_check = ok and
+          HD_flicks = yes
+     then HD_check  = ok
+     because "If hard disk flickers & monitor is OK, then RAM is the
+     problem";
+
+rule 5-2
+     if   CRT_check = ok and
+          HD_flicks = no
+     then HD_check  = not_ok
+     because "If hard disk does not flicker & monitor is OK, then hard
+     disk is the problem";
+
+rule 6-1
+     if   HD_check = not_ok and
+          HD_fail_msg = yes
+     then recommend = run_the_Setup_Program;
+
+rule 6-2
+     if   HD_check = not_ok and
+          HD_fail_msg = no
+     then recommend = reformat_the_hard_disk;
+
+rule 7-1
+     if   HD_check = ok and
+          beeps = yes and
+          keyboard_stuck = yes
+     then recommend = call_CompuTec_to_check_bank_0_of_RAM
+     because "Bank 0 of RAM is either loose or defective";
+
+rule 7-2
+     if   HD_check = ok and
+          beeps = no and
+          keyboard_stuck = no
+     then recommend = call_CompuTec_1-800-SYS-HELP;
+
+rule 7-3
+     if   HD_check = ok and
+          beeps = no and
+          keyboard_stuck = yes
+     then recommend = call_CompuTec_1-800-SYS-HELP;
+
+rule 7-4
+     if   HD_check = ok and
+          beeps = yes and
+          keyboard_stuck = no
+     then recommend = call_CompuTec_1-800-SYS-HELP;
+
+!============================ Questions Block =============================
+
+ask c_prompt: "Is the C:\> displayed on the screen of the computer?";
+choices c_prompt: yes, no;
+
+ask power_lite: "Is the computer's power switch turned on?";
+choices power_lite: yes, no;
+
+ask fan: "Do you hear the motor running on the PC?";
+choices fan: yes, no;
+
+ask power_outlet: "Is the computer's power cord plugged into an outlet?";
+choices power_outlet: yes, no;
+
+ask connections: "Is the connection to the power supply secure?";
+choices connections: yes, no;
+
+ask plugged_in: "Is the monitor turned on?";
+choices plugged_in: yes, no;
+
+ask briteness:  "Is the brightness turned all the way up on the monitor?";
+choices briteness: yes, no;
+
+ask cables: "Is the cable connection between the computer and the monitor
+secure?";
+choices cables: yes, no;
+
+ask HD_flicks: "Does the hard disk light flicker on and off?";
+choices HD_flicks: yes, no;
+
+ask HD_fail_msg:  "Does the screen display the following message:
+    `Hard disk failure - Run SETUP'?";
+choices HD_fail_msg: yes, no;
+
+ask beeps:  "Does the computer beep continuously?";
+choices beeps: yes, no;
+
+ask keyboard_stuck:  "Is the keyboard stuck?";
+choices keyboard_stuck: yes, no;
+
+ask CRT_monitor:  "Does the monitor display anything on the screen?";
+choices CRT_monitor: yes, no;
+
+ask emp_name: "What is your name (full name, please)?";
+
+ask title: "Which of the following best describes your position?";
+choices title: staff_worker, manager;
+

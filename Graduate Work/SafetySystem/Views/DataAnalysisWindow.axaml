@@ -1,0 +1,14 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="SafetySystem.Views.DataAnalysisWindow"
+        Title="Анализ данных" Width="800" Height="600">
+    <StackPanel Margin="20">
+        <TextBlock Text="Анализ событий" FontSize="20" HorizontalAlignment="Center"/>
+        
+        <!-- Графики/диаграммы -->
+        <Canvas Width="750" Height="400" Background="#f1f1f1"/>
+        
+        <TextBlock Text="События: Нарушения / Нормальная работа" Margin="10"/>
+        <ListBox Name="EventList" Width="750" Height="200"/>
+    </StackPanel>
+</Window>

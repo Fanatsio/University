@@ -1,0 +1,775 @@
+RUNTIME;
+BKCOLOR=3;
+ENDOFF;
+ACTIONS
+   COLOR=0
+   DISPLAY "
+
+
+                                 Welcome To"
+COLOR=15
+DISPLAY"     
+                         THE AI SERVICES COMPANY's" 
+COLOR=0
+DISPLAY"
+     Expert System which determines whether the person you are claiming
+     as a dependent on your taxes is qualified as such.
+
+     The information included in the system was obtained from the booklet
+     entitled:
+
+                  Instructions for preparing  FORM 1040
+                      by Department of the Treasury
+                         Internal Revenue Service
+                                   1988
+
+"
+COLOR=9
+DISPLAY "                         Press any key to Continue
+
+      ~"
+COLOR=0
+CLS
+   DISPLAY "
+
+        The criteria for determining whether you can claim somebody
+        as a dependent are broken into five categories, they are:
+"
+COLOR=15
+DISPLAY "
+                         1.  Income
+                         2.  Support
+                         3.  Married Dependent
+                         4.  Citizenship or Residence
+                         5.  Relationship
+"
+COLOR=0
+DISPLAY "
+        The requirements for each of these categories must be met in
+        order that you may claim dependency.
+
+               Each of these categories will now be examined.
+
+ "
+COLOR=9
+DISPLAY "                   Press any key to begin Consultation. ~"
+COLOR=0
+CLS
+  FIND subgoal1
+  FIND Income
+CLS
+   DISPLAY "
+
+
+
+
+
+              {dependent_name}'s Income requirement was found to be: 
+
+                         ==>  {Income}
+
+ "
+COLOR=9
+DISPLAY "                     < Press any key to Continue >
+
+ ~"
+COLOR=0
+CLS
+   FIND  subgoal2
+   FIND  Support
+CLS
+   DISPLAY "
+
+
+
+
+
+              {Dependent_name}'s Support requirement was found to be:
+
+                         ==>  {Support}
+
+ "
+COLOR=9
+DISPLAY "                     < Press any key to Continue >
+
+ ~"
+COLOR=0
+CLS
+   FIND subgoal3
+   FIND Married_Dependent
+CLS
+   DISPLAY "
+
+
+
+
+
+           {Dependent_name}'s Married Dependent Requirement was found to be:
+
+                           ==>  {Married_dependent}
+
+"
+COLOR=9
+DISPLAY "                       < Press any key to Continue >
+
+ ~"
+COLOR=0
+CLS
+   FIND subgoal4
+   FIND Citizenship
+CLS
+   DISPLAY "
+
+
+
+
+
+            {dependent_name}'s Citizenship Requirement was found to be:
+
+                          ==>  {Citizenship}
+
+"
+COLOR=9
+DISPLAY "                     < Press any key to Continue >
+
+ ~"
+COLOR=0
+CLS
+   FIND subgoal5
+   FIND Relationship
+CLS
+   DISPLAY "
+
+
+
+
+
+           {dependent_name}'s Relationship Requirement was found to be:
+
+                            ==>  {Relationship}
+
+"
+COLOR=9
+DISPLAY "                      < Press any key to Continue >
+
+ ~"
+COLOR=0
+CLS
+   FIND Dependent
+CLS
+   DISPLAY " 
+
+
+             Based upon the following conclusions:
+"
+COLOR=15
+DISPLAY "
+                 1. Income Category: {Income}
+                 2. Support Category: {Support}
+                 3. Married Dependent Category: {Married_Dependent}
+                 4. Citizenship/Residence Category: {Citizenship}
+                 5. Relationship Category: {Relationship}
+"
+COLOR=0
+DISPLAY "
+         {your_name}, It has been determined that you {dependent} {dependent_name}
+         as a dependent.
+
+"
+COLOR=9
+DISPLAY "                       < Press any key to Continue >
+
+
+ ~"
+COLOR=0
+CLS
+DISPLAY "
+
+
+                   This is the end of the consultation!
+"
+COLOR=15
+DISPLAY "
+                     Press F2: Run Consultation Again
+                     Press F8: To Exit System
+
+
+"
+COLOR=0
+DISPLAY "                   Any questions on VP-Expert Contact:
+
+"
+COLOR=9
+DISPLAY "                         The AI SERVICES Company
+                         Suite 1015
+                         Five Science Park
+                         New Haven, CT  06511
+                         Phone: (203) 786-5222
+
+ ~";
+
+
+! ************************* BEGINNING OF RULE SET *************************
+
+
+! ...........................Rules for Subgoals.............................
+
+RULE Begin
+IF   your_name<>a AND
+     dependent_name<>a AND
+     dependent_age<>UNKNOWN
+THEN goal1=yes
+     CLS;
+
+RULE Begin1
+IF   goal1=yes
+THEN CLS
+     COLOR=15
+     DISPLAY "
+
+
+
+
+
+
+               We will now examine the first Category: INCOME
+ "
+COLOR=9
+DISPLAY "                        < Press any key to Continue >
+ ~"
+     COLOR=0
+     subgoal1=yes
+     CLS;
+ 
+RULE Begin2
+IF   Income<>UNKNOWN AND
+     Income<>FAILED
+THEN CLS
+     COLOR=15
+     DISPLAY "
+
+
+
+
+
+
+              We will now examine the Second Category: SUPPORT
+ "
+COLOR=9
+DISPLAY "                        < Press any key to Continue >
+ ~"
+     COLOR=0
+     subgoal2=yes
+     CLS;
+
+RULE Begin3
+IF   Support<>UNKNOWN AND
+     Support<>FAILED
+THEN CLS
+     COLOR=15
+     DISPLAY "
+
+
+
+
+
+
+           We will now examine the third Category: Married Dependent
+ "
+COLOR=9
+DISPLAY "                        < Press any key to Continue >
+ ~"
+     COLOR=0
+     subgoal3=yes
+     CLS;
+
+RULE Begin4
+IF   Married_dependent<>UNKNOWN AND
+     Married_dependent<>FAILED
+THEN CLS
+     COLOR=15
+     DISPLAY "
+
+
+
+
+
+
+           We will now examine the fourth Category: Citizenship
+ "
+COLOR=9
+DISPLAY "                        < Press any key to Continue >
+ ~"
+     COLOR=0
+     subgoal4=yes
+     CLS;
+
+RULE Begin5
+IF   Citizenship<>UNKNOWN AND
+     Citizenship<>FAILED
+THEN CLS
+     COLOR=15
+     DISPLAY "
+
+
+
+
+
+
+           We will now examine the Fifth Category: Relationship
+ "
+COLOR=9
+DISPLAY "                        < Press any key to Continue >
+ ~"
+     COLOR=0
+     subgoal5=yes
+     CLS;
+
+! ..........................................................................
+
+! ........................Examine Income Criteria............................
+RULE 1
+IF       Gross_income < 1080
+THEN     Income=SATISFIED;
+
+RULE 2
+IF       Gross_income > 1080 AND
+         Dependent_age < 19
+THEN     Income=SATISFIED;
+
+RULE 3
+IF       Gross_income > 1080 AND
+         Student = True
+THEN     Income=SATISFIED;
+
+RULE 4
+IF       Gross_income>1080 AND
+         Student = False AND
+         Farm_course = True
+THEN     Income= SATISFIED;
+
+RULE 5
+IF       Student = False AND
+         Farm_course = False
+THEN     Income= FAILED;
+
+! ..........................................................................
+
+! The following four rules are checked first when the inference engine
+! starts its search for a value for one of the subsequent categories
+! (Support, Married_Dependent, Citizenship, and Relationship).
+! If the user has failed in a category, the appropriate one of these rules
+! will fire. The remaining unknown categories are assigned a value that
+! indicates which category failed. The inference engine will then bypass
+! the rules and questions associated with these categories and return the
+! conclusion that the subject cannot be claimed as a dependent.
+
+RULE quit1
+IF       Income=Failed
+THEN     Support=CATEGORY_1_FAILED
+         Married_Dependent=CATEGORY_1_FAILED
+         Citizenship=CATEGORY_1_FAILED
+         Relationship=CATEGORY_1_FAILED
+BECAUSE  "   Once one of the five criteria is not satisfied, the person cannot be
+claimed as a dependent";
+
+RULE quit2
+IF       Support=Failed
+THEN     Married_Dependent=CATEGORY_2_FAILED
+         Citizenship=CATEGORY_2_FAILED
+         Relationship=CATEGORY_2_FAILED;
+
+RULE quit3
+IF       Married_Dependent=Failed
+THEN     Citizenship=CATEGORY_3_FAILED
+         Relationship=CATEGORY_3_FAILED;
+
+RULE quit4
+IF       Citizenship=Failed
+THEN     Relationship=CATEGORY_4_FAILED;
+
+! .........................Examine Support Criteria...........................
+
+RULE 6
+IF       Income=satisfied AND
+         Marital_status=divorced
+THEN     Divorced=true
+CLS
+DISPLAY  " The parent who has custody of a child for most of a year can generally
+ take the exemption for that child if the parents together paid more than
+ half of the child's support.
+ ";
+
+RULE 7
+IF       Divorced=true AND
+         Custody=No
+THEN     Ask_agreements=true;
+
+RULE 8
+IF       Divorced=true AND
+         Custody=Yes AND
+         Divorced_support=Over_half
+THEN     CLS
+         Support=SATISFIED;
+
+RULE 9
+IF       Divorced=true AND
+         Custody=Yes AND
+         Divorced_support=under_half AND
+         Others=yes
+THEN     CLS
+DISPLAY  " The taxpayer who claims the dependent must:
+
+               1.  have paid more than 10% of the dependent's
+                   support, and
+
+               2.  attach to his or her tax return a signed
+                   FORM 2120, Multiple Support Declaration, from
+                   every other person who paid more than 10% of
+                   the support.  This Form states that the person
+                   who signs it will not claim an exemption in
+                   1988 for the person he or she helped to support.
+ "
+           Ask_done=true;
+
+RULE 10
+IF         Ask_done=true AND
+           done=yes
+THEN       Support=SATISFIED;
+
+RULE 11
+IF       Ask_agreements=true AND
+         Agreement=Release_Form
+THEN     Support=SATISFIED;
+
+RULE 12
+IF       Ask_agreements=true AND
+         Agreement=Decree AND
+         Child_support>=600
+THEN     Support=SATISFIED;
+
+RULE 13
+IF       Income=satisfied AND
+         Marital_status=Single AND
+         Single_support=Over_half
+THEN     Support=SATISFIED;
+
+RULE 14
+IF       Income=satisfied AND
+         Marital_status=Single AND
+         Single_support=Under_half
+THEN     Support=FAILED;
+
+RULE 15
+IF       Income=satisfied AND
+         Marital_status=Married AND
+         file=separate
+THEN     file_type=true
+         CLS
+         DISPLAY " If you and your spouse are filing separate returns, and you, {your_name},
+ are claiming {dependent_name} as a dependent, then you must have supplied
+ over half of {dependent_name}'s support for the year.
+
+";
+
+RULE 16
+IF       Income=satisfied AND
+         Marital_status=Married AND
+         file=joint
+THEN     file_type=true
+         CLS
+         DISPLAY " In general, you must have given over half of your child's support for
+ this year.  However, if you file a joint return, the support can be
+ from you and your spouse.
+ "
+ELSE     file_type=false;
+
+RULE 17   
+IF       file_type=true AND
+         Married_Support=over_half
+THEN     Support=SATISFIED
+ELSE     Support=FAILED;
+
+! .....................Examine Married Dependent Criteria.....................
+RULE 18
+IF       Dependent_age<16 AND 
+         Support<>UNKNOWN
+THEN     DISPLAY "
+
+
+
+
+
+         We assume that any child under the age of 16 is not married!
+"
+COLOR=9
+DISPLAY "
+                       < Press any key to Continue > ~"
+COLOR=0
+CLS
+         Married_Dependent=BYPASSED;
+
+RULE 19
+IF       Dependent_married=yes AND
+         joint_return=no
+THEN     Married_dependent=SATISFIED;
+
+RULE 20
+IF       Dependent_married=yes AND
+         Joint_return=Yes AND
+         have_to=no
+THEN     Married_Dependent=SATISFIED;
+
+RULE 21 
+IF       Dependent_age>=16 AND
+         Dependent_married=yes AND
+         Joint_return=Yes AND
+         have_to=yes
+THEN     Married_Dependent=FAILED;
+
+RULE 22
+IF       Dependent_married=no
+THEN     Married_Dependent=BYPASSED;
+
+! ......................Examine Citizenship Criteria.........................
+RULE 23
+IF       citizen=United_States OR
+         residence=United_States OR
+         residence=Canada OR
+         residence=Mexico
+THEN     Citizenship=SATISFIED;
+
+RULE 24
+IF       citizen=Other AND
+         residence=Other AND
+         adopted_alien=yes AND
+         living_abroad=yes
+THEN     Citizenship=SATISFIED;
+
+RULE 25  
+IF       citizen=Other AND
+         residence=Other AND
+         adopted_alien=no
+THEN     Citizenship=FAILED;
+
+RULE 26 
+IF       citizen=other AND
+         residence=Other AND
+         adopted_alien=yes AND
+         living_abroad=no
+THEN     Citizenship=FAILED;
+
+! .......................Examine Relationship Criteria......................
+RULE 27
+IF       related=yes
+THEN     Relationship=SATISFIED;
+
+RULE 28
+IF       lived_in_home=yes
+THEN     Relationship=SATISFIED;
+
+RULE 29
+IF       related=no AND
+         lived_in_home=no
+THEN     Relationship=FAILED;
+
+! ......................Determine the value of Dependent......................
+RULE Determine_Dependent
+IF       Income=Failed OR
+         Support=Failed OR
+         Married_Dependent=Failed OR
+         Citizenship=Failed OR
+         Relationship=Failed
+THEN     Dependent=CANNOT_CLAIM
+         CLS
+ELSE     Dependent=CAN_CLAIM;
+
+
+! ****************** DEFINE QUESTION AND ANSWER CHOICES *********************
+
+
+
+ASK   Gross_income : "What was {dependent_name}'s gross income for the year (in dollars)?
+
+ - Gross income does not include nontaxable income, such as welfare
+   benefits or nontaxable social security benefits.
+
+";
+
+ASK   Student : " Did {dependent_name} attend school full-time for any five months of 1988?
+
+ The school must have a regular teaching staff, a regular course of study, 
+ and a regularly enrolled body of students in attendance.
+
+ A school includes:
+
+      1.  elementary, junior, and senior high schools;
+      2.  colleges and universities; and
+      3.  technical, trade, and mechanical schools
+
+ However, school does not include on-the-job training courses or
+ correspondence schools
+
+   ";
+
+CHOICES Student :  True, False;
+
+ASK   Farm_course : " Did {dependent_name} take a full-time, on-farm training course for any five
+ months of 1988?  (The course had to be given by a school or state,
+ county, or local government agency)";
+
+CHOICES Farm_course : True, False;
+
+ASK   Divorced_support : "
+ - In figuring total support, you must include money the dependent used
+   for his or her own support, even if this money was not taxable (for
+   example, gifts, savings, welfare benefits).  If your child was a stu-
+   dent, do not include amounts he or she received as scholarships.
+
+ - Support includes items such as food, a place to live, clothes, medical
+   and dental care, recreation, and education.  In figuring support,
+   use the actual cost of these items.  However, the cost of a place
+   to live is figured at its fair rental value.
+
+ Indicate the support you and your ex-spouse suppied to {dependent_name}:
+
+";
+
+CHOICES Divorced_support : Over_half,Under_half;
+
+ASK   Married_support : "
+ - In figuring total support, you must include money the dependent used
+   for his or her own support, even if this money was not taxable (for
+   example, gifts, savings, welfare benefits).  If your child was a stu-
+   dent, do not include amounts he or she received as scholarships.
+
+ - Support includes items such as food, a place to live, clothes, medical
+   and dental care, recreation, and education.  In figuring support,
+   use the actual cost of these items.  However, the cost of a place
+   to live is figured at its fair rental value.
+
+ Indicate the support you and/or your spouse supplied to {dependent_name}:
+
+";
+
+CHOICES Married_Support : Over_half, Under_half;
+
+ASK   Single_support : "
+ - In figuring total support, you must include money the dependent used
+   for his or her own support, even if this money was not taxable (for
+   example, gifts, savings, welfare benefits).  If your child was a stu-
+   dent, do not include amounts he or she received as scholarships.
+
+ - Support includes items such as food, a place to live, clothes, medical
+   and dental care, recreation, and education.  In figuring support,
+   use the actual cost of these items.  However, the cost of a place
+   to live is figured at its fair rental value.
+
+ Indicate the support that you supplied to {dependent_name}:
+
+";
+
+CHOICES Single_Support : Over_half,Under_half;
+
+ASK  File : " How did you and your spouse file your returns this year?";
+
+CHOICES File : Separate, Joint;
+
+ASK  Marital_Status : " What is your Marital Status, {your_name}?";
+
+CHOICES Marital_Status : Divorced, Married, Single;
+
+ASK  Custody : " Do you have custody of {dependent_name}, {your_name}?";
+
+CHOICES Custody : Yes,No;
+
+ASK Agreement : " Did the custodial parent sign FORM 8332 releasing claim of the dependent,
+ or did the custodial parent sign a written decree prior to 1985 that you
+ may claim exemption of the child?
+ ";
+
+CHOICES  Agreement : Release_Form, Decree;
+
+ASK Child_support : "{your_name}, how much did you spend on support of this child in 1988
+ (In figuring out support, a parent who has remarried may count the support
+  provided by the new spouse)?
+ ";
+
+ASK Done : " {your_name}, have you completed steps one and two above?";
+
+CHOICES Done : Yes, No;
+
+ASK Others : " Sometimes two or more taxpayes together pay more than half of another
+ person's support, but no one alone pays over half of the support.  Do
+ you fit into this category, {your_name}?
+ ";
+
+CHOICES Others : Yes, No;
+
+ASK Dependent_married : "Is {Dependent_name} married?";
+
+CHOICES Dependent_married : Yes, No;
+
+ASK Joint_return : "Did {dependent_name} and his/her spouse file a joint return?";
+
+CHOICES joint_return : Yes, No;
+
+ASK have_to : "Did they file a joint return to get a refund of all tax withheld?";
+
+CHOICES have_to : Yes, No;
+
+ASK citizen : "Please indicate which country {dependent_name} is a legal citizen of:";
+
+CHOICES citizen : United_States, Other;
+
+ASK residence : "Please indicate which country {dependent_name} now resides in:";
+
+CHOICES residence : United_States, Canada, Mexico, Other;
+
+ASK Adopted_Alien : "Is {dependent_name} an adopted alien?";
+
+CHOICES adopted_alien : Yes, No;
+
+ASK Living_abroad : " Is {dependent_name} living the entire year with a U.S. citizen in a
+ foreign country
+ ";
+
+CHOICES Living_abroad : Yes, No;
+
+ASK related : "Is {dependent_name} related to you in any of the following ways:
+
+ Child        Stepbrother    Daughter-in-law   if related by blood: 
+ Stepchild    Stepsister     Son-in-law              Uncle
+ Mother       Stepmother     Mother-in-law           Aunt
+ Father       Stepfather     Father-in-law           Nephew
+ Grandparent  Grandchild     Brother-in-law          Niece
+ Brother      Sister         Sister-in-law
+
+ Note: Any relationships that have been established by marriage are not
+       ended by death or divorce.
+
+ Note: The word Child includes:
+
+           a.  A child who lived in your home as a member of your
+               family if placed with you by an authorized placement
+               agency for legal adoption.
+           b.  A foster child (any child who lived in your home as
+               a member of your family for the whole year).
+ ";
+
+CHOICES related : Yes, No;
+
+ASK lived_in_home : "Was the dependent any other person who lived in your home as a
+ member of your household for a whole year. (A person is not a member
+ of your household if at any time during your tax year the relationship
+ between you and that person violates local law.)
+
+ ";
+
+CHOICES lived_in_home : Yes, No;
+
+ASK Your_Name : "What is your Name? ";
+
+ASK Dependent_Name : "What is the Name of the person you are claiming as a dependent? ";
+
+ASK Dependent_Age : "What is {dependent_name}'s Age?  (If the child is under 1 enter: 1)";

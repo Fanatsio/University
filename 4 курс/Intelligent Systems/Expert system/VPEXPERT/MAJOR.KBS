@@ -1,0 +1,338 @@
+!College Major Advisor
+!This prototype expert system assists students in choosing a major
+!based on aptitude, interests, and financial need.
+!The system is currently limited to CIS majors.
+!Therefore, the recommended major is either computer science,
+!computer programming, or computer technology.
+!In addition, there is a recommendation to not major in computers,
+!for students who show no aptitude or interest in computers.
+!
+!It was developed on an IBM-compatible ITT PC,
+!using VP-Expert, Version 2.02.
+!The KBS is saved under the filename MAJOR.KBS
+!
+!*****************************************************************
+EXECUTE;   !Will start consultation without typing GO
+RUNTIME;   !Will eliminate rules and facts window
+ENDOFF;    !Will eliminate need for pressing END after ENTER
+!
+!
+!
+!Actions Block
+!
+ACTIONS
+WOPEN 1,0,0,23,79,1
+ACTIVE 1
+DISPLAY "
+
+
+
+                        *** COLLEGE MAJOR ADVISOR ***
+
+                         Developed by Toby Shatzoff
+                   under the direction and supervision of
+                              Dr. D.G. Dologite
+                      For further information, contact
+                              Dr. D.G. Dologite
+                          c/o Macmillan Publishing
+
+
+                          Press any key to continue~"
+
+WCLOSE 1
+WOPEN 1,5,8,13,60,3            !Define opening window 1
+ACTIVE 1
+!Display opening message
+!
+DISPLAY  "
+                   College Major Advisor
+
+     This system provides advice about choosing an
+     appropriate college major.  It asks you a series
+     of questions about your abilities, interests, and
+     financial needs.  The system then recommends an
+     appropriate major.
+
+
+
+         PLEASE PRESS ANY KEY TO BEGIN THE SESSION~"
+!
+WCLOSE 1                      !Remove window 1
+WOPEN 1,1,1,8,77,3            !Define instructions window 1
+ACTIVE 1
+!
+!Display instructions for user
+!
+DISPLAY   "  INSTRUCTIONS
+        When you are asked a question, use the arrow keys to move
+        the light bar to a desired answer choice.                                
+        Then press the ENTER key."                                               
+!
+WOPEN 2,7,1,14,77,2           !Define consultation screen, window 2
+ACTIVE 2
+FIND recommend                !recommend is the goal (a major)
+WCLOSE 1
+WCLOSE 2
+CLS
+WOPEN 1,5,13,9,48,3           !Define the recommendation window 1
+ACTIVE 1
+
+!
+!Display the recommendation
+DISPLAY     "   Based on your answers, the College Major
+   Advisor recommends that you major in:
+  
+             {recommend}.
+
+
+
+ PLEASE PRESS ANY KEY TO CONCLUDE THIS SESSION~"
+;
+!
+!********************************************************************
+!Rules Block
+!
+!Rules for the final rule set, set #1
+Rule 1_1
+ IF aptitude = level_0
+ THEN recommend = some_field_other_than_computers;!
+Rule 1_2
+ IF interest = level_0
+ THEN recommend = some_field_other_than_computers;!
+Rule 1_3
+ IF aptitude = level_1 and
+    interest = level_1
+ THEN recommend = computer_technology;
+!
+Rule 1_4
+IF aptitude = level_1 and
+   interest = level_2 and
+   finance = yes
+ THEN recommend = computer_programming;
+!
+Rule 1_5
+IF aptitude = level_1 and
+   interest = level_2 and
+   finance = no
+THEN recommend = computer_science;
+!
+Rule 1_6
+IF aptitude = level_1 and
+   interest = level_3 and
+   finance = yes
+THEN recommend = computer_programming;
+!
+Rule 1_7
+IF aptitude = level_1 and
+   interest = level_3 and
+   finance = no
+THEN recommend = computer_science;
+!
+Rule 1_8
+IF aptitude = level_2 and
+   interest = level_1 and
+   finance = yes
+THEN recommend = computer_programming;
+!
+Rule 1_9
+IF aptitude = level_2 and
+   interest = level_1 and
+   finance = no
+THEN recommend = computer_science;
+!
+Rule 1_10
+IF aptitude = level_2 and
+   interest = level_2 and
+   finance = yes
+THEN recommend = computer_programming;
+!
+Rule 1_11
+IF aptitude = level_2 and
+   interest = level_2 and
+   finance = no
+THEN recommend = computer_science;
+!
+Rule 1_12
+IF aptitude = level_2 and
+   interest = level_3 and
+   finance = yes
+THEN recommend = computer_programming;
+!
+Rule 1_13
+IF aptitude = level_2 and
+   interest = level_3 and
+   finance = no
+THEN recommend = computer_science;
+!
+Rule 1_14
+IF aptitude = level_3 and
+   interest = level_1
+THEN recommend = computer_technology;
+!
+Rule 1_15
+IF aptitude = level_3 and
+   interest = level_2
+THEN recommend = computer_technology;
+!
+Rule 1_16
+IF aptitude = level_3 and
+   interest = level_3
+THEN recommend = computer_technology;
+!
+Rule 1_17
+IF aptitude = level_4 and
+   interest = level_1
+THEN recommend = computer_technology;
+!
+Rule 1_18
+IF aptitude = level_4 and
+   interest = level_2
+THEN recommend = computer_programming;
+!
+Rule 1_19
+IF aptitude = level_4 and
+   interest = level_3
+THEN recommend = computer_programming;
+!
+Rule 1_20
+IF aptitude = level_5
+   and interest = level_1
+THEN recommend = computer_programming;
+!
+Rule 1_21
+IF aptitude = level_5 and
+   interest = level_2
+THEN recommend = computer_programming;
+!
+Rule 1_22
+IF aptitude = level_5 and
+   interest = level_3
+THEN recommend = computer_programming;
+!
+!Rule set for rule set #2
+!
+Rule 2_1
+IF math = yes and
+   prog = yes and
+   manual = yes
+THEN aptitude = level_1;
+!
+Rule 2_2
+IF math = yes and
+   prog = yes and
+   manual = no
+THEN aptitude = level_2;
+!
+Rule 2_3
+IF math = yes and
+   prog = no and
+   manual = yes
+THEN aptitude = level_3;
+!
+Rule 2_4
+IF math = yes and
+   prog = no and
+   manual = no
+THEN aptitude = level_0;
+!
+Rule 2_5
+IF math = no and
+   prog = yes and
+   manual = yes
+THEN aptitude = level_4;
+!
+Rule 2_6
+IF math = no and
+   prog = yes and
+   manual = no
+THEN aptitude = level_5;
+!
+Rule 2_7
+IF math = no and
+   prog = no and
+   manual = yes
+THEN aptitude = level_3;
+!
+Rule 2_8
+IF math = no and
+   prog = no and
+   manual = no
+THEN aptitude = level_0;
+!
+!Rule set for rule set #3
+!
+Rule 3_1
+IF computers = yes and
+   problems = yes and
+   place = desk and
+   repair = yes
+THEN interest = level_3;
+!
+Rule 3_2
+IF computers = yes and
+   problems = yes and
+   repair = no
+THEN interest = level_2;
+!
+Rule 3_3
+IF computers = yes and
+   problems = yes and
+   place = field and
+   repair = yes
+THEN interest = level_1;
+!
+Rule 3_4
+IF computers = yes and
+   problems = no
+THEN interest = level_0;
+!
+Rule 3_5
+IF computers = no
+THEN interest = level_0;
+!
+!
+!Questions Block
+!
+ASK math: "Are you good at math?";
+CHOICES math:yes,no;
+!
+ASK prog: "Are you good at programming?";
+CHOICES prog:yes,no;
+!
+ASK manual: "Are you good at working with your hands?";
+CHOICES manual:yes,no;
+!
+ASK computers: "Do you like working with computers?";
+CHOICES computers:yes,no;
+!
+ASK problems: "Do you like solving problems?";
+CHOICES problems:yes,no;
+!
+ASK place: "Do you prefer working at a desk or in the field?";
+CHOICES place:desk,field;
+!
+ASK repair: "Do you like to repair things?";
+CHOICES repair:yes,no;
+!
+ASK finance: "Do you need to get a job upon graduation?";
+CHOICES finance:yes,no;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

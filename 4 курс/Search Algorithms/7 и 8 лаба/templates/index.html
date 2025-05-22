@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #f9f9f9;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .no-results {
+            text-align: center;
+            font-size: 18px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <h1>Поиск по Википедии</h1>
+    <form method="POST">
+        <input type="text" name="query" placeholder="Введите запрос..." required>
+        <button type="submit">Искать</button>
+    </form>
+
+    {% if results %}
+        <h2>Результаты поиска:</h2>
+        <ul>
+            {% for article in results %}
+                {% if article["title"] %}
+                    <li>
+                        <strong>{{ article["title"] }}</strong>
+                        {% if article["links"] %}
+                            <br>🔗 <a href="/click?target={{ article['links'][0] }}" target="_blank">Перейти</a>
+                        {% else %}
+                            <br>❌ Нет доступных ссылок
+                        {% endif %}
+                        {% if article.get("score") %}
+                            <br>📊 Рейтинг: {{ article["score"] | round(3) }}
+                        {% endif %}
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="no-results">Ничего не найдено. Попробуйте другой запрос.</p>
+    {% endif %}
+</body>
+</html>

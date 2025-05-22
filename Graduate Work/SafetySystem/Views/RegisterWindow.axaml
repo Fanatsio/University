@@ -1,0 +1,21 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="SafetySystem.Views.RegisterWindow"
+        Title="Регистрация сотрудника" Width="500" Height="600">
+
+    <StackPanel Margin="20">
+        <TextBlock Text="ID сотрудника" />
+        <TextBox Name="EmployeeIdTextBox" Watermark="Введите ID сотрудника" Margin="0,5,0,10"/>
+
+        <TextBlock Text="ФИО" />
+        <TextBox Name="NameTextBox" Watermark="Введите ФИО" Margin="0,5,0,10"/>
+
+        <TextBlock Text="RFID метка" />
+        <TextBox Name="RfidTagTextBox" Watermark="Введите RFID" Margin="0,5,0,10"/>
+
+        <Button Content="Выбрать фото" Click="OnChoosePhotoClick" Margin="0,5,0,10"/>
+        <TextBlock Name="PhotoPathText" Text="Фотография не выбрана" Margin="0,5,0,10"/>
+
+        <Button Content="Сохранить сотрудника" Click="OnSaveEmployeeClick" Background="Green" Foreground="White" Margin="0,20,0,0"/>
+    </StackPanel>
+</Window>

@@ -1,0 +1,42 @@
+RUNTIME;
+ACTIONS
+     DISPLAY "This example assists your interrogation of the"
+     DISPLAY "          MEMBER.DBF database file."
+     DISPLAY "                                              "
+     DISPLAY "It also demonstrates the use of the MENU_SIZE,"
+     DISPLAY "MRESET, CLOSE, and RECORD_NUM keywords."
+     DISPLAY "                                              "
+     DISPLAY "        PLEASE PRESS ANY KEY TO BEGIN~"
+
+     MENU plan_type, ALL, member, p_type
+     DISPLAY "Please select one of the following {MENU_SIZE} choices...."
+     DISPLAY "                                                        "
+     FIND plan_type
+     FIND cut_off
+     MRESET plan_type
+     DISPLAY "The following database records meet your criteria:"
+     WHILEKNOWN p_type
+          GET plan_type = p_type and cut_off < requests, member, ALL
+          RESET message
+          FIND message
+     END
+     CLOSE member
+;
+
+RULE 1
+     IF p_type <> UNKNOWN
+     THEN message = displayed
+          DISPLAY "Record number {RECORD_NUM} meets your criteria"
+          DISPLAY "{id}, {p_type}, {lname}, {fname}, {requests}"
+          DISPLAY "                                           "
+     ELSE message = displayed
+          DISPLAY "                                              "
+          DISPLAY "End of file";
+
+ASK plan_type: "What plan type(s) do you want to check?";
+
+ASK cut_off: "If you want only those records with 'requests' above
+a certain number, please enter the number (or zero).";
+
+PLURAL: plan_type;
+

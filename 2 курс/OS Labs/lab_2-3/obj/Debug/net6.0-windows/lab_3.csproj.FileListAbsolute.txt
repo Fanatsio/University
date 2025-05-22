@@ -1,0 +1,34 @@
+D:\Games and tools\Project\C#\lab_3\bin\Debug\net6.0-windows\lab_3.exe
+D:\Games and tools\Project\C#\lab_3\bin\Debug\net6.0-windows\lab_3.deps.json
+D:\Games and tools\Project\C#\lab_3\bin\Debug\net6.0-windows\lab_3.runtimeconfig.json
+D:\Games and tools\Project\C#\lab_3\bin\Debug\net6.0-windows\lab_3.dll
+D:\Games and tools\Project\C#\lab_3\bin\Debug\net6.0-windows\lab_3.pdb
+D:\Games and tools\Project\C#\lab_3\obj\Debug\net6.0-windows\lab_3.csproj.AssemblyReference.cache
+D:\Games and tools\Project\C#\lab_3\obj\Debug\net6.0-windows\lab_3.Form1.resources
+D:\Games and tools\Project\C#\lab_3\obj\Debug\net6.0-windows\lab_3.csproj.GenerateResource.cache
+D:\Games and tools\Project\C#\lab_3\obj\Debug\net6.0-windows\lab_3.GeneratedMSBuildEditorConfig.editorconfig
+D:\Games and tools\Project\C#\lab_3\obj\Debug\net6.0-windows\lab_3.AssemblyInfoInputs.cache
+D:\Games and tools\Project\C#\lab_3\obj\Debug\net6.0-windows\lab_3.AssemblyInfo.cs
+D:\Games and tools\Project\C#\lab_3\obj\Debug\net6.0-windows\lab_3.csproj.CoreCompileInputs.cache
+D:\Games and tools\Project\C#\lab_3\obj\Debug\net6.0-windows\lab_3.dll
+D:\Games and tools\Project\C#\lab_3\obj\Debug\net6.0-windows\refint\lab_3.dll
+D:\Games and tools\Project\C#\lab_3\obj\Debug\net6.0-windows\lab_3.pdb
+D:\Games and tools\Project\C#\lab_3\obj\Debug\net6.0-windows\lab_3.genruntimeconfig.cache
+D:\Games and tools\Project\C#\lab_3\obj\Debug\net6.0-windows\ref\lab_3.dll
+F:\Университет\OS labs\lab_3\bin\Debug\net6.0-windows\lab_3.exe
+F:\Университет\OS labs\lab_3\bin\Debug\net6.0-windows\lab_3.deps.json
+F:\Университет\OS labs\lab_3\bin\Debug\net6.0-windows\lab_3.runtimeconfig.json
+F:\Университет\OS labs\lab_3\bin\Debug\net6.0-windows\lab_3.dll
+F:\Университет\OS labs\lab_3\bin\Debug\net6.0-windows\lab_3.pdb
+F:\Университет\OS labs\lab_3\obj\Debug\net6.0-windows\lab_3.csproj.AssemblyReference.cache
+F:\Университет\OS labs\lab_3\obj\Debug\net6.0-windows\lab_3.Form1.resources
+F:\Университет\OS labs\lab_3\obj\Debug\net6.0-windows\lab_3.csproj.GenerateResource.cache
+F:\Университет\OS labs\lab_3\obj\Debug\net6.0-windows\lab_3.GeneratedMSBuildEditorConfig.editorconfig
+F:\Университет\OS labs\lab_3\obj\Debug\net6.0-windows\lab_3.AssemblyInfoInputs.cache
+F:\Университет\OS labs\lab_3\obj\Debug\net6.0-windows\lab_3.AssemblyInfo.cs
+F:\Университет\OS labs\lab_3\obj\Debug\net6.0-windows\lab_3.csproj.CoreCompileInputs.cache
+F:\Университет\OS labs\lab_3\obj\Debug\net6.0-windows\lab_3.dll
+F:\Университет\OS labs\lab_3\obj\Debug\net6.0-windows\refint\lab_3.dll
+F:\Университет\OS labs\lab_3\obj\Debug\net6.0-windows\lab_3.pdb
+F:\Университет\OS labs\lab_3\obj\Debug\net6.0-windows\lab_3.genruntimeconfig.cache
+F:\Университет\OS labs\lab_3\obj\Debug\net6.0-windows\ref\lab_3.dll

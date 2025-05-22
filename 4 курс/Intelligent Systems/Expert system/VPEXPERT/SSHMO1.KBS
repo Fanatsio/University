@@ -1,0 +1,54 @@
+RUNTIME;
+ACTIONS
+     DISPLAY "       This demonstrates Static Range B5..B9 Spreadsheet Access"
+     DISPLAY "                  from the spreadsheet SSHMO1.WKS."
+     DISPLAY "                                                   "
+     WFORMAT FIXED, 0            !format PWKS values without decimal places
+
+          WKS example, B5..B9, SSHMO1         !declare static range B5..B9
+          DISPLAY "          January Cases                         "
+          DISPLAY "                                                "
+          DISPLAY "          level 1 cases =           {example[1]}"
+          DISPLAY "          level 2 cases =           {example[2]}"
+          DISPLAY "          level 3 cases =           {example[3]}"
+          DISPLAY "          information other cases = {example[4]}"
+          DISPLAY "          non member cases =        {example[5]}"
+          DISPLAY "                                      "
+          DISPLAY "          PLEASE PRESS ANY KEY TO CONTINUE~"
+          DISPLAY "                                         "
+
+     DISPLAY "          This demonstrates Named COLUMN Spreadsheet Access."
+     DISPLAY "          The COLUMN is named 'month.'"
+     DISPLAY "                                                   "
+
+     FIND month
+          WKS cases, COLUMN = (month), SSHMO1           !declare a COLUMN
+          DISPLAY "                {month} Cases                 "
+          DISPLAY "                                              "
+          DISPLAY "          level 1 cases =           {cases[1]}" 
+          DISPLAY "          level 2 cases =           {cases[2]}"
+          DISPLAY "          level 3 cases =           {cases[3]}"
+          DISPLAY "          information other cases = {cases[4]}"
+          DISPLAY "          non member cases =        {cases[5]}"
+          DISPLAY "                                         "
+          DISPLAY "          PLEASE PRESS ANY KEY TO CONTINUE~"
+          DISPLAY "                                         "
+
+     DISPLAY "          This demonstrates Named ROW Spreadsheet Access."
+     DISPLAY "          The ROW is named 'level.'"
+     DISPLAY "                                                   "
+
+     FIND level
+          WKS figures, ROW = (level), SSHMO1           !declare a ROW
+          DISPLAY "  Jan   Feb    Mar"
+          DISPLAY "                                         "
+          DISPLAY "  {figures[1]}     {figures[2]}      {figures[3]}"
+ ;
+ ASK month: "For which month do you wish to retrieve case figures?";
+ CHOICES month: January, February, March;
+
+ ASK level: "For which case level do you wish to retrieve figures for?";
+ CHOICES level: level_1, level_2, level_3, information_other, non_member;
+
+ 
+

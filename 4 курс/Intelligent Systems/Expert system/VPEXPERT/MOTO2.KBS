@@ -1,0 +1,635 @@
+! Name of the expert system: MOTORCYCLE CHOICE
+! Description:  Eta sistema pomoget vam v vibore motorcycla
+! Microcomputer used: IBM PC compatible
+! Saved file name: MOTO.KBS
+
+ENDOFF;
+RUNTIME;
+
+! ACTIONS BLOCK
+ACTIONS
+WOPEN 1,0,0,23,79,2
+ACTIVE 1
+DISPLAY "
+
+
+
+                     	     	VIBOR MOTORCYCLA
+
+                         Developed by Mukhametchina V. A.
+                   
+
+
+                           Press any key to continue~"
+
+WCLOSE 1
+
+   DISPLAY " Welcome!"
+   DISPLAY "*********"
+   DISPLAY ""
+   FIND RECO
+   DISPLAY " Vam recomendovano: {RECO}";
+
+
+RULE 1
+IF       M = NO
+	AND A1 = NO
+	AND A = NO
+THEN     RECO = Bez_prav_nelzya_upravlyat_motorciclom;
+
+RULE 2
+IF      G = NO
+	AND G1 = NO
+	AND P = NO
+	AND Z = NO
+THEN     RECO = Ne_vibran_tip_mestnosti;
+
+RULE 3
+IF      O1 = NO
+	AND O2 = NO
+THEN     RECO = Ne_vibrano_kolichestvo_sezonov;
+
+RULE 4
+IF      B1 = NO
+	AND B2 = NO
+	AND B3 = NO
+THEN     RECO = Ne_vibran_budget;
+
+RULE 5
+IF      M = YES
+	AND G = YES
+	AND G1 = NO
+	AND O1 = YES
+	AND B1 = YES
+THEN     RECO = SYM_Symphony_SR50_OR_SYM_Allo_50;
+
+RULE 6
+IF      M = YES
+	AND G = YES
+	AND G1 = NO
+	AND O1 = YES
+	AND B2 = YES
+THEN     RECO = Aprilia_SR_50_OR_Gilera_Runner_SR50;
+
+RULE 7
+IF      M = YES
+	AND G = YES
+	AND G1 = NO
+	AND O1 = YES
+	AND B3 = YES
+THEN     RECO = Ne_naideno_podhodyashih_modelei;
+
+RULE 8
+IF      M = YES
+	AND G = YES
+	AND G1 = NO
+	AND O2 = YES
+	AND B1 = YES
+THEN     RECO = Kymco_Visa_R50_OR_Agility_City_50;
+
+RULE 9
+IF      M = YES
+	AND G = YES
+	AND G1 = NO
+	AND O2 = YES
+	AND B2 = YES
+THEN     RECO = Yamaha_RZ50_OR_Senda_DPD_XTreme50R;
+
+RULE 10
+IF      M = YES
+	AND G = YES
+	AND G1 = NO
+	AND O2 = YES
+	AND B3 = YES
+THEN     RECO = Ne_naideno_podhodyashih_modelei;
+
+RULE 11
+IF      M = YES
+	AND G = YES
+	AND G1 = YES
+	AND O1 = YES
+	AND B1 = YES
+THEN     RECO = SYM_Symphony_SR50_OR_Kymco_Like_50;
+
+RULE 12
+IF      M = YES
+	AND G = YES
+	AND G1 = YES
+	AND O1 = YES
+	AND B2 = YES
+THEN     RECO = Aprilia_SR50_OR_Gilera_Runner_SR50;
+
+RULE 13
+IF      M = YES
+	AND G = YES
+	AND G1 = YES
+	AND O1 = YES
+	AND B3 = YES
+THEN     RECO = Ne_naideno_podhodyashih_modelei;
+
+RULE 14
+IF      M = YES
+	AND G = YES
+	AND G1 = YES
+	AND O2 = YES
+	AND B1 = YES
+THEN     RECO = Kymco_Super8_50_2T_OR_Kymco_DJ50S;
+
+RULE 15
+IF      M = YES
+	AND G = YES
+	AND G1 = YES
+	AND O2 = YES
+	AND B2 = YES
+THEN     RECO = Aprilia_SR50_OR_Gilera_Runner_SR50;
+
+RULE 16
+IF      M = YES
+	AND G = YES
+	AND G1 = YES
+	AND O2 = YES
+	AND B3 = YES
+THEN     RECO = Ne_naideno_podhodyashih_modelei;
+
+RULE 17
+IF      M = YES
+	AND Z = YES
+	AND O1 = YES
+	AND B1 = YES
+THEN     RECO = KTM_50SX_OR_Suzuki_RM50;
+
+RULE 18
+IF      M = YES
+	AND Z = YES
+	AND O1 = YES
+	AND B2 = YES
+THEN     RECO = Ne_naideno_podhodyashih_modelei;
+
+RULE 19
+IF      M = YES
+	AND Z = YES
+	AND O1 = YES
+	AND B3 = YES
+THEN     RECO = Husqvarna_TC50;
+
+RULE 20
+IF      M = YES
+	AND Z = YES
+	AND O2 = YES
+	AND B1 = YES
+THEN     RECO = Yamaha_Pocket_bike_OR_Suzuki_RM50;
+
+RULE 21
+IF      M = YES
+	AND Z = YES
+	AND O2 = YES
+	AND B2 = YES
+THEN     RECO = Ne_naideno_podhodyashih_modelei;
+
+RULE 22
+IF      M = YES
+	AND Z = YES
+	AND O2 = YES
+	AND B3 = YES
+THEN     RECO = Husqvarna_TC50;
+
+RULE 23
+IF      M = YES
+	AND P = YES
+	AND O1 = YES
+	AND B1 = YES
+THEN     RECO = Sliskom_malaya_kubatura;
+
+RULE 24
+IF      M = YES
+	AND P = YES
+	AND O1 = YES
+	AND B2 = YES
+THEN     RECO = Sliskom_malaya_kubatura;
+
+RULE 25
+IF      M = YES
+	AND P = YES
+	AND O1 = YES
+	AND B3 = YES
+THEN     RECO = Sliskom_malaya_kubatura;
+
+RULE 26
+IF      M = YES
+	AND P = YES
+	AND O2 = YES
+	AND B1 = YES
+THEN     RECO = Sliskom_malaya_kubatura;
+
+RULE 27
+IF      M = YES
+	AND P = YES
+	AND O2 = YES
+	AND B2 = YES
+THEN     RECO = Sliskom_malaya_kubatura;
+
+RULE 28
+IF      M = YES
+	AND P = YES
+	AND O3 = YES
+	AND B3 = YES
+THEN     RECO = Sliskom_malaya_kubatura;
+
+RULE 29
+IF      A = YES
+	AND G = YES
+	AND G1 = NO
+	AND O1 = YES
+	AND B1 = YES
+THEN     RECO = Stels_SB_200_OR_CFMoto_150_Leader;
+
+RULE 30
+IF      A = YES
+	AND G = YES
+	AND G1 = NO
+	AND O1 = YES
+	AND B2 = YES
+THEN     RECO = Bajaj_Pulsar_RS200_OR_Minsk_C4_250;
+
+RULE 31
+IF      A = YES
+	AND G = YES
+	AND G1 = NO
+	AND O1 = YES
+	AND B3 = YES
+THEN     RECO = Yamaha_Fazer250_OR_Piaggio_300ie;
+
+RULE 32
+IF      A = YES
+	AND G = YES
+	AND G1 = NO
+	AND O2 = YES
+	AND B1 = YES
+THEN     RECO = Stels_Flex250_OR_Regulmoto_SK250GY5;
+
+RULE 33
+IF      A = YES
+	AND G = YES
+	AND G1 = NO
+	AND O2 = YES
+	AND B2 = YES
+THEN     RECO = CFMoto_150NK_OR_Motoland_ultra250;
+
+RULE 34
+IF      A = YES
+	AND G = YES
+	AND G1 = NO
+	AND O2 = YES
+	AND B3 = YES
+THEN     RECO = CFMoto_650NK_OR_Kawasaki_Z250SL;
+
+RULE 35
+IF      A = YES
+	AND G = YES
+	AND G1 = YES
+	AND O1 = YES
+	AND B1 = YES
+THEN     RECO = CFMoto_150_Leader_OR_Regulmoto_SK1506;
+
+RULE 36
+IF      A = YES
+	AND G = YES
+	AND G1 = YES
+	AND O1 = YES
+	AND B2 = YES
+THEN     RECO = CFMoto_Jetmax250_OR_Motoland_VRaptor250;
+
+RULE 37
+IF      A = YES
+	AND G = YES
+	AND G1 = YES
+	AND O1 = YES
+	AND B3 = YES
+THEN     RECO = SYM_Joymax300_OR_Vespa_Primavera150;
+
+RULE 38
+IF      A = YES
+	AND G = YES
+	AND G1 = YES
+	AND O2 = YES
+	AND B1 = YES
+THEN     RECO = Regulmoto_SK200GY4_OR_Regulmoto_SK1506;
+
+RULE 39
+IF      A = YES
+	AND G = YES
+	AND G1 = YES
+	AND O2 = YES
+	AND B2 = YES
+THEN     RECO = Raser_Fighter250_OR_Motoland_R3_250;
+
+RULE 40
+IF      A = YES
+	AND G = YES
+	AND G1 = YES
+	AND O2 = YES
+	AND B3 = YES
+THEN     RECO = CFMoto_650TK_OR_Stels_Flex_250;
+
+RULE 41
+IF      A = YES
+	AND Z = YES
+	AND O1 = YES
+	AND B1 = YES
+THEN     RECO = BSE_Z1_150e_OR_Regulmoto_SK15022;
+
+RULE 42
+IF      A = YES
+	AND Z = YES
+	AND O1 = YES
+	AND B2 = YES
+THEN     RECO = Avantis_FXLux250_OR_Kayo_T2_250Enduro;
+
+RULE 43
+IF      A = YES
+	AND Z = YES
+	AND O1 = YES
+	AND B3 = YES
+THEN     RECO = Honda_CRF250L_OR_BSE_M2_250;
+
+RULE 44
+IF      A = YES
+	AND Z = YES
+	AND O2 = YES
+	AND B1 = YES
+THEN     RECO = Motoland_GS250_OR_Motoland_Enduro250ST;
+
+RULE 45
+IF      A = YES
+	AND Z = YES
+	AND O2 = YES
+	AND B2 = YES
+THEN     RECO = BSE_Z7_OR_Ekonika_Sport_003;
+
+RULE 46
+IF      A = YES
+	AND Z = YES
+	AND O2 = YES
+	AND B3 = YES
+THEN     RECO = Minsk_Goose400_OR_Motoland_WRX300NC;
+
+RULE 47
+IF      A = YES
+	AND P = YES
+	AND O1 = YES
+	AND B1 = YES
+THEN     RECO = Ne_naideno_podhodyashih_modelei;
+
+RULE 48
+IF      A = YES
+	AND P = YES
+	AND O1 = YES
+	AND B2 = YES
+THEN     RECO = Bajaj_V15_OR_Bajaj_Avenger_220Cruize;
+
+RULE 49
+IF      A = YES
+	AND P = YES
+	AND O1 = YES
+	AND B3 = YES
+THEN     RECO = Honda_NC750X_OR_Suzuki_Burgman400;
+
+RULE 50
+IF      A = YES
+	AND P = YES
+	AND O2 = YES
+	AND B1 = YES
+THEN     RECO = Ne_naideno_podhodyashih_modelei;
+
+RULE 51
+IF      A = YES
+	AND P = YES
+	AND O2 = YES
+	AND B2 = YES
+THEN     RECO = Motoland_Wolf250_OR_CFMoto_250Jetmax;
+
+RULE 52
+IF      A = YES
+	AND P = YES
+	AND O2 = YES
+	AND B3 = YES
+THEN     RECO = Yamaha_TDM900_OR_Yamaha_XVS_950Bolt;
+
+RULE 53
+IF      A1 = YES
+	AND G = YES
+	AND G1 = NO
+	AND O1 = YES
+	AND B1 = YES
+THEN     RECO = Minsk_D4_125_OR_Kymco_Agility_City125;
+
+RULE 54
+IF      A1 = YES
+	AND G = YES
+	AND G1 = NO
+	AND O1 = YES
+	AND B2 = YES
+THEN     RECO = Yamaha_YBR125_OR_Honda_CB125;
+
+RULE 55
+IF      A1 = YES
+	AND G = YES
+	AND G1 = NO
+	AND O1 = YES
+	AND B3 = YES
+THEN     RECO = Yamaha_NMX_OR_Vespa_Primavera_125;
+
+RULE 56
+IF      A1 = YES
+	AND G = YES
+	AND G1 = NO
+	AND O2 = YES
+	AND B1 = YES
+THEN     RECO = Bajaj_Boxer_BM125_OR_Regulmoto_SK125cc;
+
+RULE 57
+IF      A1 = YES
+	AND G = YES
+	AND G1 = NO
+	AND O2 = YES
+	AND B2 = YES
+THEN     RECO = Yamaha_YBR125_OR_Honda_CBF125_Stunner;
+
+RULE 58
+IF      A1 = YES
+	AND G = YES
+	AND G1 = NO
+	AND O2 = YES
+	AND B3 = YES
+THEN     RECO = Super_Soco_TC_Max_OR_Aprilia_RX125;
+
+RULE 59
+IF      A1 = YES
+	AND G = YES
+	AND G1 = YES
+	AND O1 = YES
+	AND B1 = YES
+THEN     RECO = Kymco_Agility_City125_OR_Minsk_D4_125;
+
+RULE 60
+IF      A1 = YES
+	AND G = YES
+	AND G1 = YES
+	AND O1 = YES
+	AND B2 = YES
+THEN     RECO = Honda_CBF125_OR_Suzuki_GN125;
+
+RULE 61
+IF      A1 = YES
+	AND G = YES
+	AND G1 = YES
+	AND O1 = YES
+	AND B3 = YES
+THEN     RECO = Vespa_Sprint_125_OR_Honda_CB125;
+
+RULE 62
+IF      A1 = YES
+	AND G = YES
+	AND G1 = YES
+	AND O2 = YES
+	AND B1 = YES
+THEN     RECO = Senke_SK125_OR_Alpha_Cross;
+
+RULE 63
+IF      A1 = YES
+	AND G = YES
+	AND G1 = YES
+	AND O2 = YES
+	AND B2 = YES
+THEN     RECO = Yamaha_YBR125_OR_Honda_CBF125;
+
+RULE 64
+IF      A1 = YES
+	AND G = YES
+	AND G1 = YES
+	AND O2 = YES
+	AND B3 = YES
+THEN     RECO = Vespa_Sprint_125_OR_Honda_CB125;
+
+RULE 65
+IF      A1 = YES
+	AND Z = YES
+	AND O1 = YES
+	AND B1 = YES
+THEN     RECO = Cross_XR125_OR_Orion_125;
+
+RULE 66
+IF      A1 = YES
+	AND Z = YES
+	AND O1 = YES
+	AND B2 = YES
+THEN     RECO = Yamaha_YZ125_OR_Jumper_125;
+
+RULE 67
+IF      A1 = YES
+	AND Z = YES
+	AND O1 = YES
+	AND B3 = YES
+THEN     RECO = Husqvarna_TC85_OR_Husqvarna_TC65;
+
+RULE 68
+IF      A1 = YES
+	AND Z = YES
+	AND O2 = YES
+	AND B1 = YES
+THEN     RECO = Orion_125_OR_Honda_XR_125;
+
+RULE 69
+IF      A1 = YES
+	AND Z = YES
+	AND O2 = YES
+	AND B2 = YES
+THEN     RECO = Yamaha_YZ_125_OR_Kawasaki_KSR110;
+
+RULE 70
+IF      A1 = YES
+	AND Z = YES
+	AND O2 = YES
+	AND B3 = YES
+THEN     RECO = Kawasaki_KLX150_OR_Aprilia_RX_125;
+
+RULE 71
+IF      A1 = YES
+	AND P = YES
+	AND O1 = YES
+	AND B1 = YES
+THEN     RECO = Sliskom_malaya_kubatura;
+
+RULE 72
+IF      A1 = YES
+	AND P = YES
+	AND O1 = YES
+	AND B2 = YES
+THEN     RECO = Sliskom_malaya_kubatura;
+
+RULE 73
+IF      A1 = YES
+	AND P = YES
+	AND O1 = YES
+	AND B3 = YES
+THEN     RECO = Sliskom_malaya_kubatura;
+
+RULE 74
+IF      A1 = YES
+	AND P = YES
+	AND O2 = YES
+	AND B1 = YES
+THEN     RECO = Sliskom_malaya_kubatura;
+
+RULE 75
+IF      A1 = YES
+	AND P = YES
+	AND O2 = YES
+	AND B2 = YES
+THEN     RECO = Sliskom_malaya_kubatura;
+
+RULE 76
+IF      A1 = YES
+	AND P = YES
+	AND O3 = YES
+	AND B3 = YES
+THEN     RECO = Sliskom_malaya_kubatura;
+
+!STATEMENTS BLOCK
+
+ASK M: "U vas est` kategoria prav M?";
+CHOICES M: YES,NO;
+
+ASK A1: "U vas est` kategoria prav A1?";
+CHOICES A1: YES,NO;
+
+ASK A: "U vas est` kategoria prav A?";
+CHOICES A: YES,NO;
+
+ASK G: " Planiruete ezdit` v gorode?";
+CHOICES G: YES,NO;
+
+ASK G1: " S passagirom?";
+CHOICES G1: YES,NO;
+
+ASK P: " Planiruete puteshestvovat` na motorcycle?";
+CHOICES P: YES,NO;
+
+ASK Z: " Planiruete ezdit` zagorod?";
+CHOICES Z: YES,NO;
+
+ASK O1: "Vash stag vogdeniya motorcycla sostavlyaet 1 sezon?";
+CHOICES O1: YES,NO;
+
+ASK O2: "Vash stag vogdeniya motorcycla bol`she libo raven 2 sezonam?";
+CHOICES O2: YES,NO;
+
+ASK B1: "Vash budget do 100 000p?";
+CHOICES B1: YES,NO;
+
+ASK B2: "Vash budget ot 100 000p do 200 000p?";
+CHOICES B2: YES,NO;
+
+ASK B3: "Vash budget ot 200 000p?";
+CHOICES B3: YES,NO;
+

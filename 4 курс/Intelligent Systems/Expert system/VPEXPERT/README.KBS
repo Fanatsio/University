@@ -1,0 +1,135 @@
+RUNTIME;
+ENDOFF;
+BKCOLOR = 1;
+
+ACTIONS
+  COLOR = 15
+  CLS
+  DISPLAY "
+                          VP-Expert release 2.1
+                             HyperText README
+
+ This sample file serves a twofold purpose.  On the one hand it provides an
+ example of using the hypertext capabilities of VP-Expert while at the same
+ time informing you of some of the last minute changes in VP-Expert 2.1.
+
+   You can print the readme textfile by using the following DOS command:
+ 
+                          A>COPY README.TXT PRN
+
+                       [ Press any key to begin ]~
+"
+  CLS
+  FIND Graphics_Mode
+  Topic = README_HELP
+  Topic1 = INDEX
+  WHILETRUE ExitButton = NO THEN END;
+
+! RULES to handle LBUTTON selection
+
+WHENEVER Topics_Exit
+IF   Topic = EXIT
+THEN ExitButton = YES;
+
+
+WHENEVER Previous_Selected
+IF   PreviousButton = YES
+THEN POP Topic, Topic1
+     POP Topic, Topic1
+     Topic = (Topic1)
+     ResetMono = YES
+     ResetColor = YES;
+
+PLURAL: Topic;
+
+WHENEVER Other_Selected
+IF   OtherButton = YES
+THEN ResetMono = YES
+     ResetColor = YES
+     Topic = OTHER;
+
+WHENEVER Index_Selected
+IF   MainIndexButton = YES
+THEN ResetMono = YES
+     ResetColor = YES
+     Topic = INDEX;
+
+WHENEVER Help_Selected
+IF   HelpButton = YES
+THEN ResetMono = YES
+     ResetColor = YES
+     Topic = README_HELP;
+     
+! Rules to display LBUTTONS in color or B&W depending on GMODE
+
+WHENEVER ResetMono
+IF   ResetMono = YES
+THEN PreviousButton = NO
+     OtherButton = NO
+     MainIndexButton = NO
+     HelpButton = NO
+     ExitButton = NO;
+
+WHENEVER ResetColor
+IF   ResetColor = YES
+AND  G_Mode = EGA
+THEN PButton = NO
+     MIButton = NO
+     HButton = NO
+     EButton = NO;
+
+! Rules to select proper GMODE
+
+RULE G1
+IF   G_Mode = UNKNOWN
+THEN Graphics_Mode = -1
+     MOUSEON
+     GMODE @Graphics_Mode
+     ResetMono = YES;
+
+RULE G2
+IF   G_Mode = Hercules
+THEN Graphics_Mode = 8
+     MOUSEON
+     GMODE @Graphics_Mode
+     ResetMono = YES;
+
+RULE G3
+IF   G_Mode = CGA
+THEN Graphics_Mode = 6
+     MOUSEON
+     GMODE @Graphics_Mode
+     ResetMono = YES;
+
+RULE G4
+IF   G_Mode = EGA
+THEN Graphics_Mode = 16
+     MOUSEON
+     GMODE @Graphics_Mode
+     ResetMono = YES
+     ResetColor = YES;
+
+RULE G6
+IF   G_Mode = None
+THEN Graphics_Mode = -1
+     GMODE @Graphics_Mode
+     ResetMono = YES;
+
+HYPERTEXT Topic: 1, 1, 78, 22, readme, 14, 15;
+
+!.....Color buttons.....
+LBUTTON PButton: 8, 24, 0, 11, Previous;
+LBUTTON MIButton: 26, 24, 0, 11, Index;
+LBUTTON HButton: 41, 24, 0, 11, Help;
+LBUTTON EButton: 70, 24, 0, 11, Exit;
+
+!.....Monochrome buttons.....
+LBUTTON PreviousButton: 8, 24, 11, 0, Previous;
+LBUTTON MainIndexButton: 26, 24, 11, 0, Index;
+LBUTTON HelpButton: 41, 24, 11, 0, Help;
+FORMFIELD Topic: 52, 24, 13, 0;
+LBUTTON ExitButton: 70, 24, 11, 0, Exit;
+
+
+ASK G_Mode: "What Graphics Mode should be used?";
+CHOICES G_Mode: EGA, None, CGA, Hercules;

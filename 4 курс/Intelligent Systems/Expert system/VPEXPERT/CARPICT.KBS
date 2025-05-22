@@ -1,0 +1,159 @@
+RUNTIME;
+ENDOFF;
+BKCOLOR = 1;
+ACTIONS
+  MOUSEOFF
+  COLOR = 15
+  CLS
+  DISPLAY " CARPICT.KBS
+
+ This VP-Expert release 2 sample file demonstrates the ability of the
+ graphic primitives combined with label buttons and WHENEVER rules.
+
+ You must have an EGA or VGA display and a Microsoft-compatible mouse
+ installed to use this demonstration rule base properly.  You need to
+ modify the rule base in order to have it support other display types."
+
+ Find Continue
+
+;  ! -- [ End of Actions ]
+
+Ask Response: "
+ Do you wish to procede?";
+Choices Response: Yes, No;
+ 
+Rule Show_Sample
+If	Response = Yes
+THEN	Continue = Yes
+	CLS
+	MOUSEON
+	GMODE 16
+	FrontTire = no
+	RearTire = no
+	FrontWindow = no
+	RearWindow = no
+	Image = car
+	Done = NO
+	WHILETRUE Done = NO THEN END
+ELSE	Continue = no;
+
+WHENEVER pict_car
+IF Image = CAR
+THEN
+
+! Draw the tires
+
+GCOLOR 15
+ELLIPSE 200,70,225,85
+ELLIPSE 209,75,216,80
+GCOLOR 11
+FILL 213,78,15
+GCOLOR 15
+ELLIPSE 300,70,325,85
+ELLIPSE 309,75,316,80
+GCOLOR 11
+FILL 313,78,15
+
+! Draw the body outline of the car
+
+GCOLOR 15
+MOVETO 224,77
+LINETO 301,77
+MOVETO 200,76
+LINETO 160,73
+LINETO 175,68
+LINETO 225,63
+LINETO 250,53
+LINETO 300,53
+LINETO 315,63
+LINETO 350,66
+LINETO 355,73
+LINETO 325,76
+
+! Draw front window
+
+MOVETO 232,63
+LINETO 250,55
+LINETO 275,55
+LINETO 275,63
+LINETO 232,63
+
+! Draw rear window
+
+MOVETO 280,63
+LINETO 280,55
+LINETO 297,55
+LINETO 307,63
+LINETO 280,63
+
+! Paint the car
+
+GCOLOR 14
+FILL 260,70,15;
+
+!.......WHENEVER rules to handle mouse-downs on HOTREGIONs........
+
+WHENEVER Ftire
+IF	FrontTire = yes
+THEN	GLOCATE 19, 16
+	GDISPLAY "You have selected the front tire.  "
+	FOR Loop = 1 to 10
+	  GCOLOR 12
+	  FILL 205, 75, 15
+	  GCOLOR 0
+	  FILL 205, 75, 15
+	END
+	FrontTire = no;
+
+WHENEVER Rtire
+IF	RearTire = yes
+THEN	GLOCATE 19, 16
+	GDISPLAY "You have selected the rear tire.   "
+	FOR Loop = 1 to 10
+	  GCOLOR 12
+	  FILL 305, 75, 15
+	  GCOLOR 0
+	  FILL 305, 75, 15
+	END
+	RearTire = no;
+
+WHENEVER Fwindow
+IF	FrontWindow = yes
+THEN	GLOCATE 19, 16
+	GDISPLAY "You have selected the front window."
+	FOR Loop = 1 to 10
+	  GCOLOR 12
+	  FILL 250, 60, 15
+	  GCOLOR 0
+	  FILL 250, 60, 15
+	END
+	FrontWindow = no;
+
+WHENEVER Rwindow
+IF	RearWindow = yes
+THEN	GLOCATE 19, 16
+	GDISPLAY "You have selected the rear window. "
+	FOR Loop = 1 to 10
+	  GCOLOR 12
+	  FILL 300, 60, 15
+	  GCOLOR 0
+	  FILL 300, 60, 15
+	END
+	RearWindow = no;
+
+
+!........."Hidden" dynamic regions of the car graphic.........
+
+HOTREGION FrontTire: 200, 70, 225, 85;
+HOTREGION RearTire: 300, 70, 325, 85;
+HOTREGION FrontWindow: 232, 55, 275, 63;
+HOTREGION RearWindow: 280, 55, 307, 63;
+
+
+!.........Label Buttons to allow easy access to a specific HOTREGION.......
+
+LBUTTON FrontTire: 14, 9, 9, 10, FrontTire;
+LBUTTON RearTire: 43, 9, 9, 10, RearTire;
+LBUTTON FrontWindow: 14, 2, 9, 10, FrontWindow;
+LBUTTON RearWindow: 41, 2, 9, 10, RearWindow;
+LBUTTON Done: 32, 13, 0, 7, Done;
