@@ -1,0 +1,6 @@
+Found existing installation: mmcv 2.2.0
+Uninstalling mmcv-2.2.0:
+  Would remove:
+    /home/hetsu/.conda/envs/openmmlab/lib/python3.8/site-packages/mmcv-2.2.0.dist-info/*
+    /home/hetsu/.conda/envs/openmmlab/lib/python3.8/site-packages/mmcv/*
+Proceed (Y/n)? 

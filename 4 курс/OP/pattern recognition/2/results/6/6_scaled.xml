@@ -1,0 +1,38 @@
+<annotation>
+	<folder>images</folder>
+	<filename>6.jpg</filename>
+	<path>C:\Users\vital\OneDrive\&#1056;&#1072;&#1073;&#1086;&#1095;&#1080;&#1081; &#1089;&#1090;&#1086;&#1083;\sht\OP\pattern recognition\2\images\6.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>384</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>cat</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>240</xmin>
+			<ymin>67</ymin>
+			<xmax>350</xmax>
+			<ymax>221</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>cat</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>420</xmin>
+			<ymin>203</ymin>
+			<xmax>476</xmax>
+			<ymax>344</ymax>
+		</bndbox>
+	</object>
+</annotation>

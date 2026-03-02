@@ -1,0 +1,6 @@
+train: C:/Users/vital/OneDrive/Рабочий стол/sht/OP/pattern recognition/5/dataset/images/train
+val:   C:/Users/vital/OneDrive/Рабочий стол/sht/OP/pattern recognition/5/dataset/images/val
+test:  C:/Users/vital/OneDrive/Рабочий стол/sht/OP/pattern recognition/5/dataset/images/test
+
+nc: 1
+names: ['coin']

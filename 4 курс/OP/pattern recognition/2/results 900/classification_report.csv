@@ -1,0 +1,12 @@
+image,ground_truth,predicted,true_positive,false_positive,true_negative,false_negative,total_proposals,cat_proposals
+0,cat,no cat,0,0,0,1,200,0
+10,cat,cat,1,0,0,0,200,1
+2,cat,cat,1,0,0,0,200,18
+2010_003781,cat,cat,1,0,0,0,75,16
+3,cat,cat,1,0,0,0,200,10
+4,cat,cat,1,0,0,0,154,112
+5,cat,cat,1,0,0,0,200,117
+6,cat,cat,1,0,0,0,176,48
+7,cat,cat,1,0,0,0,200,1
+8,cat,no cat,0,0,0,1,200,0
+9,cat,cat,1,0,0,0,200,3
