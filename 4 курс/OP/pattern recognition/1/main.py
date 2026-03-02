@@ -20,7 +20,3 @@ cv2.rectangle(img, top_left, bottom_right, (0, 255, 0), 2)
 cv2.imshow("Result", img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-
-
-
-
