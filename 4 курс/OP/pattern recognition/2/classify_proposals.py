@@ -117,7 +117,7 @@ def visualize_results(image_path, results_subdir, top_n=1):
     valid_df = df[df['cat_prob'] > 0.05].copy()
     
     if valid_df.empty:
-        print(f"Нет валидных предложений для {base_name}")
+        # print(f"Нет валидных предложений для {base_name}")
         return
     
     valid_df['final_score'] = (

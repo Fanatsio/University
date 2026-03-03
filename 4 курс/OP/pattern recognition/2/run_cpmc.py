@@ -11,8 +11,7 @@ def main():
     parser.add_argument("--compact", type=float, default=7.0)
     parser.add_argument("--grid", type=int, default=50)
     parser.add_argument("--topk", type=int, default=200)
-    parser.add_argument("--workers", type=int, default=8,
-                        help="Number of parallel workers for GraphCut (default: 1 — no parallelism)")
+    parser.add_argument("--workers", type=int, default=8, help="Number of parallel workers for GraphCut (default: 1 — no parallelism)")
     args = parser.parse_args()
 
     os.makedirs(args.out, exist_ok=True)

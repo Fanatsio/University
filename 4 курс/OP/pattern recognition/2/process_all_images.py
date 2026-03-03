@@ -5,10 +5,9 @@ import tempfile
 import shutil
 from PIL import Image
 import xml.etree.ElementTree as ET
-import cv2  # для визуализации
+import cv2
 import numpy as np
 
-# Максимальный размер для CPMC — ты сказал 400
 MAX_SIDE = 640
 
 def parse_voc_xml(xml_path):
