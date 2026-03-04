@@ -1,79 +1,50 @@
 import numpy as np
-import time
 
-CONFIG = {
-    "eps": 1e-6,
-    "max_iter": 100,
-    "x0": np.array([-2., -2.])
-}
-
-def F(x: np.ndarray) -> np.ndarray:
+# Система уравнений, приведенная к виду F(x) = 0
+def F(x):
     x1, x2 = x
-    return np.array([
-        np.sin(0.2 * x2) - np.cos(0.4 * x1) + 0.1,
-        np.exp(-((x1 - 2) / 4) ** 2 - ((x2 - 1) / 3) ** 2) - 0.1
-    ])
+    f1 = np.sin(0.2 * x2) - np.cos(0.4 * x1) + 0.1
+    f2 = np.exp(-((x1 - 2) / 4)**2) * np.exp(-((x2 - 1) / 3)**2) - 0.1
+    return np.array([f1, f2])
 
-def J(x: np.ndarray) -> np.ndarray:
+# Якобиан (матрица производных)
+def J(x):
     x1, x2 = x
-    e_part = np.exp(-((x1 - 2) / 4) ** 2 - ((x2 - 1) / 3) ** 2)
 
     df1_dx1 = 0.4 * np.sin(0.4 * x1)
     df1_dx2 = 0.2 * np.cos(0.2 * x2)
-    df2_dx1 = e_part * (-2 * (x1 - 2) / 16)
-    df2_dx2 = e_part * (-2 * (x2 - 1) / 9)
- 
-    return np.array([[df1_dx1, df1_dx2], [df2_dx1, df2_dx2]])
 
-def newton_implicit(F, J, x0: np.ndarray, eps=1e-6, max_iter=100):
-    x = x0.copy()
-    history = []
-    start_time = time.time()
+    exp_part = np.exp(-((x1 - 2) / 4)**2) * np.exp(-((x2 - 1) / 3)**2)
+    df2_dx1 = exp_part * (- (x1 - 2) / 8)
+    df2_dx2 = exp_part * (- 2 * (x2 - 1) / 9)
 
-    for k in range(max_iter):
+    return np.array([
+        [df1_dx1, df1_dx2],
+        [df2_dx1, df2_dx2]
+    ])
+
+# Неявный метод Ньютона
+def newton_system(x0, eps):
+    x = np.array(x0, dtype=float)
+    iter = 0
+    print("Начальное приближение:", x0)
+
+    while True:
         Fx = F(x)
         Jx = J(x)
-        detJ = np.linalg.det(Jx)
 
-        if abs(detJ) < 1e-10:
-            raise np.linalg.LinAlgError(f"Якобиан вырожден на итерации {k}, det(J)={detJ:.3e}")
+        delta = np.linalg.solve(Jx, Fx)
+        x_new = x - delta
 
-        dx = np.linalg.solve(Jx, -Fx)
-        x_new = x + dx
-        norm_dx = np.linalg.norm(dx)
-        history.append((k + 1, x[0], x[1], norm_dx))
-
-        if norm_dx < eps:
-            elapsed = time.time() - start_time
-            return x_new, k + 1, F(x_new), eps, history, elapsed
+        if np.linalg.norm(x_new - x) < eps:
+            print("x =", x_new)
+            print("Итераций:", iter + 1)
+            print("F(x) =", F(x_new))
+            print("Точность (eps):", eps)
+            return x_new
 
         x = x_new
+        iter += 1
 
-    elapsed = time.time() - start_time
-    raise Exception(f"Метод Ньютона не сошёлся за {max_iter} итераций. Последнее x={x}, ||F(x)||={np.linalg.norm(F(x)):.3e}, время={elapsed:.2f} c")
-
-def print_results(result, x0):
-    print("\n" + "=" * 50)
-    print("        РЕЗУЛЬТАТЫ РАБОТЫ МЕТОДА НЬЮТОНА")
-    print("=" * 50)
-
-    print(f"Начальное приближение: x₀ = [{x0[0]:.4f}, {x0[1]:.4f}]")
-    print(f"Количество итераций:   {result[1]}")
-    print(f"Найденное решение:     x* = [{result[0][0]:.6f}, {result[0][1]:.6f}]")
-    print(f"Вектор невязки:        F(x*) = [{result[2][0]:.3e}, {result[2][1]:.3e}]")
-    print(f"Точность ε:            {result[3]}")
-    print(f"Время выполнения:      {result[5]:.6f} c\n")
-
-    print("-" * 50)
-    print(f"{'k':<5}{'x1':>12}{'x2':>12}{'||Δx||':>12}")
-    print("-" * 50)
-    for k, x1, x2, dx_norm in result[4]:
-        print(f"{k:<5}{x1:>12.6f}{x2:>12.6f}{dx_norm:>12.3e}")
-    print("-" * 50)
-    print("✅ Метод Ньютона успешно сошёлся!")
-    print("=" * 50 + "\n")
-
-if __name__ == "__main__":
-    x0 = CONFIG["x0"]
-    result = newton_implicit(F, J, x0, eps=CONFIG["eps"], max_iter=CONFIG["max_iter"])
-    print_results(result, x0)
+x0 = [0.888889, 3.0]
+solution = newton_system(x0, eps=1e-6)
