@@ -3,20 +3,18 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
 def f1(x1, x2):
-    """Первое уравнение системы: sin(0.2x2) - cos(0.4x1) = -0.1"""
     return np.sin(0.2 * x2) - np.cos(0.4 * x1) + 0.1
 
 def f2(x1, x2):
-    """Второе уравнение системы: e^(-((x1-2)/4)^2) * e^(-((x2-1)/3)^2) = 0.1"""
     return np.exp(-((x1 - 2) / 4) ** 2) * np.exp(-((x2 - 1) / 3) ** 2) - 0.1
 
 def phi(x):
-    """Целевая функция Ф(x,y) = f1^2 + f2^2"""
+    # Целевая функция Ф(x,y)
     x1, x2 = x[0], x[1]
     return f1(x1, x2)**2 + f2(x1, x2)**2
 
 def gradient(x, h=1e-6):
-    """Вычисление градиента численным методом"""
+    #Вычисление градиента численным методом
     grad = np.zeros_like(x)
     for i in range(len(x)):
         x_plus = x.copy()
@@ -27,9 +25,7 @@ def gradient(x, h=1e-6):
     return grad
 
 def localization_phase():
-    """
-    Этап 1: Локализация минимума графическим методом
-    """
+    # Этап 1: Локализация минимума графическим методом
     print("=" * 80)
     print("ЭТАП 1: ЛОКАЛИЗАЦИЯ МИНИМУМА ГРАФИЧЕСКИМ МЕТОДОМ")
     print("=" * 80)
@@ -69,14 +65,16 @@ def localization_phase():
     
     # 3. Совмещенный график - пересечение функций
     ax3 = fig.add_subplot(223)
-    contour1_3 = ax3.contour(X1, X2, F1, levels=[0], colors='blue', linewidths=2, label='f1=0')
-    contour2_3 = ax3.contour(X1, X2, F2, levels=[0], colors='red', linewidths=2, label='f2=0')
+    _ = ax3.contour(X1, X2, F1, levels=[0], colors='blue', linewidths=2, label='f1=0')
+    _ = ax3.contour(X1, X2, F2, levels=[0], colors='red', linewidths=2, label='f2=0')
+    
     # Добавим линии уровня Ф(x) для контекста
-    contour_phi = ax3.contour(X1, X2, PHI, levels=20, cmap='viridis', alpha=0.6)
+    _ = ax3.contour(X1, X2, PHI, levels=20, cmap='viridis', alpha=0.6)
     ax3.set_xlabel('x1')
     ax3.set_ylabel('x2')
     ax3.set_title('Пересечение f1=0 (синий) и f2=0 (красный)')
     ax3.grid(True, alpha=0.3)
+    
     # Создаем легенду вручную
     from matplotlib.lines import Line2D
     legend_elements = [Line2D([0], [0], color='blue', lw=2, label='f1(x) = 0'),
@@ -85,12 +83,12 @@ def localization_phase():
     
     # 4. Тепловая карта Φ(x) с указанием минимумов
     ax4 = fig.add_subplot(224)
+    
     # Найдем несколько точек с минимальными значениями Φ для ориентира
     min_idx = np.unravel_index(np.argmin(PHI, axis=None), PHI.shape)
     min_x1, min_x2 = X1[min_idx], X2[min_idx]
     
-    im = ax4.imshow(PHI, extent=[x1.min(), x1.max(), x2.min(), x2.max()], 
-                   origin='lower', cmap='viridis', aspect='auto', alpha=0.8)
+    im = ax4.imshow(PHI, extent=[x1.min(), x1.max(), x2.min(), x2.max()], origin='lower', cmap='viridis', aspect='auto', alpha=0.8)
     plt.colorbar(im, ax=ax4, label='Φ(x)')
     ax4.contour(X1, X2, PHI, levels=20, colors='white', alpha=0.5, linewidths=0.5)
     ax4.plot(min_x1, min_x2, 'r*', markersize=15, label='Глобальный минимум на сетке')
@@ -109,8 +107,7 @@ def localization_phase():
     print("   пересечения синей и красной линий.")
     print("2. Тепловая карта Φ(x) показывает области с наименьшими значениями")
     print("   (темные области на карте соответствуют минимумам).")
-    
-    # Предлагаем несколько вариантов начальных приближений
+
     candidate_points = [
         [0.0, 0.0],
         [2.0, 1.0],
@@ -160,7 +157,7 @@ def coordinate_descent(x0, eps=1e-6, max_iter=1000):
                 x_temp[i] = alpha
                 return phi(x_temp)
             
-            # Определяем интервал для поиска (адаптивный)
+            # Определяем интервал для поиска
             step = 1.0
             a, b = x[i] - step, x[i] + step
             
@@ -227,10 +224,8 @@ def visualize_results(history, solution):
     # 3D поверхность
     ax1 = fig.add_subplot(131, projection='3d')
     surf = ax1.plot_surface(X1, X2, Z, cmap='viridis', alpha=0.8)
-    ax1.scatter(history[:, 0], history[:, 1], 
-                [phi(x) for x in history], color='red', s=50)
-    ax1.plot(history[:, 0], history[:, 1], 
-             [phi(x) for x in history], 'r-', linewidth=1, alpha=0.7)
+    ax1.scatter(history[:, 0], history[:, 1], [phi(x) for x in history], color='red', s=50)
+    ax1.plot(history[:, 0], history[:, 1], [phi(x) for x in history], 'r-', linewidth=1, alpha=0.7)
     ax1.set_xlabel('x1')
     ax1.set_ylabel('x2')
     ax1.set_zlabel('Φ(x)')
@@ -279,8 +274,7 @@ def main():
     print(f"Начальное приближение: x0 = [{x0[0]:.2f}, {x0[1]:.2f}]")
     print(f"Точность: ε = {eps}")
     print("-" * 80)
-    
-    # Запуск метода
+
     solution, iterations, phi_val, grad_norm, eps, history = coordinate_descent(x0, eps)
     
     print("=" * 80)
