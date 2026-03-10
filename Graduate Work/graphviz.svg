@@ -1,0 +1,159 @@
+<svg width="2109pt" height="398pt" viewBox="0.00 0.00 2109.00 398.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 394.41)">
+<title>DFD_Level1</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-394.41 2105.44,-394.41 2105.44,4 -4,4"/>
+<!-- employee -->
+<g id="node1" class="node">
+<title>employee</title>
+<polygon fill="none" stroke="black" points="109.35,-117.33 23.34,-117.33 23.34,-81.33 109.35,-81.33 109.35,-117.33"/>
+<text xml:space="preserve" text-anchor="middle" x="66.34" y="-95.13" font-family="Arial" font-size="14.00">Сотрудник</text>
+</g>
+<!-- p1 -->
+<g id="node4" class="node">
+<title>p1</title>
+<ellipse fill="none" stroke="black" cx="405.31" cy="-99.33" rx="99.33" ry="99.33"/>
+<text xml:space="preserve" text-anchor="middle" x="405.31" y="-103.53" font-family="Arial" font-size="14.00">1. Аутентификация</text>
+<text xml:space="preserve" text-anchor="middle" x="405.31" y="-86.73" font-family="Arial" font-size="14.00">пользователя</text>
+</g>
+<!-- employee&#45;&gt;p1 -->
+<g id="edge1" class="edge">
+<title>employee-&gt;p1</title>
+<path fill="none" stroke="black" d="M109.68,-99.33C155.79,-99.33 231.38,-99.33 294.45,-99.33"/>
+<polygon fill="black" stroke="black" points="294.16,-102.83 304.16,-99.33 294.16,-95.83 294.16,-102.83"/>
+<text xml:space="preserve" text-anchor="middle" x="219.33" y="-103.53" font-family="Times,serif" font-size="14.00">RFID / данные доступа</text>
+</g>
+<!-- camera -->
+<g id="node2" class="node">
+<title>camera</title>
+<polygon fill="none" stroke="black" points="132.69,-309.13 0,-309.13 0,-267.53 132.69,-267.53 132.69,-309.13"/>
+<text xml:space="preserve" text-anchor="middle" x="66.34" y="-292.53" font-family="Arial" font-size="14.00">Камера</text>
+<text xml:space="preserve" text-anchor="middle" x="66.34" y="-275.73" font-family="Arial" font-size="14.00">видеонаблюдения</text>
+</g>
+<!-- p2 -->
+<g id="node5" class="node">
+<title>p2</title>
+<ellipse fill="none" stroke="black" cx="405.31" cy="-288.33" rx="71.83" ry="71.83"/>
+<text xml:space="preserve" text-anchor="middle" x="405.31" y="-292.53" font-family="Arial" font-size="14.00">2. Обработка</text>
+<text xml:space="preserve" text-anchor="middle" x="405.31" y="-275.73" font-family="Arial" font-size="14.00">видеопотока</text>
+</g>
+<!-- camera&#45;&gt;p2 -->
+<g id="edge4" class="edge">
+<title>camera-&gt;p2</title>
+<path fill="none" stroke="black" d="M133.11,-288.33C187.07,-288.33 263.76,-288.33 321.82,-288.33"/>
+<polygon fill="black" stroke="black" points="321.66,-291.83 331.66,-288.33 321.66,-284.83 321.66,-291.83"/>
+<text xml:space="preserve" text-anchor="middle" x="219.33" y="-292.53" font-family="Times,serif" font-size="14.00">видеопоток</text>
+</g>
+<!-- operator -->
+<g id="node3" class="node">
+<title>operator</title>
+<polygon fill="none" stroke="black" points="1789.04,-346.33 1710.8,-346.33 1710.8,-310.33 1789.04,-310.33 1789.04,-346.33"/>
+<text xml:space="preserve" text-anchor="middle" x="1749.92" y="-324.13" font-family="Arial" font-size="14.00">Оператор</text>
+</g>
+<!-- p5 -->
+<g id="node8" class="node">
+<title>p5</title>
+<ellipse fill="none" stroke="black" cx="1410.77" cy="-288.33" rx="60.82" ry="60.82"/>
+<text xml:space="preserve" text-anchor="middle" x="1410.77" y="-292.53" font-family="Arial" font-size="14.00">5. Анализ</text>
+<text xml:space="preserve" text-anchor="middle" x="1410.77" y="-275.73" font-family="Arial" font-size="14.00">нарушений</text>
+</g>
+<!-- operator&#45;&gt;p5 -->
+<g id="edge9" class="edge">
+<title>operator-&gt;p5</title>
+<path fill="none" stroke="black" d="M1710.54,-320.2C1694.76,-315.93 1676.69,-309.78 1661.59,-301.33 1652.3,-296.13 1653.55,-289.28 1643.59,-285.53 1591.92,-266.07 1529.05,-268.27 1481.83,-274.51"/>
+<polygon fill="black" stroke="black" points="1481.39,-271.03 1471.98,-275.91 1482.38,-277.96 1481.39,-271.03"/>
+<text xml:space="preserve" text-anchor="middle" x="1566.59" y="-289.73" font-family="Times,serif" font-size="14.00">решение</text>
+</g>
+<!-- db_staff -->
+<g id="node10" class="node">
+<title>db_staff</title>
+<path fill="none" stroke="black" d="M810.37,-114.06C810.37,-115.86 778.37,-117.33 738.97,-117.33 699.57,-117.33 667.56,-115.86 667.56,-114.06 667.56,-114.06 667.56,-84.6 667.56,-84.6 667.56,-82.8 699.57,-81.33 738.97,-81.33 778.37,-81.33 810.37,-82.8 810.37,-84.6 810.37,-84.6 810.37,-114.06 810.37,-114.06"/>
+<path fill="none" stroke="black" d="M810.37,-114.06C810.37,-112.25 778.37,-110.79 738.97,-110.79 699.57,-110.79 667.56,-112.25 667.56,-114.06"/>
+<text xml:space="preserve" text-anchor="middle" x="738.97" y="-95.13" font-family="Arial" font-size="14.00">D1 БД сотрудников</text>
+</g>
+<!-- p1&#45;&gt;db_staff -->
+<g id="edge2" class="edge">
+<title>p1-&gt;db_staff</title>
+<path fill="none" stroke="black" d="M504.92,-99.33C552.97,-99.33 610.09,-99.33 655.76,-99.33"/>
+<polygon fill="black" stroke="black" points="655.59,-102.83 665.59,-99.33 655.59,-95.83 655.59,-102.83"/>
+<text xml:space="preserve" text-anchor="middle" x="580.39" y="-103.53" font-family="Times,serif" font-size="14.00">запрос данных</text>
+</g>
+<!-- p3 -->
+<g id="node6" class="node">
+<title>p3</title>
+<ellipse fill="none" stroke="black" cx="738.97" cy="-288.33" rx="82.83" ry="82.83"/>
+<text xml:space="preserve" text-anchor="middle" x="738.97" y="-292.53" font-family="Arial" font-size="14.00">3. Обнаружение</text>
+<text xml:space="preserve" text-anchor="middle" x="738.97" y="-275.73" font-family="Arial" font-size="14.00">человека</text>
+</g>
+<!-- p2&#45;&gt;p3 -->
+<g id="edge5" class="edge">
+<title>p2-&gt;p3</title>
+<path fill="none" stroke="black" d="M477.46,-288.33C526.22,-288.33 591.41,-288.33 644.38,-288.33"/>
+<polygon fill="black" stroke="black" points="644.32,-291.83 654.32,-288.33 644.32,-284.83 644.32,-291.83"/>
+<text xml:space="preserve" text-anchor="middle" x="580.39" y="-292.53" font-family="Times,serif" font-size="14.00">кадры видео</text>
+</g>
+<!-- p4 -->
+<g id="node7" class="node">
+<title>p4</title>
+<ellipse fill="none" stroke="black" cx="1089.37" cy="-288.33" rx="102.08" ry="102.08"/>
+<text xml:space="preserve" text-anchor="middle" x="1089.37" y="-292.53" font-family="Arial" font-size="14.00">4. Проверка</text>
+<text xml:space="preserve" text-anchor="middle" x="1089.37" y="-275.73" font-family="Arial" font-size="14.00">контрольных точек</text>
+</g>
+<!-- p3&#45;&gt;p4 -->
+<g id="edge6" class="edge">
+<title>p3-&gt;p4</title>
+<path fill="none" stroke="black" d="M822.09,-288.33C867.92,-288.33 925.67,-288.33 975.67,-288.33"/>
+<polygon fill="black" stroke="black" points="975.36,-291.83 985.36,-288.33 975.36,-284.83 975.36,-291.83"/>
+<text xml:space="preserve" text-anchor="middle" x="904.55" y="-292.53" font-family="Times,serif" font-size="14.00">координаты человека</text>
+</g>
+<!-- p4&#45;&gt;p5 -->
+<g id="edge7" class="edge">
+<title>p4-&gt;p5</title>
+<path fill="none" stroke="black" d="M1191.87,-288.33C1239.49,-288.33 1295.11,-288.33 1338.24,-288.33"/>
+<polygon fill="black" stroke="black" points="1337.97,-291.83 1347.97,-288.33 1337.97,-284.83 1337.97,-291.83"/>
+<text xml:space="preserve" text-anchor="middle" x="1270.7" y="-309.33" font-family="Times,serif" font-size="14.00">статус прохождения</text>
+<text xml:space="preserve" text-anchor="middle" x="1270.7" y="-292.53" font-family="Times,serif" font-size="14.00">контрольных точек</text>
+</g>
+<!-- p5&#45;&gt;operator -->
+<g id="edge8" class="edge">
+<title>p5-&gt;operator</title>
+<path fill="none" stroke="black" d="M1470.24,-302.8C1476.74,-304.12 1483.29,-305.34 1489.59,-306.33 1562,-317.72 1646.78,-323.51 1699.18,-326.22"/>
+<polygon fill="black" stroke="black" points="1698.81,-329.71 1708.98,-326.71 1699.16,-322.72 1698.81,-329.71"/>
+<text xml:space="preserve" text-anchor="middle" x="1566.59" y="-327" font-family="Times,serif" font-size="14.00">уведомление о нарушении</text>
+</g>
+<!-- p6 -->
+<g id="node9" class="node">
+<title>p6</title>
+<ellipse fill="none" stroke="black" cx="1749.92" cy="-204.33" rx="88.33" ry="88.33"/>
+<text xml:space="preserve" text-anchor="middle" x="1749.92" y="-208.53" font-family="Arial" font-size="14.00">6. Формирование</text>
+<text xml:space="preserve" text-anchor="middle" x="1749.92" y="-191.73" font-family="Arial" font-size="14.00">отчета</text>
+</g>
+<!-- p5&#45;&gt;p6 -->
+<g id="edge10" class="edge">
+<title>p5-&gt;p6</title>
+<path fill="none" stroke="black" d="M1464.49,-259.51C1472.73,-255.75 1481.27,-252.27 1489.59,-249.53 1541.35,-232.52 1601.14,-221.55 1650.26,-214.68"/>
+<polygon fill="black" stroke="black" points="1650.59,-218.17 1660.03,-213.36 1649.65,-211.23 1650.59,-218.17"/>
+<text xml:space="preserve" text-anchor="middle" x="1566.59" y="-253.73" font-family="Times,serif" font-size="14.00">результаты анализа</text>
+</g>
+<!-- db_events -->
+<g id="node11" class="node">
+<title>db_events</title>
+<path fill="none" stroke="black" d="M2101.44,-219.06C2101.44,-220.86 2076.41,-222.33 2045.6,-222.33 2014.78,-222.33 1989.75,-220.86 1989.75,-219.06 1989.75,-219.06 1989.75,-189.6 1989.75,-189.6 1989.75,-187.8 2014.78,-186.33 2045.6,-186.33 2076.41,-186.33 2101.44,-187.8 2101.44,-189.6 2101.44,-189.6 2101.44,-219.06 2101.44,-219.06"/>
+<path fill="none" stroke="black" d="M2101.44,-219.06C2101.44,-217.25 2076.41,-215.79 2045.6,-215.79 2014.78,-215.79 1989.75,-217.25 1989.75,-219.06"/>
+<text xml:space="preserve" text-anchor="middle" x="2045.6" y="-200.13" font-family="Arial" font-size="14.00">D2 БД событий</text>
+</g>
+<!-- p6&#45;&gt;db_events -->
+<g id="edge11" class="edge">
+<title>p6-&gt;db_events</title>
+<path fill="none" stroke="black" d="M1838.63,-204.33C1883.44,-204.33 1937.06,-204.33 1978.35,-204.33"/>
+<polygon fill="black" stroke="black" points="1978.14,-207.83 1988.14,-204.33 1978.14,-200.83 1978.14,-207.83"/>
+<text xml:space="preserve" text-anchor="middle" x="1914" y="-208.53" font-family="Times,serif" font-size="14.00">сохранение отчета</text>
+</g>
+<!-- db_staff&#45;&gt;p1 -->
+<g id="edge3" class="edge">
+<title>db_staff-&gt;p1</title>
+<path fill="none" stroke="black" d="M667.08,-82.7C657.4,-80.98 647.56,-79.5 638.14,-78.53 587.08,-73.27 573.77,-74 522.64,-78.53 519.97,-78.77 517.26,-79.04 514.54,-79.33"/>
+<polygon fill="black" stroke="black" points="514.27,-75.84 504.75,-80.5 515.1,-82.79 514.27,-75.84"/>
+<text xml:space="preserve" text-anchor="middle" x="580.39" y="-82.73" font-family="Times,serif" font-size="14.00">данные сотрудника</text>
+</g>
+</g>
+</svg>
