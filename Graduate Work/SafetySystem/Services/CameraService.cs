@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Text;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
@@ -14,11 +13,11 @@ namespace SafetySystem.Services
 {
     public class CameraService
     {
-        private VideoCapture _capture;
+        private VideoCapture? _capture;
         private bool _running;
-        private Process _python;
+        private Process? _python;
 
-        public event Action<Bitmap, List<DetectionResult>> FrameReady;
+        public event Action<Bitmap, List<DetectionResult>> FrameReady = delegate { };
 
         public void StartCamera()
         {
@@ -98,16 +97,22 @@ namespace SafetySystem.Services
                 string base64 = Convert.ToBase64String(data);
 
                 // Отправляем в Python
+                if (_python?.StandardInput == null || _python.HasExited)
+                    return detections;
+
                 _python.StandardInput.WriteLine(base64);
                 _python.StandardInput.Flush();
 
                 // Получаем JSON с детекциями
-                string line = _python.StandardOutput.ReadLine();
+                string? line = _python.StandardOutput.ReadLine();
+                if (string.IsNullOrEmpty(line))
+                    return detections;
+
 
                 if (string.IsNullOrEmpty(line))
                     return detections;
 
-                var boxes = JsonSerializer.Deserialize<List<Dictionary<string, int>>>(line);
+                var boxes = JsonSerializer.Deserialize<List<Dictionary<string,int>>>(line) ?? [];
 
                 int id = 1;
 
@@ -128,41 +133,29 @@ namespace SafetySystem.Services
             }
             catch
             {
-                // Игнорируем ошибки парсинга или передачи
+                // Игнорируем ошибки (например, если Python не отвечает)
             }
 
             return detections;
         }
 
-        private void DrawDetections(Mat frame, List<DetectionResult> detections)
+        private static void DrawDetections(Mat frame, List<DetectionResult> detections)
         {
             foreach (var d in detections)
             {
                 var color = d.InDangerZone ? Scalar.Red : Scalar.Green;
 
                 Cv2.Rectangle(frame,
-                    new Rect(d.X, d.Y, d.Width, d.Height),
-                    color,
-                    2);
+                    new Rect(d.X, d.Y, d.Width, d.Height), color, 2);
 
-                Cv2.PutText(frame,
-                    $"ID {d.Id}",
-                    new Point(d.X, d.Y - 10),
-                    HersheyFonts.HersheySimplex,
-                    0.6,
-                    color,
-                    2);
+                Cv2.PutText(frame, $"ID {d.Id}", new Point(d.X, d.Y - 10), HersheyFonts.HersheySimplex, 0.6, color, 2);
             }
 
             // Линия опасной зоны
-            Cv2.Line(frame,
-                new Point(0, 400),
-                new Point(frame.Width, 400),
-                Scalar.Red,
-                2);
+            // Cv2.Line(frame, new Point(0, 400), new Point(frame.Width, 400), Scalar.Red, 2);
         }
 
-        private Bitmap ConvertToBitmap(Mat frame)
+        private static Bitmap ConvertToBitmap(Mat frame)
         {
             Cv2.ImEncode(".bmp", frame, out var data);
             return new Bitmap(new MemoryStream(data));
