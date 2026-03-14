@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Znndpnl+sLs=",
+  "dgSpecHash": "Nwp8ib9LrpE=",
   "success": true,
-  "projectFilePath": "D:\\GitHub\\surgu-graduate-work\\SafetySystem\\SafetySystem.csproj",
+  "projectFilePath": "D:\\Университет\\University\\Graduate Work\\SafetySystem\\SafetySystem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rechu\\.nuget\\packages\\avalonia\\11.2.6\\avalonia.11.2.6.nupkg.sha512",
     "C:\\Users\\rechu\\.nuget\\packages\\avalonia.angle.windows.natives\\2.1.22045.20230930\\avalonia.angle.windows.natives.2.1.22045.20230930.nupkg.sha512",
@@ -41,7 +41,11 @@
     "C:\\Users\\rechu\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\2.1.10\\sqlitepclraw.provider.e_sqlite3.2.1.10.nupkg.sha512",
     "C:\\Users\\rechu\\.nuget\\packages\\system.io.pipelines\\8.0.0\\system.io.pipelines.8.0.0.nupkg.sha512",
     "C:\\Users\\rechu\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
-    "C:\\Users\\rechu\\.nuget\\packages\\tmds.dbus.protocol\\0.20.0\\tmds.dbus.protocol.0.20.0.nupkg.sha512"
+    "C:\\Users\\rechu\\.nuget\\packages\\tmds.dbus.protocol\\0.20.0\\tmds.dbus.protocol.0.20.0.nupkg.sha512",
+    "C:\\Users\\rechu\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.14\\microsoft.netcore.app.ref.9.0.14.nupkg.sha512",
+    "C:\\Users\\rechu\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\9.0.14\\microsoft.windowsdesktop.app.ref.9.0.14.nupkg.sha512",
+    "C:\\Users\\rechu\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\9.0.14\\microsoft.aspnetcore.app.ref.9.0.14.nupkg.sha512",
+    "C:\\Users\\rechu\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\9.0.14\\microsoft.netcore.app.host.win-x64.9.0.14.nupkg.sha512"
   ],
   "logs": []
 }

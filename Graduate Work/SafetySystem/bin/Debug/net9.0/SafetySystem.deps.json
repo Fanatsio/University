@@ -23,7 +23,6 @@
       },
       "Avalonia/11.2.6": {
         "dependencies": {
-          "Avalonia.BuildServices": "0.0.31",
           "Avalonia.Remote.Protocol": "11.2.6",
           "MicroCom.Runtime": "0.11.0"
         },
@@ -93,7 +92,6 @@
           }
         }
       },
-      "Avalonia.BuildServices/0.0.31": {},
       "Avalonia.Controls.ColorPicker/11.2.6": {
         "dependencies": {
           "Avalonia": "11.2.6",
@@ -201,10 +199,8 @@
           "Avalonia": "11.2.6",
           "HarfBuzzSharp": "7.3.0.3",
           "HarfBuzzSharp.NativeAssets.Linux": "7.3.0.3",
-          "HarfBuzzSharp.NativeAssets.WebAssembly": "7.3.0.3",
           "SkiaSharp": "2.88.9",
-          "SkiaSharp.NativeAssets.Linux": "2.88.9",
-          "SkiaSharp.NativeAssets.WebAssembly": "2.88.9"
+          "SkiaSharp.NativeAssets.Linux": "2.88.9"
         },
         "runtime": {
           "lib/net8.0/Avalonia.Skia.dll": {
@@ -324,7 +320,6 @@
           }
         }
       },
-      "HarfBuzzSharp.NativeAssets.WebAssembly/7.3.0.3": {},
       "HarfBuzzSharp.NativeAssets.Win32/7.3.0.3": {
         "runtimeTargets": {
           "runtimes/win-arm64/native/libHarfBuzzSharp.dll": {
@@ -418,7 +413,6 @@
           }
         }
       },
-      "SkiaSharp.NativeAssets.WebAssembly/2.88.9": {},
       "SkiaSharp.NativeAssets.Win32/2.88.9": {
         "runtimeTargets": {
           "runtimes/win-arm64/native/libSkiaSharp.dll": {
@@ -451,9 +445,6 @@
         }
       },
       "SQLitePCLRaw.core/2.1.10": {
-        "dependencies": {
-          "System.Memory": "4.5.3"
-        },
         "runtime": {
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {
             "assemblyVersion": "2.1.10.2445",
@@ -581,12 +572,7 @@
           }
         }
       },
-      "System.IO.Pipelines/8.0.0": {},
-      "System.Memory/4.5.3": {},
       "Tmds.DBus.Protocol/0.20.0": {
-        "dependencies": {
-          "System.IO.Pipelines": "8.0.0"
-        },
         "runtime": {
           "lib/net8.0/Tmds.DBus.Protocol.dll": {
             "assemblyVersion": "0.20.0.0",
@@ -615,13 +601,6 @@
       "sha512": "sha512-Bo3qOhKC1b84BIhiogndMdAzB3UrrESKK7hS769f5HWeoMw/pcd42US5KFYW2JJ4ZSTrXnP8mXwLTMzh+S+9Lg==",
       "path": "avalonia.angle.windows.natives/2.1.22045.20230930",
       "hashPath": "avalonia.angle.windows.natives.2.1.22045.20230930.nupkg.sha512"
-    },
-    "Avalonia.BuildServices/0.0.31": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-KmCN6Hc+45q4OnF10ge450yVUvWuxU6bdQiyKqiSvrHKpahNrEdk0kG6Ip6GHk2SKOCttGQuA206JVdkldEENg==",
-      "path": "avalonia.buildservices/0.0.31",
-      "hashPath": "avalonia.buildservices.0.0.31.nupkg.sha512"
     },
     "Avalonia.Controls.ColorPicker/11.2.6": {
       "type": "package",
@@ -749,13 +728,6 @@
       "path": "harfbuzzsharp.nativeassets.macos/7.3.0.3",
       "hashPath": "harfbuzzsharp.nativeassets.macos.7.3.0.3.nupkg.sha512"
     },
-    "HarfBuzzSharp.NativeAssets.WebAssembly/7.3.0.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-OpheDNp9a3nC6hWNACemWkNEXJ4tWP3Gw9bykw3FbyeEmU2nUDtLIp6VgNnjHAPRMgUs1Kl7m4gJpzVYwC7CZw==",
-      "path": "harfbuzzsharp.nativeassets.webassembly/7.3.0.3",
-      "hashPath": "harfbuzzsharp.nativeassets.webassembly.7.3.0.3.nupkg.sha512"
-    },
     "HarfBuzzSharp.NativeAssets.Win32/7.3.0.3": {
       "type": "package",
       "serviceable": true,
@@ -805,13 +777,6 @@
       "path": "skiasharp.nativeassets.macos/2.88.9",
       "hashPath": "skiasharp.nativeassets.macos.2.88.9.nupkg.sha512"
     },
-    "SkiaSharp.NativeAssets.WebAssembly/2.88.9": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-kt06RccBHSnAs2wDYdBSfsjIDbY3EpsOVqnlDgKdgvyuRA8ZFDaHRdWNx1VHjGgYzmnFCGiTJBnXFl5BqGwGnA==",
-      "path": "skiasharp.nativeassets.webassembly/2.88.9",
-      "hashPath": "skiasharp.nativeassets.webassembly.2.88.9.nupkg.sha512"
-    },
     "SkiaSharp.NativeAssets.Win32/2.88.9": {
       "type": "package",
       "serviceable": true,
@@ -846,20 +811,6 @@
       "sha512": "sha512-uZVTi02C1SxqzgT0HqTWatIbWGb40iIkfc3FpFCpE/r7g6K0PqzDUeefL6P6HPhDtc6BacN3yQysfzP7ks+wSQ==",
       "path": "sqlitepclraw.provider.e_sqlite3/2.1.10",
       "hashPath": "sqlitepclraw.provider.e_sqlite3.2.1.10.nupkg.sha512"
-    },
-    "System.IO.Pipelines/8.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-FHNOatmUq0sqJOkTx+UF/9YK1f180cnW5FVqnQMvYUN0elp6wFzbtPSiqbo1/ru8ICp43JM1i7kKkk6GsNGHlA==",
-      "path": "system.io.pipelines/8.0.0",
-      "hashPath": "system.io.pipelines.8.0.0.nupkg.sha512"
-    },
-    "System.Memory/4.5.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-3oDzvc/zzetpTKWMShs1AADwZjQ/36HnsufHRPcOjyRAAMLDlu2iD33MBI2opxnezcVUtXyqDXXjoFMOU9c7SA==",
-      "path": "system.memory/4.5.3",
-      "hashPath": "system.memory.4.5.3.nupkg.sha512"
     },
     "Tmds.DBus.Protocol/0.20.0": {
       "type": "package",
