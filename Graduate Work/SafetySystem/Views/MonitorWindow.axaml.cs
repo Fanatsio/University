@@ -1,17 +1,64 @@
 using Avalonia.Controls;
+using Avalonia.Threading;
+using SafetySystem.Services;
+using SafetySystem.Models;
+using System;
+using System.Collections.Generic;
 
 namespace SafetySystem.Views
 {
     public partial class MonitorWindow : Window
     {
+        private CameraService _cameraService;
+
         public MonitorWindow()
         {
             InitializeComponent();
+
+            _cameraService = new CameraService();
+
+            _cameraService.FrameReady += OnFrameReady;
+
+            _cameraService.StartCamera();
         }
 
-        private void OnCloseWindow(object sender, Avalonia.Interactivity.RoutedEventArgs e)
+        private void OnFrameReady(Avalonia.Media.Imaging.Bitmap frame,
+                                  List<DetectionResult> detections)
         {
-            this.Close();
+            Dispatcher.UIThread.Post(() =>
+            {
+                CameraStream.Source = frame;
+
+                PeopleInZoneList.Items.Clear();
+
+                bool dangerDetected = false;
+
+                foreach (var d in detections)
+                {
+                    if (d.InDangerZone)
+                    {
+                        PeopleInZoneList.Items.Add($"ID {d.Id} — В ОПАСНОЙ ЗОНЕ");
+                        dangerDetected = true;
+                    }
+                }
+
+                if (dangerDetected)
+                {
+                    IntrusionAlert.Text = "НАРУШЕНИЕ!";
+                    IntrusionAlert.Foreground = Avalonia.Media.Brushes.Red;
+                }
+                else
+                {
+                    IntrusionAlert.Text = "Нет нарушений";
+                    IntrusionAlert.Foreground = Avalonia.Media.Brushes.Green;
+                }
+            });
+        }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            _cameraService.StopCamera();
+            base.OnClosed(e);
         }
     }
 }

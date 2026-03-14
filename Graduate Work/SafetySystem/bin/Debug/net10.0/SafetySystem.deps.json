@@ -1,0 +1,1114 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "SafetySystem/1.0.0": {
+        "dependencies": {
+          "Avalonia": "11.3.12",
+          "Avalonia.Desktop": "11.3.12",
+          "Avalonia.Diagnostics": "11.2.6",
+          "Avalonia.Fonts.Inter": "11.2.6",
+          "Avalonia.Themes.Fluent": "11.2.6",
+          "CommunityToolkit.Mvvm": "8.2.1",
+          "Dapper": "2.1.66",
+          "Emgu.CV": "4.12.0.5764",
+          "Emgu.CV.runtime.windows": "4.12.0.5764",
+          "Microsoft.Data.Sqlite": "9.0.4",
+          "OpenCvSharp4": "4.13.0.20260308",
+          "OpenCvSharp4.runtime.win": "4.13.0.20260302"
+        },
+        "runtime": {
+          "SafetySystem.dll": {}
+        }
+      },
+      "Avalonia/11.3.12": {
+        "dependencies": {
+          "Avalonia.Remote.Protocol": "11.3.12",
+          "MicroCom.Runtime": "0.11.0"
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.Base.dll": {
+            "assemblyVersion": "11.3.12.0",
+            "fileVersion": "11.3.12.0"
+          },
+          "lib/net8.0/Avalonia.Controls.dll": {
+            "assemblyVersion": "11.3.12.0",
+            "fileVersion": "11.3.12.0"
+          },
+          "lib/net8.0/Avalonia.DesignerSupport.dll": {
+            "assemblyVersion": "0.7.0.0",
+            "fileVersion": "0.7.0.0"
+          },
+          "lib/net8.0/Avalonia.Dialogs.dll": {
+            "assemblyVersion": "11.3.12.0",
+            "fileVersion": "11.3.12.0"
+          },
+          "lib/net8.0/Avalonia.Markup.Xaml.dll": {
+            "assemblyVersion": "11.3.12.0",
+            "fileVersion": "11.3.12.0"
+          },
+          "lib/net8.0/Avalonia.Markup.dll": {
+            "assemblyVersion": "11.3.12.0",
+            "fileVersion": "11.3.12.0"
+          },
+          "lib/net8.0/Avalonia.Metal.dll": {
+            "assemblyVersion": "11.3.12.0",
+            "fileVersion": "11.3.12.0"
+          },
+          "lib/net8.0/Avalonia.MicroCom.dll": {
+            "assemblyVersion": "11.3.12.0",
+            "fileVersion": "11.3.12.0"
+          },
+          "lib/net8.0/Avalonia.OpenGL.dll": {
+            "assemblyVersion": "11.3.12.0",
+            "fileVersion": "11.3.12.0"
+          },
+          "lib/net8.0/Avalonia.Vulkan.dll": {
+            "assemblyVersion": "11.3.12.0",
+            "fileVersion": "11.3.12.0"
+          },
+          "lib/net8.0/Avalonia.dll": {
+            "assemblyVersion": "11.3.12.0",
+            "fileVersion": "11.3.12.0"
+          }
+        }
+      },
+      "Avalonia.Angle.Windows.Natives/2.1.25547.20250602": {
+        "runtimeTargets": {
+          "runtimes/win-arm64/native/av_libglesv2.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "2.1.25606.0"
+          },
+          "runtimes/win-x64/native/av_libglesv2.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "2.1.25606.0"
+          },
+          "runtimes/win-x86/native/av_libglesv2.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "2.1.25606.0"
+          }
+        }
+      },
+      "Avalonia.Controls.ColorPicker/11.2.6": {
+        "dependencies": {
+          "Avalonia": "11.3.12",
+          "Avalonia.Remote.Protocol": "11.3.12"
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.Controls.ColorPicker.dll": {
+            "assemblyVersion": "11.2.6.0",
+            "fileVersion": "11.2.6.0"
+          }
+        }
+      },
+      "Avalonia.Controls.DataGrid/11.2.6": {
+        "dependencies": {
+          "Avalonia": "11.3.12",
+          "Avalonia.Remote.Protocol": "11.3.12"
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.Controls.DataGrid.dll": {
+            "assemblyVersion": "11.2.6.0",
+            "fileVersion": "11.2.6.0"
+          }
+        }
+      },
+      "Avalonia.Desktop/11.3.12": {
+        "dependencies": {
+          "Avalonia": "11.3.12",
+          "Avalonia.Native": "11.3.12",
+          "Avalonia.Skia": "11.3.12",
+          "Avalonia.Win32": "11.3.12",
+          "Avalonia.X11": "11.3.12"
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.Desktop.dll": {
+            "assemblyVersion": "11.3.12.0",
+            "fileVersion": "11.3.12.0"
+          }
+        }
+      },
+      "Avalonia.Diagnostics/11.2.6": {
+        "dependencies": {
+          "Avalonia": "11.3.12",
+          "Avalonia.Controls.ColorPicker": "11.2.6",
+          "Avalonia.Controls.DataGrid": "11.2.6",
+          "Avalonia.Themes.Simple": "11.2.6"
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.Diagnostics.dll": {
+            "assemblyVersion": "11.2.6.0",
+            "fileVersion": "11.2.6.0"
+          }
+        }
+      },
+      "Avalonia.Fonts.Inter/11.2.6": {
+        "dependencies": {
+          "Avalonia": "11.3.12"
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.Fonts.Inter.dll": {
+            "assemblyVersion": "11.2.6.0",
+            "fileVersion": "11.2.6.0"
+          }
+        }
+      },
+      "Avalonia.FreeDesktop/11.3.12": {
+        "dependencies": {
+          "Avalonia": "11.3.12",
+          "Tmds.DBus.Protocol": "0.21.2"
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.FreeDesktop.dll": {
+            "assemblyVersion": "11.3.12.0",
+            "fileVersion": "11.3.12.0"
+          }
+        }
+      },
+      "Avalonia.Native/11.3.12": {
+        "dependencies": {
+          "Avalonia": "11.3.12"
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.Native.dll": {
+            "assemblyVersion": "11.3.12.0",
+            "fileVersion": "11.3.12.0"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/osx/native/libAvaloniaNative.dylib": {
+            "rid": "osx",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Avalonia.Remote.Protocol/11.3.12": {
+        "runtime": {
+          "lib/net8.0/Avalonia.Remote.Protocol.dll": {
+            "assemblyVersion": "11.3.12.0",
+            "fileVersion": "11.3.12.0"
+          }
+        }
+      },
+      "Avalonia.Skia/11.3.12": {
+        "dependencies": {
+          "Avalonia": "11.3.12",
+          "HarfBuzzSharp": "8.3.1.1",
+          "HarfBuzzSharp.NativeAssets.Linux": "8.3.1.1",
+          "SkiaSharp": "2.88.9",
+          "SkiaSharp.NativeAssets.Linux": "2.88.9"
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.Skia.dll": {
+            "assemblyVersion": "11.3.12.0",
+            "fileVersion": "11.3.12.0"
+          }
+        }
+      },
+      "Avalonia.Themes.Fluent/11.2.6": {
+        "dependencies": {
+          "Avalonia": "11.3.12"
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.Themes.Fluent.dll": {
+            "assemblyVersion": "11.2.6.0",
+            "fileVersion": "11.2.6.0"
+          }
+        }
+      },
+      "Avalonia.Themes.Simple/11.2.6": {
+        "dependencies": {
+          "Avalonia": "11.3.12"
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.Themes.Simple.dll": {
+            "assemblyVersion": "11.2.6.0",
+            "fileVersion": "11.2.6.0"
+          }
+        }
+      },
+      "Avalonia.Win32/11.3.12": {
+        "dependencies": {
+          "Avalonia": "11.3.12",
+          "Avalonia.Angle.Windows.Natives": "2.1.25547.20250602"
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.Win32.Automation.dll": {
+            "assemblyVersion": "11.3.12.0",
+            "fileVersion": "11.3.12.0"
+          },
+          "lib/net8.0/Avalonia.Win32.dll": {
+            "assemblyVersion": "11.3.12.0",
+            "fileVersion": "11.3.12.0"
+          }
+        }
+      },
+      "Avalonia.X11/11.3.12": {
+        "dependencies": {
+          "Avalonia": "11.3.12",
+          "Avalonia.FreeDesktop": "11.3.12",
+          "Avalonia.Skia": "11.3.12"
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.X11.dll": {
+            "assemblyVersion": "11.3.12.0",
+            "fileVersion": "11.3.12.0"
+          }
+        }
+      },
+      "CommunityToolkit.Mvvm/8.2.1": {
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "assemblyVersion": "8.2.0.0",
+            "fileVersion": "8.2.1.1"
+          }
+        }
+      },
+      "Dapper/2.1.66": {
+        "runtime": {
+          "lib/net8.0/Dapper.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.1.66.48463"
+          }
+        }
+      },
+      "Emgu.CV/4.12.0.5764": {
+        "runtime": {
+          "lib/netstandard2.0/Emgu.CV.dll": {
+            "assemblyVersion": "4.12.0.5764",
+            "fileVersion": "4.12.0.5764"
+          }
+        }
+      },
+      "Emgu.CV.runtime.windows/4.12.0.5764": {
+        "dependencies": {
+          "Emgu.CV": "4.12.0.5764",
+          "Emgu.runtime.windows.msvc.rt.arm64": "19.44.35214",
+          "Emgu.runtime.windows.msvc.rt.x64": "19.44.35214",
+          "Emgu.runtime.windows.msvc.rt.x86": "19.44.35214"
+        },
+        "runtimeTargets": {
+          "runtimes/win-arm64/native/cvextern.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "4.12.0.5764"
+          },
+          "runtimes/win-x64/native/cvextern.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "4.12.0.5764"
+          },
+          "runtimes/win-x64/native/libusb-1.0.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/opencv_videoio_ffmpeg4120_64.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "2025.6.0.0"
+          },
+          "runtimes/win-x86/native/cvextern.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "4.12.0.5764"
+          },
+          "runtimes/win-x86/native/libusb-1.0.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x86/native/opencv_videoio_ffmpeg4120.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "2025.6.0.0"
+          }
+        }
+      },
+      "Emgu.runtime.windows.msvc.rt.arm64/19.44.35214": {
+        "runtimeTargets": {
+          "runtimes/win-arm64/native/concrt140.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "14.44.35211.0"
+          },
+          "runtimes/win-arm64/native/msvcp140.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "14.44.35211.0"
+          },
+          "runtimes/win-arm64/native/msvcp140_1.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "14.44.35211.0"
+          },
+          "runtimes/win-arm64/native/msvcp140_2.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "14.44.35211.0"
+          },
+          "runtimes/win-arm64/native/msvcp140_atomic_wait.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "14.44.35211.0"
+          },
+          "runtimes/win-arm64/native/msvcp140_codecvt_ids.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "14.44.35211.0"
+          },
+          "runtimes/win-arm64/native/vcruntime140.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "14.44.35211.0"
+          },
+          "runtimes/win-arm64/native/vcruntime140_1.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "14.44.35211.0"
+          }
+        }
+      },
+      "Emgu.runtime.windows.msvc.rt.x64/19.44.35214": {
+        "runtimeTargets": {
+          "runtimes/win-x64/native/concrt140.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "14.44.35211.0"
+          },
+          "runtimes/win-x64/native/msvcp140.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "14.44.35211.0"
+          },
+          "runtimes/win-x64/native/msvcp140_1.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "14.44.35211.0"
+          },
+          "runtimes/win-x64/native/msvcp140_2.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "14.44.35211.0"
+          },
+          "runtimes/win-x64/native/msvcp140_atomic_wait.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "14.44.35211.0"
+          },
+          "runtimes/win-x64/native/msvcp140_codecvt_ids.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "14.44.35211.0"
+          },
+          "runtimes/win-x64/native/vcruntime140.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "14.44.35211.0"
+          },
+          "runtimes/win-x64/native/vcruntime140_1.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "14.44.35211.0"
+          }
+        }
+      },
+      "Emgu.runtime.windows.msvc.rt.x86/19.44.35214": {
+        "runtimeTargets": {
+          "runtimes/win-x86/native/concrt140.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "14.44.35211.0"
+          },
+          "runtimes/win-x86/native/msvcp140.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "14.44.35211.0"
+          },
+          "runtimes/win-x86/native/msvcp140_1.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "14.44.35211.0"
+          },
+          "runtimes/win-x86/native/msvcp140_2.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "14.44.35211.0"
+          },
+          "runtimes/win-x86/native/msvcp140_atomic_wait.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "14.44.35211.0"
+          },
+          "runtimes/win-x86/native/msvcp140_codecvt_ids.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "14.44.35211.0"
+          },
+          "runtimes/win-x86/native/vcruntime140.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "14.44.35211.0"
+          }
+        }
+      },
+      "HarfBuzzSharp/8.3.1.1": {
+        "dependencies": {
+          "HarfBuzzSharp.NativeAssets.Win32": "8.3.1.1",
+          "HarfBuzzSharp.NativeAssets.macOS": "8.3.1.1"
+        },
+        "runtime": {
+          "lib/net8.0/HarfBuzzSharp.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "8.3.1.1"
+          }
+        }
+      },
+      "HarfBuzzSharp.NativeAssets.Linux/8.3.1.1": {
+        "runtimeTargets": {
+          "runtimes/linux-arm/native/libHarfBuzzSharp.so": {
+            "rid": "linux-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm64/native/libHarfBuzzSharp.so": {
+            "rid": "linux-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-loongarch64/native/libHarfBuzzSharp.so": {
+            "rid": "linux-loongarch64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-arm/native/libHarfBuzzSharp.so": {
+            "rid": "linux-musl-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-arm64/native/libHarfBuzzSharp.so": {
+            "rid": "linux-musl-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-loongarch64/native/libHarfBuzzSharp.so": {
+            "rid": "linux-musl-loongarch64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-riscv64/native/libHarfBuzzSharp.so": {
+            "rid": "linux-musl-riscv64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-x64/native/libHarfBuzzSharp.so": {
+            "rid": "linux-musl-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-riscv64/native/libHarfBuzzSharp.so": {
+            "rid": "linux-riscv64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/libHarfBuzzSharp.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x86/native/libHarfBuzzSharp.so": {
+            "rid": "linux-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "HarfBuzzSharp.NativeAssets.macOS/8.3.1.1": {
+        "runtimeTargets": {
+          "runtimes/osx/native/libHarfBuzzSharp.dylib": {
+            "rid": "osx",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "HarfBuzzSharp.NativeAssets.Win32/8.3.1.1": {
+        "runtimeTargets": {
+          "runtimes/win-arm64/native/libHarfBuzzSharp.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/libHarfBuzzSharp.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x86/native/libHarfBuzzSharp.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "MicroCom.Runtime/0.11.0": {
+        "runtime": {
+          "lib/net5.0/MicroCom.Runtime.dll": {
+            "assemblyVersion": "0.11.0.0",
+            "fileVersion": "0.11.0.0"
+          }
+        }
+      },
+      "Microsoft.Data.Sqlite/9.0.4": {
+        "dependencies": {
+          "Microsoft.Data.Sqlite.Core": "9.0.4",
+          "SQLitePCLRaw.bundle_e_sqlite3": "2.1.10",
+          "SQLitePCLRaw.core": "2.1.10"
+        }
+      },
+      "Microsoft.Data.Sqlite.Core/9.0.4": {
+        "dependencies": {
+          "SQLitePCLRaw.core": "2.1.10"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Data.Sqlite.dll": {
+            "assemblyVersion": "9.0.4.0",
+            "fileVersion": "9.0.425.16310"
+          }
+        }
+      },
+      "OpenCvSharp4/4.13.0.20260308": {
+        "runtime": {
+          "lib/net8.0/OpenCvSharp.dll": {
+            "assemblyVersion": "4.13.0.0",
+            "fileVersion": "4.13.0.0"
+          }
+        }
+      },
+      "OpenCvSharp4.runtime.win/4.13.0.20260302": {
+        "runtimeTargets": {
+          "runtimes/win-x64/native/OpenCvSharpExtern.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/opencv_videoio_ffmpeg4130_64.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "2025.12.0.0"
+          }
+        }
+      },
+      "SkiaSharp/2.88.9": {
+        "dependencies": {
+          "SkiaSharp.NativeAssets.Win32": "2.88.9",
+          "SkiaSharp.NativeAssets.macOS": "2.88.9"
+        },
+        "runtime": {
+          "lib/net6.0/SkiaSharp.dll": {
+            "assemblyVersion": "2.88.0.0",
+            "fileVersion": "2.88.9.0"
+          }
+        }
+      },
+      "SkiaSharp.NativeAssets.Linux/2.88.9": {
+        "dependencies": {
+          "SkiaSharp": "2.88.9"
+        },
+        "runtimeTargets": {
+          "runtimes/linux-arm/native/libSkiaSharp.so": {
+            "rid": "linux-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm64/native/libSkiaSharp.so": {
+            "rid": "linux-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-x64/native/libSkiaSharp.so": {
+            "rid": "linux-musl-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/libSkiaSharp.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "SkiaSharp.NativeAssets.macOS/2.88.9": {
+        "runtimeTargets": {
+          "runtimes/osx/native/libSkiaSharp.dylib": {
+            "rid": "osx",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "SkiaSharp.NativeAssets.Win32/2.88.9": {
+        "runtimeTargets": {
+          "runtimes/win-arm64/native/libSkiaSharp.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/libSkiaSharp.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x86/native/libSkiaSharp.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "SQLitePCLRaw.bundle_e_sqlite3/2.1.10": {
+        "dependencies": {
+          "SQLitePCLRaw.lib.e_sqlite3": "2.1.10",
+          "SQLitePCLRaw.provider.e_sqlite3": "2.1.10"
+        },
+        "runtime": {
+          "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {
+            "assemblyVersion": "2.1.10.2445",
+            "fileVersion": "2.1.10.2445"
+          }
+        }
+      },
+      "SQLitePCLRaw.core/2.1.10": {
+        "runtime": {
+          "lib/netstandard2.0/SQLitePCLRaw.core.dll": {
+            "assemblyVersion": "2.1.10.2445",
+            "fileVersion": "2.1.10.2445"
+          }
+        }
+      },
+      "SQLitePCLRaw.lib.e_sqlite3/2.1.10": {
+        "runtimeTargets": {
+          "runtimes/browser-wasm/nativeassets/net9.0/e_sqlite3.a": {
+            "rid": "browser-wasm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm/native/libe_sqlite3.so": {
+            "rid": "linux-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm64/native/libe_sqlite3.so": {
+            "rid": "linux-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-armel/native/libe_sqlite3.so": {
+            "rid": "linux-armel",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-mips64/native/libe_sqlite3.so": {
+            "rid": "linux-mips64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-arm/native/libe_sqlite3.so": {
+            "rid": "linux-musl-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-arm64/native/libe_sqlite3.so": {
+            "rid": "linux-musl-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-s390x/native/libe_sqlite3.so": {
+            "rid": "linux-musl-s390x",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-x64/native/libe_sqlite3.so": {
+            "rid": "linux-musl-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-ppc64le/native/libe_sqlite3.so": {
+            "rid": "linux-ppc64le",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-s390x/native/libe_sqlite3.so": {
+            "rid": "linux-s390x",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/libe_sqlite3.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x86/native/libe_sqlite3.so": {
+            "rid": "linux-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/maccatalyst-arm64/native/libe_sqlite3.dylib": {
+            "rid": "maccatalyst-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/maccatalyst-x64/native/libe_sqlite3.dylib": {
+            "rid": "maccatalyst-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-arm64/native/libe_sqlite3.dylib": {
+            "rid": "osx-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-x64/native/libe_sqlite3.dylib": {
+            "rid": "osx-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-arm/native/e_sqlite3.dll": {
+            "rid": "win-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-arm64/native/e_sqlite3.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/e_sqlite3.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x86/native/e_sqlite3.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "SQLitePCLRaw.provider.e_sqlite3/2.1.10": {
+        "dependencies": {
+          "SQLitePCLRaw.core": "2.1.10"
+        },
+        "runtime": {
+          "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {
+            "assemblyVersion": "2.1.10.2445",
+            "fileVersion": "2.1.10.2445"
+          }
+        }
+      },
+      "Tmds.DBus.Protocol/0.21.2": {
+        "runtime": {
+          "lib/net8.0/Tmds.DBus.Protocol.dll": {
+            "assemblyVersion": "0.21.2.0",
+            "fileVersion": "0.21.2.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SafetySystem/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Avalonia/11.3.12": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CHB0gXMSba8gTXqTrO9lS1te9ejH52ngHPm+0i/RfXFzqHXHPQ3yciFc/GfGnXUBjqjwH85J1rhYNl4/EujP0w==",
+      "path": "avalonia/11.3.12",
+      "hashPath": "avalonia.11.3.12.nupkg.sha512"
+    },
+    "Avalonia.Angle.Windows.Natives/2.1.25547.20250602": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZL0VLc4s9rvNNFt19Pxm5UNAkmKNylugAwJPX9ulXZ6JWs/l6XZihPWWTyezaoNOVyEPU8YbURtW7XMAtqXH5A==",
+      "path": "avalonia.angle.windows.natives/2.1.25547.20250602",
+      "hashPath": "avalonia.angle.windows.natives.2.1.25547.20250602.nupkg.sha512"
+    },
+    "Avalonia.Controls.ColorPicker/11.2.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LTq8Ii/SNW8+klJSGm6KkCfdfEBZDbTaFzAHoCJobYqZHv7Lev3OsfEWBsuIAAIGOibgFChNIkSEu4rAaD+yLQ==",
+      "path": "avalonia.controls.colorpicker/11.2.6",
+      "hashPath": "avalonia.controls.colorpicker.11.2.6.nupkg.sha512"
+    },
+    "Avalonia.Controls.DataGrid/11.2.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0Jj3c9q19ifY1VEXJgtdnH9AcGsuL/8NMrUq5R7H8qR6yRJm+OpnTqR3y3e2hl2EybVZ5mIiaJcmMoenu45ZqQ==",
+      "path": "avalonia.controls.datagrid/11.2.6",
+      "hashPath": "avalonia.controls.datagrid.11.2.6.nupkg.sha512"
+    },
+    "Avalonia.Desktop/11.3.12": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zwtEFNvXB60z7rHD92oISkCQq0PcFyttfAW+cgcfALECegtNkd9P9/UXIuE0GvMVBVUPTRUQeSB6/jhwZKqqRQ==",
+      "path": "avalonia.desktop/11.3.12",
+      "hashPath": "avalonia.desktop.11.3.12.nupkg.sha512"
+    },
+    "Avalonia.Diagnostics/11.2.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-buw4qZ3DJfJHSC1D72WLIEAijBajNo8TkD+jOMsM8vYVCdvCJogldU9svPQ6R+Q90jOphUDHz117tp89q1/BTg==",
+      "path": "avalonia.diagnostics/11.2.6",
+      "hashPath": "avalonia.diagnostics.11.2.6.nupkg.sha512"
+    },
+    "Avalonia.Fonts.Inter/11.2.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-o6ZUiwJhiY8Nlqij/FfFwVcBWYtbY9cHgbB0/I6jfWPANzw1zfbF1HmpZKqDwzoofPAL0ZfgjWSOREGjoJNtKw==",
+      "path": "avalonia.fonts.inter/11.2.6",
+      "hashPath": "avalonia.fonts.inter.11.2.6.nupkg.sha512"
+    },
+    "Avalonia.FreeDesktop/11.3.12": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-R1UdslorpUSmAt1SKNmmypkUPj993WpE4iUm5KvPd0mL0NQbIFra2DYYGb8GCtLOsupnA4pyNOU2FXumB2EGKA==",
+      "path": "avalonia.freedesktop/11.3.12",
+      "hashPath": "avalonia.freedesktop.11.3.12.nupkg.sha512"
+    },
+    "Avalonia.Native/11.3.12": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-28q2DUSGUBVRpEQWYBo0crokZabPyI7KmA68++nm/qAe/9Zxmxythk/F36swAkI4pIU2ouLIKK0yxiFBy+xvNw==",
+      "path": "avalonia.native/11.3.12",
+      "hashPath": "avalonia.native.11.3.12.nupkg.sha512"
+    },
+    "Avalonia.Remote.Protocol/11.3.12": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zaWTPaBKxGfHxqQfPh1WP+vWy3iVAwYWW/7FGlz63/wT1b+3b7Wn37H6c9C2E/M3cgllrW5/cirye516QUDZiA==",
+      "path": "avalonia.remote.protocol/11.3.12",
+      "hashPath": "avalonia.remote.protocol.11.3.12.nupkg.sha512"
+    },
+    "Avalonia.Skia/11.3.12": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rlVMl2obc5hy4CHfLwA4+Lyu7KU+l5iSmj8leugoWofjgGDyUPa281VCo5FSH4+SkU1+EIXVJZubx2o02gp9nw==",
+      "path": "avalonia.skia/11.3.12",
+      "hashPath": "avalonia.skia.11.3.12.nupkg.sha512"
+    },
+    "Avalonia.Themes.Fluent/11.2.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Bo6YsWq7bkwKVv+GOnSMo2dy0sbIW4S1Tt5/NKlUxfx0uzd6dl2Uypdt77xk3aHWdy1zQXbEGlkW8A4luIXKcA==",
+      "path": "avalonia.themes.fluent/11.2.6",
+      "hashPath": "avalonia.themes.fluent.11.2.6.nupkg.sha512"
+    },
+    "Avalonia.Themes.Simple/11.2.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-38jnpB8bcKKwuHmmR6aVwXT5oFs7pXXcBxLkePeSUku3p5Km8c3ujYA+tOBsyhOpnSWhvLtz1TLYWrDYKAgmRw==",
+      "path": "avalonia.themes.simple/11.2.6",
+      "hashPath": "avalonia.themes.simple.11.2.6.nupkg.sha512"
+    },
+    "Avalonia.Win32/11.3.12": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3Z8gSpWMU0NWR0fI/m8d9b6d9fms1MJ6eZJ7IU4CdU/zCrPiFTjtPfc2VRaRD/0H4tsR3VgP+iTMGZn5nBWljg==",
+      "path": "avalonia.win32/11.3.12",
+      "hashPath": "avalonia.win32.11.3.12.nupkg.sha512"
+    },
+    "Avalonia.X11/11.3.12": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HR0zf0si52uu/hxPTIOI7gW68kPwz8D/fPYgioxISXAR+Yf6BH/TY/F/zrlu3LbptqU3ySoUmqkA9QJpXz04BQ==",
+      "path": "avalonia.x11/11.3.12",
+      "hashPath": "avalonia.x11.11.3.12.nupkg.sha512"
+    },
+    "CommunityToolkit.Mvvm/8.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-I24ofWVEdplxYjUez9/bljv/qb8r8Ccj6cvYXHexNBegLaD3iDy3QrzAAOYVMmfGWIXxlU1ZtECQNfU07+6hXQ==",
+      "path": "communitytoolkit.mvvm/8.2.1",
+      "hashPath": "communitytoolkit.mvvm.8.2.1.nupkg.sha512"
+    },
+    "Dapper/2.1.66": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/q77jUgDOS+bzkmk3Vy9SiWMaetTw+NOoPAV0xPBsGVAyljd5S6P+4RUW7R3ZUGGr9lDRyPKgAMj2UAOwvqZYw==",
+      "path": "dapper/2.1.66",
+      "hashPath": "dapper.2.1.66.nupkg.sha512"
+    },
+    "Emgu.CV/4.12.0.5764": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-629jbQI7SjB6EviVwunEliIojnap2Pa239/phyjkrhMoQNJk43dWJBOhH4U9nLsOsKLSX4Xyv82t38xcXq4qyQ==",
+      "path": "emgu.cv/4.12.0.5764",
+      "hashPath": "emgu.cv.4.12.0.5764.nupkg.sha512"
+    },
+    "Emgu.CV.runtime.windows/4.12.0.5764": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RCOAc9kmxZp5F050ygd3pLTBFnSZWdxai/Dnyr/Q2EEV2R4JgXu+OoB4fr83GLeytTkll9WAeVWLRTDve9ijIA==",
+      "path": "emgu.cv.runtime.windows/4.12.0.5764",
+      "hashPath": "emgu.cv.runtime.windows.4.12.0.5764.nupkg.sha512"
+    },
+    "Emgu.runtime.windows.msvc.rt.arm64/19.44.35214": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ugNJFVV01rvFAnS3swIm9TJiK/x2AlNZXOCB4bwp7U5gLZ35eUV62mnHqG6/yRk/I/k9aUjZZ/zwHFrHrgZyvg==",
+      "path": "emgu.runtime.windows.msvc.rt.arm64/19.44.35214",
+      "hashPath": "emgu.runtime.windows.msvc.rt.arm64.19.44.35214.nupkg.sha512"
+    },
+    "Emgu.runtime.windows.msvc.rt.x64/19.44.35214": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QGKE7bohY7tLy7iBMJTY+VXQbM2nLVA7AFQLrqPHIK7bWTOPgeIbITefjUwYyxD/wFXwj93GOQq7VIAzDyNztA==",
+      "path": "emgu.runtime.windows.msvc.rt.x64/19.44.35214",
+      "hashPath": "emgu.runtime.windows.msvc.rt.x64.19.44.35214.nupkg.sha512"
+    },
+    "Emgu.runtime.windows.msvc.rt.x86/19.44.35214": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Cgs6eutsi7s4vO79djADbOpXdKG5x1tq4R4hq5wDIv58FimSQyIiRvnkCbZzRMUcIpXOX09W4y7P2XKS9UfSYw==",
+      "path": "emgu.runtime.windows.msvc.rt.x86/19.44.35214",
+      "hashPath": "emgu.runtime.windows.msvc.rt.x86.19.44.35214.nupkg.sha512"
+    },
+    "HarfBuzzSharp/8.3.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tLZN66oe/uiRPTZfrCU4i8ScVGwqHNh5MHrXj0yVf4l7Mz0FhTGnQ71RGySROTmdognAs0JtluHkL41pIabWuQ==",
+      "path": "harfbuzzsharp/8.3.1.1",
+      "hashPath": "harfbuzzsharp.8.3.1.1.nupkg.sha512"
+    },
+    "HarfBuzzSharp.NativeAssets.Linux/8.3.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3EZ1mpIiKWRLL5hUYA82ZHteeDIVaEA/Z0rA/wU6tjx6crcAkJnBPwDXZugBSfo8+J3EznvRJf49uMsqYfKrHg==",
+      "path": "harfbuzzsharp.nativeassets.linux/8.3.1.1",
+      "hashPath": "harfbuzzsharp.nativeassets.linux.8.3.1.1.nupkg.sha512"
+    },
+    "HarfBuzzSharp.NativeAssets.macOS/8.3.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jbtCsgftcaFLCA13tVKo5iWdElJScrulLTKJre36O4YQTIlwDtPPqhRZNk+Y0vv4D1gxbscasGRucUDfS44ofQ==",
+      "path": "harfbuzzsharp.nativeassets.macos/8.3.1.1",
+      "hashPath": "harfbuzzsharp.nativeassets.macos.8.3.1.1.nupkg.sha512"
+    },
+    "HarfBuzzSharp.NativeAssets.Win32/8.3.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UsJtQsfAJoFDZrXc4hCUfRPMqccfKZ0iumJ/upcUjz/cmsTgVFGNEL5yaJWmkqsuFYdMWbj/En5/kS4PFl9hBA==",
+      "path": "harfbuzzsharp.nativeassets.win32/8.3.1.1",
+      "hashPath": "harfbuzzsharp.nativeassets.win32.8.3.1.1.nupkg.sha512"
+    },
+    "MicroCom.Runtime/0.11.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MEnrZ3UIiH40hjzMDsxrTyi8dtqB5ziv3iBeeU4bXsL/7NLSal9F1lZKpK+tfBRnUoDSdtcW3KufE4yhATOMCA==",
+      "path": "microcom.runtime/0.11.0",
+      "hashPath": "microcom.runtime.0.11.0.nupkg.sha512"
+    },
+    "Microsoft.Data.Sqlite/9.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jD3xtvMnMRn2uQl/rMCh01Q4b4P0l6Y5cUJfjTL/MOhkCy/4iDa4tL6y/gHaSKJilO9SdkOEJ/v4Z2Z59/jgLQ==",
+      "path": "microsoft.data.sqlite/9.0.4",
+      "hashPath": "microsoft.data.sqlite.9.0.4.nupkg.sha512"
+    },
+    "Microsoft.Data.Sqlite.Core/9.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rnVGier1R0w9YEAzxOlUl8koFwq4QLwuYKiJN6NFqbCNCPrRLGW3f7x0OtL/Sp1KBMVhgffUIP6jWPppzhpa2Q==",
+      "path": "microsoft.data.sqlite.core/9.0.4",
+      "hashPath": "microsoft.data.sqlite.core.9.0.4.nupkg.sha512"
+    },
+    "OpenCvSharp4/4.13.0.20260308": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aIWd3FisXZDdtzG/m63fk7rkhEJ8+iXrUOHw+RmKRmSyuA07/qdfMn4l91CPT5mtNMtuTW1Qlgi29iHwzL1IwA==",
+      "path": "opencvsharp4/4.13.0.20260308",
+      "hashPath": "opencvsharp4.4.13.0.20260308.nupkg.sha512"
+    },
+    "OpenCvSharp4.runtime.win/4.13.0.20260302": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VC2n9CVZQvAm+p0NXW077e/MGkDBraT3ye4FdInRPpxTVK64DwGnLuIncS8mwrkVcKhqh82/KgcDgKXNWDndAA==",
+      "path": "opencvsharp4.runtime.win/4.13.0.20260302",
+      "hashPath": "opencvsharp4.runtime.win.4.13.0.20260302.nupkg.sha512"
+    },
+    "SkiaSharp/2.88.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3MD5VHjXXieSHCleRLuaTXmL2pD0mB7CcOB1x2kA1I4bhptf4e3R27iM93264ZYuAq6mkUyX5XbcxnZvMJYc1Q==",
+      "path": "skiasharp/2.88.9",
+      "hashPath": "skiasharp.2.88.9.nupkg.sha512"
+    },
+    "SkiaSharp.NativeAssets.Linux/2.88.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cWSaJKVPWAaT/WIn9c8T5uT/l4ETwHxNJTkEOtNKjphNo8AW6TF9O32aRkxqw3l8GUdUo66Bu7EiqtFh/XG0Zg==",
+      "path": "skiasharp.nativeassets.linux/2.88.9",
+      "hashPath": "skiasharp.nativeassets.linux.2.88.9.nupkg.sha512"
+    },
+    "SkiaSharp.NativeAssets.macOS/2.88.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Nv5spmKc4505Ep7oUoJ5vp3KweFpeNqxpyGDWyeEPTX2uR6S6syXIm3gj75dM0YJz7NPvcix48mR5laqs8dPuA==",
+      "path": "skiasharp.nativeassets.macos/2.88.9",
+      "hashPath": "skiasharp.nativeassets.macos.2.88.9.nupkg.sha512"
+    },
+    "SkiaSharp.NativeAssets.Win32/2.88.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wb2kYgU7iy84nQLYZwMeJXixvK++GoIuECjU4ECaUKNuflyRlJKyiRhN1MAHswvlvzuvkrjRWlK0Za6+kYQK7w==",
+      "path": "skiasharp.nativeassets.win32/2.88.9",
+      "hashPath": "skiasharp.nativeassets.win32.2.88.9.nupkg.sha512"
+    },
+    "SQLitePCLRaw.bundle_e_sqlite3/2.1.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UxWuisvZ3uVcVOLJQv7urM/JiQH+v3TmaJc1BLKl5Dxfm/nTzTUrqswCqg/INiYLi61AXnHo1M1JPmPqqLnAdg==",
+      "path": "sqlitepclraw.bundle_e_sqlite3/2.1.10",
+      "hashPath": "sqlitepclraw.bundle_e_sqlite3.2.1.10.nupkg.sha512"
+    },
+    "SQLitePCLRaw.core/2.1.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Ii8JCbC7oiVclaE/mbDEK000EFIJ+ShRPwAvvV89GOZhQ+ZLtlnSWl6ksCNMKu/VGXA4Nfi2B7LhN/QFN9oBcw==",
+      "path": "sqlitepclraw.core/2.1.10",
+      "hashPath": "sqlitepclraw.core.2.1.10.nupkg.sha512"
+    },
+    "SQLitePCLRaw.lib.e_sqlite3/2.1.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mAr69tDbnf3QJpRy2nJz8Qdpebdil00fvycyByR58Cn9eARvR+UiG2Vzsp+4q1tV3ikwiYIjlXCQFc12GfebbA==",
+      "path": "sqlitepclraw.lib.e_sqlite3/2.1.10",
+      "hashPath": "sqlitepclraw.lib.e_sqlite3.2.1.10.nupkg.sha512"
+    },
+    "SQLitePCLRaw.provider.e_sqlite3/2.1.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uZVTi02C1SxqzgT0HqTWatIbWGb40iIkfc3FpFCpE/r7g6K0PqzDUeefL6P6HPhDtc6BacN3yQysfzP7ks+wSQ==",
+      "path": "sqlitepclraw.provider.e_sqlite3/2.1.10",
+      "hashPath": "sqlitepclraw.provider.e_sqlite3.2.1.10.nupkg.sha512"
+    },
+    "Tmds.DBus.Protocol/0.21.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ScSMrUrrw8px4kK1Glh0fZv/HQUlg1078bNXNPfRPKQ3WbRzV9HpsydYEOgSoMK5LWICMf2bMwIFH0pGjxjcMA==",
+      "path": "tmds.dbus.protocol/0.21.2",
+      "hashPath": "tmds.dbus.protocol.0.21.2.nupkg.sha512"
+    }
+  }
+}
