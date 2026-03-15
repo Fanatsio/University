@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "3VAW8t/tcvA=",
+  "dgSpecHash": "d5uvHEjPN7o=",
   "success": true,
   "projectFilePath": "D:\\Университет\\University\\Graduate Work\\SafetySystem\\SafetySystem.csproj",
   "expectedPackageFiles": [
@@ -8,7 +8,7 @@
     "C:\\Users\\rechu\\.nuget\\packages\\avalonia.angle.windows.natives\\2.1.25547.20250602\\avalonia.angle.windows.natives.2.1.25547.20250602.nupkg.sha512",
     "C:\\Users\\rechu\\.nuget\\packages\\avalonia.buildservices\\11.3.2\\avalonia.buildservices.11.3.2.nupkg.sha512",
     "C:\\Users\\rechu\\.nuget\\packages\\avalonia.controls.colorpicker\\11.2.6\\avalonia.controls.colorpicker.11.2.6.nupkg.sha512",
-    "C:\\Users\\rechu\\.nuget\\packages\\avalonia.controls.datagrid\\11.2.6\\avalonia.controls.datagrid.11.2.6.nupkg.sha512",
+    "C:\\Users\\rechu\\.nuget\\packages\\avalonia.controls.datagrid\\11.3.12\\avalonia.controls.datagrid.11.3.12.nupkg.sha512",
     "C:\\Users\\rechu\\.nuget\\packages\\avalonia.desktop\\11.3.12\\avalonia.desktop.11.3.12.nupkg.sha512",
     "C:\\Users\\rechu\\.nuget\\packages\\avalonia.diagnostics\\11.2.6\\avalonia.diagnostics.11.2.6.nupkg.sha512",
     "C:\\Users\\rechu\\.nuget\\packages\\avalonia.fonts.inter\\11.2.6\\avalonia.fonts.inter.11.2.6.nupkg.sha512",

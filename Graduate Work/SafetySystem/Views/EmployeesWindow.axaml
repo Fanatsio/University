@@ -6,18 +6,41 @@
         x:Class="SafetySystem.Views.EmployeesWindow"
         Title="Список сотрудников"
         Width="600" Height="400"
-        Background="White">
-    <DataGrid x:Name="EmployeesDataGrid"
-        AutoGenerateColumns="False"
-        IsReadOnly="True"
-        SelectionMode="Single"
-        CanUserResizeColumns="True"
-        CanUserSortColumns="True"
-        ItemsSource="{Binding Employees}"
+        Background="White"
         x:DataType="viewModels:EmployeesViewModel">
-        <DataGrid.Columns>
-            <DataGridTextColumn Header="ФИО" Binding="{Binding Name, x:DataType=models:Employee}" Width="*"/>
-            <DataGridTextColumn Header="RFID" Binding="{Binding RfidTag, x:DataType=models:Employee}" Width="200"/>
-        </DataGrid.Columns>
-    </DataGrid>
+    
+    <Grid>
+        <DataGrid x:Name="EmployeesDataGrid"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  SelectionMode="Single"
+                  CanUserResizeColumns="True"
+                  CanUserSortColumns="True"
+                  ItemsSource="{Binding Employees}"
+                  Grid.Column="0"
+                  Margin="10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID сотрудника" 
+                                    Binding="{Binding EmployeeId}" 
+                                    Width="150"/>
+                <DataGridTextColumn Header="ФИО" 
+                                    Binding="{Binding Name}" 
+                                    Width="*"/>
+                <DataGridTextColumn Header="RFID" 
+                                    Binding="{Binding RfidTag}" 
+                                    Width="200"/>
+                <DataGridTextColumn Header="Фото" 
+                                    Binding="{Binding PhotoPath}" 
+                                    Width="200"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        <!-- Сообщение, если нет данных -->
+        <TextBlock Text="Нет данных для отображения"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   IsVisible="{Binding NoDataMessageVisible}"
+                   FontSize="16"
+                   Foreground="Gray"/>
+    </Grid>
 </Window>

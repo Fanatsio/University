@@ -75,7 +75,7 @@ namespace SafetySystem.Services
                 connection.Open();
                 connection.Execute(@"
                     INSERT INTO Employees (EmployeeId, RfidTag, Name, PhotoPath)
-                    VALUES @EmployeeId, @RfidTag, @Name, @PhotoPath)
+                    VALUES (@EmployeeId, @RfidTag, @Name, @PhotoPath)
                 ", employee);
                 Console.WriteLine("Employee added successfully.");
             }
