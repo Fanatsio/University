@@ -1,7 +1,6 @@
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
-using SafetySystem.Views;
 
 namespace SafetySystem.Views
 {
@@ -12,31 +11,31 @@ namespace SafetySystem.Views
             InitializeComponent();
         }
 
-        private void OnRegisterWindowClick(object sender, Avalonia.Interactivity.RoutedEventArgs e)
+        private void OnRegisterWindowClick(object sender, RoutedEventArgs e)
         {
             var registerWindow = new RegisterWindow();
             registerWindow.Show();
         }
 
-        private void OnEmployeesButtonClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        private void OnEmployeesButtonClick(object? sender, RoutedEventArgs e)
         {
             var employeesWindow = new EmployeesWindow();
             employeesWindow.Show();
         }
 
-        private void OnMonitorWindowClick(object sender, Avalonia.Interactivity.RoutedEventArgs e)
+        private void OnMonitorWindowClick(object sender, RoutedEventArgs e)
         {
             var monitorWindow = new MonitorWindow();
             monitorWindow.Show();
         }
 
-        private void OnRouteControlWindowClick(object sender, Avalonia.Interactivity.RoutedEventArgs e)
+        private void OnRouteControlWindowClick(object sender, RoutedEventArgs e)
         {
             var routeControlWindow = new RouteControlWindow();
             routeControlWindow.Show();
         }
 
-        private void OnDataAnalysisWindowClick(object sender, Avalonia.Interactivity.RoutedEventArgs e)
+        private void OnDataAnalysisWindowClick(object sender, RoutedEventArgs e)
         {
             var dataAnalysisWindow = new DataAnalysisWindow();
             dataAnalysisWindow.Show();
@@ -47,9 +46,5 @@ namespace SafetySystem.Views
             if (e.GetCurrentPoint(this).Properties.IsLeftButtonPressed)
                 BeginMoveDrag(e);
         }
-
-        private void OnMinimizeClick(object? sender, RoutedEventArgs e) => WindowState = WindowState.Minimized;
-        private void OnMaximizeClick(object? sender, RoutedEventArgs e) => WindowState = WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
-        private void OnCloseClick(object? sender, RoutedEventArgs e) => Close();
     }
 }
