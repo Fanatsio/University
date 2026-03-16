@@ -10,14 +10,14 @@
         "projectUniqueName": "D:\\Университет\\University\\Graduate Work\\SafetySystem\\SafetySystem.csproj",
         "projectName": "SafetySystem",
         "projectPath": "D:\\Университет\\University\\Graduate Work\\SafetySystem\\SafetySystem.csproj",
-        "packagesPath": "C:\\Users\\rechu\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\Fanatsio\\.nuget\\packages\\",
         "outputPath": "D:\\Университет\\University\\Graduate Work\\SafetySystem\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Visual Studio\\SDK\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\rechu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Fanatsio\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

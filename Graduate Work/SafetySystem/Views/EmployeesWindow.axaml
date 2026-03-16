@@ -6,7 +6,7 @@
         x:Class="SafetySystem.Views.EmployeesWindow"
         Title="Список сотрудников"
         Width="600" Height="400"
-        Background="White"
+        Background="{DynamicResource WindowBackground}"
         x:DataType="viewModels:EmployeesViewModel">
     
     <Grid>
@@ -18,7 +18,10 @@
                   CanUserSortColumns="True"
                   ItemsSource="{Binding Employees}"
                   Grid.Column="0"
-                  Margin="10">
+                  Margin="10"
+                  Background="Transparent"
+                  Foreground="{StaticResource CardForeground}"
+                  BorderBrush="{StaticResource CardBorder}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID сотрудника" 
                                     Binding="{Binding EmployeeId}" 
@@ -41,6 +44,6 @@
                    VerticalAlignment="Center"
                    IsVisible="{Binding NoDataMessageVisible}"
                    FontSize="16"
-                   Foreground="Gray"/>
+                   Foreground="{StaticResource MutedText}"/>
     </Grid>
 </Window>

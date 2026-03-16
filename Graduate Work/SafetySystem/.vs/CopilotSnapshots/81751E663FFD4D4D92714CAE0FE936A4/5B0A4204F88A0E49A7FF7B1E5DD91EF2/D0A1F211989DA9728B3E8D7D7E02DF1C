@@ -1,0 +1,361 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="SafetySystem.Views.MainWindow"
+        Title="Система безопасности и мониторинга опасной зоны"
+        Width="1200" Height="700"
+        Background="{DynamicResource PageBg}"
+        SystemDecorations="None"
+        ExtendClientAreaToDecorationsHint="True"
+        ExtendClientAreaChromeHints="NoChrome">
+
+    <Window.Resources>
+        <!-- Color tokens -->
+        <!-- Dark-blue modern dashboard palette -->
+        <SolidColorBrush x:Key="PrimaryDark" Color="#E6F7FF" />    <!-- main text (near-white with blue tint) -->
+        <SolidColorBrush x:Key="Primary" Color="#4FB3FF" />        <!-- accent blue -->
+        <SolidColorBrush x:Key="Accent" Color="#76D0FF" />
+        <SolidColorBrush x:Key="MutedText" Color="#9FB7C9" />     <!-- secondary text -->
+        <SolidColorBrush x:Key="CardBg" Color="#071B2A" />        <!-- card background (dark) -->
+        <SolidColorBrush x:Key="PageBg" Color="#041826" />        <!-- overall window background -->
+        <SolidColorBrush x:Key="TopBarBg" Color="#052233" />      <!-- top bar slightly lighter -->
+        <SolidColorBrush x:Key="SidebarStart" Color="#062433" />
+        <SolidColorBrush x:Key="SidebarEnd" Color="#07283A" />
+        <SolidColorBrush x:Key="CardBorder" Color="#123347" />
+    </Window.Resources>
+
+    <Window.Styles>
+        <!-- Global typography -->
+        <Style Selector="Window">
+            <Setter Property="FontFamily" Value="Segoe UI, Arial, sans-serif"/>
+            <Setter Property="Background" Value="{DynamicResource PageBg}"/>
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryDark}"/>
+        </Style>
+
+        <!-- Sidebar buttons -->
+        <Style Selector="Button.nav">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Padding" Value="14,10"/>
+            <Setter Property="Margin" Value="6,4"/>
+            <Setter Property="CornerRadius" Value="8"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="FontSize" Value="15"/>
+        </Style>
+        <Style Selector="Button.nav:pointerover">
+            <Setter Property="Background" Value="#344648"/>
+        </Style>
+        <Style Selector="Button.nav:pressed">
+            <Setter Property="Background" Value="#263233"/>
+        </Style>
+
+        <!-- Headings -->
+        <Style Selector="TextBlock.header">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Margin" Value="6,8"/>
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryDark}"/>
+        </Style>
+        <Style Selector="TextBlock.subheader">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Foreground" Value="{DynamicResource MutedText}"/>
+            <Setter Property="Margin" Value="6,0,6,12"/>
+        </Style>
+
+        <!-- Card -->
+        <Style Selector="Border.card">
+            <Setter Property="Background" Value="{DynamicResource CardBg}"/>
+            <Setter Property="CornerRadius" Value="14"/>
+            <Setter Property="Padding" Value="18"/>
+            <Setter Property="Margin" Value="12"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource CardBorder}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Effect">
+                <DropShadow BlurRadius="12" Color="#041826" Opacity="0.5" OffsetY="4"/>
+            </Setter>
+        </Style>
+        <Style Selector="Border.card:pointerover">
+            <Setter Property="BorderBrush" Value="#1A4D6B"/>
+        </Style>
+
+        <!-- Tab control styling -->
+        <Style Selector="TabControl">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <Style Selector="TabItem">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#2E3A3F"/>
+            <Setter Property="Padding" Value="12,8"/>
+            <Setter Property="Margin" Value="0,0,8,0"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+        <Style Selector="TabItem:selected">
+            <Setter Property="Background" Value="{DynamicResource Primary}"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+
+        <!-- Small utility styles -->
+        <Style Selector="Button[Content=⏻]">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryDark}"/>
+        </Style>
+        <!-- Window control buttons (minimize, maximize, close) -->
+        <Style Selector="Button.windowcontrol">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryDark}"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Width" Value="36"/>
+            <Setter Property="Height" Value="28"/>
+        </Style>
+        <Style Selector="Button.windowcontrol:pointerover">
+            <Setter Property="Background" Value="#E6F0FF"/>
+            <Setter Property="Foreground" Value="{DynamicResource Primary}"/>
+        </Style>
+        <Style Selector="Button.windowcontrol:pressed">
+            <Setter Property="Background" Value="#DCE8FF"/>
+        </Style>
+
+        <!-- TextBox default to softer background to reduce white areas -->
+        <Style Selector="TextBox">
+            <Setter Property="Background" Value="#072635"/>
+            <Setter Property="BorderBrush" Value="#0E4B66"/>
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryDark}"/>
+            <Setter Property="CornerRadius" Value="8"/>
+            <Setter Property="Padding" Value="8"/>
+        </Style>
+    </Window.Styles>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Top App Bar -->
+        <Border Grid.ColumnSpan="2" Background="{DynamicResource TopBarBg}" CornerRadius="0,0,12,12" BorderBrush="{DynamicResource CardBorder}" BorderThickness="0,0,0,1" Padding="12,8"
+                PointerPressed="TitleBar_PointerPressed">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="260" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="260" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="8,0">
+                    <Border Background="{DynamicResource Primary}" CornerRadius="8" Padding="8" VerticalAlignment="Center">
+                        <TextBlock Text="🔒" FontSize="16"/>
+                    </Border>
+                    <StackPanel Orientation="Vertical" Margin="12,0" VerticalAlignment="Center">
+                        <TextBlock Text="Система безопасности" FontSize="16" FontWeight="SemiBold" Foreground="{DynamicResource PrimaryDark}"/>
+                        <TextBlock Text="CONNECTED" FontSize="11" Foreground="{DynamicResource MutedText}"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="8">
+                    <TextBox Width="520" Watermark="Поиск по журналу и сотрудникам..." HorizontalAlignment="Center"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,8,0" Spacing="8">
+                    <TextBlock Text="Пользователь: Админ" Foreground="{DynamicResource MutedText}" VerticalAlignment="Center"/>
+                    <Button Content="⏻" Background="Transparent" BorderBrush="Transparent"/>
+                    <!-- Window control buttons -->
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="6" Margin="8,0,0,0">
+                        <Button Classes="windowcontrol" Content="—" Click="OnMinimizeClick"/>
+                        <Button Classes="windowcontrol" Content="▢" Click="OnMaximizeClick"/>
+                        <Button Classes="windowcontrol" Content="✕" Click="OnCloseClick"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Sidebar -->
+        <Border Grid.Row="1" Padding="16">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="#233033" Offset="0" />
+                    <GradientStop Color="#2E3A3F" Offset="1" />
+                </LinearGradientBrush>
+            </Border.Background>
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="4,0,0,12" Spacing="10">
+                    <Border Background="White" CornerRadius="8" Padding="6">
+                        <TextBlock Text="🛡️" FontSize="18"/>
+                    </Border>
+                    <TextBlock Text="Система безопасности" Foreground="White" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                </StackPanel>
+                <TextBox Watermark="Поиск..." Margin="0,0,0,12"/>
+                <Separator Background="#395153" Margin="0,6"/>
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <Button Content="📝  Регистрация сотрудников" Classes="nav" Click="OnRegisterWindowClick" HorizontalContentAlignment="Left"/>
+                        <Button Content="👥  Список сотрудников" Classes="nav" Click="OnEmployeesButtonClick" HorizontalContentAlignment="Left"/>
+                        <Button Content="📊  Мониторинг" Classes="nav" Click="OnMonitorWindowClick" HorizontalContentAlignment="Left"/>
+                        <Button Content="🛤️  Контроль точек" Classes="nav" Click="OnRouteControlWindowClick" HorizontalContentAlignment="Left"/>
+                        <Button Content="📈  Анализ данных" Classes="nav" Click="OnDataAnalysisWindowClick" HorizontalContentAlignment="Left"/>
+                    </StackPanel>
+                </ScrollViewer>
+                <StackPanel VerticalAlignment="Bottom" Margin="0,12,0,0">
+                    <Separator Background="#395153" Margin="0,6"/>
+                    <TextBlock Text="Версия 1.0" Foreground="#AAB3B8" FontSize="12" Margin="6"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+        <!-- Main content -->
+        <TabControl Grid.Column="1" Grid.Row="1" Background="Transparent" Margin="18,6,18,12">
+            <TabItem Header="Главная">
+                <ScrollViewer>
+                    <Grid Margin="12">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="260" />
+                            <RowDefinition Height="260" />
+                        </Grid.RowDefinitions>
+
+                        <!-- Column 1: Clock + Forecast -->
+                        <StackPanel Grid.Column="0" Grid.Row="0" Margin="8">
+                            <Border Classes="card" Height="200">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="120" />
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Margin="12">
+                                        <TextBlock Text="TODAY" Foreground="{DynamicResource MutedText}" FontSize="12"/>
+                                        <TextBlock Text="19:14" FontSize="48" FontWeight="SemiBold" Foreground="{DynamicResource Primary}"/>
+                                        <TextBlock Text="Monday 09 - Dec 2023" Foreground="{DynamicResource MutedText}" FontSize="12"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <TextBlock Text="🌙" FontSize="40"/>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+
+                            <Border Classes="card" Height="220" Margin="0,12,0,0">
+                                <StackPanel Margin="12">
+                                    <TextBlock Text="FORECAST" Foreground="{DynamicResource MutedText}" FontSize="12"/>
+                                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Height="120">
+                                        <TextBlock Text="☁️" FontSize="64" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="12">
+                                        <TextBlock Text="5pm" Foreground="{DynamicResource MutedText}"/>
+                                        <TextBlock Text="6pm" Foreground="{DynamicResource MutedText}"/>
+                                        <TextBlock Text="7pm" Foreground="{DynamicResource Primary}"/>
+                                        <TextBlock Text="8pm" Foreground="{DynamicResource MutedText}"/>
+                                        <TextBlock Text="9pm" Foreground="{DynamicResource MutedText}"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+
+                        <!-- Column 2: Wind (gauge) + Humidity -->
+                        <StackPanel Grid.Column="1" Grid.Row="0" Margin="8">
+                            <Border Classes="card" Height="260">
+                                <Grid>
+                                    <TextBlock Text="WIND" Foreground="{DynamicResource MutedText}" Margin="12"/>
+                                    <Canvas HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Ellipse Width="160" Height="160" Stroke="#0E4B66" StrokeThickness="8"/>
+                                        <Ellipse Width="130" Height="130" Stroke="#072635" StrokeThickness="16"/>
+                                        <TextBlock Text="1.2" FontSize="28" FontWeight="Bold" Foreground="{DynamicResource Primary}" Canvas.Left="60" Canvas.Top="62" />
+                                        <TextBlock Text="MPH" FontSize="12" Foreground="{DynamicResource MutedText}" Canvas.Left="72" Canvas.Top="92" />
+                                        <!-- pointer triangle -->
+                                        <Polygon Points="0,0 12,8 0,16" Fill="{DynamicResource Accent}" Canvas.Left="150" Canvas.Top="100" RenderTransformOrigin="0.5,0.5"/>
+                                    </Canvas>
+                                </Grid>
+                            </Border>
+
+                            <Border Classes="card" Height="220" Margin="0,12,0,0">
+                                <StackPanel Margin="12">
+                                    <TextBlock Text="HUMIDITY" Foreground="{DynamicResource MutedText}" FontSize="12"/>
+                                    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Ellipse Width="140" Height="140" Stroke="#2E5D78" StrokeThickness="12"/>
+                                        <Ellipse Width="120" Height="120" Stroke="{DynamicResource Primary}" StrokeThickness="6"/>
+                                        <TextBlock Text="70%" FontSize="28" FontWeight="Bold" Foreground="{DynamicResource Primary}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Grid>
+                                    <TextBlock Text="↓ 18% from yesterday" Foreground="{DynamicResource MutedText}" FontSize="12" Margin="6,8,0,0"/>
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+
+                        <!-- Column 3: Sun metrics -->
+                        <StackPanel Grid.Column="2" Grid.Row="0" Margin="8">
+                            <Border Classes="card" Height="260">
+                                <StackPanel Margin="12">
+                                    <TextBlock Text="SUN" Foreground="{DynamicResource MutedText}" FontSize="12"/>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Spacing="12">
+                                        <StackPanel Width="120">
+                                            <TextBlock Text="Solar radiation" Foreground="{DynamicResource MutedText}" FontSize="12"/>
+                                            <TextBlock Text="1000" FontSize="28" FontWeight="Bold" Foreground="{DynamicResource Primary}"/>
+                                        </StackPanel>
+                                        <StackPanel Width="120">
+                                            <TextBlock Text="UV Index" Foreground="{DynamicResource MutedText}" FontSize="12"/>
+                                            <TextBlock Text="0.3" FontSize="28" FontWeight="Bold" Foreground="{DynamicResource Accent}"/>
+                                        </StackPanel>
+                                        <StackPanel Width="120">
+                                            <TextBlock Text="Light Index" Foreground="{DynamicResource MutedText}" FontSize="12"/>
+                                            <TextBlock Text="0.4" FontSize="28" FontWeight="Bold" Foreground="{DynamicResource Primary}"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+
+                        <!-- Column 4: Temperature + Sun/Moon ring -->
+                        <StackPanel Grid.Column="3" Grid.Row="0" Margin="8">
+                            <Border Classes="card" Height="140">
+                                <StackPanel Margin="12">
+                                    <TextBlock Text="TEMPERATURE" Foreground="{DynamicResource MutedText}" FontSize="12"/>
+                                    <TextBlock Text="23°" FontSize="36" FontWeight="Bold" Foreground="{DynamicResource Primary}"/>
+                                    <StackPanel Orientation="Horizontal" Spacing="12" Margin="0,8,0,0">
+                                        <TextBlock Text="Dew point 23°C" Foreground="{DynamicResource MutedText}" FontSize="12"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Classes="card" Height="320" Margin="0,12,0,0">
+                                <StackPanel Margin="12">
+                                    <TextBlock Text="SUN/MOON" Foreground="{DynamicResource MutedText}" FontSize="12"/>
+                                    <Canvas Height="180" HorizontalAlignment="Center">
+                                        <Ellipse Width="160" Height="160" Stroke="#0E4B66" StrokeThickness="10"/>
+                                        <Ellipse Width="120" Height="120" Stroke="#072635" StrokeThickness="8"/>
+                                        <TextBlock Text="12 hr 59 min" FontSize="12" Foreground="{DynamicResource MutedText}" Canvas.Left="40" Canvas.Top="80"/>
+                                    </Canvas>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Spacing="12" Margin="6,8,0,0">
+                                        <TextBlock Text="Rise 6:00 AM" Foreground="{DynamicResource MutedText}" FontSize="12"/>
+                                        <TextBlock Text="Set 7:00 PM" Foreground="{DynamicResource MutedText}" FontSize="12"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+
+                        <!-- Second row can be used for maps or larger charts (placeholder) -->
+                        <Border Grid.ColumnSpan="4" Grid.Row="1" Classes="card" Margin="8" Height="220">
+                            <StackPanel Margin="12">
+                                <TextBlock Text="Map / Timeline" Foreground="{DynamicResource MutedText}"/>
+                                <Border Background="#03121A" CornerRadius="8" Height="160" Margin="0,8,0,0"/>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="Уведомления">
+                <StackPanel Margin="20">
+                    <TextBlock Text="Активные тревоги" Classes="header" Foreground="#2E3A3F"/>
+                    <ListBox Name="NotificationList" Background="White" BorderBrush="#E0E0E0" BorderThickness="1" CornerRadius="6" Padding="10"/>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

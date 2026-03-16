@@ -1,0 +1,36 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="SafetySystem.Views.DataAnalysisWindow"
+        Title="Анализ данных" Width="800" Height="600"
+        Background="{DynamicResource WindowBackground}">
+
+    <Window.Resources>
+        <SolidColorBrush x:Key="WindowBackground" Color="#071726"/>
+        <SolidColorBrush x:Key="CardBorder" Color="#123243"/>
+        <SolidColorBrush x:Key="CardForeground" Color="#E6F3FF"/>
+        <SolidColorBrush x:Key="MutedText" Color="#9FB6C6"/>
+    </Window.Resources>
+
+    <Window.Styles>
+        <Style Selector="TextBlock.header">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="{StaticResource CardForeground}"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="8"/>
+        </Style>
+    </Window.Styles>
+
+    <StackPanel Margin="20">
+        <TextBlock Text="Анализ событий" Classes="header"/>
+
+        <Border Classes="card" Width="760" HorizontalAlignment="Center">
+            <Canvas Width="740" Height="400" Background="#041826"/>
+        </Border>
+
+        <TextBlock Text="События: Нарушения / Нормальная работа" Margin="10" Foreground="{StaticResource MutedText}"/>
+        <Border Classes="card" Width="760" HorizontalAlignment="Center">
+            <ListBox Name="EventList" Width="740" Height="200" Background="Transparent" Foreground="{StaticResource CardForeground}" BorderBrush="{StaticResource CardBorder}"/>
+        </Border>
+    </StackPanel>
+</Window>

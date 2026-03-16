@@ -1,0 +1,43 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="SafetySystem.Views.MonitorWindow"
+        Title="Мониторинг зоны"
+        Width="1000"
+        Height="700"
+        Background="{DynamicResource WindowBackground}">
+
+    <Window.Resources>
+        <SolidColorBrush x:Key="WindowBackground" Color="#071726"/>
+        <SolidColorBrush x:Key="CardBorder" Color="#123243"/>
+        <SolidColorBrush x:Key="CardForeground" Color="#E6F3FF"/>
+        <SolidColorBrush x:Key="MutedText" Color="#9FB6C6"/>
+        <SolidColorBrush x:Key="AlertGreen" Color="#28A745"/>
+    </Window.Resources>
+
+    <DockPanel>
+
+        <Border Classes="card" Margin="12" DockPanel.Dock="Top" HorizontalAlignment="Center">
+            <Image Name="CameraStream"
+                   Width="920"
+                   Height="520"
+                   Stretch="Uniform"/>
+        </Border>
+
+        <StackPanel DockPanel.Dock="Bottom" Margin="10">
+
+            <TextBlock Text="Люди в зоне" FontSize="16" Foreground="{StaticResource CardForeground}"/>
+
+            <Border Classes="card" Width="960">
+                <ListBox Name="PeopleInZoneList" Height="200" Background="Transparent" Foreground="{StaticResource CardForeground}" BorderBrush="{StaticResource CardBorder}"/>
+            </Border>
+
+        </StackPanel>
+
+        <TextBlock Name="IntrusionAlert"
+                   Text="Нет нарушений"
+                   Foreground="{StaticResource AlertGreen}"
+                   Margin="10"/>
+
+    </DockPanel>
+
+</Window>

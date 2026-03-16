@@ -1,4 +1,6 @@
 using Avalonia.Controls;
+using Avalonia.Input;
+using Avalonia.Interactivity;
 using SafetySystem.Views;
 
 namespace SafetySystem.Views
@@ -39,5 +41,15 @@ namespace SafetySystem.Views
             var dataAnalysisWindow = new DataAnalysisWindow();
             dataAnalysisWindow.Show();
         }
+
+        private void TitleBar_PointerPressed(object? sender, PointerPressedEventArgs e)
+        {
+            if (e.GetCurrentPoint(this).Properties.IsLeftButtonPressed)
+                BeginMoveDrag(e);
+        }
+
+        private void OnMinimizeClick(object? sender, RoutedEventArgs e) => WindowState = WindowState.Minimized;
+        private void OnMaximizeClick(object? sender, RoutedEventArgs e) => WindowState = WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
+        private void OnCloseClick(object? sender, RoutedEventArgs e) => Close();
     }
 }
