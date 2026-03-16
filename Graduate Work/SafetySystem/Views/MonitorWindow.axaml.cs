@@ -9,7 +9,7 @@ namespace SafetySystem.Views
 {
     public partial class MonitorWindow : Window
     {
-        private CameraService _cameraService;
+        private readonly CameraService _cameraService;
 
         public MonitorWindow()
         {
@@ -22,8 +22,7 @@ namespace SafetySystem.Views
             _cameraService.StartCamera();
         }
 
-        private void OnFrameReady(Avalonia.Media.Imaging.Bitmap frame,
-                                  List<DetectionResult> detections)
+        private void OnFrameReady(Avalonia.Media.Imaging.Bitmap frame, List<DetectionResult> detections)
         {
             Dispatcher.UIThread.Post(() =>
             {
