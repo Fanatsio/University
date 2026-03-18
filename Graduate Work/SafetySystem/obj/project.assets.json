@@ -2110,8 +2110,8 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Fanatsio\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\rechu\\.nuget\\packages\\": {},
+    "D:\\Visual Studio\\SDK\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
@@ -2119,14 +2119,14 @@
       "projectUniqueName": "D:\\Университет\\University\\Graduate Work\\SafetySystem\\SafetySystem.csproj",
       "projectName": "SafetySystem",
       "projectPath": "D:\\Университет\\University\\Graduate Work\\SafetySystem\\SafetySystem.csproj",
-      "packagesPath": "C:\\Users\\Fanatsio\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\rechu\\.nuget\\packages\\",
       "outputPath": "D:\\Университет\\University\\Graduate Work\\SafetySystem\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "D:\\Visual Studio\\SDK\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Fanatsio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\rechu\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
