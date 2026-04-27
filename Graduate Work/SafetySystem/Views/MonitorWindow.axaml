@@ -1,43 +1,74 @@
-<Window xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        x:Class="SafetySystem.Views.MonitorWindow"
-        Title="Мониторинг зоны"
-        Width="1000"
-        Height="700"
-        Background="{DynamicResource WindowBackground}">
-
-    <Window.Resources>
-        <SolidColorBrush x:Key="WindowBackground" Color="#071726"/>
-        <SolidColorBrush x:Key="CardBorder" Color="#123243"/>
-        <SolidColorBrush x:Key="CardForeground" Color="#E6F3FF"/>
-        <SolidColorBrush x:Key="MutedText" Color="#9FB6C6"/>
-        <SolidColorBrush x:Key="AlertGreen" Color="#28A745"/>
-    </Window.Resources>
-
-    <DockPanel>
-
-        <Border Classes="card" Margin="12" DockPanel.Dock="Top" HorizontalAlignment="Center">
-            <Image Name="CameraStream"
-                   Width="920"
-                   Height="520"
-                   Stretch="Uniform"/>
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="SafetySystem.Views.MonitorWindow">
+    <Grid RowDefinitions="Auto,*,Auto">
+        <Border Grid.Row="0"
+                Margin="0,0,0,12"
+                Padding="16,12"
+                Background="#081F2C"
+                BorderBrush="{DynamicResource CardBorder}"
+                BorderThickness="1"
+                CornerRadius="10">
+            <TextBlock Name="IntrusionAlert"
+                       Text="Нет нарушений"
+                       Foreground="#28A745"
+                       FontWeight="SemiBold"
+                       FontSize="16" />
         </Border>
 
-        <StackPanel DockPanel.Dock="Bottom" Margin="10">
+        <Border Grid.Row="1"
+                Classes="card"
+                Margin="0"
+                Padding="16"
+                ClipToBounds="True"
+                MinHeight="320">
+            <Grid>
+                <Border Background="#03131D"
+                        BorderBrush="{DynamicResource CardBorder}"
+                        BorderThickness="1"
+                        CornerRadius="10"
+                        ClipToBounds="True">
+                    <Image Name="CameraStream"
+                           Stretch="Uniform"
+                           HorizontalAlignment="Stretch"
+                           VerticalAlignment="Stretch" />
+                </Border>
 
-            <TextBlock Text="Люди в зоне" FontSize="16" Foreground="{StaticResource CardForeground}"/>
+                <Border Name="LoadingOverlay"
+                        Background="#AA041826"
+                        CornerRadius="10"
+                        Padding="24"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        IsVisible="True">
+                    <StackPanel Spacing="10">
+                        <TextBlock Text="Мониторинг"
+                                   FontSize="20"
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Center"
+                                   Foreground="{DynamicResource CardForeground}" />
+                        <TextBlock Name="LoadingStatusText"
+                                   Text="Инициализация камеры..."
+                                   FontSize="15"
+                                   HorizontalAlignment="Center"
+                                   Foreground="{DynamicResource MutedText}" />
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Border>
 
-            <Border Classes="card" Width="960">
-                <ListBox Name="PeopleInZoneList" Height="200" Background="Transparent" Foreground="{StaticResource CardForeground}" BorderBrush="{StaticResource CardBorder}"/>
+        <StackPanel Grid.Row="2" Margin="0,12,0,0">
+            <TextBlock Text="Люди в зоне"
+                       FontSize="16"
+                       Foreground="{DynamicResource CardForeground}" />
+            <Border Classes="card" Margin="0,8,0,0">
+                <ListBox Name="PeopleInZoneList"
+                         MinHeight="140"
+                         MaxHeight="200"
+                         Background="Transparent"
+                         Foreground="{DynamicResource CardForeground}"
+                         BorderBrush="{DynamicResource CardBorder}" />
             </Border>
-
         </StackPanel>
-
-        <TextBlock Name="IntrusionAlert"
-                   Text="Нет нарушений"
-                   Foreground="{StaticResource AlertGreen}"
-                   Margin="10"/>
-
-    </DockPanel>
-
-</Window>
+    </Grid>
+</UserControl>

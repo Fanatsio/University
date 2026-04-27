@@ -1,26 +1,34 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using Avalonia.Media;
+using Avalonia.Platform.Storage;
 using SafetySystem.Models;
 using SafetySystem.Services;
-using System.Threading.Tasks;
-using Avalonia.Platform.Storage;
-using System.Collections.Generic;
 using System;
 
 namespace SafetySystem.Views
 {
-    public partial class RegisterWindow : Window
+    public partial class RegisterWindow : UserControl
     {
-        private string? _photoPath = null;
+        private string? _photoPath;
+
+        public event EventHandler? EmployeeSaved;
 
         public RegisterWindow()
         {
             InitializeComponent();
         }
 
-        private async void OnChoosePhotoClick(object sender, RoutedEventArgs e)
+        private async void OnChoosePhotoClick(object? sender, RoutedEventArgs e)
         {
-            var files = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
+            var storageProvider = TopLevel.GetTopLevel(this)?.StorageProvider;
+            if (storageProvider is null)
+            {
+                SetStatus("Не удалось открыть диалог выбора файла.", Brushes.Orange);
+                return;
+            }
+
+            var files = await storageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
             {
                 Title = "Выберите фотографию",
                 AllowMultiple = false,
@@ -33,14 +41,17 @@ namespace SafetySystem.Views
                 ]
             });
 
-            if (files.Count > 0)
+            if (files.Count == 0)
             {
-                _photoPath = files[0].Path.LocalPath;
-                PhotoPathText.Text = _photoPath;
+                return;
             }
+
+            _photoPath = files[0].Path.LocalPath;
+            PhotoPathText.Text = _photoPath;
+            SetStatus("Фотография выбрана и готова к сохранению.", Brushes.LightGreen);
         }
 
-        private async void OnSaveEmployeeClick(object sender, RoutedEventArgs e)
+        private void OnSaveEmployeeClick(object? sender, RoutedEventArgs e)
         {
             var employee = new Employee
             {
@@ -53,32 +64,29 @@ namespace SafetySystem.Views
             try
             {
                 DatabaseService.Instance.AddEmployee(employee);
-                await MessageBox("Сотрудник успешно добавлен!");
-                this.Close();
+                ClearForm();
+                SetStatus("Сотрудник успешно добавлен. Открываю список сотрудников.", Brushes.LightGreen);
+                EmployeeSaved?.Invoke(this, EventArgs.Empty);
             }
             catch (Exception ex)
             {
-                await MessageBox($"Ошибка при добавлении сотрудника: {ex.Message}");
+                SetStatus($"Ошибка при добавлении сотрудника: {ex.Message}", Brushes.OrangeRed);
             }
         }
 
-        private async Task MessageBox(string message)
+        private void ClearForm()
         {
-            var dialog = new Window
-            {
-                Width = 300,
-                Height = 150,
-                Title = "Уведомление",
-                Content = new TextBlock
-                {
-                    Text = message,
-                    VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center,
-                    HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Center
-                }
-            };
-            await dialog.ShowDialog(this);
-            await Task.Delay(1500);
-            dialog.Close();
+            EmployeeIdTextBox.Text = string.Empty;
+            NameTextBox.Text = string.Empty;
+            RfidTagTextBox.Text = string.Empty;
+            _photoPath = null;
+            PhotoPathText.Text = "Фотография не выбрана";
+        }
+
+        private void SetStatus(string message, IBrush brush)
+        {
+            StatusMessageText.Text = message;
+            StatusMessageText.Foreground = brush;
         }
     }
 }

@@ -1,63 +1,93 @@
+using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Media;
+using Avalonia.Media.Imaging;
 using Avalonia.Threading;
-using SafetySystem.Services;
 using SafetySystem.Models;
-using System;
+using SafetySystem.Services;
 using System.Collections.Generic;
 
 namespace SafetySystem.Views
 {
-    public partial class MonitorWindow : Window
+    public partial class MonitorWindow : UserControl
     {
         private readonly CameraService _cameraService;
+        private Bitmap? _currentFrame;
 
         public MonitorWindow()
         {
             InitializeComponent();
 
             _cameraService = new CameraService();
-
             _cameraService.FrameReady += OnFrameReady;
+            _cameraService.StatusChanged += OnStatusChanged;
 
+            AttachedToVisualTree += OnAttachedToVisualTree;
+            DetachedFromVisualTree += OnDetachedFromVisualTree;
+        }
+
+        private void OnAttachedToVisualTree(object? sender, VisualTreeAttachmentEventArgs e)
+        {
+            ShowLoadingState("Инициализация камеры...", false);
             _cameraService.StartCamera();
         }
 
-        private void OnFrameReady(Avalonia.Media.Imaging.Bitmap frame, List<DetectionResult> detections)
+        private void OnDetachedFromVisualTree(object? sender, VisualTreeAttachmentEventArgs e)
+        {
+            _cameraService.StopCamera();
+            DisposeCurrentFrame();
+            ShowLoadingState("Инициализация камеры...", false);
+        }
+
+        private void OnFrameReady(Bitmap frame, List<DetectionResult> detections)
         {
             Dispatcher.UIThread.Post(() =>
             {
+                var previousFrame = _currentFrame;
+                _currentFrame = frame;
+
                 CameraStream.Source = frame;
+                previousFrame?.Dispose();
+                LoadingOverlay.IsVisible = false;
 
                 PeopleInZoneList.Items.Clear();
 
-                bool dangerDetected = false;
+                var dangerDetected = false;
 
-                foreach (var d in detections)
+                foreach (var detection in detections)
                 {
-                    if (d.InDangerZone)
+                    if (!detection.InDangerZone)
                     {
-                        PeopleInZoneList.Items.Add($"ID {d.Id} — В ОПАСНОЙ ЗОНЕ");
-                        dangerDetected = true;
+                        continue;
                     }
+
+                    PeopleInZoneList.Items.Add($"ID {detection.Id} - В опасной зоне");
+                    dangerDetected = true;
                 }
 
-                if (dangerDetected)
-                {
-                    IntrusionAlert.Text = "НАРУШЕНИЕ!";
-                    IntrusionAlert.Foreground = Avalonia.Media.Brushes.Red;
-                }
-                else
-                {
-                    IntrusionAlert.Text = "Нет нарушений";
-                    IntrusionAlert.Foreground = Avalonia.Media.Brushes.Green;
-                }
+                IntrusionAlert.Text = dangerDetected ? "НАРУШЕНИЕ!" : "Нет нарушений";
+                IntrusionAlert.Foreground = dangerDetected ? Brushes.Red : Brushes.Green;
             });
         }
 
-        protected override void OnClosed(EventArgs e)
+        private void OnStatusChanged(string message, bool isError)
         {
-            _cameraService.StopCamera();
-            base.OnClosed(e);
+            Dispatcher.UIThread.Post(() => ShowLoadingState(message, isError));
+        }
+
+        private void ShowLoadingState(string message, bool isError)
+        {
+            LoadingStatusText.Text = message;
+            LoadingStatusText.Foreground = isError ? Brushes.OrangeRed : Brushes.White;
+            LoadingOverlay.IsVisible = true;
+        }
+
+        private void DisposeCurrentFrame()
+        {
+            var frame = _currentFrame;
+            _currentFrame = null;
+            CameraStream.Source = null;
+            frame?.Dispose();
         }
     }
 }

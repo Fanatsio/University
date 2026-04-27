@@ -1,55 +1,17 @@
-<Window xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        x:Class="SafetySystem.Views.RouteControlWindow"
-        Title="Контроль точек" Width="800" Height="600"
-        Background="{DynamicResource WindowBackground}">
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="SafetySystem.Views.RouteControlWindow">
+    <StackPanel>
+        <TextBlock Text="Маршрут сотрудников"
+                   Classes="header"
+                   Margin="0,0,0,16" />
 
-    <Window.Resources>
-        <Color x:Key="BgTop">#0B2A3A</Color>
-        <Color x:Key="BgBottom">#071726</Color>
-        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" x:Key="MainGradient">
-            <GradientStop Color="{StaticResource BgTop}" Offset="0"/>
-            <GradientStop Color="{StaticResource BgBottom}" Offset="1"/>
-        </LinearGradientBrush>
-        <SolidColorBrush x:Key="WindowBackground" Color="#071726"/>
-        <SolidColorBrush x:Key="CardBorder" Color="#123243"/>
-        <SolidColorBrush x:Key="CardForeground" Color="#E6F3FF"/>
-        <SolidColorBrush x:Key="MutedText" Color="#9FB6C6"/>
-        <SolidColorBrush x:Key="AccentCyan" Color="#3AD1FF"/>
-        <SolidColorBrush x:Key="AccentPurple" Color="#9B7BFF"/>
-        <SolidColorBrush x:Key="AccentOrange" Color="#FFB657"/>
-    </Window.Resources>
-
-    <Window.Styles>
-        <Style Selector="TextBlock.header">
-            <Setter Property="FontSize" Value="20"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Foreground" Value="{StaticResource CardForeground}"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="Margin" Value="8"/>
-        </Style>
-        <Style Selector="Border.card">
-            <Setter Property="Background">
-                <Setter.Value>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                        <GradientStop Color="#0D2B3A" Offset="0"/>
-                        <GradientStop Color="#072131" Offset="1"/>
-                    </LinearGradientBrush>
-                </Setter.Value>
-            </Setter>
-            <Setter Property="CornerRadius" Value="10"/>
-            <Setter Property="Padding" Value="12"/>
-            <Setter Property="Margin" Value="12"/>
-            <Setter Property="BorderBrush" Value="{StaticResource CardBorder}"/>
-            <Setter Property="BorderThickness" Value="1"/>
-        </Style>
-    </Window.Styles>
-
-    <StackPanel Margin="20">
-        <TextBlock Text="Маршрут сотрудников" Classes="header"/>
-
-        <Border Classes="card" Width="760" HorizontalAlignment="Center">
-            <DataGrid Name="RouteDataGrid" Width="740" Height="400" Background="Transparent" Foreground="{StaticResource CardForeground}" BorderBrush="{StaticResource CardBorder}">
+        <Border Classes="card" Margin="0">
+            <DataGrid Name="RouteDataGrid"
+                      Height="460"
+                      Background="Transparent"
+                      Foreground="{DynamicResource CardForeground}"
+                      BorderBrush="{DynamicResource CardBorder}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Сотрудник" />
                     <DataGridTextColumn Header="Точка" />
@@ -59,4 +21,4 @@
             </DataGrid>
         </Border>
     </StackPanel>
-</Window>
+</UserControl>

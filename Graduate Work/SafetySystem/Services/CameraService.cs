@@ -1,5 +1,5 @@
-using OpenCvSharp;
 using Avalonia.Media.Imaging;
+using OpenCvSharp;
 using SafetySystem.Models;
 using System;
 using System.Collections.Generic;
@@ -13,77 +13,191 @@ namespace SafetySystem.Services
 {
     public class CameraService
     {
+        private readonly object _syncRoot = new();
         private VideoCapture? _capture;
-        private bool _running;
         private Process? _python;
+        private Task? _startupTask;
+        private Task? _cameraTask;
+        private CancellationTokenSource? _cancellationTokenSource;
 
         public event Action<Bitmap, List<DetectionResult>> FrameReady = delegate { };
+        public event Action<string, bool> StatusChanged = delegate { };
 
         public void StartCamera()
         {
-            // Запускаем камеру
-            _capture = new VideoCapture(0);
-
-            if (!_capture.IsOpened())
-                throw new Exception("Не удалось открыть камеру!");
-
-            // Запускаем Python YOLO сервер
-            StartPythonYolo();
-
-            _running = true;
-
-            Task.Run(() =>
+            lock (_syncRoot)
             {
-                var frame = new Mat();
-
-                while (_running)
+                if (_startupTask is { IsCompleted: false } || _cameraTask is { IsCompleted: false })
                 {
-                    _capture.Read(frame);
-
-                    if (frame.Empty())
-                        continue;
-
-                    // Получаем детекции от YOLO
-                    var detections = DetectWithYolo(frame);
-
-                    // Рисуем bounding boxes и линию опасной зоны
-                    DrawDetections(frame, detections);
-
-                    // Конвертируем в Bitmap для Avalonia
-                    var bitmap = ConvertToBitmap(frame);
-
-                    // Отправляем событие в UI
-                    FrameReady?.Invoke(bitmap, detections);
-
-                    Thread.Sleep(30);
+                    return;
                 }
-            });
+
+                _cancellationTokenSource = new CancellationTokenSource();
+                _startupTask = Task.Run(() => StartCameraCore(_cancellationTokenSource.Token));
+            }
         }
 
         public void StopCamera()
         {
-            _running = false;
-            _capture?.Release();
+            Task? startupTask;
+            Task? cameraTask;
+            Process? python;
+            VideoCapture? capture;
+            CancellationTokenSource? cancellationTokenSource;
 
-            if (_python != null && !_python.HasExited)
+            lock (_syncRoot)
             {
-                _python.Kill();
-                _python.Dispose();
+                startupTask = _startupTask;
+                cameraTask = _cameraTask;
+                python = _python;
+                capture = _capture;
+                cancellationTokenSource = _cancellationTokenSource;
+
+                _startupTask = null;
+                _cameraTask = null;
+                _python = null;
+                _capture = null;
+                _cancellationTokenSource = null;
+            }
+
+            if (startupTask is null && cameraTask is null && python is null && capture is null)
+            {
+                return;
+            }
+
+            cancellationTokenSource?.Cancel();
+
+            if (python != null)
+            {
+                TryStopPythonProcess(python);
+            }
+
+            if (startupTask != null)
+            {
+                try
+                {
+                    startupTask.Wait(TimeSpan.FromSeconds(2));
+                }
+                catch (AggregateException)
+                {
+                }
+            }
+
+            if (cameraTask != null)
+            {
+                try
+                {
+                    cameraTask.Wait(TimeSpan.FromSeconds(2));
+                }
+                catch (AggregateException)
+                {
+                }
+            }
+
+            capture?.Release();
+            capture?.Dispose();
+            cancellationTokenSource?.Dispose();
+        }
+
+        private void StartCameraCore(CancellationToken cancellationToken)
+        {
+            try
+            {
+                StatusChanged.Invoke("Инициализация камеры...", false);
+
+                var capture = new VideoCapture(0);
+                if (!capture.IsOpened())
+                {
+                    capture.Dispose();
+                    throw new Exception("Не удалось открыть камеру.");
+                }
+
+                cancellationToken.ThrowIfCancellationRequested();
+
+                lock (_syncRoot)
+                {
+                    _capture = capture;
+                }
+
+                StatusChanged.Invoke("Загрузка модели...", false);
+
+                var python = StartPythonYolo();
+                cancellationToken.ThrowIfCancellationRequested();
+
+                lock (_syncRoot)
+                {
+                    _python = python;
+                    _cameraTask = Task.Run(() => CaptureLoop(cancellationToken), cancellationToken);
+                }
+            }
+            catch (OperationCanceledException)
+            {
+            }
+            catch (Exception ex)
+            {
+                StatusChanged.Invoke($"Ошибка запуска мониторинга: {ex.Message}", true);
+                StopCamera();
+            }
+            finally
+            {
+                lock (_syncRoot)
+                {
+                    _startupTask = null;
+                }
             }
         }
 
-        private void StartPythonYolo()
+        private void CaptureLoop(CancellationToken cancellationToken)
         {
-            _python = new Process();
+            using var frame = new Mat();
+            var startupCompleted = false;
 
-            _python.StartInfo.FileName = "py";
-            _python.StartInfo.Arguments = "yolo_server.py";
-            _python.StartInfo.UseShellExecute = false;
-            _python.StartInfo.RedirectStandardOutput = true;
-            _python.StartInfo.RedirectStandardInput = true;
-            _python.StartInfo.CreateNoWindow = true;
+            while (!cancellationToken.IsCancellationRequested)
+            {
+                var capture = _capture;
+                if (capture is null)
+                {
+                    break;
+                }
 
-            _python.Start();
+                if (!capture.Read(frame) || frame.Empty())
+                {
+                    Thread.Sleep(30);
+                    continue;
+                }
+
+                var detections = DetectWithYolo(frame);
+                DrawDetections(frame, detections);
+
+                var bitmap = ConvertToBitmap(frame);
+                if (!startupCompleted)
+                {
+                    StatusChanged.Invoke("Мониторинг запущен.", false);
+                    startupCompleted = true;
+                }
+
+                FrameReady.Invoke(bitmap, detections);
+
+                if (cancellationToken.WaitHandle.WaitOne(30))
+                {
+                    break;
+                }
+            }
+        }
+
+        private static Process StartPythonYolo()
+        {
+            var python = new Process();
+
+            python.StartInfo.FileName = "py";
+            python.StartInfo.Arguments = "yolo_server.py";
+            python.StartInfo.UseShellExecute = false;
+            python.StartInfo.RedirectStandardOutput = true;
+            python.StartInfo.RedirectStandardInput = true;
+            python.StartInfo.CreateNoWindow = true;
+
+            python.Start();
+            return python;
         }
 
         private List<DetectionResult> DetectWithYolo(Mat frame)
@@ -92,48 +206,44 @@ namespace SafetySystem.Services
 
             try
             {
-                // Кодируем кадр в JPEG и в Base64
                 Cv2.ImEncode(".jpg", frame, out var data);
-                string base64 = Convert.ToBase64String(data);
+                var base64 = Convert.ToBase64String(data);
 
-                // Отправляем в Python
-                if (_python?.StandardInput == null || _python.HasExited)
-                    return detections;
-
-                _python.StandardInput.WriteLine(base64);
-                _python.StandardInput.Flush();
-
-                // Получаем JSON с детекциями
-                string? line = _python.StandardOutput.ReadLine();
-                if (string.IsNullOrEmpty(line))
-                    return detections;
-
-
-                if (string.IsNullOrEmpty(line))
-                    return detections;
-
-                var boxes = JsonSerializer.Deserialize<List<Dictionary<string,int>>>(line) ?? [];
-
-                int id = 1;
-
-                foreach (var b in boxes)
+                var python = _python;
+                if (python?.StandardInput == null || python.HasExited)
                 {
-                    bool danger = b["y"] + b["h"] > 400;
+                    return detections;
+                }
+
+                python.StandardInput.WriteLine(base64);
+                python.StandardInput.Flush();
+
+                var line = python.StandardOutput.ReadLine();
+                if (string.IsNullOrEmpty(line))
+                {
+                    return detections;
+                }
+
+                var boxes = JsonSerializer.Deserialize<List<Dictionary<string, int>>>(line) ?? [];
+                var id = 1;
+
+                foreach (var box in boxes)
+                {
+                    var danger = box["y"] + box["h"] > 400;
 
                     detections.Add(new DetectionResult
                     {
                         Id = id++,
-                        X = b["x"],
-                        Y = b["y"],
-                        Width = b["w"],
-                        Height = b["h"],
+                        X = box["x"],
+                        Y = box["y"],
+                        Width = box["w"],
+                        Height = box["h"],
                         InDangerZone = danger
                     });
                 }
             }
             catch
             {
-                // Игнорируем ошибки (например, если Python не отвечает)
             }
 
             return detections;
@@ -141,24 +251,50 @@ namespace SafetySystem.Services
 
         private static void DrawDetections(Mat frame, List<DetectionResult> detections)
         {
-            foreach (var d in detections)
+            foreach (var detection in detections)
             {
-                var color = d.InDangerZone ? Scalar.Red : Scalar.Green;
+                var color = detection.InDangerZone ? Scalar.Red : Scalar.Green;
 
-                Cv2.Rectangle(frame,
-                    new Rect(d.X, d.Y, d.Width, d.Height), color, 2);
+                Cv2.Rectangle(
+                    frame,
+                    new Rect(detection.X, detection.Y, detection.Width, detection.Height),
+                    color,
+                    2);
 
-                Cv2.PutText(frame, $"ID {d.Id}", new Point(d.X, d.Y - 10), HersheyFonts.HersheySimplex, 0.6, color, 2);
+                Cv2.PutText(
+                    frame,
+                    $"ID {detection.Id}",
+                    new Point(detection.X, detection.Y - 10),
+                    HersheyFonts.HersheySimplex,
+                    0.6,
+                    color,
+                    2);
             }
-
-            // Линия опасной зоны
-            // Cv2.Line(frame, new Point(0, 400), new Point(frame.Width, 400), Scalar.Red, 2);
         }
 
         private static Bitmap ConvertToBitmap(Mat frame)
         {
             Cv2.ImEncode(".bmp", frame, out var data);
             return new Bitmap(new MemoryStream(data));
+        }
+
+        private static void TryStopPythonProcess(Process python)
+        {
+            try
+            {
+                if (!python.HasExited)
+                {
+                    python.Kill(true);
+                    python.WaitForExit(1000);
+                }
+            }
+            catch
+            {
+            }
+            finally
+            {
+                python.Dispose();
+            }
         }
     }
 }

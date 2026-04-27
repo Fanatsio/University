@@ -1,0 +1,25 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="SafetySystem.Views.NotificationsView">
+    <StackPanel>
+        <TextBlock Text="Активные тревоги"
+                   Classes="header"
+                   Margin="0,0,0,16" />
+
+        <Border Classes="card" Margin="0,0,0,16">
+            <ListBox Name="NotificationList"
+                     Height="260"
+                     Background="Transparent"
+                     BorderBrush="{DynamicResource CardBorder}"
+                     Foreground="{DynamicResource CardForeground}">
+                <ListBoxItem Content="Тревог нет. Система работает штатно." />
+            </ListBox>
+        </Border>
+
+        <Border Classes="card" Margin="0">
+            <TextBlock Text="Здесь можно будет собрать системные сообщения, нарушения и служебные уведомления."
+                       Foreground="{DynamicResource MutedText}"
+                       TextWrapping="Wrap" />
+        </Border>
+    </StackPanel>
+</UserControl>

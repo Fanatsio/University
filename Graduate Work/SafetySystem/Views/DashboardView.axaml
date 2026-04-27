@@ -1,0 +1,24 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="SafetySystem.Views.DashboardView">
+    <ScrollViewer>
+        <StackPanel>
+            <WrapPanel ItemWidth="320" ItemHeight="180">
+                <Border Classes="card" Width="320">
+                    <StackPanel Spacing="8">
+                        <TextBlock Text="Статус системы"
+                                   FontSize="18"
+                                   FontWeight="SemiBold"
+                                   Foreground="{DynamicResource CardForeground}" />
+                        <TextBlock Text="Все основные модули доступны в пределах одного окна."
+                                   Foreground="{DynamicResource MutedText}"
+                                   TextWrapping="Wrap" />
+                        <TextBlock Text="Активных тревог: 0"
+                                   FontSize="14"
+                                   Foreground="{DynamicResource AccentOrange}" />
+                    </StackPanel>
+                </Border>
+            </WrapPanel>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

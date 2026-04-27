@@ -1,15 +1,9 @@
-<Window xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:models="clr-namespace:SafetySystem.Models"
-        xmlns:viewModels="clr-namespace:SafetySystem.ViewModels"
-        xmlns:converters="clr-namespace:SafetySystem.Converters"
-        x:Class="SafetySystem.Views.EmployeesWindow"
-        Title="Список сотрудников"
-        Width="600" Height="400"
-        Background="{DynamicResource WindowBackground}"
-        x:DataType="viewModels:EmployeesViewModel">
-    
-    <Grid>
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:viewModels="clr-namespace:SafetySystem.ViewModels"
+             x:Class="SafetySystem.Views.EmployeesWindow"
+             x:DataType="viewModels:EmployeesViewModel">
+    <Grid RowDefinitions="*,Auto">
         <DataGrid x:Name="EmployeesDataGrid"
                   AutoGenerateColumns="False"
                   IsReadOnly="True"
@@ -17,33 +11,28 @@
                   CanUserResizeColumns="True"
                   CanUserSortColumns="True"
                   ItemsSource="{Binding Employees}"
-                  Grid.Column="0"
-                  Margin="10"
+                  Margin="0,0,0,12"
                   Background="Transparent"
-                  Foreground="{StaticResource CardForeground}"
-                  BorderBrush="{StaticResource CardBorder}">
+                  Foreground="{DynamicResource CardForeground}"
+                  BorderBrush="{DynamicResource CardBorder}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID сотрудника" 
-                                    Binding="{Binding EmployeeId}" 
-                                    Width="150"/>
-                <DataGridTextColumn Header="ФИО" 
-                                    Binding="{Binding Name}" 
-                                    Width="*"/>
-                <DataGridTextColumn Header="RFID" 
-                                    Binding="{Binding RfidTag}" 
-                                    Width="200"/>
-                <DataGridTextColumn Header="Фото" 
-                                    Binding="{Binding PhotoPath}" 
-                                    Width="200"/>
+                <DataGridTextColumn Header="ID сотрудника" Binding="{Binding EmployeeId}" Width="180" />
+                <DataGridTextColumn Header="ФИО" Binding="{Binding Name}" Width="*" />
+                <DataGridTextColumn Header="RFID" Binding="{Binding RfidTag}" Width="220" />
+                <DataGridTextColumn Header="Фото" Binding="{Binding PhotoPath}" Width="260" />
             </DataGrid.Columns>
         </DataGrid>
-        
-        <!-- Сообщение, если нет данных -->
-        <TextBlock Text="Нет данных для отображения"
+
+        <TextBlock Grid.RowSpan="2"
+                   Text="Нет данных для отображения"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    IsVisible="{Binding NoDataMessageVisible}"
                    FontSize="16"
-                   Foreground="{StaticResource MutedText}"/>
+                   Foreground="{DynamicResource MutedText}" />
+
+        <TextBlock Grid.Row="1"
+                   Text="Список обновляется при каждом открытии раздела."
+                   Foreground="{DynamicResource MutedText}" />
     </Grid>
-</Window>
+</UserControl>

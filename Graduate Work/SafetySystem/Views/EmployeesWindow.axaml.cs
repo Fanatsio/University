@@ -1,37 +1,14 @@
 using Avalonia.Controls;
-using Avalonia.Interactivity;
 using SafetySystem.ViewModels;
-using System;
 
 namespace SafetySystem.Views
 {
-    public partial class EmployeesWindow : Window 
+    public partial class EmployeesWindow : UserControl
     {
         public EmployeesWindow()
         {
             InitializeComponent();
-            
-            // Создаем ViewModel
-            var viewModel = new EmployeesViewModel();
-            DataContext = viewModel;
-            
-            Console.WriteLine($"DataContext set to: {DataContext?.GetType().Name}");
-            
-            // Проверяем, что DataGrid получил данные
-            var vm = DataContext as EmployeesViewModel;
-            if (vm != null)
-            {
-                Console.WriteLine($"Employees count in VM: {vm.Employees.Count}");
-                
-                // Подписываемся на событие загрузки окна
-                this.Opened += (s, e) =>
-                {
-                    Console.WriteLine("Window opened, refreshing data...");
-                    // Принудительно обновляем DataGrid
-                    EmployeesDataGrid.ItemsSource = null;
-                    EmployeesDataGrid.ItemsSource = vm.Employees;
-                };
-            }
+            DataContext = new EmployeesViewModel();
         }
     }
 }
