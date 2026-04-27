@@ -2,10 +2,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         x:Class="SafetySystem.Views.MainWindow"
         Title="Система безопасности и мониторинга опасной зоны"
-        Width="1280"
-        Height="760"
-        MinWidth="1100"
-        MinHeight="680"
+        Width="1380"
+        Height="860"
+        MinWidth="1200"
+        MinHeight="780"
         Background="{DynamicResource WindowBackground}">
     <Window.Resources>
         <Color x:Key="BgTop">#0B2A3A</Color>
