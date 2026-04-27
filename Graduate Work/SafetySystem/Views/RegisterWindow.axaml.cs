@@ -63,7 +63,7 @@ namespace SafetySystem.Views
 
             try
             {
-                DatabaseService.Instance.AddEmployee(employee);
+                DatabaseService.AddEmployee(employee);
                 ClearForm();
                 SetStatus("Сотрудник успешно добавлен. Открываю список сотрудников.", Brushes.LightGreen);
                 EmployeeSaved?.Invoke(this, EventArgs.Empty);

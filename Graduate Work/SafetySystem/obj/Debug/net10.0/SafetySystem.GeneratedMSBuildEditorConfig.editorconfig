@@ -22,35 +22,35 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SafetySystem
-build_property.ProjectDir = D:\Университет\University\Graduate Work\SafetySystem\
+build_property.ProjectDir = d:\Университет\University\Graduate Work\SafetySystem\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
-[D:/Университет/University/Graduate Work/SafetySystem/App.axaml]
+[d:/Университет/University/Graduate Work/SafetySystem/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[D:/Университет/University/Graduate Work/SafetySystem/Views/DashboardView.axaml]
+[d:/Университет/University/Graduate Work/SafetySystem/Views/DashboardView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[D:/Университет/University/Graduate Work/SafetySystem/Views/DataAnalysisWindow.axaml]
+[d:/Университет/University/Graduate Work/SafetySystem/Views/DataAnalysisWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[D:/Университет/University/Graduate Work/SafetySystem/Views/EmployeesWindow.axaml]
+[d:/Университет/University/Graduate Work/SafetySystem/Views/EmployeesWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[D:/Университет/University/Graduate Work/SafetySystem/Views/MainWindow.axaml]
+[d:/Университет/University/Graduate Work/SafetySystem/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[D:/Университет/University/Graduate Work/SafetySystem/Views/MonitorWindow.axaml]
+[d:/Университет/University/Graduate Work/SafetySystem/Views/MonitorWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[D:/Университет/University/Graduate Work/SafetySystem/Views/NotificationsView.axaml]
+[d:/Университет/University/Graduate Work/SafetySystem/Views/NotificationsView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[D:/Университет/University/Graduate Work/SafetySystem/Views/RegisterWindow.axaml]
+[d:/Университет/University/Graduate Work/SafetySystem/Views/RegisterWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[D:/Университет/University/Graduate Work/SafetySystem/Views/RouteControlWindow.axaml]
+[d:/Университет/University/Graduate Work/SafetySystem/Views/RouteControlWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

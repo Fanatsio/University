@@ -41,7 +41,7 @@ namespace SafetySystem.ViewModels
         {
             try
             {
-                var employees = DatabaseService.Instance.GetEmployees();
+                var employees = DatabaseService.GetEmployees();
                 Console.WriteLine($"ViewModel {employees.Count} employees");
                 Employees.Clear(); // Очищаем старую коллекцию
                 foreach (var employee in employees)

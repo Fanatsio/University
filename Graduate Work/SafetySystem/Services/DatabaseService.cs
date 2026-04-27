@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
-using System.Linq;
 using Dapper;
 using Microsoft.Data.Sqlite;
 using SafetySystem.Models;
@@ -27,11 +26,11 @@ namespace SafetySystem.Services
             }
         }
 
-        private void InitializeDatabase()
+        private static void InitializeDatabase()
         {
             try
             {
-                using var connection = GetConnection();
+                using var connection = Connection;
                 connection.Open();
                 var tableExists = connection.ExecuteScalar<int>("SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name='Employees'") > 0;
                 if (!tableExists)
@@ -55,23 +54,25 @@ namespace SafetySystem.Services
             }
         }
 
-        private static IDbConnection GetConnection()
+        private static IDbConnection Connection
         {
-            var fullPath = Path.GetFullPath(_dbPath);
-            Console.WriteLine($"Opening database at: {fullPath}");
-            return new SqliteConnection($"Data Source={fullPath}");
+            get
+            {
+                var fullPath = Path.GetFullPath(_dbPath);
+                Console.WriteLine($"Opening database at: {fullPath}");
+                return new SqliteConnection($"Data Source={fullPath}");
+            }
         }
 
-        public void AddEmployee(Employee employee)
+        public static void AddEmployee(Employee employee)
         {
-            if (employee == null)
-                throw new ArgumentNullException(nameof(employee));
+            ArgumentNullException.ThrowIfNull(employee);
             if (string.IsNullOrEmpty(employee.EmployeeId) || string.IsNullOrEmpty(employee.RfidTag) || string.IsNullOrEmpty(employee.Name))
                 throw new ArgumentException("EmployeeId, RfidTag, and Name cannot be null or empty.");
 
             try
             {
-                using var connection = GetConnection();
+                using var connection = Connection;
                 connection.Open();
                 connection.Execute(@"
                     INSERT INTO Employees (EmployeeId, RfidTag, Name, PhotoPath)
@@ -86,11 +87,11 @@ namespace SafetySystem.Services
             }
         }
 
-        public List<Employee> GetEmployees()
+        public static List<Employee> GetEmployees()
         {
             try
             {
-                using var connection = GetConnection();
+                using var connection = Connection;
                 connection.Open();
                 var employees = connection.Query<Employee>("SELECT * FROM Employees").AsList();
                 Console.WriteLine($"DataBase {employees.Count} employees");
@@ -99,7 +100,7 @@ namespace SafetySystem.Services
             catch (SqliteException ex)
             {
                 Console.WriteLine($"Error retrieving employees: {ex.Message}");
-                return new List<Employee>();
+                return [];
             }
         }
     }
