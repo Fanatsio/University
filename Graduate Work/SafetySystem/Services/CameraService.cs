@@ -2,6 +2,7 @@ using Avalonia.Media.Imaging;
 using OpenCvSharp;
 using SafetySystem.Models;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -13,7 +14,13 @@ namespace SafetySystem.Services
 {
     public class CameraService
     {
+        private const int PythonStartupTimeoutMs = 30000;
+        private const int PythonResponseTimeoutMs = 5000;
+        private const int DangerZoneBottomBoundary = 400;
+        private const string PythonReadyMessage = "READY";
+
         private readonly object _syncRoot = new();
+        private readonly ConcurrentQueue<string> _pythonErrorLog = new();
         private VideoCapture? _capture;
         private Process? _python;
         private Task? _startupTask;
@@ -122,6 +129,7 @@ namespace SafetySystem.Services
                 StatusChanged.Invoke("Загрузка модели...", false);
 
                 var python = StartPythonYolo();
+                WaitForPythonReady(python, cancellationToken);
                 cancellationToken.ThrowIfCancellationRequested();
 
                 lock (_syncRoot)
@@ -188,13 +196,16 @@ namespace SafetySystem.Services
         private static Process StartPythonYolo()
         {
             var python = new Process();
+            var scriptPath = ResolveRuntimeFilePath("yolo_server.py");
 
             python.StartInfo.FileName = "py";
-            python.StartInfo.Arguments = "yolo_server.py";
+            python.StartInfo.Arguments = $"-u \"{scriptPath}\"";
             python.StartInfo.UseShellExecute = false;
             python.StartInfo.RedirectStandardOutput = true;
             python.StartInfo.RedirectStandardInput = true;
+            python.StartInfo.RedirectStandardError = true;
             python.StartInfo.CreateNoWindow = true;
+            python.StartInfo.WorkingDirectory = Path.GetDirectoryName(scriptPath) ?? Environment.CurrentDirectory;
 
             python.Start();
             return python;
@@ -218,7 +229,13 @@ namespace SafetySystem.Services
                 python.StandardInput.WriteLine(base64);
                 python.StandardInput.Flush();
 
-                var line = python.StandardOutput.ReadLine();
+                var lineTask = python.StandardOutput.ReadLineAsync();
+                if (!lineTask.Wait(PythonResponseTimeoutMs))
+                {
+                    throw new TimeoutException("Python YOLO service did not answer in time.");
+                }
+
+                var line = lineTask.Result;
                 if (string.IsNullOrEmpty(line))
                 {
                     return detections;
@@ -229,7 +246,7 @@ namespace SafetySystem.Services
 
                 foreach (var box in boxes)
                 {
-                    var danger = box["y"] + box["h"] > 400;
+                    var danger = box["y"] + box["h"] > DangerZoneBottomBoundary;
 
                     detections.Add(new DetectionResult
                     {
@@ -241,6 +258,21 @@ namespace SafetySystem.Services
                         InDangerZone = danger
                     });
                 }
+            }
+            catch (TimeoutException ex)
+            {
+                StatusChanged.Invoke($"Ошибка YOLO: {ex.Message}", true);
+                StopCamera();
+            }
+            catch (JsonException ex)
+            {
+                StatusChanged.Invoke($"Ошибка ответа YOLO: {ex.Message}", true);
+                StopCamera();
+            }
+            catch (InvalidOperationException ex)
+            {
+                StatusChanged.Invoke($"Ошибка Python-процесса: {ex.Message}", true);
+                StopCamera();
             }
             catch
             {
@@ -295,6 +327,77 @@ namespace SafetySystem.Services
             {
                 python.Dispose();
             }
+        }
+
+        private void WaitForPythonReady(Process python, CancellationToken cancellationToken)
+        {
+            _pythonErrorLog.Clear();
+            _ = Task.Run(() => PumpPythonErrors(python), cancellationToken);
+
+            var readyTask = python.StandardOutput.ReadLineAsync();
+            if (!readyTask.Wait(PythonStartupTimeoutMs))
+            {
+                throw new TimeoutException("Python YOLO service startup timed out.");
+            }
+
+            var readyLine = readyTask.Result;
+            if (!string.Equals(readyLine, PythonReadyMessage, StringComparison.Ordinal))
+            {
+                var errorText = TryGetRecentPythonError();
+                throw new InvalidOperationException(
+                    string.IsNullOrWhiteSpace(errorText)
+                        ? $"Unexpected Python startup response: {readyLine ?? "<null>"}"
+                        : $"Python startup failed: {errorText}");
+            }
+
+            cancellationToken.ThrowIfCancellationRequested();
+        }
+
+        private void PumpPythonErrors(Process python)
+        {
+            try
+            {
+                while (!python.HasExited)
+                {
+                    var line = python.StandardError.ReadLine();
+                    if (string.IsNullOrWhiteSpace(line))
+                    {
+                        continue;
+                    }
+
+                    _pythonErrorLog.Enqueue(line);
+                    while (_pythonErrorLog.Count > 10 && _pythonErrorLog.TryDequeue(out _))
+                    {
+                    }
+                }
+            }
+            catch
+            {
+            }
+        }
+
+        private string? TryGetRecentPythonError()
+        {
+            return _pythonErrorLog.IsEmpty ? null : string.Join(" | ", _pythonErrorLog.ToArray());
+        }
+
+        private static string ResolveRuntimeFilePath(string fileName)
+        {
+            var candidates = new[]
+            {
+                Path.Combine(Environment.CurrentDirectory, fileName),
+                Path.Combine(AppContext.BaseDirectory, fileName)
+            };
+
+            foreach (var candidate in candidates)
+            {
+                if (File.Exists(candidate))
+                {
+                    return Path.GetFullPath(candidate);
+                }
+            }
+
+            throw new FileNotFoundException($"Required runtime file was not found: {fileName}");
         }
     }
 }

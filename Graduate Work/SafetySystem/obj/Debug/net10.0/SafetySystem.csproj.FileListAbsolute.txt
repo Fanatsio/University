@@ -153,3 +153,5 @@ D:\Университет\University\Graduate Work\SafetySystem\bin\Debug\net10.
 D:\Университет\University\Graduate Work\SafetySystem\bin\Debug\net10.0\runtimes\linux-riscv64\native\libe_sqlite3.so
 D:\Университет\University\Graduate Work\SafetySystem\bin\Debug\net10.0\runtimes\linux-bionic-arm64\native\libSkiaSharp.so
 D:\Университет\University\Graduate Work\SafetySystem\bin\Debug\net10.0\runtimes\linux-bionic-x64\native\libSkiaSharp.so
+D:\Университет\University\Graduate Work\SafetySystem\bin\Debug\net10.0\yolov8n.pt
+D:\Университет\University\Graduate Work\SafetySystem\bin\Debug\net10.0\yolo_server.py
