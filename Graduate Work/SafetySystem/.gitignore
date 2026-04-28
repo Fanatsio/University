@@ -1,0 +1,30 @@
+# Build outputs
+bin/
+obj/
+
+# User-specific IDE files
+.vs/
+*.user
+*.rsuser
+*.suo
+
+# .NET local tooling/cache
+.dotnet/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# Python cache/virtualenv
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
