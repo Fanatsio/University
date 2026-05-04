@@ -12,6 +12,8 @@ namespace SafetySystem.Services
     {
         private static readonly string _dbPath = "safetysystem.db";
         private static DatabaseService? _instance;
+        private static readonly object _initializationLock = new();
+        private static bool _isInitialized;
 
         public static DatabaseService Instance
         {
@@ -20,9 +22,25 @@ namespace SafetySystem.Services
 
         private DatabaseService()
         {
-            if (!File.Exists(_dbPath))
+            EnsureDatabaseInitialized();
+        }
+
+        private static void EnsureDatabaseInitialized()
+        {
+            if (_isInitialized)
             {
+                return;
+            }
+
+            lock (_initializationLock)
+            {
+                if (_isInitialized)
+                {
+                    return;
+                }
+
                 InitializeDatabase();
+                _isInitialized = true;
             }
         }
 
@@ -32,19 +50,27 @@ namespace SafetySystem.Services
             {
                 using var connection = Connection;
                 connection.Open();
-                var tableExists = connection.ExecuteScalar<int>("SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name='Employees'") > 0;
-                if (!tableExists)
+                connection.Execute(@"
+                    CREATE TABLE IF NOT EXISTS Employees (
+                        Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        EmployeeId TEXT NOT NULL,
+                        RfidTag TEXT NOT NULL,
+                        Name TEXT NOT NULL,
+                        PhotoPath TEXT
+                    );
+                ");
+
+                var employeesCount = connection.ExecuteScalar<int>("SELECT COUNT(*) FROM Employees");
+                if (employeesCount == 0)
                 {
                     connection.Execute(@"
-                        CREATE TABLE Employees (
-                            Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                            EmployeeId TEXT NOT NULL,
-                            RfidTag TEXT NOT NULL,
-                            Name TEXT NOT NULL,
-                            PhotoPath TEXT
-                        );
+                        INSERT INTO Employees (EmployeeId, RfidTag, Name, PhotoPath)
+                        VALUES
+                            ('EMP-001', 'RFID-1001', 'Иванов Иван Иванович', 'Assets\\employee-1.jpg'),
+                            ('EMP-002', 'RFID-1002', 'Петров Петр Сергеевич', 'Assets\\employee-2.jpg'),
+                            ('EMP-003', 'RFID-1003', 'Сидорова Анна Викторовна', 'Assets\\employee-3.jpg');
                     ");
-                    Console.WriteLine("Employees table created.");
+                    Console.WriteLine("Sample employees added.");
                 }
             }
             catch (SqliteException ex)
@@ -66,6 +92,7 @@ namespace SafetySystem.Services
 
         public static void AddEmployee(Employee employee)
         {
+            EnsureDatabaseInitialized();
             ArgumentNullException.ThrowIfNull(employee);
             if (string.IsNullOrEmpty(employee.EmployeeId) || string.IsNullOrEmpty(employee.RfidTag) || string.IsNullOrEmpty(employee.Name))
                 throw new ArgumentException("EmployeeId, RfidTag, and Name cannot be null or empty.");
@@ -89,6 +116,7 @@ namespace SafetySystem.Services
 
         public static List<Employee> GetEmployees()
         {
+            EnsureDatabaseInitialized();
             try
             {
                 using var connection = Connection;
