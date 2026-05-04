@@ -2,115 +2,242 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         x:Class="SafetySystem.Views.MainWindow"
         Title="Система безопасности и мониторинга опасной зоны"
-        Width="1380"
-        Height="860"
-        MinWidth="1200"
-        MinHeight="780"
+        Width="1420"
+        Height="900"
+        MinWidth="1180"
+        MinHeight="760"
         Background="{DynamicResource WindowBackground}">
     <Window.Resources>
-        <Color x:Key="BgTop">#0B2A3A</Color>
-        <Color x:Key="BgBottom">#071726</Color>
-        <LinearGradientBrush x:Key="MainGradient" StartPoint="0,0" EndPoint="0,1">
-            <GradientStop Color="{StaticResource BgTop}" Offset="0" />
-            <GradientStop Color="{StaticResource BgBottom}" Offset="1" />
-        </LinearGradientBrush>
-        <SolidColorBrush x:Key="WindowBackground" Color="#071726" />
-        <SolidColorBrush x:Key="CardBorder" Color="#123243" />
-        <SolidColorBrush x:Key="CardForeground" Color="#E6F3FF" />
-        <SolidColorBrush x:Key="MutedText" Color="#9FB6C6" />
-        <SolidColorBrush x:Key="AccentCyan" Color="#3AD1FF" />
-        <SolidColorBrush x:Key="AccentOrange" Color="#FFB657" />
-        <SolidColorBrush x:Key="PanelBackground" Color="#041826" />
+        <SolidColorBrush x:Key="WindowBackground" Color="#111417" />
+        <SolidColorBrush x:Key="ShellBackground" Color="#15191D" />
+        <SolidColorBrush x:Key="PanelBackground" Color="#1A1F24" />
+        <SolidColorBrush x:Key="CardBackground" Color="#20262B" />
+        <SolidColorBrush x:Key="CardBackgroundAlt" Color="#252B31" />
+        <SolidColorBrush x:Key="CardBorder" Color="#343C44" />
+        <SolidColorBrush x:Key="CardForeground" Color="#F3F7FA" />
+        <SolidColorBrush x:Key="MutedText" Color="#9EAAB4" />
+        <SolidColorBrush x:Key="AccentCyan" Color="#28D6C6" />
+        <SolidColorBrush x:Key="AccentAmber" Color="#FFB84D" />
+        <SolidColorBrush x:Key="AccentGreen" Color="#57D987" />
+        <SolidColorBrush x:Key="AccentRed" Color="#FF625F" />
+        <SolidColorBrush x:Key="InputBackground" Color="#161B20" />
     </Window.Resources>
 
     <Window.Styles>
+        <Style Selector="TextBlock">
+            <Setter Property="FontFamily" Value="Inter, Segoe UI" />
+        </Style>
+
         <Style Selector="Button.nav">
-            <Setter Property="Background" Value="#072533" />
+            <Setter Property="Background" Value="Transparent" />
             <Setter Property="Foreground" Value="{StaticResource CardForeground}" />
             <Setter Property="Padding" Value="14,12" />
-            <Setter Property="Margin" Value="12,6" />
-            <Setter Property="CornerRadius" Value="10" />
-            <Setter Property="HorizontalContentAlignment" Value="Left" />
+            <Setter Property="Margin" Value="10,3" />
+            <Setter Property="CornerRadius" Value="8" />
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
             <Setter Property="FontSize" Value="14" />
-            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="Transparent" />
         </Style>
         <Style Selector="Button.nav:pointerover">
-            <Setter Property="Background" Value="#0B4150" />
+            <Setter Property="Background" Value="#252D33" />
+            <Setter Property="BorderBrush" Value="#3B464F" />
         </Style>
 
         <Style Selector="TextBlock.header">
             <Setter Property="FontSize" Value="24" />
-            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Foreground" Value="{StaticResource CardForeground}" />
+        </Style>
+        <Style Selector="TextBlock.sectionTitle">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontWeight" Value="SemiBold" />
             <Setter Property="Foreground" Value="{StaticResource CardForeground}" />
         </Style>
         <Style Selector="TextBlock.subheader">
             <Setter Property="FontSize" Value="14" />
             <Setter Property="Foreground" Value="{StaticResource MutedText}" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+        </Style>
+        <Style Selector="TextBlock.metric">
+            <Setter Property="FontSize" Value="34" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Foreground" Value="{StaticResource CardForeground}" />
         </Style>
 
         <Style Selector="Border.card">
-            <Setter Property="Background">
-                <Setter.Value>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                        <GradientStop Color="#0D2B3A" Offset="0" />
-                        <GradientStop Color="#072131" Offset="1" />
-                    </LinearGradientBrush>
-                </Setter.Value>
-            </Setter>
-            <Setter Property="CornerRadius" Value="12" />
-            <Setter Property="Padding" Value="16" />
-            <Setter Property="Margin" Value="0,0,0,16" />
+            <Setter Property="Background" Value="{StaticResource CardBackground}" />
+            <Setter Property="CornerRadius" Value="8" />
+            <Setter Property="Padding" Value="18" />
             <Setter Property="BorderBrush" Value="{StaticResource CardBorder}" />
             <Setter Property="BorderThickness" Value="1" />
         </Style>
+        <Style Selector="Border.softPanel">
+            <Setter Property="Background" Value="{StaticResource PanelBackground}" />
+            <Setter Property="CornerRadius" Value="8" />
+            <Setter Property="Padding" Value="16" />
+            <Setter Property="BorderBrush" Value="{StaticResource CardBorder}" />
+            <Setter Property="BorderThickness" Value="1" />
+        </Style>
+        <Style Selector="Border.statusPill">
+            <Setter Property="CornerRadius" Value="99" />
+            <Setter Property="Padding" Value="10,5" />
+        </Style>
 
         <Style Selector="TextBox">
-            <Setter Property="Background" Value="#05242E" />
+            <Setter Property="Background" Value="{StaticResource InputBackground}" />
             <Setter Property="Foreground" Value="{StaticResource CardForeground}" />
             <Setter Property="BorderBrush" Value="{StaticResource CardBorder}" />
-            <Setter Property="CornerRadius" Value="6" />
-            <Setter Property="Padding" Value="8" />
+            <Setter Property="CornerRadius" Value="7" />
+            <Setter Property="Padding" Value="12,9" />
+            <Setter Property="MinHeight" Value="42" />
+        </Style>
+        <Style Selector="TextBox:focus">
+            <Setter Property="BorderBrush" Value="{StaticResource AccentCyan}" />
         </Style>
 
         <Style Selector="Button.action">
-            <Setter Property="CornerRadius" Value="6" />
-            <Setter Property="Padding" Value="10" />
+            <Setter Property="CornerRadius" Value="7" />
+            <Setter Property="Padding" Value="14,10" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="BorderThickness" Value="0" />
+        </Style>
+
+        <Style Selector="DataGrid">
+            <Setter Property="GridLinesVisibility" Value="Horizontal" />
+            <Setter Property="HeadersVisibility" Value="Column" />
+            <Setter Property="RowBackground" Value="#1C2227" />
+            <Setter Property="HorizontalGridLinesBrush" Value="#303840" />
         </Style>
     </Window.Styles>
 
-    <Grid Background="{StaticResource MainGradient}" ColumnDefinitions="260,*">
-        <Border Grid.Column="0" Background="{StaticResource PanelBackground}" BorderBrush="{StaticResource CardBorder}" BorderThickness="0,0,1,0">
+    <Grid Background="{StaticResource WindowBackground}" ColumnDefinitions="284,*">
+        <Border Grid.Column="0"
+                Background="{StaticResource ShellBackground}"
+                BorderBrush="{StaticResource CardBorder}"
+                BorderThickness="0,0,1,0">
             <Grid RowDefinitions="Auto,*,Auto">
-                <StackPanel Margin="18,24,18,18">
-                    <TextBlock Text="Safety System" Foreground="{StaticResource CardForeground}" FontSize="20" FontWeight="Bold" />
-                    <TextBlock Text="Единое рабочее окно оператора" Foreground="{StaticResource MutedText}" Margin="0,6,0,0" />
+                <StackPanel Margin="22,26,22,20" Spacing="12">
+                    <Border Width="48"
+                            Height="48"
+                            CornerRadius="8"
+                            HorizontalAlignment="Left"
+                            Background="{StaticResource AccentCyan}">
+                        <TextBlock Text="S"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontSize="24"
+                                   FontWeight="Bold"
+                                   Foreground="#101417" />
+                    </Border>
+                    <StackPanel Spacing="3">
+                        <TextBlock Text="Safety System"
+                                   Foreground="{StaticResource CardForeground}"
+                                   FontSize="21"
+                                   FontWeight="SemiBold" />
+                        <TextBlock Text="Пульт оператора опасной зоны"
+                                   Foreground="{StaticResource MutedText}"
+                                   FontSize="13"
+                                   TextWrapping="Wrap" />
+                    </StackPanel>
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" Margin="0,4,0,0">
-                    <Button Content="Главная" Classes="nav" Click="OnHomeClick" />
-                    <Button Content="Регистрация сотрудников" Classes="nav" Click="OnRegisterWindowClick" />
-                    <Button Content="Список сотрудников" Classes="nav" Click="OnEmployeesButtonClick" />
-                    <Button Content="Мониторинг" Classes="nav" Click="OnMonitorWindowClick" />
-                    <Button Content="Контроль точек" Classes="nav" Click="OnRouteControlWindowClick" />
-                    <Button Content="Анализ данных" Classes="nav" Click="OnDataAnalysisWindowClick" />
-                    <Button Content="Уведомления" Classes="nav" Click="OnNotificationsClick" />
+                    <Button Classes="nav" Click="OnHomeClick">
+                        <Grid ColumnDefinitions="28,*">
+                            <TextBlock Text="⌂" Foreground="{StaticResource AccentCyan}" FontSize="17" />
+                            <TextBlock Grid.Column="1" Text="Главная" />
+                        </Grid>
+                    </Button>
+                    <Button Classes="nav" Click="OnRegisterWindowClick">
+                        <Grid ColumnDefinitions="28,*">
+                            <TextBlock Text="+" Foreground="{StaticResource AccentGreen}" FontSize="18" />
+                            <TextBlock Grid.Column="1" Text="Регистрация сотрудников" />
+                        </Grid>
+                    </Button>
+                    <Button Classes="nav" Click="OnEmployeesButtonClick">
+                        <Grid ColumnDefinitions="28,*">
+                            <TextBlock Text="≡" Foreground="{StaticResource AccentAmber}" FontSize="18" />
+                            <TextBlock Grid.Column="1" Text="Список сотрудников" />
+                        </Grid>
+                    </Button>
+                    <Button Classes="nav" Click="OnMonitorWindowClick">
+                        <Grid ColumnDefinitions="28,*">
+                            <TextBlock Text="●" Foreground="{StaticResource AccentRed}" FontSize="14" />
+                            <TextBlock Grid.Column="1" Text="Мониторинг" />
+                        </Grid>
+                    </Button>
+                    <Button Classes="nav" Click="OnRouteControlWindowClick">
+                        <Grid ColumnDefinitions="28,*">
+                            <TextBlock Text="◇" Foreground="{StaticResource AccentCyan}" FontSize="16" />
+                            <TextBlock Grid.Column="1" Text="Контроль точек" />
+                        </Grid>
+                    </Button>
+                    <Button Classes="nav" Click="OnDataAnalysisWindowClick">
+                        <Grid ColumnDefinitions="28,*">
+                            <TextBlock Text="▥" Foreground="{StaticResource AccentGreen}" FontSize="16" />
+                            <TextBlock Grid.Column="1" Text="Анализ данных" />
+                        </Grid>
+                    </Button>
+                    <Button Classes="nav" Click="OnNotificationsClick">
+                        <Grid ColumnDefinitions="28,*">
+                            <TextBlock Text="!" Foreground="{StaticResource AccentAmber}" FontSize="16" FontWeight="Bold" />
+                            <TextBlock Grid.Column="1" Text="Уведомления" />
+                        </Grid>
+                    </Button>
                 </StackPanel>
+
+                <Border Grid.Row="2"
+                        Margin="18,18,18,24"
+                        Padding="14"
+                        CornerRadius="8"
+                        Background="#20262B"
+                        BorderBrush="{StaticResource CardBorder}"
+                        BorderThickness="1">
+                    <StackPanel Spacing="6">
+                        <TextBlock Text="Состояние комплекса"
+                                   Foreground="{StaticResource MutedText}"
+                                   FontSize="12" />
+                        <StackPanel Orientation="Horizontal" Spacing="8">
+                            <Ellipse Width="9" Height="9" Fill="{StaticResource AccentGreen}" VerticalAlignment="Center" />
+                            <TextBlock Text="Работает штатно"
+                                       Foreground="{StaticResource CardForeground}"
+                                       FontWeight="SemiBold" />
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
             </Grid>
         </Border>
 
-        <Grid Grid.Column="1" RowDefinitions="Auto,*" Margin="24">
-            <Border Classes="card" Padding="20" Margin="0,0,0,20">
-                <StackPanel>
-                    <TextBlock x:Name="SectionTitleText" Classes="header" Text="Главная" />
-                    <TextBlock x:Name="SectionSubtitleText"
-                               Classes="subheader"
-                               Text="Контролируйте систему и переключайтесь между разделами без открытия новых окон." />
-                </StackPanel>
+        <Grid Grid.Column="1" RowDefinitions="Auto,*" Margin="28">
+            <Border Background="{StaticResource PanelBackground}"
+                    BorderBrush="{StaticResource CardBorder}"
+                    BorderThickness="1"
+                    CornerRadius="8"
+                    Padding="22,18"
+                    Margin="0,0,0,22">
+                <Grid ColumnDefinitions="*,Auto">
+                    <StackPanel Spacing="5">
+                        <TextBlock x:Name="SectionTitleText" Classes="header" Text="Главная" />
+                        <TextBlock x:Name="SectionSubtitleText"
+                                   Classes="subheader"
+                                   Text="Единое рабочее пространство для наблюдения, регистрации и анализа событий." />
+                    </StackPanel>
+                    <Border Grid.Column="1"
+                            Classes="statusPill"
+                            Background="#173329"
+                            BorderBrush="#245A43"
+                            BorderThickness="1"
+                            VerticalAlignment="Center">
+                        <TextBlock Text="ONLINE"
+                                   Foreground="{StaticResource AccentGreen}"
+                                   FontWeight="SemiBold"
+                                   FontSize="12" />
+                    </Border>
+                </Grid>
             </Border>
 
-            <Border Grid.Row="1" Classes="card" Padding="20">
-                <ContentControl x:Name="MainContentHost" />
-            </Border>
+            <ContentControl Grid.Row="1" x:Name="MainContentHost" />
         </Grid>
     </Grid>
 </Window>

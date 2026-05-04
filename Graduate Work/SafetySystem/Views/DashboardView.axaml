@@ -2,23 +2,91 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="SafetySystem.Views.DashboardView">
     <ScrollViewer>
-        <StackPanel>
-            <WrapPanel ItemWidth="320" ItemHeight="180">
-                <Border Classes="card" Width="320">
-                    <StackPanel Spacing="8">
-                        <TextBlock Text="Статус системы"
-                                   FontSize="18"
-                                   FontWeight="SemiBold"
-                                   Foreground="{DynamicResource CardForeground}" />
-                        <TextBlock Text="Все основные модули доступны в пределах одного окна."
-                                   Foreground="{DynamicResource MutedText}"
-                                   TextWrapping="Wrap" />
-                        <TextBlock Text="Активных тревог: 0"
-                                   FontSize="14"
-                                   Foreground="{DynamicResource AccentOrange}" />
+        <StackPanel Spacing="18">
+            <UniformGrid Columns="4" Rows="1">
+                <Border Classes="card" Margin="0,0,12,0">
+                    <StackPanel Spacing="10">
+                        <TextBlock Text="Камера" Foreground="{DynamicResource MutedText}" />
+                        <TextBlock Text="Готова" Classes="metric" Foreground="{DynamicResource AccentGreen}" />
+                        <TextBlock Text="Поток мониторинга доступен" Classes="subheader" />
                     </StackPanel>
                 </Border>
-            </WrapPanel>
+
+                <Border Classes="card" Margin="0,0,12,0">
+                    <StackPanel Spacing="10">
+                        <TextBlock Text="Тревоги" Foreground="{DynamicResource MutedText}" />
+                        <TextBlock Text="0" Classes="metric" Foreground="{DynamicResource AccentCyan}" />
+                        <TextBlock Text="Активных нарушений нет" Classes="subheader" />
+                    </StackPanel>
+                </Border>
+
+                <Border Classes="card" Margin="0,0,12,0">
+                    <StackPanel Spacing="10">
+                        <TextBlock Text="Контроль" Foreground="{DynamicResource MutedText}" />
+                        <TextBlock Text="RFID" Classes="metric" Foreground="{DynamicResource AccentAmber}" />
+                        <TextBlock Text="Точки прохода в рабочем режиме" Classes="subheader" />
+                    </StackPanel>
+                </Border>
+
+                <Border Classes="card">
+                    <StackPanel Spacing="10">
+                        <TextBlock Text="База" Foreground="{DynamicResource MutedText}" />
+                        <TextBlock Text="OK" Classes="metric" Foreground="{DynamicResource AccentGreen}" />
+                        <TextBlock Text="Сотрудники и события доступны" Classes="subheader" />
+                    </StackPanel>
+                </Border>
+            </UniformGrid>
+
+            <Grid ColumnDefinitions="1.25*,0.75*" ColumnSpacing="18">
+                <Border Classes="card">
+                    <StackPanel Spacing="16">
+                        <Grid ColumnDefinitions="*,Auto">
+                            <TextBlock Text="Оперативная сводка" Classes="sectionTitle" />
+                            <Border Grid.Column="1" Classes="statusPill" Background="#173329">
+                                <TextBlock Text="Штатно" Foreground="{DynamicResource AccentGreen}" FontWeight="SemiBold" />
+                            </Border>
+                        </Grid>
+
+                        <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto" RowSpacing="14" ColumnSpacing="14">
+                            <Border Width="12" Height="12" CornerRadius="6" Background="{DynamicResource AccentGreen}" VerticalAlignment="Center" />
+                            <StackPanel Grid.Column="1" Spacing="2">
+                                <TextBlock Text="Опасная зона свободна" Foreground="{DynamicResource CardForeground}" FontWeight="SemiBold" />
+                                <TextBlock Text="Нарушения периметра не зафиксированы." Classes="subheader" />
+                            </StackPanel>
+
+                            <Border Grid.Row="1" Width="12" Height="12" CornerRadius="6" Background="{DynamicResource AccentCyan}" VerticalAlignment="Center" />
+                            <StackPanel Grid.Row="1" Grid.Column="1" Spacing="2">
+                                <TextBlock Text="Реестр сотрудников подключен" Foreground="{DynamicResource CardForeground}" FontWeight="SemiBold" />
+                                <TextBlock Text="Данные можно обновлять из раздела регистрации." Classes="subheader" />
+                            </StackPanel>
+
+                            <Border Grid.Row="2" Width="12" Height="12" CornerRadius="6" Background="{DynamicResource AccentAmber}" VerticalAlignment="Center" />
+                            <StackPanel Grid.Row="2" Grid.Column="1" Spacing="2">
+                                <TextBlock Text="Маршрутный контроль готов" Foreground="{DynamicResource CardForeground}" FontWeight="SemiBold" />
+                                <TextBlock Text="События прохода будут отображаться в аналитике." Classes="subheader" />
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Column="1" Classes="card">
+                    <StackPanel Spacing="14">
+                        <TextBlock Text="Быстрый статус" Classes="sectionTitle" />
+                        <Border Background="#161B20" CornerRadius="8" Padding="14">
+                            <StackPanel Spacing="8">
+                                <TextBlock Text="Последнее событие" Foreground="{DynamicResource MutedText}" />
+                                <TextBlock Text="Система запущена" Foreground="{DynamicResource CardForeground}" FontWeight="SemiBold" />
+                            </StackPanel>
+                        </Border>
+                        <Border Background="#161B20" CornerRadius="8" Padding="14">
+                            <StackPanel Spacing="8">
+                                <TextBlock Text="Приоритет" Foreground="{DynamicResource MutedText}" />
+                                <TextBlock Text="Наблюдение" Foreground="{DynamicResource AccentCyan}" FontWeight="SemiBold" />
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </Border>
+            </Grid>
         </StackPanel>
     </ScrollViewer>
 </UserControl>

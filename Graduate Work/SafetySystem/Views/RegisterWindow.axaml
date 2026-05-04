@@ -2,52 +2,85 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="SafetySystem.Views.RegisterWindow">
     <ScrollViewer>
-        <StackPanel Spacing="12">
+        <Grid ColumnDefinitions="1.1*,0.9*" ColumnSpacing="18">
             <Border Classes="card">
-                <StackPanel Spacing="10">
-                    <TextBlock Text="Регистрация сотрудника"
-                               FontSize="18"
-                               FontWeight="Bold"
-                               Foreground="{DynamicResource CardForeground}" />
-
-                    <TextBlock Text="ID сотрудника" Foreground="{DynamicResource CardForeground}" />
-                    <TextBox Name="EmployeeIdTextBox" PlaceholderText="Введите ID сотрудника" />
-
-                    <TextBlock Text="ФИО" Foreground="{DynamicResource CardForeground}" />
-                    <TextBox Name="NameTextBox" PlaceholderText="Введите ФИО" />
-
-                    <TextBlock Text="RFID метка" Foreground="{DynamicResource CardForeground}" />
-                    <TextBox Name="RfidTagTextBox" PlaceholderText="Введите RFID" />
-
-                    <StackPanel Orientation="Horizontal" Spacing="12">
-                        <Button Content="Выбрать фото"
-                                Classes="action"
-                                Click="OnChoosePhotoClick"
-                                Background="#0B4150"
-                                Foreground="{DynamicResource CardForeground}" />
-                        <TextBlock Name="PhotoPathText"
-                                   Text="Фотография не выбрана"
-                                   VerticalAlignment="Center"
-                                   Foreground="{DynamicResource MutedText}"
-                                   TextWrapping="Wrap"
-                                   MaxWidth="500" />
+                <StackPanel Spacing="14">
+                    <StackPanel Spacing="4">
+                        <TextBlock Text="Карточка сотрудника" Classes="sectionTitle" />
+                        <TextBlock Text="Заполните основные данные и прикрепите фотографию для идентификации." Classes="subheader" />
                     </StackPanel>
+
+                    <StackPanel Spacing="7">
+                        <TextBlock Text="ID сотрудника" Foreground="{DynamicResource CardForeground}" FontWeight="SemiBold" />
+                        <TextBox Name="EmployeeIdTextBox" PlaceholderText="Например: EMP-001" />
+                    </StackPanel>
+
+                    <StackPanel Spacing="7">
+                        <TextBlock Text="ФИО" Foreground="{DynamicResource CardForeground}" FontWeight="SemiBold" />
+                        <TextBox Name="NameTextBox" PlaceholderText="Введите фамилию, имя и отчество" />
+                    </StackPanel>
+
+                    <StackPanel Spacing="7">
+                        <TextBlock Text="RFID метка" Foreground="{DynamicResource CardForeground}" FontWeight="SemiBold" />
+                        <TextBox Name="RfidTagTextBox" PlaceholderText="Введите идентификатор RFID" />
+                    </StackPanel>
+
+                    <Border Background="#161B20"
+                            BorderBrush="{DynamicResource CardBorder}"
+                            BorderThickness="1"
+                            CornerRadius="8"
+                            Padding="14">
+                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="14">
+                            <Button Content="Выбрать фото"
+                                    Classes="action"
+                                    Click="OnChoosePhotoClick"
+                                    Background="#26343A"
+                                    Foreground="{DynamicResource CardForeground}" />
+                            <TextBlock Grid.Column="1"
+                                       Name="PhotoPathText"
+                                       Text="Фотография не выбрана"
+                                       VerticalAlignment="Center"
+                                       Foreground="{DynamicResource MutedText}"
+                                       TextWrapping="Wrap" />
+                        </Grid>
+                    </Border>
 
                     <Button Content="Сохранить сотрудника"
                             Classes="action"
                             Click="OnSaveEmployeeClick"
                             Background="{DynamicResource AccentCyan}"
-                            Foreground="#02252A"
+                            Foreground="#101417"
                             HorizontalAlignment="Left" />
                 </StackPanel>
             </Border>
 
-            <Border Classes="card">
-                <TextBlock Name="StatusMessageText"
-                           Text="Заполните карточку сотрудника и сохраните ее."
-                           Foreground="{DynamicResource MutedText}"
-                           TextWrapping="Wrap" />
-            </Border>
-        </StackPanel>
+            <StackPanel Grid.Column="1" Spacing="18">
+                <Border Classes="card">
+                    <StackPanel Spacing="14">
+                        <TextBlock Text="Проверка перед сохранением" Classes="sectionTitle" />
+                        <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto" RowSpacing="12" ColumnSpacing="12">
+                            <Border Width="10" Height="10" CornerRadius="5" Background="{DynamicResource AccentCyan}" VerticalAlignment="Center" />
+                            <TextBlock Grid.Column="1" Text="ID нужен для внутреннего учета." Classes="subheader" />
+
+                            <Border Grid.Row="1" Width="10" Height="10" CornerRadius="5" Background="{DynamicResource AccentGreen}" VerticalAlignment="Center" />
+                            <TextBlock Grid.Row="1" Grid.Column="1" Text="RFID используется при контроле точек." Classes="subheader" />
+
+                            <Border Grid.Row="2" Width="10" Height="10" CornerRadius="5" Background="{DynamicResource AccentAmber}" VerticalAlignment="Center" />
+                            <TextBlock Grid.Row="2" Grid.Column="1" Text="Фото ускоряет визуальную проверку оператора." Classes="subheader" />
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <Border Classes="card">
+                    <StackPanel Spacing="10">
+                        <TextBlock Text="Статус операции" Classes="sectionTitle" />
+                        <TextBlock Name="StatusMessageText"
+                                   Text="Заполните карточку сотрудника и сохраните ее."
+                                   Foreground="{DynamicResource MutedText}"
+                                   TextWrapping="Wrap" />
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Grid>
     </ScrollViewer>
 </UserControl>

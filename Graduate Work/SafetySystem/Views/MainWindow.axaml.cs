@@ -23,7 +23,7 @@ namespace SafetySystem.Views
             ShowSection(
                 new DashboardView(),
                 "Главная",
-                "Контролируйте систему и переключайтесь между разделами.");
+                "Единое рабочее пространство для наблюдения, регистрации и анализа событий.");
         }
 
         private void ShowEmployees()
@@ -47,7 +47,7 @@ namespace SafetySystem.Views
             ShowSection(
                 registerView,
                 "Регистрация сотрудников",
-                "Добавляйте новых сотрудников.");
+                "Добавляйте новые учетные записи для контроля доступа и мониторинга.");
         }
 
         private void OnEmployeesButtonClick(object? sender, RoutedEventArgs e)
@@ -60,7 +60,7 @@ namespace SafetySystem.Views
             ShowSection(
                 new MonitorWindow(),
                 "Мониторинг",
-                "Поток с камеры и события опасной зоны.");
+                "Поток с камеры, детекция людей и события опасной зоны.");
         }
 
         private void OnRouteControlWindowClick(object? sender, RoutedEventArgs e)
@@ -68,7 +68,7 @@ namespace SafetySystem.Views
             ShowSection(
                 new RouteControlWindow(),
                 "Контроль точек",
-                "Отслеживайте перемещения и контрольные точки.");
+                "Отслеживайте перемещения сотрудников и контрольные точки.");
         }
 
         private void OnDataAnalysisWindowClick(object? sender, RoutedEventArgs e)
@@ -76,7 +76,7 @@ namespace SafetySystem.Views
             ShowSection(
                 new DataAnalysisWindow(),
                 "Анализ данных",
-                "Просматривайте события и аналитические данные.");
+                "Просматривайте события, динамику нарушений и аналитические данные.");
         }
 
         private void OnNotificationsClick(object? sender, RoutedEventArgs e)
@@ -84,7 +84,7 @@ namespace SafetySystem.Views
             ShowSection(
                 new NotificationsView(),
                 "Уведомления",
-                "Оперативные сообщения и тревоги.");
+                "Оперативные сообщения, тревоги и служебные события системы.");
         }
     }
 }

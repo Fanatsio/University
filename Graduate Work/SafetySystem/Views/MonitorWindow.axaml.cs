@@ -61,12 +61,12 @@ namespace SafetySystem.Views
                         continue;
                     }
 
-                    PeopleInZoneList.Items.Add($"ID {detection.Id} - В опасной зоне");
+                    PeopleInZoneList.Items.Add($"ID {detection.Id} - в опасной зоне");
                     dangerDetected = true;
                 }
 
                 IntrusionAlert.Text = dangerDetected ? "НАРУШЕНИЕ!" : "Нет нарушений";
-                IntrusionAlert.Foreground = dangerDetected ? Brushes.Red : Brushes.Green;
+                IntrusionAlert.Foreground = dangerDetected ? Brushes.OrangeRed : Brushes.LightGreen;
             });
         }
 

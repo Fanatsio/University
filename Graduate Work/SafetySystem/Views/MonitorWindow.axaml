@@ -1,50 +1,84 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="SafetySystem.Views.MonitorWindow">
-    <Grid RowDefinitions="Auto,*,Auto">
-        <Border Grid.Row="0"
-                Margin="0,0,0,12"
-                Padding="16,12"
-                Background="#081F2C"
-                BorderBrush="{DynamicResource CardBorder}"
-                BorderThickness="1"
-                CornerRadius="10">
-            <TextBlock Name="IntrusionAlert"
-                       Text="Нет нарушений"
-                       Foreground="#28A745"
-                       FontWeight="SemiBold"
-                       FontSize="16" />
-        </Border>
+    <Grid RowDefinitions="Auto,*,Auto" RowSpacing="14">
+        <Grid ColumnDefinitions="*,Auto" ColumnSpacing="14">
+            <Border Padding="16,12"
+                    Background="#173329"
+                    BorderBrush="#245A43"
+                    BorderThickness="1"
+                    CornerRadius="8">
+                <StackPanel Orientation="Horizontal" Spacing="10">
+                    <Ellipse Width="10" Height="10" Fill="{DynamicResource AccentGreen}" VerticalAlignment="Center" />
+                    <TextBlock Name="IntrusionAlert"
+                               Text="Нет нарушений"
+                               Foreground="{DynamicResource AccentGreen}"
+                               FontWeight="SemiBold"
+                               FontSize="16" />
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Column="1"
+                    Classes="statusPill"
+                    Background="#252B31"
+                    BorderBrush="{DynamicResource CardBorder}"
+                    BorderThickness="1"
+                    VerticalAlignment="Stretch">
+                <TextBlock Text="LIVE"
+                           Foreground="{DynamicResource AccentRed}"
+                           FontWeight="SemiBold"
+                           VerticalAlignment="Center" />
+            </Border>
+        </Grid>
 
         <Border Grid.Row="1"
-                Classes="card"
-                Margin="0"
-                Padding="16"
+                Background="#0C1014"
+                BorderBrush="{DynamicResource CardBorder}"
+                BorderThickness="1"
+                CornerRadius="8"
                 ClipToBounds="True"
-                MinHeight="320">
+                MinHeight="380">
             <Grid>
-                <Border Background="#03131D"
-                        BorderBrush="{DynamicResource CardBorder}"
-                        BorderThickness="1"
-                        CornerRadius="10"
-                        ClipToBounds="True">
-                    <Image Name="CameraStream"
-                           Stretch="Uniform"
-                           HorizontalAlignment="Stretch"
-                           VerticalAlignment="Stretch" />
-                </Border>
+                <Image Name="CameraStream"
+                       Stretch="Uniform"
+                       HorizontalAlignment="Stretch"
+                       VerticalAlignment="Stretch" />
+
+                <Grid RowDefinitions="*,Auto">
+                    <Border Margin="14"
+                            Padding="10,6"
+                            CornerRadius="6"
+                            Background="#B0111417"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top">
+                        <TextBlock Text="Камера опасной зоны"
+                                   Foreground="{DynamicResource CardForeground}"
+                                   FontWeight="SemiBold" />
+                    </Border>
+
+                    <Border Grid.Row="1"
+                            Margin="14"
+                            Padding="12,8"
+                            CornerRadius="6"
+                            Background="#B0111417"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Bottom">
+                        <TextBlock Text="YOLOv8 детекция персонала"
+                                   Foreground="{DynamicResource MutedText}" />
+                    </Border>
+                </Grid>
 
                 <Border Name="LoadingOverlay"
-                        Background="#AA041826"
-                        CornerRadius="10"
-                        Padding="24"
+                        Background="#E6111417"
+                        CornerRadius="8"
+                        Padding="26"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
                         IsVisible="True">
                     <StackPanel Spacing="10">
                         <TextBlock Text="Мониторинг"
-                                   FontSize="20"
-                                   FontWeight="Bold"
+                                   FontSize="21"
+                                   FontWeight="SemiBold"
                                    HorizontalAlignment="Center"
                                    Foreground="{DynamicResource CardForeground}" />
                         <TextBlock Name="LoadingStatusText"
@@ -57,18 +91,26 @@
             </Grid>
         </Border>
 
-        <StackPanel Grid.Row="2" Margin="0,12,0,0">
-            <TextBlock Text="Люди в зоне"
-                       FontSize="16"
-                       Foreground="{DynamicResource CardForeground}" />
-            <Border Classes="card" Margin="0,8,0,0">
-                <ListBox Name="PeopleInZoneList"
-                         MinHeight="140"
-                         MaxHeight="200"
-                         Background="Transparent"
-                         Foreground="{DynamicResource CardForeground}"
-                         BorderBrush="{DynamicResource CardBorder}" />
+        <Grid Grid.Row="2" ColumnDefinitions="*,Auto" ColumnSpacing="14">
+            <Border Classes="card">
+                <StackPanel Spacing="10">
+                    <TextBlock Text="Люди в опасной зоне" Classes="sectionTitle" />
+                    <ListBox Name="PeopleInZoneList"
+                             MinHeight="110"
+                             MaxHeight="170"
+                             Background="#161B20"
+                             Foreground="{DynamicResource CardForeground}"
+                             BorderBrush="{DynamicResource CardBorder}" />
+                </StackPanel>
             </Border>
-        </StackPanel>
+
+            <Border Grid.Column="1" Classes="card" Width="260">
+                <StackPanel Spacing="8">
+                    <TextBlock Text="Режим" Foreground="{DynamicResource MutedText}" />
+                    <TextBlock Text="Наблюдение" Foreground="{DynamicResource CardForeground}" FontSize="20" FontWeight="SemiBold" />
+                    <TextBlock Text="Поток автоматически запускается при открытии раздела." Classes="subheader" />
+                </StackPanel>
+            </Border>
+        </Grid>
     </Grid>
 </UserControl>

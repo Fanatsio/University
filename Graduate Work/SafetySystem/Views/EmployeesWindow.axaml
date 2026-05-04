@@ -3,36 +3,61 @@
              xmlns:viewModels="clr-namespace:SafetySystem.ViewModels"
              x:Class="SafetySystem.Views.EmployeesWindow"
              x:DataType="viewModels:EmployeesViewModel">
-    <Grid RowDefinitions="*,Auto">
-        <DataGrid x:Name="EmployeesDataGrid"
-                  AutoGenerateColumns="False"
-                  IsReadOnly="True"
-                  SelectionMode="Single"
-                  CanUserResizeColumns="True"
-                  CanUserSortColumns="True"
-                  ItemsSource="{Binding Employees}"
-                  Margin="0,0,0,12"
-                  Background="Transparent"
-                  Foreground="{DynamicResource CardForeground}"
-                  BorderBrush="{DynamicResource CardBorder}">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="ID сотрудника" Binding="{Binding EmployeeId}" Width="180" />
-                <DataGridTextColumn Header="ФИО" Binding="{Binding Name}" Width="*" />
-                <DataGridTextColumn Header="RFID" Binding="{Binding RfidTag}" Width="220" />
-                <DataGridTextColumn Header="Фото" Binding="{Binding PhotoPath}" Width="260" />
-            </DataGrid.Columns>
-        </DataGrid>
+    <Grid RowDefinitions="Auto,*" RowSpacing="14">
+        <Border Classes="softPanel">
+            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="16">
+                <StackPanel Spacing="4">
+                    <TextBlock Text="Реестр сотрудников" Classes="sectionTitle" />
+                    <TextBlock Text="Актуальные учетные записи для RFID-контроля и мониторинга." Classes="subheader" />
+                </StackPanel>
+                <Border Grid.Column="1" Classes="statusPill" Background="#172D33" VerticalAlignment="Center">
+                    <TextBlock Text="Автообновление при открытии"
+                               Foreground="{DynamicResource AccentCyan}"
+                               FontWeight="SemiBold"
+                               FontSize="12" />
+                </Border>
+            </Grid>
+        </Border>
 
-        <TextBlock Grid.RowSpan="2"
-                   Text="Нет данных для отображения"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"
-                   IsVisible="{Binding NoDataMessageVisible}"
-                   FontSize="16"
-                   Foreground="{DynamicResource MutedText}" />
+        <Grid Grid.Row="1">
+            <Border Classes="card" Padding="0">
+                <DataGrid x:Name="EmployeesDataGrid"
+                          AutoGenerateColumns="False"
+                          IsReadOnly="True"
+                          SelectionMode="Single"
+                          CanUserResizeColumns="True"
+                          CanUserSortColumns="True"
+                          ItemsSource="{Binding Employees}"
+                          Background="Transparent"
+                          Foreground="{DynamicResource CardForeground}"
+                          BorderBrush="{DynamicResource CardBorder}"
+                          BorderThickness="0">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID сотрудника" Binding="{Binding EmployeeId}" Width="180" />
+                        <DataGridTextColumn Header="ФИО" Binding="{Binding Name}" Width="*" />
+                        <DataGridTextColumn Header="RFID" Binding="{Binding RfidTag}" Width="220" />
+                        <DataGridTextColumn Header="Фотография" Binding="{Binding PhotoPath}" Width="300" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Border>
 
-        <TextBlock Grid.Row="1"
-                   Text="Список обновляется при каждом открытии раздела."
-                   Foreground="{DynamicResource MutedText}" />
+            <Border Background="#E6111417"
+                    CornerRadius="8"
+                    Padding="24"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    IsVisible="{Binding NoDataMessageVisible}">
+                <StackPanel Spacing="8">
+                    <TextBlock Text="Данных пока нет"
+                               HorizontalAlignment="Center"
+                               FontSize="18"
+                               FontWeight="SemiBold"
+                               Foreground="{DynamicResource CardForeground}" />
+                    <TextBlock Text="Добавьте первого сотрудника в разделе регистрации."
+                               HorizontalAlignment="Center"
+                               Foreground="{DynamicResource MutedText}" />
+                </StackPanel>
+            </Border>
+        </Grid>
     </Grid>
 </UserControl>

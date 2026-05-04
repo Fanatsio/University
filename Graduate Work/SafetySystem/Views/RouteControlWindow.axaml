@@ -1,24 +1,37 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="SafetySystem.Views.RouteControlWindow">
-    <StackPanel>
-        <TextBlock Text="Маршрут сотрудников"
-                   Classes="header"
-                   Margin="0,0,0,16" />
+    <Grid RowDefinitions="Auto,*" RowSpacing="16">
+        <Grid ColumnDefinitions="*,Auto" ColumnSpacing="14">
+            <Border Classes="card">
+                <StackPanel Spacing="6">
+                    <TextBlock Text="Контрольные точки" Classes="sectionTitle" />
+                    <TextBlock Text="Маршруты сотрудников и отметки RFID будут отображаться в единой таблице." Classes="subheader" />
+                </StackPanel>
+            </Border>
+            <Border Grid.Column="1" Classes="card" Width="230">
+                <StackPanel Spacing="6">
+                    <TextBlock Text="Режим" Foreground="{DynamicResource MutedText}" />
+                    <TextBlock Text="Готов" Foreground="{DynamicResource AccentGreen}" FontSize="22" FontWeight="SemiBold" />
+                </StackPanel>
+            </Border>
+        </Grid>
 
-        <Border Classes="card" Margin="0">
+        <Border Grid.Row="1" Classes="card" Padding="0">
             <DataGrid Name="RouteDataGrid"
-                      Height="460"
                       Background="Transparent"
                       Foreground="{DynamicResource CardForeground}"
-                      BorderBrush="{DynamicResource CardBorder}">
+                      BorderBrush="{DynamicResource CardBorder}"
+                      BorderThickness="0"
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Сотрудник" />
-                    <DataGridTextColumn Header="Точка" />
-                    <DataGridTextColumn Header="Время" />
-                    <DataGridTextColumn Header="Статус" />
+                    <DataGridTextColumn Header="Сотрудник" Width="*" />
+                    <DataGridTextColumn Header="Точка" Width="220" />
+                    <DataGridTextColumn Header="Время" Width="180" />
+                    <DataGridTextColumn Header="Статус" Width="180" />
                 </DataGrid.Columns>
             </DataGrid>
         </Border>
-    </StackPanel>
+    </Grid>
 </UserControl>
