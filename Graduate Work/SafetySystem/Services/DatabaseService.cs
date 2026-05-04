@@ -10,10 +10,9 @@ namespace SafetySystem.Services
 {
     public class DatabaseService
     {
-        private static readonly string _dbPath = "safetysystem.db";
         private static DatabaseService? _instance;
         private static readonly object _initializationLock = new();
-        private static bool _isInitialized;
+        private static readonly HashSet<string> _initializedDatabasePaths = [];
 
         public static DatabaseService Instance
         {
@@ -25,30 +24,34 @@ namespace SafetySystem.Services
             EnsureDatabaseInitialized();
         }
 
-        private static void EnsureDatabaseInitialized()
+        private static string EnsureDatabaseInitialized()
         {
-            if (_isInitialized)
+            var dbPath = ResolveDatabasePath();
+
+            if (_initializedDatabasePaths.Contains(dbPath))
             {
-                return;
+                return dbPath;
             }
 
             lock (_initializationLock)
             {
-                if (_isInitialized)
+                if (_initializedDatabasePaths.Contains(dbPath))
                 {
-                    return;
+                    return dbPath;
                 }
 
-                InitializeDatabase();
-                _isInitialized = true;
+                InitializeDatabase(dbPath);
+                _initializedDatabasePaths.Add(dbPath);
             }
+
+            return dbPath;
         }
 
-        private static void InitializeDatabase()
+        private static void InitializeDatabase(string dbPath)
         {
             try
             {
-                using var connection = Connection;
+                using var connection = CreateConnection(dbPath);
                 connection.Open();
                 connection.Execute(@"
                     CREATE TABLE IF NOT EXISTS Employees (
@@ -80,26 +83,28 @@ namespace SafetySystem.Services
             }
         }
 
-        private static IDbConnection Connection
+        private static IDbConnection CreateConnection(string dbPath)
         {
-            get
-            {
-                var fullPath = Path.GetFullPath(_dbPath);
-                Console.WriteLine($"Opening database at: {fullPath}");
-                return new SqliteConnection($"Data Source={fullPath}");
-            }
+            Console.WriteLine($"Opening database at: {dbPath}");
+            return new SqliteConnection($"Data Source={dbPath}");
+        }
+
+        private static string ResolveDatabasePath()
+        {
+            var configuredPath = AppSettingsService.Load().DatabasePath;
+            return Path.GetFullPath(configuredPath);
         }
 
         public static void AddEmployee(Employee employee)
         {
-            EnsureDatabaseInitialized();
+            var dbPath = EnsureDatabaseInitialized();
             ArgumentNullException.ThrowIfNull(employee);
             if (string.IsNullOrEmpty(employee.EmployeeId) || string.IsNullOrEmpty(employee.RfidTag) || string.IsNullOrEmpty(employee.Name))
                 throw new ArgumentException("EmployeeId, RfidTag, and Name cannot be null or empty.");
 
             try
             {
-                using var connection = Connection;
+                using var connection = CreateConnection(dbPath);
                 connection.Open();
                 connection.Execute(@"
                     INSERT INTO Employees (EmployeeId, RfidTag, Name, PhotoPath)
@@ -116,10 +121,10 @@ namespace SafetySystem.Services
 
         public static List<Employee> GetEmployees()
         {
-            EnsureDatabaseInitialized();
+            var dbPath = EnsureDatabaseInitialized();
             try
             {
-                using var connection = Connection;
+                using var connection = CreateConnection(dbPath);
                 connection.Open();
                 var employees = connection.Query<Employee>("SELECT * FROM Employees").AsList();
                 Console.WriteLine($"DataBase {employees.Count} employees");

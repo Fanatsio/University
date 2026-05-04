@@ -186,6 +186,12 @@
                             <TextBlock Grid.Column="1" Text="Уведомления" />
                         </Grid>
                     </Button>
+                    <Button Classes="nav" Click="OnSettingsClick">
+                        <Grid ColumnDefinitions="28,*">
+                            <TextBlock Text="⚙" Foreground="{StaticResource AccentCyan}" FontSize="16" />
+                            <TextBlock Grid.Column="1" Text="Настройки" />
+                        </Grid>
+                    </Button>
                 </StackPanel>
 
                 <Border Grid.Row="2"

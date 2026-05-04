@@ -16,6 +16,10 @@ obj/
 *.tmp
 *.temp
 
+# Local runtime data
+safetysystem.db
+yolov8n.pt
+
 # Python cache/virtualenv
 __pycache__/
 *.pyc

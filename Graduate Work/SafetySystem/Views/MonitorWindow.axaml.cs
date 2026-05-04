@@ -24,6 +24,7 @@ namespace SafetySystem.Views
             _cameraService = new CameraService();
 
             InitializeComponent();
+            ApplySavedDangerZone();
             SubscribeDangerZoneControls();
             UpdateDangerZone();
 
@@ -36,7 +37,14 @@ namespace SafetySystem.Views
 
         private void OnAttachedToVisualTree(object? sender, VisualTreeAttachmentEventArgs e)
         {
-            StartMonitoring();
+            if (AppSettingsService.Load().AutoStartMonitoring)
+            {
+                StartMonitoring();
+            }
+            else
+            {
+                StopMonitoring("Мониторинг ожидает запуска.", false);
+            }
         }
 
         private void OnDetachedFromVisualTree(object? sender, VisualTreeAttachmentEventArgs e)
@@ -131,6 +139,16 @@ namespace SafetySystem.Views
             DangerZoneYSlider.ValueChanged += OnDangerZoneSliderChanged;
             DangerZoneWidthSlider.ValueChanged += OnDangerZoneSliderChanged;
             DangerZoneHeightSlider.ValueChanged += OnDangerZoneSliderChanged;
+        }
+
+        private void ApplySavedDangerZone()
+        {
+            var settings = AppSettingsService.Load();
+
+            DangerZoneXSlider.Value = settings.DangerZoneXPercent;
+            DangerZoneYSlider.Value = settings.DangerZoneYPercent;
+            DangerZoneWidthSlider.Value = settings.DangerZoneWidthPercent;
+            DangerZoneHeightSlider.Value = settings.DangerZoneHeightPercent;
         }
 
         private void StartMonitoring()

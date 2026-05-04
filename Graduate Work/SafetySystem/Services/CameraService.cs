@@ -5,6 +5,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Text.Json;
 using System.Threading;
@@ -133,11 +134,18 @@ namespace SafetySystem.Services
             {
                 StatusChanged.Invoke("Инициализация камеры...", false);
 
-                var capture = new VideoCapture(0);
+                var settings = AppSettingsService.Load();
+                SetDangerZoneRectPercent(
+                    settings.DangerZoneXPercent,
+                    settings.DangerZoneYPercent,
+                    settings.DangerZoneWidthPercent,
+                    settings.DangerZoneHeightPercent);
+
+                var capture = new VideoCapture(settings.CameraIndex);
                 if (!capture.IsOpened())
                 {
                     capture.Dispose();
-                    throw new Exception("Не удалось открыть камеру.");
+                    throw new Exception($"Не удалось открыть камеру {settings.CameraIndex}.");
                 }
 
                 cancellationToken.ThrowIfCancellationRequested();
@@ -149,7 +157,7 @@ namespace SafetySystem.Services
 
                 StatusChanged.Invoke("Загрузка модели...", false);
 
-                var python = StartPythonYolo();
+                var python = StartPythonYolo(settings);
                 WaitForPythonReady(python, cancellationToken);
                 cancellationToken.ThrowIfCancellationRequested();
 
@@ -216,13 +224,15 @@ namespace SafetySystem.Services
             }
         }
 
-        private static Process StartPythonYolo()
+        private static Process StartPythonYolo(AppSettings settings)
         {
             var python = new Process();
             var scriptPath = ResolveRuntimeFilePath("yolo_server.py");
+            var modelPath = ResolveModelPath(settings.YoloModelPath, scriptPath);
+            var confidence = settings.ConfidenceThreshold.ToString(CultureInfo.InvariantCulture);
 
             python.StartInfo.FileName = "py";
-            python.StartInfo.Arguments = $"-u \"{scriptPath}\"";
+            python.StartInfo.Arguments = $"-u \"{scriptPath}\" --model \"{modelPath}\" --confidence {confidence}";
             python.StartInfo.UseShellExecute = false;
             python.StartInfo.RedirectStandardOutput = true;
             python.StartInfo.RedirectStandardInput = true;
@@ -466,6 +476,32 @@ namespace SafetySystem.Services
             }
 
             throw new FileNotFoundException($"Required runtime file was not found: {fileName}");
+        }
+
+        private static string ResolveModelPath(string modelPath, string scriptPath)
+        {
+            if (Path.IsPathRooted(modelPath) && File.Exists(modelPath))
+            {
+                return Path.GetFullPath(modelPath);
+            }
+
+            var scriptDirectory = Path.GetDirectoryName(scriptPath) ?? Environment.CurrentDirectory;
+            var candidates = new[]
+            {
+                Path.Combine(Environment.CurrentDirectory, modelPath),
+                Path.Combine(AppContext.BaseDirectory, modelPath),
+                Path.Combine(scriptDirectory, modelPath)
+            };
+
+            foreach (var candidate in candidates)
+            {
+                if (File.Exists(candidate))
+                {
+                    return Path.GetFullPath(candidate);
+                }
+            }
+
+            throw new FileNotFoundException($"YOLO model file was not found: {modelPath}");
         }
 
         private readonly record struct DangerZoneRatios(double X, double Y, double Width, double Height);

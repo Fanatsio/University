@@ -86,5 +86,13 @@ namespace SafetySystem.Views
                 "Уведомления",
                 "Оперативные сообщения, тревоги и служебные события системы.");
         }
+
+        private void OnSettingsClick(object? sender, RoutedEventArgs e)
+        {
+            ShowSection(
+                new SettingsView(),
+                "Настройки",
+                "Параметры камеры, модели YOLO, базы данных и опасной зоны.");
+        }
     }
 }

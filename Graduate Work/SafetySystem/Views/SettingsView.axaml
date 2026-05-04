@@ -1,0 +1,196 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="SafetySystem.Views.SettingsView">
+    <ScrollViewer>
+        <StackPanel Spacing="14">
+            <Border Classes="card">
+                <Grid ColumnDefinitions="*,Auto" ColumnSpacing="16">
+                    <StackPanel Spacing="5">
+                        <TextBlock Text="Настройки комплекса" Classes="sectionTitle" />
+                        <TextBlock Text="Параметры сохраняются локально и применяются при следующем запуске мониторинга."
+                                   Classes="subheader" />
+                    </StackPanel>
+
+                    <Border Grid.Column="1"
+                            Padding="12,7"
+                            CornerRadius="99"
+                            Background="#162F35"
+                            BorderBrush="#285A62"
+                            BorderThickness="1"
+                            VerticalAlignment="Center">
+                        <TextBlock Name="SettingsStatusText"
+                                   Text="Готово"
+                                   Foreground="{DynamicResource AccentCyan}"
+                                   FontWeight="SemiBold" />
+                    </Border>
+                </Grid>
+            </Border>
+
+            <Grid ColumnDefinitions="1*,1*" ColumnSpacing="14">
+                <Border Classes="card">
+                    <StackPanel Spacing="14">
+                        <StackPanel Spacing="5">
+                            <TextBlock Text="Мониторинг" Classes="sectionTitle" />
+                            <TextBlock Text="Источник камеры и параметры нейросетевой детекции."
+                                       Classes="subheader" />
+                        </StackPanel>
+
+                        <StackPanel Spacing="6">
+                            <TextBlock Text="Индекс камеры" Foreground="{DynamicResource MutedText}" />
+                            <ComboBox Name="CameraIndexComboBox"
+                                      MinHeight="42"
+                                      Background="{DynamicResource InputBackground}"
+                                      Foreground="{DynamicResource CardForeground}"
+                                      BorderBrush="{DynamicResource CardBorder}" />
+                        </StackPanel>
+
+                        <StackPanel Spacing="6">
+                            <TextBlock Text="Файл модели YOLO" Foreground="{DynamicResource MutedText}" />
+                            <TextBox Name="YoloModelPathTextBox"
+                                     PlaceholderText="yolov8s.pt" />
+                            <TextBlock Text="Можно указать имя файла рядом с приложением или полный путь к .pt модели."
+                                       Classes="subheader"
+                                       FontSize="12" />
+                        </StackPanel>
+
+                        <StackPanel Spacing="8">
+                            <Grid ColumnDefinitions="*,Auto">
+                                <TextBlock Text="Порог уверенности" Foreground="{DynamicResource MutedText}" />
+                                <TextBlock Grid.Column="1"
+                                           Name="ConfidenceValueText"
+                                           Foreground="{DynamicResource CardForeground}"
+                                           FontWeight="SemiBold" />
+                            </Grid>
+                            <Slider Name="ConfidenceSlider"
+                                    Minimum="10"
+                                    Maximum="95"
+                                    Value="50"
+                                    TickFrequency="5"
+                                    IsSnapToTickEnabled="True" />
+                        </StackPanel>
+
+                        <CheckBox Name="AutoStartMonitoringCheckBox"
+                                  Content="Запускать мониторинг автоматически при открытии раздела"
+                                  Foreground="{DynamicResource CardForeground}" />
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Column="1" Classes="card">
+                    <StackPanel Spacing="14">
+                        <StackPanel Spacing="5">
+                            <TextBlock Text="Данные" Classes="sectionTitle" />
+                            <TextBlock Text="Пути к локальным файлам проекта и пользовательских настроек."
+                                       Classes="subheader" />
+                        </StackPanel>
+
+                        <StackPanel Spacing="6">
+                            <TextBlock Text="Файл базы данных" Foreground="{DynamicResource MutedText}" />
+                            <TextBox Name="DatabasePathTextBox"
+                                     PlaceholderText="safetysystem.db" />
+                        </StackPanel>
+
+                        <Border Background="#161B20"
+                                BorderBrush="{DynamicResource CardBorder}"
+                                BorderThickness="1"
+                                CornerRadius="8"
+                                Padding="14">
+                            <StackPanel Spacing="6">
+                                <TextBlock Text="Файл настроек"
+                                           Foreground="{DynamicResource MutedText}" />
+                                <TextBlock Name="SettingsFilePathText"
+                                           TextWrapping="Wrap"
+                                           Foreground="{DynamicResource CardForeground}" />
+                            </StackPanel>
+                        </Border>
+
+                        <Border Background="#201A12"
+                                BorderBrush="#5F4424"
+                                BorderThickness="1"
+                                CornerRadius="8"
+                                Padding="14">
+                            <TextBlock Text="Если мониторинг уже запущен, новые параметры камеры и YOLO применятся после перезапуска мониторинга."
+                                       Foreground="{DynamicResource AccentAmber}"
+                                       TextWrapping="Wrap" />
+                        </Border>
+                    </StackPanel>
+                </Border>
+            </Grid>
+
+            <Border Classes="card">
+                <StackPanel Spacing="14">
+                    <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
+                        <StackPanel Spacing="5">
+                            <TextBlock Text="Опасная зона" Classes="sectionTitle" />
+                            <TextBlock Text="Задайте область кадра, пересечение с которой считается нарушением."
+                                       Classes="subheader" />
+                        </StackPanel>
+                        <TextBlock Grid.Column="1"
+                                   Name="DangerZoneValueText"
+                                   Foreground="{DynamicResource CardForeground}"
+                                   FontWeight="SemiBold"
+                                   VerticalAlignment="Center" />
+                    </Grid>
+
+                    <Grid RowDefinitions="Auto,Auto,Auto,Auto" ColumnDefinitions="90,*" RowSpacing="8" ColumnSpacing="12">
+                        <TextBlock Text="X" Foreground="{DynamicResource CardForeground}" VerticalAlignment="Center" />
+                        <Slider Grid.Column="1"
+                                Name="DangerZoneXSlider"
+                                Minimum="0"
+                                Maximum="95"
+                                Value="25"
+                                TickFrequency="5"
+                                IsSnapToTickEnabled="True" />
+
+                        <TextBlock Grid.Row="1" Text="Y" Foreground="{DynamicResource CardForeground}" VerticalAlignment="Center" />
+                        <Slider Grid.Row="1"
+                                Grid.Column="1"
+                                Name="DangerZoneYSlider"
+                                Minimum="0"
+                                Maximum="95"
+                                Value="55"
+                                TickFrequency="5"
+                                IsSnapToTickEnabled="True" />
+
+                        <TextBlock Grid.Row="2" Text="Ширина" Foreground="{DynamicResource CardForeground}" VerticalAlignment="Center" />
+                        <Slider Grid.Row="2"
+                                Grid.Column="1"
+                                Name="DangerZoneWidthSlider"
+                                Minimum="5"
+                                Maximum="100"
+                                Value="50"
+                                TickFrequency="5"
+                                IsSnapToTickEnabled="True" />
+
+                        <TextBlock Grid.Row="3" Text="Высота" Foreground="{DynamicResource CardForeground}" VerticalAlignment="Center" />
+                        <Slider Grid.Row="3"
+                                Grid.Column="1"
+                                Name="DangerZoneHeightSlider"
+                                Minimum="5"
+                                Maximum="100"
+                                Value="35"
+                                TickFrequency="5"
+                                IsSnapToTickEnabled="True" />
+                    </Grid>
+                </StackPanel>
+            </Border>
+
+            <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="10">
+                <TextBlock Text="Настройки можно менять без перезапуска приложения."
+                           Foreground="{DynamicResource MutedText}"
+                           VerticalAlignment="Center" />
+                <Button Grid.Column="1"
+                        Classes="action"
+                        Content="Сбросить"
+                        Background="#343C44"
+                        Foreground="{DynamicResource CardForeground}"
+                        Click="OnResetClick" />
+                <Button Grid.Column="2"
+                        Classes="action"
+                        Content="Сохранить"
+                        Background="{DynamicResource AccentCyan}"
+                        Foreground="#101417"
+                        Click="OnSaveClick" />
+            </Grid>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>
