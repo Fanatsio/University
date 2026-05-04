@@ -1,4 +1,4 @@
-using Avalonia.Media.Imaging;
+﻿using Avalonia.Media.Imaging;
 using OpenCvSharp;
 using SafetySystem.Models;
 using System;
