@@ -2,6 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         x:Class="SafetySystem.Views.MainWindow"
         Title="Система безопасности и мониторинга опасной зоны"
+        Icon="/Assets/avalonia-logo.ico"
         Width="1420"
         Height="900"
         MinWidth="1180"
