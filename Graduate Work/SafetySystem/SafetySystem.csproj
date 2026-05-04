@@ -17,7 +17,7 @@
     <None Update="yolo_server.py">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="yolov8n.pt">
+    <None Update="yolov8s.pt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

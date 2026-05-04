@@ -24,7 +24,8 @@
                     BorderBrush="{DynamicResource CardBorder}"
                     BorderThickness="1"
                     VerticalAlignment="Stretch">
-                <TextBlock Text="LIVE"
+                <TextBlock Name="MonitorModeText"
+                           Text="LIVE"
                            Foreground="{DynamicResource AccentRed}"
                            FontWeight="SemiBold"
                            VerticalAlignment="Center" />
@@ -91,10 +92,17 @@
             </Grid>
         </Border>
 
-        <Grid Grid.Row="2" ColumnDefinitions="*,Auto" ColumnSpacing="14">
+        <Grid Grid.Row="2" ColumnDefinitions="1.1*,0.9*" ColumnSpacing="14">
             <Border Classes="card">
                 <StackPanel Spacing="10">
-                    <TextBlock Text="Люди в опасной зоне" Classes="sectionTitle" />
+                    <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
+                        <TextBlock Text="Люди в опасной зоне" Classes="sectionTitle" />
+                        <TextBlock Grid.Column="1"
+                                   Name="LastUpdateText"
+                                   Text="Кадров пока нет"
+                                   Foreground="{DynamicResource MutedText}"
+                                   VerticalAlignment="Center" />
+                    </Grid>
                     <ListBox Name="PeopleInZoneList"
                              MinHeight="110"
                              MaxHeight="170"
@@ -104,11 +112,110 @@
                 </StackPanel>
             </Border>
 
-            <Border Grid.Column="1" Classes="card" Width="260">
-                <StackPanel Spacing="8">
-                    <TextBlock Text="Режим" Foreground="{DynamicResource MutedText}" />
-                    <TextBlock Text="Наблюдение" Foreground="{DynamicResource CardForeground}" FontSize="20" FontWeight="SemiBold" />
-                    <TextBlock Text="Поток автоматически запускается при открытии раздела." Classes="subheader" />
+            <Border Grid.Column="1" Classes="card">
+                <StackPanel Spacing="14">
+                    <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="10">
+                        <StackPanel Spacing="3">
+                            <TextBlock Text="Управление" Classes="sectionTitle" />
+                            <TextBlock Name="MonitorStatusText"
+                                       Text="Подготовка мониторинга"
+                                       Foreground="{DynamicResource MutedText}" />
+                        </StackPanel>
+
+                        <Button Grid.Column="1"
+                                Name="StartMonitorButton"
+                                Classes="action"
+                                Content="Старт"
+                                Background="{DynamicResource AccentGreen}"
+                                Foreground="#101417"
+                                Click="OnStartMonitorClick" />
+
+                        <Button Grid.Column="2"
+                                Name="StopMonitorButton"
+                                Classes="action"
+                                Content="Пауза"
+                                Background="#343C44"
+                                Foreground="{DynamicResource CardForeground}"
+                                Click="OnStopMonitorClick" />
+                    </Grid>
+
+                    <Grid ColumnDefinitions="*,*,*" ColumnSpacing="10">
+                        <Border Background="#161B20" CornerRadius="8" Padding="12">
+                            <StackPanel Spacing="4">
+                                <TextBlock Text="Всего" Foreground="{DynamicResource MutedText}" />
+                                <TextBlock Name="TotalPeopleText" Text="0" Classes="metric" FontSize="28" />
+                            </StackPanel>
+                        </Border>
+
+                        <Border Grid.Column="1" Background="#161B20" CornerRadius="8" Padding="12">
+                            <StackPanel Spacing="4">
+                                <TextBlock Text="Опасно" Foreground="{DynamicResource MutedText}" />
+                                <TextBlock Name="DangerPeopleText" Text="0" Classes="metric" FontSize="28" Foreground="{DynamicResource AccentRed}" />
+                            </StackPanel>
+                        </Border>
+
+                        <Border Grid.Column="2" Background="#161B20" CornerRadius="8" Padding="12">
+                            <StackPanel Spacing="4">
+                                <TextBlock Text="Безопасно" Foreground="{DynamicResource MutedText}" />
+                                <TextBlock Name="SafePeopleText" Text="0" Classes="metric" FontSize="28" Foreground="{DynamicResource AccentGreen}" />
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+
+                    <StackPanel Spacing="10">
+                        <Grid ColumnDefinitions="*,Auto">
+                            <TextBlock Text="Прямоугольник опасной зоны" Foreground="{DynamicResource MutedText}" />
+                            <TextBlock Grid.Column="1"
+                                       Name="DangerZoneValueText"
+                                       Text="X 25%, Y 55%, W 50%, H 35%"
+                                       Foreground="{DynamicResource CardForeground}"
+                                       FontWeight="SemiBold" />
+                        </Grid>
+
+                        <Grid RowDefinitions="Auto,Auto,Auto,Auto" ColumnDefinitions="64,*" RowSpacing="6" ColumnSpacing="10">
+                            <TextBlock Text="X" Foreground="{DynamicResource CardForeground}" VerticalAlignment="Center" />
+                            <Slider Grid.Column="1"
+                                    Name="DangerZoneXSlider"
+                                    Minimum="0"
+                                    Maximum="95"
+                                    Value="25"
+                                    TickFrequency="5"
+                                    IsSnapToTickEnabled="True" />
+
+                            <TextBlock Grid.Row="1" Text="Y" Foreground="{DynamicResource CardForeground}" VerticalAlignment="Center" />
+                            <Slider Grid.Row="1"
+                                    Grid.Column="1"
+                                    Name="DangerZoneYSlider"
+                                    Minimum="0"
+                                    Maximum="95"
+                                    Value="55"
+                                    TickFrequency="5"
+                                    IsSnapToTickEnabled="True" />
+
+                            <TextBlock Grid.Row="2" Text="Ширина" Foreground="{DynamicResource CardForeground}" VerticalAlignment="Center" />
+                            <Slider Grid.Row="2"
+                                    Grid.Column="1"
+                                    Name="DangerZoneWidthSlider"
+                                    Minimum="5"
+                                    Maximum="100"
+                                    Value="50"
+                                    TickFrequency="5"
+                                    IsSnapToTickEnabled="True" />
+
+                            <TextBlock Grid.Row="3" Text="Высота" Foreground="{DynamicResource CardForeground}" VerticalAlignment="Center" />
+                            <Slider Grid.Row="3"
+                                    Grid.Column="1"
+                                    Name="DangerZoneHeightSlider"
+                                    Minimum="5"
+                                    Maximum="100"
+                                    Value="35"
+                                    TickFrequency="5"
+                                    IsSnapToTickEnabled="True" />
+                        </Grid>
+
+                        <TextBlock Text="Человек считается в опасной зоне, если его рамка пересекает красный прямоугольник."
+                                   Classes="subheader" />
+                    </StackPanel>
                 </StackPanel>
             </Border>
         </Grid>

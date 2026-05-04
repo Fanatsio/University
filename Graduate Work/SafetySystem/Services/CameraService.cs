@@ -16,11 +16,19 @@ namespace SafetySystem.Services
     {
         private const int PythonStartupTimeoutMs = 30000;
         private const int PythonResponseTimeoutMs = 5000;
-        private const int DangerZoneBottomBoundary = 400;
+        private const double DefaultDangerZoneXRatio = 0.25;
+        private const double DefaultDangerZoneYRatio = 0.55;
+        private const double DefaultDangerZoneWidthRatio = 0.5;
+        private const double DefaultDangerZoneHeightRatio = 0.35;
         private const string PythonReadyMessage = "READY";
 
         private readonly object _syncRoot = new();
         private readonly ConcurrentQueue<string> _pythonErrorLog = new();
+        private DangerZoneRatios _dangerZone = new(
+            DefaultDangerZoneXRatio,
+            DefaultDangerZoneYRatio,
+            DefaultDangerZoneWidthRatio,
+            DefaultDangerZoneHeightRatio);
         private VideoCapture? _capture;
         private Process? _python;
         private Task? _startupTask;
@@ -29,6 +37,19 @@ namespace SafetySystem.Services
 
         public event Action<Bitmap, List<DetectionResult>> FrameReady = delegate { };
         public event Action<string, bool> StatusChanged = delegate { };
+
+        public void SetDangerZoneRectPercent(double xPercent, double yPercent, double widthPercent, double heightPercent)
+        {
+            var x = Math.Clamp(xPercent / 100.0, 0, 0.95);
+            var y = Math.Clamp(yPercent / 100.0, 0, 0.95);
+            var width = Math.Clamp(widthPercent / 100.0, 0.05, 1.0 - x);
+            var height = Math.Clamp(heightPercent / 100.0, 0.05, 1.0 - y);
+
+            lock (_syncRoot)
+            {
+                _dangerZone = new DangerZoneRatios(x, y, width, height);
+            }
+        }
 
         public void StartCamera()
         {
@@ -174,7 +195,9 @@ namespace SafetySystem.Services
                     continue;
                 }
 
-                var detections = DetectWithYolo(frame);
+                var dangerZone = GetDangerZoneRect(frame.Width, frame.Height);
+                var detections = DetectWithYolo(frame, dangerZone);
+                DrawDangerZone(frame, dangerZone);
                 DrawDetections(frame, detections);
 
                 var bitmap = ConvertToBitmap(frame);
@@ -211,7 +234,7 @@ namespace SafetySystem.Services
             return python;
         }
 
-        private List<DetectionResult> DetectWithYolo(Mat frame)
+        private List<DetectionResult> DetectWithYolo(Mat frame, Rect dangerZone)
         {
             var detections = new List<DetectionResult>();
 
@@ -246,7 +269,8 @@ namespace SafetySystem.Services
 
                 foreach (var box in boxes)
                 {
-                    var danger = box["y"] + box["h"] > DangerZoneBottomBoundary;
+                    var personRect = new Rect(box["x"], box["y"], box["w"], box["h"]);
+                    var danger = personRect.IntersectsWith(dangerZone);
 
                     detections.Add(new DetectionResult
                     {
@@ -279,6 +303,50 @@ namespace SafetySystem.Services
             }
 
             return detections;
+        }
+
+        private Rect GetDangerZoneRect(int frameWidth, int frameHeight)
+        {
+            DangerZoneRatios ratios;
+
+            lock (_syncRoot)
+            {
+                ratios = _dangerZone;
+            }
+
+            var x = Math.Clamp((int)(frameWidth * ratios.X), 0, frameWidth - 1);
+            var y = Math.Clamp((int)(frameHeight * ratios.Y), 0, frameHeight - 1);
+            var width = Math.Clamp((int)(frameWidth * ratios.Width), 1, frameWidth - x);
+            var height = Math.Clamp((int)(frameHeight * ratios.Height), 1, frameHeight - y);
+
+            return new Rect(x, y, width, height);
+        }
+
+        private static void DrawDangerZone(Mat frame, Rect dangerZone)
+        {
+            if (frame.Empty() || dangerZone.Width <= 0 || dangerZone.Height <= 0)
+            {
+                return;
+            }
+
+            using var overlay = frame.Clone();
+
+            Cv2.Rectangle(
+                overlay,
+                dangerZone,
+                new Scalar(40, 40, 180),
+                -1);
+
+            Cv2.AddWeighted(overlay, 0.2, frame, 0.8, 0, frame);
+            Cv2.Rectangle(frame, dangerZone, Scalar.Red, 2);
+            Cv2.PutText(
+                frame,
+                "Danger zone",
+                new Point(dangerZone.X + 10, Math.Max(28, dangerZone.Y - 10)),
+                HersheyFonts.HersheySimplex,
+                0.65,
+                Scalar.Red,
+                2);
         }
 
         private static void DrawDetections(Mat frame, List<DetectionResult> detections)
@@ -399,5 +467,7 @@ namespace SafetySystem.Services
 
             throw new FileNotFoundException($"Required runtime file was not found: {fileName}");
         }
+
+        private readonly record struct DangerZoneRatios(double X, double Y, double Width, double Height);
     }
 }

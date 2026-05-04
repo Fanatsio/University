@@ -7,7 +7,10 @@ import numpy as np
 from ultralytics import YOLO
 
 ROOT = Path(__file__).resolve().parent
-MODEL_PATH = ROOT / "yolov8n.pt"
+MODEL_PATH = ROOT / "yolov8s.pt"
+
+if not MODEL_PATH.exists():
+    raise FileNotFoundError(f"YOLO model file was not found: {MODEL_PATH}")
 
 model = YOLO(str(MODEL_PATH))
 print("READY", flush=True)
