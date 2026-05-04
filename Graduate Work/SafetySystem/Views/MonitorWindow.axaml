@@ -1,7 +1,8 @@
 ﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="SafetySystem.Views.MonitorWindow">
-    <Grid RowDefinitions="Auto,*,Auto" RowSpacing="14">
+    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+    <StackPanel Spacing="14">
         <Grid ColumnDefinitions="*,Auto" ColumnSpacing="14">
             <Border Padding="16,12"
                     Background="#173329"
@@ -32,13 +33,13 @@
             </Border>
         </Grid>
 
-        <Border Grid.Row="1"
-                Background="#0C1014"
+        <Border Background="#0C1014"
                 BorderBrush="{DynamicResource CardBorder}"
                 BorderThickness="1"
                 CornerRadius="8"
                 ClipToBounds="True"
-                MinHeight="380">
+                MinHeight="320"
+                MaxHeight="620">
             <Grid>
                 <Image Name="CameraStream"
                        Stretch="Uniform"
@@ -64,7 +65,7 @@
                             Background="#B0111417"
                             HorizontalAlignment="Left"
                             VerticalAlignment="Bottom">
-                        <TextBlock Text="YOLOv8 детекция персонала"
+                        <TextBlock Text="YOLOv8 детекция/сегментация персонала"
                                    Foreground="{DynamicResource MutedText}" />
                     </Border>
                 </Grid>
@@ -92,8 +93,8 @@
             </Grid>
         </Border>
 
-        <Grid Grid.Row="2" ColumnDefinitions="1.1*,0.9*" ColumnSpacing="14">
-            <Border Classes="card">
+        <WrapPanel>
+            <Border Classes="card" Width="430" MinWidth="300" Margin="0,0,14,14">
                 <StackPanel Spacing="10">
                     <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
                         <TextBlock Text="Люди в опасной зоне" Classes="sectionTitle" />
@@ -112,7 +113,7 @@
                 </StackPanel>
             </Border>
 
-            <Border Grid.Column="1" Classes="card">
+            <Border Classes="card" Width="430" MinWidth="300" Margin="0,0,14,14">
                 <StackPanel Spacing="14">
                     <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="10">
                         <StackPanel Spacing="3">
@@ -213,11 +214,12 @@
                                     IsSnapToTickEnabled="True" />
                         </Grid>
 
-                        <TextBlock Text="Человек считается в опасной зоне, если его рамка пересекает красный прямоугольник."
+                        <TextBlock Text="Человек считается в опасной зоне, если его контур или рамка пересекает красный прямоугольник."
                                    Classes="subheader" />
                     </StackPanel>
                 </StackPanel>
             </Border>
-        </Grid>
-    </Grid>
+        </WrapPanel>
+    </StackPanel>
+    </ScrollViewer>
 </UserControl>

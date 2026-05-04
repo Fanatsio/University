@@ -40,17 +40,31 @@ while True:
 
         results = model(frame, verbose=False)[0]
         detections = []
+        masks = results.masks.xy if results.masks is not None else None
 
-        for box in results.boxes.data.tolist():
+        for index, box in enumerate(results.boxes.data.tolist()):
             x1, y1, x2, y2, score, class_id = box
 
             if int(class_id) == 0 and score >= args.confidence:
-                detections.append({
+                detection = {
                     "x": int(x1),
                     "y": int(y1),
                     "w": int(x2 - x1),
                     "h": int(y2 - y1)
-                })
+                }
+
+                if masks is not None and index < len(masks):
+                    contour = masks[index].astype(np.int32)
+
+                    if len(contour) >= 3:
+                        epsilon = 0.004 * cv2.arcLength(contour, True)
+                        approx = cv2.approxPolyDP(contour, epsilon, True).reshape(-1, 2)
+                        detection["contour"] = [
+                            {"x": int(point[0]), "y": int(point[1])}
+                            for point in approx
+                        ]
+
+                detections.append(detection)
 
         print(json.dumps(detections), flush=True)
     except Exception as ex:

@@ -1,32 +1,33 @@
 ﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="SafetySystem.Views.DataAnalysisWindow">
-    <Grid RowDefinitions="Auto,*,Auto" RowSpacing="16">
-        <UniformGrid Columns="3" Rows="1">
-            <Border Classes="card" Margin="0,0,12,0">
+    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+        <StackPanel Spacing="16">
+        <WrapPanel>
+            <Border Classes="card" Width="260" MinHeight="120" Margin="0,0,12,12">
                 <StackPanel Spacing="8">
                     <TextBlock Text="События сегодня" Foreground="{DynamicResource MutedText}" />
                     <TextBlock Text="0" Classes="metric" Foreground="{DynamicResource AccentCyan}" />
                 </StackPanel>
             </Border>
-            <Border Classes="card" Margin="0,0,12,0">
+            <Border Classes="card" Width="260" MinHeight="120" Margin="0,0,12,12">
                 <StackPanel Spacing="8">
                     <TextBlock Text="Нарушения" Foreground="{DynamicResource MutedText}" />
                     <TextBlock Text="0" Classes="metric" Foreground="{DynamicResource AccentGreen}" />
                 </StackPanel>
             </Border>
-            <Border Classes="card">
+            <Border Classes="card" Width="260" MinHeight="120" Margin="0,0,12,12">
                 <StackPanel Spacing="8">
                     <TextBlock Text="Среднее время реакции" Foreground="{DynamicResource MutedText}" />
                     <TextBlock Text="--" Classes="metric" Foreground="{DynamicResource AccentAmber}" />
                 </StackPanel>
             </Border>
-        </UniformGrid>
+        </WrapPanel>
 
-        <Border Grid.Row="1" Classes="card">
+        <Border Classes="card">
             <Grid RowDefinitions="Auto,*" RowSpacing="16">
                 <TextBlock Text="Динамика событий" Classes="sectionTitle" />
-                <Grid Grid.Row="1" Height="320">
+                <Grid Grid.Row="1" MinHeight="260" MaxHeight="360">
                     <Border Background="#161B20" CornerRadius="8" />
                     <Canvas Margin="24">
                         <Rectangle Canvas.Left="28" Canvas.Top="218" Width="54" Height="58" Fill="{DynamicResource AccentGreen}" RadiusX="4" RadiusY="4" />
@@ -41,7 +42,7 @@
             </Grid>
         </Border>
 
-        <Border Grid.Row="2" Classes="card">
+        <Border Classes="card">
             <StackPanel Spacing="10">
                 <TextBlock Text="Журнал событий" Classes="sectionTitle" />
                 <ListBox Name="EventList"
@@ -53,5 +54,6 @@
                 </ListBox>
             </StackPanel>
         </Border>
-    </Grid>
+        </StackPanel>
+    </ScrollViewer>
 </UserControl>

@@ -3,7 +3,7 @@ namespace SafetySystem.Models
     public class AppSettings
     {
         public int CameraIndex { get; set; } = 0;
-        public string YoloModelPath { get; set; } = "yolov8s.pt";
+        public string YoloModelPath { get; set; } = "yolov8s-seg.pt";
         public double ConfidenceThreshold { get; set; } = 0.5;
         public string DatabasePath { get; set; } = "safetysystem.db";
         public bool AutoStartMonitoring { get; set; } = true;

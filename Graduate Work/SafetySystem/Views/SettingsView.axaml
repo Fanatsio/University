@@ -1,7 +1,7 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="SafetySystem.Views.SettingsView">
-    <ScrollViewer>
+    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
         <StackPanel Spacing="14">
             <Border Classes="card">
                 <Grid ColumnDefinitions="*,Auto" ColumnSpacing="16">
@@ -26,8 +26,8 @@
                 </Grid>
             </Border>
 
-            <Grid ColumnDefinitions="1*,1*" ColumnSpacing="14">
-                <Border Classes="card">
+            <WrapPanel>
+                <Border Classes="card" Width="430" MinWidth="300" Margin="0,0,14,14">
                     <StackPanel Spacing="14">
                         <StackPanel Spacing="5">
                             <TextBlock Text="Мониторинг" Classes="sectionTitle" />
@@ -75,7 +75,7 @@
                     </StackPanel>
                 </Border>
 
-                <Border Grid.Column="1" Classes="card">
+                <Border Classes="card" Width="430" MinWidth="300" Margin="0,0,14,14">
                     <StackPanel Spacing="14">
                         <StackPanel Spacing="5">
                             <TextBlock Text="Данные" Classes="sectionTitle" />
@@ -114,7 +114,7 @@
                         </Border>
                     </StackPanel>
                 </Border>
-            </Grid>
+            </WrapPanel>
 
             <Border Classes="card">
                 <StackPanel Spacing="14">
@@ -174,23 +174,26 @@
                 </StackPanel>
             </Border>
 
-            <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="10">
+            <WrapPanel>
                 <TextBlock Text="Настройки можно менять без перезапуска приложения."
                            Foreground="{DynamicResource MutedText}"
+                           Width="430"
+                           Margin="0,0,12,12"
+                           TextWrapping="Wrap"
                            VerticalAlignment="Center" />
-                <Button Grid.Column="1"
-                        Classes="action"
+                <Button Classes="action"
                         Content="Сбросить"
                         Background="#343C44"
                         Foreground="{DynamicResource CardForeground}"
+                        Margin="0,0,10,12"
                         Click="OnResetClick" />
-                <Button Grid.Column="2"
-                        Classes="action"
+                <Button Classes="action"
                         Content="Сохранить"
                         Background="{DynamicResource AccentCyan}"
                         Foreground="#101417"
+                        Margin="0,0,10,12"
                         Click="OnSaveClick" />
-            </Grid>
+            </WrapPanel>
         </StackPanel>
     </ScrollViewer>
 </UserControl>

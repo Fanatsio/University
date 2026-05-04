@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
@@ -274,23 +275,14 @@ namespace SafetySystem.Services
                     return detections;
                 }
 
-                var boxes = JsonSerializer.Deserialize<List<Dictionary<string, int>>>(line) ?? [];
+                var detectionsFromYolo = JsonSerializer.Deserialize<List<DetectionResult>>(line) ?? [];
                 var id = 1;
 
-                foreach (var box in boxes)
+                foreach (var detection in detectionsFromYolo)
                 {
-                    var personRect = new Rect(box["x"], box["y"], box["w"], box["h"]);
-                    var danger = personRect.IntersectsWith(dangerZone);
-
-                    detections.Add(new DetectionResult
-                    {
-                        Id = id++,
-                        X = box["x"],
-                        Y = box["y"],
-                        Width = box["w"],
-                        Height = box["h"],
-                        InDangerZone = danger
-                    });
+                    detection.Id = id++;
+                    detection.InDangerZone = IsDetectionInDangerZone(detection, dangerZone);
+                    detections.Add(detection);
                 }
             }
             catch (TimeoutException ex)
@@ -359,17 +351,166 @@ namespace SafetySystem.Services
                 2);
         }
 
+        private static bool IsDetectionInDangerZone(DetectionResult detection, Rect dangerZone)
+        {
+            if (detection.Contour.Count < 3)
+            {
+                var personRect = new Rect(detection.X, detection.Y, detection.Width, detection.Height);
+                return personRect.IntersectsWith(dangerZone);
+            }
+
+            if (detection.Contour.Any(point => IsPointInsideRect(point, dangerZone)))
+            {
+                return true;
+            }
+
+            var dangerCorners = new[]
+            {
+                new DetectionPoint { X = dangerZone.X, Y = dangerZone.Y },
+                new DetectionPoint { X = dangerZone.X + dangerZone.Width, Y = dangerZone.Y },
+                new DetectionPoint { X = dangerZone.X + dangerZone.Width, Y = dangerZone.Y + dangerZone.Height },
+                new DetectionPoint { X = dangerZone.X, Y = dangerZone.Y + dangerZone.Height }
+            };
+
+            if (dangerCorners.Any(corner => IsPointInsidePolygon(corner, detection.Contour)))
+            {
+                return true;
+            }
+
+            var dangerEdges = new[]
+            {
+                (dangerCorners[0], dangerCorners[1]),
+                (dangerCorners[1], dangerCorners[2]),
+                (dangerCorners[2], dangerCorners[3]),
+                (dangerCorners[3], dangerCorners[0])
+            };
+
+            for (var index = 0; index < detection.Contour.Count; index++)
+            {
+                var current = detection.Contour[index];
+                var next = detection.Contour[(index + 1) % detection.Contour.Count];
+
+                if (dangerEdges.Any(edge => SegmentsIntersect(current, next, edge.Item1, edge.Item2)))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private static bool IsPointInsideRect(DetectionPoint point, Rect rect)
+        {
+            return point.X >= rect.X
+                && point.X <= rect.X + rect.Width
+                && point.Y >= rect.Y
+                && point.Y <= rect.Y + rect.Height;
+        }
+
+        private static bool IsPointInsidePolygon(DetectionPoint point, IReadOnlyList<DetectionPoint> polygon)
+        {
+            var inside = false;
+
+            for (int current = 0, previous = polygon.Count - 1; current < polygon.Count; previous = current++)
+            {
+                var currentPoint = polygon[current];
+                var previousPoint = polygon[previous];
+                var crossesY = currentPoint.Y > point.Y != previousPoint.Y > point.Y;
+
+                if (crossesY)
+                {
+                    var intersectionX = (double)(previousPoint.X - currentPoint.X)
+                        * (point.Y - currentPoint.Y)
+                        / (previousPoint.Y - currentPoint.Y)
+                        + currentPoint.X;
+
+                    if (point.X < intersectionX)
+                    {
+                        inside = !inside;
+                    }
+                }
+            }
+
+            return inside;
+        }
+
+        private static bool SegmentsIntersect(DetectionPoint a, DetectionPoint b, DetectionPoint c, DetectionPoint d)
+        {
+            var d1 = Direction(c, d, a);
+            var d2 = Direction(c, d, b);
+            var d3 = Direction(a, b, c);
+            var d4 = Direction(a, b, d);
+
+            if (((d1 > 0 && d2 < 0) || (d1 < 0 && d2 > 0))
+                && ((d3 > 0 && d4 < 0) || (d3 < 0 && d4 > 0)))
+            {
+                return true;
+            }
+
+            return d1 == 0 && IsPointOnSegment(c, d, a)
+                || d2 == 0 && IsPointOnSegment(c, d, b)
+                || d3 == 0 && IsPointOnSegment(a, b, c)
+                || d4 == 0 && IsPointOnSegment(a, b, d);
+        }
+
+        private static long Direction(DetectionPoint a, DetectionPoint b, DetectionPoint c)
+        {
+            return (long)(c.X - a.X) * (b.Y - a.Y) - (long)(c.Y - a.Y) * (b.X - a.X);
+        }
+
+        private static bool IsPointOnSegment(DetectionPoint a, DetectionPoint b, DetectionPoint point)
+        {
+            return Math.Min(a.X, b.X) <= point.X
+                && point.X <= Math.Max(a.X, b.X)
+                && Math.Min(a.Y, b.Y) <= point.Y
+                && point.Y <= Math.Max(a.Y, b.Y);
+        }
+
         private static void DrawDetections(Mat frame, List<DetectionResult> detections)
         {
+            using var overlay = frame.Clone();
+            var hasMasks = false;
+
             foreach (var detection in detections)
             {
                 var color = detection.InDangerZone ? Scalar.Red : Scalar.Green;
 
-                Cv2.Rectangle(
-                    frame,
-                    new Rect(detection.X, detection.Y, detection.Width, detection.Height),
-                    color,
-                    2);
+                if (detection.Contour.Count >= 3)
+                {
+                    var contour = detection.Contour
+                        .Select(point => new Point(point.X, point.Y))
+                        .ToArray();
+
+                    Cv2.FillPoly(overlay, [contour], color);
+                    hasMasks = true;
+                }
+            }
+
+            if (hasMasks)
+            {
+                Cv2.AddWeighted(overlay, 0.18, frame, 0.82, 0, frame);
+            }
+
+            foreach (var detection in detections)
+            {
+                var color = detection.InDangerZone ? Scalar.Red : Scalar.Green;
+
+                if (detection.Contour.Count >= 3)
+                {
+                    var contour = detection.Contour
+                        .Select(point => new Point(point.X, point.Y))
+                        .ToArray();
+
+                    Cv2.Polylines(frame, [contour], true, color, 2);
+                }
+                else
+                {
+                    Cv2.Rectangle(
+                        frame,
+                        new Rect(detection.X, detection.Y, detection.Width, detection.Height),
+                        color,
+                        2);
+                }
 
                 Cv2.PutText(
                     frame,

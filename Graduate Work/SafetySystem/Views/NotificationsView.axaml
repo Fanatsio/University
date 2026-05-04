@@ -1,30 +1,31 @@
 ﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="SafetySystem.Views.NotificationsView">
-    <Grid RowDefinitions="Auto,*" RowSpacing="16">
-        <UniformGrid Columns="3" Rows="1">
-            <Border Classes="card" Margin="0,0,12,0">
+    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+        <StackPanel Spacing="16">
+        <WrapPanel>
+            <Border Classes="card" Width="260" MinHeight="120" Margin="0,0,12,12">
                 <StackPanel Spacing="8">
                     <TextBlock Text="Активные" Foreground="{DynamicResource MutedText}" />
                     <TextBlock Text="0" Classes="metric" Foreground="{DynamicResource AccentGreen}" />
                 </StackPanel>
             </Border>
-            <Border Classes="card" Margin="0,0,12,0">
+            <Border Classes="card" Width="260" MinHeight="120" Margin="0,0,12,12">
                 <StackPanel Spacing="8">
                     <TextBlock Text="Ожидают реакции" Foreground="{DynamicResource MutedText}" />
                     <TextBlock Text="0" Classes="metric" Foreground="{DynamicResource AccentCyan}" />
                 </StackPanel>
             </Border>
-            <Border Classes="card">
+            <Border Classes="card" Width="260" MinHeight="120" Margin="0,0,12,12">
                 <StackPanel Spacing="8">
                     <TextBlock Text="Критические" Foreground="{DynamicResource MutedText}" />
                     <TextBlock Text="0" Classes="metric" Foreground="{DynamicResource AccentAmber}" />
                 </StackPanel>
             </Border>
-        </UniformGrid>
+        </WrapPanel>
 
-        <Grid Grid.Row="1" ColumnDefinitions="1.15*,0.85*" ColumnSpacing="16">
-            <Border Classes="card">
+        <WrapPanel>
+            <Border Classes="card" Width="430" MinWidth="300" Margin="0,0,16,16">
                 <StackPanel Spacing="12">
                     <TextBlock Text="Лента уведомлений" Classes="sectionTitle" />
                     <ListBox Name="NotificationList"
@@ -37,7 +38,7 @@
                 </StackPanel>
             </Border>
 
-            <Border Grid.Column="1" Classes="card">
+            <Border Classes="card" Width="360" MinWidth="280" Margin="0,0,16,16">
                 <StackPanel Spacing="14">
                     <TextBlock Text="Каналы контроля" Classes="sectionTitle" />
                     <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto" RowSpacing="12" ColumnSpacing="12">
@@ -52,6 +53,7 @@
                     </Grid>
                 </StackPanel>
             </Border>
-        </Grid>
-    </Grid>
+        </WrapPanel>
+        </StackPanel>
+    </ScrollViewer>
 </UserControl>

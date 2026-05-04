@@ -3,10 +3,10 @@
         x:Class="SafetySystem.Views.MainWindow"
         Title="Система безопасности и мониторинга опасной зоны"
         Icon="/Assets/avalonia-logo.ico"
-        Width="1420"
-        Height="900"
-        MinWidth="1180"
-        MinHeight="760"
+        Width="1280"
+        Height="820"
+        MinWidth="760"
+        MinHeight="560"
         Background="{DynamicResource WindowBackground}">
     <Window.Resources>
         <SolidColorBrush x:Key="WindowBackground" Color="#111417" />
@@ -112,13 +112,13 @@
         </Style>
     </Window.Styles>
 
-    <Grid Background="{StaticResource WindowBackground}" ColumnDefinitions="284,*">
+    <Grid Background="{StaticResource WindowBackground}" ColumnDefinitions="244,*">
         <Border Grid.Column="0"
                 Background="{StaticResource ShellBackground}"
                 BorderBrush="{StaticResource CardBorder}"
                 BorderThickness="0,0,1,0">
             <Grid RowDefinitions="Auto,*,Auto">
-                <StackPanel Margin="22,26,22,20" Spacing="12">
+                <StackPanel Margin="18,22,18,18" Spacing="12">
                     <Border Width="48"
                             Height="48"
                             CornerRadius="8"
@@ -195,7 +195,7 @@
                 </StackPanel>
 
                 <Border Grid.Row="2"
-                        Margin="18,18,18,24"
+                        Margin="14,14,14,18"
                         Padding="14"
                         CornerRadius="8"
                         Background="#20262B"
@@ -216,7 +216,7 @@
             </Grid>
         </Border>
 
-        <Grid Grid.Column="1" RowDefinitions="Auto,*" Margin="28">
+        <Grid Grid.Column="1" RowDefinitions="Auto,*" Margin="18">
             <Border Background="{StaticResource PanelBackground}"
                     BorderBrush="{StaticResource CardBorder}"
                     BorderThickness="1"
@@ -235,6 +235,7 @@
                             Background="#173329"
                             BorderBrush="#245A43"
                             BorderThickness="1"
+                            Margin="12,0,0,0"
                             VerticalAlignment="Center">
                         <TextBlock Text="ONLINE"
                                    Foreground="{StaticResource AccentGreen}"

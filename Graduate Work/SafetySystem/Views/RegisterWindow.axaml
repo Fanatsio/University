@@ -1,9 +1,9 @@
 ﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="SafetySystem.Views.RegisterWindow">
-    <ScrollViewer>
-        <Grid ColumnDefinitions="1.1*,0.9*" ColumnSpacing="18">
-            <Border Classes="card">
+    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+        <WrapPanel>
+            <Border Classes="card" Width="430" MinWidth="300" Margin="0,0,18,18">
                 <StackPanel Spacing="14">
                     <StackPanel Spacing="4">
                         <TextBlock Text="Карточка сотрудника" Classes="sectionTitle" />
@@ -54,7 +54,7 @@
                 </StackPanel>
             </Border>
 
-            <StackPanel Grid.Column="1" Spacing="18">
+            <StackPanel Width="380" MinWidth="300" Spacing="18" Margin="0,0,18,18">
                 <Border Classes="card">
                     <StackPanel Spacing="14">
                         <TextBlock Text="Проверка перед сохранением" Classes="sectionTitle" />
@@ -81,6 +81,6 @@
                     </StackPanel>
                 </Border>
             </StackPanel>
-        </Grid>
+        </WrapPanel>
     </ScrollViewer>
 </UserControl>

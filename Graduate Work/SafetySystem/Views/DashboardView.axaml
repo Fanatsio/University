@@ -1,10 +1,10 @@
 ﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="SafetySystem.Views.DashboardView">
-    <ScrollViewer>
+    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
         <StackPanel Spacing="18">
-            <UniformGrid Columns="4" Rows="1">
-                <Border Classes="card" Margin="0,0,12,0">
+            <WrapPanel>
+                <Border Classes="card" Width="250" MinHeight="150" Margin="0,0,12,12">
                     <StackPanel Spacing="10">
                         <TextBlock Text="Камера" Foreground="{DynamicResource MutedText}" />
                         <TextBlock Text="Готова" Classes="metric" Foreground="{DynamicResource AccentGreen}" />
@@ -12,7 +12,7 @@
                     </StackPanel>
                 </Border>
 
-                <Border Classes="card" Margin="0,0,12,0">
+                <Border Classes="card" Width="250" MinHeight="150" Margin="0,0,12,12">
                     <StackPanel Spacing="10">
                         <TextBlock Text="Тревоги" Foreground="{DynamicResource MutedText}" />
                         <TextBlock Text="0" Classes="metric" Foreground="{DynamicResource AccentCyan}" />
@@ -20,7 +20,7 @@
                     </StackPanel>
                 </Border>
 
-                <Border Classes="card" Margin="0,0,12,0">
+                <Border Classes="card" Width="250" MinHeight="150" Margin="0,0,12,12">
                     <StackPanel Spacing="10">
                         <TextBlock Text="Контроль" Foreground="{DynamicResource MutedText}" />
                         <TextBlock Text="RFID" Classes="metric" Foreground="{DynamicResource AccentAmber}" />
@@ -28,17 +28,17 @@
                     </StackPanel>
                 </Border>
 
-                <Border Classes="card">
+                <Border Classes="card" Width="250" MinHeight="150" Margin="0,0,12,12">
                     <StackPanel Spacing="10">
                         <TextBlock Text="База" Foreground="{DynamicResource MutedText}" />
                         <TextBlock Text="OK" Classes="metric" Foreground="{DynamicResource AccentGreen}" />
                         <TextBlock Text="Сотрудники и события доступны" Classes="subheader" />
                     </StackPanel>
                 </Border>
-            </UniformGrid>
+            </WrapPanel>
 
-            <Grid ColumnDefinitions="1.25*,0.75*" ColumnSpacing="18">
-                <Border Classes="card">
+            <WrapPanel>
+                <Border Classes="card" Width="430" MinWidth="300" Margin="0,0,18,18">
                     <StackPanel Spacing="16">
                         <Grid ColumnDefinitions="*,Auto">
                             <TextBlock Text="Оперативная сводка" Classes="sectionTitle" />
@@ -69,7 +69,7 @@
                     </StackPanel>
                 </Border>
 
-                <Border Grid.Column="1" Classes="card">
+                <Border Classes="card" Width="360" MinWidth="280" Margin="0,0,18,18">
                     <StackPanel Spacing="14">
                         <TextBlock Text="Быстрый статус" Classes="sectionTitle" />
                         <Border Background="#161B20" CornerRadius="8" Padding="14">
@@ -86,7 +86,7 @@
                         </Border>
                     </StackPanel>
                 </Border>
-            </Grid>
+            </WrapPanel>
         </StackPanel>
     </ScrollViewer>
 </UserControl>

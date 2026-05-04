@@ -71,7 +71,7 @@ namespace SafetySystem.Services
             settings.DangerZoneYPercent = Math.Clamp(settings.DangerZoneYPercent, 0, 95);
             settings.DangerZoneWidthPercent = Math.Clamp(settings.DangerZoneWidthPercent, 5, 100 - settings.DangerZoneXPercent);
             settings.DangerZoneHeightPercent = Math.Clamp(settings.DangerZoneHeightPercent, 5, 100 - settings.DangerZoneYPercent);
-            settings.YoloModelPath = string.IsNullOrWhiteSpace(settings.YoloModelPath) ? "yolov8s.pt" : settings.YoloModelPath.Trim();
+            settings.YoloModelPath = string.IsNullOrWhiteSpace(settings.YoloModelPath) ? "yolov8s-seg.pt" : settings.YoloModelPath.Trim();
             settings.DatabasePath = string.IsNullOrWhiteSpace(settings.DatabasePath) ? "safetysystem.db" : settings.DatabasePath.Trim();
         }
     }
